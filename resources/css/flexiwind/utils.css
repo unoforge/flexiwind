@@ -1,0 +1,212 @@
+
+@utility dropdown-content {
+  @apply grid max-h-[inherit] grid-cols-[auto_1fr] overflow-y-auto overscroll-contain outline-hidden *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1
+}
+
+@utility dropdown-item-base {
+  border-radius: calc(var(--dropdown-radius) - var(--dropdown-padding));
+  @apply outline-none focus:outline rounded-md px-3.5 py-1.5 ease-linear duration-200 transition-colors;
+}
+
+@utility dropdown-item-grid {
+  @apply col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid;
+}
+
+@utility dropdown-item-bg {
+  @apply text-fg focus:outline-primary hover:text-fg-title focus:bg-bg-muted hover:bg-bg-muted fx-focus-active:bg-bg-muted;
+}
+
+@utility dropdown-item-bg-danger {
+  @apply focus:outline-danger focus:bg-danger-50 hover:bg-danger-100 text-danger dark:hover:bg-danger-500/10 dark:focus:bg-danger-500/10 **:slot-icon:text-danger/60 fx-focus-active:bg-danger-100 dark:fx-focus-active:bg-danger-500/10;
+}
+
+@utility dropdown-item-slot {
+  @apply not-has-[[slot=description]]:items-center has-[[slot=description]]:**:data-[slot=check-indicator]:mt-[1.5px] **:data-[slot=avatar]:*:mr-1.5 **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:mr-(--mr-icon) **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5
+}
+
+@utility dropdown-item-icon {
+  @apply *:slot-icon:mr-(--mr-icon) **:slot-icon:size-5 **:slot-icon:shrink-0 **:slot-icon:text-fg-muted sm:**:slot-icon:size-4;
+}
+
+@utility dropdown-item-label {
+  @apply [&>[slot=label]+[data-slot=icon]]:absolute [&>[slot=label]+[data-slot=icon]]:right-1;
+}
+
+@utility dropdown-item-force-color {
+  @apply forced-color-adjust-none forced-colors:text-[CanvasText] forced-colors:**:slot-icon:text-[CanvasText] forced-colors:group-focus:**:slot-icon:text-[CanvasText]
+}
+
+@utility ui-card {
+  @apply p-(--card-padding) rounded-(--card-radius)
+}
+
+@utility inner-radius {
+  border-radius: calc(var(--card-radius) - var(--card-padding));
+}
+
+
+
+
+
+
+@utility d-flex-justify-center {
+  @apply flex justify-center;
+}
+
+@utility d-flex-justify-start {
+  @apply flex justify-start;
+}
+
+@utility d-flex-justify-end {
+  @apply flex justify-end;
+}
+
+@utility d-flex-items-start {
+  @apply flex items-start;
+}
+
+@utility d-flex-items-center {
+  @apply flex items-center;
+}
+
+@utility d-flex-items-end {
+  @apply flex items-end;
+}
+
+@utility d-flex-between {
+  @apply flex justify-between;
+}
+
+@utility d-flex-place-center {
+  @apply flex justify-center items-center;
+}
+
+
+
+
+@utility ui-grid-dotted {
+  background-image: radial-gradient(currentColor var(--dotsize), var(--bg-grid-dotted) var(--dotsize));
+  background-size: var(--unify-ui-grid-width) var(--unify-ui-grid-height);
+}
+
+@utility ui-radial-gradient {
+  background: radial-gradient(125% 125% at 50% 10%, var(--unify-radial-bg) 40%, currentColor 100%);
+}
+
+@utility ui-grid {
+  --unify-grid-color: currentColor;
+  background-image: linear-gradient(to right, var(--unify-grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--unify-grid-color) 1px, transparent 1px);
+  background-size: var(--unify-ui-grid-width) var(--unify-ui-grid-height);
+}
+
+@utility ui-striper-overlay-mask {
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 110%);
+}
+
+@utility ui-grid-w-xs {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-xs);
+}
+
+@utility ui-grid-w-sm {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-sm);
+}
+
+@utility ui-grid-w-md {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-md);
+}
+
+@utility ui-grid-w-lg {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-lg);
+}
+
+@utility ui-grid-w-xl {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-xl);
+}
+
+@utility ui-grid-w-2xl {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-2xl);
+}
+
+@utility ui-grid-h-xs {
+  --unify-ui-grid-height: var(--unify-ui-grid-height-xs);
+}
+
+@utility ui-grid-h-sm {
+  --unify-ui-grid-height: var(--unify-ui-grid-height-sm);
+}
+
+@utility ui-grid-h-md {
+  --unify-ui-grid-height: var(--unify-ui-grid-height-md);
+}
+
+@utility ui-grid-h-lg {
+  --unify-ui-grid-height: var(--unify-ui-grid-height-lg);
+}
+
+@utility ui-grid-h-xl {
+  --unify-ui-grid-height: var(--unify-ui-grid-height-xl);
+}
+
+@utility ui-grid-h-2xl {
+  --unify-ui-grid-height: var(--unify-ui-grid-height-2xl);
+}
+
+@utility ui-grid-square-xs {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-xs);
+  --unify-ui-grid-height: var(--unify-ui-grid-width-xs);
+}
+
+@utility ui-grid-square-sm {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-sm);
+  --unify-ui-grid-height: var(--unify-ui-grid-width-sm);
+}
+
+@utility ui-grid-square-md {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-md);
+  --unify-ui-grid-height: var(--unify-ui-grid-width-md);
+}
+
+@utility ui-grid-square-lg {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-lg);
+  --unify-ui-grid-height: var(--unify-ui-grid-width-lg);
+}
+
+@utility ui-grid-square-xl {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-xl);
+  --unify-ui-grid-height: var(--unify-ui-grid-width-xl);
+}
+
+@utility ui-grid-square-2xl {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-2xl);
+  --unify-ui-grid-height: var(--unify-ui-grid-width-2xl);
+}
+
+@utility ui-grid-rec-xs {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-xs);
+  --unify-ui-grid-height: var(--unify-ui-grid-height-xs);
+}
+
+@utility ui-grid-rec-sm {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-sm);
+  --unify-ui-grid-height: var(--unify-ui-grid-height-sm);
+}
+
+@utility ui-grid-rec-md {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-md);
+  --unify-ui-grid-height: var(--unify-ui-grid-height-md);
+}
+
+@utility ui-grid-rec-lg {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-lg);
+  --unify-ui-grid-height: var(--unify-ui-grid-height-lg);
+}
+
+@utility ui-grid-rec-xl {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-xl);
+  --unify-ui-grid-height: var(--unify-ui-grid-height-xl);
+}
+
+@utility ui-grid-rec-2xl {
+  --unify-ui-grid-width: var(--unify-ui-grid-width-2xl);
+  --unify-ui-grid-height: var(--unify-ui-grid-height-2xl);
+}

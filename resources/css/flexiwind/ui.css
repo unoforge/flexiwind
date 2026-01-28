@@ -1,0 +1,194 @@
+@utility ui-radius {
+  @apply rounded-(--ui-radius);
+}
+
+@utility ui-soft {
+  @apply bg-(--ui-soft-bg) text-(--ui-soft-text);
+}
+
+@utility ui-solid {
+  @apply bg-(--ui-solid-bg) text-(--ui-solid-text);
+}
+
+@utility ui-outline {
+  @apply text-(--ui-outline-text) border border-(--ui-outline-border);
+}
+
+@utility ui-subtle {
+  @apply bg-(--ui-subtle-bg) border text-(--ui-subtle-text) border-(--ui-subtle-border);
+}
+
+@utility ui-popper {
+  @apply fixed left-(--fx-popper-placement-x) top-(--fx-popper-placement-y);
+}
+
+@utility u-fx-popper {
+  @apply fixed left-(--fx-popper-placement-x) top-(--fx-popper-placement-y);
+}
+
+@utility animated-modal-content {
+  animation-fill-mode: both;
+  animation: var(--un-modal-animation);
+  -webkit-animation: var(--un-modal-animation);
+}
+
+
+
+@utility ui-tabs-indicator {
+  width: var(--un-tab-indicator-width, 0px);
+  height: var(--un-tab-indicator-height, 0px);
+  top: var(--un-tab-indicator-top, 0px);
+  left: var(--un-tab-indicator-left, 0px);
+  position: absolute;
+}
+
+@utility aspect-utrawide {
+  @apply aspect-[21/9];
+}
+
+@utility aspect-standard-tv {
+  @apply aspect-[4/3];
+}
+
+@utility aspect-35mm-film {
+  @apply aspect-[3/2];
+}
+
+@utility avatar-xs {
+  width: calc(var(--spacing, 0.25rem) * 6.5);
+  height: calc(var(--spacing, 0.25rem) * 6.5);
+}
+
+@utility avatar-sm {
+  width: calc(var(--spacing, 0.25rem) * 8);
+  height: calc(var(--spacing, 0.25rem) * 8);
+}
+
+@utility avatar-md {
+  width: calc(var(--spacing, 0.25rem) * 9.5);
+  height: calc(var(--spacing, 0.25rem) * 9.5);
+}
+
+@utility avatar-lg {
+  width: calc(var(--spacing, 0.25rem) * 10.5);
+  height: calc(var(--spacing, 0.25rem) * 10.5);
+}
+
+@utility avatar-xl {
+  width: calc(var(--spacing, 0.25rem) * 12);
+  height: calc(var(--spacing, 0.25rem) * 12);
+}
+
+@utility avatar-placeholder {
+  @apply flex items-center justify-center truncate;
+}
+
+@utility avatar-placeholder-xs {
+  width: calc(var(--spacing, 0.25rem) * 6.5);
+  height: calc(var(--spacing, 0.25rem) * 6.5);
+  @apply text-xs;
+}
+
+@utility avatar-placeholder-sm {
+  width: calc(var(--spacing, 0.25rem) * 8);
+  height: calc(var(--spacing, 0.25rem) * 8);
+  @apply text-sm;
+}
+
+@utility avatar-placeholder-md {
+  width: calc(var(--spacing, 0.25rem) * 8);
+  height: calc(var(--spacing, 0.25rem) * 8);
+  @apply text-sm;
+}
+
+@utility avatar-placeholder-lg {
+  width: calc(var(--spacing, 0.25rem) * 10.5);
+  height: calc(var(--spacing, 0.25rem) * 10.5);
+  @apply text-base;
+}
+
+@utility avatar-placeholder-xl {
+  width: calc(var(--spacing, 0.25rem) * 12);
+  height: calc(var(--spacing, 0.25rem) * 12);
+  @apply text-base;
+}
+
+
+@utility badge-xs {
+  padding: calc(var(--spacing, 0.25rem) * 0.5) calc(var(--spacing, 0.25rem) * 1);
+  @apply text-xs;
+}
+
+@utility badge-sm {
+  padding: calc(var(--spacing, 0.25rem) * 0.65) calc(var(--spacing, 0.25rem) * 1.5);
+  @apply text-xs;
+}
+
+@utility badge-md {
+  @apply text-sm;
+  padding: calc(var(--spacing, 0.25rem) * 1) calc(var(--spacing, 0.25rem) * 2);
+
+}
+
+@utility badge-lg {
+  padding: calc(var(--spacing, 0.25rem) * 1.115) calc(var(--spacing, 0.25rem) * 2.5);
+}
+
+@utility badge-xl {
+  padding: calc(var(--spacing, 0.25rem) * 1.3) calc(var(--spacing, 0.25rem) * 3);
+}
+
+@utility kbd-xs {
+  padding: calc(var(--spacing, 0.25rem) * 0.5) calc(var(--spacing, 0.25rem) * 1);
+  @apply text-xs;
+}
+
+@utility kbd-sm {
+  padding: calc(var(--spacing, 0.25rem) * 0.65) calc(var(--spacing, 0.25rem) * 1.5);
+  @apply text-xs;
+}
+
+@utility kbd-md {
+  @apply text-sm;
+  padding: calc(var(--spacing, 0.25rem) * 1) calc(var(--spacing, 0.25rem) * 2);
+
+}
+
+@utility kbd-lg {
+  padding: calc(var(--spacing, 0.25rem) * 1.115) calc(var(--spacing, 0.25rem) * 2.5);
+}
+
+@utility kbd-xl {
+  padding: calc(var(--spacing, 0.25rem) * 1.3) calc(var(--spacing, 0.25rem) * 3);
+}
+
+
+
+
+@utility divider-custom {
+  @apply relative before:absolute before:inset-x-0 flex items-center;
+}
+
+@utility divider-custom-1 {
+  @apply before:h-px;
+}
+
+@utility divider-custom-2 {
+  @apply before:h-[2px];
+}
+
+@utility divider-custom-3 {
+  @apply before:h-[3px];
+}
+
+@utility divider-custom-4 {
+  @apply before:h-[4px];
+}
+
+@utility divider-custom-6 {
+  @apply before:h-[6px];
+}
+
+@utility divider-custom-8 {
+  @apply before:h-[8px];
+}

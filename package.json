@@ -1,0 +1,37 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@iconify-json/ph": "^1.2.2",
+        "@iconify-json/simple-icons": "^1.2.66",
+        "@iconify/tailwind4": "^1.2.1",
+        "@tailwindcss/vite": "^4.1.18",
+        "axios": "^1.11.0",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.0.0",
+        "tailwindcss": "^4.1.18",
+        "vite": "^7.0.7"
+    },
+    "dependencies": {
+        "@flexilla/alpine-accordion": "^0.3.0",
+        "@flexilla/alpine-autoresize-area": "^0.2.0",
+        "@flexilla/alpine-collapse": "^0.2.0",
+        "@flexilla/alpine-dismissible": "^0.2.0",
+        "@flexilla/alpine-dropdown": "^0.3.0",
+        "@flexilla/alpine-modal": "^0.3.0",
+        "@flexilla/alpine-navbar": "^0.1.0",
+        "@flexilla/alpine-offcanvas": "^0.3.0",
+        "@flexilla/alpine-pin-input": "^0.2.0",
+        "@flexilla/alpine-popover": "^0.2.0",
+        "@flexilla/alpine-range-indicator": "^0.1.0",
+        "@flexilla/alpine-tabs": "^0.3.0",
+        "@flexilla/alpine-tooltip": "^0.0.1",
+        "@flexilla/utilities": "^2.4.2",
+        "shiki": "^3.8.1"
+    }
+}

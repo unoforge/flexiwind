@@ -1,0 +1,19 @@
+@custom-variant fx-open (&[data-state="open"]);
+@custom-variant fx-close (&[data-state="open"]);
+@custom-variant fx-visible (&[data-state="open"]);
+@custom-variant fx-hidden (&[data-state="open"]);
+@custom-variant fx-opened (&[data-state="open"]);
+@custom-variant fx-closed (&[data-state="open"]);
+@custom-variant fx-resized (&[data-resized="true"]);
+@custom-variant fx-active (&[data-state="active"]);
+@custom-variant fx-inactive (&[data-state="inactive"]);
+@custom-variant fx-focus-active (&[data-focus="active"]);
+
+
+@custom-variant slot-icon (&[slot="icon"]);
+@custom-variant slot-label (&[slot="label"]);
+@custom-variant slot-description (&[slot="description"]);
+@custom-variant slot-kbd (&[slot="kbd"]);
+
+@custom-variant fx-slide-x (&[data-ax="x"]);
+@custom-variant fx-slide-y (&[data-ax="y"]);

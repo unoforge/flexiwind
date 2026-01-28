@@ -1,0 +1,100 @@
+
+
+@utility btn {
+  @apply flex items-center disabled:opacity-90 disabled:cursor-not-allowed disabled:hover:opacity-70 transition-colors ease-linear outline-offset-2 outline-2 outline-transparent focus-visible:outline-(--btn-focus-outline-color);
+}
+
+@utility btn-xs {
+  @apply h-6 px-3.5 text-xs;
+}
+
+@utility btn-icon-xs {
+  @apply size-6 justify-center;
+}
+
+@utility btn-sm {
+  @apply h-8 px-4 text-sm;
+}
+
+@utility btn-icon-sm {
+  @apply size-8 justify-center;
+}
+
+@utility btn-md {
+  @apply h-10 px-5 text-sm;
+}
+
+@utility btn-icon-md {
+  @apply size-10 justify-center;
+}
+
+@utility btn-lg {
+  @apply h-12 px-6 text-sm;
+}
+
+@utility btn-icon-lg {
+  @apply size-12 justify-center;
+}
+
+@utility btn-xl {
+  @apply h-14 px-7 text-sm;
+}
+
+@utility btn-icon-xl {
+  @apply size-14 justify-center
+}
+
+
+@utility btn-solid {
+  @apply bg-(--btn-solid-color) hover:bg-(--btn-solid-color-hover) active:bg-(--btn-solid-color-press) focus-visible:outline-(--btn-solid-color-hover) [--btn-focus-outline-color:var(--btn-solid-color-hover)];
+  background-image: radial-gradient(farthest-corner at 50% -50%, rgba(255, 255, 255, .1) 0%, transparent 100%);
+  box-shadow: inset 0px 2px 0 var(--btn-solid-top-shadow), inset 0px -2px 0 var(--btn-solid-bottom-shadow);
+}
+
+@utility btn-flexi {
+  @apply bg-(--btn-flexi-bg) hover:bg-(--btn-flexi-hover-bg) active:bg-(--btn-flexi-active-bg) active:[--btn-flexi-shadow-a:--btn-flexi-shadow-active-a] active:[--btn-flexi-shadow-b:--btn-flexi-shadow-active-b] active:[--btn-flexi-shadow-c:--btn-flexi-shadow-active-c] [--btn-focus-outline-color:--btn-flexi-hover-bg];
+  --tw-shadow: 0 -1px 0 0px var(--tw-shadow-color, var(--btn-flexi-shadow-a)) inset, 0 0 0 1px var(--tw-shadow-color, var(--btn-flexi-shadow-b)) inset, 0 0.5px 0 1.5px var(--tw-shadow-color, var(--btn-flexi-shadow-c)) inset;
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+
+@utility btn-outline {
+  background-image: radial-gradient(76% 151% at 52% -52%, rgba(255, 255, 255, var(--outline-radial-opacity)) 0%, transparent 100%);
+  box-shadow: rgba(255, 255, 255, var(--inner-border-color)) 0px 1px 0px 0px inset, var(--btn-outline-color) 0px 0px 0px 1px, 0px 1px 2px rgba(0, 0, 0, 0.1);
+  @apply hover:brightness-[0.98] active:brightness-100 bg-(--btn-outline-bg) hover:bg-(--btn-outline-bg-hover) active:bg-(--btn-outline-bg) [--outline-radial-opacity:0.6] [--inner-border-color:1] text-(--btn-outline-text-color) focus-visible:outline-(--btn-outline-color-hover);
+
+  &:is(.dark *) {
+    background-image: none;
+    --inner-border-color: 0;
+    --outline-radial-opacity: 0.2;
+  }
+}
+
+@utility btn-soft {
+  @apply bg-(--btn-soft-bg-color) hover:bg-(--btn-soft-bg-color-hover) active:bg-(--btn-soft-bg-color-press) text-(--btn-soft-text-color) [--btn-focus-outline-color:--btn-soft-text-color];
+
+  &:hover {
+    @media (hover: hover) {
+      color: var(--btn-soft-text-color-hover, --btn-soft-text-color);
+    }
+  }
+
+  &:active {
+    color: var(--btn-soft-text-color-hover, --btn-soft-text-color);
+  }
+}
+
+
+
+@utility btn-ghost {
+  @apply hover:bg-(--btn-ghost-bg-color-hover) active:bg-(--btn-ghost-bg-color-press) text-(--btn-ghost-text-color) [--btn-focus-outline-color:--btn-ghost-text-color];
+
+  &:hover {
+    @media (hover: hover) {
+      color: var(--btn-ghost-text-color-hover, --btn-ghost-text-color);
+    }
+  }
+
+  &:active {
+    color: var(--btn-ghost-text-color-hover, --btn-ghost-text-color);
+  }
+}
