@@ -9,6 +9,8 @@
 @custom-variant fx-inactive (&[data-state="inactive"]);
 @custom-variant fx-focus-active (&[data-focus="active"]);
 
+@custom-variant fx-current (&[data-current]);
+
 
 @custom-variant slot-icon (&[slot="icon"]);
 @custom-variant slot-label (&[slot="label"]);

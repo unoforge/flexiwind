@@ -43,7 +43,7 @@ class DocsPage extends Component
         $this->path = str_replace('/content', '', '/'.implode('/', $segments));
     }
 
-    #[Layout('layouts.docs', ['activeGroup' => 'getting-started', 'activeItem' => 'introduction', 'hideTableOfContent' => false, 'title' => '', 'description' => ''])]
+    #[Layout('layouts::docs')]
     public function render()
     {
         if (! View::exists($this->view)) {
@@ -59,7 +59,6 @@ class DocsPage extends Component
         $this->description = $this->current['seoDescription'] ?? '';
         $this->keywords = $this->current['keywords'] ?? '';
 
-        // dd($this->nextSlug);
 
         return view($this->view);
     }
