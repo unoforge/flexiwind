@@ -17,7 +17,7 @@
 
 <x-layouts.base body-class="bg-bg " :seo="$seo">
     <x-slot name="head">
-        @vite(['resources/css/code-theme.css', 'resources/css/docs.css', 'resources/js/docs.js'])
+        @vite(['resources/css/docs.css', 'resources/js/docs.js'])
     </x-slot>
     <x-organisms.doc-navbar />
     <div
