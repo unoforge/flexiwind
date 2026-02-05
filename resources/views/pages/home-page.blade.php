@@ -32,7 +32,7 @@ new class extends Component {
             </div>
         </div>
         <div class="relative py-20 md:py-28 max-w-6xl flex flex-col items-center text-center px-4">
-            <a href=""
+            <x-ui.link href="https://dev.to/unoforge/introducing-flexiwind-beta-a-composable-ui-system-for-laravel-livewire-144a"
                 class="ring ring-border-strong/80 bg-bg text-fg pl-(--annonce-padding) pr-2 py-(--annonce-padding) rounded-(--annonce-radius) [--annonce-padding:--spacing(0.5)] [--annonce-radius:var(--global-main-radius)] text-sm flex items-center gap-1">
                 <span
                     class="bg-bg-muted text-fg-title rounded-[calc(var(--annonce-radius)-var(--annonce-padding))] px-2 py-0.5">
@@ -41,7 +41,7 @@ new class extends Component {
                 <span>
                     Introducing Flexiwind
                 </span>
-            </a>
+            </x-ui.link>
             <h1
                 class="text-transparent bg-clip-text bg-linear-to-bl from-fg-title to-fg-muted/60 font-semibold text-4xl sm:text-5xl text-balance md:text-6xl/tight capitalize max-w-3xl mt-6">
                 Discover a new way to build Laravel UI with ease
@@ -51,10 +51,10 @@ new class extends Component {
                 build your UI faster and more efficiently.
             </p>
             <div class="flex items-center justify-center flex-wrap gap-2 mt-9">
-                <x-ui.button href="#">
+                <x-ui.button href="https://tally.so/r/ODGxd8">
                     Join waitlist
                 </x-ui.button>
-                <x-ui.button variant="outline" intent="gray" href="/docs/introduction" wire:navigate>
+                <x-ui.button variant="outline" intent="gray" href="/docs/introduction">
                     Get Started
                 </x-ui.button>
             </div>
