@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "radio",
+    "type": "registry:component",
+    "title": "Radio",
+    "description": "A reusable radio component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/radio.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/radio.blade.php",
+            "content": "@props([\n    'id' => null,\n    'name' => '',\n    'value' => '',\n    'checked' => false,\n    'disabled' => false,\n    'size' => 'sm',\n    'label' => ''\n])\n\n@php\n    $sizes = [\n        'sm' => 'size-4',\n        'md' => 'size-5',\n        'lg' => 'size-6',\n    ];\n\n    $baseClasses =\n        'ui-checkbox-radio-base ui-form-radio border border-border-input shadow-sm bg-(--checkbox-bg) mt-0.5 peer text-primary rounded-full';\n    $sizeClasses = $sizes[$size] ?? $sizes['sm'];\n    $stateClasses = $disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer';\n\n    $id = $id ?? $name;\n\n    $attributes = $attributes->class([$baseClasses, $sizeClasses, $stateClasses])->merge([\n        'id' => $id,\n        'name' => $name,\n        'value' => $value,\n        'checked' => $checked,\n        'disabled' => $disabled,\n    ]);\n@endphp\n\n\n\n\n@if ($label)\n    <div class=\"flex items-center\">\n        <input type=\"radio\" {{ $attributes }}>\n        <x-ui.label for=\"{{ $id }}\" class=\"ml-2 mt-0.5 {{ $disabled ? 'opacity-60' : '' }}\">\n            {{ $label }}\n        </x-ui.label>\n    </div>\n@else\n    <input type=\"radio\" {{ $attributes }}>\n@endif\n"
+        }
+    ]
+}

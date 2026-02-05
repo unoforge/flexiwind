@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "aspect",
+    "type": "registry:component",
+    "title": "Aspect Ratio",
+    "description": "A reusable aspect ratio component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/aspect.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/aspect.blade.php",
+            "content": "@props(['aspect' => 'video'])\n\n@php\n    $aspects = [\n        'video' => 'aspect-video',\n        'square' => 'aspect-square',\n        '35mm-film' => 'aspect-35mm-film',\n        'standard-tv' => 'aspect-standard-tv',\n        'ultrawide' => 'aspect-ultrawide',\n    ];\n    \n    $defaultAspect = 'video';\n    $aspectClass = $aspects[$aspect] ?? $aspects[$defaultAspect];\n@endphp\n\n<div {{ $attributes->merge(['class' => $aspectClass]) }}>\n    {{ $slot }}\n</div>"
+        }
+    ]
+}

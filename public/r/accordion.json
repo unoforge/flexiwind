@@ -1,0 +1,46 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "accordion",
+    "type": "registry:component",
+    "title": "Accordion",
+    "description": "A reusable accordion component for Laravel Blade/Livewire.",
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/alpine-accordion"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/accordion.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/accordion.blade.php",
+            "content": "@props([\n    'defaultValue' => null,\n    'type' => 'single',\n    'class' => '',\n    'keepOneOpen' => false,\n    'multiple' => false,\n])\n\n<div x-accordion @if ($defaultValue && $defaultValue != '') data-default-value=\"{{ $defaultValue }}\" @endif\n    @if ($keepOneOpen) data-prevent-closing-all @endif data-accordion-type=\"{{ $multiple ? 'multiple' : $type }}\"\n    {{ $attributes->class([$class]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/accordion/item.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/accordion/item.blade.php",
+            "content": "@props(['variant' => 'default', 'intent' => 'gray', 'id', 'class' => null])\n\n@php\n    use App\\Flexiwind\\UiHelper;\n    $variants = UiHelper::getVariants();\n\n    $className = '';\n    $variantClass = UiHelper::getClasses($variant, $intent);\n    if ($variant === 'default') {\n        $className = ' border-b border-border ';\n    }\n\n    $className .= \"{$class} {$variantClass}\";\n\n@endphp\n\n<div data-accordion-item data-accordion-value=\"{{ $id }}\" class=\"{{ $className }}\">\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/accordion/trigger.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/accordion/trigger.blade.php",
+            "content": "@props(['class'=>''])\n<button data-accordion-trigger aria-label=\"toggle button\"\n    class=\"w-full flex justify-between items-center {{ $class }}\">\n    {{ $slot }}\n</button>\n"
+        },
+        {
+            "path": "resources/views/components/ui/accordion/content.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/accordion/content.blade.php",
+            "content": "<div data-accordion-content class=\"duration-200 ease-linear not-fx-open:h-0 overflow-hidden\">\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/accordion/indicator.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/accordion/indicator.blade.php",
+            "content": "@props(['style', 'icon' => 'ph--caret-down'])\n\n<span data-trigger-icon\n    class=\"ease-linear duration-300 iconify ph--caret-down in-[[aria-expanded=true]]:rotate-180 text-sm\"></span>\n"
+        }
+    ]
+}

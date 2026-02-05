@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "meter",
+    "type": "registry:component",
+    "title": "Meter",
+    "description": "A reusable meter component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/meter.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/meter.blade.php",
+            "content": "@props(['size' => 'md', 'class' => '', 'noRadius' => false])\n\n@php\n    $meter_sizes = [\n        '2xs' => 'h-0.5',\n        'xs' => 'h-1',\n        'sm' => 'h-1.5',\n        'md' => 'h-2',\n        'lg' => 'h-3',\n        'xl' => 'h-6',\n    ];\n    $size = $meter_sizes[$size] ?? $meter_sizes['md'];\n    $radius = $noRadius ? '' : '[--ui-meter-radius:20px]';\n    $className = \"ui-meter {$radius} {$size} bg-bg-muted {$class}\";\n@endphp\n<meter {{ $attributes->merge(['class' => $className]) }}></meter>\n"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "avatar-placeholder",
+    "type": "registry:component",
+    "title": "Avatar Placeholder",
+    "description": "A reusable avatar placeholder component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/avatar-placeholder.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/avatar-placeholder.blade.php",
+            "content": "@props(['size' => 'default', 'radius' => 'circle', 'text' => null, 'variant' => 'solid', 'intent' => 'gray', 'radiusNone'=>false])\n\n@php\n    use App\\Flexiwind\\UiHelper;\n\n    $av_p_sizes = [\n        'default' => 'avatar-placeholder-md',\n        'xs' => 'avatar-placeholder-xs',\n        'sm' => 'avatar-placeholder-sm',\n        'md' => 'avatar-placeholder-md',\n        'lg' => 'avatar-placeholder-lg',\n        'xl' => 'avatar-placeholder-xl',\n    ];\n@endphp\n\n<span\n    {{ $attributes->class([\n        'avatar-placeholder',\n        $av_p_sizes[$size] ?? $av_p_sizes['default'],\n        UiHelper::getClasses($variant, $intent),\n       $radiusNone ? '':\"rounded-full\"\n    ]) }}>\n    @if ($text)\n        {{ $text }}\n    @else\n        {{ $slot }}\n    @endif\n</span>\n"
+        }
+    ]
+}

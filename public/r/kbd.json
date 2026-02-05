@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "kbd",
+    "type": "registry:component",
+    "title": "Kbd",
+    "description": "A reusable kbd component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/kbd.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/kbd.blade.php",
+            "content": "@props(['class' => '', 'variant' => 'solid', 'intent' => 'gray', 'size' => 'default', 'radius' => 'md'])\n\n@php\n    use App\\Flexiwind\\UiHelper;\n    $variants = UiHelper::getVariants();\n\n    $sizes = [\n        'none'=>'',\n        'default' => 'kbd-md',\n        'xs' => 'kbd-xs',\n        'sm' => 'kbd-sm',\n        'lg' => 'kbd-lg',\n        'xl' => 'kbd-xl',\n    ];\n\n    $variantClass = $variant == 'default' ? ' bg-bg-subtle text-fg' : UiHelper::getClasses($variant, $intent);\n\n    $kbd_size = $sizes[$size] ?? $sizes['md'];\n    $className = \"{$kbd_size} {$variantClass} {$class} ui-radius\";\n@endphp\n<kbd {{ $attributes->merge(['class' => $className]) }}>\n    {{ $slot }}\n</kbd>\n"
+        }
+    ]
+}

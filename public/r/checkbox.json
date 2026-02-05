@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "checkbox",
+    "type": "registry:component",
+    "title": "Checkbox",
+    "description": "A reusable checkbox component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/checkbox.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/checkbox.blade.php",
+            "content": "@props([\n    'id' => null,\n    'name' => '',\n    'value' => '',\n    'checked' => false,\n    'disabled' => false,\n    'size' => 'sm',\n    'label' => ''\n])\n\n@php\n    $sizes = [\n        'sm' => 'size-4',\n        'md' => 'size-5',\n        'lg' => 'size-6',\n    ];\n\n    $baseClasses =\n        'ui-checkbox-radio-base ui-form-checkbox bg-(--checkbox-bg) mt-0.5 peer text-primary border border-border-input shadow-sm rounded-(--checkbox-radius)';\n    $sizeClasses = $sizes[$size] ?? $sizes['sm'];\n    $stateClasses = $disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer';\n\n    $id ??= $name;\n\n    $attributes = $attributes->class([$baseClasses, $sizeClasses, $stateClasses])->merge([\n        'type' => 'checkbox',\n        'id' => $id,\n        'name' => $name,\n        'value' => $value,\n        'checked' => $checked,\n        'disabled' => $disabled,\n    ]);\n@endphp\n\n\n\n@if ($label)\n    <div class=\"flex items-center\">\n        <input {{ $attributes }}>\n        <label for=\"{{ $id }}\"\n            class=\"ml-2 mt-0.5 text-sm select-none font-medium text-fg-muted {{ $disabled ? 'opacity-60' : '' }}\">\n            {{ $label }}\n        </label>\n    </div>\n@else\n    <input {{ $attributes }}>\n@endif\n"
+        }
+    ]
+}

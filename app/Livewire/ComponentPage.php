@@ -32,10 +32,10 @@ class ComponentPage extends Component
         if ($segments[0] === 'livewire') {
             array_shift($segments);
         }
-       $this->path = str_replace('/content', '', '/'.implode('/', $segments));
+        $this->path = str_replace('/content', '', '/' . implode('/', $segments));
     }
 
-    #[Layout('layouts.docs', ['activeGroup' => 'components'])]
+    #[Layout('layouts::docs')]
     public function render()
     {
         if (! View::exists($this->view)) {

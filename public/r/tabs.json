@@ -1,0 +1,52 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "tabs",
+    "type": "registry:component",
+    "title": "Tabs",
+    "description": "A reusable tabs component for Laravel Blade/Livewire.",
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/alpine-tabs"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/tabs.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/tabs.blade.php",
+            "content": "<div x-data x-tabs data-app-tabs role=\"tab\" {{ $attributes }}>\n    {{ $slot }}\n</div>"
+        },
+        {
+            "path": "resources/views/components/ui/tabs/list-wrapper.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/tabs/list-wrapper.blade.php",
+            "content": "<div data-tab-list-wrapper {{ $attributes }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/tabs/list.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/tabs/list.blade.php",
+            "content": "<ul data-tab-list role=\"tablist\" {{ $attributes }}>\n    {{ $slot }}\n</ul>\n"
+        },
+        {
+            "path": "resources/views/components/ui/tabs/panel-wrapper.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/tabs/panel-wrapper.blade.php",
+            "content": "<div data-panels-container {{ $attributes }}>\n    {{ $slot }}\n</div>"
+        },
+        {
+            "path": "resources/views/components/ui/tabs/panel.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/tabs/panel.blade.php",
+            "content": "@props(['id', 'class' => '', 'showAsGrid' => false, 'active' => false])\n\n@php\n    $active_class = $showAsGrid ? 'fx-active:grid' : 'fx-active:flex';\n    $className = \"hidden {$active_class} ring-offset-gray-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-danger-500 focus-visible:ring-offset-2 {$class}\";\n@endphp\n\n<section role=\"tabpanel\" data-tab-panel aria-hidden=\"{{ $active ? 'false' : 'true' }}\"\n    data-state=\"{{ $active ? 'active' : 'inactive' }}\" tabindex=\"0\"\n    {{ $attributes->merge([\n        'class' => $className,\n        'id' => $id,\n    ]) }}>\n    {{ $slot }}\n</section>\n"
+        },
+        {
+            "path": "resources/views/components/ui/tabs/trigger.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/tabs/trigger.blade.php",
+            "content": "@props(['wrapperClass' => '', 'id'])\n<li role=\"presentation\" class=\"{{ $wrapperClass }}\">\n    <a href=\"#{{ $id }}\" data-tabs-trigger data-target=\"{{ $id }}\"\n        {{ $attributes->merge(['class' => 'disabled:cursor-not-allowed disabled:opacity-80']) }}>\n        {{ $slot }}\n    </a>\n</li>\n"
+        }
+    ]
+}

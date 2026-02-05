@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "kpi01",
+    "type": "registry:component",
+    "title": "KPI 01",
+    "description": "A full KPI layout.",
+    "registryDependencies": [
+        "card"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/dash-card/kpi01.blade.php",
+            "type": "registry:page",
+            "target": "resources/views/components/dash-card/kpi01.blade.php",
+            "content": "<div class=\"max-w-7xl px-4 mx-auto\">\n    <div class=\"grid gap-3 md:grid-cols-2 lg:grid-cols-4\">\n        <x-ui.card>\n            <div class=\"space-y-2\">\n                <p class=\"text-xs font-medium text-fg-muted uppercase tracking-wide\">\n                    Conversion Rate\n                </p>\n                <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xl font-semibold text-fg\">3.2%</span>\n                    <div class=\"flex items-center space-x-1 text-xs font-medium text-green-600\">\n                        <span class=\"text-xs iconify ph--trend-up\"></span>\n                        <span>+0.5%</span>\n                    </div>\n                </div>\n            </div>\n        </x-ui.card>\n        <x-ui.card >\n            <div class=\"space-y-2\">\n                <p class=\"text-xs font-medium text-fg-muted uppercase tracking-wide\">\n                    Bounce Rate\n                </p>\n                <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xl font-semibold text-fg\">42.3%</span>\n                    <div class=\"flex items-center space-x-1 text-xs font-medium text-danger\">\n                        <span class=\"text-xs iconify ph--trend-up\"></span>\n                        <span>-1.2%</span>\n                    </div>\n                </div>\n            </div>\n        </x-ui.card>\n        <x-ui.card>\n            <div class=\"space-y-2\">\n                <p class=\"text-xs font-medium text-fg-muted uppercase tracking-wide\">\n                    Session Duration\n                </p>\n                <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xl font-semibold text-fg\">4m 32s</span>\n                    <div class=\"flex items-center space-x-1 text-xs font-medium text-success\">\n                        <span class=\"text-xs iconify ph--trend-up\"></span>\n                        <span>+12%</span>\n                    </div>\n                </div>\n            </div>\n        </x-ui.card>\n        <x-ui.card>\n            <div class=\"space-y-2\">\n                <p class=\"text-xs font-medium text-fg-muted uppercase tracking-wide\">\n                    New Visitors\n                </p>\n                <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xl font-semibold text-fg\">1,429 </span>\n                    <div class=\"flex items-center space-x-1 text-xs font-medium text-success\">\n                        <span class=\"text-xs iconify ph--trend-up\"></span>\n                        <span>+23%</span>\n                    </div>\n                </div>\n            </div>\n        </x-ui.card>\n    </div>\n</div>"
+        }
+    ]
+}

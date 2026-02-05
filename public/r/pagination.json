@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "pagination",
+    "type": "registry:component",
+    "title": "Pagination",
+    "description": "A reusable pagination component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "button"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/pagination.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/pagination.blade.php",
+            "content": ""
+        }
+    ]
+}

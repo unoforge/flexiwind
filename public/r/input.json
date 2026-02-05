@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "input",
+    "type": "registry:component",
+    "title": "Input",
+    "description": "A reusable input component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "label"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/input.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/input.blade.php",
+            "content": "@props([\n    'type' => 'text',\n    'size' => 'md',\n    'disabled' => false,\n    'readonly' => false,\n    'label' => null,\n    'noBorder' => false,\n    'inlinedLabel' => false,\n    'labelClass' => '',\n    'unStylled' => false,\n    'bgNone' => false,\n    'radiusNone' => false,\n    'groupWrapperClass' => null,\n])\n\n@php\n    $sizes = [\n        'none' => '',\n        'sm' => 'ui-form-input-sm',\n        'md' => 'ui-form-input-md',\n        'lg' => 'ui-form-input-lg',\n    ];\n\n    $bg_class = $bgNone ? '' : 'bg-bg';\n    $radius = $radiusNone ? '' : 'ui-radius';\n\n    $border_class = $noBorder ? 'border-transparent' : 'border border-border-input';\n    $baseClasses = $unStylled ? '' : \"ui-form-base ui-form-input shadow {$radius} {$bg_class} {$border_class} text-fg\";\n    $sizeClasses = $unStylled ? '' : $sizes[$size] ?? $sizes['md'];\n\n    $id = $attributes->get('id') ?? $attributes->get('name', uniqid('input-'));\n\n    $attributes = $attributes->class([$baseClasses, $sizeClasses])->merge([\n        'type' => $type,\n        'disabled' => $disabled,\n        'readonly' => $readonly,\n        'id' => $id,\n    ]);\n\n    $containerClass = $groupWrapperClass ? '' : '';\n    $group_wrapper = $inlinedLabel\n        ? \"flex items-center gap-2 {$containerClass}\"\n        : \"flex flex-col space-y-2 {$containerClass}\";\n@endphp\n\n@if ($label)\n    <div class=\"{{ $group_wrapper }}\">\n        <x-ui.label for=\"{{ $id }}\" :text=\"$label\" class=\"{{ $labelClass }}\" />\n        <input {{ $attributes }}>\n    </div>\n@else\n    <input {{ $attributes }}>\n@endif\n"
+        }
+    ]
+}

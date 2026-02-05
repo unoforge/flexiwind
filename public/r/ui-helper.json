@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "ui-helper",
+    "type": "registry:component",
+    "title": "Ui helper",
+    "description": "A reusable accordion component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "app/Flexiwind/UiHelper.php",
+            "type": "registry:helper",
+            "target": "app/Flexiwind/UiHelper.php",
+            "content": "<?php\n\nnamespace App\\Flexiwind;\n\nclass UiHelper\n{\n    protected static array $variants = [\n        'none' => [],\n        'solid' => [\n            'base' => 'ui-solid',\n            'intent' => [\n                'primary' => 'ui-solid-primary',\n                'secondary' => 'ui-solid-secondary',\n                'success' => 'ui-solid-success',\n                'danger' => 'ui-solid-danger',\n                'warning' => 'ui-solid-warning',\n                'info' => 'ui-solid-info',\n                'gray' => 'ui-solid-gray',\n                'neutral'=>'ui-solid-neutral'\n            ],\n        ],\n        'soft' => [\n            'base' => 'ui-soft',\n            'intent' => [\n                'primary' => 'ui-soft-primary',\n                'secondary' => 'ui-soft-secondary',\n                'accent'=>'ui-soft-accent',\n                'success' => 'ui-soft-success',\n                'danger' => 'ui-soft-danger',\n                'warning' => 'ui-soft-warning',\n                'info' => 'ui-soft-info',\n                'gray' => 'ui-soft-gray',\n                'neutral' => 'ui-soft-neutral'\n            ],\n        ],\n        'subtle' => [\n            'base' => 'ui-subtle',\n            'intent' => [\n                'primary' => 'ui-subtle-primary',\n                'secondary' => 'ui-subtle-secondary',\n                'success' => 'ui-subtle-success',\n                'danger' => 'ui-subtle-danger',\n                'accent'=>'ui-subtle-accent',\n                'warning' => 'ui-subtle-warning',\n                'info' => 'ui-subtle-info',\n                'gray' => 'ui-subtle-gray',\n                'neutral' => 'ui-subtle-neutral'\n            ],\n        ],\n        'outline' => [\n            'base' => 'ui-outline',\n            'intent' => [\n                'primary' => 'ui-outline-primary',\n                'secondary' => 'ui-outline-secondary',\n                'success' => 'ui-outline-success',\n                'danger' => 'ui-outline-danger',\n                'warning' => 'ui-outline-warning',\n                'info' => 'ui-outline-info',\n                'gray' => 'ui-outline-gray',\n                'neutral' => 'ui-outline-neutral'\n            ],\n        ],\n    ];\n\n\n    public static function getVariants()\n    {\n        return self::$variants;\n    }\n\n    public static function getClasses(string $variant = 'solid', ?string $intent = 'gray'): string\n    {\n        $variantConfig = self::$variants[$variant] ?? [];\n        $base = $variantConfig['base'] ?? '';\n        $intentClass = $variantConfig['intent'][$intent] ?? '';\n        return trim(\"$base $intentClass\");\n    }\n}\n"
+        }
+    ]
+}

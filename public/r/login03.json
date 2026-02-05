@@ -1,0 +1,23 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "login03",
+    "type": "registry:component",
+    "title": "Login",
+    "description": "A full auth login page.",
+    "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/auth/login03.blade.php",
+            "type": "registry:page",
+            "target": "resources/views/components/auth/login.blade.php",
+            "content": "    <main class=\"flex min-h-screen justify-center items-center px-5 sm:px-10 lg:px-0\">\n        <div class=\"flex flex-col gap-6 w-full max-w-sm\">\n            <div class=\"flex flex-col items-center gap-2 text-center\">\n                <div\n                    class=\"size-12 bg-primary text-white text-xl rounded-xl flex items-center justify-center mx-auto mb-4\">\n                    <span class=\"iconify ph--speedometer\"></span>\n                </div>\n                <h1 class=\"text-xl font-bold\">\n                    Welcome to Acme Inc.\n                </h1>\n                <p class=\"text-sm text-fg-muted\">\n                    Don't have an account?\n                    <x-ui.link href=\"#\" underlined class=\"text-primary\">\n                        Sign up\n                    </x-ui.link>\n                </p>\n            </div>\n            <form class=\"flex flex-col gap-4\">\n                <x-ui.input type=\"email\" label=\"Email\" placeholder=\"johnkatmj@gmail.com\" />\n                <x-ui.button class=\"w-full justify-center\">\n                    Login\n                </x-ui.button>\n                <x-ui.divider label=\"Or continue\" class=\"before:bg-bg-muted\" label-placement=\"middle\"\n                    label-class=\"px-3 bg-bg text-fg-muted text-sm relative\" />\n                <div class=\"grid gap-4 sm:grid-cols-2\">\n                    <x-ui.button variant=\"outline\" intent=\"gray\" class=\"justify-center gap-1.5\">\n                        <span aria-hidden=\"true\" class=\"iconify ph--apple-logo\"></span>\n                        <span class=\"hidden sm:flex text-sm\">With Apple</span>\n                    </x-ui.button>\n                    <x-ui.button variant=\"outline\" intent=\"gray\" class=\"justify-center gap-1.5\">\n                        <span aria-hidden=\"true\" class=\"iconify ph--google-logo\"></span>\n                        <span class=\"hidden sm:flex text-sm\">With Google</span>\n                    </x-ui.button>\n                </div>\n            </form>\n            <p class=\"px-6 text-center text-fg-muted mx-auto max-w-md text-sm mt-3\">\n                By clicking continue, you agree to our \n                <x-ui.link href=\"#\" underlined class=\"text-primary\">Terms of Service</x-ui.link>\n                and <x-ui.link href=\"#\" underlined class=\"text-primary\">Privacy Policy</x-ui.link>.\n            </p>\n        </div>\n    </main>\n"
+        }
+    ]
+}

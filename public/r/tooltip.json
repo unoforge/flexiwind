@@ -1,0 +1,31 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "tooltip",
+    "type": "registry:component",
+    "title": "Tooltip",
+    "description": "A reusable tooltip component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "button"
+    ],
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/alpine-tooltip"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/tooltip.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/tooltip.blade.php",
+            "content": "@props([\n    'id',\n    'class' => '',\n    'placement' => 'bottom',\n    'bg' => 'default',\n    'triggerOnClick' => false,\n    'content' => null,\n])\n\n\n\n<div x-data x-tooltip wire:ignore.self role=\"tooltip\" id=\"tooltip-{{ $id }}\" data-app-tooltip\n    data-placement=\"{{ $placement }}\" data-trigger-strategy=\"{{ $triggerOnClick ? 'click' : 'hover' }}\"\n    {{ $attributes->class([\n        'opacity-0 invisible z-40 translate-y-3 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 text-sm overflow-hidden ease-linear transition-transform',\n        'ui-popper ui-radius py-1 px-2',\n        'bg-popover border border-border shadow text-fg' => $bg == 'default',\n        'bg-popover-gray text-fg' => $bg == 'gray',\n        'bg-fg-title text-bg' => $bg == 'neutral',\n        'bg-gray-950 text-white' => $bg == 'dark',\n        $class,\n    ]) }}>\n    @if (isset($content))\n        {{ $content }}\n    @else\n        {{ $slot }}\n    @endif\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/tooltip/trigger.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/tooltip/trigger.blade.php",
+            "content": "@props(['tooltipId', 'variant' => 'none', 'intent' => 'none', 'size' => 'none', 'radius' => 'lg'])\n\n<x-ui.button data-tooltip-trigger data-tooltip-id=\"tooltip-{{ $tooltipId }}\" :size=\"$size\" :radius=\"$radius\"\n    :variant=\"$variant\" :intent=\"$intent\" {{ $attributes }}>\n    {{ $slot }}\n</x-ui.button>"
+        }
+    ]
+}

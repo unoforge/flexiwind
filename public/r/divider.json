@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "divider",
+    "type": "registry:component",
+    "title": "Divider",
+    "description": "A reusable divider component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/divider.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/divider.blade.php",
+            "content": "@props(['size' => 'default', 'label' => null, 'labelPlacement' => 'start', 'labelClass' => '', 'class'=>''])\n\n\n@if ($label)\n    @php\n        $sizes = [\n            'default' => 'divider-custom-1',\n            '2' => 'divider-custom-2',\n            '3' => 'divider-custom-3',\n        ];\n        $label_placements = [\n            'start' => 'justify-start',\n            'middle' => 'justify-center',\n            'end' => 'justify-end',\n        ];\n        $div_size = $sizes[$size] ?? $sizes['default'];\n        $label_placement = $label_placements[$labelPlacement] ?? $label_placements['middle'];\n        $className = \"divider-custom w-full {$div_size} flex items-center {$label_placement} {$class}\";\n    @endphp\n    <div {{ $attributes->merge(['class' => $className]) }}>\n        <span class=\"{{ $labelClass }}\">\n            {{ $label }}\n        </span>\n    </div>\n@else\n    @php\n        $sizes = [\n            'default' => '',\n            '2' => 'border-2',\n            '3' => 'border-3',\n        ];\n        $size = $sizes[$size] ?? $sizes['default'];\n\n        $className = \"w-full {$size} {$class}\";\n    @endphp\n    <hr {{ $attributes->merge(['class' => $className]) }}>\n@endif\n"
+        }
+    ]
+}

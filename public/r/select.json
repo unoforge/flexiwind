@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "select",
+    "type": "registry:component",
+    "title": "Select",
+    "description": "A reusable select component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/select.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/select.blade.php",
+            "content": "@props([\n    'size' => 'md',\n    'disabled' => false,\n    'readonly' => false,\n    'label' => null,\n    'noBorder' => false,\n    'inlinedLabel' => false,\n    'labelClass' => '',\n    'bgNone' => false,\n    'radiusNone' => false,\n    'unStylled' => false,\n    'groupWrapperClass' => null,\n])\n\n@php\n    $sizes = [\n        'sm' => 'ui-form-input-sm',\n        'md' => 'ui-form-input-md',\n        'lg' => 'ui-form-input-lg',\n    ];\n\n    $bg_class = $bgNone ? '' : 'bg-bg';\n    $radius = $radiusNone ? '' : 'ui-radius';\n    $border_class = $noBorder ? 'border-transparent' : 'border border-border-input';\n    $baseClasses = \"ui-form-base ui-form-input ui-form-select shadow {$radius} {$border_class} text-fg\";\n    $sizeClasses = $sizes[$size] ?? $sizes['md'];\n\n    $id = $attributes->get('id') ?? $attributes->get('name', uniqid('input-'));\n\n    $final_class = $unStylled ? '' : \"{$baseClasses} {$bg_class} {$sizeClasses}\";\n    $attributes = $attributes->class([$final_class])->merge([\n        'disabled' => $disabled,\n        'readonly' => $readonly,\n        'id' => $id,\n    ]);\n\n    $containerClass = $groupWrapperClass ? '' : '';\n    $group_wrapper = $inlinedLabel\n        ? \"flex items-center gap-2 {$containerClass}\"\n        : \"flex flex-col space-y-2 {$containerClass}\";\n@endphp\n\n@if ($label)\n    <div class=\"{{ $group_wrapper }}\">\n        <x-ui.label for=\"{{ $id }}\" :text=\"$label\" class=\"{{ $labelClass }}\" />\n        <select {{ $attributes }}>\n            {{ $slot }}\n        </select>\n    </div>\n@else\n    <select {{ $attributes }}>\n        {{ $slot }}\n    </select>\n@endif\n"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "alert",
+    "type": "registry:component",
+    "title": "Alert",
+    "description": "A reusable alert component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "ui-helper"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/alert.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/alert.blade.php",
+            "content": "@props(['class' => '', 'variant' => 'solid', 'intent' => 'gray', 'size' => 'default'])\n\n@php\n    use App\\Flexiwind\\UiHelper;\n    $variants = UiHelper::getVariants();\n\n    $sizes = [\n        'none'=>'',\n        'default' => 'p-4 text-sm',\n        'xs' => 'p-1.5 text-xs',\n        'sm' => 'p-2.5 text-sm',\n        'lg' => 'p-5',\n    ];\n\n    $base = \"relative w-full {$sizes[$size ?? 'default']} \";\n\n    $variantClass = $variant == 'default' ? ' bg-bg-subtle text-fg' : UiHelper::getClasses($variant, $intent);\n\n    $className = \"{$base} {$variantClass} {$class} ui-radius\";\n@endphp\n\n<div {{ $attributes->merge(['class' => $className]) }}>\n    {{ $slot }}\n</div>\n"
+        }
+    ]
+}

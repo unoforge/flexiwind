@@ -3,9 +3,6 @@ import copyToClipboardComponent from "./copyToClipboard";
 import { docSearch } from "../data/search-db";
 import { disableTransitionsTemporarily } from "./utils";
 
-const initGlobalApp = () => {};
-
-initGlobalApp();
 
 
 
@@ -104,7 +101,6 @@ document.addEventListener("livewire:navigated", () => {
             ? "dark"
             : "light");
     document.documentElement.classList.toggle("dark", theme === "dark");
-    initGlobalApp();
 });
 
 window.toggleTheme = function () {

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "breadcrumb",
+    "type": "registry:component",
+    "title": "Breadcrumb",
+    "description": "A reusable breadcrumb component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/breadcrumb.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/breadcrumb.blade.php",
+            "content": "@props([\n    'class' => 'text-fg-muted',\n    'wrapper' => '',\n    'spacing' => '3.5',\n])\n@php\n    $spacings = [\n        'none' => '',\n        '0' => 'gap-0',\n        '0.5' => 'gap-0.5',\n        '1' => 'gap-1',\n        '1.5' => 'gap-1.5',\n        '2' => 'gap-2',\n        '3' => 'gap-3',\n    ];\n    $spacing_ = $spacings[$spacing] ?? $spacings['1.5'];\n@endphp\n<nav aria-label=\"Breadcrumbs\" class=\"{{ $wrapper }}\">\n    <ol {{ $attributes->class(['flex items-center', $spacing_, $class]) }}>\n        {{ $slot }}\n    </ol>\n</nav>\n"
+        },
+        {
+            "path": "resources/views/components/ui/breadcrumb/item.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/breadcrumb/item.blade.php",
+            "content": "@props([\n    'wrapper' => '',\n    'href' => null,\n    'active' => false,\n    'activeClass' => 'text-fg-title font-medium',\n    'class' => '',\n    'separator' => 'ph--caret-right',\n    'separatorNotIcon' => false,\n    'separatorIconColor' => false,\n    'spacing' => '1.5',\n    'text' => null,\n])\n\n@php\n    $spacings = [\n        'none' => '',\n        '0' => 'gap-0',\n        '0.5' => 'gap-0.5',\n        '1' => 'gap-1',\n        '1.5' => 'gap-1.5',\n        '2' => 'gap-2',\n        '3' => 'gap-3',\n    ];\n    $spacing_ = $spacings[$spacing] ?? $spacings['1.5'];\n@endphp\n<li class=\"flex items-center {{ $spacing_ }} \">\n    @if ($href && !$active)\n        <a href=\"{{ $href }}\"\n            {{ $attributes->class(['flex items-center ease-linear hover:text-fg-subtitle', $class]) }}>\n            @if ($text)\n                {{ $text }}\n            @else\n                {{ $slot }}\n            @endif\n        </a>\n    @else\n        <span aria-current=\"page\" class=\"flex items-center {{ $active ? $activeClass : '' }}\">\n            @if ($text)\n                {{ $text }}\n            @else\n                {{ $slot }}\n            @endif\n        </span>\n    @endif\n\n    @unless ($active)\n        @if ($separatorNotIcon)\n            <x-ui.breadcrumb.separator :not-icon=\"true\">\n                {!! $separator !!}\n            </x-ui.breadcrumb.separator>\n        @else\n            <x-ui.breadcrumb.separator :icon-color=\"$separatorIconColor\" :separator=\"$separator\" />\n        @endif\n    @endunless\n</li>\n"
+        },
+        {
+            "path": "resources/views/components/ui/breadcrumb/separator.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/breadcrumb/separator.blade.php",
+            "content": "@props([\n    'notIcon' => false,\n    'iconColor'=>false,\n    'separator' => 'ph--caret-right',\n])\n\n<span aria-hidden=\"true\"\n    {{ $attributes->class([\n        'flex shrink-0',\n        'iconify' => !$notIcon && $separator && !$iconColor,\n        'iconify-color'=>!$notIcon && $iconColor,\n        $separator => !$notIcon && $separator,\n    ]) }}>\n    @if ($notIcon)\n        @if ($separator)\n            {!! $separator !!}\n        @else\n            {{ $slot }}\n        @endif\n    @endif\n</span>\n"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "link",
+    "type": "registry:component",
+    "title": "Link",
+    "description": "A reusable link component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "button"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/link.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/link.blade.php",
+            "content": "@props([\n    'href' => '#',\n    'asButton' => false,\n    'size' => 'md',\n    'radius' => 'md',\n    'class' => '',\n    'underlined' => false,\n    'underlineOffset' => '',\n    'variant' => 'solid',\n    'intent' => 'neutral',\n    'ariaLabel' => null,\n    'disabled' => false,\n])\n\n@php\n\n    $isInternal = ($href && Str::startsWith($href, '/')) || Str::startsWith($href, '#');\n\n    $offsets = [\n        'none' => '',\n        '1' => 'underline-offset-1',\n        '2' => 'underline-offset-2',\n        '3' => 'underline-offset-3',\n        '4' => 'underline-offset-4',\n        '8' => 'underline-offset-8',\n    ];\n    $underline_of_class = $underlineOffset ? $offsets[$underlineOffset] : '';\n    $underline_class = $underlined ? \"underline {$underline_of_class}\" : '';\n\n    $label = $ariaLabel ?: \"Link to {$href}\";\n\n    $className = \"{$underline_class} {$class}\";\n    $attributes = $attributes->merge([\n        'href' => $href,\n        'class' => $className,\n        'aria-label' => $label,\n        'aria-disabled' => $disabled ? 'true' : null,\n        'tabindex' => $disabled ? '-1' : null,\n        'target' => $isInternal ? null : '_blank',\n        'rel' => $isInternal ? null : 'noopener noreferrer',\n    ]);\n@endphp\n\n@if ($asButton)\n    <x-ui.button variant=\"{{ $variant }}\" intent=\"{{ $intent }}\" size=\"{{ $size }}\" {{ $attributes }}>\n        {{ $slot }}\n    </x-ui.button>\n@else\n    <a {{ $attributes }}>\n        {{ $slot }}\n    </a>\n@endif\n"
+        }
+    ]
+}

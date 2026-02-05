@@ -39,7 +39,7 @@ html {
     --ui-radius: var(--radius-lg);
     --card-radius: var(--radius-lg);
     --checkbox-radius: var(--radius-sm);
-    --checkbox-bg: var(--color-bg-white);
+    --checkbox-bg: var(--color-bg);
 }
 
 .dark {
@@ -198,7 +198,9 @@ html {
 
 
 @utility docs-sidebar {
-    @apply fixed lg:sticky top-0 left-0 -translate-x-full lg:top-16 fx-open:translate-x-0 invisible fx-open:visible lg:visible transition-transform duration-300 ease-linear lg:transition-none w-11/12 max-w-80 lg:max-w-none md:w-full h-dvh lg:h-[calc(100dvh-4rem)] lg:translate-x-0;
+    @apply fixed lg:sticky top-0 left-0 -translate-x-full 
+    lg:top-16 fx-open:translate-x-0 invisible fx-open:visible lg:visible transition-all lg:transition-none duration-300 ease-linear lg:transition-none w-11/12 
+    max-w-80 lg:max-w-none md:w-full h-dvh lg:h-[calc(100dvh-4rem)] lg:translate-x-0;
 }
 
 
@@ -311,6 +313,10 @@ html {
         background: var(--c-border-strong);
         border-radius: 4px;
     }
+}
+
+[x-persist]{
+    height: 100%;
 }
 
 

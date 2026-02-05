@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "switch",
+    "type": "registry:component",
+    "title": "Switch",
+    "description": "A reusable switch component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/switch.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/switch.blade.php",
+            "content": "@props(['size' => 'md', 'outlined' => false, 'class' => ''])\n\n@php\n    $switch_sizes = [\n        'xs' => 'switch-xs',\n        'sm' => 'switch-sm',\n        'md' => 'switch-md',\n        'lg' => 'switch-lg',\n    ];\n    $swith_outline_sizes = [\n        'xs' => 'switch-outline-xs',\n        'sm' => 'switch-outline-sm',\n        'md' => 'switch-outline-md',\n        'lg' => 'switch-outline-lg',\n    ];\n\n    $className = '';\n    if ($outlined) {\n        $size = $swith_outline_sizes[$size] ?? $swith_outline_sizes['md'];\n        $className .= \"switch-outline {$size} border border-border-strong shadow\";\n    } else {\n        $size = $switch_sizes[$size] ?? $switch_sizes['md'];\n        $className .= \"switch {$size}\";\n    }\n\n    $className .= \" {{ $class }}\";\n\n    $attributes = $attributes->merge([\n        'class' => $className,\n        'type' => 'checkbox',\n    ]);\n@endphp\n\n<input {{ $attributes }} />\n"
+        }
+    ]
+}

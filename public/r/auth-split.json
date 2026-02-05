@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "auth-split",
+    "type": "registry:component",
+    "title": "Auth Split",
+    "description": "A reusable auth split component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/auth-split.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/auth-split.blade.php",
+            "content": "@props(['as' => 'main', 'noDefaultGrid' => false])\n@php\n    $className = $noDefaultGrid ? '' : 'grid lg:grid-cols-2';\n@endphp\n\n\n<{{ $as }} {{ $attributes->class([$className]) }}>\n    {{ $slot }}\n    </{{ $as }}>\n"
+        }
+    ]
+}

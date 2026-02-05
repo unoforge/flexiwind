@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "button",
+    "type": "registry:component",
+    "title": "Button",
+    "description": "A reusable button component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "button-helper"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/button.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/button.blade.php",
+            "content": "@props([\n    'variant' => 'solid',\n    'intent' => null,\n    'size' => 'md',\n    'iconOnly' => false,\n    'disabled' => false,\n    'type' => 'button',\n    'href' => null,\n])\n\n@php\n    use App\\Flexiwind\\ButtonHelper;\n    $btn_variants = ButtonHelper::getVariants();\n\n    $sizes = [\n        'xs' => 'btn-xs',\n        'sm' => 'btn-sm',\n        'md' => 'btn-md',\n        'lg' => 'btn-lg',\n        'xl' => 'btn-xl',\n    ];\n    $iconSizes = [\n        'xs' => 'btn-icon-xs text-xs',\n        'sm' => 'btn-icon-sm text-xs',\n        'md' => 'btn-icon-md text-sm',\n        'lg' => 'btn-icon-lg text-sm',\n        'xl' => 'btn-icon-xl text-base',\n    ];\n    $baseClasses = 'btn ease-linear duration-200 ui-radius ';\n    if ($variant !== 'none') {\n        $baseClasses .= isset($btn_variants[$variant]) ? $btn_variants[$variant]['base'] : 'ee';\n    }\n\n    \n    $defaultIntents = [\n        'solid' => 'primary',\n        'soft' => 'gray',\n        'outline' => 'gray',\n        'ghost' => 'gray',\n    ];\n\n    if ($intent === null && $variant !== 'none') {\n        $intent = $defaultIntents[$variant] ?? 'primary';\n    }\n\n    $variantClasses = '';\n    if ($variant !== 'none' && isset($btn_variants[$variant])) {\n        if (isset($btn_variants[$variant]['intents'][$intent])) {\n            $variantClasses = $btn_variants[$variant]['intents'][$intent];\n        } else {\n            // Fallback to variant-specific default intent if provided\n            $fallbackIntent = $defaultIntents[$variant] ?? 'primary';\n            if (isset($btn_variants[$variant]['intents'][$fallbackIntent])) {\n                $variantClasses = $btn_variants[$variant]['intents'][$fallbackIntent];\n            }\n        }\n    }\n\n    $sizeMap = $iconOnly ? $iconSizes : $sizes;\n    $sizeClasses = isset($sizeMap[$size]) ? $sizeMap[$size] : $sizeMap['md'];\n\n    $tag = $href ? 'a' : 'button';\n\n    $attributes = $attributes->class([\n        $baseClasses,\n        $variantClasses,\n        $sizeClasses,\n        'cursor-not-allowed' => $disabled,\n    ]);\n\n    $isInternal = true;\n    if ($href) {\n        $isInternal = ($href && Str::startsWith($href, '/')) || Str::startsWith($href, '#');\n    }\n\n    $attributes =\n        $tag === 'button'\n            ? ($attributes = $attributes->merge([\n                'type' => $type,\n                'disabled' => $disabled,\n            ]))\n            : $attributes->merge([\n                'href' => $disabled ? null : $href,\n                'aria-disabled' => $disabled ? 'true' : null,\n                'tabindex' => $disabled ? '-1' : null,\n            ]);\n\n@endphp\n\n<{{ $tag }} {{ $attributes }}\n    @if (!$isInternal) target=\"_blank\"  rel=\"noopener noreferrer\" @endif>\n    {{ $slot }}\n    </{{ $tag }}>\n"
+        }
+    ]
+}
