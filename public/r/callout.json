@@ -1,0 +1,20 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "callout",
+    "type": "registry:component",
+    "title": "Callout",
+    "description": "A reusable callout component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "alert",
+        "ui-helper"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/callout.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/callout.blade.php",
+            "content": "@props([\n    'class' => '',\n    'variant' => 'solid',\n    'intent' => '',\n    'type' => 'default',\n    'size' => 'default',\n    'title' => null,\n    'message' => null,\n    'noIcon' => false,\n    'iconWrapper' => '',\n])\n\n@php\n    $callout_types = [\n        'default' => 'gray',\n        'update' => 'info',\n        'note' => 'primary',\n        'warning' => 'warning',\n        'important' => 'danger',\n    ];\n\n    $icons = [\n        'default' => 'ph--info',\n        'update' => 'ph--none',\n        'note' => 'ph--lightbulb-filament',\n        'warning' => 'ph--warning',\n        'important' => 'ph--smiley-sad',\n    ];\n\n    $intent_ = isset($intent) && $intent != '' ? $intent : $callout_types[$type] ?? $callout_types['default'];\n    $icon = $icons[$type] ?? $icons['default'];\n@endphp\n\n<x-ui.alert :variant=\"$variant\" :intent=\"$intent_\" :size=\"$size\"\n    {{ $attributes->class([\n        'flex items-start gap-4' => !$noIcon,\n        $class,\n    ]) }}>\n    @if (!$noIcon)\n        <span class=\"w-max {{ $iconWrapper }}\">\n            <span aria-hidden=\"true\" class=\"iconify size-6 {{ $icon }}\"></span>\n        </span>\n    @endif\n\n    @if ($title || $message)\n        @if (!$noIcon)\n            <div class=\"flex-1 flex flex-col gap-3\">\n                @if ($title)\n                    <x-ui.callout.title text=\"{{ $title }}\" />\n                @endif\n                @if ($message)\n                    <x-ui.callout.description>\n                        {{ $message }}\n                    </x-ui.callout.description>\n                @endif\n            </div>\n        @else\n            {{ $slot }}\n        @endif\n    @else\n        @if (!$noIcon)\n            <div class=\"flex-1 flex flex-col gap-3\">\n                {{ $slot }}\n            </div>\n        @else\n            {{ $slot }}\n        @endif\n    @endif\n</x-ui.alert>\n"
+        }
+    ]
+}

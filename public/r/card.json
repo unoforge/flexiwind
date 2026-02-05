@@ -1,0 +1,49 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "card",
+    "type": "registry:component",
+    "title": "Card",
+    "description": "A reusable card component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "ui-helper"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/card.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/card.blade.php",
+            "content": "@props([\n    'fill' => 'default',\n    'size' => 'default',\n    'variant' => 'none',\n    'intent' => 'gray',\n    'noBorder' => false,\n    'class' => '',\n    'noShadow' => false,\n])\n\n@php\n    use App\\Flexiwind\\UiHelper;\n    $variants = UiHelper::getVariants();\n    $variantClass = $variant == 'none' ? '' : UiHelper::getClasses($variant, $intent);\n\n@endphp\n<div\n    {{ $attributes->class([\n        'relative text-sm',\n        'p-(--card-padding) rounded-(--card-radius) [--card-radius:var(--radius-ui)]' => $size != 'none',\n        '[--card-padding:var(--ui-padding,--spacing(4))]' => $size == 'default',\n        '[--card-padding:var(--ui-padding,--spacing(0.5))]' => $size == '2xs',\n        '[--card-padding:var(--ui-padding,--spacing(1))]' => $size == 'xs',\n        '[--card-padding:var(--ui-padding,--spacing(2.5)]' => $size == 'sm',\n        '[--card-padding:var(--ui-padding,--spacing(5)]' => $size == 'lg',\n        'bg-card text-fg' => $fill == 'default' && $variant == 'none',\n        'bg-card-gray text-fg' => $fill == 'gray' && $variant == 'none',\n        'ring-1 ring-border-card' => !$noBorder && $variant == 'none',\n        'shadow-sm' => !$noShadow,\n        $variantClass,\n        $class,\n    ]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/card/content.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/card/content.blade.php",
+            "content": "@props(['class' => '', 'gap' => '3'])\n\n<div\n    {{ $attributes->class([\n        'flex flex-col',\n        'gap-1' => $gap == '1',\n        'gap-2' => $gap == '2',\n        'gap-3' => $gap == '3',\n        'gap-4' => $gap == '4',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/card/description.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/card/description.blade.php",
+            "content": "@props(['text' => null, 'class' => '', 'size' => 'sm'])\n<p\n    {{ $attributes->class([\n        'text-pretty',\n        'text-sm' => $size == 'sm',\n        'text-base' => $size == 'base',\n        'text-lg' => $size == 'lg',\n        $class,\n    ]) }}>\n    @if ($text)\n        {{ $text }}\n    @else\n        {{ $slot }}\n    @endif\n</p>\n"
+        },
+        {
+            "path": "resources/views/components/ui/card/footer.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/card/footer.blade.php",
+            "content": "<div {{ $attributes }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/card/header.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/card/header.blade.php",
+            "content": "@props(['direction' => 'column', 'justify' => 'start', 'class' => '', 'flexNone' => false, 'gap' => '2'])\n\n<div\n    {{ $attributes->class([\n        'flex' => !$flexNone,\n        'flex-col' => $direction == 'column' && !$flexNone,\n        'flex-row' => $direction == 'row' && !$flexNone,\n        'justify-start' => $justify == 'start' && !$flexNone,\n        'justify-end' => $justify == 'end' && !$flexNone,\n        'justify-center' => $justify == 'center' && !$flexNone,\n        'gap-1' => $gap == '1' && !$flexNone,\n        'gap-2' => $gap == '2' && !$flexNone,\n        'gap-3' => $gap == '3' && !$flexNone,\n        'gap-4' => $gap == '4' && !$flexNone,\n        $class,\n    ]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/card/title.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/card/title.blade.php",
+            "content": "@props(['level' => '2', 'text' => null, 'size' => 'lg', 'class' => '', 'weight' => 'semibold'])\n@php\n    $levels = [\n        '1' => 'h1',\n        '2' => 'h2',\n        '3' => 'h3',\n        '4' => 'h4',\n    ];\n    $tag = $levels[$level] ?? $levels['2'];\n@endphp\n\n<{{ $tag }}\n    {{ $attributes->class([\n        'text-balance text-fg-title',\n        'text-lg/6 md:text-xl/6' => $size == 'lg',\n        'text-sm md:text-base/6' => $size == 'sm',\n        'text-base/6 md:text-lg/6' => $size == 'md',\n        'text-xl/6 md:text-2xl/6' => $size == 'xl',\n        'font-semibold' => $weight === 'semibold',\n        'font-bold' => $weight === 'bold',\n        'font-medium' => $weight === 'medium',\n        $class,\n    ]) }}>\n    @if ($text)\n        {{ $text }}\n    @else\n        {{ $slot }}\n    @endif\n    </{{ $tag }}>\n"
+        }
+    ]
+}

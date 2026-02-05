@@ -1,0 +1,24 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "signup01",
+    "type": "registry:component",
+    "title": "Signup",
+    "description": "A full auth signup page.",
+    "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input",
+        "card"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/auth/signup01.blade.php",
+            "type": "registry:page",
+            "target": "resources/views/components/auth/signup.blade.php",
+            "content": "<main class=\"flex min-h-screen justify-center items-center px-4 sm:px-10 lg:px-0\">\n    <x-ui.card class=\"rounded-ui p-6 sm:p-8 flex flex-col w-full max-w-lg\">\n        <div class=\"size-12 bg-primary text-white text-xl rounded-xl flex items-center justify-center mx-auto mb-4\">\n            <span class=\"iconify ph--speedometer\"></span>\n        </div>\n        <div class=\"text-center\">\n            <h1 class=\"text-fg-title mb-1 text-xl font-semibold\">Create your account</h1>\n            <p class=\"text-sm text-fg-muted\">\n                Fill in your details to get started\n            </p>ring-1 ring-border-strong/60\n        </div>\n        <x-ui.divider class=\"my-8 border-border-strong/60\" />\n        <form class=\"flex flex-col gap-4\">\n            <div class=\"grid grid-cols-2 gap-4\">\n                <x-ui.input type=\"text\" placeholder=\"John\" label=\"First Name\" />\n                <x-ui.input type=\"text\" placeholder=\"Doe\" label=\"Last Name\" />\n            </div>\n            <x-ui.input type=\"email\" placeholder=\"johndoe@example.com\" label=\"Email\" />\n            <x-ui.input type=\"password\" placeholder=\"••••••••\" label=\"Create Password\" />\n            <x-ui.input type=\"password\" placeholder=\"••••••••\" label=\"Confirm Password\" />\n            <div class=\"text-xs text-fg-muted -mt-2\">\n                Use 8 or more characters with a mix of letters, numbers & symbols\n            </div>\n            <x-ui.button class=\"justify-center w-full mt-2\">\n                Create Account\n            </x-ui.button>\n        </form>\n\n        <div class=\"text-center mt-6\">\n            <p class=\"text-sm text-fg-muted\">\n                Already have an account?\n                <x-ui.link href=\"#\" class=\"font-medium text-primary ml-1\">Login</x-ui.link>\n            </p>\n        </div>\n    </x-ui.card>\n</main>\n"
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "modal",
+    "type": "registry:component",
+    "title": "Modal",
+    "description": "A reusable modal component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "button"
+    ],
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/alpine-modal"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/modal.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/modal.blade.php",
+            "content": "@props([\n    'modalId',\n    'backdropClass' => '',\n    'overlayBlured' => true,\n    'closable' => true,\n    'staticBackdrop' => '',\n    'scrollableBody' => false,\n])\n\n@php\n    $bluredClass = $overlayBlured ? 'backdrop-blur-xs' : '';\n    $overlay_class = \"fixed inset-0 bg-gray-800/60 {$bluredClass} {$backdropClass}\";\n@endphp\n<dialog x-modal data-modal-id=\"{{ $modalId }}\" wire:ignore.self\n    @if ($staticBackdrop) data-modal-prevent @endif\n    @if ($scrollableBody) data-allow-body-scroll @endif\n    {{ $attributes->class([\n        'fixed m-0 max-h-none max-w-none top-0 left-0 w-screen h-screen z-80 hidden fx-open:flex items-center justify-center bg-transparent',\n    ]) }}>\n    <span data-modal-overlay wire:ignore class=\"{{ $overlay_class }}\"></span>\n    {{ $slot }}\n</dialog>\n"
+        },
+        {
+            "path": "resources/views/components/ui/modal/content.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/modal/content.blade.php",
+            "content": "@props(['size' => 'md', 'class' => '', 'closable' => true, 'noGutter' => false])\n\n@php\n    $sizes = [\n        'xs' => 'sm:max-w-sm',\n        'sm' => 'sm:max-w-md',\n        'md' => 'sm:max-w-lg',\n        'lg' => 'sm:max-w-xl',\n        'xl' => 'sm:max-w-2xl',\n        '2xl' => 'sm:max-w-3xl',\n        '3xl' => 'sm:max-w-4xl',\n        '4xl' => 'sm:max-w-5xl',\n        'full' => 'max-w-full',\n    ];\n\n    $size_ = $sizes[$size] ?? $sizes['lg'];\n\n@endphp\n\n<div data-modal-content wire:ignore.self\n    {{ $attributes->class([\n        'w-full flex flex-col relative bg-bg border border-border shadow-sm rounded-ui overflow-hidden',\n        '[--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]' => !$noGutter,\n        $size_,\n        $class,\n    ]) }}>\n    {{ $slot }}\n\n    @if ($closable)\n        <x-ui.modal.close size=\"sm\" iconOnly variant=\"none\" intent=\"none\"\n            class=\"absolute top-4 right-4 hover:bg-bg-muted rounded-full text-fg z-90\">\n            <span aria-hidden=\"true\" class=\"flex iconify ph--x\"></span>\n        </x-ui.modal.close>\n    @endif\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/modal/body.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/modal/body.blade.php",
+            "content": "\n@props(['noGutter'=>false])\n<div data-slot=\"modal-body\" {{ $attributes->class([\n    \"flex flex-1\",\n    \"flex-1 flex-col\",\n    \"px-(--gutter) py-1\"=>!$noGutter\n]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/modal/close.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/modal/close.blade.php",
+            "content": "@props(['size' => 'sm', 'variant' => 'solid', 'intent' => 'white'])\n\n<x-ui.button wire:ignore data-close-modal\n    {{ $attributes->merge([\n        'type' => 'button',\n        'size' => $size,\n        'variant' => $variant,\n        'intent' => $intent,\n    ]) }}>\n    {{ $slot }}\n</x-ui.button>\n"
+        },
+        {
+            "path": "resources/views/components/ui/modal/description.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/modal/description.blade.php",
+            "content": "\n\n<p {{ $attributes->merge(['class' => 'text-pretty text-fg-muted text-sm/6']) }}>\n    {{ $slot }}\n</p>"
+        },
+        {
+            "path": "resources/views/components/ui/modal/footer.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/modal/footer.blade.php",
+            "content": "@props(['justify' => 'start'])\n\n<div data-slot=\"modal-footer\"\n    {{ $attributes->class([\n        'relative',\n        'p-(--gutter) pt-[calc(var(--gutter)---spacing(3)) flex items-center gap-(--gap,--spacing(3))',\n        'justify-start' => $justify == 'start',\n        'justify-end' => $justify == 'end',\n        'justify-between' => $justify == 'between',\n        'justify-center' => $justify == 'center'\n    ]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/modal/header.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/modal/header.blade.php",
+            "content": "@props([\n    'title' => null,\n    'description' => null,\n    'class' => '',\n    'titleClass' => '',\n    'descriptionClass' => '',\n    'paddingNone' => false,\n])\n\n@php\n    $title_class = $titleClass;\n    $description_class = $descriptionClass;\n    $className = '';\n@endphp\n\n\n<div data-slot=\"sheet-header\"\n    {{ $attributes->class([\n        'relative flex items-start gap-3.5',\n        'p-(--gutter) pb-[calc(var(--gutter)---spacing(3)) space-y-1' => !$paddingNone,\n        $class,\n    ]) }}>\n    @if (isset($title) || isset($titleSlot))\n        <div class=\"flex-1 space-y-1 pr-14\">\n            <x-ui.modal.title class=\"{{ $title_class }}\">\n                @if (isset($title))\n                    {{ $title }}\n                @else\n                    {{ $titleSlot }}\n                @endif\n                </x-ui.smodal.title>\n                @if (isset($description) || isset($descriptionSlot))\n                    <x-ui.modal.description class=\"{{ $description_class }}\">\n                        @if (isset($description))\n                            {{ $description }}\n                        @else\n                            {{ $descriptionSlot }}\n                        @endif\n                    </x-ui.modal.description>\n                @endif\n        </div>\n    @else\n        {{ $slot }}\n    @endif\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/modal/title.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/modal/title.blade.php",
+            "content": "<h2 data-slot=\"modal-title\" {{ $attributes->merge(['class' => 'text-balance font-semibold text-fg-title text-lg/6']) }}>\n    {{ $slot }}\n</h2>\n"
+        },
+        {
+            "path": "resources/views/components/ui/modal/trigger.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/modal/trigger.blade.php",
+            "content": "@props(['modalId', 'size' => 'sm', 'variant' => 'solid', 'intent' => 'white', 'radius' => 'lg'])\n\n<x-ui.button data-modal-id=\"{{ $modalId }}\" data-modal-trigger aria-haspopup=\"dialog\" :size=\"$size\"\n    :variant=\"$variant\" :intent=\"$intent\" :radius=\"$radius\" type=\"button\" {{ $attributes }}>\n    {{ $slot }}\n</x-ui.button>\n"
+        }
+    ]
+}

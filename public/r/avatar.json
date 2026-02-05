@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "avatar",
+    "type": "registry:component",
+    "title": "Avatar",
+    "description": "A reusable avatar component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/avatar.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/avatar.blade.php",
+            "content": "@props(['size' => 'default', 'radius' => 'circle'])\n\n@php\n    $sizes = [\n        'default' => 'avatar-md',\n        'xs' => 'avatar-xs',\n        'sm' => 'avatar-sm',\n        'md' => 'avatar-md',\n        'lg' => 'avatar-lg',\n        'xl' => 'avatar-xl',\n    ];\n\n    $radii = [\n        'none' => '',\n        'md' => 'rounded-md',\n        'xl' => 'rounded-xl',\n        'circle' => 'rounded-full',\n    ];\n@endphp\n\n<img \n    {{ $attributes->class([\n        $sizes[$size] ?? $sizes['default'],\n        'object-cover',\n        $radii[$radius] ?? $radii['circle'],\n    ]) }}\n>\n"
+        }
+    ]
+}

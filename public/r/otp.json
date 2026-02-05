@@ -1,0 +1,31 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "otp",
+    "type": "registry:component",
+    "title": "OTP",
+    "description": "A reusable otp component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "input"
+    ],
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/alpine-pin-input"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/otp.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/otp.blade.php",
+            "content": "@props(['validation' => null])\n\n@php\n    $predefinedValidations = [\n        'number'       => '/\\d/',\n        'alpha'        => '/[a-zA-Z]/',\n        'alphanumeric' => '/[a-zA-Z0-9]/',\n    ];\n\n    $resolvedValidation = $predefinedValidations[$validation] \n        ?? ($validation ?: null);\n\n    $alpineExpression = $resolvedValidation \n        ? \"{ validation: {$resolvedValidation} }\" \n        : '';\n@endphp\n\n<div \n    x-data \n    x-pin-input=\"{{ $alpineExpression }}\"  \n    {{ $attributes->class(['flex items-center gap-2 relative cursor-text']) }}\n>\n    {{ $slot }}\n</div>"
+        },
+        {
+            "path": "resources/views/components/ui/otp/input.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/otp/input.blade.php",
+            "content": "@props([\n    'type' => 'text',\n    'size' => 'md',\n    'disabled' => false,\n    'readonly' => false,\n    'noBorder' => false,\n    'unStylled' => false,\n])\n\n<x-ui.input data-pin-input maxlength=\"1\" :type=\"$type\" :size=\"$size\" :disabled=\"$disabled\" :readonly=\"$readonly\"\n    :no-border=\"$noBorder\" :un-stylled=\"$unStylled\" {{ $attributes->class(['text-center']) }}/>"
+        }
+    ]
+}

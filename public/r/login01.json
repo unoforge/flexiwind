@@ -1,0 +1,24 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "login01",
+    "type": "registry:component",
+    "title": "Login",
+    "description": "A full auth login page.",
+    "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input",
+        "card"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/auth/login01.blade.php",
+            "type": "registry:page",
+            "target": "resources/views/components/auth/login.blade.php",
+            "content": "<main class=\"flex min-h-screen justify-center items-center px-4 sm:px-10 lg:px-0\">\n    <x-ui.card size=\"none\" class=\"rounded-ui p-6 sm:p-8 flex flex-col w-full max-w-md\">\n        <!-- Logo -->\n        <div class=\"text-center mb-8\">\n            <div class=\"size-12 bg-primary text-white text-xl rounded-ui flex items-center justify-center mx-auto mb-4\">\n                <span class=\"iconify ph--speedometer\"></span>\n            </div>\n            <h2 class=\"text-2xl font-semibold text-fg-title\">Welcome back</h2>\n            <p class=\"text-fg-muted mt-1\">Sign in to your account</p>\n        </div>\n\n\n        <form class=\"space-y-4\" id=\"login-form\">\n            <x-ui.input type=\"email\" id=\"email\" label=\"Email\" placeholder=\"you@company.com\" />\n            <div class=\"space-y-2\">\n                <x-ui.label for=\"login-password\" class=\"block\">Password</x-ui.label>\n                <x-ui.input.group>\n                    <x-ui.input id=\"login-password\" un-styled type=\"email\" placeholder=\"Your email here\" class=\"pe-11 px-3\" />\n                    <x-ui.input.trailing absolute class=\"text-fg\" clickable>\n                        <button type=\"button\" class=\"flex items-center cursor-pointer\">\n                            <span class=\"iconify ph--eye text-fg-muted/80\"></span>\n                        </button>\n                    </x-ui.input.trailing>\n                </x-ui.input.group>\n            </div>\n\n            <div class=\"flex items-center justify-between\">\n                <x-ui.checkbox id=\"remember_me\" label=\"Remember me\" />\n                <x-ui.link href=\"#\" class=\"text-sm text-primary\">Forgot password?</x-ui.link>\n            </div>\n\n            <x-ui.button type=\"submit\" class=\"w-full justify-center\">\n                Sign in\n            </x-ui.button>\n        </form>\n\n        <x-ui.divider label-placement=\"middle\" label=\"Or continue with\" class=\"before:bg-bg-muted my-6\"\n            label-class=\"pr-3 bg-bg text-fg relative\" />\n\n        <!-- Social Login -->\n        <div class=\"grid grid-cols-2 gap-3\">\n            <x-ui.button variant=\"outline\" intent=\"gray\" class=\"justify-center\">\n                <span class=\"iconify ph--google-logo mr-2\"></span>\n                <span>Google</span>\n            </x-ui.button>\n            <x-ui.button variant=\"outline\" intent=\"gray\" class=\"justify-center\">\n                <span class=\"iconify ph--github-logo mr-2\"></span>\n                <span>GitHub</span>\n            </x-ui.button>\n        </div>\n\n        <!-- Sign Up Link -->\n        <div class=\"text-center mt-6\">\n            <p class=\"text-sm text-fg-muted\">\n                Don't have an account?\n                <x-ui.link href=\"#\" class=\"font-medium text-primary ml-1\">Sign up</x-ui.link>\n            </p>\n        </div>\n    </x-ui.card>\n</main>\n"
+        }
+    ]
+}

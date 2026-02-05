@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "textarea",
+    "type": "registry:component",
+    "title": "Textarea",
+    "description": "A reusable textarea component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/textarea.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/textarea.blade.php",
+            "content": "@props([\n    'type' => 'text',\n    'size' => 'md',\n    'disabled' => false,\n    'readonly' => false,\n    'label' => null,\n    'noBorder' => false,\n    'inlinedLabel' => false,\n    'labelClass' => '',\n    'radius' => 'lg',\n    'autoResize' => false,\n    'resizeNone' => false,\n    'groupWrapperClass' => null,\n])\n\n@php\n    $sizes = [\n        'sm' => 'p-2 text-xs',\n        'md' => 'p-2.5 text-sm',\n        'lg' => 'p-3 text-sm',\n    ];\n\n    $resize_class = $resizeNone ? 'resize-none' : '';\n\n    $border_class = $noBorder ? 'border-transparent' : 'border border-border-input bg-bg';\n    $baseClasses = \"ui-form-base ui-form-input ui-radius {$border_class} {$resize_class} text-fg min-h-20 shadow \";\n    $sizeClasses = $sizes[$size] ?? $sizes['md'];\n\n    $id = $attributes->get('id') ?? $attributes->get('name', uniqid('input-'));\n\n    $attributes = $attributes->class([$baseClasses, $sizeClasses])->merge([\n        'type' => $type,\n        'disabled' => $disabled,\n        'readonly' => $readonly,\n        'id' => $id,\n    ]);\n\n    $containerClass = $groupWrapperClass ? '' : '';\n    $group_wrapper = $inlinedLabel\n        ? \"flex items-center gap-2 {$containerClass}\"\n        : \"flex flex-col space-y-2 {$containerClass}\";\n@endphp\n\n@if ($label)\n    <div class=\"{{ $group_wrapper }}\">\n        <x-ui.label for=\"{{ $id }}\" :text=\"$label\" class=\"{{ $labelClass }}\" />\n        <textarea {{ $attributes }} @if ($autoResize) x-auto-resize-area @endif>{{ $slot }}</textarea>\n    </div>\n@else\n    <textarea {{ $attributes }} @if ($autoResize) x-auto-resize-area @endif>{{ $slot }}</textarea>\n@endif\n"
+        }
+    ]
+}

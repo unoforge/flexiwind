@@ -1,0 +1,73 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "slideover",
+    "type": "registry:component",
+    "title": "Slideover",
+    "description": "A reusable slideover component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "button"
+    ],
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/alpine-offcanvas"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/slideover.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/slideover.blade.php",
+            "content": "@props([\n    'id',\n    'position' => 'right',\n    'class' => '',\n    'isFloated' => true,\n    'staticBackdrop' => '',\n    'backdropBlured' => true,\n    'scrollableBody' => false,\n    'size' => 'md',\n    'closable'=>true\n])\n\n@php\n    $positions = [\n        'left' => '-translate-x-full top-0 fx-open:translate-x-0 left-0',\n        'right' => 'translate-x-full top-0 fx-open:translate-x-0 justify-end right-0',\n        'top' => '-translate-y-full fx-open:translate-y-0 top-0',\n        'bottom' => 'translate-y-full fx-open:translate-y-0 bottom-0',\n    ];\n\n    $sizes = [\n        'sm' => 'fx-slide-x:max-w-72 fx-slide-y:max-h-72',\n        'md' => 'fx-slide-x:max-w-96 fx-slide-y:max-h-96',\n        'lg' => 'fx-slide-x:max-w-128 fx-slide-y:max-h-128',\n        'xl' => 'fx-slide-x:max-w-160 fx-slide-y:max-h-160',\n        '2xl' => 'fx-slide-x:max-w-160 fx-slide-y:max-h-160',\n        '3xl' => 'fx-slide-x:max-w-[600px] fx-slide-y:max-h-[600px]',\n    ];\n\n    $position_axes = [\n        'left' => 'x',\n        'right' => 'x',\n        'top' => 'y',\n        'bottom' => 'y',\n    ];\n\n    $u_position = $positions[$position] ?? $positions['right'];\n    $pos_ax = $position_axes[$position] ?? $position_axes['right'];\n    $size_class = $sizes[$size] ?? $sizes['md'];\n\n    $backdrop_blur = $backdropBlured ? 'backdrop-blur-sm' : '';\n@endphp\n\n<div x-data x-offcanvas data-slideover data-offcanvas-backdrop=\"fixed inset-0 bg-bg/50 z-60 {{ $backdrop_blur }}\" data-ax=\"{{ $pos_ax }}\"\n    id=\"{{ $id }}\" aria-labelledby=\"{{ $id }}\"\n    @if ($staticBackdrop) data-static-backdrop @endif\n    @if ($scrollableBody) data-allow-body-scroll @endif\n    {{ $attributes->class([\n        'fixed w-screen h-dvh ease-linear duration-200 z-110 flex',\n        'opacity-0 fx-open:opacity-100',\n        'transition-[transform_opacity] duration-300 ease-linear',\n        $size_class,\n        $u_position,\n        'p-2 *:rounded-lg' => $isFloated,\n        $class,\n    ]) }}>\n    {{ $slot }}\n\n    @if ($closable)\n    <x-ui.slideover.close size=\"sm\" iconOnly variant=\"none\" intent=\"none\"\n            class=\"absolute top-4 right-4 hover:bg-bg-muted rounded-full text-fg\">\n        <span aria-hidden=\"true\" class=\"flex iconify ph--x\"></span>\n    </x-ui.slideover.close>\n    @endif\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/slideover/body.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/slideover/body.blade.php",
+            "content": "\n\n<div data-slot=\"sheet-body\" {{ $attributes->class([\n    \"flex flex-1 overflow-y-auto\",\n    \"flex-1 flex-col overflow-auto px-(--gutter) py-1\"\n]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/slideover/close.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/slideover/close.blade.php",
+            "content": "@props(['size' => 'sm', 'variant' => 'solid', 'intent' => 'white'])\n\n<x-ui.button wire:ignore data-offcanvas-close\n    {{ $attributes->merge([\n        'type' => 'button',\n        'size' => $size,\n        'variant' => $variant,\n        'intent' => $intent,\n    ]) }}>\n    {{ $slot }}\n</x-ui.button>\n"
+        },
+        {
+            "path": "resources/views/components/ui/slideover/content.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/slideover/content.blade.php",
+            "content": "@props(['class' => '', 'as' => 'div'])\n\n\n\n\n\n<{{ $as }}\n    {{ $attributes->class(['flex flex-col size-full overflow-hidden border border-fg-muted/20 bg-overlay [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]']) }}>\n    {{ $slot }}\n    </{{ $as }}>\n"
+        },
+        {
+            "path": "resources/views/components/ui/slideover/description.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/slideover/description.blade.php",
+            "content": "\n\n<p data-slot=\"sheet-description\" {{ $attributes->merge(['class' => 'text-pretty text-fg-muted text-sm/6']) }}>\n    {{ $slot }}\n</p>"
+        },
+        {
+            "path": "resources/views/components/ui/slideover/footer.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/slideover/footer.blade.php",
+            "content": "@props(['justify' => 'start'])\n<div data-slot=\"sheet-footer\"\n    {{ $attributes->class([\n        'relative',\n        'p-(--gutter) pt-[calc(var(--gutter)---spacing(3)) flex items-center gap-(--gap,--spacing(3))',\n        'justify-start' => $justify == 'start',\n        'justify-end' => $justify == 'end',\n        'justify-between' => $justify == 'between',\n        'justify-center' => $justify == 'center'\n    ]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/slideover/header.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/slideover/header.blade.php",
+            "content": "@props([\n    'title' => null,\n    'description' => null,\n    'class' => '',\n    'titleClass' => '',\n    'descriptionClass' => '',\n])\n\n@php\n    $title_class = $titleClass;\n    $description_class = $descriptionClass;\n    $className = '';\n@endphp\n\n\n<div data-slot=\"sheet-header\"\n    {{ $attributes->class([\n        'relative flex items-start gap-3.5 relative',\n        'space-y-1 p-(--gutter) pb-[calc(var(--gutter)---spacing(3))',\n        $class,\n    ]) }}>\n    @if (isset($title) || isset($titleSlot))\n        <div class=\"flex-1 space-y-1 pr-14\">\n            <x-ui.slideover.title class=\"{{ $title_class }}\">\n                @if (isset($title))\n                    {{ $title }}\n                @else\n                    {{ $titleSlot }}\n                @endif\n            </x-ui.sliderover.title>\n            @if (isset($description) || isset($descriptionSlot))\n                <x-ui.slideover.description class=\"{{ $description_class }}\">\n                    @if (isset($description))\n                        {{ $description }}\n                    @else\n                        {{ $descriptionSlot }}\n                    @endif\n                </x-ui.slideover.description>\n            @endif\n        </div>\n    @else\n        {{ $slot }}\n    @endif\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/slideover/title.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/slideover/title.blade.php",
+            "content": "<h2 data-slot=\"sheet-title\" {{ $attributes->merge(['class' => 'text-balance font-semibold text-fg-title text-lg/6']) }}>\n    {{ $slot }}\n</h2>\n"
+        },
+        {
+            "path": "resources/views/components/ui/slideover/trigger.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/slideover/trigger.blade.php",
+            "content": "@props(['slideOverId', 'size' => 'sm', 'variant' => 'solid', 'intent' => 'white'])\n\n<x-ui.button data-offcanvas-trigger data-target=\"{{ $slideOverId }}\" aria-haspopup=\"dialog\"\n    {{ $attributes->merge([\n        'type' => 'button',\n        'size' => $size,\n        'variant' => $variant,\n        'intent' => $intent,\n    ]) }}>\n    {{ $slot }}\n</x-ui.button>\n\n"
+        }
+    ]
+}

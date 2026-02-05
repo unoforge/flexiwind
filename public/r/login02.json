@@ -1,0 +1,24 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "login02",
+    "type": "registry:component",
+    "title": "Login",
+    "description": "A full auth login page.",
+    "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input",
+        "card"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/auth/login02.blade.php",
+            "type": "registry:page",
+            "target": "resources/views/components/auth/login.blade.php",
+            "content": "<main class=\"flex min-h-screen justify-center items-center px-5 sm:px-10 lg:px-0\">\n    <x-ui.card size=\"none\" class=\"rounded-ui p-5 sm:p-8 max-w-md\">\n        <div class=\"text-center mb-6\">\n            <h2 class=\"text-xl font-semibold text-fg-title\">Sign In</h2>\n            <p class=\"text-fg-muted text-sm mt-2\">\n                Welcome back! Please sign in to your account.\n            </p>\n        </div>\n        <form class=\"space-y-4\">\n            <x-ui.input id=\"email\" type=\"email\" placeholder=\"johndeo@gmail.com\" label=\"Email\"  autocomplete=\"off\"/>\n             <x-ui.input id=\"password\" type=\"password\" placeholder=\"********\" label=\"Password\"  autocomplete=\"off\"/>\n            \n            <div class=\"flex items-center justify-between\">\n                <x-ui.checkbox id=\"remember\" label=\"Remember me\"/>\n                \n                <x-ui.link href=\"#\" underlined class=\"text-sm text-primary\">Forgot password?</x-ui.link>\n            </div>\n            <x-ui.button type=\"submit\"\n                class=\"justify-center w-full\">\n                Sign In\n            </x-ui.button>\n        </form>\n        <div class=\"mt-6 text-center\">\n            <p class=\"text-sm text-fg-muted\">\n                Don't have an account?\n                <x-ui.link href=\"#\" class=\"text-primary\">Sign up</x-ui.link>\n            </p>\n        </div>\n    </x-ui.card>\n</main>\n"
+        }
+    ]
+}

@@ -1,9 +1,9 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug" :links="[]">
 
 
-<x-md.image-block src="/cover-image.webp" alt="Flexiwind Cover Image" />
+    <x-md.image-block src="/cover-image.webp" alt="Flexiwind Cover Image" />
 
-<x-md.h2>Overview</x-md.h2>
+    <x-md.h2>Overview</x-md.h2>
     <x-md.paragraph>
         <strong>
             Re-usable Laravel UI components built with Tailwind v4.
@@ -56,28 +56,30 @@
 
     <x-md.h2>Authors</x-md.h2>
     <x-md.ul>
-        <x-md.li><x-docs.doc-link href="https://">Johnkat MJ</x-docs.doc-link> </x-md.li>
-        <x-md.li><x-docs.doc-link href="https://">Tresor Kasenda</x-docs.doc-link></x-md.li>
+        <x-md.li><x-docs.doc-link href="https://x.com/johnkat_Mj">Johnkat MJ</x-docs.doc-link> </x-md.li>
     </x-md.ul>
 
     <x-md.h2>Credits</x-md.h2>
     <x-md.ul>
         <x-md.li>
-            <x-docs.doc-link href="https://livewire.laravel.com/">Livewire</x-docs.doc-link> (We couldn't create this if it was not for
+            <x-docs.doc-link href="https://livewire.laravel.com/">Livewire</x-docs.doc-link> (We couldn't create this if
+            it was not for
             Livewire)
         </x-md.li>
         <x-md.li>
-            <x-docs.doc-link href="https://x.com/shadcn">shadcn/ui</x-docs.doc-link> (For bringing the amazing idea of having
+            <x-docs.doc-link href="https://x.com/shadcn">shadcn/ui</x-docs.doc-link> (For bringing the amazing idea of
+            having
             Registries and CLI)
         </x-md.li>
         <x-md.li>
-            <x-docs.doc-link href="https://x.com/MeschacIrung">Tailus Themer by Méschac Irung</x-docs.doc-link> (Thanks to Themer we've got Nice Buttons
+            <x-docs.doc-link href="https://x.com/MeschacIrung">Tailus Themer by Méschac Irung</x-docs.doc-link> (Thanks
+            to Themer we've got Nice Buttons
             with all beautiful variants)
         </x-md.li>
         <x-md.li>
-            <x-docs.doc-link href="https://x.com/irsyad">Intent UI by Irsyad A. Panjaitan</x-docs.doc-link> (Inspired us to structure some components and
+            <x-docs.doc-link href="https://x.com/irsyad">Intent UI by Irsyad A. Panjaitan</x-docs.doc-link> (Inspired us
+            to structure some components and
             even in styling them)
         </x-md.li>
     </x-md.ul>
-
 </x-layouts.doc-page-wrapper>

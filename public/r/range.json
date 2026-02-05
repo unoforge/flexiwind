@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "range",
+    "type": "registry:component",
+    "title": "Range",
+    "description": "A reusable range component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/range.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/range.blade.php",
+            "content": "@props([\n    'size' => 'md',\n    'class' => '',\n    'noRadius' => false,\n    'wrapper' => '',\n    'max' => '100',\n    'min' => '0',\n    'customIndicator' => null,\n    'thumbBgCurrent' => false,\n])\n\n@php\n\n    $wrapper_sizes = [\n        'xs' => 'h-2',\n        'sm' => 'h-3',\n        'md' => 'h-4',\n    ];\n    $range_sizes = [\n        'xs' => '[--ui-input-range-size:--spacing(2)] [--ui-input-range-track-height:--spacing(0.5)] [--ui-input-range-mt:--spacing(0.75)]',\n        'sm' => '[--ui-input-range-size:--spacing(3)] [--ui-input-range-track-height:--spacing(1)] [--ui-input-range-mt:--spacing(1)]',\n        'md' =>\n            '[--ui-input-range-size:--spacing(4)] [--ui-input-range-track-height:--spacing(2)] [--ui-input-range-mt:--spacing(1)]',\n    ];\n    $wrapper_size = $wrapper_sizes[$size] ?? $wrapper_sizes['md'];\n    $wrapper_class = \"relative w-full flex items-center {$wrapper_size} {$wrapper}\";\n    \n    $range_size = $range_sizes[$size] ?? $range_sizes['md'];\n    $radius = $noRadius ? '[--ui-progressbar-radius:0px]' : '[--ui-progressbar-radius:20px]';\n    $thumBg = $thumbBgCurrent ? '[--ui-input-range-thumb-bg:currentColor]' : '[--ui-input-range-thumb-bg:var(--c-bg)]';\n    $className = \"ui-input-range [--ui-input-range-track-bg:var(--c-bg-range)] {$radius} {$range_size} {$thumBg} {$class}\";\n\n    $indicator_sizes = [\n        'xs' => 'h-0.5',\n        'sm' => 'h-1',\n        'md' => 'h-2',\n    ];\n    $indicator_size = $indicator_sizes[$size] ?? $indicator_sizes['md'];\n    $radius_indicator = $noRadius ? '' : 'rounded-[20px]';\n    $custom_indicator = $customIndicator\n        ? \"peer-disabled:opacity-50 {$radius_indicator} {$indicator_size} {$customIndicator}\"\n        : null;\n@endphp\n\n<div class=\"{{ $wrapper_class }}\"\n    @if ($custom_indicator) x-data x-range-indicator data-custom-range-wrapper data-range-indicator=\"{{ $custom_indicator }}\" @endif>\n    <input data-input-range\n        {{ $attributes->merge([\n            'class' => $className,\n            'type' => 'range',\n            'min' => $min,\n            'max' => $max,\n        ]) }}>\n</div>\n"
+        }
+    ]
+}

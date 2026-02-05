@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/cli/main/registry-item.json",
+    "version": "0.0.0",
+    "name": "progress",
+    "type": "registry:component",
+    "title": "Progress",
+    "description": "A reusable progress component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/progress.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/progress.blade.php",
+            "content": "@props(['size' => 'md', 'class' => '', 'noRadius' => false])\n\n@php\n    $progress_sizes = [\n        '2xs' => 'h-0.5',\n        'xs' => 'h-1',\n        'sm' => 'h-1.5',\n        'md' => 'h-2',\n        'lg' => 'h-3',\n        'xl' => 'h-6',\n    ];\n    $size = $progress_sizes[$size] ?? $progress_sizes['md'];\n    $radius = $noRadius ? '' : '[--ui-progressbar-radius:20px]';\n    $className = \"ui-progressbar {$radius} {$size} [--ui-progressbar-bg:var(--c-progressbar)] {$class}\";\n@endphp\n\n<progress {{ $attributes->merge(['class' => $className]) }}></progress>\n"
+        }
+    ]
+}
