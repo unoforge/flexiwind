@@ -12,7 +12,8 @@ export default defineConfig({
                 'resources/js/flexilla.js',
                 'resources/js/docs.js',
                 'resources/js/block.js',
-                'resources/js/sidebar-plugin.js'
+                'resources/js/sidebar-plugin.js',
+                'resources/css/code-theme.css'
             ],
             refresh: true,
         }),
