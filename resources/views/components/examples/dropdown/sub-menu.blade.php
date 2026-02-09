@@ -1,9 +1,9 @@
- <x-ui.dropdown.trigger variant="solid" intent="white" size="sm" dropdown-id="with-submenu">
+ <x-ui.dropdown.trigger variant="outline" size="sm" dropdown-id="with-submenu">
      More Options
      <span class="iconify ph--caret-down ml-2 text-xs"></span>
  </x-ui.dropdown.trigger>
 
- <x-ui.dropdown keep-open class="w-48" id="with-submenu">
+ <x-ui.dropdown keep-open placement="bottom-start" class="w-46" id="with-submenu">
      <x-ui.dropdown.item>
          <x-ui.dropdown.icon>
              <span class="iconify ph--eye text-sm"></span>
