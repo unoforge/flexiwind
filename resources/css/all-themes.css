@@ -65,4 +65,5 @@
     --c-border: var(--c-gray-900);
     --c-border-sub: var(--c-gray-900);
     --c-border-card:var(--c-gray-800);
+    --c-border-input:var(--color-gray-800);
 }

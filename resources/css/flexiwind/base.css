@@ -1,9 +1,9 @@
 @custom-variant fx-open (&[data-state="open"]);
-@custom-variant fx-close (&[data-state="open"]);
-@custom-variant fx-visible (&[data-state="open"]);
-@custom-variant fx-hidden (&[data-state="open"]);
-@custom-variant fx-opened (&[data-state="open"]);
-@custom-variant fx-closed (&[data-state="open"]);
+@custom-variant fx-close (&[data-state="close"]);
+@custom-variant fx-visible (&[data-state="visible"]);
+@custom-variant fx-hidden (&[data-state="hidden"]);
+@custom-variant fx-opened (&[data-state="opened"]);
+@custom-variant fx-closed (&[data-state="closed"]);
 @custom-variant fx-resized (&[data-resized="true"]);
 @custom-variant fx-active (&[data-state="active"]);
 @custom-variant fx-inactive (&[data-state="inactive"]);
@@ -19,3 +19,4 @@
 
 @custom-variant fx-slide-x (&[data-ax="x"]);
 @custom-variant fx-slide-y (&[data-ax="y"]);
+
