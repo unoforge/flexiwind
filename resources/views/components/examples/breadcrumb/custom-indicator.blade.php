@@ -30,17 +30,17 @@
     <x-ui.breadcrumb class="text-fg-muted">
         <x-ui.breadcrumb.item href="#"
             class="ease-linear hover:text-fg-subtitle gap-x-1.5 px-1.5 py-px rounded-full bg-bg-subtle hover:bg-bg-muted">
-            <span aria-hidden="true" class="flex iconify ph--house text-xl"></span>
+            <span aria-hidden="true" class="flex iconify ph--house size-4 mr-1"></span>
             Home
         </x-ui.breadcrumb.item>
         <x-ui.breadcrumb.item href="#"
             class="ease-linear hover:text-fg-subtitle gap-x-1.5 px-1.5 py-px rounded-full bg-bg-subtle hover:bg-bg-muted">
-            <span aria-hidden="true" class="flex iconify ph--link-break text-xl"></span>
+            <span aria-hidden="true" class="flex iconify ph--link-break size-4 mr-1"></span>
             Navigation
         </x-ui.breadcrumb.item>
         <x-ui.breadcrumb.item active
             active-class="gap-x-1.5 text-bg font-semibold px-1.5 py-px rounded-full bg-fg-title">
-            <span aria-hidden="true" class="flex iconify ph--link-simple-horizontal"></span>
+            <span aria-hidden="true" class="flex iconify ph--link-simple-horizontal size-4"></span>
             Current Page
         </x-ui.breadcrumb.item>
     </x-ui.breadcrumb>
