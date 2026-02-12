@@ -53,7 +53,7 @@ class extends Component {
                     We're working on this, we'll release it soon
                 </p>
                 <div class="mt-8">
-                    <x-ui.button href="https://github.com/unoforge/laravel-ui" class="w-max">
+                    <x-ui.button href="https://github.com/unoforge/flexiwind" class="w-max">
                         Bring my contributing
                     </x-ui.button>
                 </div>

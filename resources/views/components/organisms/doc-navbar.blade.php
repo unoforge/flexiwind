@@ -30,7 +30,7 @@
             </x-ui.modal.trigger>
         </div>
         <div class="flex items-center gap-px">
-            <x-atoms.ui-link href="https://github.com/unoforge/laravel-ui" aria-label="Link to github repo"
+            <x-atoms.ui-link href="https://github.com/unoforge/flexiwind" aria-label="Link to github repo"
                 class="hidden min-[22rem]:d-flex-place-center size-8 hover:bg-bg-muted rounded-lg text-fg hover:text-fg-title">
                 <span class="iconify ph--github-logo"></span>
             </x-atoms.ui-link>
