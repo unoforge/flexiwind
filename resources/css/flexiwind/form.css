@@ -1,16 +1,9 @@
-/* input  */
 @utility ui-form-input {
   @apply disabled:hover:cursor-not-allowed disabled:opacity-80 outline-offset-0 focus:outline-offset-0 focus:border-transparent outline outline-transparent focus:outline-(--ui-input-focus-outline) ring-transparent ring-offset-transparent focus:ring-(--focus-ring) ring-3 ring-offset-1 transition-all ease-linear duration-200;
 }
 
-
 @utility ui-form-group-base {
-  @apply w-full data-invalide:[outline-color:var(--ui-input-invalid-outline)];
-
-  & input,
-  & select {
-    @apply flex-1 placeholder-[color:var(--ui-input-place-holder)] [line-height:1.5rem];
-  }
+  @apply w-full data-invalide:outline-(--ui-input-invalid-outline);
 }
 
 @utility ui-form-group {
@@ -20,10 +13,18 @@
   & select {
     @apply outline-none focus:outline-none appearance-none;
   }
+}
 
+
+@utility ui-form-group-input {
+
+  & input {
+    @apply outline-none focus:outline-none;
+  }
+
+  & input,
   & select {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%236b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>');
-    @apply [background-position:right_0.5rem_center] [background-repeat:no-repeat] [background-size:1.5em_1.5em] [padding-right:2.5rem] [print-color-adjust:exact];
+    @apply flex-1 placeholder-(--ui-input-place-holder) leading-6 text-sm;
   }
 }
 
@@ -48,16 +49,23 @@
 }
 
 @utility ui-form-base {
-  @apply appearance-none w-full placeholder-[color:var(--ui-input-place-holder)] invalid:[outline-color:var(--ui-input-invalid-outline)] [line-height:1.5rem];
+  @apply appearance-none w-full placeholder-(--ui-input-place-holder) invalid:[outline-color:var(--ui-input-invalid-outline)] [line-height:1.5rem];
 }
 
 
 
 @utility ui-form-select {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%236b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>');
-  @apply appearance-none w-full placeholder-[color:var(--ui-input-place-holder)] [line-height:1.5rem] [background-position:right_0.5rem_center] [background-repeat:no-repeat] [background-size:1.5em_1.5em] [padding-right:2.5rem] [print-color-adjust:exact];
+  @apply appearance-none w-full placeholder-(--ui-input-place-holder) leading-6;
 }
 
+@utility ui-form-select-indicator {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%236b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>');
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  print-color-adjust: exact;
+}
 
 @utility ui-form-multiselect {
   @apply [background-image:unset] [background-position:unset] [background-repeat:unset] [background-size:unset] [padding-right:0.75rem] [print-color-adjust:unset]

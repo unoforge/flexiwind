@@ -16,7 +16,7 @@
     $spacing_ = $spacings[$spacing] ?? $spacings['1.5'];
 @endphp
 <nav aria-label="Breadcrumbs" class="{{ $wrapper }}">
-    <ol {{ $attributes->class(['flex items-center', $spacing_, $class]) }}>
+    <ol {{ $attributes->class(['flex items-center ', $spacing_, $class]) }}>
         {{ $slot }}
     </ol>
 </nav>

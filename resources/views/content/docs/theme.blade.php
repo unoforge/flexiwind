@@ -21,7 +21,7 @@
             </x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell class="font-medium">
+            <x-ui.table.cell class="font-mediuma">
                 <x-docs.inline-code no-wrap text="secondary" />
             </x-ui.table.cell>
             <x-ui.table.cell>

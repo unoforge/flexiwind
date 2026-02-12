@@ -1,17 +1,21 @@
-@props(['dropdownId', 'variant' => 'none', 'disabled' => false])
+@props(['dropdownId', 'variant' => 'none', 'disabled' => false, 'danger' => false])
 @php
 
+    $itemClassDefault = $danger ? 'dropdown-item-bg-danger' : 'dropdown-item-bg';
+    $className = ' ';
+
     $attributes = $attributes->class([
-        '[--mr-icon:--spacing(2)]',
-        'group relative select-none dropdown-item-base dropdown-item-bg dropdown-item-grid text-left',
-        'dropdown-item-slot dropdown-item-icon dropdown-item-label ',
+        '[--mr-icon:--spacing(1.5)]',
+        'group relative select-none dropdown-item-base dropdown-item-variants dropdown-item-grid text-left',
+        'dropdown-item-slot dropdown-item-label ',
         'dropdown-item-force-color',
         'dropdown-item-danger',
         'cursor-default text-base/6 sm:text-sm/6',
+        $itemClassDefault,
         'cursor-not-allowed' => $disabled,
     ]);
 
-    $attributes = $attributes = $attributes->merge([
+    $attributes = $attributes->merge([
         'disabled' => $disabled,
     ]);
 @endphp

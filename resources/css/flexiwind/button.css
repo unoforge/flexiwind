@@ -1,7 +1,24 @@
-
-
 @utility btn {
   @apply flex items-center disabled:opacity-90 disabled:cursor-not-allowed disabled:hover:opacity-70 transition-colors ease-linear outline-offset-2 outline-2 outline-transparent focus-visible:outline-(--btn-focus-outline-color);
+}
+
+@utility btn-pagination-link-variables {
+  --ring-bg-color: var(--btn-pagination-link-ring-color, transparent);
+  --link-bg: var(--btn-pagination-link-bg, transparent);
+  --link-text-color: var(--btn-pagination-link-text-color, var(--color-fg-muted));
+  --link-hover-bg: var(--btn-pagination-link-hover-bg, --alpha(var(--color-bg-muted)/60%));
+}
+
+@utility btn-pagination-link {
+  --tw-ring-color: var(--ring-bg-color);
+  @apply ring-1 bg-(--link-bg) hover:bg-(--link-hover-bg) text-(--link-text-color) focus-visible:outline-(--link-hover-bg);
+}
+
+@utility btn-pagination-active {
+  --ring-bg-color: var(--btn-pagination-active-link-ring-color, var(--color-border));
+  --link-bg: var(--btn-pagination-active-link-bg, transparent);
+  --link-text-color: var(--btn-pagination-active-link-text-color, var(--color-fg-title));
+  --link-hover-bg: var(--btn-pagination-active-link-hover-bg, --alpha(var(--color-bg-muted)/80%));
 }
 
 @utility btn-xs {
