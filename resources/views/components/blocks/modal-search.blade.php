@@ -3,7 +3,7 @@
         class="animated-modal-content h-124 p-0.5" data-enter-animation="fadeIn .4s linear"
         data-exit-animation="fadeOut .1s linear">
         <x-ui.modal.header padding-none class="relative w-full">
-            <x-ui.input @input="search" data-input-search un-stylled
+            <x-ui.input @input="search" data-input-search unStyled
                 class="w-full ps-9 text-fg focus:outline-none border-0 ui-form-input-lg" placeholder="Search components, docs..."
                 x-model="query" />
             <span aria-hidden="true"
