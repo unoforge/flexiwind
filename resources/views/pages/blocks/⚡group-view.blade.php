@@ -31,11 +31,11 @@ class extends Component {
 };
 ?>
 
-<main>
+<main class="w-full overflow-hidden">
     <x-blocks.blocks-nav :current="$blockName" :all-blocks="$allBlocks" />
     @if (isset($blockGroup) && isset($blockGroup['blocks']) && count($blockGroup['blocks']) > 0)
         <x-blocks.block-page-header :title="$blockGroup['title'] ?? 'Block Group'" :description="$blockGroup['description'] ?? 'Block Group Description'" />
-        <section class="mt-10 space-y-12 pb-16">
+        <section class="mt-10 space-y-12 pb-16 w-full">
             @foreach ($blockGroup['blocks'] as $codeKey => $block)
                 <livewire:v-ui.single-block
                     wire:key="block-{{ $blockName }}-{{ $codeKey }}-{{ $loop->index }}" :key-ui="$blockName . '-' . $codeKey . '-' . $loop->index"
@@ -43,11 +43,11 @@ class extends Component {
             @endforeach
         </section>
     @else
-        <div class="lg:max-w-336 xl:max-w-252 mx-auto px-2 sm:px-4 xl:px-8">
+        <div class="lg:max-w-336 xl:max-w-352 mx-auto px-2 sm:px-4 xl:px-8 w-full">
             <div
-                class="mt-10 bg-bg-surface border border-border-card/60 p-5 sm:p-10 rounded-global flex flex-col text-center items-center">
+                class="mt-10 w-full bg-bg-surface border border-border-card/60 p-5 sm:p-10 lg:py-16 rounded-global flex flex-col text-center items-center">
                 <h2 class="text-fg-title font-semibold text-3xl">
-                    No Block found for <span class="text-primary">{{ $blockName }}</span>
+                    No Block found for <span class="text-primary">{{ $blockGroup['title']?? $blockName }}</span>
                 </h2>
                 <p class="mx-auto max-w-lg text-fg mt-4">
                     We're working on this, we'll release it soon

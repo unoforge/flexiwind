@@ -1,4 +1,4 @@
-<main class="flex min-h-screen justify-center items-center px-4 sm:px-10 lg:px-0">
+<main class="flex min-h-screen justify-center items-center px-4 sm:px-10 lg:px-0 py-5">
     <x-ui.card size="none" class="rounded-ui p-6 sm:p-8 flex flex-col w-full max-w-md">
         <!-- Logo -->
         <div class="text-center mb-8">
@@ -15,7 +15,7 @@
             <div class="space-y-2">
                 <x-ui.label for="login-password" class="block">Password</x-ui.label>
                 <x-ui.input.group>
-                    <x-ui.input id="login-password" un-styled type="email" placeholder="Your email here" class="pe-11 px-3" />
+                    <x-ui.input id="login-password" unStyled type="email" placeholder="Your email here" class="pe-11 px-3" />
                     <x-ui.input.trailing absolute class="text-fg" clickable>
                         <button type="button" class="flex items-center cursor-pointer">
                             <span class="iconify ph--eye text-fg-muted/80"></span>

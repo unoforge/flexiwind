@@ -1,4 +1,4 @@
-<main class="flex min-h-screen justify-center items-center px-5 sm:px-10 lg:px-0">
+<main class="flex min-h-screen justify-center items-center px-5 sm:px-10 lg:px-0 py-5">
     <x-ui.card size="none" class="rounded-ui p-5 sm:p-8 max-w-md">
         <div class="text-center mb-6">
             <h2 class="text-xl font-semibold text-fg-title">Sign In</h2>

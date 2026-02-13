@@ -39,6 +39,21 @@
     {{ $slot }}
     @livewireScripts
     @vite(['resources/js/app.js', 'resources/js/flexilla.js'])
+
+        @if (!config('app.debug'))
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4F5SD3FZ5"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-Z4F5SD3FZ5');
+        </script>
+    @endif
 </body>
 
 </html>
