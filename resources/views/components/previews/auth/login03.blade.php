@@ -1,4 +1,4 @@
-    <main class="flex min-h-screen justify-center items-center px-5 sm:px-10 lg:px-0">
+    <main class="flex min-h-screen justify-center items-center px-5 sm:px-10 lg:px-0 py-5">
         <div class="flex flex-col gap-6 w-full max-w-sm">
             <div class="flex flex-col items-center gap-2 text-center">
                 <div

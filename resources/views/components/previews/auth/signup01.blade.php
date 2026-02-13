@@ -7,7 +7,7 @@
             <h1 class="text-fg-title mb-1 text-xl font-semibold">Create your account</h1>
             <p class="text-sm text-fg-muted">
                 Fill in your details to get started
-            </p>ring-1 ring-border-strong/60
+            </p>
         </div>
         <x-ui.divider class="my-8 border-border-strong/60" />
         <form class="flex flex-col gap-4">

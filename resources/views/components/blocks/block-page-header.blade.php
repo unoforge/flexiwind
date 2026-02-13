@@ -1,6 +1,6 @@
 @props(['title', 'description'])
 
-<section class="w-full lg:max-w-[84rem] xl:max-w-[88rem] mx-auto pt-12 px-2 sm:px-4 xl:px-8">
+<section class="w-full lg:max-w-336 xl:max-w-352 mx-auto pt-12 px-3.5 sm:px-4 xl:px-8">
     <x-ui.breadcrumb class="gap-2.5 whitespace-nowrap text-fg capitalize text-sm md:text-base">
         <x-ui.breadcrumb.item separator="ph--caret-right" href="#" text="Blocks" />
         <x-ui.breadcrumb.item  active :text="$title" />

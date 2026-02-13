@@ -42,9 +42,9 @@ new class extends Component
     ];
 @endphp
 
-<article x-data x-ui-block wire:key="card-wrapper-{{ $key_ui }}" class="relative">
+<article x-data x-ui-block wire:key="card-wrapper-{{ $key_ui }}" class="relative w-full">
     <div aria-hidden="true" class="inset-x-0 absolute top-0 left-0 h-12 border-y border-border-strong/60"></div>
-    <div class="relative lg:max-w-336 xl:max-w-352 mx-auto px-2 sm:px-4 xl:px-8 w-full">
+    <div class="relative lg:max-w-336 xl:max-w-352 lg:mx-auto px-2 sm:px-4 xl:px-8 w-full">
         <div aria-hidden="true"
             class="inset-y-0 inset-x-1.5 sm:inset-x-3.5 xl:inset-x-7.5 pointer-events-none absolute flex scale-y-105 border-x border-border-strong/60">
         </div>
