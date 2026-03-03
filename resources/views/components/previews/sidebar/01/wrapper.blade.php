@@ -1,4 +1,4 @@
-<main class="lg:pl-72">
+<main class="lg:pl-64">
     <header class="w-full flex h-16 bg-bg sticky top-0 z-40">
         <div class="flex items-center justify-between w-full h-full px-4 sm:px-8">
             <div class="flex items-center gap-3">
