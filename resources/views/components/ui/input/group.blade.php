@@ -16,9 +16,9 @@
 
     $bg_class = ($bgNone ? '' : 'bg-bg') . '';
 
-    $radius = $radiusNone ? '' : 'ui-radius';
+    $radius = $radiusNone ? '' : 'rounded-ui';
     $border_class = $noBorder ? 'border-transparent' : 'border border-border-input';
-    $baseClasses = "ui-form-group-base ui-form-group relative flex shadow {$radius} {$bg_class} {$border_class} text-fg";
+    $baseClasses = "ui-form-group-base ui-form-group ui-form-group-input relative flex {$radius} {$bg_class} {$border_class} text-fg";
     $sizeClasses = $sizes[$size] ?? $sizes['md'];
 
     $attributes = $attributes->class([$baseClasses, $sizeClasses])->merge([

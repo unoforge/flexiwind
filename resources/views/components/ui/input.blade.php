@@ -7,7 +7,7 @@
     'noBorder' => false,
     'inlinedLabel' => false,
     'labelClass' => '',
-    'unStylled' => false,
+    'unStyled' => false,
     'bgNone' => false,
     'radiusNone' => false,
     'groupWrapperClass' => null,
@@ -22,11 +22,11 @@
     ];
 
     $bg_class = $bgNone ? '' : 'bg-bg';
-    $radius = $radiusNone ? '' : 'ui-radius';
+    $radius = $radiusNone ? '' : 'rounded-ui';
 
     $border_class = $noBorder ? 'border-transparent' : 'border border-border-input';
-    $baseClasses = $unStylled ? '' : "ui-form-base ui-form-input shadow {$radius} {$bg_class} {$border_class} text-fg";
-    $sizeClasses = $unStylled ? '' : $sizes[$size] ?? $sizes['md'];
+    $baseClasses = $unStyled ? '' : "ui-form-base ui-form-input {$radius} {$bg_class} {$border_class} text-fg";
+    $sizeClasses = $unStyled ? '' : $sizes[$size] ?? $sizes['md'];
 
     $id = $attributes->get('id') ?? $attributes->get('name', uniqid('input-'));
 

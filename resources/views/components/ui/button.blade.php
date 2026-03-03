@@ -26,7 +26,7 @@
         'lg' => 'btn-icon-lg text-sm',
         'xl' => 'btn-icon-xl text-base',
     ];
-    $baseClasses = 'btn ease-linear duration-200 ui-radius ';
+    $baseClasses = 'btn ease-linear duration-200 rounded-ui ';
     if ($variant !== 'none') {
         $baseClasses .= isset($btn_variants[$variant]) ? $btn_variants[$variant]['base'] : 'ee';
     }

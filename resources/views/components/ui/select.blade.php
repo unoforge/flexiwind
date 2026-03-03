@@ -7,8 +7,9 @@
     'inlinedLabel' => false,
     'labelClass' => '',
     'bgNone' => false,
+    'noIndicator' => false,
     'radiusNone' => false,
-    'unStylled' => false,
+    'unStyled' => false,
     'groupWrapperClass' => null,
 ])
 
@@ -20,15 +21,16 @@
     ];
 
     $bg_class = $bgNone ? '' : 'bg-bg';
-    $radius = $radiusNone ? '' : 'ui-radius';
+    $radius = $radiusNone ? '' : 'rounded-ui';
     $border_class = $noBorder ? 'border-transparent' : 'border border-border-input';
-    $baseClasses = "ui-form-base ui-form-input ui-form-select shadow {$radius} {$border_class} text-fg";
+    $baseClasses = "ui-form-base ui-form-input ui-form-select {$radius} {$border_class} text-fg";
     $sizeClasses = $sizes[$size] ?? $sizes['md'];
+    $indicatorClass = !$noIndicator ? 'ui-form-select-indicator' : '';
 
     $id = $attributes->get('id') ?? $attributes->get('name', uniqid('input-'));
 
-    $final_class = $unStylled ? '' : "{$baseClasses} {$bg_class} {$sizeClasses}";
-    $attributes = $attributes->class([$final_class])->merge([
+    $final_class = $unStyled ? '' : "{$baseClasses} {$bg_class} {$sizeClasses} {$indicatorClass}";
+    $attributes = $attributes->class([$final_class, $indicatorClass])->merge([
         'disabled' => $disabled,
         'readonly' => $readonly,
         'id' => $id,

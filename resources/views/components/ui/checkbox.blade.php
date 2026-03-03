@@ -16,7 +16,7 @@
     ];
 
     $baseClasses =
-        'ui-checkbox-radio-base ui-form-checkbox bg-(--checkbox-bg) mt-0.5 peer text-primary border border-border-input shadow-sm rounded-(--checkbox-radius)';
+        'ui-checkbox-radio-base ui-form-checkbox bg-(--checkbox-bg) mt-0.5 peer text-(--checkbox-checked-color) border border-border-input rounded-(--checkbox-radius)';
     $sizeClasses = $sizes[$size] ?? $sizes['sm'];
     $stateClasses = $disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer';
 

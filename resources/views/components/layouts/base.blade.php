@@ -30,7 +30,7 @@
         })();
     </script>
     @livewireStyles
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/site-font.css', 'resources/css/app.css'])
     {{ $head ?? '' }}
 </head>
 

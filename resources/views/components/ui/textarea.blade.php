@@ -23,7 +23,7 @@
     $resize_class = $resizeNone ? 'resize-none' : '';
 
     $border_class = $noBorder ? 'border-transparent' : 'border border-border-input bg-bg';
-    $baseClasses = "ui-form-base ui-form-input ui-radius {$border_class} {$resize_class} text-fg min-h-20 shadow ";
+    $baseClasses = "ui-form-base ui-form-input rounded-ui {$border_class} {$resize_class} text-fg min-h-20 ";
     $sizeClasses = $sizes[$size] ?? $sizes['md'];
 
     $id = $attributes->get('id') ?? $attributes->get('name', uniqid('input-'));

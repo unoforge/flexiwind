@@ -1,7 +1,6 @@
 <x-ui.modal modalId="search-modal">
     <x-ui.modal.content x-data="searchDocs" :closable="false" no-gutter size="md"
-        class="animated-modal-content h-124 p-0.5" data-enter-animation="fadeIn .4s linear"
-        data-exit-animation="fadeOut .1s linear">
+        class="h-124 p-0.5" >
         <x-ui.modal.header padding-none class="relative w-full">
             <x-ui.input @input="search" data-input-search unStyled
                 class="w-full ps-9 text-fg focus:outline-none border-0 ui-form-input-lg" placeholder="Search components, docs..."

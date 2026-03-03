@@ -4,8 +4,8 @@
 <tr
     {{ $attributes->class([
         'text-sm',
-        'hover:bg-bg-muted' => $hoverable,
-        'odd:bg-bg even:bg-bg-muted/70' => $stripped,
+        'hover:bg-bg-muted/60 transition-colors ease-linear' => $hoverable,
+        'odd:bg-bg even:bg-bg-muted/60' => $stripped,
         'divide-y divide-border-strong/60' => !$noDivider,
         $class
     ]) }}>
