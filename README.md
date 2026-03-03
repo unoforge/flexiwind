@@ -2,22 +2,66 @@
 
 # Flexiwind
 
-Beautifully crafted, accessible UI components for Laravel. Built with Tailwind CSS v4. Supports both Blade and Livewire. Shadcn-like and open source.
+Flexiwind is a Laravel-first UI component system built with Blade, Livewire, and Tailwind CSS v4.
+It focuses on semantic theming, reusable patterns, and practical integration into real app codebases.
 
-## Features
+## Highlights
 
-- **Beautifully crafted components**
-- **Accessible by default**
-- **Tailwind CSS v4**
-- **Blade and Livewire support**
-- **Shadcn-like ergonomics**
-- **Open source**
+- Blade + Livewire component workflows
+- Tailwind CSS v4 token-driven styling
+- Built-in theme architecture (colors, utilities, buttons)
+- Accessible interaction patterns across core components
+- Documentation playground for implementation guidance
 
-## Status
+## Requirements
 
-This project is actively developed. Documentation and component examples will be added here.
+- PHP `^8.2`
+- Laravel `^12`
+- Node.js + npm
+
+## Quick Start
+
+```bash
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+composer dev
+```
+
+App routes:
+- Home: `/`
+- Docs: `/docs`
+- Components: `/components`
+
+## Build and Test
+
+```bash
+npm run build
+```
+
+## Documentation
+
+Core documentation lives in:
+- `resources/views/content/docs`
+- `resources/views/content/components`
+
+Sidebar navigation metadata:
+- `config/sidebar.php`
 
 ## Contributing
 
-Issues and pull requests are welcome. Please open an issue to discuss any major changes first.
+Please read:
+- `CONTRIBUTING.md`
+- `CODE_OF_CONDUCT.md`
+- `SECURITY.md`
 
+## License
+
+MIT - see `LICENSE`.
+
+## Buy Me a Coffee
+
+Support the project:
+[Buy me a coffee](https://johnkat-mj.mychariow.shop/prd_jue7tw)

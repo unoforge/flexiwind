@@ -1,0 +1,235 @@
+{
+    "components": [
+        {
+            "version": "0.0.0",
+            "name": "auth-split",
+            "title": "Auth Split",
+            "description": "A reusable auth split component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "resources/views/components/ui/auth-split.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/ui/auth-split.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "login01",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/login01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "card"
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "login02",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/login02.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "card"
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "login03",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/login03.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input"
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "signup01",
+            "title": "Signup",
+            "description": "A full auth signup page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/signup01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/signup.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "card"
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "otp01",
+            "title": "Otp ",
+            "description": "A full auth OTP page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/otp01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/otp.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input"
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "sidebar-wrapper",
+            "title": "Sidebar Wrapper",
+            "description": "A full sidebar wrapper layout.",
+            "files": [
+                {
+                    "path": "resources/views/components/ui/sidebar-wrapper.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/ui/sidebar-wrapper.blade.php"
+                },
+                {
+                    "path": "resources/js/sidebar-plugin.js",
+                    "type": "registry:ui",
+                    "target": "resources/js/sidebar-plugin.js"
+                }
+            ],
+            "dependencies":{
+                "node":[
+                    "@flexilla/utilities"
+                ]
+            }
+        },
+        {
+            "version": "0.0.0",
+            "name": "sidebar01",
+            "title": "Sidebar 01",
+            "description": "A full sidebar layout.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/sidebar/01/sidebar-item.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-item.blade.php"
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/sidebar.blade.php",
+                    "replace": {
+                        "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item"
+                    }
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/wrapper.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "sidebar-wrapper"
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "header01",
+            "title": "Header 01",
+            "description": "Header navbar for dashboard layout",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/header/01/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "header02",
+            "title": "Header 02",
+            "description": "Header navbar for dashboard layout",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/header/02/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "kpi01",
+            "title": "KPI 01",
+            "description": "A full KPI layout.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/dash-card/kpi01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/dash-card/kpi01.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "card"
+            ]
+        },
+        {
+            "version": "0.0.0",
+            "name": "activity01",
+            "title": "Activity 01",
+            "description": "A full Activity layout.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/dash-card/activity01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/dash-card/activity01.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "card"
+            ]
+        }
+    ]
+}
