@@ -3,43 +3,43 @@
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 
-new 
-#[Layout('layouts.view-block')] 
+new #[Layout('layouts.view-block')] 
 class extends Component {
+    public $category;
     public $blockName;
 
     public $blockGroup;
 
     public $allBlocks;
 
-    public function mount($blockName)
+    public function mount($blockCategory, $blockName)
     {
         $this->blockName = $blockName;
+        $this->category = $blockCategory;
 
         // Get all blocks from config
         $blocks = config('blocks');
-        $this->allBlocks = $blocks;
+        $this->allBlocks = $blocks[$blockCategory];
 
         // Check if the block exists
-        if (!isset($blocks[$blockName])) {
+        if (!isset($blocks[$blockCategory][$blockName])) {
             $this->blockGroup = [];
         } else {
             // Get the specific block data
-            $this->blockGroup = $blocks[$blockName];
+            $this->blockGroup = $blocks[$blockCategory][$blockName];
         }
     }
 };
 ?>
 
-<main class="w-full overflow-hidden">
-    <x-blocks.blocks-nav :current="$blockName" :all-blocks="$allBlocks" />
+<main class="w-full ">
+    <x-blocks.blocks-nav :category="$category" :all-blocks="$allBlocks" />
     @if (isset($blockGroup) && isset($blockGroup['blocks']) && count($blockGroup['blocks']) > 0)
         <x-blocks.block-page-header :title="$blockGroup['title'] ?? 'Block Group'" :description="$blockGroup['description'] ?? 'Block Group Description'" />
-        <section class="mt-10 space-y-12 pb-16 w-full">
+        <section class="mt-10 space-y-12 pb-16 w-full overflow-hidden">
             @foreach ($blockGroup['blocks'] as $codeKey => $block)
-                <livewire:v-ui.single-block
-                    wire:key="block-{{ $blockName }}-{{ $codeKey }}-{{ $loop->index }}" :key-ui="$blockName . '-' . $codeKey . '-' . $loop->index"
-                    :title="$block['name'] ?? ucfirst($codeKey)" :preview="$block['preview'] ?? '#'" :code="$block" />
+                <livewire:v-ui.single-block wire:key="block-{{ $blockName }}-{{ $codeKey }}-{{ $loop->index }}"
+                    :key-ui="$blockName . '-' . $codeKey . '-' . $loop->index" :title="$block['name'] ?? ucfirst($codeKey)" :preview="$block['preview'] ?? '#'" :code="$block" />
             @endforeach
         </section>
     @else
@@ -47,7 +47,7 @@ class extends Component {
             <div
                 class="mt-10 w-full bg-bg-surface border border-border-card/60 p-5 sm:p-10 lg:py-16 rounded-global flex flex-col text-center items-center">
                 <h2 class="text-fg-title font-semibold text-3xl">
-                    No Block found for <span class="text-primary">{{ $blockGroup['title']?? $blockName }}</span>
+                    No Block found for <span class="text-primary">{{ $blockGroup['title'] ?? $blockName }}</span>
                 </h2>
                 <p class="mx-auto max-w-lg text-fg mt-4">
                     We're working on this, we'll release it soon
