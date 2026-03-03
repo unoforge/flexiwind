@@ -1,4 +1,11 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
+    <x-md.h2>When to Use</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use alerts for status and feedback messages users should notice immediately.</x-md.li>
+        <x-md.li>Choose intent and variant based on message importance and urgency.</x-md.li>
+        <x-md.li>Keep alert copy concise and action-oriented.</x-md.li>
+    </x-md.ul>
+
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.alert.default" />
 
@@ -78,4 +85,28 @@
             </x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
+
+    <x-md.h2>API</x-md.h2>
+    <x-md.paragraph>
+        The full prop API is listed in the <strong>References</strong> table above.
+    </x-md.paragraph>
+
+    <x-md.h2>Accessibility</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use meaningful text and avoid color-only status communication.</x-md.li>
+        <x-md.li>Keep alerts readable with strong contrast and clear hierarchy.</x-md.li>
+        <x-md.li>For dynamic updates, ensure message context is understandable when announced.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Integration Tips</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Map common backend status states to consistent intents across the app.</x-md.li>
+        <x-md.li>Place alerts near affected UI sections for immediate clarity.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Alternatives</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use callout for inline educational messaging within content sections.</x-md.li>
+        <x-md.li>Use toast/notification systems for transient background events.</x-md.li>
+    </x-md.ul>
 </x-layouts.doc-page-wrapper>

@@ -1,19 +1,26 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
+    <x-md.h2>When to Use</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use OTP inputs for verification codes, 2FA, and short secure tokens.</x-md.li>
+        <x-md.li>Keep code length explicit and match backend validation rules.</x-md.li>
+        <x-md.li>Use clear expiry/resend messaging near the input.</x-md.li>
+    </x-md.ul>
+
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.otp.demo" no-in-tabs />
 
     <x-md.h2>Installation</x-md.h2>
     <x-docs.steps>
         <x-docs.step>
-            <x-md.h3>Add the component</x-md.h3>
+            <x-md.h3>Install the component</x-md.h3>
             <livewire:base.terminal code="flexi-cli add otp" />
         </x-docs.step>
         <x-docs.step>
             <x-md.h3>Install Otp Plugin</x-md.h3>
             <x-docs.callout intent="gray" type="note">
-                This component require JS. By default we're using our own Interactive Component Library
+                This component requires JS. By default we're using our own Interactive Component Library
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. Install this only if you
-                didn't accept dependencies installation during component addition.
+                did not accept dependency installation when adding the component.
             </x-docs.callout>
             <x-md.ol>
                 <x-md.li><strong>With Alpine</strong></x-md.li>
@@ -191,7 +198,13 @@
             Documentation</x-docs.link>.
     </x-md.paragraph>
 
-    <x-md.h3>Accessibility</x-md.h3>
+    <x-md.h2>API</x-md.h2>
+    <x-md.paragraph>
+        The complete component and input APIs are documented in the <strong>References</strong> section above.
+    </x-md.paragraph>
+
+    <x-md.h2>Accessibility</x-md.h2>
+    <x-md.h3>Accessibility Notes</x-md.h3>
     <x-md.paragraph>
         The OTP component is built with accessibility in mind:
     </x-md.paragraph>
@@ -200,5 +213,17 @@
         <x-md.li>Keyboard navigation support (Tab, Shift+Tab, Arrow keys)</x-md.li>
         <x-md.li>Auto-focus management between fields</x-md.li>
         <x-md.li>Paste support for easier code entry</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Integration Tips</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Auto-submit only when backend latency and error feedback are reliable.</x-md.li>
+        <x-md.li>Disable resend actions briefly to prevent request abuse.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Alternatives</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use a single input for less strict verification UX when split fields are unnecessary.</x-md.li>
+        <x-md.li>Use passkey/magic-link flows when OTP friction should be reduced.</x-md.li>
     </x-md.ul>
 </x-layouts.doc-page-wrapper>

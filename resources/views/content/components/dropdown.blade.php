@@ -1,23 +1,30 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
 
+    <x-md.h2>When to Use</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use dropdowns for compact action lists and contextual menu options.</x-md.li>
+        <x-md.li>Keep items concise and grouped by user intent.</x-md.li>
+        <x-md.li>Avoid placing critical long-form flows inside dropdown menus.</x-md.li>
+    </x-md.ul>
+
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.dropdown.demo" />
 
 
     <x-md.h2>Installation</x-md.h2>
-    <x-md.paragraph>Add the component</x-md.paragraph>
+    <x-md.paragraph>Install the component</x-md.paragraph>
 
     <x-docs.steps>
         <x-docs.step>
-            <x-md.h3>Add the component</x-md.h3>
+            <x-md.h3>Install the component</x-md.h3>
             <livewire:base.terminal code="flexi-cli add dropdown" />
         </x-docs.step>
         <x-docs.step>
-            <x-md.h3>Install Dropdown</x-md.h3>
+            <x-md.h3>Install dependencies</x-md.h3>
             <x-docs.callout intent="gray" type="note">
-                This component require JS. By default we're using our own Interactive Component Library
+                This component requires JS. By default we're using our own Interactive Component Library
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. Install this only if you
-                didn't accept dependencies installation during component addition.
+                did not accept dependency installation when adding the component.
             </x-docs.callout>
             <x-md.ol>
                 <x-md.li><strong>With Alpine</strong></x-md.li>
@@ -212,4 +219,27 @@
             href="https://flexilla-docs.vercel.app/docs/components/dropdown">Flexilla Dropdown</x-docs.link>
         documentation.
     </x-md.paragraph>
+    <x-md.h2>API</x-md.h2>
+    <x-md.paragraph>
+        The API is documented in the <strong>References</strong> section above, including core props and subcomponents.
+    </x-md.paragraph>
+
+    <x-md.h2>Accessibility</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Ensure every menu item has clear text and predictable action outcome.</x-md.li>
+        <x-md.li>Maintain visible keyboard focus styles for menu navigation.</x-md.li>
+        <x-md.li>Avoid hover-only access to critical menu actions.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Integration Tips</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use separators and headers to reduce cognitive load in long action lists.</x-md.li>
+        <x-md.li>Keep destructive actions visually distinct and isolated from safe actions.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Alternatives</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use popover when content includes richer UI than a simple action list.</x-md.li>
+        <x-md.li>Use buttons or inline links when only one or two actions are needed.</x-md.li>
+    </x-md.ul>
 </x-layouts.doc-page-wrapper>

@@ -15,7 +15,7 @@
         [
             'href' => 'https://alpinejs.dev',
             'title' => 'Alpine.js',
-            'description' => 'Minimal JS behavior framework. (Optionnal when not using Livewire)',
+            'description' => 'Minimal JS behavior framework. (Optional when not using Livewire)',
             'icon' => 'simple-icons--alpinedotjs',
         ],
     ];
@@ -40,23 +40,13 @@
             <x-docs.steps>
                 <x-docs.step>
                     <x-md.h3>Install flexi-cli</x-md.h3>
-                    <x-md.paragraph>Install the flexi-cli tool globally using composer:</x-md.paragraph>
-                    <livewire:base.terminal code="composer global require unoforge/flexi-cli" />
-                    <x-md.paragraph>If you don't want to install the cli globally, you can install directly as a dev
-                        dependency</x-md.paragraph>
-                    <livewire:base.terminal code="composer require --dev unoforge/flexi-cli" />
+                    <x-md.paragraph>Make sure to have a laravel project setup</x-md.paragraph>
+                    <livewire:base.terminal code="composer require --dev unoforge/flexiwind-cli" />
                 </x-docs.step>
 
                 <x-docs.step>
-                    <x-md.h3>Create a new Laravel Project</x-md.h3>
-                    <x-md.paragraph>Run the following command to initialize a new Laravel project:</x-md.paragraph>
-                    <livewire:base.terminal code="flexi-cli init --new-laravel --tailwindcss" />
-                    <x-md.paragraph>Follow the prompts to complete the setup. This will create a new Laravel project
-                        with all necessary dependencies.</x-md.paragraph>
-                    <x-md.paragraph>After the setup is complete, navigate to the project directory:</x-md.paragraph>
-                    <livewire:base.terminal code="cd project-name" />
-                    <x-md.paragraph>If you already have a project you can just run this:</x-md.paragraph>
-                    <livewire:base.terminal code="flexi-cli init --tailwindcss" />
+                    <x-md.h3>Initialize Flexiwind</x-md.h3>
+                    <livewire:base.terminal code="php artisan flexi:init" />
                 </x-docs.step>
 
                 <x-docs.step>
@@ -106,7 +96,6 @@
                 <x-docs.step>
                     <x-md.h3>1. Create a new Laravel project</x-md.h3>
                     <x-md.paragraph>Create a new Laravel project using laravel Installer:</x-md.paragraph>
-             
                         <livewire:base.terminal code="laravel new project-name -n" />
                         <x-md.paragraph>After installation navigate to project directory:</x-md.paragraph>
                         <livewire:base.terminal code="cd project-name" />
@@ -115,15 +104,15 @@
                 <x-docs.step>
                     <x-md.h3>2. Install flexi-cli</x-md.h3>
                     <x-md.paragraph>Install the CLI package:</x-md.paragraph>
-                    <livewire:base.terminal code="composer require unoforge/flexi-cli --dev" />
+                    <livewire:base.terminal code="composer require unoforge/flexiwind-cli --dev" />
                 </x-docs.step>
 
                 <x-docs.step>
                     <x-md.h3>3. Initialize the CLI</x-md.h3>
                     <x-md.paragraph>Run the initialization command:</x-md.paragraph>
-                    <livewire:base.terminal code="php flexi-cli init --tailwind" />
+                    <livewire:base.terminal code="php artisan flexi:init" />
                     <x-md.paragraph>Follow the prompts to complete the setup. Know more about <x-docs.link
-                            href="https://github.com/unoforge/flexi-cli">flexi-cli</x-docs.link></x-md.paragraph>
+                            href="https://github.com/unoforge/flexiwind-cli">flexiwind-cli</x-docs.link></x-md.paragraph>
                 </x-docs.step>
             </x-docs.steps>
         </x-docs.tab-panel>
@@ -140,5 +129,5 @@
     <x-md.paragraph>
         You can now start adding and using our components. Just use the CLI to add components:
     </x-md.paragraph>
-    <livewire:base.terminal code="flexi-cli add button" />
+    <livewire:base.terminal code="php artisan flexi:add button input" />
 </x-layouts.doc-page-wrapper>

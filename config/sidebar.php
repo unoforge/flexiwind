@@ -101,14 +101,14 @@ return [
             [
                 'title' => 'Checkbox',
                 'path' => '/components/checkbox',
-                'description' => 'Standard checkbox input for toggling multiple independent options.',
+                'description' => 'Form control for independent or multi-select choices with optional inline labels and sizing.',
                 'keywords' => 'checkbox, check, form, multi-select',
                 'seoDescription' => 'Implement multiple selection controls with Flexiwind\'s checkbox component.',
             ],
             [
                 'title' => 'Radio',
                 'path' => '/components/radio',
-                'description' => 'Input group for choosing a single option from a predefined list.',
+                'description' => 'Single-choice form control for mutually exclusive options in a named group.',
                 'keywords' => 'radio, selection, form, options',
                 'seoDescription' => 'Create single-selection controls with Flexiwind\'s radio component.',
             ],
@@ -148,7 +148,7 @@ return [
             [
                 'title' => 'Divider',
                 'path' => '/components/divider',
-                'description' => 'Visual separator for grouping or distinguishing content blocks.',
+                'description' => 'Horizontal separator with optional labeled content and alignment controls.',
                 'keywords' => 'divider, separator, hr, line, spacing',
                 'seoDescription' => 'Add visual separation between content with Flexiwind\'s divider component.',
             ],
@@ -181,7 +181,7 @@ return [
             [
                 'title' => 'Breadcrumbs',
                 'path' => '/components/breadcrumbs',
-                'description' => 'Path-based navigation to help users identify their current location.',
+                'description' => 'Hierarchical navigation trail showing current location and quick parent navigation.',
                 'keywords' => 'breadcrumbs, path, navigation, hierarchy',
                 'seoDescription' => 'Implement navigation breadcrumbs to improve user orientation.',
             ],
@@ -202,7 +202,7 @@ return [
             [
                 'title' => 'Link',
                 'path' => '/components/link',
-                'description' => 'Anchor component with consistent typography and hover states.',
+                'description' => 'Consistent link primitive supporting inline, underlined, and button-like action styles.',
                 'keywords' => 'link, anchor, navigation, href',
                 'seoDescription' => 'Create styled links and navigation elements with Flexiwind\'s link component.',
             ],
@@ -249,21 +249,21 @@ return [
             [
                 'title' => 'Progress',
                 'path' => '/components/progress',
-                'description' => 'Linear indicator for showing completion percentage or loading.',
+                'description' => 'Task-completion indicator with configurable thickness for determinate loading states.',
                 'keywords' => 'progress bar, loading, status, percent',
                 'seoDescription' => 'Show progress and loading states with Flexiwind\'s progress component.',
             ],
             [
                 'title' => 'Meter',
                 'path' => '/components/meter',
-                'description' => 'Graphical representation of a scalar measurement within a known range.',
+                'description' => 'Range-based value indicator for metrics like usage, score, or capacity.',
                 'keywords' => 'meter, gauge, measurement, indicator',
                 'seoDescription' => 'Display measurements and progress with Flexiwind\'s meter component.',
             ],
             [
                 'title' => 'Skeleton',
                 'path' => '/components/skeleton',
-                'description' => 'Animated placeholder used while content is loading.',
+                'description' => 'Lightweight loading placeholder to preserve layout and reduce perceived wait.',
                 'keywords' => 'skeleton, loader, ghost, placeholder',
                 'seoDescription' => 'Add loading state placeholders with Flexiwind\'s skeleton component.',
             ],
@@ -282,7 +282,7 @@ return [
             [
                 'title' => 'Alert Dialog',
                 'path' => '/components/alert-dialog',
-                'description' => 'Modal variation used for confirmations and critical warnings.',
+                'description' => 'Confirmation dialog pattern for destructive or high-impact actions using modal behavior.',
                 'keywords' => 'confirmation, alert dialog, warning modal',
                 'seoDescription' => 'Create interactive alert dialogs using Flexiwind\'s modal dialog component.',
             ],
@@ -324,7 +324,7 @@ return [
             [
                 'title' => 'Kbd',
                 'path' => '/components/kbd',
-                'description' => 'Visual representation of keyboard keys for shortcuts.',
+                'description' => 'Shortcut keycap component for displaying keyboard commands and key combinations.',
                 'keywords' => 'keyboard, kbd, shortcut, command',
                 'seoDescription' => 'Display keyboard shortcuts and commands with Flexiwind\'s kbd component.',
             ],

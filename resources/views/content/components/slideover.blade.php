@@ -1,5 +1,12 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
 
+    <x-md.h2>When to Use</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use slideover for secondary workflows while keeping page context visible.</x-md.li>
+        <x-md.li>Ideal for filters, settings, and side-detail editing flows.</x-md.li>
+        <x-md.li>Keep actions focused and avoid full-page replacement behavior.</x-md.li>
+    </x-md.ul>
+
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.slideover.demo" />
 
@@ -9,13 +16,13 @@
 
     <x-docs.steps>
         <x-docs.step>
-            <x-md.h3>Add the component</x-md.h3>
+            <x-md.h3>Install the component</x-md.h3>
             <livewire:base.terminal code="flexi-cli add slideover" />
         </x-docs.step>
         <x-docs.step>
-            <x-md.h3>Install Accordion</x-md.h3>
+            <x-md.h3>Install dependencies</x-md.h3>
             <x-docs.callout intent="gray" type="note">
-                This component require JS. By default we're using our own Interactive Component Library
+                This component requires JS. By default we're using our own Interactive Component Library
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. You can install the
                 Alpine Plugin if using Alpine or the vanilla JS version as you need
             </x-docs.callout>
@@ -274,5 +281,32 @@
             href="https://flexilla-docs.vercel.app/components/tabs">Flexilla</x-docs.link> documentation.
     </x-md.paragraph>
 
+    <x-md.h2>API</x-md.h2>
+    <x-md.paragraph>
+        The complete API is documented in the <strong>References</strong> section above, including component props and events.
+    </x-md.paragraph>
 
+    <x-md.h2>Examples</x-md.h2>
+    <x-md.paragraph>
+        Use the demo and reference patterns above to compose side panels with header/body/footer actions.
+    </x-md.paragraph>
+
+    <x-md.h2>Accessibility</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Ensure focus moves into the panel on open and returns to trigger on close.</x-md.li>
+        <x-md.li>Provide clear title/description for panel context.</x-md.li>
+        <x-md.li>Keep close actions discoverable via keyboard and pointer.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Integration Tips</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use for non-blocking side tasks that should not interrupt main page flow.</x-md.li>
+        <x-md.li>Persist pending edits carefully when users close/reopen the panel.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Alternatives</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use modal for high-focus confirmations and blocking interactions.</x-md.li>
+        <x-md.li>Use popover for lightweight contextual controls.</x-md.li>
+    </x-md.ul>
 </x-layouts.doc-page-wrapper>

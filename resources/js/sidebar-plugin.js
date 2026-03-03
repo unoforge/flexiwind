@@ -1,7 +1,8 @@
-import { actionToggler } from "@flexilla/utilities";
+import { actionToggler, $ } from "@flexilla/utilities";
 
 document.addEventListener("alpine:init", () => {
-    Alpine.directive("sidebar", (el, {}, { cleanup }) => {
+    Alpine.directive("sidebar", (el, { }, { cleanup }) => {
+        const overlayEl = $("[data-sidebar-overlay]")
         const toggleSidebar = actionToggler({
             trigger: "[data-toggle-sidebar]",
             targets: [
@@ -12,26 +13,18 @@ document.addEventListener("alpine:init", () => {
                         to: { "data-state": "open" },
                     },
                 },
-                {
-                    element: "[data-sidebar-overlay]",
-                    attributes: {
-                        initial: {
-                            "aria-hidden": "true",
-                            "data-state": "close",
-                        },
-                        to: { "aria-hidden": "false", "data-state": "open" },
-                    },
-                },
             ],
             onToggle: ({ isExpanded }) => {
                 document.body.classList[!isExpanded ? "add" : "remove"](
                     "overflow-y-auto"
                 );
+                overlayEl?.setAttribute("aria-hidden", !isExpanded)
+                overlayEl?.setAttribute("data-state", !isExpanded ? "close" : "open")
             },
         });
 
         const resizeSidebar = actionToggler({
-            trigger: "[ data-toggle-sidebar-size]",
+            trigger: "[data-toggle-sidebar-size]",
             targets: [
                 {
                     element: el,
@@ -42,9 +35,11 @@ document.addEventListener("alpine:init", () => {
                 },
             ],
         });
+        overlayEl?.addEventListener("click", toggleSidebar.toInitial)
         cleanup(() => {
             toggleSidebar.destroy();
             resizeSidebar.destroy();
+            overlayEl?.removeEventListener("click", toggleSidebar.toInitial)
         });
     });
 });

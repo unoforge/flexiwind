@@ -1,7 +1,3 @@
-@utility ui-radius {
-  @apply rounded-(--ui-radius);
-}
-
 @utility ui-soft {
   @apply bg-(--ui-soft-bg) text-(--ui-soft-text);
 }

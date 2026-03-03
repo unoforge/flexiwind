@@ -1,21 +1,27 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
+    <x-md.h2>When to Use</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use accordion for dense content where users only need one section at a time.</x-md.li>
+        <x-md.li>Ideal for FAQs, optional settings, and progressive disclosure patterns.</x-md.li>
+        <x-md.li>Keep trigger labels short and specific.</x-md.li>
+    </x-md.ul>
 
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.accordion.default" />
 
 
     <x-md.h2>Installation</x-md.h2>
-    <x-md.paragraph>Add the component</x-md.paragraph>
+    <x-md.paragraph>Install the component</x-md.paragraph>
 
     <x-docs.steps>
         <x-docs.step>
-            <x-md.h3>Add the component</x-md.h3>
+            <x-md.h3>Install the component</x-md.h3>
             <livewire:base.terminal code="flexi-cli add accordion" />
         </x-docs.step>
         <x-docs.step>
-            <x-md.h3>Add the </x-md.h3>
+            <x-md.h3>Install dependencies</x-md.h3>
             <x-docs.callout type="note">
-                This component require JS. By default we're using our own Interactive Component Library
+                This component requires JS. By default we're using our own Interactive Component Library
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>.
             </x-docs.callout>
             <x-md.ol>
@@ -191,5 +197,34 @@
             </x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
+
+    <x-md.h2>API</x-md.h2>
+    <x-md.paragraph>
+        The API is documented in the <strong>References</strong> tables above (composition, props, and item props).
+    </x-md.paragraph>
+
+    <x-md.h2>Examples</x-md.h2>
+    <x-md.paragraph>
+        Use the examples above to compare single-open, multi-open, and visual style variants.
+    </x-md.paragraph>
+
+    <x-md.h2>Accessibility</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Write trigger labels that clearly describe the content they reveal.</x-md.li>
+        <x-md.li>Keep keyboard navigation and focus styles visible for all accordion triggers.</x-md.li>
+        <x-md.li>Avoid placing mandatory information only inside collapsed panels.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Integration Tips</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use for FAQs, optional settings, and progressive disclosure in narrow layouts.</x-md.li>
+        <x-md.li>Open relevant sections by default when context is known from route or state.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>Alternatives</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Use tabs for frequent switching between peer sections.</x-md.li>
+        <x-md.li>Use plain stacked sections when content volume is small.</x-md.li>
+    </x-md.ul>
 
 </x-layouts.doc-page-wrapper>

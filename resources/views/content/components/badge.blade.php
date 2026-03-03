@@ -5,7 +5,35 @@
     <x-md.h2>Installation</x-md.h2>
     <livewire:base.terminal code="flexi-cli add badge" />
 
-    <x-md.h2>Variants</x-md.h2>
+    <x-md.h2>When to Use</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Show compact status, category, or count metadata next to UI elements.</x-md.li>
+        <x-md.li>Highlight small state signals inside cards, tables, and list items.</x-md.li>
+        <x-md.li>Use badges for short labels, not long descriptive messages.</x-md.li>
+    </x-md.ul>
+
+    <x-md.h2>API</x-md.h2>
+    <x-docs.table>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="variant" /> (solid|soft|subtle|outline|default)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Visual style of the badge.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="intent" /> (string)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Semantic color intent for the selected variant.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="size" /> (xs|sm|default|lg)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Controls badge size and text rhythm.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="radius" /> (string)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Rounding token applied through utility classes.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+    </x-docs.table>
+
+    <x-md.h2>Examples</x-md.h2>
+    <x-md.h3>Variants</x-md.h3>
     <x-md.h3>Solid</x-md.h3>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.badge.solid" />
     <x-md.h3>Outline</x-md.h3>
@@ -15,6 +43,12 @@
     <x-md.h3>Subtle</x-md.h3>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.badge.subtle" />
 
-    <x-md.h2>With icon</x-md.h2>
+    <x-md.h3>With icon</x-md.h3>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.badge.with-icon" />
+
+    <x-md.h2>Integration Tips</x-md.h2>
+    <x-md.ul>
+        <x-md.li>Map badge intents to a shared status dictionary across your domain models.</x-md.li>
+        <x-md.li>Use compact badges in tables and cards to improve scanability.</x-md.li>
+    </x-md.ul>
 </x-layouts.doc-page-wrapper>
