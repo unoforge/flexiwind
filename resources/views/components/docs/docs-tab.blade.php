@@ -17,7 +17,7 @@
                     <li role="presentation" class="flex">
                         <a data-tabs-trigger data-target="{{ $value }}" href="#{{ $value }}" role="tab"
                             aria-controls="{{ $value }}" aria-label="{{ $value }}"
-                            class="relative flex disabled:cursor-not-allowed disabled:opacity-80 fx-active:text-fg-title outline-none focus:outline-0 focus:outline-transparent focus-visible:outline focus-visible:outline-primary {{ $triggersClass !== '' ? $triggersClass : 'px-4 pt-1.5 pb-2.5' }}">
+                            class="relative text-nowrap flex disabled:cursor-not-allowed disabled:opacity-80 fx-active:text-fg-title outline-none focus:outline-0 focus:outline-transparent focus-visible:outline focus-visible:outline-primary {{ $triggersClass !== '' ? $triggersClass : 'px-4 pt-1.5 pb-2.5' }}">
                             {{ $value }}
                         </a>
                     </li>

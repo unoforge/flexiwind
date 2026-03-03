@@ -1,5 +1,5 @@
 @props([
-    'breadcrumbsMain' => ['href' => '/', 'text' => 'Docddds'],
+    'breadcrumbsMain' => ['href' => '/', 'text' => 'Docs'],
     'breadcrumbsWords' => [],
     'title',
     'subTitle' => null,

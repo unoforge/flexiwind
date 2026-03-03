@@ -2,8 +2,7 @@
     Join waitlist
 </x-ui.modal.trigger>
 <x-ui.modal modalId="waitlist-modal">
-    <x-ui.modal.content no-gutter size="sm" :closable="false" class="animated-modal-content p-0.5"
-        data-enter-animation="fadeIn .4s linear" data-exit-animation="fadeOut .1s linear">
+    <x-ui.modal.content no-gutter size="sm" :closable="false" class="p-0.5">
         <form class="size-full">
             <x-ui.modal.header padding-none class="relative w-full p-4 flex items-center gap-2">
                 <span class="ui-soft ui-soft-gray size-12 d-flex-place-center rounded-ui">
