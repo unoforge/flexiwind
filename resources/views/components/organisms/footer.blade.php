@@ -45,7 +45,7 @@
             'items' => [
                 [
                     'text' => 'About us',
-                    'href' => '#',
+                    'href' => 'https://unoforge.vercel.app',
                 ],
                 [
                     'text' => 'The club',
@@ -95,14 +95,14 @@
                         Built for speed. Designed for control.
                     </p>
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <x-ui.link href="#"
+                        <x-ui.link href="https://github.com/unoforge/flexiwind"
                             class="flex items-center px-2 h-6.5 rounded-ui ring ring-border-strong/70 text-sm text-fg-muted hover:text-fg-title hover:bg-bg-surface">
-                            <span aria-hidden="true" class="iconify ph--x-logo"></span>
+                            <span aria-hidden="true" class="iconify ph--github-logo"></span>
                             <span>
                                 Github
                             </span>
                         </x-ui.link>
-                        <x-ui.link href="#"
+                        <x-ui.link href="https://x.com/johnkat_Mj"
                             class="flex items-center px-2 h-6.5 rounded-ui ring ring-border-strong/70 text-sm text-fg-muted hover:text-fg-title hover:bg-bg-surface">
                             <span aria-hidden="true" class="iconify ph--x-logo"></span>
                             <span>

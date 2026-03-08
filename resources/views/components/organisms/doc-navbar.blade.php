@@ -16,7 +16,7 @@
         </div>
         <div class="sm:max-w-sm flex-1 mr-2 sm:mr-0 flex">
             <x-ui.modal.trigger modal-id="search-modal" size="none" variant="none" radius="none"
-                class="px-3 h-9 border border-border-input shadow-sm shadow-bg-muted/20 bg-bg-subtle/60 hover:bg-bg-muted/60 w-full flex justify-between items-center rounded-global">
+                class="px-3 h-9 border border-border-input shadow-sm shadow-bg-muted/20 bg-bg-subtle/60 hover:bg-bg-muted/60 w-full flex justify-between items-center rounded-ui">
                 <span class="mr-3 iconify ph--magnifying-glass text-sm text-fg-muted"></span>
                 <span class="min-[32rem]:flex-1 min-[32rem]:flex hidden text-fg-muted text-sm">Search...</span>
                 <span class="flex items-center text-sm text-fg-muted">

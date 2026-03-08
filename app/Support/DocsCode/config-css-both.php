@@ -53,6 +53,7 @@ return [
     --card-radius: var(--radius-lg);
     --checkbox-radius: var(--radius-sm);
     --checkbox-bg: var(--color-bg);
+    --checkbox-checked-color: var(--color-primary);
 
     --dropdown-item-outline: var(--color-primary);
     --dropdown-item-bg-hover: var(--color-gray-100);

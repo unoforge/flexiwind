@@ -254,6 +254,26 @@ BLADE,
 BLADE,
     ],
 
+    'sidebar-basic-implementation' => [
+        'lang' => 'blade',
+        'name' => 'sidebar-basic-implementation.blade.php',
+        'code' => <<<'BLADE'
+<!-- Basic sidebar implementation -->
+<x-ui.sidebar-wrapper class="fixed h-dvh w-72 bg-bg-surface border-r border-bg-muted transition-all -translate-x-full fx-open:translate-x-0 lg:translate-x-0 z-80">
+    <nav class="flex-1 p-4">
+        <ul class="space-y-2">
+            <li>
+                <a href="#" class="flex items-center gap-x-2.5 px-3 py-2 rounded-md hover:bg-bg-muted">
+                    <span class="iconify ph--house"></span>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</x-ui.sidebar-wrapper>
+BLADE,
+    ],
+
     'sidebar-with-resize' => [
         'lang' => 'blade',
         'name' => 'sidebar-with-resize.blade.php',

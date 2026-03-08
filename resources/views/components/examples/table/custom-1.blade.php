@@ -33,7 +33,7 @@
 
 <x-ui.table noDivider wrapper="rounded-lg border border-border-strong/70 p-1">
     <x-ui.table.columns header-bg-style="gray" class="*:first:rounded-l-md *:last:rounded-r-md">
-        <x-ui.table.column>
+        <x-ui.table.column class="[--column-px:0px] pl-3 size-6">
             <x-ui.checkbox />
         </x-ui.table.column>
         <x-ui.table.column>
@@ -47,15 +47,15 @@
     <x-ui.table.rows>
         @foreach ($users as $user)
             <x-ui.table.row>
-                <x-ui.table.cell class="w-7">
+                <x-ui.table.cell class="[--column-px:0px] pl-3 size-6">
                     <x-ui.checkbox />
                 </x-ui.table.cell>
                 <x-ui.table.cell>
                     <div class="flex items-center gap-2">
-                        <x-ui.avatar size="lg" src="{{ $user['avatar'] }}" alt="avatar for {{ $user['name'] }}"
+                        <x-ui.avatar size="sm" radius="ui" src="{{ $user['avatar'] }}" alt="avatar for {{ $user['name'] }}"
                             width="300" height="300" />
                         <div class="flex-1 flex flex-col">
-                            <span class="font-semibold text-fg-title">
+                            <span class="text-sm font-semibold text-fg-title">
                                 {{ $user['name'] }}
                             </span>
                             <span class="text-xs text-fg-muted mt-px">
@@ -65,10 +65,12 @@
                     </div>
                 </x-ui.table.cell>
                 <x-ui.table.cell class="font-medium">
-                    {{ $user['title'] }}
+                    <x-ui.badge size="sm" intent="neutral">
+                        {{ $user['title'] }}
+                    </x-ui.badge>
                 </x-ui.table.cell>
                 <x-ui.table.cell class="w-9">
-                    <x-ui.button size="sm" iconOnly variant="outline" intent="gray">
+                    <x-ui.button size="sm" iconOnly variant="soft">
                         <span aria-hidden="true" class="flex iconify ph--dots-three-vertical"></span>
                     </x-ui.button>
                 </x-ui.table.cell>

@@ -27,7 +27,7 @@
             </a>
         </div>
         <div x-data x-navbar id="mainNavbar"
-            class="flex lg:flex-1 lg:px-7
+            class="flex lg:flex-1 lg:px-4
         fixed w-full lg:w-auto left-0 top-16 lg:top-0 px-1 sm:px-2
         invisible fx-open:visible opacity-0 fx-open:opacity-100 lg:opacity-100 lg:visible scale-90 fx-open:scale-100 lg:scale-100 lg:relative ease-linear duration-200 transition-all lg:transition-none origin-top
         ">

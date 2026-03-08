@@ -26,7 +26,7 @@ return [
         'name'=>'theme-toggle.blade.php',
         'code'=><<<'HTML'
 <x-ui.button variant="ghost" size="sm" iconOnly radius="none" x-on:click="$store.theme.toggle()"
-    aria-label="toggle theme" class="rounded-global relative">
+    aria-label="toggle theme" class="relative">
     <span
         class="absolute top-1/2 -translate-1/2 left-1/2 ease-linear duration-200 iconify ph--sun invisible dark:visible"></span>
     <span
@@ -53,8 +53,10 @@ HTML
         'code' => <<<'HTML'
 <head>
     <!-- Other head content -->
-     <script>
-      !(function () { try {var e = "flexilla-theme", t = localStorage.getItem(e) || "system",c = window.matchMedia("(prefers-color-scheme: dark)").matches  ? "dark"  : "light",r = "system" === t ? c : t,a = document.documentElement;(a.classList.toggle("dark", "dark" === r), a.setAttribute("data-theme", r), (a.style.colorScheme = r));} catch (e) {}})();
+    <script>
+    !(function () {
+        try{const k="flexilla-theme",l="theme",s=localStorage.getItem(k)||localStorage.getItem(l)||"system",m=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",r=s==="system"?m:s,d=document.documentElement;d.classList.toggle("dark",r==="dark");d.setAttribute("data-theme",r);d.style.colorScheme=r}catch(_){}
+    })();
     </script>
 </head>
 HTML
@@ -63,14 +65,12 @@ HTML
         'lang' => 'javascript',
         'name' => 'JavaScript',
         'code' => <<<'JS'
-import { flexiTheme } from '@flexilla/utilities'
-
-const theme = flexiTheme()
-// init theme
-theme.initTheme()
-
-// set theme : dark, light, system
-theme.setTheme("dark")
+import { flexiTheme } from "@flexilla/utilities";
+const theme = flexiTheme({
+  storageKey: "flexilla-theme",
+  initialTheme: "system",
+});
+theme.initTheme();
 JS
     ],
     'theme-alpine' => [
@@ -81,91 +81,73 @@ import { disableTransitionsTemporarily } from "@flexilla/utilities";
 
 document.addEventListener("alpine:init", () => {
     Alpine.store("theme", {
+        preference: "system",
         isDark: false,
+
         init() {
-            const localTheme = localStorage.getItem("theme");
-            const systemPrefersDark = window.matchMedia(
-                "(prefers-color-scheme: dark)"
-            ).matches;
+            this.preference = localStorage.getItem("theme") || "system";
 
-            if (localTheme) {
-                this.isDark = localTheme === "dark";
-            } else {
-                this.isDark = systemPrefersDark;
-            }
-
-            this.updateTheme();
             window
                 .matchMedia("(prefers-color-scheme: dark)")
-                .addEventListener("change", (e) => {
-                    if (!localStorage.getItem("theme")) {
-                        this.isDark = e.matches;
-                        this.updateTheme();
+                .addEventListener("change", () => {
+                    if (this.preference === "system") {
+                        this.updateState();
                     }
                 });
 
             document.addEventListener("livewire:navigated", () => {
-                disableTransitionsTemporarily(() => {
-                    document.documentElement.classList.toggle(
-                        "dark",
-                        this.isDark
-                    );
-                });
+                this.applyToDom();
             });
-        },
 
+            this.updateState();
+        },
+        setTheme(mode) {
+            this.preference = mode;
+
+            if (mode === "system") {
+                localStorage.removeItem("theme");
+            } else {
+                localStorage.setItem("theme", mode);
+            }
+
+            this.updateState();
+        },
         toggle() {
-            this.isDark = !this.isDark;
-            this.updateTheme();
+            const nextMode = this.isDark ? "light" : "dark";
+            this.setTheme(nextMode);
         },
+        updateState() {
+            const systemPrefersDark = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            ).matches;
 
-        setToDark() {
-            this.isDark = true;
-            this.updateTheme();
+            if (this.preference === "system") {
+                this.isDark = systemPrefersDark;
+            } else {
+                this.isDark = this.preference === "dark";
+            }
+
+            this.applyToDom();
         },
-
-        setToLight() {
-            this.isDark = false;
-            this.updateTheme();
-        },
-
-        updateTheme() {
+        applyToDom() {
             disableTransitionsTemporarily(() => {
-                document.documentElement.classList.toggle("dark", this.isDark);
-                localStorage.setItem("theme", this.isDark ? "dark" : "light");
-                window.dispatchEvent(new CustomEvent("theme-changed", {
-                    detail: { theme: this.isDark ? "dark" : "light", isDark: this.isDark }
-                }));
+                this._syncDom();
             });
+        },
+        _syncDom() {
+            document.documentElement.classList.toggle("dark", this.isDark);
+            window.dispatchEvent(
+                new CustomEvent("theme-changed", {
+                    detail: {
+                        preference: this.preference,
+                        isDark: this.isDark,
+                    },
+                }),
+            );
         },
     });
 });
 
-document.addEventListener("livewire:navigated", () => {
-    const theme =
-        localStorage.getItem("theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light");
-    document.documentElement.classList.toggle("dark", theme === "dark");
-});
-
-window.toggleTheme = function () {
-    const currentTheme =
-        localStorage.getItem("theme") ||
-        (document.documentElement.classList.contains("dark")
-            ? "dark"
-            : "light");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-    window.dispatchEvent(
-        new CustomEvent("theme-changed", {
-            detail: { theme: newTheme },
-        })
-    );
-};
 JS
     ],
 ];

@@ -42,7 +42,7 @@
             Email
         </x-ui.table.column>
     </x-ui.table.columns>
-    <x-ui.table.rows striped>
+    <x-ui.table.rows stripped>
         @foreach ($users as $user)
             <x-ui.table.row>
                 <x-ui.table.cell white-space="nowrap">

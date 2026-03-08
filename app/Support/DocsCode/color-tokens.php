@@ -8,11 +8,12 @@ return [
     'code' => <<<'CSS'
 @theme inline {
     --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --radius-ui: var(--radius-lg);
-    --radius-card: var(--radius-lg);
-    --radius-checkbox: var(--radius-md); 
+    --radius-ui: var(--ui-radius);
+    --radius-card: var(--card-radius);
+    --radius-checkbox: var(--checkbox-radius); 
+    
 
-    --color-white: var(--white);
+    --color-white: var(--color-white);
     --color-dark: var(--color-gray-950);
 
     --color-primary: var(--primary);

@@ -23,14 +23,14 @@
         ],
         [
             'text' => 'About',
-            'href' => 'https#',
+            'href' => 'https://unoforge.vercel.app',
         ],
     ];
 
 @endphp
 
 <ul
-    class="w-full flex flex-col lg:flex-row lg:items-center gap-0.5 text-fg-muted bg-bg lg:bg-transparent rounded-global p-2 lg:p-0 border border-border dark:border-border-strong lg:border-none">
+    class="w-full flex flex-col lg:flex-row lg:items-center gap-0.5 text-fg-muted bg-bg lg:bg-transparent rounded-ui p-2 lg:p-0 border border-border dark:border-border-strong lg:border-none">
     @foreach ($items as $item)
         <li class="relative group {{ isset($item['onlyMobile']) && $item['onlyMobile'] ? 'md:hidden' : '' }}">
             <x-atoms.ui-link href="{{ $item['href'] }}"

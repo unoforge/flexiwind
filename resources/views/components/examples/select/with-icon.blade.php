@@ -1,4 +1,4 @@
-<form action="#" class="space-y-4 w-full text-fg">
+<form action="#" class="space-y-4 max-w-sm w-full">
     <x-ui.input.group>
         <x-ui.select unStyled name="select-country_label_1" id="select-country_label_1" class="ps-9 px-3">
             <option value="DRC">DR Congo</option>

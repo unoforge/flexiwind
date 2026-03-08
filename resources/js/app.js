@@ -3,69 +3,73 @@ import copyToClipboardComponent from "./copyToClipboard";
 import { docSearch } from "../data/search-db";
 import { disableTransitionsTemporarily } from "./utils";
 
-
-
-
 Alpine.data("copyToClipboard", copyToClipboardComponent);
 
 document.addEventListener("alpine:init", () => {
     Alpine.store("theme", {
+        preference: "system",
         isDark: false,
+
         init() {
-            const localTheme = localStorage.getItem("theme");
-            const systemPrefersDark = window.matchMedia(
-                "(prefers-color-scheme: dark)"
-            ).matches;
+            this.preference = localStorage.getItem("theme") || "system";
 
-            if (localTheme) {
-                this.isDark = localTheme === "dark";
-            } else {
-                this.isDark = systemPrefersDark;
-            }
-
-            this.updateTheme();
             window
                 .matchMedia("(prefers-color-scheme: dark)")
-                .addEventListener("change", (e) => {
-                    if (!localStorage.getItem("theme")) {
-                        this.isDark = e.matches;
-                        this.updateTheme();
+                .addEventListener("change", () => {
+                    if (this.preference === "system") {
+                        this.updateState();
                     }
                 });
 
             document.addEventListener("livewire:navigated", () => {
-                disableTransitionsTemporarily(() => {
-                    document.documentElement.classList.toggle(
-                        "dark",
-                        this.isDark
-                    );
-                });
+                this.applyToDom();
             });
-        },
 
+            this.updateState();
+        },
+        setTheme(mode) {
+            this.preference = mode;
+
+            if (mode === "system") {
+                localStorage.removeItem("theme");
+            } else {
+                localStorage.setItem("theme", mode);
+            }
+
+            this.updateState();
+        },
         toggle() {
-            this.isDark = !this.isDark;
-            this.updateTheme();
+            const nextMode = this.isDark ? "light" : "dark";
+            this.setTheme(nextMode);
         },
+        updateState() {
+            const systemPrefersDark = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            ).matches;
 
-        setToDark() {
-            this.isDark = true;
-            this.updateTheme();
+            if (this.preference === "system") {
+                this.isDark = systemPrefersDark;
+            } else {
+                this.isDark = this.preference === "dark";
+            }
+
+            this.applyToDom();
         },
-
-        setToLight() {
-            this.isDark = false;
-            this.updateTheme();
-        },
-
-        updateTheme() {
+        applyToDom() {
             disableTransitionsTemporarily(() => {
-                document.documentElement.classList.toggle("dark", this.isDark);
-                localStorage.setItem("theme", this.isDark ? "dark" : "light");
-                window.dispatchEvent(new CustomEvent("theme-changed", {
-                    detail: { theme: this.isDark ? "dark" : "light", isDark: this.isDark }
-                }));
+                this._syncDom();
             });
+        },
+        _syncDom() {
+            document.documentElement.classList.toggle("dark", this.isDark);
+            window.dispatchEvent(
+                new CustomEvent("theme-changed", {
+                    detail: {
+                        preference: this.preference,
+                        isDark: this.isDark,
+                    },
+                }),
+            );
         },
     });
     Alpine.data("searchDocs", () => ({
@@ -83,7 +87,7 @@ document.addEventListener("alpine:init", () => {
                 (item) =>
                     item.title.toLowerCase().includes(q) ||
                     item.description.toLowerCase().includes(q) ||
-                    item.category.toLowerCase().includes(q)
+                    item.category.toLowerCase().includes(q),
             );
         },
 
@@ -93,29 +97,3 @@ document.addEventListener("alpine:init", () => {
         },
     }));
 });
-
-document.addEventListener("livewire:navigated", () => {
-    const theme =
-        localStorage.getItem("theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light");
-    document.documentElement.classList.toggle("dark", theme === "dark");
-});
-
-window.toggleTheme = function () {
-    const currentTheme =
-        localStorage.getItem("theme") ||
-        (document.documentElement.classList.contains("dark")
-            ? "dark"
-            : "light");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-    window.dispatchEvent(
-        new CustomEvent("theme-changed", {
-            detail: { theme: newTheme },
-        })
-    );
-};
