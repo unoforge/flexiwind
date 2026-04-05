@@ -1,12 +1,4 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
-
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use tabs to switch between peer content sections within the same page context.</x-md.li>
-        <x-md.li>Keep tab labels short and comparable in scope.</x-md.li>
-        <x-md.li>Avoid tabs when content order is strictly sequential.</x-md.li>
-    </x-md.ul>
-
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.tabs.demo" />
 
@@ -15,26 +7,29 @@
     <x-docs.steps>
         <x-docs.step>
             <x-md.h3>Install the component</x-md.h3>
-            <livewire:base.terminal code="flexi-cli add tabs" />
+            <livewire:base.terminal code="php artisan flexi:add tabs" />
         </x-docs.step>
         <x-docs.step>
             <x-md.h3>Install dependencies</x-md.h3>
             <x-docs.callout intent="gray" type="note">
-                This component requires JS. By default we're using our own Interactive Component Library
+                By default we're using our own Interactive Component Library
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. Install this only if you
                 did not accept dependency installation when adding the component.
             </x-docs.callout>
+            <livewire:base.terminal :code="'npm i @flexilla/tabs'" />
+
+        </x-docs.step>
+        <x-docs.step>
+            <x-md.h3>Usage</x-md.h3>
             <x-md.ol>
-                <x-md.li><strong>With Alpine</strong></x-md.li>
-                <livewire:base.terminal :code="'npm i @flexilla/alpine-tabs'" />
+                <x-md.li><strong>With Alpine/Livewire</strong></x-md.li>
+
                 <x-md.paragraph>Add plugin in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
 
                 <livewire:base.load-code :name="['add-tabs-plugin-in-app']" />
+
+                
                 <x-md.li><strong>Without Alpine</strong></x-md.li>
-                <x-docs.callout intent="gray" type="note">
-                    Make sure that the popover package is not installed
-                </x-docs.callout>
-                <livewire:base.terminal :code="'npm i @flexilla/tabs'" />
                 <x-md.paragraph>Initialize tabs in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
                 <livewire:base.load-code :name="['add-tabs-in-app']" />
             </x-md.ol>
@@ -147,27 +142,5 @@
         To know more about the JavaScript API, check the <x-docs.link
             href="https://flexilla-docs.vercel.app/components/tabs">Flexilla</x-docs.link> documentation.
     </x-md.paragraph>
-    <x-md.h2>API</x-md.h2>
-    <x-md.paragraph>
-        API details are documented above in the <strong>References</strong> section (component props, subcomponents, and events).
-    </x-md.paragraph>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Ensure tab labels are descriptive and unique.</x-md.li>
-        <x-md.li>Keep keyboard navigation predictable across tab triggers and panels.</x-md.li>
-        <x-md.li>Do not hide required form fields in inactive tabs without guidance.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Sync active tab state with route/query params when deep-linking is needed.</x-md.li>
-        <x-md.li>Lazy-load heavy panels if content cost is high.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use accordion for mobile-first or vertically stacked content sections.</x-md.li>
-        <x-md.li>Use segmented buttons for lightweight view toggles without panel complexity.</x-md.li>
-    </x-md.ul>
+    
 </x-layouts.doc-page-wrapper>

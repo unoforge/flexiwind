@@ -1,16 +1,9 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use switch for immediate on/off preferences and feature toggles.</x-md.li>
-        <x-md.li>Use labels that clearly describe the resulting state.</x-md.li>
-        <x-md.li>Avoid switches for choices requiring confirmation.</x-md.li>
-    </x-md.ul>
-
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.switch.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add switch" />
+    <livewire:base.terminal code="php artisan flexi:add switch" />
 
     <x-md.h2>With label</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.switch.with-label" />
@@ -153,39 +146,4 @@
         </x-ui.table.row>
     </x-docs.table>
 
-    <x-md.h3>
-        Usage with Labels
-    </x-md.h3>
-    <x-md.paragraph>
-        Switches are commonly used with labels for better accessibility and user experience:
-    </x-md.paragraph>
-    <livewire:base.load-code :name="['switch-with-labels']" />
-    <x-md.h2>API</x-md.h2>
-    <x-md.paragraph>
-        The API is documented in the <strong>References</strong> section above, including props and style utilities.
-    </x-md.paragraph>
-
-    <x-md.h2>Examples</x-md.h2>
-    <x-md.paragraph>
-        Use the examples above for labels, sizes, outlined styles, and custom variants.
-    </x-md.paragraph>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Always pair the switch with a clear label and state meaning.</x-md.li>
-        <x-md.li>Keep keyboard toggle interaction and focus styles visible.</x-md.li>
-        <x-md.li>Do not rely on color alone to communicate enabled/disabled states.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Persist user preference changes with optimistic UI and error fallback.</x-md.li>
-        <x-md.li>Group related toggles and provide short helper text for side effects.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use checkbox for non-immediate form submission workflows.</x-md.li>
-        <x-md.li>Use radio/select when multiple choices are available.</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

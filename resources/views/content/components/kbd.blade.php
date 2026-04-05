@@ -3,7 +3,7 @@
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.kbd.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add kbd" />
+    <livewire:base.terminal code="php artisan flexi:add kbd" />
 
     <x-md.h2>With Icon or Symbol</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.kbd.icon" />
@@ -29,7 +29,7 @@
             <x-ui.table.cell><x-docs.table-description>Semantic color intent for the selected variant.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell><x-docs.inline-code no-wrap text="size" /> (none|xs|sm|default|lg|xl)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="size" /> (none|xs|sm|default|lg)</x-ui.table.cell>
             <x-ui.table.cell><x-docs.table-description>Changes keycap size and typography.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
@@ -37,12 +37,5 @@
             <x-ui.table.cell><x-docs.table-description>Rounded style token passed to the component.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use kbd inside command palettes, menus, and table actions to teach shortcuts progressively.</x-md.li>
-        <x-md.li>Match displayed key names with the real app shortcut bindings.</x-md.li>
-        <x-md.li>Keep shortcut groups compact to preserve scanability in dense layouts.</x-md.li>
-    </x-md.ul>
 
 </x-layouts.doc-page-wrapper>

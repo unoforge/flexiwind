@@ -15,7 +15,7 @@
         @foreach ($allBlocks as $blockKey => $block)
             <li class="border-b-2 border-transparent has-fx-current:border-primary h-full flex items-center group">
                 <a href="{{ route('blocks.show', [$category, $blockKey]) }}"
-                    class="px-3 py-1 inline-flex text-nowrap text-fg-muted fx-current:text-fg-subtitle hover:bg-bg-muted fx-current:bg-bg-muted/70 fx-current:border-border/60 border border-transparent rounded-global ease-linear duration-200 relative"
+                    class="px-3 py-1 inline-flex text-nowrap text-fg-muted fx-current:text-fg-subtitle hover:bg-bg-muted fx-current:bg-bg-muted/70 fx-current:border-border/60 border border-transparent rounded-ui ease-linear duration-200 relative"
                     wire:navigate>
                     {{ $block['title'] ?? ucfirst($blockKey) }}
                 </a>
@@ -24,13 +24,13 @@
     </ul>
     <div class="absolute left-0 inset-y-0 flex items-center">
         <button data-scroll-to-left aria-label="scroll to left"
-            class="flex items-center p-1.5 bg-gradient-to-r from-bg-surface fx-visible:hover:bg-bg-surface cursor-not-allowed fx-visible:cursor-pointer text-fg rounded-md opacity-40 fx-visible:opacity-100 ease-linear backdrop-blur-sm">
+            class="flex items-center p-1.5 bg-linear-to-r from-bg-surface fx-visible:hover:bg-bg-surface cursor-not-allowed fx-visible:cursor-pointer text-fg rounded-md opacity-40 fx-visible:opacity-100 ease-linear backdrop-blur-sm">
             <span aria-hidden="true" class="i-ph-caret-left text-xl"></span>
         </button>
     </div>
     <div class="absolute right-0 inset-y-0 flex items-center">
         <button data-scroll-to-right aria-label="scroll to right"
-            class="flex items-center p-1.5 bg-gradient-to-r from-bg-surface fx-visible:hover:bg-bg-surface cursor-not-allowed fx-visible:cursor-pointer text-fg rounded-md opacity-40 fx-visible:opacity-100 ease-linear backdrop-blur-sm">
+            class="flex items-center p-1.5 bg-linear-to-r from-bg-surface fx-visible:hover:bg-bg-surface cursor-not-allowed fx-visible:cursor-pointer text-fg rounded-md opacity-40 fx-visible:opacity-100 ease-linear backdrop-blur-sm">
             <span aria-hidden="true" class="i-ph-caret-right text-xl"></span>
         </button>
     </div>

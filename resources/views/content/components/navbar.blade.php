@@ -142,26 +142,8 @@
     </x-md.paragraph>
 
     <x-md.h2>Examples</x-md.h2>
-    <x-md.paragraph>
-        Use the wrapper structure section above as the integration baseline, then adapt layout and links to your app IA.
-    </x-md.paragraph>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Ensure toggle buttons expose state with <x-docs.inline-code no-wrap text="aria-expanded" />.</x-md.li>
-        <x-md.li>Keep keyboard access clear for all navigation links and menus.</x-md.li>
-        <x-md.li>Provide sufficient contrast for active and hover states.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Centralize nav item config to keep desktop and mobile menus in sync.</x-md.li>
-        <x-md.li>Use route-aware highlighting to reinforce current section.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use sidebar for dashboard-heavy products with deeper information architecture.</x-md.li>
-        <x-md.li>Use breadcrumb trails for deep content navigation context.</x-md.li>
-    </x-md.ul>
+    <x-md.h3>
+        Demo Example
+    </x-md.h3>
+    <livewire:base.component-tab-preview-code in-iframe preview-url="/preview-ui/header/demo-navbar" component="components.examples.navbar.demo" />
 </x-layouts.doc-page-wrapper>

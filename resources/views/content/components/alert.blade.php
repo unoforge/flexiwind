@@ -1,16 +1,9 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use alerts for status and feedback messages users should notice immediately.</x-md.li>
-        <x-md.li>Choose intent and variant based on message importance and urgency.</x-md.li>
-        <x-md.li>Keep alert copy concise and action-oriented.</x-md.li>
-    </x-md.ul>
-
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.alert.default" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add alert" />
+    <livewire:base.terminal code="php artisan flexi:add alert" />
 
 
     <x-md.h2>Examples</x-md.h2>

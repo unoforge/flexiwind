@@ -1,0 +1,86 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "dropdown",
+    "type": "registry:component",
+    "title": "Dropdown",
+    "description": "A reusable dropdown component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "kbd",
+        "divider"
+    ],
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/dropdown"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/dropdown.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown.blade.php",
+            "content": "@props([\n    'id',\n    'class' => '',\n    'contentClass' => '',\n    'placement' => 'bottom',\n    'keepOpen' => false,\n    'keepOpenOutside' => false,\n    'submenu' => false,\n    'gray' => false,\n])\n\n@php\n    $finaPosition = $submenu\n        ? (in_array($placement, ['right', 'right-start', 'right-middle', 'right-end'])\n            ? $placement\n            : 'right-start')\n        : $placement;\n@endphp\n\n<div x-data x-f-dropdown wire:ignore.self role=\"list\" id=\"dropdown-{{ $id }}\" data-drop-down\n    @if ($keepOpen) data-prevent-close-inside @endif data-placement=\"{{ $finaPosition }}\"\n    @if ($keepOpenOutside) data-prevent-close-outside @endif\n    {{ $attributes->class([\n        'opacity-0 invisible translate-y-3 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 text-sm border border-border shadow rounded-ui flex flex-col overflow-hidden text-fg ease-linear transition-transform',\n        'ui-popper [--dropdown-padding:--spacing(1)] [--dropdown-radius:var(--radius-ui)] z-40',\n        'rounded-(--dropdown-radius) p-(--dropdown-padding) ',\n        \"grid max-h-[inherit] grid-cols-[auto_1fr] gap-y-1 overflow-y-auto overflow-x-hidden overscroll-contain outline-hidden *:[[role='group']+[role=group]]:mt-3\",\n        'text-left',\n        'bg-popover' => !$gray,\n        'bg-popover-gray' => $gray,\n        $class,\n    ]) }}>\n\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/dropdown/icon.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown/icon.blade.php",
+            "content": "<span slot=\"icon\" data-slot=\"icon\" {{ $attributes->class([\n    'flex text-current items-center opacity-70 mr-(--mr-icon)'\n    ]) }}>\n    {{ $slot }}\n</span>"
+        },
+        {
+            "path": "resources/views/components/ui/dropdown/item.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown/item.blade.php",
+            "content": "@props(['intent' => null, 'href' => null, 'disabled' => false])\n@php\n    $itemDanger =\n        $intent === 'danger'\n            ? 'dropdown-item-danger text-(--dropdown-item-danger-fg) **:text-(--dropdown-item-danger-fg)'\n            : '';\n    $itemWarning =\n        $intent === 'warning'\n            ? 'dropdown-item-warning text-(--dropdown-item-warning-fg) **:text-(--dropdown-item-warning-fg)'\n            : '';\n\n    $attributes = $attributes->class([\n        'dropdown-item-base',\n        'dropdown-item-base-vars',\n        'min-w-0 [--mr-icon:--spacing(2.5)] sm:[--mr-icon:--spacing(2)]',\n        'not-has-[[slot=description]]:items-center',\n        'group relative cursor-default select-none dropdown-item-radius rounded-dropdown-item text-left',\n        'text-base/6 sm:text-sm/6 forced-colors:text-[CanvasText]',\n        'ease-linear duration-200',\n        'dropdown-item-grid',\n        'dropdown-item-icon',\n        'dropdown-item-keyboard',\n        'dropdown-item-description',\n        'dropdown-item-has-description',\n        'dropdown-item-label',\n        'dropdown-item-avatar',\n        'dropdown-item-force-color',\n        'dropdown-item-hover',\n        'dropdown-item-disabled',\n        'dropdown-item-selected',\n        'dropdown-item-selected-icon',\n        'dropdown-item-selected-avatar-icon',\n        'dropdown-item-selected-avatar',\n        'ease-linear duration-200',\n        'cursor-default' => !$href,\n        'text-fg-muted' => $intent !== 'danger' && $intent !== 'warning',\n        $itemDanger,\n        $itemWarning,\n        'cursor-not-allowed' => $disabled,\n    ]);\n\n    $tag = $href ? 'a' : 'button';\n    $attributes =\n        $tag === 'button'\n            ? ($attributes = $attributes->merge([\n                'disabled' => $disabled,\n            ]))\n            : $attributes->merge([\n                'href' => $disabled ? null : $href,\n                'aria-disabled' => $disabled ? 'true' : null,\n                'tabindex' => $disabled ? '-1' : null,\n            ]);\n@endphp\n\n<{{ $tag }} {{ $attributes }}>\n    {{ $slot }}\n    </{{ $tag }}>\n"
+        },
+        {
+            "path": "resources/views/components/ui/dropdown/item-submenu.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown/item-submenu.blade.php",
+            "content": "@props(['dropdownId', 'variant' => 'none', 'disabled' => false])\n@php\n\n\n    $attributes = $attributes->class([\n        'dropdown-item-base',\n        'dropdown-item-base-vars',\n        'min-w-0 [--mr-icon:--spacing(2.5)] sm:[--mr-icon:--spacing(2)]',\n        'not-has-[[slot=description]]:items-center',\n        'group relative cursor-default select-none dropdown-item-radius rounded-dropdown-item text-left',\n        'text-base/6 sm:text-sm/6 forced-colors:text-[CanvasText]',\n        'ease-linear duration-200',\n        'dropdown-item-grid',\n        'dropdown-item-icon',\n        'dropdown-item-keyboard',\n        'dropdown-item-description',\n        'dropdown-item-has-description',\n        'dropdown-item-label',\n        'dropdown-item-avatar',\n        'dropdown-item-force-color',\n        'dropdown-item-hover',\n        'dropdown-item-disabled',\n        'dropdown-item-selected',\n        'dropdown-item-selected-icon',\n        'dropdown-item-selected-avatar-icon',\n        'dropdown-item-selected-avatar',\n        'ease-linear duration-200',\n        'text-fg-muted',\n        'cursor-not-allowed' => $disabled,\n    ]);\n\n    $attributes = $attributes->merge([\n        'disabled' => $disabled,\n    ]);\n@endphp\n\n<button data-dropdown-trigger data-dropdown-id=\"dropdown-{{ $dropdownId }}\" {{ $attributes }}>\n    {{ $slot }}\n    <span slot=\"chevron\" data-slot=\"chevron\" class=\"flex iconify ph--caret-right absolute right-2 text-xs\"></span>\n</button>\n"
+        },
+        {
+            "path": "resources/views/components/ui/dropdown/trigger.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown/trigger.blade.php",
+            "content": "@props(['dropdownId', 'variant' => 'none', 'intent' => 'none','size'=>'none'])\n\n<x-ui.button data-dropdown-trigger data-dropdown-id=\"dropdown-{{ $dropdownId }}\" :size=\"$size\" :variant=\"$variant\" :intent=\"$intent\"\n    {{ $attributes->merge(['class' => 'group']) }}>\n    {{ $slot }}\n</x-ui.button>\n"
+        },
+        {
+            "path": "resources/views/components/ui/dropdown/description.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown/description.blade.php",
+            "content": "<div slot=\"description\" {{ $attributes->class([\n    'col-start-2 font-normal text-fg-muted text-sm'\n]) }}>\n{{ $slot }}\n</div>"
+        },
+        {
+            "path": "resources/views/components/ui/dropdown/header.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown/header.blade.php",
+            "content": "<div {{ $attributes->class(['col-span-full px-3 py-2 font-medium text-fg-muted text-sm/6 sm:px-2.5 sm:py-1.5 sm:text-xs/3']) }}>\n    {{ $slot }}\n</div>"
+        },
+        {
+            "path": "resources/views/components/ui/dropdown/kbd.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown/kbd.blade.php",
+            "content": "@props(['class' => '', 'variant' => 'none', 'intent' => 'gray', 'size' => 'none', 'radius' => 'none'])\n\n<x-ui.kbd data-slot=\"kbd\" :variant=\"$variant\" :intent=\"$intent\" :size=\"$size\" :radius=\"$radius\"\n    {{ $attributes->class(['absolute right-2 pl-2', $class]) }}>\n    {{ $slot }}\n</x-ui.kbd>\n"
+        },
+        {
+            "path": "resources/views/components/ui/dropdown/label.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown/label.blade.php",
+            "content": "<span slot=\"label\" data-slot=\"label\" {{ $attributes->class(['col-start-2 text-sm']) }}>\n    {{ $slot }}\n</span>\n"
+        },
+        {
+            "path": "resources/views/components/ui/dropdown/separator.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/dropdown/separator.blade.php",
+            "content": "<x-ui.divider {{ $attributes->class([\n    'col-span-full -mx-1 py-1 border-border'\n]) }}/>"
+        },
+        {
+            "path": "resources/js/plugins/dropdown.js",
+            "type": "registry:script",
+            "target": "resources/js/plugins/dropdown.js",
+            "content": "import { Dropdown as FlexillaDropdown } from \"@flexilla/dropdown\";\n\nexport function DropdownPlugin(Alpine) {\n    Alpine.directive(\"f-dropdown\", (el, {}, { cleanup }) => {\n        const dropdown_ = new FlexillaDropdown(el);\n        cleanup(() => {\n            dropdown_.cleanup();\n        });\n    });\n}"
+        }
+    ]
+}

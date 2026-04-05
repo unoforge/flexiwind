@@ -3,14 +3,8 @@
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.badge.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add badge" />
+    <livewire:base.terminal code="php artisan flexi:add badge" />
 
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Show compact status, category, or count metadata next to UI elements.</x-md.li>
-        <x-md.li>Highlight small state signals inside cards, tables, and list items.</x-md.li>
-        <x-md.li>Use badges for short labels, not long descriptive messages.</x-md.li>
-    </x-md.ul>
 
     <x-md.h2>API</x-md.h2>
     <x-docs.table>
@@ -46,9 +40,4 @@
     <x-md.h3>With icon</x-md.h3>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.badge.with-icon" />
 
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Map badge intents to a shared status dictionary across your domain models.</x-md.li>
-        <x-md.li>Use compact badges in tables and cards to improve scanability.</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

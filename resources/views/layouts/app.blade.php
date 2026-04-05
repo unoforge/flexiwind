@@ -1,11 +1,11 @@
 @php
     $seo = [
         'ogImage' => [
-            'src' => $ogImage['src'] ?? config('app.default_og_image', '/default-og.png'),
-            'alt' => $ogImage['alt'] ?? config('app.default_og_alt', 'Default OG Alt'),
+            'src' => $ogImage['src'] ?? '/illustrations/blocks-light.webp',
+            'alt' => $ogImage['alt'] ?? "Flexiwind Cover",
         ],
-        'keywords' => trim(config('app.keywords_def', 'docs, flexiwind')),
-        'title' => 'Flexiwind | Laravel UI',
+        'keywords' => trim('docs, flexiwind, laravel components, laravel blocks, laravel ui'),
+        'title' => 'Flexiwind',
         'description' => $description ?? 'Easily add interactive Components to your App.',
     ];
 @endphp

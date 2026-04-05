@@ -31,9 +31,9 @@
     ];
 @endphp
 
-<x-ui.table noDivider wrapper="rounded-lg border border-border-strong/70 p-1">
+<x-ui.table :divider="false" wrapper="rounded-lg border border-border-strong/70 p-1">
     <x-ui.table.columns header-bg-style="gray" class="*:first:rounded-l-md *:last:rounded-r-md">
-        <x-ui.table.column class="[--column-px:0px] pl-3 size-6">
+        <x-ui.table.column class="[--gutter-x:0px] pl-3 size-6">
             <x-ui.checkbox />
         </x-ui.table.column>
         <x-ui.table.column>
@@ -47,7 +47,7 @@
     <x-ui.table.rows>
         @foreach ($users as $user)
             <x-ui.table.row>
-                <x-ui.table.cell class="[--column-px:0px] pl-3 size-6">
+                <x-ui.table.cell class="[--gutter-x:0px] pl-3 size-6">
                     <x-ui.checkbox />
                 </x-ui.table.cell>
                 <x-ui.table.cell>

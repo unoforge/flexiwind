@@ -9,8 +9,7 @@ class SidebarPaginator
         return collect(config('sidebar'))
             ->flatMap(function ($group) {
                 return collect($group['items'])
-                    ->filter(fn($item) => empty($item['hideInSidebar']))
-                    ->map(fn($item) => [
+                    ->map(fn ($item) => [
                         'title' => $item['title'],
                         'slug' => $item['path'],
                         'description' => $item['description'],
@@ -29,16 +28,15 @@ class SidebarPaginator
     public static function getCurrent(string $slug): ?array
     {
         $items = self::getFlattened();
-        $index = collect($items)->search(fn($item) => $item['slug'] === $slug);
+        $index = collect($items)->search(fn ($item) => $item['slug'] === $slug);
 
         return $index !== false ? $items[$index] : null;
     }
 
-
     public static function getPagger(string $slug): array
     {
         $items = self::getFlattened();
-        $index = collect($items)->search(fn($item) => $item['slug'] === $slug);
+        $index = collect($items)->search(fn ($item) => $item['slug'] === $slug);
 
         if ($index === false) {
             return [

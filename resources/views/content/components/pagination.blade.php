@@ -3,7 +3,7 @@
     <livewire:base.component-tab-preview-code component="components.examples.pagination.basic" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add pagination" />
+    <livewire:base.terminal code="php artisan flexi:add pagination" />
 
 
     <x-md.h2>Composition</x-md.h2>
@@ -157,16 +157,4 @@
         Simply override the CSS variables in your theme to customize colors, backgrounds, and hover states:
     </x-md.paragraph>
     <livewire:base.load-code :name="['pagination-custom-theme']" />
-
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.paragraph>
-        The pagination components include proper ARIA attributes for screen readers:
-    </x-md.paragraph>
-    <x-md.ul>
-        <x-md.li> <x-docs.inline-code no-wrap text="role='navigation'" /> on the nav element</x-md.li>
-        <x-md.li> <x-docs.inline-code no-wrap text="aria-label='pagination'" /> for screen readers</x-md.li>
-        <x-md.li> <x-docs.inline-code no-wrap text="aria-current='page'" /> on active links</x-md.li>
-        <x-md.li> <x-docs.inline-code no-wrap text="aria-hidden='true'" /> on ellipsis elements</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

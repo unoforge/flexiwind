@@ -1,4 +1,4 @@
-@props(['size' => 'md', 'class' => '', 'noRadius' => false])
+@props(['size' => 'md', 'class' => '', 'radius' => true])
 
 @php
     $progress_sizes = [
@@ -10,8 +10,8 @@
         'xl' => 'h-6',
     ];
     $size = $progress_sizes[$size] ?? $progress_sizes['md'];
-    $radius = $noRadius ? '' : '[--ui-progressbar-radius:20px]';
-    $className = "ui-progressbar {$radius} {$size} [--ui-progressbar-bg:var(--c-progressbar)] {$class}";
+    $radiusClass = $radius ? '[--ui-progressbar-radius:20px]' : '';
+    $className = "ui-progressbar {$radiusClass} {$size} [--ui-progressbar-bg:var(--c-progressbar)] {$class}";
 @endphp
 
 <progress {{ $attributes->merge(['class' => $className]) }}></progress>

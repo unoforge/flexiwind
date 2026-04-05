@@ -1,10 +1,11 @@
-@props(['text', 'icon', 'href' => '', 'isActive' => null])
+@props(['icon', 'text', 'href', 'isActive' => false])
 
-<li
-    class="relative before:absolute before:-left-1 before:w-1 before:inset-y-1.5 before:rounded-l-md before:bg-transparent has-fx-active:before:bg-fg-title">
-    <a href="{{ $href }}" data-state="{{ $isActive ? 'active' : null }}" aria-label="Link to {{ $text }}"
-        class="flex items-center text-sm px-3 py-1.5 gap-x-2.5 fx-active:bg-bg fx-active:text-fg-title border border-transparent fx-active:border-bg-muted/70 fx-active:shadow-xs rounded-md">
-        <span class="flex iconify size-3.5 {{ $icon }}"></span>
-        {{ $text }}
+<li>
+    <a href="{{ $href }}" data-state="{{ $isActive ? 'active' : 'inactive' }}" class="flex items-center gap-3 px-2 h-9 fx-current:bg-white dark:fx-current:bg-bg-surface fx-current:text-fg-title fx-current:ring-border-input/70
+            fx-active:bg-white dark:fx-active:bg-bg-surface fx-active:text-fg-title fx-active:ring-border-input/70
+            text-fg-muted hover:bg-bg-muted/50 ring ring-transparent rounded-ui text-sm">
+        <span aria-hidden="true"
+            class="iconify size-4 opacity-70 {{ $icon }} in-fx-active:text-primary in-fx-current:text-primary"></span>
+        <span>{{ $text }}</span>
     </a>
 </li>

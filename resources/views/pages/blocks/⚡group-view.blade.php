@@ -45,7 +45,7 @@ class extends Component {
     @else
         <div class="lg:max-w-336 xl:max-w-352 mx-auto px-2 sm:px-4 xl:px-8 w-full">
             <div
-                class="mt-10 w-full bg-bg-surface border border-border-card/60 p-5 sm:p-10 lg:py-16 rounded-global flex flex-col text-center items-center">
+                class="mt-10 w-full bg-bg-surface border border-border-card/60 p-5 sm:p-10 lg:py-16 rounded-ui flex flex-col text-center items-center">
                 <h2 class="text-fg-title font-semibold text-3xl">
                     No Block found for <span class="text-primary">{{ $blockGroup['title'] ?? $blockName }}</span>
                 </h2>

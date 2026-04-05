@@ -1,5 +1,5 @@
 <div slot="description" {{ $attributes->class([
-    'row-start-2 text-pretty text-fg-muted text-sm'
+    'col-start-2 font-normal text-fg-muted text-sm'
 ]) }}>
 {{ $slot }}
 </div>

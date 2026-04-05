@@ -1,16 +1,10 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use aspect ratio to preserve media layout before content loads.</x-md.li>
-        <x-md.li>Ideal for thumbnails, embeds, and responsive card galleries.</x-md.li>
-        <x-md.li>Choose ratios based on media intent, not visual guesswork.</x-md.li>
-    </x-md.ul>
 
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.aspect.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add aspect" />
+    <livewire:base.terminal code="php artisan flexi:add aspect" />
 
     <x-md.h2>Examples</x-md.h2>
     <x-md.h3>Square</x-md.h3>
@@ -60,22 +54,4 @@
             </x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
-
-    <x-md.h2>API</x-md.h2>
-    <x-md.paragraph>
-        The full prop API is listed in the <strong>References</strong> section above.
-    </x-md.paragraph>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Provide descriptive alt text for images inside ratio containers.</x-md.li>
-        <x-md.li>Ensure important visual content is not cropped unintentionally.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use consistent ratios in media grids to avoid layout jump between cards.</x-md.li>
-        <x-md.li>Pair with lazy loading in long feeds for better performance.</x-md.li>
-    </x-md.ul>
-
 </x-layouts.doc-page-wrapper>

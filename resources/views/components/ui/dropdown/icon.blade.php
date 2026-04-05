@@ -1,3 +1,5 @@
-<span slot="icon" data-slot="icon" {{ $attributes->class(['icon-size mr-(--mr-icon) group-disabled:opacity-50 group-data-disabled:opacity-50 flex items-center justify-center']) }}>
+<span slot="icon" data-slot="icon" {{ $attributes->class([
+    'flex text-current items-center opacity-70 mr-(--mr-icon)'
+    ]) }}>
     {{ $slot }}
 </span>

@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "pagination",
+    "type": "registry:component",
+    "title": "Pagination",
+    "description": "A reusable pagination component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "button"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/pagination.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/pagination.blade.php",
+            "content": "@props([\n    'class' => null,\n    'justify' => 'center',\n])\n\n<nav role=\"navigation\" aria-label=\"pagination\" data-slot=\"pagination\"\n    {{ $attributes->class([\n        'mx-auto flex w-full',\n        'justify-center' => $justify == 'center',\n        'justify-start' => $justify == 'start',\n        'justify-end' => $justify == 'end',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</nav>\n"
+        }
+    ]
+}

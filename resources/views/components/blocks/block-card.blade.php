@@ -1,5 +1,5 @@
 <a href="{{ route('blocks.show', [$group, $key]) }}" aria-label="Link to blocks : {{ $title }}"
-    class="hover:bg-bg-surface p-px rounded-ui group ease-linear duration-200">
+    class="hover:bg-bg-surface p-px rounded-ui group ease-linear duration-200 w-full">
     <div class="aspect-standard-tv bg-bg-muted/30 rounded-ui pointer-events-none">
         <img src="{{ $illustrations['light'] }}" alt="Illustration light {{ $title }}" width="1455"
             height="1091" class="size-full object-cover dark:hidden">

@@ -3,9 +3,10 @@
 <thead class="{{ $wrapper }}">
     <tr
         {{ $attributes->class([
-            'capitalize text-sm font-medium text-fg-title',
-            'bg-bg-muted/80' => $headerBgStyle === 'gray',
-            'divide-x divide-border-strong' => $columnDivider,
+            'capitalize text-sm font-medium text-fg-title divide-(--table-border-color)',
+            'bg-bg-muted/60' => $headerBgStyle === 'gray',
+            'divide-x' => $columnDivider,
+            'in-fx-table-grid:divide-x'
         ]) }}>
         {{ $slot }}
     </tr>

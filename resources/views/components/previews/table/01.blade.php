@@ -59,14 +59,14 @@
 @endphp
 
 <div class="rounded-ui border border-border">
-    <div class="p-4 border-b border-border">
+    <div class="p-4 border-b border-border-input/60">
         <h2 class="text-xl font-semibold text-fg-title mb-1">Organizations</h2>
         <p class="text-fg-muted text-sm">Manage your customer relationships and track organization details.</p>
     </div>
     
     <x-ui.table class="text-left">
         <x-ui.table.columns
-            wrapper="bg-bg-surface border-b border-border-input [--column-px:--spacing(4)] [--column-py:--spacing(3)]">
+            wrapper="bg-bg-surface border-y border-border-input/60 [--gutter-x:--spacing(4)] [--gutter-y:--spacing(3)]">
             <x-ui.table.column class="text-xs font-medium text-fg-muted uppercase tracking-wider w-8">
                 <x-ui.checkbox />
             </x-ui.table.column>
@@ -90,7 +90,7 @@
             </x-ui.table.column>
             <x-ui.table.column class="w-10"></x-ui.table.column>
         </x-ui.table.columns>
-        <x-ui.table.rows class="divide-y divide-border [--column-px:--spacing(4)] [--column-py:--spacing(3)]">
+        <x-ui.table.rows class="divide-y divide-border [--gutter-x:--spacing(4)] [--gutter-y:--spacing(3)]">
             @foreach ($organizations as $organization)
                 <x-ui.table.row hoverable class="group">
                     <x-ui.table.cell>

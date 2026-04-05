@@ -3,14 +3,9 @@
     <livewire:base.component-tab-preview-code component="components.examples.callout.demo" no-in-tabs />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add callout" />
+    <livewire:base.terminal code="php artisan flexi:add callout" />
 
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Show contextual guidance, warnings, notes, or update messages inline.</x-md.li>
-        <x-md.li>Keep callouts concise and place them near related content.</x-md.li>
-        <x-md.li>Prefer one callout per section to avoid visual noise.</x-md.li>
-    </x-md.ul>
+
 
     <x-md.h2>API</x-md.h2>
     <x-docs.table>
@@ -35,8 +30,8 @@
             <x-ui.table.cell><x-docs.table-description>Quick title/message API when not using slot composition.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell><x-docs.inline-code no-wrap text="noIcon" /> (boolean)</x-ui.table.cell>
-            <x-ui.table.cell><x-docs.table-description>Removes leading icon and keeps content-only layout.</x-docs.table-description></x-ui.table.cell>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="icon" /> (boolean)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Controls leading icon visibility. Default: true</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell><x-docs.inline-code no-wrap text="iconWrapper" /> (string)</x-ui.table.cell>
@@ -51,9 +46,4 @@
     <x-md.h3>With Title</x-md.h3>
     <livewire:base.component-tab-preview-code component="components.examples.callout.with-title" no-in-tabs />
 
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Standardize callout tone mapping for release notes, warnings, and migration guides.</x-md.li>
-        <x-md.li>Keep callouts near the affected control or content section.</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

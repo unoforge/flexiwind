@@ -3,14 +3,8 @@
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.checkbox.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add checkbox" />
+    <livewire:base.terminal code="php artisan flexi:add checkbox" />
 
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use checkboxes when users may choose multiple items.</x-md.li>
-        <x-md.li>Use radio buttons when only one choice is allowed.</x-md.li>
-        <x-md.li>For a single on/off preference, consider <x-docs.doc-link href="/components/switch">switch</x-docs.doc-link>.</x-md.li>
-    </x-md.ul>
 
     <x-md.h2>API</x-md.h2>
     <x-docs.table>
@@ -50,18 +44,4 @@
         <x-md.li>For grouped checkboxes, wrap related options in a <x-docs.inline-code no-wrap text="fieldset" /> with a clear legend.</x-md.li>
         <x-md.li>Avoid using color alone to communicate checked or error states.</x-md.li>
     </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use grouped checkboxes for permission sets, filters, and multi-tag selectors.</x-md.li>
-        <x-md.li>Initialize default selections from saved user preferences when available.</x-md.li>
-        <x-md.li>Show helper text for options with side effects.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use <x-docs.doc-link href="/components/radio">radio</x-docs.doc-link> when only one option is allowed.</x-md.li>
-        <x-md.li>Use <x-docs.doc-link href="/components/switch">switch</x-docs.doc-link> for single immediate on/off settings.</x-md.li>
-    </x-md.ul>
-
 </x-layouts.doc-page-wrapper>

@@ -3,7 +3,7 @@
 }
 
 @utility ui-form-group-base {
-  @apply w-full data-invalide:outline-(--ui-input-invalid-outline);
+  @apply w-full has-data-invalide:outline-(--ui-input-invalid-outline);
 }
 
 @utility ui-form-group {
@@ -49,7 +49,7 @@
 }
 
 @utility ui-form-base {
-  @apply appearance-none w-full placeholder-(--ui-input-place-holder) invalid:[outline-color:var(--ui-input-invalid-outline)] [line-height:1.5rem];
+  @apply appearance-none w-full placeholder-(--ui-input-place-holder) data-invalid:outline-(--ui-input-invalid-outline) leading-6;
 }
 
 

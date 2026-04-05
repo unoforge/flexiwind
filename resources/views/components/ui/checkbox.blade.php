@@ -37,10 +37,9 @@
 @if ($label)
     <div class="flex items-center">
         <input {{ $attributes }}>
-        <label for="{{ $id }}"
-            class="ml-2 mt-0.5 text-sm select-none font-medium text-fg-muted {{ $disabled ? 'opacity-60' : '' }}">
+        <x-ui.label for="{{ $id }}" class="ml-2 mt-0.5 {{ $disabled ? 'opacity-60' : '' }}">
             {{ $label }}
-        </label>
+        </x-ui.label>
     </div>
 @else
     <input {{ $attributes }}>

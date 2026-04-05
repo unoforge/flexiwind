@@ -1,11 +1,4 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use OTP inputs for verification codes, 2FA, and short secure tokens.</x-md.li>
-        <x-md.li>Keep code length explicit and match backend validation rules.</x-md.li>
-        <x-md.li>Use clear expiry/resend messaging near the input.</x-md.li>
-    </x-md.ul>
-
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.otp.demo" no-in-tabs />
 
@@ -13,26 +6,30 @@
     <x-docs.steps>
         <x-docs.step>
             <x-md.h3>Install the component</x-md.h3>
-            <livewire:base.terminal code="flexi-cli add otp" />
+            <livewire:base.terminal code="php artisan flexi:add otp" />
         </x-docs.step>
         <x-docs.step>
-            <x-md.h3>Install Otp Plugin</x-md.h3>
+            <x-md.h3>Install </x-md.h3>
             <x-docs.callout intent="gray" type="note">
-                This component requires JS. By default we're using our own Interactive Component Library
+                By default we're using our own Interactive Component Library
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. Install this only if you
                 did not accept dependency installation when adding the component.
             </x-docs.callout>
+
+            <x-md.paragraph>
+                Install this only if you're not using AlpineJS
+            </x-md.paragraph>
+
+             <livewire:base.terminal :code="'npm i @flexilla/pin-input'" />
+        </x-docs.step>
+        <x-docs.step>
             <x-md.ol>
-                <x-md.li><strong>With Alpine</strong></x-md.li>
-                <livewire:base.terminal :code="'npm i @flexilla/alpine-pin-input'" />
+                <x-md.li><strong>With Alpine/Livewire</strong></x-md.li>
                 <x-md.paragraph>Add plugin in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
 
                 <livewire:base.load-code :name="['add-otp-plugin-in-app']" />
                 <x-md.li><strong>Without Alpine</strong></x-md.li>
-                <x-docs.callout intent="gray" type="note">
-                    Make sure that the dropdown package is not installed
-                </x-docs.callout>
-                <livewire:base.terminal :code="'npm i @flexilla/pin-input'" />
+               
                 <x-md.paragraph>Initialize Pin Input in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
                 <livewire:base.load-code :name="['add-otp-in-app']" />
             </x-md.ol>
@@ -167,13 +164,13 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="noBorder" />
+                <x-docs.inline-code no-wrap text="border" />
             </x-ui.table.cell>
             <x-ui.table.cell>boolean</x-ui.table.cell>
-            <x-ui.table.cell>false</x-ui.table.cell>
+            <x-ui.table.cell>true</x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    When true, removes the border from the input.
+                    Controls the border visibility on the input.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -213,17 +210,5 @@
         <x-md.li>Keyboard navigation support (Tab, Shift+Tab, Arrow keys)</x-md.li>
         <x-md.li>Auto-focus management between fields</x-md.li>
         <x-md.li>Paste support for easier code entry</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Auto-submit only when backend latency and error feedback are reliable.</x-md.li>
-        <x-md.li>Disable resend actions briefly to prevent request abuse.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use a single input for less strict verification UX when split fields are unnecessary.</x-md.li>
-        <x-md.li>Use passkey/magic-link flows when OTP friction should be reduced.</x-md.li>
     </x-md.ul>
 </x-layouts.doc-page-wrapper>

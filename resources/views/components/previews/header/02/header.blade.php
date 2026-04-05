@@ -5,14 +5,14 @@
                 <span aria-hidden="true" class="iconify ph--door-open"></span>
             </x-ui.button>
         </div>
-        <x-ui.breadcrumb class="text-xs sm:text-sm text-fg-muted">
-            <x-ui.breadcrumb.item href="#">
+        <x-ui.breadcrumbs class="text-xs sm:text-sm text-fg-muted">
+            <x-ui.breadcrumbs.item href="#">
                 Core
-            </x-ui.breadcrumb.item>
-            <x-ui.breadcrumb.item active>
+            </x-ui.breadcrumbs.item>
+            <x-ui.breadcrumbs.item active>
                 Dashboard
-            </x-ui.breadcrumb.item>
-        </x-ui.breadcrumb>
+            </x-ui.breadcrumbs.item>
+        </x-ui.breadcrumbs>
     </div>
     <div class="flex items-center gap-1">
         <div class="h-6 w-px bg-border mx-2 hidden sm:block"></div>

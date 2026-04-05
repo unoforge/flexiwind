@@ -1,0 +1,28 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "textarea",
+    "type": "registry:component",
+    "title": "Textarea",
+    "description": "A reusable textarea component for Laravel Blade/Livewire.",
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/auto-resize-area"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/textarea.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/textarea.blade.php",
+            "content": "@props([\n    'variant' => 'default',\n    'size' => 'md',\n    'disabled' => false,\n    'readonly' => false,\n    'label' => null,\n    'labelPosition' => 'top',\n    'labelClass' => '',\n    'invalid' => false,\n    'autoResize' => false,\n    'class' => '',\n])\n\n@php\n    $sizes = [\n        'sm' => 'p-2 text-xs',\n        'md' => 'p-2.5 text-sm',\n        'lg' => 'p-3 text-sm',\n    ];\n\n    \n\n    $variantClasses = match ($variant) {\n        'default' => 'ui-form-base ui-form-input rounded-ui bg-bg border border-border-input text-fg min-h-20',\n        'ghost' => 'ui-form-base ui-form-input rounded-ui border border-transparent text-fg min-h-20',\n        'flush' => 'ui-form-base ui-form-input rounded-ui border-transparent text-fg min-h-20',\n        'unstyled' => '',\n    };\n\n    $sizeClass = $variant === 'unstyled' ? '' : ($sizes[$size] ?? $sizes['md']);\n    $id = $attributes->get('id') ?? $attributes->get('name', uniqid('input-'));\n@endphp\n\n@if ($label)\n    <div class=\"{{ $labelPosition === 'inline' ? 'flex items-center gap-2' : 'flex flex-col space-y-2' }}\">\n        <x-ui.label for=\"{{ $id }}\" :text=\"$label\" class=\"{{ $labelClass }}\" />\n        <textarea\n            id=\"{{ $id }}\"\n            @if ($disabled) disabled @endif\n            @if ($readonly) readonly @endif\n            @if ($invalid) data-invalid @endif\n            @if ($autoResize) x-auto-resize-area @endif\n            {{ $attributes->class([$variantClasses, $sizeClass, $class]) }}\n        >{{ $slot }}</textarea>\n    </div>\n@else\n    <textarea\n        id=\"{{ $id }}\"\n        @if ($disabled) disabled @endif\n        @if ($readonly) readonly @endif\n        @if ($invalid) data-invalid @endif\n        @if ($autoResize) x-auto-resize-area @endif\n        {{ $attributes->class([$variantClasses, $sizeClass, $class]) }}\n    >{{ $slot }}</textarea>\n@endif\n"
+        },
+        {
+            "path": "resources/js/plugins/auto-resize-area.js",
+            "type": "registry:script",
+            "target": "resources/js/plugins/auto-resize-area.js",
+            "content": "import {AutoResizeTextArea as FlexillaAutoresize} from \"@flexilla/auto-resize-area\"\n\nexport function AutoResizeAreaPlugin(Alpine) {\n    Alpine.directive(\"auto-resize-area\", (el, {}, { cleanup }) => {\n        const resize_area = new FlexillaAutoresize(el);\n        cleanup(() => {\n            resize_area.cleanup();\n        });\n    });\n}\n\n"
+        }
+    ]
+}

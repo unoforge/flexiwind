@@ -6,13 +6,14 @@
     'disabled' => false,
     'type' => 'button',
     'href' => null,
+    'radius' => true,
 ])
-
 @php
     use App\Flexiwind\ButtonHelper;
     $btn_variants = ButtonHelper::getVariants();
 
     $sizes = [
+        'none' => '',
         'xs' => 'btn-xs',
         'sm' => 'btn-sm',
         'md' => 'btn-md',
@@ -20,18 +21,18 @@
         'xl' => 'btn-xl',
     ];
     $iconSizes = [
+        'none' => '',
         'xs' => 'btn-icon-xs text-xs',
         'sm' => 'btn-icon-sm text-xs',
         'md' => 'btn-icon-md text-sm',
         'lg' => 'btn-icon-lg text-sm',
         'xl' => 'btn-icon-xl text-base',
     ];
-    $baseClasses = 'btn ease-linear duration-200 rounded-ui ';
+    $baseClasses = 'btn ease-linear duration-200  ';
     if ($variant !== 'none') {
         $baseClasses .= isset($btn_variants[$variant]) ? $btn_variants[$variant]['base'] : 'ee';
     }
 
-    
     $defaultIntents = [
         'solid' => 'primary',
         'soft' => 'gray',
@@ -65,6 +66,7 @@
         $baseClasses,
         $variantClasses,
         $sizeClasses,
+        'rounded-ui' => $radius,
         'cursor-not-allowed' => $disabled,
     ]);
 
@@ -75,15 +77,15 @@
 
     $attributes =
         $tag === 'button'
-            ? ($attributes = $attributes->merge([
-                'type' => $type,
-                'disabled' => $disabled,
-            ]))
-            : $attributes->merge([
-                'href' => $disabled ? null : $href,
-                'aria-disabled' => $disabled ? 'true' : null,
-                'tabindex' => $disabled ? '-1' : null,
-            ]);
+        ? ($attributes = $attributes->merge([
+            'type' => $type,
+            'disabled' => $disabled,
+        ]))
+        : $attributes->merge([
+            'href' => $disabled ? null : $href,
+            'aria-disabled' => $disabled ? 'true' : null,
+            'tabindex' => $disabled ? '-1' : null,
+        ]);
 
 @endphp
 

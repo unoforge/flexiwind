@@ -3,7 +3,7 @@
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.avatar.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add avatar avatar-placeholder" />
+    <livewire:base.terminal code="php artisan flexi:add avatar avatar-placeholder" />
 
     <x-md.h2>Placeholder Text</x-md.h2>
     <x-md.h3>With text</x-md.h3>

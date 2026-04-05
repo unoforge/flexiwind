@@ -3,7 +3,7 @@
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.progress.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add progress" />
+    <livewire:base.terminal code="php artisan flexi:add progress" />
 
     <x-md.h2>Indicator</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.progress.indicator" />
@@ -29,21 +29,8 @@
             <x-ui.table.cell><x-docs.table-description>Controls bar thickness.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell><x-docs.inline-code no-wrap text="noRadius" /> (boolean)</x-ui.table.cell>
-            <x-ui.table.cell><x-docs.table-description>Removes rounded corners for squared progress bars.</x-docs.table-description></x-ui.table.cell>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="radius" /> (boolean)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Controls rounded corners for progress bars. Default: true</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
-
-    <x-md.h2>Best Practices</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use determinate progress when task length is known.</x-md.li>
-        <x-md.li>Pair progress bars with short status text for clarity.</x-md.li>
-        <x-md.li>For unknown duration, use a skeleton or spinner instead.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Provide nearby text that describes what is progressing.</x-md.li>
-        <x-md.li>Keep updates meaningful; avoid overly noisy UI updates.</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

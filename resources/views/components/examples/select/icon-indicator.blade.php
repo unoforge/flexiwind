@@ -1,5 +1,5 @@
 <div class="relative w-full">
-    <x-ui.select name="select-country" id="select-country" class="pe-9" noIndicator>
+    <x-ui.select name="select-country" id="select-country" class="pe-9" :indicator="false">
         <option value="DRC">DR Congo</option>
         <option value="TZ">Tanzania</option>
         <option value="MA">Morocco</option>

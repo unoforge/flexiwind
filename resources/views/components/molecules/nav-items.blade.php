@@ -11,7 +11,7 @@
         ],
         [
             'text' => 'Components',
-            'href' => '/components/button',
+            'href' => '/components',
         ],
         [
             'text' => 'Blocks',

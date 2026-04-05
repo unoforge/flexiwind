@@ -1,0 +1,22 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "features01",
+    "type": "registry:component",
+    "title": "Features 01",
+    "description": "Feature sections.",
+    "files": [
+        {
+            "path": "resources/views/components/previews/features/01/features.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/blocks/features.blade.php",
+            "content": "@php\n\n    $features = [\n        [\n            'icon' => 'ph--gauge',\n            'title' => 'Real-Time Dashboard',\n            'description' =>\n                'Monitor your business metrics in real time with an intuitive dashboard that gives you instant visibility into performance, usage, and growth.',\n        ],\n        [\n            'icon' => 'ph--users-three',\n            'title' => 'Team Collaboration',\n            'description' =>\n                'Work seamlessly with your team using shared workspaces, role-based permissions, and real-time updates that keep everyone aligned.',\n        ],\n        [\n            'icon' => 'ph--gear-six',\n            'title' => 'Automated Workflows',\n            'description' =>\n                'Streamline repetitive tasks with powerful automation tools that save time, reduce errors, and boost overall productivity.',\n        ],\n        [\n            'icon' => 'ph--cloud',\n            'title' => 'Cloud-Based Access',\n            'description' =>\n                'Access your data securely from anywhere in the world. Our fully cloud-hosted platform ensures reliability, scalability, and 99.9% uptime.',\n        ],\n        [\n            'icon' => 'ph--shield-check',\n            'title' => 'Enterprise-Grade Security',\n            'description' =>\n                'Protect your data with advanced encryption, secure authentication, and compliance-ready infrastructure built for peace of mind.',\n        ],\n        [\n            'icon' => 'ph--chart-line-up',\n            'title' => 'Advanced Analytics & Insights',\n            'description' =>\n                'Make smarter decisions with detailed reports, actionable insights, and predictive analytics designed to help you scale confidently.',\n        ],\n    ];\n@endphp\n<section class=\"py-20 lg:py-32\">\n    <div class=\"px-5 sm:px-10 md:px-12 lg:px-5 lg:max-w-7xl mx-auto w-full\">\n        <div class=\"flex flex-col md:flex-row md:justify-between md:items-end\">\n            <div class=\"max-w-lg space-y-4\">\n                <span class=\"block w-max border border-border shadow-sm text-fg rounded-ui px-2 py-0.5\">\n                    Why us\n                </span>\n                <h1 class=\"font-semibold text-fg-title text-3xl md:text-4xl/tight\">\n                    Choose the perfect SEO partner for your business growth\n                </h1>\n            </div>\n            <div class=\"max-w-sm\">\n                <p class=\"text-fg-muted\">\n                    We help businesses rank higher, grow organic traffic, and dominate search engines through tailored\n                    SEO strategies.\n                </p>\n            </div>\n        </div>\n        <div class=\"grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16\">\n            @foreach ($features as $feature)\n                <x-blocks.feature-card :icon=\"$feature['icon']\" :title=\"$feature['title']\" :description=\"$feature['description']\" />\n            @endforeach\n        </div>\n    </div>\n</section>\n"
+        },
+        {
+            "path": "resources/views/components/previews/features/01/feature-card.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/blocks/feature-card.blade.php",
+            "content": "@props(['icon', 'title', 'description'])\n<div class=\"rounded-ui p-6 sm:p-8 lg:p-10 bg-bg-surface flex flex-col hover:bg-bg-muted ease-linear\">\n    <div class=\"p-3 rounded-md bg-bg shadow-sm text-fg-subtitle flex items-center justify-center w-max\">\n        <span class=\"iconify {{ $icon }} size-6\"></span>\n    </div>\n    <h3 class=\"text-fg-title font-medium text-2xl mt-10\">\n        {{ $title }}\n    </h3>\n    <p class=\"text-fg-muted text-sm mt-4\">\n        {{ $description }}\n    </p>\n</div>\n"
+        }
+    ]
+}

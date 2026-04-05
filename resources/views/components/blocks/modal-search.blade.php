@@ -1,19 +1,19 @@
-<x-ui.modal modalId="search-modal">
+<x-ui.modal id="search-modal">
     <x-ui.modal.content x-data="searchDocs" :closable="false" no-gutter size="md"
         class="h-124 p-0.5" >
         <x-ui.modal.header padding-none class="relative w-full">
-            <x-ui.input @input="search" data-input-search unStyled
+            <x-ui.input @input="search" data-input-search variant="unstyled"
                 class="w-full ps-9 text-fg focus:outline-none border-0 ui-form-input-lg" placeholder="Search components, docs..."
                 x-model="query" />
             <span aria-hidden="true"
                 class="iconify ph--magnifying-glass absolute left-3.5 top-3 text-fg-muted text-sm"></span>
         </x-ui.modal.header>
         <x-ui.modal.body data-search-results
-            class="[--gutter:--spacing(0)] overflow-y-auto bg-bg-surface border border-border ui-card [--card-radius:var(--global-main-radius)] [--card-padding:--spacing(0.5)] shadow-sm">
+            class="[--gutter:--spacing(0)] overflow-y-auto bg-bg-surface border border-border ui-card [--card-radius:var(--radius-ui)] [--card-padding:--spacing(0.5)] shadow-sm">
             <div x-show="results.length" class="px-1 space-y-0.5">
                 <template x-for="item in results" :key="item.slug">
                     <a :href="item.slug"
-                        class="flex w-full items-center gap-4 px-3 py-2 inner-radius hover:bg-bg-muted/40 relative before:absolute before:left-10 before:right-0 before:bottom-0 before:flex before:h-0.5 before:bg-gradient-to-l before:from-bg-muted/30 before:via-bg-muted/90 before:to-bg-muted/30">
+                        class="flex w-full items-center gap-4 px-3 py-2 inner-radius hover:bg-bg-muted/40 relative before:absolute before:left-10 before:right-0 before:bottom-0 before:flex before:h-0.5 before:bg-linear-to-l before:from-bg-muted/30 before:via-bg-muted/90 before:to-bg-muted/30">
                         <div class="flex min-w-max text-fg-muted">
                             <template x-if="item.isComponent && !item.isTheming">
                                 <span class="iconify size-5 ph--cube"></span>

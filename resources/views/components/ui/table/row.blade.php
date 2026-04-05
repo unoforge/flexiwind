@@ -1,13 +1,14 @@
-@props(['class' => '', 'noDivider' => true, 'hoverable' => false, 'stripped' => false])
+@props(['class' => '', 'divider' => false])
 
 
 <tr
     {{ $attributes->class([
-        'text-sm',
-        'hover:bg-bg-muted/60 transition-colors ease-linear' => $hoverable,
-        'odd:bg-bg even:bg-bg-muted/60' => $stripped,
-        'divide-y divide-border-strong/60' => !$noDivider,
-        $class
+        'text-sm divide-(--table-border-color) transition-colors ease-linear',
+        'in-fx-hoverable:hover:bg-bg-muted/40',
+        'in-fx-striped:in-fx-hoverable:hover:bg-bg-muted/40',
+        'divide-x' => $divider,
+        'in-fx-table-grid:divide-x',
+        $class,
     ]) }}>
     {{ $slot }}
 </tr>

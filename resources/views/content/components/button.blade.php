@@ -3,14 +3,7 @@
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.button.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add button" />
-
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use buttons for direct actions such as submit, save, delete, and open.</x-md.li>
-        <x-md.li>Use one clear primary action per section, then secondary actions as soft/outline.</x-md.li>
-        <x-md.li>Keep labels verb-first and specific (for example: "Create project").</x-md.li>
-    </x-md.ul>
+    <livewire:base.terminal code="php artisan flexi:add button" />
 
     <x-md.h2>Button Principles</x-md.h2>
 
@@ -69,22 +62,4 @@
         <x-examples.button.variants />
     </x-docs.preview-ui>
 
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use explicit labels for icon-only buttons via <x-docs.inline-code no-wrap text="aria-label" />.</x-md.li>
-        <x-md.li>Do not communicate destructive intent with color alone; use clear labels.</x-md.li>
-        <x-md.li>Use <x-docs.inline-code no-wrap text="disabled" /> only when users can understand why action is unavailable.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Keep one clear primary action per view and downgrade secondary actions visually.</x-md.li>
-        <x-md.li>Use loading/disabled states to prevent duplicate submissions.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use <x-docs.doc-link href="/components/link">link</x-docs.doc-link> for pure navigation semantics.</x-md.li>
-        <x-md.li>Use dropdown actions when too many secondary actions clutter the interface.</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

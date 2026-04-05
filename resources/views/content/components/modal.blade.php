@@ -1,12 +1,5 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
 
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use modal for focused tasks that require temporary context separation.</x-md.li>
-        <x-md.li>Keep modal content short and action-oriented whenever possible.</x-md.li>
-        <x-md.li>Avoid deep multi-step workflows in one modal.</x-md.li>
-    </x-md.ul>
-
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.modal.demo" />
 
@@ -15,26 +8,26 @@
     <x-docs.steps>
         <x-docs.step>
             <x-md.h3>Install the component</x-md.h3>
-            <livewire:base.terminal code="flexi-cli add modal" />
+            <livewire:base.terminal code="php artisan flexi:add modal" />
         </x-docs.step>
         <x-docs.step>
-            <x-md.h3>Install Modal</x-md.h3>
+            <x-md.h3>Install Dependencies</x-md.h3>
             <x-docs.callout intent="gray" type="note">
-                This component requires JS. By default we're using our own Interactive Component Library
+                By default we're using our own Interactive Component Library
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. Install this only if you
                 did not accept dependency installation when adding the component.
             </x-docs.callout>
+            <livewire:base.terminal :code="'npm i @flexilla/modal'" />
+        </x-docs.step>
+        <x-docs.step>
+            <x-md.h3>Usage</x-md.h3>
             <x-md.ol>
-                <x-md.li><strong>With Alpine</strong></x-md.li>
-                <livewire:base.terminal :code="'npm i @flexilla/alpine-modal'" />
+                <x-md.li><strong>With Alpine/Livewire</strong></x-md.li>
+
                 <x-md.paragraph>Add plugin in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
 
                 <livewire:base.load-code :name="['add-modal-plugin-in-app']" />
                 <x-md.li><strong>Without Alpine</strong></x-md.li>
-                <x-docs.callout intent="gray" type="note">
-                    Make sure that the modal package is not installed
-                </x-docs.callout>
-                <livewire:base.terminal :code="'npm i @flexilla/modal'" />
                 <x-md.paragraph>Initialize modal in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
 
                 <livewire:base.load-code :name="['add-modal-in-app']" />
@@ -58,7 +51,7 @@
         ['label' => 'Description', 'class' => 'w-2/5'],
     ]">
         <x-ui.table.row>
-            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="modalId" /></x-ui.table.cell>
+            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="id" /></x-ui.table.cell>
             <x-ui.table.cell>string</x-ui.table.cell>
             <x-ui.table.cell>-</x-ui.table.cell>
             <x-ui.table.cell>
@@ -148,12 +141,12 @@
             </x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="noGutter" /></x-ui.table.cell>
+            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="gutter" /></x-ui.table.cell>
             <x-ui.table.cell>boolean</x-ui.table.cell>
-            <x-ui.table.cell>false</x-ui.table.cell>
+            <x-ui.table.cell>true</x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    When true, removes the default padding from the modal content.
+                    When false, removes the default padding from the modal content.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -178,12 +171,12 @@
             </x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="noAnimation" /></x-ui.table.cell>
+            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="animation" /></x-ui.table.cell>
             <x-ui.table.cell>boolean</x-ui.table.cell>
-            <x-ui.table.cell>false</x-ui.table.cell>
+            <x-ui.table.cell>true</x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    When true, disables all animations for the modal content.
+                    When false, disables all animations for the modal content.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -193,29 +186,32 @@
     <x-md.paragraph>
         The modal component uses CSS keyframes for animations. The default animations are:
     </x-md.paragraph>
-    <x-docs.table :columns="[
-        ['label' => 'Keyframe', 'class' => 'w-1/3'],
-        ['label' => 'Description', 'class' => 'w-2/3'],
-    ]">
+    <x-docs.table :columns="[['label' => 'Keyframe', 'class' => 'w-1/3'], ['label' => 'Description', 'class' => 'w-2/3']]">
         <x-ui.table.row>
-            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="modal-animation-in" /></x-ui.table.cell>
+            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap
+                    text="modal-animation-in" /></x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Default enter animation. Fades in and slides up from -1.5rem to 0 with opacity transition from 0 to 1.
+                    Default enter animation. Fades in and slides up from -1.5rem to 0 with opacity transition from 0 to
+                    1.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="modal-animation-out" /></x-ui.table.cell>
+            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap
+                    text="modal-animation-out" /></x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Default exit animation. Fades out and slides up from 0 to -0.75rem with opacity transition from 1 to 0.
+                    Default exit animation. Fades out and slides up from 0 to -0.75rem with opacity transition from 1 to
+                    0.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
     <x-md.paragraph>
-        You can customize animations by modifying the keyframes in your CSS or by providing custom animation names to the <x-docs.inline-code no-wrap text="enterAnimation" /> and <x-docs.inline-code no-wrap text="exitAnimation" /> props.
+        You can customize animations by modifying the keyframes in your CSS or by providing custom animation names to
+        the <x-docs.inline-code no-wrap text="enterAnimation" /> and <x-docs.inline-code no-wrap text="exitAnimation" />
+        props.
     </x-md.paragraph>
 
     <x-md.h3 class="mt-8">Subcomponents</x-md.h3>
@@ -226,7 +222,7 @@
             <x-ui.table.cell>
                 <x-docs.table-description>
                     The clickable element that opens the modal. Must have 'modal-id' attribute matching the modal's
-                    'modalId'.
+                    'id'.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -313,32 +309,4 @@
         To know more about the JavaScript API, check the <x-docs.link
             href="https://flexilla-docs.vercel.app/components/modal">Flexilla</x-docs.link> documentation.
     </x-md.paragraph>
-    <x-md.h2>API</x-md.h2>
-    <x-md.paragraph>
-        The complete API is documented in the <strong>References</strong> section above, including props, subcomponents, and events.
-    </x-md.paragraph>
-
-    <x-md.h2>Examples</x-md.h2>
-    <x-md.paragraph>
-        Start from the demo above and combine trigger/content/header/footer patterns based on your use case.
-    </x-md.paragraph>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Keep focus trapped inside modal content while open.</x-md.li>
-        <x-md.li>Ensure every modal has clear title, description, and close path.</x-md.li>
-        <x-md.li>Avoid background interactions while modal is active.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use modals for confirmation, quick-create forms, and focused detail views.</x-md.li>
-        <x-md.li>Keep success/error handling close to primary modal action buttons.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use slideover when users should retain more page context.</x-md.li>
-        <x-md.li>Use popover for lightweight contextual interactions.</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

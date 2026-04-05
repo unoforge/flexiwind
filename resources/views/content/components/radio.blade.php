@@ -3,7 +3,7 @@
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.radio.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add radio" />
+    <livewire:base.terminal code="php artisan flexi:add radio" />
 
     <x-md.h2>Disabled</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.radio.disabled" />
@@ -46,25 +46,5 @@
             <x-ui.table.cell><x-docs.table-description>Optional inline label rendered with the radio.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use radios for billing cycles, delivery methods, or preference modes with clear defaults.</x-md.li>
-        <x-md.li>Combine with helper text when option consequences are not obvious.</x-md.li>
-        <x-md.li>Keep the full option group visible when possible to reduce comparison effort.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Group related radios in a fieldset with a descriptive legend.</x-md.li>
-        <x-md.li>Make sure each option has a clear text label and sufficient click target size.</x-md.li>
-        <x-md.li>Avoid using color alone to indicate selected state.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use <x-docs.doc-link href="/components/select">select</x-docs.doc-link> when the option list is long.</x-md.li>
-        <x-md.li>Use <x-docs.doc-link href="/components/checkbox">checkbox</x-docs.doc-link> when multiple selections are allowed.</x-md.li>
-    </x-md.ul>
 
 </x-layouts.doc-page-wrapper>

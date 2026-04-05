@@ -39,7 +39,7 @@
               Billing
          </x-ui.dropdown.label>
      </x-ui.dropdown.item>
-     <x-ui.dropdown.item danger>
+     <x-ui.dropdown.item intent="danger">
          <x-ui.dropdown.icon>
              <span class="iconify ph--sign-out text-sm"></span>
          </x-ui.dropdown.icon>

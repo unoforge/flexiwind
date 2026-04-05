@@ -33,7 +33,6 @@ return [
     --color-bg-subtle: var(--bg-subtle);
     --color-bg-surface: var(--bg-surface);
     --color-bg-muted: var(--bg-muted);
-    --color-bg-surface-elevated: var(--bg-surface-elevated);
     --color-card: var(--card);
     --color-card-gray: var(--card-gray);
     --color-popover: var(--bg);
@@ -43,7 +42,6 @@ return [
     --color-progressbar: var(--progressbar);
 
     --color-border-strong: var(--border-strong);
-    --color-border-amphasis: var(--border-amphasis);
     --color-border: var(--border);
     --color-border-sub: var(--border-sub);
     --color-border-card: var(--border-card);

@@ -7,21 +7,20 @@
         'md' => 'switch-md',
         'lg' => 'switch-lg',
     ];
-    $swith_outline_sizes = [
-        'xs' => 'switch-outline-xs',
-        'sm' => 'switch-outline-sm',
-        'md' => 'switch-outline-md',
-        'lg' => 'switch-outline-lg',
+
+    $switch_base_sizes = [
+        'xs' => 'switch-base-xs',
+        'sm' => 'switch-base-sm',
+        'md' => 'switch-base-md',
+        'lg' => 'switch-base-lg',
     ];
 
-    $className = '';
+    $size_base = $switch_base_sizes[$size]?? $switch_base_sizes['md'];
+     $size = $switch_sizes[$size] ?? $switch_sizes['md'];
+    $className = "switch switch-base switch-size switch-knob switch-checked switch-base-ring {$size_base} {$size} ";
     if ($outlined) {
-        $size = $swith_outline_sizes[$size] ?? $swith_outline_sizes['md'];
-        $className .= "switch-outline {$size} border border-border-strong shadow";
-    } else {
-        $size = $switch_sizes[$size] ?? $switch_sizes['md'];
-        $className .= "switch {$size}";
-    }
+        $className .= "ring ring-border-strong shadow";
+    } 
 
     $className .= " {{ $class }}";
 

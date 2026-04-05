@@ -14,6 +14,11 @@
     $words = UrlHelper::splitSlug($filePath);
     $breadcrumbsMain = str_contains($path, '/components') ? $breadcrumbs['components'] : $breadcrumbs['docs'];
     $contentLocation = trim($path, '/');
+    $pageUrl = url($contentLocation);
+
+    $aiPrompt = "Tell me about the {$current['title']} component in Flexiwind: {$current['description']}. Documentation: {$pageUrl}";
+    $chatGptUrl = 'https://chat.openai.com/?q=' . urlencode($aiPrompt);
+    $claudeUrl = 'https://claude.ai/new?q=' . urlencode($aiPrompt);
 
     $slotHtml = (string) $slot;
 
@@ -28,21 +33,21 @@
                 <div class="flex items-center divide-x divide-border">
                     <x-ui.button size="sm" variant="outline" intent="gray" class="rounded-r-none" data-copy-markdown>
                         <span aria-hidden="true" class="flex iconify ph--copy text-sm mr-1.5"></span>
-                        <span>Copy as Markdown</span>
+                        <span>Copy page</span>
                     </x-ui.button>
                     <x-ui.dropdown.trigger size="sm" iconOnly variant="outline" intent="gray" dropdown-id="ui-more-options" class="rounded-l-none">
                         <span class="iconify ph--caret-down text-xs"></span>
                     </x-ui.dropdown.trigger>
                     <x-ui.dropdown placement="bottom-end" id="ui-more-options">
-                        <x-ui.dropdown.item>
+                        <x-ui.dropdown.item href="{{ $chatGptUrl }}" target="_blank" rel="noopener noreferrer">
                             <x-ui.dropdown.icon>
                                 <span aria-hidden="true" class="flex iconify ph--open-ai-logo"></span>
                             </x-ui.dropdown.icon>
                             <x-ui.dropdown.label>
-                                Open with Chat Gpt
+                                Open with ChatGPT
                             </x-ui.dropdown.label>
                         </x-ui.dropdown.item>
-                        <x-ui.dropdown.item>
+                        <x-ui.dropdown.item href="{{ $claudeUrl }}" target="_blank" rel="noopener noreferrer">
                             <x-ui.dropdown.icon>
                                 <span aria-hidden="true" class="flex iconify ph--chat"></span>
                             </x-ui.dropdown.icon>

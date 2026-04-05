@@ -1,12 +1,19 @@
-@props(['wrapper' => '', 'class' => '','noDivider'=>false])
+@props(['wrapper' => '', 'divider' => true, 'grid' => false, 'striped' => false, 'hoverable' => false])
 
 @php
-    $wrapper_class = "relative overflow-x-auto w-full {$wrapper}";
-    $className = "w-full {$class} [--column-px:--spacing(5)] [--column-py:--spacing(2.5)] ";
-    $className .= $noDivider ? '' : 'divide-y divide-border-strong';
+    $grid_class = $grid ? 'border border-(--table-border-color)' : '';
 @endphp
-<div class="{{ $wrapper_class }}">
-    <table {{ $attributes->merge(['class' => $className]) }}>
+<div
+    class="relative overflow-x-auto w-full [--table-border-color:--alpha(var(--color-border-strong)/60%)] {{ $wrapper }} {{ $grid_class }}">
+    <table @if ($grid) data-table-grid @endif
+        @if ($striped) data-table-striped @endif 
+        @if ($hoverable) data-table-hoverable @endif
+        {{ $attributes->class([
+            'w-full divide-(--table-border-color)',
+            '[--gutter-x:--spacing(5)] [--gutter-y:--spacing(2.5)]',
+            'divide-y' => $divider,
+            'in-fx-table-grid:divide-y',
+        ]) }}>
         {{ $slot }}
     </table>
 </div>

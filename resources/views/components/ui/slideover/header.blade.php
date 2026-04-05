@@ -16,7 +16,7 @@
 <div data-slot="sheet-header"
     {{ $attributes->class([
         'relative flex items-start gap-3.5 relative',
-        'space-y-1 p-(--gutter) pb-[calc(var(--gutter)---spacing(3))',
+        'space-y-1 px-(--gutter) py-[calc(var(--gutter)---spacing(3))]',
         $class,
     ]) }}>
     @if (isset($title) || isset($titleSlot))

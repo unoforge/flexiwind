@@ -12,6 +12,7 @@
 
     $radii = [
         'none' => '',
+        'ui'=>'rounded-ui',
         'md' => 'rounded-md',
         'xl' => 'rounded-xl',
         'circle' => 'rounded-full',

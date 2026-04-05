@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "header02",
+    "type": "registry:component",
+    "title": "Header 02",
+    "description": "Header navbar for dashboard layout",
+    "files": [
+        {
+            "path": "resources/views/components/previews/header/02/header.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/layouts/nav-header.blade.php",
+            "content": "<header class=\"h-14 bg-bg border-b border-border flex items-center justify-between px-6 sticky top-0 z-10\">\n    <div class=\"flex items-center gap-4\">\n        <div class=\"flex md:hidden border-r border-border pr-2\">\n            <x-ui.button variant=\"soft\" size=\"sm\" icon-only class=\"\">\n                <span aria-hidden=\"true\" class=\"iconify ph--door-open\"></span>\n            </x-ui.button>\n        </div>\n        <x-ui.breadcrumbs class=\"text-xs sm:text-sm text-fg-muted\">\n            <x-ui.breadcrumbs.item href=\"#\">\n                Core\n            </x-ui.breadcrumbs.item>\n            <x-ui.breadcrumbs.item active>\n                Dashboard\n            </x-ui.breadcrumbs.item>\n        </x-ui.breadcrumbs>\n    </div>\n    <div class=\"flex items-center gap-1\">\n        <div class=\"h-6 w-px bg-border mx-2 hidden sm:block\"></div>\n        <x-ui.button variant=\"ghost\" icon-only size=\"sm\">\n            <span aria-hidden=\"true\" class=\"iconify ph--magnifying-glass\"></span>\n        </x-ui.button>\n        <x-ui.button variant=\"ghost\" icon-only size=\"sm\">\n            <span aria-hidden=\"true\" class=\"iconify ph--mailbox\"></span>\n        </x-ui.button>\n    </div>\n</header>\n"
+        }
+    ]
+}

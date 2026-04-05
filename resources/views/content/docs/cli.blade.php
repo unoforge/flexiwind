@@ -1,14 +1,11 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug" :links="[]">
 
     <x-md.paragraph>
-        Flexi CLI is a powerful command-line tool developed by us to help you manage Flexiwind components and streamline your development workflow.
+        Flexiwind CLI is a powerful command-line tool developed by us to help you manage Flexiwind components and streamline your development workflow.
     </x-md.paragraph>
 
     <x-md.h2>Installation</x-md.h2>
-    <x-md.paragraph>
-        You can install Flexi CLI globally using composer:
-    </x-md.paragraph>
-    <livewire:base.terminal code="composer global require unoforge/flexiwind-cli" />
+    <livewire:base.terminal code="composer require --dev unoforge/flexiwind-cli" />
 
     <x-md.paragraph>
         Or visit the GitHub repository for more installation options:
@@ -34,7 +31,6 @@
 
 
 
-
     <x-md.h2>Features</x-md.h2>
     <x-md.ul>
         <x-md.li><strong>Component Management:</strong> Easily add, update, and manage Flexiwind components</x-md.li>
@@ -46,7 +42,7 @@
 
     <x-md.h3>Development</x-md.h3>
     <x-md.paragraph>
-        Flexi CLI is actively developed and maintained by us. The CLI tool is designed to complement the Flexiwind component library and provide a smooth development experience.
+        Flexiwind CLI is actively developed and maintained by us. The CLI tool is designed to complement the Flexiwind component library and provide a smooth development experience.
     </x-md.paragraph>
 
     <x-md.paragraph>

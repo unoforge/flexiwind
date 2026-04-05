@@ -1,16 +1,9 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use input for short single-line text, numbers, email, and identifier fields.</x-md.li>
-        <x-md.li>Use labels and helper text to make expected format explicit.</x-md.li>
-        <x-md.li>Group leading/trailing affordances only when they improve clarity.</x-md.li>
-    </x-md.ul>
-
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.input.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add input" />
+    <livewire:base.terminal code="php artisan flexi:add input" />
 
     <x-md.h2>With label</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.input.with-label" />
@@ -23,10 +16,10 @@
 
     <x-md.paragraph>
         When using <x-docs.inline-code text="x-ui.input.group" />,
-        the input itself must be rendered in <strong>unStyled mode</strong>.
+        the input itself must be rendered in <strong>variant mode</strong>.
     </x-md.paragraph>
     <x-md.ul>
-        <x-md.li>Always pass <x-docs.inline-code text="unStyled" /> to the input</x-md.li>
+        <x-md.li>Always set <x-docs.inline-code text="variant" /> to <x-docs.inline-code text="unstyled" /> for the input</x-md.li>
         <x-md.li>Never pass <x-docs.inline-code text="label" /> to the input</x-md.li>
         <x-md.li>Styling and layout are handled by the group container</x-md.li>
     </x-md.ul>
@@ -52,7 +45,7 @@
         <x-md.li>Use the <x-docs.inline-code text="label" /> prop for simple inputs</x-md.li>
         <x-md.li>Use <x-docs.inline-code text="x-ui.label" /> for custom layouts</x-md.li>
         <x-md.li>Use <x-docs.inline-code text="x-ui.input.group" /> for composed inputs</x-md.li>
-        <x-md.li>Always use <x-docs.inline-code text="unStyled" /> inside groups</x-md.li>
+        <x-md.li>Always use <x-docs.inline-code text="variant" /> inside groups</x-md.li>
         <x-md.li>Never mix labels with grouped inputs</x-md.li>
     </x-md.ul>
 
@@ -134,6 +127,16 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell>
+                <x-docs.inline-code no-wrap text="invalid" /> (boolean)
+            </x-ui.table.cell>
+            <x-ui.table.cell>
+                <x-docs.table-description>
+                   Whether the input is invalid or not for visual, default : false.
+                </x-docs.table-description>
+            </x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell>
                 <x-docs.inline-code no-wrap text="disabled" /> (boolean)
             </x-ui.table.cell>
             <x-ui.table.cell>
@@ -164,21 +167,21 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="noBorder" /> (boolean)
+                <x-docs.inline-code no-wrap text="variant" /> (string)
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Removes the border from the input. Default: false
+                    The variant of the input. Options: "default", "ghost", "flush", "unstyled". Default: "default"
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="inlinedLabel" /> (boolean)
+                <x-docs.inline-code no-wrap text="labelPosition" /> (top|inline)
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Whether the label should be inline with the input. Default: false
+                    Position of the label relative to the input. Options: "top", "inline". Default: "top"
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -189,46 +192,6 @@
             <x-ui.table.cell>
                 <x-docs.table-description>
                     Additional CSS classes for the label. Default: ''
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="unStyled" /> (boolean)
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Removes all default styling from the input. Default: false
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="bgNone" /> (boolean)
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Removes the background color from the input. Default: false
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="radiusNone" /> (boolean)
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Removes the border radius from the input. Default: false
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="groupWrapperClass" /> (string)
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Additional CSS classes for the group wrapper. Default: null
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -251,31 +214,11 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="noBorder" /> (boolean)
+                <x-docs.inline-code no-wrap text="variant" /> (string)
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Removes the border from the group. Default: false
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="bgNone" /> (boolean)
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Removes the background color from the group. Default: false
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="radiusNone" /> (boolean)
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Removes the border radius from the group. Default: false
+                    The variant of the group. Options: "default", "ghost", "flush", "unstyled". Default: "default"
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -316,32 +259,5 @@
             </x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
-    <x-md.h2>API</x-md.h2>
-    <x-md.paragraph>
-        Full API details are documented in the <strong>References</strong> tables above (component, props, and subcomponents).
-    </x-md.paragraph>
 
-    <x-md.h2>Examples</x-md.h2>
-    <x-md.paragraph>
-        The sections above include labeled inputs, grouped inputs, and leading/trailing affordances.
-    </x-md.paragraph>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Every input should have an associated visible label.</x-md.li>
-        <x-md.li>Expose validation errors with readable text, not color alone.</x-md.li>
-        <x-md.li>Preserve keyboard focus visibility and logical tab order.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use consistent validation copy and state colors across forms.</x-md.li>
-        <x-md.li>Pre-fill known values to reduce typing and improve completion rates.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use textarea for multi-line content.</x-md.li>
-        <x-md.li>Use select/radio when choices are predefined.</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

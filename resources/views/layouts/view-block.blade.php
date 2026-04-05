@@ -10,22 +10,23 @@
 
 @php
 
-    $fullPath = '/' . ltrim(request()->path() ?: '', '/');
-    $path = basename($fullPath);
-
     $blocks = config('blocks');
 
-    $block = $blocks[$path] ?? [];
+    $blockCategory = request()->route('blockCategory');
+    $blockName = request()->route('blockName');
+
+    $block = $blocks[$blockCategory][$blockName] ?? [];
+
 
     $seo = [
         'ogImage' => [
-            'src' => $ogImage['src'] ?? config('app.default_og_image', '/default-og.png'),
-            'alt' => $ogImage['alt'] ?? config('app.default_og_alt', 'Default OG Alt'),
+            'src' => $ogImage['src'] ?? "/illustrations/blocks-light.webp",
+            'alt' => $ogImage['alt'] ?? "Flexiwind Cover illustration",
         ],
         'keywords' => trim(
-            config('app.keywords_def', 'docs, flexiwind') . ', blocks, components, laravel blocks, livewire blocks',
+            'docs, flexiwind, blocks, components, laravel blocks, livewire blocks',
         ),
-        'title' => 'Flexiwind | Preview ' . ($block['title'] ?? ''),
+        'title' => "Flexiwind | {$blockName}",
         'description' => $block['description'] ?? 'Easily add interactive Components to your App.',
     ];
 

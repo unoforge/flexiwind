@@ -1,30 +1,16 @@
 <?php
 
 return [
-    'flexilla-all' => [
-        'lang' => 'css',
-        'name' => 'Shell',
-        'code' => 'npm i @flexilla/flexilla'
-    ],
-    'flexilla-accordion' => [
-        'lang' => 'css',
-        'name' => 'Shell',
-        'code' => 'npm i @flexilla/accordion'
-    ],
-    'flexilla-accordion-alpine' => [
-        'lang' => 'css',
-        'name' => 'Shell',
-        'code' => 'npm i @flexilla/alpine-accordion'
-    ],
+
     'install-dark-mode-blade' => [
         'lang' => 'css',
         'name' => 'Shell',
-        'code' => 'npm i @flexilla/utilities'
+        'code' => 'npm i @flexilla/utilities',
     ],
     'theme-toggle-button' => [
-        'lang'=>'blade',
-        'name'=>'theme-toggle.blade.php',
-        'code'=><<<'HTML'
+        'lang' => 'blade',
+        'name' => 'theme-toggle.blade.php',
+        'code' => <<<'HTML'
 <x-ui.button variant="ghost" size="sm" iconOnly radius="none" x-on:click="$store.theme.toggle()"
     aria-label="toggle theme" class="relative">
     <span

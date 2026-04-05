@@ -9,7 +9,7 @@
             'src' => $current['ogImage']['src'] ?? config('base.default_og_image'),
             'alt' => $current['ogImage']['alt'] ?? config('base.default_og_alt'),
         ],
-        'keywords' => trim(config('base.keywords_def') . ($current['keywords'] ? ', ' . $current['keywords'] : '')),
+        'keywords' => trim(($current['keywords'] ? ', ' . $current['keywords'] : 'flexiwind, laravel, components, ui')),
         'title' => 'Flexiwind | ' . $current['title'],
         'description' => $current['seoDescription'] ?? 'Easily add interactive Components to your App.',
     ];

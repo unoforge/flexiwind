@@ -1,0 +1,209 @@
+# Flexiwind
+
+> Flexiwind is a Laravel-first UI component system built with Blade, Livewire, and Tailwind CSS v4. It follows a code-ownership model inspired by shadcn/ui — components are copied into your project and are fully yours to customize.
+
+## Overview
+
+- Components are Blade-based, Tailwind v4-styled, and optionally Livewire-powered
+- Interactive components (accordion, modal, dropdown, etc.) use [Flexilla](https://flexilla-docs.vercel.app/) for JS behavior
+- A semantic design token system drives all theming (colors, surfaces, borders, radii)
+- The Flexi CLI (`unoforge/flexiwind-cli`) manages component installation and updates
+
+## Requirements
+
+- PHP ^8.2
+- Laravel ^12
+- Tailwind CSS v4
+- Node.js + npm
+
+## Quick Start
+
+```bash
+# Via CLI (recommended)
+composer require --dev unoforge/flexiwind-cli
+php artisan flexi:init
+php artisan flexi:add flexiwind-base
+
+# Via starter kit
+laravel new project-name --using=uno-forge-hub/livewire-tail-starter-kit
+```
+
+## Flexi CLI
+
+```bash
+# Add one or more components
+php artisan flexi:add button input modal
+
+# Initialize in an existing project
+php artisan flexi:init
+```
+
+## Design System
+
+### Semantic Color Roles
+
+| Token       | Purpose                                              |
+|-------------|------------------------------------------------------|
+| `primary`   | Main brand color — buttons, links, active states     |
+| `secondary` | Supporting brand color for visual hierarchy          |
+| `accent`    | Highlight color for badges and special interactions  |
+| `info`      | Neutral/informational messages                       |
+| `success`   | Positive states, confirmations, valid inputs         |
+| `warning`   | Caution states requiring attention                   |
+| `danger`    | Destructive actions, errors, critical states         |
+| `gray`      | Neutral scale for backgrounds, borders, disabled     |
+
+### Background Tokens
+
+`--bg`, `--bg-subtle`, `--bg-surface`, `--bg-muted`, `--card`, `--card-gray`, `--popover`, `--popover-gray`, `--overlay`
+
+### Foreground Tokens
+
+`--fg`, `--fg-title`, `--fg-subtitle`, `--fg-muted`
+
+### Border Tokens
+
+`--border`, `--border-strong`, `--border-subtle`, `--border-card`, `--border-input`
+
+### Radius
+
+`--radius-ui` — default border radius for all components
+
+### Button Variants & Intents
+
+Variants: `solid`, `soft`, `outline`, `ghost`, `flexi`, `none`
+
+Intents: `primary`, `secondary`, `accent`, `success`, `danger`, `warning`, `info`, `gray`, `neutral`, `white`
+
+CSS class pattern: `btn-{variant}-{intent}` (e.g. `btn-solid-primary`, `btn-soft-danger`)
+
+### UI Utilities
+
+Variants: `solid`, `soft`, `subtle`, `outline`
+
+CSS class pattern: `ui-{variant}-{intent}` (e.g. `ui-soft-primary`, `ui-subtle-danger`)
+
+### Dark Mode
+
+With Alpine/Livewire: use an Alpine store to toggle a `dark` class on `<html>`.
+Without Alpine: install `@flexilla/utilities` and use its theme API.
+
+## Components
+
+### Actions & Inputs
+
+- **Button** — `php artisan flexi:add button`
+  Props: `variant` (solid|soft|outline|ghost|none), `intent`, `size` (xs|sm|md|lg|xl), `iconOnly`, `disabled`, `href`
+
+- **Input** — `php artisan flexi:add input`
+  Supports icons, validation states, leading/trailing addons via `x-ui.input.group`
+
+- **Text Area** — `php artisan flexi:add textarea`
+  Auto-resizes via `@flexilla/auto-resize-area`
+
+- **Select** — `php artisan flexi:add select`
+
+- **Checkbox** — `php artisan flexi:add checkbox`
+
+- **Radio** — `php artisan flexi:add radio`
+
+- **Switch** — `php artisan flexi:add switch`
+
+- **OTP / Pin** — `php artisan flexi:add otp`
+  Segmented input for verification codes; uses `@flexilla/pin-input`
+
+- **Range** — `php artisan flexi:add range`
+  Slider with custom indicator via `@flexilla/custom-range`
+
+### Layout & Structure
+
+- **Card** — `php artisan flexi:add card`
+  Subcomponents: `x-ui.card.header`, `x-ui.card.title`, `x-ui.card.description`, `x-ui.card.content`, `x-ui.card.footer`
+
+- **Divider** — `php artisan flexi:add divider`
+
+- **Aspect Ratio** — `php artisan flexi:add aspect`
+
+### Navigation
+
+- **Navbar** — `php artisan flexi:add navbar`
+
+- **Sidebar** — `php artisan flexi:add sidebar`
+
+- **Breadcrumbs** — `php artisan flexi:add breadcrumbs`
+  Subcomponents: `x-ui.breadcrumbs.item`, `x-ui.breadcrumbs.separator`
+
+- **Tabs** — `php artisan flexi:add tabs`
+  Uses `@flexilla/tabs`. Subcomponents: `x-ui.tabs.list`, `x-ui.tabs.trigger`, `x-ui.tabs.panel`
+
+- **Pagination** — `php artisan flexi:add pagination`
+
+- **Link** — `php artisan flexi:add link`
+
+### Data & Feedback
+
+- **Table** — `php artisan flexi:add table`
+  Subcomponents: `x-ui.table.columns`, `x-ui.table.column`, `x-ui.table.rows`, `x-ui.table.row`, `x-ui.table.cell`
+
+- **Avatar** — `php artisan flexi:add avatar`
+
+- **Badge** — `php artisan flexi:add badge`
+
+- **Alert** — `php artisan flexi:add alert`
+
+- **Callout** — `php artisan flexi:add callout`
+  Subcomponents: `x-ui.callout.title`, `x-ui.callout.description`
+
+- **Progress** — `php artisan flexi:add progress`
+
+- **Meter** — `php artisan flexi:add meter`
+
+- **Skeleton** — `php artisan flexi:add skeleton`
+
+- **Kbd** — `php artisan flexi:add kbd`
+
+### Overlays & Disclosure
+
+- **Modal** — `php artisan flexi:add modal`
+  Uses `@flexilla/modal`. Props: `id` (required), `backdropClass`, `overlayBlured`, `closable`, `staticBackdrop`, `scrollableBody`
+  Content props: `size` (xs|sm|md|lg|xl|2xl|3xl|4xl|full), `closable`, `noGutter`, `enterAnimation`, `exitAnimation`, `noAnimation`
+  Subcomponents: `x-ui.modal.trigger`, `x-ui.modal.content`, `x-ui.modal.header`, `x-ui.modal.title`, `x-ui.modal.body`, `x-ui.modal.footer`, `x-ui.modal.close`
+  Events: `modal:{id}:open`, `modal:{id}:close`
+
+- **Alert Dialog** — `php artisan flexi:add alert-dialog`
+  Confirmation dialog built on modal behavior
+
+- **Slideover** — `php artisan flexi:add slideover`
+  Uses `@flexilla/offcanvas`. Side-panel overlay.
+  Subcomponents: `x-ui.slideover.trigger`, `x-ui.slideover.content`, `x-ui.slideover.header`, `x-ui.slideover.title`, `x-ui.slideover.body`, `x-ui.slideover.footer`, `x-ui.slideover.close`
+
+- **Dropdown** — `php artisan flexi:add dropdown`
+  Uses `@flexilla/dropdown`.
+  Subcomponents: `x-ui.dropdown.trigger`, `x-ui.dropdown.item`, `x-ui.dropdown.label`, `x-ui.dropdown.separator`, `x-ui.dropdown.header`, `x-ui.dropdown.kbd`
+
+- **Popover** — `php artisan flexi:add popover`
+  Uses `@flexilla/popover`. Subcomponents: `x-ui.popover.trigger`
+
+- **Tooltip** — `php artisan flexi:add tooltip`
+  Uses `@flexilla/tooltip`. Subcomponents: `x-ui.tooltip.trigger`
+
+- **Accordion** — `php artisan flexi:add accordion`
+  Uses `@flexilla/accordion`.
+  Subcomponents: `x-ui.accordion.item`, `x-ui.accordion.trigger`, `x-ui.accordion.content`, `x-ui.accordion.indicator`
+
+- **Collapse** — `php artisan flexi:add collapse`
+  Uses `@flexilla/collapse`. Subcomponents: `x-ui.collapse.trigger`, `x-ui.collapse.indicator`
+
+## Documentation
+
+- Docs: `/docs`
+- Components: `/components`
+- Source: `resources/views/content/docs/` and `resources/views/content/components/`
+- Sidebar config: `config/sidebar.php`
+
+## Links
+
+- Homepage: https://flexiwind.laravel.com
+- GitHub CLI: https://github.com/unoforge/flexiwind-cli
+- Flexilla docs: https://flexilla-docs.vercel.app/
+- Author: Johnkat MJ (https://x.com/johnkat_Mj)

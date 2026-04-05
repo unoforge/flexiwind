@@ -1,7 +1,11 @@
+import '@fontsource/geist-sans';
+
+
+
 import copyToClipboardComponent from "./copyToClipboard";
 
 import { docSearch } from "../data/search-db";
-import { disableTransitionsTemporarily } from "./utils";
+import { disableTransitionsTemporarily } from "@flexilla/utilities/dom-utilities";
 
 Alpine.data("copyToClipboard", copyToClipboardComponent);
 

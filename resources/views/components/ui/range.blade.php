@@ -1,12 +1,12 @@
 @props([
     'size' => 'md',
     'class' => '',
-    'noRadius' => false,
+    'radius' => true,
     'wrapper' => '',
     'max' => '100',
     'min' => '0',
     'customIndicator' => null,
-    'thumbBgCurrent' => false,
+    'thumbBackground' => 'default',
 ])
 
 @php
@@ -26,8 +26,8 @@
     $wrapper_class = "relative w-full flex items-center {$wrapper_size} {$wrapper}";
     
     $range_size = $range_sizes[$size] ?? $range_sizes['md'];
-    $radius = $noRadius ? '[--ui-progressbar-radius:0px]' : '[--ui-progressbar-radius:20px]';
-    $thumBg = $thumbBgCurrent ? '[--ui-input-range-thumb-bg:currentColor]' : '[--ui-input-range-thumb-bg:var(--c-bg)]';
+    $radius = $radius ? '[--ui-progressbar-radius:20px]' : '[--ui-progressbar-radius:0px]';
+    $thumBg = $thumbBackground === 'current' ? '[--ui-input-range-thumb-bg:currentColor]' : '[--ui-input-range-thumb-bg:var(--c-bg)]';
     $className = "ui-input-range [--ui-input-range-track-bg:var(--c-bg-range)] {$radius} {$range_size} {$thumBg} {$class}";
 
     $indicator_sizes = [
@@ -36,7 +36,7 @@
         'md' => 'h-2',
     ];
     $indicator_size = $indicator_sizes[$size] ?? $indicator_sizes['md'];
-    $radius_indicator = $noRadius ? '' : 'rounded-[20px]';
+    $radius_indicator = $radius ? 'rounded-[20px]' : '';
     $custom_indicator = $customIndicator
         ? "peer-disabled:opacity-50 {$radius_indicator} {$indicator_size} {$customIndicator}"
         : null;

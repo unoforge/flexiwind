@@ -365,6 +365,27 @@ export const docSearch = [
         isTheming: false,
         category: "inputs",
     },
+
+    {
+        slug: "/components/navbar",
+        title: "Navbar",
+        description: "Header navigation component with support for branding and menus.",
+        type: "component",
+        isDocumentation: false,
+        isComponent: true,
+        isTheming: false,
+        category: "navigation",
+    },
+    {
+        slug: "/components/sidebar",
+        title: "Sidebar",
+        description: "Collapsible vertical navigation container for application dashboards.",
+        type: "component",
+        isDocumentation: false,
+        isComponent: true,
+        isTheming: false,
+        category: "navigatioon",
+    },
     {
         slug: "/components/tooltip",
         title: "Tooltip",

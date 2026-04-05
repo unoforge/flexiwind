@@ -1,0 +1,31 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "input-group",
+    "type": "registry:component",
+    "title": "Input Group",
+    "description": "A reusable input component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "label"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/input/group.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/input/group.blade.php",
+            "content": "@props([\n    'variant' => 'default',\n    'size' => 'md',\n])\n\n@php\n    $sizes = [\n        'none' => '',\n        'sm' => 'h-8',\n        'md' => 'h-9',\n        'lg' => 'h-10',\n        'xl' => 'h-11',\n    ];\n\n    $variantClasses = match ($variant) {\n        'default' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex rounded-ui bg-bg border border-border-input text-fg',\n        'ghost' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex rounded-ui bg-bg border border-border-input text-fg',\n        'flush' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex border-transparent bg-bg text-fg',\n        'unstyled' => 'relative flex',\n    };\n\n    $sizeClass = $variant === 'unstyled' ? '' : ($sizes[$size] ?? $sizes['md']);\n@endphp\n\n<div {{ $attributes->class([$variantClasses, $sizeClass]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/input/leading.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/input/leading.blade.php",
+            "content": "@props(['absolute' => false, 'class' => '', 'clickable' => false])\n\n@php\n    $isClickable = $clickable ? '' : 'pointer-events-none';\n    $position = $absolute ? \"absolute inset-y-0 pointer-events-none left-(--left-space,10px) {$isClickable}\" : '';\n    $final_class = \"{$class} {$position} flex justify-center items-center\";\n@endphp\n<span class=\"{{ $final_class }}\">\n    {{ $slot }}\n</span>\n"
+        },
+        {
+            "path": "resources/views/components/ui/input/trailing.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/input/trailing.blade.php",
+            "content": "@props(['absolute' => false, 'class' => '', 'clickable' => false])\n\n@php\n    $isClickable = $clickable ? '' : 'pointer-events-none';\n    $position = $absolute ? \"absolute inset-y-0 right-(--right-space,10px) {$isClickable}\" : '';\n    $final_class = \"{$class} {$position} flex justify-center items-center\";\n@endphp\n<span class=\"{{ $final_class }}\">\n    {{ $slot }}\n</span>\n"
+        }
+    ]
+}

@@ -6,7 +6,7 @@
         </button>
     </div>
     <div class="px-6 pb-6 space-y-4">
-        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-bg-bg-subtle/50 transition-colors">
+        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-bg-subtle/50 transition-colors">
             <div class="size-8 rounded-full overflow-hidden">
                 <img src="/defaultavatar.webp" alt="Sarah Chen" class="w-full h-full object-cover" />
             </div>

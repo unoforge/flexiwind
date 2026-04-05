@@ -1,0 +1,46 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "table",
+    "type": "registry:component",
+    "title": "Table",
+    "description": "A reusable table component for Laravel Blade/Livewire.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/table.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/table.blade.php",
+            "content": "@props(['wrapper' => '', 'divider' => true, 'grid' => false, 'striped' => false, 'hoverable' => false])\n\n@php\n    $grid_class = $grid ? 'border border-(--table-border-color)' : '';\n@endphp\n<div\n    class=\"relative overflow-x-auto w-full [--table-border-color:--alpha(var(--color-border-strong)/60%)] {{ $wrapper }} {{ $grid_class }}\">\n    <table @if ($grid) data-table-grid @endif\n        @if ($striped) data-table-striped @endif \n        @if ($hoverable) data-table-hoverable @endif\n        {{ $attributes->class([\n            'w-full divide-(--table-border-color)',\n            '[--gutter-x:--spacing(5)] [--gutter-y:--spacing(2.5)]',\n            'divide-y' => $divider,\n            'in-fx-table-grid:divide-y',\n        ]) }}>\n        {{ $slot }}\n    </table>\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/table/cell.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/table/cell.blade.php",
+            "content": "@props(['align' => 'left', 'whiteSpace' => 'nowrap', 'class' => ''])\n\n<td\n    {{ $attributes->class([\n        'px-(--gutter-x) py-(--gutter-y)',\n        'text-left' => $align == 'left',\n        'text-center' => $align == 'center',\n        'text-right' => $align == 'right',\n        'whitespace-nowrap'=>$whiteSpace=='nowrap',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</td>\n"
+        },
+        {
+            "path": "resources/views/components/ui/table/column.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/table/column.blade.php",
+            "content": "@props(['align' => 'left', 'whiteSpace' => 'nowrap', 'class' => ''])\n\n<th\n    {{ $attributes->class([\n        'px-(--gutter-x) py-(--gutter-y) font-medium',\n        'text-left' => $align == 'left',\n        'text-center' => $align == 'center',\n        'text-right' => $align == 'right',\n        'whitespace-nowrap' => $whiteSpace === 'nowrap',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</th>\n"
+        },
+        {
+            "path": "resources/views/components/ui/table/columns.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/table/columns.blade.php",
+            "content": "@props(['wrapper' => '', 'headerBgStyle' => 'none', 'columnDivider' => false])\n\n<thead class=\"{{ $wrapper }}\">\n    <tr\n        {{ $attributes->class([\n            'capitalize text-sm font-medium text-fg-title divide-(--table-border-color)',\n            'bg-bg-muted/60' => $headerBgStyle === 'gray',\n            'divide-x' => $columnDivider,\n            'in-fx-table-grid:divide-x'\n        ]) }}>\n        {{ $slot }}\n    </tr>\n</thead>\n"
+        },
+        {
+            "path": "resources/views/components/ui/table/row.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/table/row.blade.php",
+            "content": "@props(['class' => '', 'divider' => false])\n\n\n<tr\n    {{ $attributes->class([\n        'text-sm divide-(--table-border-color) transition-colors ease-linear',\n        'in-fx-hoverable:hover:bg-bg-muted/40',\n        'in-fx-striped:in-fx-hoverable:hover:bg-bg-muted/40',\n        'divide-x' => $divider,\n        'in-fx-table-grid:divide-x',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</tr>\n"
+        },
+        {
+            "path": "resources/views/components/ui/table/rows.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/table/rows.blade.php",
+            "content": "@props(['divider' => true, 'class' => ''])\n\n\n\n<tbody\n    {{ $attributes->class([\n        'text-sm divide-(--table-border-color)',\n        'divide-y' => $divider,\n        'in-fx-table-grid:divide-y',\n        'in-fx-striped:*:even:bg-bg-muted/40',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</tbody>\n"
+        }
+    ]
+}

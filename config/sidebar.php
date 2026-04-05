@@ -40,16 +40,16 @@ return [
             [
                 'title' => 'Theming Tokens',
                 'path' => '/docs/theme',
-                'description' => "Foundation of Flexiwind’s design system: semantic tokens for colors, surfaces, borders, typography, spacing, and radii to ensure visual consistency.",
+                'description' => 'Foundation of Flexiwind’s design system: semantic tokens for colors, surfaces, borders, typography, spacing, and radii to ensure visual consistency.',
                 'keywords' => 'Design System, Design Tokens, Semantic Tokens, Theming, Colors, Typography, UI Foundation',
-                'seoDescription' => "Learn how Flexiwind uses semantic design tokens to build a consistent, scalable, and customizable UI system.",
+                'seoDescription' => 'Learn how Flexiwind uses semantic design tokens to build a consistent, scalable, and customizable UI system.',
             ],
             [
                 'title' => 'Color Tokens',
                 'path' => '/docs/theme/colors',
-                'description' => "Semantic color tokens for backgrounds, text, borders, states, and emphasis. Built to support light and dark themes out of the box.",
+                'description' => 'Semantic color tokens for backgrounds, text, borders, states, and emphasis. Built to support light and dark themes out of the box.',
                 'keywords' => 'Color Tokens, Semantic Colors, UI Colors, Light Mode, Dark Mode, Design System',
-                'seoDescription' => "Explore Flexiwind’s semantic color tokens for building accessible and theme-ready user interfaces.",
+                'seoDescription' => 'Explore Flexiwind’s semantic color tokens for building accessible and theme-ready user interfaces.',
             ],
             [
                 'title' => 'Buttons',
@@ -70,6 +70,14 @@ return [
     [
         'label' => 'Actions & Inputs',
         'items' => [
+            [
+                'title' => 'Components',
+                'path' => '/components',
+                'description' => 'Browse all Flexiwind UI components including inputs, overlays, navigation, and data display elements.',
+                'keywords' => 'UI Components, Blade Components, Livewire Components, Laravel UI, Component Library',
+                'seoDescription' => 'Explore the full Flexiwind component collection for Laravel, featuring ready-to-use Blade and Livewire UI components.',
+                'hideInSidebar' => true,
+            ],
             [
                 'title' => 'Button',
                 'path' => '/components/button',
@@ -267,6 +275,13 @@ return [
                 'keywords' => 'skeleton, loader, ghost, placeholder',
                 'seoDescription' => 'Add loading state placeholders with Flexiwind\'s skeleton component.',
             ],
+            [
+                'title' => 'Kbd',
+                'path' => '/components/kbd',
+                'description' => 'Shortcut keycap component for displaying keyboard commands and key combinations.',
+                'keywords' => 'keyboard, kbd, shortcut, command',
+                'seoDescription' => 'Display keyboard shortcuts and commands with Flexiwind\'s kbd component.',
+            ],
         ],
     ],
     [
@@ -322,11 +337,37 @@ return [
                 'seoDescription' => 'Learn how to use Flexiwind\'s accordion component to create expandable content sections.',
             ],
             [
-                'title' => 'Kbd',
-                'path' => '/components/kbd',
-                'description' => 'Shortcut keycap component for displaying keyboard commands and key combinations.',
-                'keywords' => 'keyboard, kbd, shortcut, command',
-                'seoDescription' => 'Display keyboard shortcuts and commands with Flexiwind\'s kbd component.',
+                'title' => 'Collapse',
+                'path' => '/components/collapse',
+                'description' => 'Toggle visibility of content sections with smooth height transitions.',
+                'keywords' => 'collapse, expand, show more, toggle, disclosure',
+                'seoDescription' => 'Learn how to use Flexiwind\'s collapse component to create expandable content sections.',
+            ],
+        ],
+    ],
+    [
+        'label' => 'Typography',
+        'items' => [
+            [
+                'title' => 'Icon',
+                'path' => '/components/icon',
+                'description' => 'Reusable icon component using Iconify for consistent iconography across the UI.',
+                'keywords' => 'icon, iconify, svg, symbol',
+                'seoDescription' => 'Display icons consistently with Flexiwind\'s icon component.',
+            ],
+            [
+                'title' => 'Text',
+                'path' => '/components/text',
+                'description' => 'Semantic text component with intent-based styling for body, muted, title, and accent colors.',
+                'keywords' => 'text, typography, paragraph, muted text',
+                'seoDescription' => 'Style text consistently with Flexiwind\'s text component.',
+            ],
+            [
+                'title' => 'Heading',
+                'path' => '/components/heading',
+                'description' => 'Structured heading levels (H1-H5) with consistent sizing and semantic hierarchy.',
+                'keywords' => 'heading, h1, h2, h3, h4, h5, title',
+                'seoDescription' => 'Create consistent headings with Flexiwind\'s heading component.',
             ],
         ],
     ],

@@ -1,4 +1,4 @@
-<x-layouts.prev-ui class="overflow-hidden overflow-y-auto lg:overflow-y-auto">
+<x-layouts.prev-ui class="overflow-hidden min-h-screen">
     <x-previews.sidebar.02.sidebar />
     <x-previews.sidebar.02.wrapper>
         <div>

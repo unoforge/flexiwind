@@ -2,7 +2,7 @@
 
 <th
     {{ $attributes->class([
-        'px-(--column-px) py-(--column-py) font-medium',
+        'px-(--gutter-x) py-(--gutter-y) font-medium',
         'text-left' => $align == 'left',
         'text-center' => $align == 'center',
         'text-right' => $align == 'right',

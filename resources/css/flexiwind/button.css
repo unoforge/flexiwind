@@ -68,11 +68,6 @@
   box-shadow: inset 0px 2px 0 var(--btn-solid-top-shadow), inset 0px -2px 0 var(--btn-solid-bottom-shadow);
 }
 
-@utility btn-flexi {
-  @apply bg-(--btn-flexi-bg) hover:bg-(--btn-flexi-hover-bg) active:bg-(--btn-flexi-active-bg) active:[--btn-flexi-shadow-a:--btn-flexi-shadow-active-a] active:[--btn-flexi-shadow-b:--btn-flexi-shadow-active-b] active:[--btn-flexi-shadow-c:--btn-flexi-shadow-active-c] [--btn-focus-outline-color:--btn-flexi-hover-bg];
-  --tw-shadow: 0 -1px 0 0px var(--tw-shadow-color, var(--btn-flexi-shadow-a)) inset, 0 0 0 1px var(--tw-shadow-color, var(--btn-flexi-shadow-b)) inset, 0 0.5px 0 1.5px var(--tw-shadow-color, var(--btn-flexi-shadow-c)) inset;
-  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-}
 
 @utility btn-outline {
   background-image: radial-gradient(76% 151% at 52% -52%, rgba(255, 255, 255, var(--outline-radial-opacity)) 0%, transparent 100%);

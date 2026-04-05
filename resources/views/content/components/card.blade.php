@@ -1,17 +1,11 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use cards to group related content, metadata, and actions into clear visual units.</x-md.li>
-        <x-md.li>Prefer consistent card structure across similar list/grid experiences.</x-md.li>
-        <x-md.li>Keep content density balanced for readability.</x-md.li>
-    </x-md.ul>
 
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.card.demo" />
 
     <x-md.h2>Installation</x-md.h2>
     <x-md.paragraph>Install the component</x-md.paragraph>
-    <livewire:base.terminal code="flexi-cli add card" />
+    <livewire:base.terminal code="php artisan flexi:add card" />
 
     <x-md.h2>Examples</x-md.h2>
     <x-md.h3>With Icon</x-md.h3>
@@ -135,21 +129,21 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="noBorder" /> (boolean)
+                <x-docs.inline-code no-wrap text="border" /> (boolean)
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Removes the border from the card. Default: false
+                    Controls the border on the card. Default: true
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="noShadow" /> (boolean)
+                <x-docs.inline-code no-wrap text="shadow" /> (boolean)
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Removes the shadow from the card. Default: false
+                    Controls the shadow on the card. Default: true
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -362,28 +356,4 @@
         You can combine multiple variable overrides for complete control over the card appearance:
     </x-md.paragraph>
     <livewire:base.load-code :name="['card-combined-customization']" />
-
-    <x-md.h2>API</x-md.h2>
-    <x-md.paragraph>
-        The full API is documented in the <strong>References</strong> section above, including subcomponents and props.
-    </x-md.paragraph>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Maintain semantic heading order inside card titles and content.</x-md.li>
-        <x-md.li>Ensure action controls inside cards have clear labels and focus states.</x-md.li>
-        <x-md.li>Do not use visual elevation alone to communicate critical state.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use consistent card padding/radius variables across dashboards and listing pages.</x-md.li>
-        <x-md.li>Pair cards with badges/alerts for quick status context.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use table layouts for highly comparable row-based data.</x-md.li>
-        <x-md.li>Use simple section blocks when content grouping does not need a container treatment.</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

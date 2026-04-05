@@ -1,7 +1,7 @@
 <x-ui.modal.trigger intent="primary" variant="solid" modalId="waitlist-modal" size="md">
     Join waitlist
 </x-ui.modal.trigger>
-<x-ui.modal modalId="waitlist-modal">
+<x-ui.modal id="waitlist-modal">
     <x-ui.modal.content no-gutter size="sm" :closable="false" class="p-0.5">
         <form class="size-full">
             <x-ui.modal.header padding-none class="relative w-full p-4 flex items-center gap-2">
@@ -14,7 +14,7 @@
                 </div>
             </x-ui.modal.header>
             <x-ui.modal.body no-gutter
-                class="mb-2 bg-bg-surface border border-border ui-card [--card-radius:var(--global-main-radius)] [--card-padding:--spacing(4)] shadow-sm  flex flex-col space-y-4">
+                class="mb-2 bg-bg-surface border border-border ui-card [--card-radius:var(--radius-ui)] [--card-padding:--spacing(4)] shadow-sm  flex flex-col space-y-4">
                 <x-ui.input type="email" label="Your Email" placeholder="johndoe@gmail.com" />
                 <x-ui.input type="text" label="Your Name" placeholder="johnkatmj@gmail.com" />
             </x-ui.modal.body>

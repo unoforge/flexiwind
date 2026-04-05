@@ -1,36 +1,14 @@
-import { $, $$ } from "@flexilla/utilities";
+import { $ } from "@flexilla/utilities";
 import { copyToClipboard } from "./utils";
 
 document.addEventListener("alpine:init", () => {
     Alpine.directive("ui-block", (el, {}, { cleanup }) => {
-        const responsiveBoxToggler = $("[data-responsive-toggler]", el);
         const previewBox = $("[data-ui-previewbox]", el);
-        const sizePreviewTriggers = $$(
-            "[data-preview-size-trigger]",
-            responsiveBoxToggler
-        );
+        
 
-        const updateSizeTriggerState = (currentTarget) => {
-            for (const sizeTrigger of sizePreviewTriggers) {
-                if (sizeTrigger.getAttribute("data-target") === currentTarget)
-                    sizeTrigger.setAttribute("data-state", "active");
-                else sizeTrigger.setAttribute("data-state", "inactive");
-            }
-        };
-        const changeActiveTrigger = (e) => {
-            const trigger = e.target;
-            const id = `${trigger.getAttribute("data-target")}`;
-            updateSizeTriggerState(id);
-            previewBox?.setAttribute("data-size", id);
-        };
 
-        for (const sizeTrigger of sizePreviewTriggers) {
-            sizeTrigger.addEventListener("click", changeActiveTrigger);
-        }
         cleanup(() => {
-            for (const sizeTrigger of sizePreviewTriggers) {
-                sizeTrigger.removeEventListener("click", changeActiveTrigger);
-            }
+            
         });
     });
 

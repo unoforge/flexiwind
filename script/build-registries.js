@@ -4,8 +4,11 @@ import path from "path";
 function build() {
     const root = process.cwd();
     const componentsPath = path.join(root, "registries", "components.json");
-    // const chartPath = path.join(root, "registries", "chart.json");
     const blocksPath = path.join(root, "registries", "blocks.json");
+    const marketingBlocksPath = path.join(root, "registries", "marketing.json");
+    const basePaths = path.join(root,"registries","base.json")
+
+
     const outPath = path.join(root, "registry.json");
 
     function readJsonSync(p) {
@@ -20,7 +23,9 @@ function build() {
 
     const components = readJsonSync(componentsPath);
     const blocks = readJsonSync(blocksPath);
-
+    const marketing = readJsonSync(marketingBlocksPath)
+    const base = readJsonSync(basePaths)
+    
     const finalRegistry = {
         name: "flexiwind-ui",
         title: "Flexiwind UI",
@@ -30,6 +35,8 @@ function build() {
         components: [
             ...(components && components.components ? components.components : []),
             ...(blocks && blocks.components ? blocks.components : []),
+            ...(marketing && marketing.components ? marketing.components : []),
+            ...(base && base.components ? base.components : []),
         ],
     };
 

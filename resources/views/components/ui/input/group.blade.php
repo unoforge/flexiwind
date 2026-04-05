@@ -1,8 +1,6 @@
 @props([
+    'variant' => 'default',
     'size' => 'md',
-    'noBorder' => false,
-    'bgNone' => false,
-    'radiusNone' => false,
 ])
 
 @php
@@ -14,18 +12,16 @@
         'xl' => 'h-11',
     ];
 
-    $bg_class = ($bgNone ? '' : 'bg-bg') . '';
+    $variantClasses = match ($variant) {
+        'default' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex rounded-ui bg-bg border border-border-input text-fg',
+        'ghost' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex rounded-ui bg-bg border border-border-input text-fg',
+        'flush' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex border-transparent bg-bg text-fg',
+        'unstyled' => 'relative flex',
+    };
 
-    $radius = $radiusNone ? '' : 'rounded-ui';
-    $border_class = $noBorder ? 'border-transparent' : 'border border-border-input';
-    $baseClasses = "ui-form-group-base ui-form-group ui-form-group-input relative flex {$radius} {$bg_class} {$border_class} text-fg";
-    $sizeClasses = $sizes[$size] ?? $sizes['md'];
-
-    $attributes = $attributes->class([$baseClasses, $sizeClasses])->merge([
-       
-    ]);
+    $sizeClass = $variant === 'unstyled' ? '' : ($sizes[$size] ?? $sizes['md']);
 @endphp
 
-<div {{ $attributes }}>
+<div {{ $attributes->class([$variantClasses, $sizeClass]) }}>
     {{ $slot }}
 </div>

@@ -1,0 +1,34 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "popover",
+    "type": "registry:component",
+    "title": "Popover",
+    "description": "A reusable popover component for Laravel Blade/Livewire.",
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/popover"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/popover.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/popover.blade.php",
+            "content": "@props([\n    'id',\n    'class' => '',\n    'placement' => 'bottom',\n    'keepOpen' => true,\n    'keepOpenOutside' => false,\n    'gray' => false,\n    'trigger' => 'click',\n])\n\n\n\n<div x-data x-f-popover wire:ignore.self role=\"tooltip\" id=\"popover-{{ $id }}\" data-popover\n    data-placement=\"{{ $placement }}\" @if (!$keepOpen) data-close-inside @endif\n    @if ($keepOpenOutside) data-prevent-close-outside @endif\n    data-trigger-strategy=\"{{ $trigger }}\"\n    {{ $attributes->class([\n        'opacity-0 invisible z-40 translate-y-3 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 text-sm border border-border shadow rounded-ui flex flex-col overflow-hidden text-fg ease-linear transition-transform',\n        'ui-popper ui-card [--card-padding:--spacing(5)] [--card-radius:var(--radius-lg)]',\n        'bg-popover' => !$gray,\n        'bg-popover-gray' => $gray,\n        $class\n    ]) }}>\n    {{ $slot }}\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/popover/trigger.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/popover/trigger.blade.php",
+            "content": "@props(['popoverId', 'variant' => 'none', 'intent' => 'none','size'=>'none'])\n\n<x-ui.button data-popover-trigger data-popover-id=\"popover-{{ $popoverId }}\" :size=\"$size\" :variant=\"$variant\" :intent=\"$intent\"\n    {{ $attributes->merge(['class' => 'group']) }}>\n    {{ $slot }}\n</x-ui.button>\n"
+        },
+        {
+            "path": "resources/js/plugins/popover.js",
+            "type": "registry:script",
+            "target": "resources/js/plugins/popover.js",
+            "content": "import { Popover as FlexillaPopover } from \"@flexilla/popover\";\n\nexport function PopoverPlugin(Alpine) {\n    Alpine.directive(\"f-popover\", (el, {}, { cleanup }) => {\n       const popover_ = new FlexillaPopover(el)\n        cleanup(() => {\n            popover_.cleanup()\n        });\n    });\n}\n"
+        }
+    ]
+}

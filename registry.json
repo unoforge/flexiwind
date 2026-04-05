@@ -6,7 +6,7 @@
   "author": "Johnkat MJ <johnkatembue4@gmail.com>",
   "components": [
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "accordion",
       "title": "Accordion",
       "description": "A reusable accordion component for Laravel Blade/Livewire.",
@@ -35,17 +35,22 @@
           "path": "resources/views/components/ui/accordion/indicator.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/accordion/indicator.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/accordion.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/accordion.js"
         }
       ],
       "dependencies": {
         "composer": [],
         "node": [
-          "@flexilla/alpine-accordion"
+          "@flexilla/accordion"
         ]
       }
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "alert",
       "title": "Alert",
       "description": "A reusable alert component for Laravel Blade/Livewire.",
@@ -61,7 +66,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "aspect",
       "title": "Aspect Ratio",
       "description": "A reusable aspect ratio component for Laravel Blade/Livewire.",
@@ -74,7 +79,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "avatar-placeholder",
       "title": "Avatar Placeholder",
       "description": "A reusable avatar placeholder component for Laravel Blade/Livewire.",
@@ -87,7 +92,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "avatar",
       "title": "Avatar",
       "description": "A reusable avatar component for Laravel Blade/Livewire.",
@@ -100,7 +105,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "badge",
       "title": "Badge",
       "description": "A reusable badge component for Laravel Blade/Livewire.",
@@ -113,30 +118,30 @@
       ]
     },
     {
-      "version": "0.0.0",
-      "name": "breadcrumb",
-      "title": "Breadcrumb",
-      "description": "A reusable breadcrumb component for Laravel Blade/Livewire.",
+      "version": "1.0.0",
+      "name": "breadcrumbs",
+      "title": "Breadcrumbs",
+      "description": "A reusable breadcrumbs component for Laravel Blade/Livewire.",
       "files": [
         {
-          "path": "resources/views/components/ui/breadcrumb.blade.php",
+          "path": "resources/views/components/ui/breadcrumbs.blade.php",
           "type": "registry:component",
-          "target": "resources/views/components/ui/breadcrumb.blade.php"
+          "target": "resources/views/components/ui/breadcrumbs.blade.php"
         },
         {
-          "path": "resources/views/components/ui/breadcrumb/item.blade.php",
+          "path": "resources/views/components/ui/breadcrumbs/item.blade.php",
           "type": "registry:component",
-          "target": "resources/views/components/ui/breadcrumb/item.blade.php"
+          "target": "resources/views/components/ui/breadcrumbs/item.blade.php"
         },
         {
-          "path": "resources/views/components/ui/breadcrumb/separator.blade.php",
+          "path": "resources/views/components/ui/breadcrumbs/separator.blade.php",
           "type": "registry:component",
-          "target": "resources/views/components/ui/breadcrumb/separator.blade.php"
+          "target": "resources/views/components/ui/breadcrumbs/separator.blade.php"
         }
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "button",
       "title": "Button",
       "description": "A reusable button component for Laravel Blade/Livewire.",
@@ -152,7 +157,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "callout",
       "title": "Callout",
       "description": "A reusable callout component for Laravel Blade/Livewire.",
@@ -161,6 +166,16 @@
           "path": "resources/views/components/ui/callout.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/callout.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/callout/description.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/callout/description.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/callout/title.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/callout/title.blade.php"
         }
       ],
       "registryDependencies": [
@@ -169,7 +184,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "card",
       "title": "Card",
       "description": "A reusable card component for Laravel Blade/Livewire.",
@@ -210,7 +225,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "checkbox",
       "title": "Checkbox",
       "description": "A reusable checkbox component for Laravel Blade/Livewire.",
@@ -223,7 +238,41 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
+      "name": "collapse",
+      "title": "Collapse",
+      "description": "A reusable collapse component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/collapse.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/collapse.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/collapse/trigger.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/collapse/trigger.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/collapse/indicator.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/collapse/indicator.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/collapse.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/collapse.js"
+        }
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/collapse"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
       "name": "divider",
       "title": "Divider",
       "description": "A reusable divider component for Laravel Blade/Livewire.",
@@ -236,7 +285,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "dropdown",
       "title": "Dropdown",
       "description": "A reusable dropdown component for Laravel Blade/Livewire.",
@@ -294,16 +343,21 @@
           "path": "resources/views/components/ui/dropdown/separator.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/dropdown/separator.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/dropdown.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/dropdown.js"
         }
       ],
       "dependencies": {
         "node": [
-          "@flexilla/alpine-dropdown"
+          "@flexilla/dropdown"
         ]
       }
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "input",
       "title": "Input",
       "description": "A reusable input component for Laravel Blade/Livewire.",
@@ -315,11 +369,12 @@
         }
       ],
       "registryDependencies": [
-        "label"
+        "label",
+        "input-group"
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "input-group",
       "title": "Input Group",
       "description": "A reusable input component for Laravel Blade/Livewire.",
@@ -345,7 +400,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "kbd",
       "title": "Kbd",
       "description": "A reusable kbd component for Laravel Blade/Livewire.",
@@ -358,7 +413,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "label",
       "title": "Label",
       "description": "A reusable label component for Laravel Blade/Livewire.",
@@ -371,7 +426,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "link",
       "title": "Link",
       "description": "A reusable link component for Laravel Blade/Livewire.",
@@ -387,7 +442,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "meter",
       "title": "Meter",
       "description": "A reusable meter component for Laravel Blade/Livewire.",
@@ -400,7 +455,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "modal",
       "title": "Modal",
       "description": "A reusable modal component for Laravel Blade/Livewire.",
@@ -449,6 +504,11 @@
           "path": "resources/views/components/ui/modal/trigger.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/modal/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/modal.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/modal.js"
         }
       ],
       "registryDependencies": [
@@ -457,12 +517,12 @@
       "dependencies": {
         "composer": [],
         "node": [
-          "@flexilla/alpine-modal"
+          "@flexilla/modal"
         ]
       }
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "otp",
       "title": "OTP",
       "description": "A reusable otp component for Laravel Blade/Livewire.",
@@ -476,6 +536,11 @@
           "path": "resources/views/components/ui/otp/input.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/otp/input.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/pin-input.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/pin-input.js"
         }
       ],
       "registryDependencies": [
@@ -484,12 +549,12 @@
       "dependencies": {
         "composer": [],
         "node": [
-          "@flexilla/alpine-pin-input"
+          "@flexilla/pin-input"
         ]
       }
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "pagination",
       "title": "Pagination",
       "description": "A reusable pagination component for Laravel Blade/Livewire.",
@@ -505,7 +570,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "popover",
       "title": "Popover",
       "description": "A reusable popover component for Laravel Blade/Livewire.",
@@ -519,17 +584,22 @@
           "path": "resources/views/components/ui/popover/trigger.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/popover/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/popover.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/popover.js"
         }
       ],
       "dependencies": {
         "composer": [],
         "node": [
-          "@flexilla/alpine-popover"
+          "@flexilla/popover"
         ]
       }
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "progress",
       "title": "Progress",
       "description": "A reusable progress component for Laravel Blade/Livewire.",
@@ -542,7 +612,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "radio",
       "title": "Radio",
       "description": "A reusable radio component for Laravel Blade/Livewire.",
@@ -555,7 +625,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "range",
       "title": "Range",
       "description": "A reusable range component for Laravel Blade/Livewire.",
@@ -564,11 +634,22 @@
           "path": "resources/views/components/ui/range.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/range.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/range-indicator.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/range-indicator.js"
         }
-      ]
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/custom-range"
+        ]
+      }
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "select",
       "title": "Select",
       "description": "A reusable select component for Laravel Blade/Livewire.",
@@ -585,7 +666,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "skeleton",
       "title": "Skeleton",
       "description": "A reusable skeleton component for Laravel Blade/Livewire.",
@@ -598,7 +679,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "slideover",
       "title": "Slideover",
       "description": "A reusable slideover component for Laravel Blade/Livewire.",
@@ -647,6 +728,11 @@
           "path": "resources/views/components/ui/slideover/trigger.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/slideover/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/offcanvas.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/offcanvas.js"
         }
       ],
       "registryDependencies": [
@@ -655,12 +741,12 @@
       "dependencies": {
         "composer": [],
         "node": [
-          "@flexilla/alpine-offcanvas"
+          "@flexilla/offcanvas"
         ]
       }
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "switch",
       "title": "Switch",
       "description": "A reusable switch component for Laravel Blade/Livewire.",
@@ -673,7 +759,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "table",
       "title": "Table",
       "description": "A reusable table component for Laravel Blade/Livewire.",
@@ -711,7 +797,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "tabs",
       "title": "Tabs",
       "description": "A reusable tabs component for Laravel Blade/Livewire.",
@@ -745,17 +831,22 @@
           "path": "resources/views/components/ui/tabs/trigger.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/tabs/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/tabs.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/tabs.js"
         }
       ],
       "dependencies": {
         "composer": [],
         "node": [
-          "@flexilla/alpine-tabs"
+          "@flexilla/tabs"
         ]
       }
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "textarea",
       "title": "Textarea",
       "description": "A reusable textarea component for Laravel Blade/Livewire.",
@@ -764,11 +855,22 @@
           "path": "resources/views/components/ui/textarea.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/textarea.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/auto-resize-area.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/auto-resize-area.js"
         }
-      ]
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/auto-resize-area"
+        ]
+      }
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "tooltip",
       "title": "Tooltip",
       "description": "A reusable tooltip component for Laravel Blade/Livewire.",
@@ -782,6 +884,11 @@
           "path": "resources/views/components/ui/tooltip/trigger.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/ui/tooltip/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/tooltip.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/tooltip.js"
         }
       ],
       "registryDependencies": [
@@ -790,38 +897,51 @@
       "dependencies": {
         "composer": [],
         "node": [
-          "@flexilla/alpine-tooltip"
+          "@flexilla/tooltip"
         ]
       }
     },
     {
-      "version": "0.0.0",
-      "name": "button-helper",
-      "title": "Button helper",
-      "description": "A reusable accordion component for Laravel Blade/Livewire.",
+      "version": "1.0.0",
+      "name": "icon",
+      "title": "Icon",
+      "description": "A reusable icon component for Laravel Blade/Livewire using Iconify.",
       "files": [
         {
-          "path": "app/Flexiwind/ButtonHelper.php",
-          "type": "registry:helper",
-          "target": "app/Flexiwind/ButtonHelper.php"
+          "path": "resources/views/components/ui/icon.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/icon.blade.php"
         }
       ]
     },
     {
-      "version": "0.0.0",
-      "name": "ui-helper",
-      "title": "Ui helper",
-      "description": "A reusable accordion component for Laravel Blade/Livewire.",
+      "version": "1.0.0",
+      "name": "text",
+      "title": "Text",
+      "description": "A reusable text component for Laravel Blade/Livewire with intent-based styling.",
       "files": [
         {
-          "path": "app/Flexiwind/UiHelper.php",
-          "type": "registry:helper",
-          "target": "app/Flexiwind/UiHelper.php"
+          "path": "resources/views/components/ui/text.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/text.blade.php"
         }
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
+      "name": "heading",
+      "title": "Heading",
+      "description": "A reusable heading component for Laravel Blade/Livewire with semantic levels.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/heading.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/heading.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
       "name": "auth-split",
       "title": "Auth Split",
       "description": "A reusable auth split component for Laravel Blade/Livewire.",
@@ -834,7 +954,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "login01",
       "title": "Login",
       "description": "A full auth login page.",
@@ -855,7 +975,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "login02",
       "title": "Login",
       "description": "A full auth login page.",
@@ -876,7 +996,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "login03",
       "title": "Login",
       "description": "A full auth login page.",
@@ -896,7 +1016,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "signup01",
       "title": "Signup",
       "description": "A full auth signup page.",
@@ -917,7 +1037,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "otp01",
       "title": "Otp ",
       "description": "A full auth OTP page.",
@@ -937,7 +1057,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "sidebar-wrapper",
       "title": "Sidebar Wrapper",
       "description": "A full sidebar wrapper layout.",
@@ -957,26 +1077,37 @@
         "node": [
           "@flexilla/utilities"
         ]
-      }
+      },
+      "message": [
+        "Wrap your sidebar markup with <x-ui.sidebar-wrapper> to get open/close toggle behaviour.",
+        "Import resources/js/sidebar-plugin.js in your Vite entry point (e.g. app.js) to activate the sidebar plugin.",
+        "Add data-toggle-sidebar to any button that should open/close the sidebar on mobile."
+      ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "sidebar01",
       "title": "Sidebar 01",
-      "description": "A full sidebar layout.",
+      "description": "A full sidebar layout with grouped navigation.",
       "files": [
+        {
+          "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/sidebar.blade.php",
+          "replace": {
+            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item",
+            "x-previews.sidebar.01.sidebar-nav-group": "x-atoms.sidebar-nav-group"
+          }
+        },
         {
           "path": "resources/views/components/previews/sidebar/01/sidebar-item.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/atoms/sidebar-item.blade.php"
         },
         {
-          "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
-          "type": "registry:block",
-          "target": "resources/views/components/layouts/sidebar.blade.php",
-          "replace": {
-            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item"
-          }
+          "path": "resources/views/components/previews/sidebar/01/sidebar-nav-group.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php"
         },
         {
           "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
@@ -991,10 +1122,57 @@
         "link",
         "input",
         "sidebar-wrapper"
+      ],
+      "message": [
+        "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+        "Use <x-atoms.sidebar-nav-group> inside the sidebar to group nav links under a labelled section.",
+        "Use <x-atoms.sidebar-item> inside each nav group (accepts href, icon, text, isActive).",
+        "Place <x-layouts.wrapper> after the sidebar; it offsets by lg:pl-64 and holds your header + content.",
+        "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
+      "name": "sidebar02",
+      "title": "Sidebar 02",
+      "description": "A full sidebar layout.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/sidebar/02/sidebar.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/sidebar.blade.php",
+          "replace": {
+            "x-previews.sidebar.02.sidebar-item": "x-atoms.sidebar-item"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/02/sidebar-item.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-item.blade.php"
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/02/wrapper.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/wrapper.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input",
+        "sidebar-wrapper"
+      ],
+      "message": [
+        "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+        "Use <x-atoms.sidebar-item> inside the sidebar nav for each link (accepts href, icon, text, isActive).",
+        "Place <x-layouts.wrapper> after the sidebar; it offsets by md:pl-64 and holds your header + content.",
+        "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+      ]
+    },
+    {
+      "version": "1.0.0",
       "name": "header01",
       "title": "Header 01",
       "description": "Header navbar for dashboard layout",
@@ -1007,7 +1185,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "header02",
       "title": "Header 02",
       "description": "Header navbar for dashboard layout",
@@ -1020,7 +1198,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "kpi01",
       "title": "KPI 01",
       "description": "A full KPI layout.",
@@ -1036,7 +1214,7 @@
       ]
     },
     {
-      "version": "0.0.0",
+      "version": "1.0.0",
       "name": "activity01",
       "title": "Activity 01",
       "description": "A full Activity layout.",
@@ -1049,6 +1227,200 @@
       ],
       "registryDependencies": [
         "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "empty-state01",
+      "title": "Empty State 01",
+      "description": "Empty State.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/empty-state/01.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/empty-state.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "shell01",
+      "title": "App Shell 01",
+      "description": "Application shell layout.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/app-shell/shell-01.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/app-shell.blade.php",
+          "replace": {
+            "x-previews.sidebar.01.sidebar": "x-layouts.sidebar01"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/01/sidebar-item.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-item.blade.php"
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/01/sidebar-nav-group.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php"
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/sidebar01.blade.php",
+          "replace": {
+            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item",
+            "x-previews.sidebar.01.sidebar-nav-group": "x-atoms.sidebar-nav-group"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/wrapper.blade.php"
+        }
+      ],
+      "message": [
+        "Use <x-layouts.app-shell> as your root layout — it composes the sidebar and main content area.",
+        "The shell embeds <x-layouts.sidebar02> automatically; customise that file to change the sidebar.",
+        "Use <x-atoms.sidebar-item> for each nav link inside the sidebar (accepts href, icon, text, isActive).",
+        "Use <x-atoms.sidebar-nav-group> to group sidebar links under a labelled section heading.",
+        "Place <x-layouts.wrapper> inside the shell for the header + scrollable content region.",
+        "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "header03",
+      "title": "Header 03",
+      "description": "Header navbar for dashboard layout",
+      "files": [
+        {
+          "path": "resources/views/components/previews/header/03/header.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/nav-header.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "table01",
+      "title": "Table 01",
+      "description": "Data table component.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/table/01.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/tables/table.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "features01",
+      "title": "Features 01",
+      "description": "Feature sections.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/features/01/features.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/blocks/features.blade.php",
+          "replace": {
+            "x-previews.features.01.feature-card": "x-blocks.feature-card"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/features/01/feature-card.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/blocks/feature-card.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "hero01",
+      "title": "HeroSection 01",
+      "description": "Hero section.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/hero-sections/01/hero.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/blocks/hero.blade.php",
+          "replace": {
+            "x-previews.hero-sections.01.navbar": "x-blocks.navbar"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/hero-sections/01/navbar.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/blocks/navbar.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "flexiwind-base",
+      "title": "Flexiwind utilities",
+      "description": "Base styles for Flexiwind UI components.",
+      "files": [
+        {
+          "path": "resources/css/flexiwind/base.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/base.css"
+        },
+        {
+          "path": "resources/css/flexiwind/button.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/button.css"
+        },
+        {
+          "path": "resources/css/flexiwind/form.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/form.css"
+        },
+        {
+          "path": "resources/css/flexiwind/ui.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/ui.css"
+        },
+        {
+          "path": "resources/css/flexiwind/utils.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/utils.css"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "button-helper",
+      "title": "Button helper",
+      "description": "A reusable button helper for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "app/Flexiwind/ButtonHelper.php",
+          "type": "registry:helper",
+          "target": "app/Flexiwind/ButtonHelper.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "ui-helper",
+      "title": "Ui helper",
+      "description": "A reusable UI helper for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "app/Flexiwind/UiHelper.php",
+          "type": "registry:helper",
+          "target": "app/Flexiwind/UiHelper.php"
+        }
       ]
     }
   ]

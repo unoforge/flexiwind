@@ -15,7 +15,7 @@
             <div class="hidden md:flex items-center flex-1 max-w-md mx-8">
                 <form class="w-full relative">
                     <x-ui.input.group>
-                        <x-ui.input placeholder="Type something..." unStyled class="ps-9" />
+                        <x-ui.input placeholder="Type something..." variant="unstyled" class="ps-9" />
                         <x-ui.input.trailing absolute class="flex items-center gap-0.5 text-xs font-light">
                             <x-ui.kbd variant="subtle" intent="gray" size="none" class="size-5 d-flex-place-center">
                                 <span class="iconify ph--command"></span>

@@ -1,7 +1,7 @@
 <x-ui.modal.trigger intent="primary" modal-id="modal-message-def">
     Show Modal
 </x-ui.modal.trigger>
-<x-ui.modal modal-id="modal-message-def" class="justify-center items-center">
+<x-ui.modal id="modal-message-def" class="justify-center items-center">
     <x-ui.modal.content size="sm" :closable="false" 
         class="p-(--gutter) flex flex-col gap-y-4 items-center text-center">
         <div class="w-max h-max p-3 rounded-full ui-soft ui-soft-gray border border-border">

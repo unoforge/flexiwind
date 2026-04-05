@@ -1,9 +1,11 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
     <x-md.paragraph>
-        Flexiwind provides a flexible sidebar system that can be customized to fit various design needs. While sidebars may look different, they share common logic for toggling and resizing functionality.
+        Flexiwind provides a flexible sidebar system that can be customized to fit various design needs. While sidebars
+        may look different, they share common logic for toggling and resizing functionality.
     </x-md.paragraph>
     <x-md.paragraph>
-        The sidebar system uses AlpineJS for interactivity and provides a global setup that works with any sidebar implementation.
+        The sidebar system uses AlpineJS for interactivity and provides a global setup that works with any sidebar
+        implementation.
     </x-md.paragraph>
 
     <x-md.h2>When to Use</x-md.h2>
@@ -17,31 +19,34 @@
     <x-md.paragraph>
         To use sidebars in your application, run the installation command:
     </x-md.paragraph>
-    <livewire:base.terminal code="flexi-cli add sidebar-wrapper" />
-    
+    <livewire:base.terminal code="php artisan flexi:add sidebar-wrapper" />
+
     <x-md.paragraph>
         <strong>What this command installs:</strong>
     </x-md.paragraph>
     <x-md.ul>
         <x-md.li>Sidebar plugin file: <x-docs.inline-code no-wrap text="resources/js/sidebar-plugin.js" /></x-md.li>
-        <x-md.li>Sidebar wrapper component: <x-docs.inline-code no-wrap text="resources/views/components/ui/sidebar-wrapper.blade.php" /></x-md.li>
+        <x-md.li>Sidebar wrapper component: <x-docs.inline-code no-wrap
+                text="resources/views/components/ui/sidebar-wrapper.blade.php" /></x-md.li>
     </x-md.ul>
-    
+
     <x-md.paragraph>
         <strong>Manual setup required:</strong>
     </x-md.paragraph>
     <x-md.paragraph>
-        After running the CLI command, you need to manually import the sidebar plugin in your application's JavaScript file (typically <x-docs.inline-code no-wrap text="app.js" />):
+        After running the CLI command, you need to manually import the sidebar plugin in your application's JavaScript
+        file (typically <x-docs.inline-code no-wrap text="app.js" />):
     </x-md.paragraph>
     <livewire:base.load-code :name="['sidebar-manual-setup']" />
-    
+
     <x-md.paragraph>
         This manual import ensures the sidebar plugin is properly initialized when AlpineJS loads in your application.
     </x-md.paragraph>
 
     <x-md.h2>Global Setup</x-md.h2>
     <x-md.paragraph>
-        The sidebar functionality is handled through an AlpineJS plugin that provides toggle and resize capabilities for all sidebars.
+        The sidebar functionality is handled through an AlpineJS plugin that provides toggle and resize capabilities for
+        all sidebars.
     </x-md.paragraph>
 
     <x-md.h3>
@@ -98,7 +103,8 @@
         Sidebar Wrapper Component
     </x-md.h3>
     <x-md.paragraph>
-        The <x-docs.inline-code no-wrap text="x-ui.sidebar-wrapper" /> component provides the base structure for any sidebar implementation:
+        The <x-docs.inline-code no-wrap text="x-ui.sidebar-wrapper" /> component provides the base structure for any
+        sidebar implementation:
     </x-md.paragraph>
     <x-docs.table>
         <x-ui.table.row>
@@ -128,27 +134,16 @@
     </x-md.paragraph>
     <livewire:base.load-code :name="['sidebar-wrapper-structure']" />
 
-    <x-md.h2>
-        Available Sidebar Implementations
-    </x-md.h2>
-    <x-md.paragraph>
-        While the sidebar system provides global functionality, specific sidebar designs are available as separate implementations. Check the following directory for available sidebar variants:
-    </x-md.paragraph>
-    <x-docs.code-block>
-/resources/views/components/previews/sidebar/
-    </x-docs.code-block>
-
-    <x-md.paragraph>
-        <strong>Current available implementations:</strong>
-    </x-md.paragraph>
-    <x-md.ul>
-        <x-md.li><x-docs.inline-code no-wrap text="01/sidebar.blade.php" /> - Default sidebar with navigation menu</x-md.li>
-        <x-md.li><x-docs.inline-code no-wrap text="01/wrapper.blade.php" /> - Wrapper with toggle button integration</x-md.li>
-    </x-md.ul>
 
     <x-md.h2>
         Usage Examples
     </x-md.h2>
+
+    <x-md.h3>
+        Demo Example
+    </x-md.h3>
+    <livewire:base.component-tab-preview-code in-iframe preview-url="/preview-ui/sidebar/demo-sidebar" component="components.examples.sidebar.demo" />
+
 
     <x-md.h3>
         Basic Sidebar Implementation
@@ -220,7 +215,8 @@
         When creating custom sidebar implementations, follow these guidelines:
     </x-md.paragraph>
     <x-md.ul>
-        <x-md.li>Use <x-docs.inline-code no-wrap text="fx-open:" /> prefix for classes that should apply when sidebar is open</x-md.li>
+        <x-md.li>Use <x-docs.inline-code no-wrap text="fx-open:" /> prefix for classes that should apply when sidebar is
+            open</x-md.li>
         <x-md.li>Use <x-docs.inline-code no-wrap text="has-fx-active:" /> prefix for active navigation items</x-md.li>
         <x-md.li>Apply proper z-index values (z-70 for overlay, z-80 for sidebar)</x-md.li>
         <x-md.li>Use responsive classes to hide/show sidebar on different screen sizes</x-md.li>
@@ -236,27 +232,5 @@
         <x-md.li>Body scroll prevention on mobile when sidebar is open</x-md.li>
         <x-md.li>Keyboard navigation support</x-md.li>
         <x-md.li>Screen reader friendly markup</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>API</x-md.h2>
-    <x-md.paragraph>
-        API behavior is documented above through plugin directives, wrapper props, and data-attribute state tables.
-    </x-md.paragraph>
-
-    <x-md.h2>Examples</x-md.h2>
-    <x-md.paragraph>
-        Use the implementation examples above for baseline, toggle-enabled, and resize-enabled patterns.
-    </x-md.paragraph>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Derive active states from route metadata to keep nav consistent.</x-md.li>
-        <x-md.li>Persist collapsed/expanded preference when appropriate.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use top navbar when app navigation depth is shallow.</x-md.li>
-        <x-md.li>Use breadcrumbs for deep content context without permanent side panels.</x-md.li>
     </x-md.ul>
 </x-layouts.doc-page-wrapper>

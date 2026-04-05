@@ -1,7 +1,7 @@
 <x-ui.modal.trigger intent="primary" modal-id="demo-modal">
     Show Modal
 </x-ui.modal.trigger>
-<x-ui.modal modal-id="demo-modal">
+<x-ui.modal id="demo-modal">
     <x-ui.modal.content 
         class="[--gutter:--spacing(4)] [--content-padding:--spacing(1)] flex flex-col gap-y-4">
         <x-ui.modal.header title="Edit profile" class="bg-bg-muted/70"

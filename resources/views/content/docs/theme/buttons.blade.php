@@ -25,11 +25,6 @@
         <x-docs.demo-buttons />
     </x-docs.component-prev>
 
-    <x-md.h3>Flexi variants</x-md.h3>
-    <livewire:base.load-code :name="['btn-flexi-both', 'btn-flexi-light', 'btn-flexi-dark']" />
-    <x-docs.component-prev>
-        <x-docs.demo-buttons variant="flexi" />
-    </x-docs.component-prev>
 
     <x-md.h3>Outline variants</x-md.h3>
     <livewire:base.load-code :name="['btn-outline-both', 'btn-outline-light', 'btn-outline-dark']" />

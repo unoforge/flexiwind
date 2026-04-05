@@ -1,16 +1,15 @@
-{{-- filepath: /Users/mac/projects/dev-self/flexi-hub/flexiforge/laravel/flexiwind-os/resources/views/components/molecules/seo.blade.php --}}
 @props([
     'seo' => [
         'ogImage' => [
-            'src' => '',
-            'alt' => '',
+            'src' => '/blocks-light.webp',
+            'alt' => 'Flexiwind Cover',
         ],
         'keywords' => '',
         'title' => '',
         'description' => '',
     ],
-    'siteUrl' => '',
-    'siteDomain' => '',
+    'siteUrl' => 'https://flexiwind.unoforge.com',
+    'siteDomain' => 'flexiwind.unoforge.com',
 ])
 
 <meta charset="UTF-8" />
@@ -43,12 +42,11 @@
 <meta name="twitter:image:height" content="578" />
 <meta name="twitter:creator" content="@johnkat-mj" />
 
-<meta name="application-name" content="UnifyUI Website" />
+<meta name="application-name" content="Flexiwind Website" />
 <meta name="keywords" content="{{ $seo['keywords'] }}" />
 <meta name="generator" content="Laravel" />
 <meta name="author" content="Johnkat-MJ" />
 <link rel="creator" href="https://github.com/Johnkat-Mj" />
-<meta name="author" content="unifyui-dev" />
-<link rel="author" href="https://github.com/unoforge" />
+<link rel="author" href="https://x.com/johnkat_Mj" />
 
 {{ $slot }}

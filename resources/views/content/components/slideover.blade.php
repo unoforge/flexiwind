@@ -1,12 +1,5 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
 
-    <x-md.h2>When to Use</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use slideover for secondary workflows while keeping page context visible.</x-md.li>
-        <x-md.li>Ideal for filters, settings, and side-detail editing flows.</x-md.li>
-        <x-md.li>Keep actions focused and avoid full-page replacement behavior.</x-md.li>
-    </x-md.ul>
-
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code component="components.examples.slideover.demo" />
 
@@ -17,7 +10,7 @@
     <x-docs.steps>
         <x-docs.step>
             <x-md.h3>Install the component</x-md.h3>
-            <livewire:base.terminal code="flexi-cli add slideover" />
+            <livewire:base.terminal code="php artisan flexi:add slideover" />
         </x-docs.step>
         <x-docs.step>
             <x-md.h3>Install dependencies</x-md.h3>
@@ -26,15 +19,17 @@
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. You can install the
                 Alpine Plugin if using Alpine or the vanilla JS version as you need
             </x-docs.callout>
+
+            </x-docs.step>
+        <x-docs.step>
+            <x-md.h3>Usage</x-md.h3>
             <x-md.ol>
-                <x-md.li><strong>With Alpine</strong></x-md.li>
-                <livewire:base.terminal :code="'npm i @flexilla/alpine-offcanvas'" />
+                <x-md.li><strong>With Alpine/Livewire</strong></x-md.li>
                 <x-md.paragraph>Add plugin in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
 
                 <livewire:base.load-code :name="['add-offcanvas-plugin-in-app']" />
                 <x-md.li><strong>Without Alpine</strong></x-md.li>
-                <livewire:base.terminal :code="'npm i @flexilla/modal'" />
-                <x-md.paragraph>Initialize modal in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
+                <x-md.paragraph>Initialize offcanvas in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
 
                 <livewire:base.load-code :name="['add-offcanvas-in-app']" />
 
@@ -280,33 +275,4 @@
         To know more about the JavaScript API, check the <x-docs.link
             href="https://flexilla-docs.vercel.app/components/tabs">Flexilla</x-docs.link> documentation.
     </x-md.paragraph>
-
-    <x-md.h2>API</x-md.h2>
-    <x-md.paragraph>
-        The complete API is documented in the <strong>References</strong> section above, including component props and events.
-    </x-md.paragraph>
-
-    <x-md.h2>Examples</x-md.h2>
-    <x-md.paragraph>
-        Use the demo and reference patterns above to compose side panels with header/body/footer actions.
-    </x-md.paragraph>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Ensure focus moves into the panel on open and returns to trigger on close.</x-md.li>
-        <x-md.li>Provide clear title/description for panel context.</x-md.li>
-        <x-md.li>Keep close actions discoverable via keyboard and pointer.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Integration Tips</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use for non-blocking side tasks that should not interrupt main page flow.</x-md.li>
-        <x-md.li>Persist pending edits carefully when users close/reopen the panel.</x-md.li>
-    </x-md.ul>
-
-    <x-md.h2>Alternatives</x-md.h2>
-    <x-md.ul>
-        <x-md.li>Use modal for high-focus confirmations and blocking interactions.</x-md.li>
-        <x-md.li>Use popover for lightweight contextual controls.</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

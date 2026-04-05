@@ -1,4 +1,4 @@
-@props(['size' => 'md', 'class' => '', 'noRadius' => false])
+@props(['size' => 'md', 'class' => '', 'radius' => true])
 
 @php
     $meter_sizes = [
@@ -10,7 +10,7 @@
         'xl' => 'h-6',
     ];
     $size = $meter_sizes[$size] ?? $meter_sizes['md'];
-    $radius = $noRadius ? '' : '[--ui-meter-radius:20px]';
-    $className = "ui-meter {$radius} {$size} bg-bg-muted {$class}";
+    $radiusClass = $radius ? '[--ui-meter-radius:20px]' : '';
+    $className = "ui-meter {$radiusClass} {$size} bg-bg-muted {$class}";
 @endphp
 <meter {{ $attributes->merge(['class' => $className]) }}></meter>

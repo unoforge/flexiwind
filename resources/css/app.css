@@ -23,9 +23,10 @@
 
 
 :root {
-    --global-main-radius: 0.5rem;
+    --radius-ui: 0.5rem;
     --ui-input-focus-outline: var(--c-primary);
     --ui-input-place-holder: var(--c-gray-500);
+    --ui-input-fg: var(--color-fg);
     --ui-input-invalid-outline: var(--c-danger);
     --ring-bg: var(--c-primary);
     --ring-offset-color: var(--c-bg);
@@ -37,14 +38,16 @@
 
 
     --dropdown-item-outline: var(--color-primary);
-    --dropdown-item-bg-hover: var(--color-gray-100);
-    --dropdown-item-fg: var(--color-gray-800);
-    --dropdown-item-fg-hover: var(--color-gray-900);
-
-
     --dropdown-item-danger-outline: var(--color-danger);
-    --dropdown-item-danger-bg-hover: var(--color-danger-100);
-    --dropdown-item-danger-fg: var(--color-danger-600);
+    --dropdown-item-hover-and-select: var(--color-bg-muted);
+    --dropdown-item-hover-and-select-fg: var(--color-fg-title);
+    --dropdown-item-selected-fg: var(--color-fg-title);
+    --dropdown-item-danger-fg: var(--color-danger);
+    --dropdown-item-warning-fg: var(--color-warning);
+    --dropdown-item-danger-hover-and-select: --alpha(var(--color-danger-100)/40%);
+    --dropdown-item-danger-hover-and-select-fg: var(--color-danger-600);
+    --dropdown-item-warning-hover-and-select: --alpha(var(--color-warning-100)/40%);
+    --dropdown-item-warning-hover-and-select-fg: var(--color-warning-600);
 
     --docs-bg: --alpha(var(--color-gray-50)/50%);
 
@@ -55,12 +58,11 @@
 .dark {
     --focus-ring: --alpha(var(--c-primary-800)/30%);
 
+    --dropdown-item-danger-hover-and-select: --alpha(var(--color-danger-900)/30%);
+    --dropdown-item-danger-Ïhover-and-select-fg: var(--color-danger-300);
+    --dropdown-item-warning-hover-and-select: --alpha(var(--color-warning-900)/30%);
+    --dropdown-item-warning-hover-and-select-fg: var(--color-warning-300);
 
-    --dropdown-item-bg-hover: var(--color-gray-900);
-    --dropdown-item-fg: var(--color-gray-200);
-    --dropdown-item-fg-hover: var(--color-gray-50);
-    --dropdown-item-danger-bg-hover: --alpha(var(--color-danger-500)/10%);
-    --dropdown-item-danger-fg: var(--color-danger-500);
 
     --docs-bg: var(--color-gray-950);
 
@@ -72,7 +74,6 @@
 @theme inline {
     --font-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-    --radius-global: var(--global-main-radius);
     --radius-ui: var(--ui-radius);
     --radius-card: var(--card-radius);
     --radius-checkbox: var(--checkbox-radius);
@@ -98,7 +99,6 @@
     --color-bg-subtle: var(--c-bg-subtle);
     --color-bg-surface: var(--c-bg-surface);
     --color-bg-muted: var(--c-bg-muted);
-    --color-bg-surface-elevated: var(--c-bg-surface-elevated);
     --color-card: var(--c-card);
     --color-card-gray: var(--c-card-gray);
     --color-popover: var(--c-bg);
@@ -108,7 +108,6 @@
     --color-progressbar: var(--c-progressbar);
 
     --color-border-strong: var(--c-border-strong);
-    --color-border-amphasis: var(--c-border-amphasis);
     --color-border: var(--c-border);
     --color-border-sub: var(--c-border-sub);
     --color-border-card: var(--c-border-card);
@@ -279,7 +278,7 @@
 
 
 @utility ui-preview-height {
-    @apply h-[calc(100vh-6rem)] lg:max-h-[70rem]
+    @apply h-[calc(100vh-6rem)] lg:max-h-170
 }
 
 @utility ui-preview-frame-box {
