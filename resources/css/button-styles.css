@@ -515,3 +515,28 @@
         --btn-ghost-text-color-hover: var(--color-gray-950);
     }
 }
+
+
+@utility btn-flexi-white {
+    --btn-flexi-bg: var(--color-white);
+    --btn-flexi-hover-bg: var(--color-gray-100);
+    --btn-flexi-active-bg: var(--color-gray-50);
+    --btn-flexi-shadow-a: var(--color-gray-300);
+    --btn-flexi-shadow-b: var(--color-gray-200);
+    --btn-flexi-shadow-c: var(--color-gray-50);
+    --btn-flexi-shadow-active-a: var(--color-gray-400);
+    --btn-flexi-shadow-active-b: var(--color-gray-300);
+    --btn-flexi-shadow-active-c: var(--color-gray-500);
+
+    &:is(.dark *) {
+        --btn-flexi-bg: var(--color-gray-900);
+        --btn-flexi-hover-bg: var(--color-gray-800);
+        --btn-flexi-active-bg: var(--color-gray-900);
+        --btn-flexi-shadow-a: var(--color-gray-800);
+        --btn-flexi-shadow-b: var(--color-gray-900);
+        --btn-flexi-shadow-c: var(--color-gray-800);
+        --btn-flexi-shadow-active-a: var(--color-gray-700);
+        --btn-flexi-shadow-active-b: var(--color-gray-800);
+        --btn-flexi-shadow-active-c: var(--color-gray-900);
+    }
+}

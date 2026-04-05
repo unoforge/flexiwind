@@ -9325,16 +9325,16 @@
         },
         {
             "name": "symfony/http-client",
-            "version": "v8.0.7",
+            "version": "v8.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-client.git",
-                "reference": "ade9bd433450382f0af154661fc8e72758b4de36"
+                "reference": "356e43d6994ae9d7761fd404d40f78691deabe0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-client/zipball/ade9bd433450382f0af154661fc8e72758b4de36",
-                "reference": "ade9bd433450382f0af154661fc8e72758b4de36",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/356e43d6994ae9d7761fd404d40f78691deabe0e",
+                "reference": "356e43d6994ae9d7761fd404d40f78691deabe0e",
                 "shasum": ""
             },
             "require": {
@@ -9397,7 +9397,7 @@
                 "http"
             ],
             "support": {
-                "source": "https://github.com/symfony/http-client/tree/v8.0.7"
+                "source": "https://github.com/symfony/http-client/tree/v8.0.8"
             },
             "funding": [
                 {
@@ -9417,7 +9417,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-06T13:17:40+00:00"
+            "time": "2026-03-30T15:14:47+00:00"
         },
         {
             "name": "symfony/http-client-contracts",
@@ -9683,16 +9683,16 @@
         },
         {
             "name": "unoforge/flexi-core",
-            "version": "1.0.7",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unoforge/flexi-core.git",
-                "reference": "8987cc776ba8fb489501b8e72dc8c598c12f9571"
+                "reference": "5af3e84e7b020ba46e193754cd998641818457a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unoforge/flexi-core/zipball/8987cc776ba8fb489501b8e72dc8c598c12f9571",
-                "reference": "8987cc776ba8fb489501b8e72dc8c598c12f9571",
+                "url": "https://api.github.com/repos/unoforge/flexi-core/zipball/5af3e84e7b020ba46e193754cd998641818457a0",
+                "reference": "5af3e84e7b020ba46e193754cd998641818457a0",
                 "shasum": ""
             },
             "require": {
@@ -9721,22 +9721,22 @@
             "description": "Core logic for Flexi CLI",
             "support": {
                 "issues": "https://github.com/unoforge/flexi-core/issues",
-                "source": "https://github.com/unoforge/flexi-core/tree/v1.0.7"
+                "source": "https://github.com/unoforge/flexi-core/tree/v1.1.1"
             },
-            "time": "2026-03-29T10:28:20+00:00"
+            "time": "2026-04-05T20:48:39+00:00"
         },
         {
             "name": "unoforge/flexiwind-cli",
-            "version": "1.0.3",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unoforge/flexiwind-cli.git",
-                "reference": "c782b412951cfbf38c66c2d057ae14743e98b162"
+                "reference": "8aca1540658eeb920df2858508f9561cbea491b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unoforge/flexiwind-cli/zipball/c782b412951cfbf38c66c2d057ae14743e98b162",
-                "reference": "c782b412951cfbf38c66c2d057ae14743e98b162",
+                "url": "https://api.github.com/repos/unoforge/flexiwind-cli/zipball/8aca1540658eeb920df2858508f9561cbea491b8",
+                "reference": "8aca1540658eeb920df2858508f9561cbea491b8",
                 "shasum": ""
             },
             "require": {
@@ -9767,9 +9767,9 @@
             "description": "Flexiwind Artisan commands",
             "support": {
                 "issues": "https://github.com/unoforge/flexiwind-cli/issues",
-                "source": "https://github.com/unoforge/flexiwind-cli/tree/v1.0.3"
+                "source": "https://github.com/unoforge/flexiwind-cli/tree/v1.0.5"
             },
-            "time": "2026-03-29T10:41:54+00:00"
+            "time": "2026-04-05T20:52:03+00:00"
         },
         {
             "name": "webmozart/assert",

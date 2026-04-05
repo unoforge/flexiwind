@@ -195,19 +195,12 @@
             Documentation</x-docs.link>.
     </x-md.paragraph>
 
-    <x-md.h2>API</x-md.h2>
-    <x-md.paragraph>
-        The complete component and input APIs are documented in the <strong>References</strong> section above.
-    </x-md.paragraph>
-
     <x-md.h2>Accessibility</x-md.h2>
-    <x-md.h3>Accessibility Notes</x-md.h3>
     <x-md.paragraph>
         The OTP component is built with accessibility in mind:
     </x-md.paragraph>
     <x-md.ul>
-        <x-md.li>Proper ARIA attributes for screen readers</x-md.li>
-        <x-md.li>Keyboard navigation support (Tab, Shift+Tab, Arrow keys)</x-md.li>
+        <x-md.li>Keyboard navigation support (Arrow keys)</x-md.li>
         <x-md.li>Auto-focus management between fields</x-md.li>
         <x-md.li>Paste support for easier code entry</x-md.li>
     </x-md.ul>

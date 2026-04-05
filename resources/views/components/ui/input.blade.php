@@ -9,6 +9,7 @@
     'labelClass' => '',
     'invalid' => false,
     'class' => '',
+    'groupWrapperClass'=>null
 ])
 
 @php
@@ -30,7 +31,7 @@
 @endphp
 
 @if ($label)
-    <div class="{{ $labelPosition === 'inline' ? 'flex items-center gap-2' : 'flex flex-col space-y-2' }}">
+    <div class="{{ $labelPosition === 'inline' ? 'flex items-center gap-2' : 'flex flex-col space-y-2' }} {{ $groupWrapperClass ?? '' }}">
         <x-ui.label for="{{ $id }}" :text="$label" class="{{ $labelClass }}" />
         <input
             type="{{ $type }}"

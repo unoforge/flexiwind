@@ -77,6 +77,7 @@
     --radius-ui: var(--ui-radius);
     --radius-card: var(--card-radius);
     --radius-checkbox: var(--checkbox-radius);
+    --radius-card-inner: calc(var(--card-radius) - var(--card-padding));
 
     --color-white: var(--c-white);
     --color-dark: var(--c-gray-950);
@@ -215,7 +216,11 @@
 }
 
 
-
+@utility btn-flexi {
+  @apply bg-(--btn-flexi-bg) hover:bg-(--btn-flexi-hover-bg) active:bg-(--btn-flexi-active-bg) active:[--btn-flexi-shadow-a:--btn-flexi-shadow-active-a] active:[--btn-flexi-shadow-b:--btn-flexi-shadow-active-b] active:[--btn-flexi-shadow-c:--btn-flexi-shadow-active-c] [--btn-focus-outline-color:--btn-flexi-hover-bg];
+  --tw-shadow: 0 -1px 0 0px var(--tw-shadow-color, var(--btn-flexi-shadow-a)) inset, 0 0 0 1px var(--tw-shadow-color, var(--btn-flexi-shadow-b)) inset, 0 0.5px 0 1.5px var(--tw-shadow-color, var(--btn-flexi-shadow-c)) inset;
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
 
 @utility docs-sidebar {
     @apply fixed lg:sticky top-0 left-0 -translate-x-full lg:top-16 fx-open:translate-x-0 invisible fx-open:visible lg:visible transition-all lg:transition-none duration-300 ease-linear lg:transition-none w-11/12 max-w-80 lg:max-w-none md:w-full h-dvh lg:h-[calc(100dvh-4rem)] lg:translate-x-0;

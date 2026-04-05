@@ -177,10 +177,7 @@
             ],
             "registryDependencies": [
                 "button",
-                "label",
-                "checkbox",
-                "link",
-                "input",
+                "icon",
                 "sidebar-wrapper"
             ],
             "message": [
@@ -218,10 +215,7 @@
             ],
             "registryDependencies": [
                 "button",
-                "label",
-                "checkbox",
-                "link",
-                "input",
+                "icon",
                 "sidebar-wrapper"
             ],
             "message": [
@@ -351,6 +345,11 @@
                 "Use <x-atoms.sidebar-nav-group> to group sidebar links under a labelled section heading.",
                 "Place <x-layouts.wrapper> inside the shell for the header + scrollable content region.",
                 "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+            ],
+            "registryDependencies": [
+                "button",
+                "icon",
+                "sidebar-wrapper"
             ]
         },
         {

@@ -50,7 +50,7 @@
         ],
         "registry":[
             "npm run build:registry",
-            "@php artisan flexi:build --output=resources/registries",
+            "@php artisan flexi:build --output=resources/registries --override",
             "npm run generate:registry"
         ],
         "dev": [

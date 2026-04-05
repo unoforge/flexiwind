@@ -9,7 +9,7 @@
 </span>
 <header class="px-1.5 max-[350px]:px-2.5 sm:px-4 pt-2 w-full z-45 relative">
     <nav
-        class="sm:max-w-4xl bg-bg shadow-sm border border-border/60 dark:border-border-strong shadow-gray-50 dark:shadow-transparent sm:mx-auto w-full flex justify-between ui-card [--card-padding:calc(var(--spacing)*4)] [--card-radius:var(--radius-ui)]">
+        class="sm:max-w-4xl bg-bg shadow-sm border border-border/60 dark:border-border-strong shadow-gray-50 dark:shadow-transparent sm:mx-auto w-full flex justify-between ui-card [--card-padding:--spacing(4)] [--card-radius:var(--radius-ui)]">
         <div class="flex items-center gap-2 pr-3">
             <div class="flex lg:hidden pr-2 border-r border-border-strong/70">
                 <button data-nav-trigger data-toggle-nav="mainNavbar"
@@ -35,15 +35,15 @@
         </div>
 
         <div class="flex items-center gap-1.5 w-max">
-            <x-ui.modal.trigger modal-id="search-modal" size="sm" iconOnly variant="flexi" intent="white">
+            <x-ui.modal.trigger modal-id="search-modal" size="sm" iconOnly variant="none" class="btn-flexi btn-flexi-white text-fg">
                 <span class="iconify ph--magnifying-glass text-sm"></span>
             </x-ui.modal.trigger>
-            <x-ui.button href="https://github.com/unoforge/flexiwind" variant="flexi" intent="white" size="sm"
-                iconOnly>
+            <x-ui.button href="https://github.com/unoforge/flexiwind"  size="sm"
+                iconOnly variant="none" class="btn-flexi btn-flexi-white text-fg">
                 <span class="iconify ph--github-logo"></span>
             </x-ui.button>
-            <x-ui.button variant="flexi" intent="white" size="sm" iconOnly radius="none"
-                x-on:click="$store.theme.toggle()" aria-label="toggle theme" class="relative">
+            <x-ui.button  size="sm" iconOnly variant="none" radius="none"
+                x-on:click="$store.theme.toggle()" aria-label="toggle theme" class="relative btn-flexi btn-flexi-white text-fg">
                 <span
                     class="absolute top-1/2 -translate-1/2 left-1/2 ease-linear duration-200 iconify ph--sun invisible dark:visible"></span>
                 <span

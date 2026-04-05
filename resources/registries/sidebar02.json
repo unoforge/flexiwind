@@ -13,10 +13,7 @@
     ],
     "registryDependencies": [
         "button",
-        "label",
-        "checkbox",
-        "link",
-        "input",
+        "icon",
         "sidebar-wrapper"
     ],
     "files": [
@@ -30,7 +27,7 @@
             "path": "resources/views/components/previews/sidebar/02/sidebar-item.blade.php",
             "type": "registry:component",
             "target": "resources/views/components/atoms/sidebar-item.blade.php",
-            "content": "@props(['text', 'icon', 'href' => '', 'isActive' => null])\n\n<li\n    class=\"relative before:absolute before:-left-0.5 before:w-0.5 before:inset-y-2.5 before:rounded-l-md before:bg-transparent has-fx-active:before:bg-fg-title\">\n    <a href=\"{{ $href }}\" data-state=\"{{ $isActive ? 'active' : null }}\" aria-label=\"Link to {{ $text }}\"\n        class=\"flex items-center text-sm h-10 px-3 py-1.5 gap-x-2.5 fx-active:bg-bg fx-active:text-primary fx-current:bg-bg fx-current:text-primary border border-transparent fx-active:border-bg-muted/70 fx-active:shadow-xs fx-current:border-bg-muted/70 fx-current:shadow-xs rounded-ui\">\n        <span class=\"flex iconify size-3.5 {{ $icon }}\"></span>\n        {{ $text }}\n    </a>\n</li>\n"
+            "content": "@props(['text', 'icon', 'href' => '', 'isActive' => null])\n\n<li\n    class=\"relative before:absolute before:-left-0.5 before:w-0.5 before:inset-y-2.5 before:rounded-l-md before:bg-transparent has-fx-active:before:bg-fg-title\">\n    <a href=\"{{ $href }}\" data-state=\"{{ $isActive ? 'active' : null }}\" aria-label=\"Link to {{ $text }}\"\n        class=\"flex items-center text-sm h-10 px-3 py-1.5 gap-x-2.5 fx-active:bg-bg fx-active:text-primary fx-current:bg-bg fx-current:text-primary border border-transparent fx-active:border-bg-muted/70 fx-active:shadow-xs fx-current:border-bg-muted/70 fx-current:shadow-xs rounded-ui\">\n        <x-ui.icon size=\"xs\" :name=\"$icon\"/>\n        {{ $text }}\n    </a>\n</li>\n"
         },
         {
             "path": "resources/views/components/previews/sidebar/02/wrapper.blade.php",

@@ -77,19 +77,25 @@
 
     $attributes =
         $tag === 'button'
-        ? ($attributes = $attributes->merge([
-            'type' => $type,
-            'disabled' => $disabled,
-        ]))
-        : $attributes->merge([
-            'href' => $disabled ? null : $href,
-            'aria-disabled' => $disabled ? 'true' : null,
-            'tabindex' => $disabled ? '-1' : null,
-        ]);
+            ? ($attributes = $attributes->merge([
+                'type' => $type,
+                'disabled' => $disabled,
+            ]))
+            : $attributes->merge([
+                'href' => $disabled ? null : $href,
+                'aria-disabled' => $disabled ? 'true' : null,
+                'tabindex' => $disabled ? '-1' : null,
+            ]);
 
 @endphp
 
-<{{ $tag }} {{ $attributes }}
-    @if (!$isInternal) target="_blank"  rel="noopener noreferrer" @endif>
-    {{ $slot }}
-    </{{ $tag }}>
+
+@if ($tag === 'button')
+    <button {{ $attributes }}>
+        {{ $slot }}
+    </button>
+@else
+    <a {{ $attributes }} @if (!$isInternal) target="_blank"  rel="noopener noreferrer" @endif>
+        {{ $slot }}
+    </a>
+@endif

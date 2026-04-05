@@ -1,4 +1,4 @@
-<div aria-hidden="true" class="text-[9px]/[1.8] overflow-hidden h-max noise-subtle w-full p-0.5">
+<div aria-hidden="true" class="text-[9px]/[1.8] overflow-hidden h-max noise-subtle w-full p-0.5 select-none">
     <div class="flex items-center gap-1.5" style="padding-left: 0px;">
         <span aria-hidden="true" class="iconify ph--folder-open size-2.5 text-primary"></span>
         <span class="text-fg">resources</span>

@@ -222,15 +222,4 @@
         <x-md.li>Use responsive classes to hide/show sidebar on different screen sizes</x-md.li>
         <x-md.li>Include proper transitions for smooth animations</x-md.li>
     </x-md.ul>
-
-    <x-md.h2>Accessibility</x-md.h2>
-    <x-md.paragraph>
-        The sidebar system includes accessibility features:
-    </x-md.paragraph>
-    <x-md.ul>
-        <x-md.li>Proper aria attributes on overlay</x-md.li>
-        <x-md.li>Body scroll prevention on mobile when sidebar is open</x-md.li>
-        <x-md.li>Keyboard navigation support</x-md.li>
-        <x-md.li>Screen reader friendly markup</x-md.li>
-    </x-md.ul>
 </x-layouts.doc-page-wrapper>

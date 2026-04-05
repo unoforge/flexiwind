@@ -11,27 +11,27 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/accordion.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/accordion.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/accordion/item.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/accordion/item.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/accordion/trigger.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/accordion/trigger.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/accordion/content.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/accordion/content.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/accordion/indicator.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/accordion/indicator.blade.php"
                 },
                 {
@@ -55,7 +55,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/alert.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/alert.blade.php"
                 }
             ],
@@ -71,7 +71,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/aspect.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/aspect.blade.php"
                 }
             ]
@@ -84,7 +84,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/avatar-placeholder.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/avatar-placeholder.blade.php"
                 }
             ]
@@ -97,7 +97,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/avatar.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/avatar.blade.php"
                 }
             ]
@@ -110,7 +110,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/badge.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/badge.blade.php"
                 }
             ]
@@ -123,17 +123,17 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/breadcrumbs.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/breadcrumbs.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/breadcrumbs/item.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/breadcrumbs/item.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/breadcrumbs/separator.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/breadcrumbs/separator.blade.php"
                 }
             ]
@@ -146,7 +146,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/button.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/button.blade.php"
                 }
             ],
@@ -162,17 +162,17 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/callout.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/callout.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/callout/description.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/callout/description.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/callout/title.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/callout/title.blade.php"
                 }
             ],
@@ -189,32 +189,32 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/card.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/card.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/card/content.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/card/content.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/card/description.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/card/description.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/card/footer.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/card/footer.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/card/header.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/card/header.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/card/title.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/card/title.blade.php"
                 }
             ],
@@ -230,7 +230,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/checkbox.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/checkbox.blade.php"
                 }
             ]
@@ -243,17 +243,17 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/collapse.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/collapse.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/collapse/trigger.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/collapse/trigger.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/collapse/indicator.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/collapse/indicator.blade.php"
                 },
                 {
@@ -277,7 +277,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/divider.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/divider.blade.php"
                 }
             ]
@@ -294,52 +294,52 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/dropdown.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/dropdown/icon.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown/icon.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/dropdown/item.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown/item.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/dropdown/item-submenu.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown/item-submenu.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/dropdown/trigger.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown/trigger.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/dropdown/description.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown/description.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/dropdown/header.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown/header.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/dropdown/kbd.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown/kbd.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/dropdown/label.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown/label.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/dropdown/separator.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/dropdown/separator.blade.php"
                 },
                 {
@@ -362,7 +362,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/input.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/input.blade.php"
                 }
             ],
@@ -379,17 +379,17 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/input/group.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/input/group.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/input/leading.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/input/leading.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/input/trailing.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/input/trailing.blade.php"
                 }
             ],
@@ -405,7 +405,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/kbd.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/kbd.blade.php"
                 }
             ]
@@ -418,7 +418,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/label.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/label.blade.php"
                 }
             ]
@@ -431,7 +431,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/link.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/link.blade.php"
                 }
             ],
@@ -447,7 +447,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/meter.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/meter.blade.php"
                 }
             ]
@@ -460,47 +460,47 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/modal.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/modal.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/modal/content.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/modal/content.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/modal/body.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/modal/body.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/modal/close.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/modal/close.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/modal/description.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/modal/description.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/modal/footer.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/modal/footer.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/modal/header.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/modal/header.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/modal/title.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/modal/title.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/modal/trigger.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/modal/trigger.blade.php"
                 },
                 {
@@ -527,12 +527,12 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/otp.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/otp.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/otp/input.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/otp/input.blade.php"
                 },
                 {
@@ -559,7 +559,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/pagination.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/pagination.blade.php"
                 }
             ],
@@ -575,12 +575,12 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/popover.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/popover.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/popover/trigger.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/popover/trigger.blade.php"
                 },
                 {
@@ -604,7 +604,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/progress.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/progress.blade.php"
                 }
             ]
@@ -617,7 +617,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/radio.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/radio.blade.php"
                 }
             ]
@@ -630,7 +630,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/range.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/range.blade.php"
                 },
                 {
@@ -654,7 +654,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/select.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/select.blade.php"
                 }
             ],
@@ -671,7 +671,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/skeleton.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/skeleton.blade.php"
                 }
             ]
@@ -684,47 +684,47 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/slideover.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/slideover.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/slideover/body.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/slideover/body.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/slideover/close.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/slideover/close.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/slideover/content.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/slideover/content.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/slideover/description.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/slideover/description.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/slideover/footer.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/slideover/footer.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/slideover/header.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/slideover/header.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/slideover/title.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/slideover/title.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/slideover/trigger.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/slideover/trigger.blade.php"
                 },
                 {
@@ -751,7 +751,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/switch.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/switch.blade.php"
                 }
             ]
@@ -764,32 +764,32 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/table.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/table.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/table/cell.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/table/cell.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/table/column.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/table/column.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/table/columns.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/table/columns.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/table/row.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/table/row.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/table/rows.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/table/rows.blade.php"
                 }
             ]
@@ -802,32 +802,32 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/tabs.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/tabs.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/tabs/list-wrapper.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/tabs/list-wrapper.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/tabs/list.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/tabs/list.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/tabs/panel-wrapper.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/tabs/panel-wrapper.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/tabs/panel.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/tabs/panel.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/tabs/trigger.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/tabs/trigger.blade.php"
                 },
                 {
@@ -851,7 +851,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/textarea.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/textarea.blade.php"
                 },
                 {
@@ -875,12 +875,12 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/tooltip.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/tooltip.blade.php"
                 },
                 {
                     "path": "resources/views/components/ui/tooltip/trigger.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/tooltip/trigger.blade.php"
                 },
                 {
@@ -907,7 +907,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/icon.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/icon.blade.php"
                 }
             ]
@@ -920,7 +920,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/text.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/text.blade.php"
                 }
             ]
@@ -933,7 +933,7 @@
             "files": [
                 {
                     "path": "resources/views/components/ui/heading.blade.php",
-                    "type": "registry:component",
+                    "type": "registry:ui",
                     "target": "resources/views/components/ui/heading.blade.php"
                 }
             ]
