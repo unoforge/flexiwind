@@ -1,0 +1,12 @@
+framework: laravel
+livewire: true
+alpine: false
+theme: flexiwind
+themeMode: Both
+cssFramework: tailwindcss
+iconLibrary: phosphore
+js_folder: resources/js
+css_folder: resources/css
+defaultSource: https://raw.githubusercontent.com/unoforge/flexiwind/refs/heads/main/resources/registries/{name}.json
+registries:
+  '@flexiwind': https://raw.githubusercontent.com/unoforge/flexiwind/refs/heads/main/resources/registries/{name}.json

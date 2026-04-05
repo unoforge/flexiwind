@@ -1,33 +1,30 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "unoforge/flexiwind",
+    "name": "laravel/laravel",
     "type": "project",
-    "description": "Flexiwind docs and component playground for Laravel + Livewire UI components.",
+    "description": "The skeleton application for the Laravel framework.",
     "keywords": [
-        "flexiwind",
         "laravel",
-        "livewire",
-        "ui-components",
-        "tailwindcss"
+        "framework"
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
-        "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1",
-        "livewire/livewire": "^4.0",
+        "php": "^8.3",
+        "laravel/framework": "^13.0",
+        "laravel/tinker": "^3.0",
+        "livewire/blaze": "^1.0",
+        "livewire/livewire": "^4.2",
         "spatie/shiki-php": "^2.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
-        "laravel/boost": "^1.8",
-        "laravel/pail": "^1.2.2",
-        "laravel/pint": "^1.24",
-        "laravel/sail": "^1.41",
+        "laravel/boost": "^2.0",
+        "laravel/pail": "^1.2.5",
+        "laravel/pint": "^1.27",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "pestphp/pest": "^4.3",
-        "pestphp/pest-plugin-laravel": "^4.0",
+        "pestphp/pest": "^4.4",
+        "pestphp/pest-plugin-laravel": "^4.1",
         "unoforge/flexiwind-cli": "^1.0"
     },
     "autoload": {
@@ -51,9 +48,14 @@
             "npm install",
             "npm run build"
         ],
+        "registry":[
+            "npm run build:registry",
+            "@php artisan flexi:build --output=resources/registries",
+            "npm run generate:registry"
+        ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
         ],
         "test": [
             "@php artisan config:clear --ansi",

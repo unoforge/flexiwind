@@ -1,12 +1,18 @@
 {
     "agents": [
-        "claude_code",
         "cursor",
+        "codex",
         "gemini"
     ],
-    "editors": [
-        "cursor",
-        "vscode"
-    ],
-    "guidelines": []
+    "guidelines": true,
+    "herd_mcp": false,
+    "mcp": true,
+    "nightwatch_mcp": false,
+    "sail": false,
+    "skills": [
+        "laravel-best-practices",
+        "livewire-development",
+        "pest-testing",
+        "tailwindcss-development"
+    ]
 }
