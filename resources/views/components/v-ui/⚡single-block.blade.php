@@ -80,7 +80,7 @@ new class extends Component {
                 </div>
             </div>
         </x-ui.tabs.list-wrapper>
-        <x-ui.tabs.panel id="preview" class="flex-1">
+        <x-ui.tabs.panel active id="preview" class="flex-1">
             <div data-ui-previewbox
                 class="bg-bg inner-radius ui-preview-height ui-preview-frame-box overflow-hidden border border-gray-50 dark:border-gray-900 w-full relative group flex-1">
                 <livewire:v-ui.preview-block url="{{ $preview }}" />
