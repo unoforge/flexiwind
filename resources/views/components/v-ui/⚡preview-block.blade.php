@@ -11,19 +11,30 @@ new class extends Component
         $this->url = $url;
     }
 
+    public function getFullUrl(): string
+    {
+        if (config('app.debug')) {
+            return $this->url;
+        }
+
+        return 'https://flexiwind.laravel.cloud' . $this->url;
+    }
+
 };
 ?>
 
-<div class="w-full h-full bg-bg duration-300 ease-linear  ui-preview-frame
-    flex items-center justify-center relative lg:group-data-[size=mobile]:rounded-ui lg:group-data-[size=tablet]:rounded-ui
-     lg:group-data-[size=tablet]:w-194.5 lg:group-data-[size=mobile]:w-96 overflow-hidden"
-    x-data="{ frameIsLoading: true }">
-    <div x-show="frameIsLoading" class="absolute inset-0 flex items-center justify-center">
-        <x-ui.skeleton radius-none class="size-full rounded-ui" />
+<div class="w-full h-full bg-bg duration-300 ease-linear ui-preview-frame flex items-center justify-center relative overflow-hidden"
+    x-data="{ frameIsLoading: true, minLoadingDone: false }"
+    x-init="setTimeout(() => minLoadingDone = true, 800)"
+    x-effect="if (minLoadingDone && $refs.frame?.contentDocument?.readyState === 'complete') frameIsLoading = false">
+    <div x-show="frameIsLoading" class="absolute inset-0" x-cloak>
+       <x-ui.skeleton radius="ui" class="size-full" />
     </div>
 
-    <iframe loading="lazy" src="{{ $url }}" x-bind:data-frame-loading="frameIsLoading"
-        x-on:load="frameIsLoading = false" x-preview-frame
+    <iframe loading="lazy" src="{{ $this->getFullUrl() }}" x-ref="frame"
+        x-on:load="if (minLoadingDone) frameIsLoading = false"
+        x-preview-frame
+        x-bind:data-frame-loading="frameIsLoading"
         class="
             w-full h-full max-h-full data-[frame-loading=true]:invisible data-[frame-loading=true]:opacity-0 overflow-hidden overflow-y-auto
         "></iframe>
