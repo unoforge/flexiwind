@@ -11,7 +11,7 @@
 
     $variantClass = $variant == 'default' ? ' bg-bg-subtle text-fg' : UiHelper::getClasses($variant, $intent);
 
-    $className = "{$sizes[$size ?? 'default']} ui-radius {$variantClass} {$class}";
+    $className = "{$sizes[$size ?? 'default']} rounded-ui {$variantClass} {$class}";
 @endphp
 <span {{ $attributes->merge(['class' => $className]) }}>
     {{ $slot }}

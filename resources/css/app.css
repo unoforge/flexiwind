@@ -22,14 +22,11 @@
 @custom-variant dark (&:is(.dark *));
 
 
-html {
-    scroll-behavior: smooth;
-}
-
 :root {
-    --global-main-radius: 0.5rem;
+    --radius-ui: 0.5rem;
     --ui-input-focus-outline: var(--c-primary);
     --ui-input-place-holder: var(--c-gray-500);
+    --ui-input-fg: var(--color-fg);
     --ui-input-invalid-outline: var(--c-danger);
     --ring-bg: var(--c-primary);
     --ring-offset-color: var(--c-bg);
@@ -38,43 +35,53 @@ html {
 
     --ui-radius: var(--radius-lg);
     --card-radius: var(--radius-lg);
-    --checkbox-radius: var(--radius-sm);
-    --checkbox-bg: var(--color-bg);
+
 
     --dropdown-item-outline: var(--color-primary);
-    --dropdown-item-bg-hover: var(--color-gray-100);
-    --dropdown-item-fg: var(--color-gray-800);
-    --dropdown-item-fg-hover: var(--color-gray-900);
-
-
     --dropdown-item-danger-outline: var(--color-danger);
-    --dropdown-item-danger-bg-hover: var(--color-danger-100);
-    --dropdown-item-danger-fg: var(--color-danger-600);
+    --dropdown-item-hover-and-select: var(--color-bg-muted);
+    --dropdown-item-hover-and-select-fg: var(--color-fg-title);
+    --dropdown-item-selected-fg: var(--color-fg-title);
+    --dropdown-item-danger-fg: var(--color-danger);
+    --dropdown-item-warning-fg: var(--color-warning);
+    --dropdown-item-danger-hover-and-select: --alpha(var(--color-danger-100)/40%);
+    --dropdown-item-danger-hover-and-select-fg: var(--color-danger-600);
+    --dropdown-item-warning-hover-and-select: --alpha(var(--color-warning-100)/40%);
+    --dropdown-item-warning-hover-and-select-fg: var(--color-warning-600);
+
+    --docs-bg: --alpha(var(--color-gray-50)/50%);
+
+
+    --pattern-fg: --alpha(var(--color-border)/50%);
 }
 
 .dark {
     --focus-ring: --alpha(var(--c-primary-800)/30%);
 
+    --dropdown-item-danger-hover-and-select: --alpha(var(--color-danger-900)/30%);
+    --dropdown-item-danger-Ïhover-and-select-fg: var(--color-danger-300);
+    --dropdown-item-warning-hover-and-select: --alpha(var(--color-warning-900)/30%);
+    --dropdown-item-warning-hover-and-select-fg: var(--color-warning-300);
 
-    --dropdown-item-bg-hover: var(--color-gray-900);
-    --dropdown-item-fg: var(--color-gray-200);
-    --dropdown-item-fg-hover: var(--color-gray-50);
-    --dropdown-item-danger-bg-hover: --alpha(var(--color-danger-500)/10%);
-    --dropdown-item-danger-fg: var(--color-danger-500);
+
+    --docs-bg: var(--color-gray-950);
+
+    --pattern-fg: --alpha(var(--color-border-strong)/60%);
 }
 
 
 
 @theme inline {
-    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-    --radius-global: var(--global-main-radius);
     --radius-ui: var(--ui-radius);
     --radius-card: var(--card-radius);
     --radius-checkbox: var(--checkbox-radius);
+    --radius-card-inner: calc(var(--card-radius) - var(--card-padding));
 
     --color-white: var(--c-white);
     --color-dark: var(--c-gray-950);
+    --color-pattern-fg: var(--pattern-fg);
 
     --color-primary: var(--c-primary);
     --color-secondary: var(--c-secondary);
@@ -93,7 +100,6 @@ html {
     --color-bg-subtle: var(--c-bg-subtle);
     --color-bg-surface: var(--c-bg-surface);
     --color-bg-muted: var(--c-bg-muted);
-    --color-bg-surface-elevated: var(--c-bg-surface-elevated);
     --color-card: var(--c-card);
     --color-card-gray: var(--c-card-gray);
     --color-popover: var(--c-bg);
@@ -103,7 +109,6 @@ html {
     --color-progressbar: var(--c-progressbar);
 
     --color-border-strong: var(--c-border-strong);
-    --color-border-amphasis: var(--c-border-amphasis);
     --color-border: var(--c-border);
     --color-border-sub: var(--c-border-sub);
     --color-border-card: var(--c-border-card);
@@ -211,7 +216,11 @@ html {
 }
 
 
-
+@utility btn-flexi {
+  @apply bg-(--btn-flexi-bg) hover:bg-(--btn-flexi-hover-bg) active:bg-(--btn-flexi-active-bg) active:[--btn-flexi-shadow-a:--btn-flexi-shadow-active-a] active:[--btn-flexi-shadow-b:--btn-flexi-shadow-active-b] active:[--btn-flexi-shadow-c:--btn-flexi-shadow-active-c] [--btn-focus-outline-color:--btn-flexi-hover-bg];
+  --tw-shadow: 0 -1px 0 0px var(--tw-shadow-color, var(--btn-flexi-shadow-a)) inset, 0 0 0 1px var(--tw-shadow-color, var(--btn-flexi-shadow-b)) inset, 0 0.5px 0 1.5px var(--tw-shadow-color, var(--btn-flexi-shadow-c)) inset;
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
 
 @utility docs-sidebar {
     @apply fixed lg:sticky top-0 left-0 -translate-x-full lg:top-16 fx-open:translate-x-0 invisible fx-open:visible lg:visible transition-all lg:transition-none duration-300 ease-linear lg:transition-none w-11/12 max-w-80 lg:max-w-none md:w-full h-dvh lg:h-[calc(100dvh-4rem)] lg:translate-x-0;
@@ -274,7 +283,7 @@ html {
 
 
 @utility ui-preview-height {
-    @apply h-[calc(100vh-6rem)] lg:max-h-[70rem]
+    @apply h-[calc(100vh-6rem)] lg:max-h-170
 }
 
 @utility ui-preview-frame-box {
@@ -299,6 +308,20 @@ html {
     }
 }
 
+@utility linear-gradient-pattern {
+    background-image: repeating-linear-gradient(-315deg, var(--pattern-fg) 0, var(--pattern-fg) 1px, transparent 0, transparent 50%);
+    background-size: 16px 16px;
+    background-attachment: fixed;
+}
+
+@utility noise-subtle {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+}
+
+
+[x-persist] {
+    height: 100%;
+}
 
 @layer base {
     * {
@@ -331,41 +354,11 @@ html {
     }
 }
 
-[x-persist] {
-    height: 100%;
-}
-
-
 
 html,
 .preview-block html {
     max-width: 100vw;
     scroll-behavior: smooth;
-}
-
-/* For modal animation  */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-1.5rem);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-0.75rem);
-    }
 }
 
 

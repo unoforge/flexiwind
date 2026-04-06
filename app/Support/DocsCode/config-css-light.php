@@ -24,7 +24,6 @@ return [
     --bg-subtle: var(--color-gray-100);
     --bg-surface: var(--color-gray-50);
     --bg-muted: var(--color-gray-200);
-    --bg-surface-elevated: var(--color-gray-300);
     --card: var(--color-bg);
     --card-gray: var(--color-bg-subtle);
     --overlay: var(--color-bg);
@@ -34,7 +33,6 @@ return [
     --bg-range:var(--color-bg-muted);
 
     --border-strong: var(--color-gray-300);
-    --border-amphasis: var(--color-gray-400);
     --border: var(--color-gray-200);
     --border-sub: var(--color-gray-100);
     --border-card:var(--color-gray-200);
@@ -53,6 +51,7 @@ return [
     --card-radius: var(--radius-lg);
     --checkbox-radius: var(--radius-sm);
     --checkbox-bg: var(--color-bg);
+    --checkbox-checked-color: var(--color-primary);
 
     --dropdown-item-outline: var(--color-primary);
     --dropdown-item-bg-hover: var(--color-gray-100);

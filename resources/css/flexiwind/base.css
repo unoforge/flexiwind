@@ -8,8 +8,12 @@
 @custom-variant fx-active (&[data-state="active"]);
 @custom-variant fx-inactive (&[data-state="inactive"]);
 @custom-variant fx-focus-active (&[data-focus="active"]);
+@custom-variant selected (&[aria-selected="true"]);
 
 @custom-variant fx-current (&[data-current]);
+@custom-variant fx-table-grid (&[data-table-grid]);
+@custom-variant fx-hoverable (&[data-table-hoverable]);
+@custom-variant fx-striped (&[data-table-striped]);
 
 
 @custom-variant slot-icon (&[slot="icon"]);
@@ -20,3 +24,13 @@
 @custom-variant fx-slide-x (&[data-ax="x"]);
 @custom-variant fx-slide-y (&[data-ax="y"]);
 
+@custom-variant placement-left (&[data-show-placement="left"]);
+@custom-variant placement-right (&[data-show-placement="right"]);
+@custom-variant placement-top (&[data-show-placement="top"]);
+@custom-variant placement-bottom (&[data-show-placement="bottom"]);
+
+@custom-variant exiting (&[data-exiting]);
+@custom-variant entering (&[data-entering]);
+
+@custom-variant orientation-horizontal (&[data-orientation=horizontal]);
+@custom-variant orientation-vertical (&[data-orientation=vertical]);

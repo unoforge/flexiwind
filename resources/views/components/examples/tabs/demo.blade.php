@@ -1,10 +1,10 @@
 <x-ui.tabs class="w-full">
     <x-ui.tabs.list-wrapper class="mb-4">
-        <x-ui.tabs.list class="pt-2 mb-2 border-b border-border flex items-center gap-5 text-fg-muted">
-            <x-ui.tabs.trigger id="tab1" class="flex items-center pb-2.5 border-b-3 border-transparent fx-active:text-fg-title fx-active:border-fg-title">
+        <x-ui.tabs.list>
+            <x-ui.tabs.trigger id="tab1">
                 Tab Item 1
             </x-ui.tabs.trigger>
-            <x-ui.tabs.trigger id="tab2" class="flex items-center pb-2.5 border-b-3 border-transparent fx-active:text-fg-title fx-active:border-fg-title">
+            <x-ui.tabs.trigger id="tab2">
                 Tab Item 2
             </x-ui.tabs.trigger>
         </x-ui.tabs.list>

@@ -117,7 +117,7 @@ function initCopyAsMarkdown() {
 
 function flashCopyState(button) {
     button.innerHTML = '<span class="flex iconify ph--check mr-1.5"></span><span>Copied</span>';
-    setTimeout(() => (button.innerHTML = `<span aria-hidden="true" class="flex iconify ph--copy text-sm mr-1.5"></span><span>Copy as Markdown</span>`), 1800);
+    setTimeout(() => (button.innerHTML = `<span aria-hidden="true" class="flex iconify ph--copy text-sm mr-1.5"></span><span>Copy page</span>`), 1800);
 }
 
 function htmlToMarkdown(root) {

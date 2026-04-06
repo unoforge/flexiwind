@@ -27,7 +27,7 @@
     ];
 @endphp
 
-<x-ui.table>
+<x-ui.table hoverable>
     <x-ui.table.columns>
         <x-ui.table.column>
             ID
@@ -45,7 +45,7 @@
     </x-ui.table.columns>
     <x-ui.table.rows>
         @foreach ($users as $user)
-            <x-ui.table.row hoverable>
+            <x-ui.table.row>
                 <x-ui.table.cell white-space="nowrap">
                     {{ $user['id'] }}
                 </x-ui.table.cell>

@@ -1,15 +1,14 @@
 @props([
-    'type' => 'text',
+    'variant' => 'default',
     'size' => 'md',
     'disabled' => false,
     'readonly' => false,
     'label' => null,
-    'noBorder' => false,
-    'inlinedLabel' => false,
+    'labelPosition' => 'top',
     'labelClass' => '',
-    'radius' => 'lg',
+    'invalid' => false,
     'autoResize' => false,
-    'resizeNone' => false,
+    'class' => '',
     'groupWrapperClass' => null,
 ])
 
@@ -20,32 +19,29 @@
         'lg' => 'p-3 text-sm',
     ];
 
-    $resize_class = $resizeNone ? 'resize-none' : '';
+    $variantClasses = match ($variant) {
+        'default' => 'ui-form-base ui-form-input rounded-ui bg-bg border border-border-input text-fg min-h-20',
+        'ghost' => 'ui-form-base ui-form-input rounded-ui border border-transparent text-fg min-h-20',
+        'flush' => 'ui-form-base ui-form-input rounded-ui border-transparent text-fg min-h-20',
+        'unstyled' => '',
+    };
 
-    $border_class = $noBorder ? 'border-transparent' : 'border border-border-input bg-bg';
-    $baseClasses = "ui-form-base ui-form-input ui-radius {$border_class} {$resize_class} text-fg min-h-20 shadow ";
-    $sizeClasses = $sizes[$size] ?? $sizes['md'];
-
+    $sizeClass = $variant === 'unstyled' ? '' : $sizes[$size] ?? $sizes['md'];
     $id = $attributes->get('id') ?? $attributes->get('name', uniqid('input-'));
-
-    $attributes = $attributes->class([$baseClasses, $sizeClasses])->merge([
-        'type' => $type,
-        'disabled' => $disabled,
-        'readonly' => $readonly,
-        'id' => $id,
-    ]);
-
-    $containerClass = $groupWrapperClass ? '' : '';
-    $group_wrapper = $inlinedLabel
-        ? "flex items-center gap-2 {$containerClass}"
-        : "flex flex-col space-y-2 {$containerClass}";
 @endphp
 
 @if ($label)
-    <div class="{{ $group_wrapper }}">
+    <div
+        class="{{ $labelPosition === 'inline' ? 'flex items-center gap-2' : 'flex flex-col space-y-2' }} {{ $groupWrapperClass ?? '' }}">
         <x-ui.label for="{{ $id }}" :text="$label" class="{{ $labelClass }}" />
-        <textarea {{ $attributes }} @if ($autoResize) x-auto-resize-area @endif>{{ $slot }}</textarea>
+        <textarea id="{{ $id }}" @if ($disabled) disabled @endif
+            @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
+            @if ($autoResize) x-auto-resize-area @endif
+            {{ $attributes->class([$variantClasses, $sizeClass, $class]) }}>{{ $slot }}</textarea>
     </div>
 @else
-    <textarea {{ $attributes }} @if ($autoResize) x-auto-resize-area @endif>{{ $slot }}</textarea>
+    <textarea id="{{ $id }}" @if ($disabled) disabled @endif
+        @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
+        @if ($autoResize) x-auto-resize-area @endif
+        {{ $attributes->class([$variantClasses, $sizeClass, $class]) }}>{{ $slot }}</textarea>
 @endif

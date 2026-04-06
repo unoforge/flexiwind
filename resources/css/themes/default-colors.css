@@ -252,17 +252,20 @@
   --c-zinc-900: hsl(240, 6%, 10%);
   --c-zinc-950: hsl(240, 10%, 4%);
 
-  --c-primary-50: var(--c-air-orange-50);
-  --c-primary-100: var(--c-air-orange-100);
-  --c-primary-200: var(--c-air-orange-200);
-  --c-primary-300: var(--c-air-orange-300);
-  --c-primary-400: var(--c-air-orange-400);
-  --c-primary-500: var(--c-air-orange-500);
-  --c-primary-600: var(--c-air-orange-600);
-  --c-primary-700: var(--c-air-orange-700);
-  --c-primary-800: var(--c-air-orange-800);
-  --c-primary-900: var(--c-air-orange-900);
-  --c-primary-950: var(--c-air-orange-950);
+  
+  --c-primary-50:  oklch(97.2% 0.015 238);
+  --c-primary-100: oklch(94.2% 0.028 238);
+  --c-primary-200: oklch(88.3% 0.060 237);
+  --c-primary-300: oklch(79.8% 0.105 236);
+  --c-primary-400: oklch(69.8% 0.150 235);
+  --c-primary-500: oklch(60.8% 0.185 233);
+  --c-primary-600: oklch(53.7% 0.185 230);
+  --c-primary-700: oklch(45.1% 0.155 228);
+  --c-primary-800: oklch(40.2% 0.135 227);
+  --c-primary-900: oklch(34.5% 0.115 226);
+  --c-primary-950: oklch(25.2% 0.090 224);
+
+
 
   --c-secondary-50: hsl(252, 100%, 97%);
   --c-secondary-100: hsl(252, 100%, 94%);

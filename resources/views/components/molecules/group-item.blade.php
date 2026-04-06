@@ -1,4 +1,4 @@
-<li>
+<li class="{{ $isHidden ? 'lg:hidden' : '' }}">
     @if ($noWire)
         <a href="{{ $path }}" aria-label="Link to {{ $title }}"
             class="flex items-center gap-x-2.5 fx-current:font-600 fx-current:text-fg-title text-fg hover:text-fg-title group">

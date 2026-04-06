@@ -1,4 +1,4 @@
-@props(['class'=>''])
+@props(['class' => ''])
 
 <!doctype html>
 <html lang="en" class="bg-bg" data-palette="default">
@@ -33,7 +33,7 @@
         })();
     </script>
     @livewireStyles
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/site-font.css', 'resources/css/app.css'])
     {{ $head ?? '' }}
 </head>
 
@@ -42,7 +42,7 @@
     @livewireScripts
     @vite(['resources/js/app.js', 'resources/js/flexilla.js'])
 
-        @if (!config('app.debug'))
+    @if (!config('app.debug'))
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4F5SD3FZ5"></script>
         <script>

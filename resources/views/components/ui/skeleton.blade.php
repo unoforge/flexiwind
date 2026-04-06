@@ -1,11 +1,11 @@
-@props(['radiusNone' => false, 'class' => '', 'bgNone' => false])
+@props(['radius' => 'circle', 'bgNone' => false])
 
-@php
-    $bgClass = $bgNone ? '' : 'bg-bg-surface-elevated';
-    $sk_radius = $radiusNone ? '' : 'rounded-full';
-    $className = "animate-pulse {$bgClass} {$sk_radius} {$class}";
-@endphp
 
-<div {{ $attributes->merge([
-    'class' => $className,
-]) }}></div>
+<div
+    {{ $attributes->class([
+        'animate-pulse',
+        'rounded-full' => $radius === 'circle',
+        'rounded-ui' => $radius === 'ui',
+        'bg-bg-muted' => !$bgNone,
+    ]) }}>
+</div>

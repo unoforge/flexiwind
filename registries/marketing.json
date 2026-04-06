@@ -1,0 +1,49 @@
+{
+    "components": [
+        {
+            "version": "1.0.0",
+            "name": "features01",
+            "title": "Features 01",
+            "description": "Feature sections.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/features/01/features.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/blocks/features.blade.php",
+                    "replace": {
+                        "x-previews.features.01.feature-card": "x-blocks.feature-card"
+                    }
+                },
+                {
+                    "path": "resources/views/components/previews/features/01/feature-card.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/blocks/feature-card.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "hero01",
+            "title": "HeroSection 01",
+            "description": "Hero section.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/hero-sections/01/hero.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/blocks/hero.blade.php",
+                    "replace": {
+                        "x-previews.hero-sections.01.navbar": "x-blocks.navbar"
+                    }
+                },
+                {
+                    "path": "resources/views/components/previews/hero-sections/01/navbar.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/blocks/navbar.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button"
+            ]
+        }
+    ]
+}

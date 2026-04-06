@@ -1,35 +1,37 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug">
-
     <x-md.h2>Demo</x-md.h2>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.dropdown.demo" />
 
 
     <x-md.h2>Installation</x-md.h2>
-    <x-md.paragraph>Add the component</x-md.paragraph>
+    <x-md.paragraph>Install the component</x-md.paragraph>
 
     <x-docs.steps>
         <x-docs.step>
-            <x-md.h3>Add the component</x-md.h3>
-            <livewire:base.terminal code="flexi-cli add dropdown" />
+            <x-md.h3>Install the component</x-md.h3>
+            <livewire:base.terminal code="php artisan flexi:add dropdown" />
         </x-docs.step>
         <x-docs.step>
-            <x-md.h3>Install Dropdown</x-md.h3>
+            <x-md.h3>Install dependencies</x-md.h3>
             <x-docs.callout intent="gray" type="note">
-                This component require JS. By default we're using our own Interactive Component Library
+                This component requires JS. By default we're using our own Interactive Component Library
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. Install this only if you
-                didn't accept dependencies installation during component addition.
+                did not accept dependency installation when adding the component.
             </x-docs.callout>
             <x-md.ol>
-                <x-md.li><strong>With Alpine</strong></x-md.li>
-                <livewire:base.terminal :code="'npm i @flexilla/alpine-dropdown'" />
-                <x-md.paragraph>Add plugin in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
+                <x-md.h3>Usage</x-md.h3>
+                <x-md.li><strong>With Alpine/Livewire</strong></x-md.li>
+                <livewire:base.terminal :code="'npm i @flexilla/dropdown'" />
+
+                <x-md.paragraph>
+                    Normally after installing the component, a file should be created in <x-docs.inline-code
+                        text="resources/js/plugins/dropdown.js" />.
+                </x-md.paragraph>
 
                 <livewire:base.load-code :name="['add-dropdown-plugin-in-app']" />
+
+
                 <x-md.li><strong>Without Alpine</strong></x-md.li>
-                <x-docs.callout intent="gray" type="note">
-                    Make sure that the dropdown package is not installed
-                </x-docs.callout>
-                <livewire:base.terminal :code="'npm i @flexilla/dropdown'" />
                 <x-md.paragraph>Initialize dropdown in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
                 <livewire:base.load-code :name="['add-dropdown-in-app']" />
             </x-md.ol>
@@ -38,9 +40,6 @@
 
 
     <x-md.h2>Examples</x-md.h2>
-    <x-md.h3>With icons</x-md.h3>
-    <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.dropdown.with-icon" />
-
     <x-md.h3>With header</x-md.h3>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.dropdown.with-header" />
 
@@ -101,13 +100,12 @@
             </x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="keppOpenOut" /></x-ui.table.cell>
+            <x-ui.table.cell class="font-medium"><x-docs.inline-code no-wrap text="keepOpenOutside" /></x-ui.table.cell>
             <x-ui.table.cell>boolean</x-ui.table.cell>
             <x-ui.table.cell>false</x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    When true, clicking outside the dropdown won't close it. The dropdown can only be closed
-                    programmatically.
+                    When true, clicking outside the dropdown won't close it.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -212,4 +210,5 @@
             href="https://flexilla-docs.vercel.app/docs/components/dropdown">Flexilla Dropdown</x-docs.link>
         documentation.
     </x-md.paragraph>
+
 </x-layouts.doc-page-wrapper>

@@ -3,11 +3,19 @@
 @endphp
 
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug" :links="[]">
-    <x-md.h2>Colors</x-md.h2>
+    <x-md.h2>Theming Tokens</x-md.h2>
     <x-md.paragraph>
-        We’ve opted for semantic naming approche, so we have color’s name as <x-docs.inline-code text="primary" />,
-        <x-docs.inline-code text="secondary" />, etc…
+        Flexiwind uses semantic tokens instead of hardcoded color values.
+        You define meaning-first roles such as <x-docs.inline-code text="primary" />,
+        <x-docs.inline-code text="secondary" />, and <x-docs.inline-code text="danger" />,
+        then consume them through utilities across the UI.
     </x-md.paragraph>
+    <x-md.paragraph>
+        Practical rule: update token values once in your theme layer, then let components inherit those values.
+        This keeps theming predictable and avoids one-off styling.
+    </x-md.paragraph>
+
+    <x-md.h3>Semantic color roles</x-md.h3>
 
     <x-docs.table :columns="[['label' => 'Color', 'class' => 'w-60'], ['label' => 'Description', 'class' => '']]">
         <x-ui.table.row>
@@ -94,9 +102,9 @@
 
     <x-md.h3>Background</x-md.h3>
     <x-md.paragraph>
-        Background tokens define surfaces and layers. Use Tailwind utilities like <x-docs.inline-code text="bg-bg" />,
-        <x-docs.inline-code text="bg-bg-muted" />, <x-docs.inline-code text="bg-card" />, <x-docs.inline-code
-            text="bg-card-gray" />.
+        Background tokens define app surfaces and elevation layers.
+        Use utilities such as <x-docs.inline-code text="bg-bg" />, <x-docs.inline-code text="bg-bg-muted" />,
+        <x-docs.inline-code text="bg-card" />, and <x-docs.inline-code text="bg-card-gray" />.
     </x-md.paragraph>
     <x-docs.table :columns="[['label' => 'Token', 'class' => 'w-60'], ['label' => 'Description', 'class' => '']]">
         <x-ui.table.row>
@@ -194,9 +202,9 @@
 
     <x-md.h3>Foreground</x-md.h3>
     <x-md.paragraph>
-        Foreground tokens define text and icon colors. Use <x-docs.inline-code text="text-fg" />, <x-docs.inline-code
-            text="text-fg-title" />, <x-docs.inline-code text="text-fg-subtitle" />, <x-docs.inline-code
-            text="text-fg-muted" />.
+        Foreground tokens control text and icon hierarchy.
+        Use <x-docs.inline-code text="text-fg" /> for default content, <x-docs.inline-code text="text-fg-title" />
+        for high-emphasis headings, and muted tokens for secondary content.
     </x-md.paragraph>
     <x-docs.table :columns="[['label' => 'Token', 'class' => 'w-60'], ['label' => 'Description', 'class' => '']]">
         <x-ui.table.row>
@@ -244,9 +252,10 @@
 
     <x-md.h3>Border</x-md.h3>
     <x-md.paragraph>
-        Border tokens control outlines and separators. Use <x-docs.inline-code text="border-border" />,
-        <x-docs.inline-code text="border-border-strong" /> and opacity variants like <x-docs.inline-code
-            text="border-border/40" />.
+        Border tokens define separators, outlines, and control edges.
+        Use <x-docs.inline-code text="border-border" /> as default, raise contrast with
+        <x-docs.inline-code text="border-border-strong" />, and tune intensity with opacity utilities such as
+        <x-docs.inline-code text="border-border/40" />.
     </x-md.paragraph>
     <x-docs.table :columns="[['label' => 'Token', 'class' => 'w-60'], ['label' => 'Description', 'class' => '']]">
         <x-ui.table.row>
@@ -302,6 +311,9 @@
     </x-docs.table>
 
     <x-md.h3>Border radius</x-md.h3>
+    <x-md.paragraph>
+        Radius tokens keep rounding consistent between primitives and composed components.
+    </x-md.paragraph>
     <x-docs.table :columns="[['label' => 'Variable', 'class' => 'w-60'], ['label' => 'Description', 'class' => '']]">
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
@@ -317,6 +329,10 @@
 
 
     <x-md.h3>Others</x-md.h3>
+    <x-md.paragraph>
+        Keep additional tokens in the same semantic style: name by intent, not by raw value.
+        This makes future redesigns or mode-specific adjustments safer and faster.
+    </x-md.paragraph>
 
 
 </x-layouts.doc-page-wrapper>

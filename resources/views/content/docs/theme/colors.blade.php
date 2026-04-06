@@ -2,26 +2,20 @@
 
     <x-md.h2>Prerequisites</x-md.h2>
     <x-md.paragraph>
-        Flexiwind color tokens are defined using CSS variables and consumed through Tailwind utilities.
-        Make sure your main stylesheet (usually <x-docs.inline-code text="app.css" />) is loaded globally
-        and that Flexiwind styles are included before any custom overrides.
+        Flexiwind color tokens are defined with CSS variables and consumed through Tailwind utilities.
+        Ensure your main stylesheet (usually <x-docs.inline-code text="app.css" />) is loaded globally,
+        and load Flexiwind token definitions before custom overrides.
     </x-md.paragraph>
 
     <x-md.paragraph>
-        Do not hardcode color values in your UI.
-        Always rely on semantic tokens to keep your interface consistent,
-        accessible, and theme-ready
+        Avoid hardcoded hex values in components.
+        Use semantic tokens so theme updates happen in one place.
     </x-md.paragraph>
-
-
-
 
     <x-md.h2>Theme Modes</x-md.h2>
     <x-md.paragraph>
-        Flexiwind supports multiple <strong>theme modes</strong> depending on
-        how your application handles color schemes.
-        You can configure your project to support both light and dark themes,
-        or restrict it to a single mode.
+        Choose one mode strategy based on product requirements.
+        Most applications should start with <x-docs.inline-code text="both" /> to support light and dark interfaces.
     </x-md.paragraph>
 
     <x-docs.table :columns="[['label' => 'Mode', 'class' => 'w-48'], ['label' => 'Description', 'class' => '']]">
@@ -31,8 +25,8 @@
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Defines color variables for both light and dark themes.
-                    Recommended for most applications that support theme switching.
+                    Define variables for both light and dark modes.
+                    Best default for applications with user theme switching.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -43,8 +37,8 @@
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Defines color variables for light mode only.
-                    Use this when your application does not support dark mode.
+                    Define only light mode variables.
+                    Use this when dark mode is intentionally not supported.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -55,34 +49,29 @@
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Defines color variables for dark mode only.
-                    Useful for dark-first or terminal-like interfaces.
+                    Define only dark mode variables.
+                    Useful for dark-first products and internal tools.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
 
-
-
     <x-md.h2>Variable Tokens</x-md.h2>
+    <x-md.paragraph>
+        Start from the mode that matches your project, then adjust only semantic token values.
+        Keep token names stable to avoid breaking class usage in templates.
+    </x-md.paragraph>
 
     <livewire:base.load-code :name="['css-variables-color-both', 'css-variables-color-light', 'css-variables-color-dark']" />
 
-
     <x-md.h2>Theme Settings</x-md.h2>
-
-
     <x-md.paragraph>
-        Define in @theme.
-        Once defined, you can use utilities like
-        <x-docs.inline-code text="bg-primary" />,
-        <x-docs.inline-code text="border-border" />,
-        or
-        <x-docs.inline-code text="border-success" />
-        anywhere in your UI.
+        Register color tokens in <x-docs.inline-code text="@theme" /> so utilities are generated consistently.
+        Once registered, use classes like <x-docs.inline-code text="bg-primary" />,
+        <x-docs.inline-code text="text-fg" />, and <x-docs.inline-code text="border-border" />
+        throughout your UI.
     </x-md.paragraph>
 
     <livewire:base.load-code :name="['css-variables-colors']" />
-
 
 </x-layouts.doc-page-wrapper>

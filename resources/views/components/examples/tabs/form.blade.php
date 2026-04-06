@@ -1,11 +1,11 @@
 <x-ui.tabs data-indicator-class-name="ui-tabs-indicator flex bg-bg shadow border border-border-strong/40 rounded absolute top-0 left-0"
     class="w-full max-w-md">
-    <x-ui.tabs.list class="flex items-center relative w-full p-0.5 bg-bg-subtle rounded-md">
-        <x-ui.tabs.trigger wrapper-class="flex flex-1" id="accountTab" href="#accountTab" aria-controls="accountTab"
+    <x-ui.tabs.list unStyled class="flex items-center relative w-full p-0.5 bg-bg-subtle rounded-md">
+        <x-ui.tabs.trigger unStyled wrapper-class="flex flex-1" id="accountTab" href="#accountTab" aria-controls="accountTab"
             tabindex="0" class="px-4 py-2 rounded flex-1 flex items-center justify-center text-sm text-fg relative fx-active:text-fg-title">
             Account
         </x-ui.tabs.trigger>
-        <x-ui.tabs.trigger wrapper-class="flex flex-1" id="passTab" href="#passTab" aria-controls="passTab"
+        <x-ui.tabs.trigger unStyled wrapper-class="flex flex-1" id="passTab" href="#passTab" aria-controls="passTab"
             tabindex="-1" class="px-4 py-2 rounded flex-1 flex items-center justify-center text-sm text-fg relative fx-active:text-fg-title">
             Password
         </x-ui.tabs.trigger>

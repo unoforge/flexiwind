@@ -62,21 +62,6 @@ class ButtonHelper
                 'neutral' => 'btn-ghost-neutral',
             ],
         ],
-        'flexi' => [
-            'base' => 'btn-flexi',
-            'intents' => [
-                'primary' => 'btn-flexi-primary text-white',
-                'secondary' => 'btn-flexi-secondary text-white',
-                'accent' => 'btn-flexi-accent text-white',
-                'danger' => 'btn-flexi-danger text-white',
-                'success' => 'btn-flexi-success text-white',
-                'info' => 'btn-flexi-info text-white',
-                'warning' => 'btn-flexi-warning text-white',
-                'gray' => 'btn-flexi-gray text-white',
-                'neutral' => 'btn-flexi-neutral text-bg',
-                'white'=>'btn-flexi-white text-fg hover:text-fg-title'
-            ],
-        ],
         'none' => [
         ],
     ];

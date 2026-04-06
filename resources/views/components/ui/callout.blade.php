@@ -6,7 +6,7 @@
     'size' => 'default',
     'title' => null,
     'message' => null,
-    'noIcon' => false,
+    'icon' => true,
     'iconWrapper' => '',
 ])
 
@@ -33,17 +33,17 @@
 
 <x-ui.alert :variant="$variant" :intent="$intent_" :size="$size"
     {{ $attributes->class([
-        'flex items-start gap-4' => !$noIcon,
+        'flex items-start gap-4' => $icon,
         $class,
     ]) }}>
-    @if (!$noIcon)
+    @if ($icon)
         <span class="w-max {{ $iconWrapper }}">
             <span aria-hidden="true" class="iconify size-6 {{ $icon }}"></span>
         </span>
     @endif
 
     @if ($title || $message)
-        @if (!$noIcon)
+        @if ($icon)
             <div class="flex-1 flex flex-col gap-3">
                 @if ($title)
                     <x-ui.callout.title text="{{ $title }}" />
@@ -58,7 +58,7 @@
             {{ $slot }}
         @endif
     @else
-        @if (!$noIcon)
+        @if ($icon)
             <div class="flex-1 flex flex-col gap-3">
                 {{ $slot }}
             </div>

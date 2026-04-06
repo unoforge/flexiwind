@@ -62,7 +62,7 @@ new class extends Component {
 ?>
 
 
-<figure data-code-snippet role="region" aria-label="codeblock region" class="py-3"
+<figure data-code-snippet role="region" aria-label="codeblock region" class="py-3 w-full"
     wire:key="code-snippet-{{ uniqid() }}">
     @if ($highlightedCode)
         {!! $highlightedCode !!}

@@ -1,4 +1,12 @@
-@props(['size' => 'md', 'class' => '', 'closable' => true, 'noGutter' => false])
+@props([
+    'size' => 'md',
+    'class' => '',
+    'closable' => true,
+    'gutter' => true,
+    'enterAnimation' => 'modal-animation-in .4s linear',
+    'exitAnimation' => 'modal-animation-out .1s linear',
+    'animation' => true,
+])
 
 @php
     $sizes = [
@@ -18,9 +26,11 @@
 @endphp
 
 <div data-modal-content wire:ignore.self
+    @if ($animation) data-enter-animation="{{ $enterAnimation }}" data-exit-animation="{{ $exitAnimation }}" @endif
     {{ $attributes->class([
         'w-full flex flex-col relative bg-bg border border-border shadow-sm rounded-ui overflow-hidden',
-        '[--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]' => !$noGutter,
+        '[--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]' => $gutter,
+        'animated-modal-content ease-linear transition-all' => $animation,
         $size_,
         $class,
     ]) }}>

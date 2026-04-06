@@ -5,7 +5,7 @@
 ])
 
 <div
-    class="w-full ui-card [--card-padding:0.25rem] [--card-radius:var(--global-main-radius)] border border-gray-200 dark:border-gray-800/60 bg-gray-50 dark:bg-gray-900/50">
+    class="w-full ui-card [--card-padding:0.25rem] [--card-radius:var(--radius-ui)] border border-gray-200 dark:border-gray-800/60 bg-gray-50 dark:bg-gray-900/50">
     @if ($dark)
         <img src="{{ $src }}" alt="{{ $alt }}" width="1728" height="1117"
             class="w-full aspect-auto inner-radius dark:hidden" />

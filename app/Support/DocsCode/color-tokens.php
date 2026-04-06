@@ -8,11 +8,12 @@ return [
     'code' => <<<'CSS'
 @theme inline {
     --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --radius-ui: var(--radius-lg);
-    --radius-card: var(--radius-lg);
-    --radius-checkbox: var(--radius-md); 
+    --radius-ui: var(--ui-radius);
+    --radius-card: var(--card-radius);
+    --radius-checkbox: var(--checkbox-radius); 
+    
 
-    --color-white: var(--white);
+    --color-white: var(--color-white);
     --color-dark: var(--color-gray-950);
 
     --color-primary: var(--primary);
@@ -32,7 +33,6 @@ return [
     --color-bg-subtle: var(--bg-subtle);
     --color-bg-surface: var(--bg-surface);
     --color-bg-muted: var(--bg-muted);
-    --color-bg-surface-elevated: var(--bg-surface-elevated);
     --color-card: var(--card);
     --color-card-gray: var(--card-gray);
     --color-popover: var(--bg);
@@ -42,7 +42,6 @@ return [
     --color-progressbar: var(--progressbar);
 
     --color-border-strong: var(--border-strong);
-    --color-border-amphasis: var(--border-amphasis);
     --color-border: var(--border);
     --color-border-sub: var(--border-sub);
     --color-border-card: var(--border-card);

@@ -3,9 +3,31 @@
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.badge.demo" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add badge" />
+    <livewire:base.terminal code="php artisan flexi:add badge" />
 
-    <x-md.h2>Variants</x-md.h2>
+
+    <x-md.h2>API</x-md.h2>
+    <x-docs.table>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="variant" /> (solid|soft|subtle|outline|default)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Visual style of the badge.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="intent" /> (string)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Semantic color intent for the selected variant.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="size" /> (xs|sm|default|lg)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Controls badge size and text rhythm.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="radius" /> (string)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Rounding token applied through utility classes.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+    </x-docs.table>
+
+    <x-md.h2>Examples</x-md.h2>
+    <x-md.h3>Variants</x-md.h3>
     <x-md.h3>Solid</x-md.h3>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.badge.solid" />
     <x-md.h3>Outline</x-md.h3>
@@ -15,6 +37,7 @@
     <x-md.h3>Subtle</x-md.h3>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.badge.subtle" />
 
-    <x-md.h2>With icon</x-md.h2>
+    <x-md.h3>With icon</x-md.h3>
     <livewire:base.component-tab-preview-code no-in-tabs component="components.examples.badge.with-icon" />
+
 </x-layouts.doc-page-wrapper>

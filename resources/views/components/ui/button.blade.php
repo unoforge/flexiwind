@@ -6,13 +6,14 @@
     'disabled' => false,
     'type' => 'button',
     'href' => null,
+    'radius' => true,
 ])
-
 @php
     use App\Flexiwind\ButtonHelper;
     $btn_variants = ButtonHelper::getVariants();
 
     $sizes = [
+        'none' => '',
         'xs' => 'btn-xs',
         'sm' => 'btn-sm',
         'md' => 'btn-md',
@@ -20,18 +21,18 @@
         'xl' => 'btn-xl',
     ];
     $iconSizes = [
+        'none' => '',
         'xs' => 'btn-icon-xs text-xs',
         'sm' => 'btn-icon-sm text-xs',
         'md' => 'btn-icon-md text-sm',
         'lg' => 'btn-icon-lg text-sm',
         'xl' => 'btn-icon-xl text-base',
     ];
-    $baseClasses = 'btn ease-linear duration-200 ui-radius ';
+    $baseClasses = 'btn ease-linear duration-200  ';
     if ($variant !== 'none') {
         $baseClasses .= isset($btn_variants[$variant]) ? $btn_variants[$variant]['base'] : 'ee';
     }
 
-    
     $defaultIntents = [
         'solid' => 'primary',
         'soft' => 'gray',
@@ -65,6 +66,7 @@
         $baseClasses,
         $variantClasses,
         $sizeClasses,
+        'rounded-ui' => $radius,
         'cursor-not-allowed' => $disabled,
     ]);
 
@@ -87,7 +89,13 @@
 
 @endphp
 
-<{{ $tag }} {{ $attributes }}
-    @if (!$isInternal) target="_blank"  rel="noopener noreferrer" @endif>
-    {{ $slot }}
-    </{{ $tag }}>
+
+@if ($tag === 'button')
+    <button {{ $attributes }}>
+        {{ $slot }}
+    </button>
+@else
+    <a {{ $attributes }} @if (!$isInternal) target="_blank"  rel="noopener noreferrer" @endif>
+        {{ $slot }}
+    </a>
+@endif

@@ -9,14 +9,13 @@
         'default' => 'kbd-md',
         'xs' => 'kbd-xs',
         'sm' => 'kbd-sm',
-        'lg' => 'kbd-lg',
-        'xl' => 'kbd-xl',
+        'lg' => 'kbd-lg'
     ];
 
     $variantClass = $variant == 'default' ? ' bg-bg-subtle text-fg' : UiHelper::getClasses($variant, $intent);
 
     $kbd_size = $sizes[$size] ?? $sizes['md'];
-    $className = "{$kbd_size} {$variantClass} {$class} ui-radius";
+    $className = "{$kbd_size} {$variantClass} {$class} rounded-ui";
 @endphp
 <kbd {{ $attributes->merge(['class' => $className]) }}>
     {{ $slot }}

@@ -1,7 +1,12 @@
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug" :links="[]">
 
-
-    <x-md.image-block src="/cover-image.webp" alt="Flexiwind Cover Image" />
+    @php
+        $image_cover = [
+            "src" => '/illustrations/blocks-dark.webp',
+            "alt" => "cover dark"
+        ];
+    @endphp
+    <x-md.image-block src="/illustrations/blocks-light.webp" :dark="$image_cover" alt="Flexiwind Cover Image" />
 
     <x-md.h2>Overview</x-md.h2>
     <x-md.paragraph>
@@ -10,14 +15,14 @@
         </strong>
     </x-md.paragraph>
     <x-md.paragraph>
-        <strong>Flexiwind Laravel</strong> brings the proven design system philosophy
+        <strong>Flexiwind</strong> brings the proven design system philosophy
         of open-source UI (like shadcn ui) components into the Laravel
         ecosystem—empowering developers with full <strong>code ownership</strong>, <strong>transparency</strong>, and
         <strong>flexibility</strong>.
     </x-md.paragraph>
 
     <x-md.paragraph>
-        This is what Flexiwind Laravel aims to solve. It is built around the following principles:
+        This is what Flexiwind aims to solve. It is built around the following principles:
     </x-md.paragraph>
     <x-md.ul>
         <x-md.li>
@@ -67,9 +72,7 @@
             Livewire)
         </x-md.li>
         <x-md.li>
-            <x-docs.doc-link href="https://x.com/shadcn">shadcn/ui</x-docs.doc-link> (For bringing the amazing idea of
-            having
-            Registries and CLI)
+            <x-docs.doc-link href="https://x.com/shadcn">shadcn/ui</x-docs.doc-link> (Registries and CLI)
         </x-md.li>
         <x-md.li>
             <x-docs.doc-link href="https://x.com/MeschacIrung">Tailus Themer by Méschac Irung</x-docs.doc-link> (Thanks
@@ -77,9 +80,7 @@
             with all beautiful variants)
         </x-md.li>
         <x-md.li>
-            <x-docs.doc-link href="https://x.com/irsyad">Intent UI by Irsyad A. Panjaitan</x-docs.doc-link> (Inspired us
-            to structure some components and
-            even in styling them)
+            <x-docs.doc-link href="https://x.com/irsyad">Intent UI by Irsyad A. Panjaitan</x-docs.doc-link> 
         </x-md.li>
     </x-md.ul>
 </x-layouts.doc-page-wrapper>

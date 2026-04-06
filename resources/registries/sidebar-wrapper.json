@@ -1,0 +1,33 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "sidebar-wrapper",
+    "type": "registry:component",
+    "title": "Sidebar Wrapper",
+    "description": "A full sidebar wrapper layout.",
+    "message": [
+        "Wrap your sidebar markup with <x-ui.sidebar-wrapper> to get open/close toggle behaviour.",
+        "Import resources/js/sidebar-plugin.js in your Vite entry point (e.g. app.js) to activate the sidebar plugin.",
+        "Add data-toggle-sidebar to any button that should open/close the sidebar on mobile."
+    ],
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/utilities"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/sidebar-wrapper.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/sidebar-wrapper.blade.php",
+            "content": "@props(['overlayBlured'=>true])\n\n<div data-sidebar-overlay\n    class=\"fixed inset-0 z-40 bg-gray-800/40 {{ $overlayBlured ? 'backdrop-blur-sm' : '' }} hidden fx-open:flex lg:fx-open:hidden\"></div>\n<aside x-data x-sidebar {{ $attributes }}>\n    {{ $slot }}\n</aside>\n"
+        },
+        {
+            "path": "resources/js/sidebar-plugin.js",
+            "type": "registry:ui",
+            "target": "resources/js/sidebar-plugin.js",
+            "content": "import { actionToggler, $ } from \"@flexilla/utilities\";\n\ndocument.addEventListener(\"alpine:init\", () => {\n    Alpine.directive(\"sidebar\", (el, { }, { cleanup }) => {\n        const overlayEl = $(\"[data-sidebar-overlay]\")\n        const toggleSidebar = actionToggler({\n            trigger: \"[data-toggle-sidebar]\",\n            targets: [\n                {\n                    element: el,\n                    attributes: {\n                        initial: { \"data-state\": \"close\" },\n                        to: { \"data-state\": \"open\" },\n                    },\n                },\n            ],\n            onToggle: ({ isExpanded }) => {\n                document.body.classList[!isExpanded ? \"add\" : \"remove\"](\n                    \"overflow-y-auto\"\n                );\n                overlayEl?.setAttribute(\"aria-hidden\", !isExpanded)\n                overlayEl?.setAttribute(\"data-state\", !isExpanded ? \"close\" : \"open\")\n            },\n        });\n\n        const resizeSidebar = actionToggler({\n            trigger: \"[data-toggle-sidebar-size]\",\n            targets: [\n                {\n                    element: el,\n                    attributes: {\n                        initial: { \"data-resized\": \"false\" },\n                        to: { \"data-resized\": \"true\" },\n                    },\n                },\n            ],\n        });\n        overlayEl?.addEventListener(\"click\", toggleSidebar.toInitial)\n        cleanup(() => {\n            toggleSidebar.destroy();\n            resizeSidebar.destroy();\n            overlayEl?.removeEventListener(\"click\", toggleSidebar.toInitial)\n        });\n    });\n});\n"
+        }
+    ]
+}

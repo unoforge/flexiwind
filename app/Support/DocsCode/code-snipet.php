@@ -19,9 +19,37 @@ JS,
         'lang' => 'js',
         'name' => 'flexilla.js',
         'code' => <<<'JS'
-import AlpineAccordion from "@flexilla/alpine-accordion"
+import { AccordionPlugin } from "./plugins/accordion";
 
-Alpine.plugin(AlpineAccordion)
+Alpine.plugin(AccordionPlugin);
+JS,
+        'lines' => [
+            1 => 'added',
+            3 => 'added',
+        ],
+    ],
+
+    'add-collapse-in-app' => [
+        'lang' => 'js',
+        'name' => 'flexilla.js',
+        'code' => <<<'JS'
+import { Collapse } from "@flexilla/collapse"
+
+// init collapse for all Element with data-app-collapse attribute
+Collapse.autoInit('[data-app-collapse]') 
+JS,
+        'lines' => [
+            1 => 'added',
+            4 => 'added',
+        ],
+    ],
+    'add-collapse-plugin-in-app' => [
+        'lang' => 'js',
+        'name' => 'flexilla.js',
+        'code' => <<<'JS'
+import { CollapsePlugin } from "./plugins/collapse";
+
+Alpine.plugin(CollapsePlugin)
 JS,
         'lines' => [
             1 => 'added',
@@ -47,9 +75,9 @@ JS,
         'lang' => 'js',
         'name' => 'flexilla.js',
         'code' => <<<'JS'
-import AlpineModal from "@flexilla/alpine-modal"
+import { ModalPlugin } from "./plugins/modal";
 
-Alpine.plugin(AlpineModal)
+Alpine.plugin(ModalPlugin)
 JS,
         'lines' => [
             1 => 'added',
@@ -85,7 +113,7 @@ BLADE,
         'lang' => 'blade',
         'name' => 'card-combined-customization.blade.php',
         'code' => <<<'BLADE'
-<x-ui.card class="[--card-padding:--spacing(6)] [--card-radius:1rem]">
+<x-ui.card class="[--ui-padding:--spacing(6)] [--ui-radius:1rem]">
     <!-- Card with custom padding and radius -->
 </x-ui.card>
 BLADE,
@@ -96,7 +124,7 @@ BLADE,
         'name' => 'inner-radius-example.blade.php',
         'code' => <<<'BLADE'
 <!-- Card with custom padding and radius -->
-<x-ui.card class="[--card-padding:--spacing(6)] [--card-radius:1rem]">
+<x-ui.card class="[--ui-padding:--spacing(6)] [--ui-radius:1rem]">
     <!-- Inner element with calculated radius -->
     <div class="inner-radius bg-primary text-white p-4">
         Content that fits perfectly
@@ -135,27 +163,6 @@ BLADE,
 
 <x-ui.switch size="lg" name="switch_custom2" id="switch_custom2" 
     class="bg-success text-success [--knob-bg:var(--color-gray-900)]" />
-BLADE,
-    ],
-
-    'switch-with-labels' => [
-        'lang' => 'blade',
-        'name' => 'switch-with-labels.blade.php',
-        'code' => <<<'BLADE'
-<!-- Switch with label -->
-<label for="switch_label" class="flex items-center gap-x-1">
-    <x-ui.switch name="switch_label" id="switch_label" 
-        class="bg-bg-muted text-primary-600 [--knob-bg:var(--color-white)]" />
-    <span class="text-sub-title ms-3">Enable notifications</span>
-</label>
-
-<!-- Switch with label on both sides -->
-<label for="switch_both" class="flex items-center gap-x-1">
-    <span class="text-sub-title me-3">Off</span>
-    <x-ui.switch name="switch_both" id="switch_both" 
-        class="bg-bg-muted text-primary-600 [--knob-bg:var(--color-white)]" />
-    <span class="text-sub-title ms-3">On</span>
-</label>
 BLADE,
     ],
 
@@ -254,6 +261,26 @@ BLADE,
 BLADE,
     ],
 
+    'sidebar-basic-implementation' => [
+        'lang' => 'blade',
+        'name' => 'sidebar-basic-implementation.blade.php',
+        'code' => <<<'BLADE'
+<!-- Basic sidebar implementation -->
+<x-ui.sidebar-wrapper class="fixed h-dvh w-72 bg-bg-surface border-r border-bg-muted transition-all -translate-x-full fx-open:translate-x-0 lg:translate-x-0 z-80">
+    <nav class="flex-1 p-4">
+        <ul class="space-y-2">
+            <li>
+                <a href="#" class="flex items-center gap-x-2.5 px-3 py-2 rounded-md hover:bg-bg-muted">
+                    <span class="iconify ph--house"></span>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</x-ui.sidebar-wrapper>
+BLADE,
+    ],
+
     'sidebar-with-resize' => [
         'lang' => 'blade',
         'name' => 'sidebar-with-resize.blade.php',
@@ -301,9 +328,9 @@ JS,
         'lang' => 'js',
         'name' => 'flexilla.js',
         'code' => <<<'JS'
-import AlpineTabs from "@flexilla/alpine-tabs"
+import { TabsPlugin } from "./plugins/tabs";
 
-Alpine.plugin(AlpineTabs)
+Alpine.plugin(TabsPlugin)
 JS,
         'lines' => [
             1 => 'added',
@@ -329,9 +356,9 @@ JS,
         'lang' => 'js',
         'name' => 'flexilla.js',
         'code' => <<<'JS'
-import AlpineAutoResize from "@flexilla/alpine-autoresize-area"
+import { AutoResizeAreaPlugin } from "./plugins/auto-resize-area";
 
-Alpine.plugin(AlpineAutoResize)
+Alpine.plugin(AutoResizeAreaPlugin)
 JS,
         'lines' => [
             1 => 'added',
@@ -357,9 +384,9 @@ JS,
         'lang' => 'js',
         'name' => 'flexilla.js',
         'code' => <<<'JS'
-import AlpineDropdown from "@flexilla/alpine-dropdown"
+import { DropdownPlugin } from "./plugins/dropdown";
 
-Alpine.plugin(AlpineDropdown)
+Alpine.plugin(DropdownPlugin)
 JS,
         'lines' => [
             1 => 'added',
@@ -385,9 +412,9 @@ JS,
         'lang' => 'js',
         'name' => 'flexilla.js',
         'code' => <<<'JS'
-import AlpinePopover from "@flexilla/alpine-dpopover"
+import { PopoverPlugin } from "./plugins/popover";
 
-Alpine.plugin(AlpinePopover)
+Alpine.plugin(PopoverPlugin)
 JS,
         'lines' => [
             1 => 'added',
@@ -423,9 +450,6 @@ JS,
         ],
     ],
 
-
-
-
     'add-otp-in-app' => [
         'lang' => 'js',
         'name' => 'flexilla.js',
@@ -453,9 +477,6 @@ JS,
             3 => 'added',
         ],
     ],
-
-
-
 
     'add-offcanvas-in-app' => [
         'lang' => 'js',

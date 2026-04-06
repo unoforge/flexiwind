@@ -5,7 +5,7 @@
     $className =
         'flex flex-col w-full ui-card text-fg ease-linear duration-200 relative ' .
         'hover:border-primary border border-gray-200 dark:border-gray-800/60 bg-bg hover:bg-bg-subtle ' .
-        '[--card-padding:calc(var(--spacing,_0.25rem)_*_5)] [--card-radius:var(--global-main-radius)]';
+        '[--card-padding:calc(var(--spacing,_0.25rem)_*_5)] [--card-radius:var(--radius-ui)]';
     $isImage = Str::startsWith($icon, '/') || Str::startsWith($icon, 'http');
     $icon = $icon ?? '';
     $iconDark = $iconDark ?? null;

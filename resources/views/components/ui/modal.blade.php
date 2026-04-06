@@ -1,5 +1,5 @@
 @props([
-    'modalId',
+    'id',
     'backdropClass' => '',
     'overlayBlured' => true,
     'closable' => true,
@@ -11,7 +11,7 @@
     $bluredClass = $overlayBlured ? 'backdrop-blur-xs' : '';
     $overlay_class = "fixed inset-0 bg-gray-800/60 {$bluredClass} {$backdropClass}";
 @endphp
-<dialog x-modal data-modal-id="{{ $modalId }}" wire:ignore.self
+<dialog x-f-modal data-modal-id="{{ $id }}" wire:ignore.self
     @if ($staticBackdrop) data-modal-prevent @endif
     @if ($scrollableBody) data-allow-body-scroll @endif
     {{ $attributes->class([

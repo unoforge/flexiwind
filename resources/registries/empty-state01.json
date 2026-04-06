@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "empty-state01",
+    "type": "registry:component",
+    "title": "Empty State 01",
+    "description": "Empty State.",
+    "registryDependencies": [
+        "button"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/empty-state/01.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/empty-state.blade.php",
+            "content": "<div class=\"px-4 py-6 md:px-6 mx-auto max-w-5xl\">\n    <div class=\"flex w-full flex-col items-center text-center rounded-ui border border-border px-6 py-8 sm:py-12\">\n        <div class=\"size-12 ui-subtle ui-subtle-gray d-flex-place-center rounded-ui\">\n            <span aria-hidden=\"true\" class=\"size-5 iconify ph--user\"></span>\n        </div>\n        <h2 class=\"text-fg-title text-lg font-semibold md:text-xl mt-4\">\n            No User found\n        </h2>\n        <p class=\"text-fg-muted text-sm mt-3\">\n            You haven't created any data right now\n        </p>\n        <div class=\"flex justify-center mt-7\">\n            <x-ui.button size=\"sm\">\n                <span aria-hidden=\"true\" class=\"iconify ph--plus size-3.5 mr-1.5\"></span>\n                Create new User\n            </x-ui.button>\n        </div>\n    </div>\n</div>\n"
+        }
+    ]
+}

@@ -1,0 +1,382 @@
+{
+    "components": [
+        {
+            "version": "1.0.0",
+            "name": "auth-split",
+            "title": "Auth Split",
+            "description": "A reusable auth split component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "resources/views/components/ui/auth-split.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/ui/auth-split.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "login01",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/login01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "card"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "login02",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/login02.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "card"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "login03",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/login03.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "signup01",
+            "title": "Signup",
+            "description": "A full auth signup page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/signup01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/signup.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "card"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "otp01",
+            "title": "Otp ",
+            "description": "A full auth OTP page.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/auth/otp01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/otp.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "sidebar-wrapper",
+            "title": "Sidebar Wrapper",
+            "description": "A full sidebar wrapper layout.",
+            "files": [
+                {
+                    "path": "resources/views/components/ui/sidebar-wrapper.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/ui/sidebar-wrapper.blade.php"
+                },
+                {
+                    "path": "resources/js/sidebar-plugin.js",
+                    "type": "registry:ui",
+                    "target": "resources/js/sidebar-plugin.js"
+                }
+            ],
+            "dependencies": {
+                "node": [
+                    "@flexilla/utilities"
+                ]
+            },
+            "message": [
+                "Wrap your sidebar markup with <x-ui.sidebar-wrapper> to get open/close toggle behaviour.",
+                "Import resources/js/sidebar-plugin.js in your Vite entry point (e.g. app.js) to activate the sidebar plugin.",
+                "Add data-toggle-sidebar to any button that should open/close the sidebar on mobile."
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "sidebar01",
+            "title": "Sidebar 01",
+            "description": "A full sidebar layout with grouped navigation.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/sidebar.blade.php",
+                    "replace": {
+                        "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item",
+                        "x-previews.sidebar.01.sidebar-nav-group": "x-atoms.sidebar-nav-group"
+                    }
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/01/sidebar-item.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-item.blade.php"
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/01/sidebar-nav-group.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-nav-group.blade.php"
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/wrapper.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "icon",
+                "sidebar-wrapper"
+            ],
+            "message": [
+                "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+                "Use <x-atoms.sidebar-nav-group> inside the sidebar to group nav links under a labelled section.",
+                "Use <x-atoms.sidebar-item> inside each nav group (accepts href, icon, text, isActive).",
+                "Place <x-layouts.wrapper> after the sidebar; it offsets by lg:pl-64 and holds your header + content.",
+                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "sidebar02",
+            "title": "Sidebar 02",
+            "description": "A full sidebar layout.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/sidebar/02/sidebar.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/sidebar.blade.php",
+                    "replace": {
+                        "x-previews.sidebar.02.sidebar-item": "x-atoms.sidebar-item"
+                    }
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/02/sidebar-item.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-item.blade.php"
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/02/wrapper.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/wrapper.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "icon",
+                "sidebar-wrapper"
+            ],
+            "message": [
+                "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+                "Use <x-atoms.sidebar-item> inside the sidebar nav for each link (accepts href, icon, text, isActive).",
+                "Place <x-layouts.wrapper> after the sidebar; it offsets by md:pl-64 and holds your header + content.",
+                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "header01",
+            "title": "Header 01",
+            "description": "Header navbar for dashboard layout",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/header/01/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "header02",
+            "title": "Header 02",
+            "description": "Header navbar for dashboard layout",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/header/02/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "kpi01",
+            "title": "KPI 01",
+            "description": "A full KPI layout.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/dash-card/kpi01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/dash-card/kpi01.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "card"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "activity01",
+            "title": "Activity 01",
+            "description": "A full Activity layout.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/dash-card/activity01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/dash-card/activity01.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "card"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "empty-state01",
+            "title": "Empty State 01",
+            "description": "Empty State.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/empty-state/01.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/empty-state.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "shell01",
+            "title": "App Shell 01",
+            "description": "Application shell layout.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/app-shell/shell-01.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/app-shell.blade.php",
+                    "replace": {
+                        "x-previews.sidebar.01.sidebar": "x-layouts.sidebar01"
+                    }
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/01/sidebar-item.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-item.blade.php"
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/01/sidebar-nav-group.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-nav-group.blade.php"
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/sidebar01.blade.php",
+                    "replace": {
+                        "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item",
+                        "x-previews.sidebar.01.sidebar-nav-group": "x-atoms.sidebar-nav-group"
+                    }
+                },
+                {
+                    "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/wrapper.blade.php"
+                }
+            ],
+            "message": [
+                "Use <x-layouts.app-shell> as your root layout — it composes the sidebar and main content area.",
+                "The shell embeds <x-layouts.sidebar02> automatically; customise that file to change the sidebar.",
+                "Use <x-atoms.sidebar-item> for each nav link inside the sidebar (accepts href, icon, text, isActive).",
+                "Use <x-atoms.sidebar-nav-group> to group sidebar links under a labelled section heading.",
+                "Place <x-layouts.wrapper> inside the shell for the header + scrollable content region.",
+                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+            ],
+            "registryDependencies": [
+                "button",
+                "icon",
+                "sidebar-wrapper"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "header03",
+            "title": "Header 03",
+            "description": "Header navbar for dashboard layout",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/header/03/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table01",
+            "title": "Table 01",
+            "description": "Data table component.",
+            "files": [
+                {
+                    "path": "resources/views/components/previews/table/01.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/tables/table.blade.php"
+                }
+            ]
+        }
+    ]
+}

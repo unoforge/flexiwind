@@ -10,12 +10,12 @@
         ],
         [
             'text' => 'Components',
-            'href' => '/components/button',
+            'href' => '/components',
         ],
     ];
 @endphp
 
-<footer class="px-4 sm:px-8 xl:px-16 mt-14 border-t border-border pt-16">
+<footer class="px-4 sm:px-8 xl:px-16 mt-1 border-t border-border pt-16">
     <div class="px-4 py-6 sm:px-6 pt4 flex flex-col gap-5 bg-gray-50/60 dark:bg-gray-900/30 border border-border-sub rounded-ui">
         <div class="w-full flex flex-col md:flex-row gap-6 md:justify-between items-center text-sm">
             <div class="text-sm text-fg">

@@ -2,8 +2,7 @@
 
 use Livewire\Component;
 
-new class extends Component
-{
+new class extends Component {
     public $data = [];
     public function mount($data)
     {
@@ -16,8 +15,8 @@ new class extends Component
 @if (count($data) === 1)
     <livewire:base.single-code-block :data="$data[0]" />
 @else
-    <div data-tab-fx-site x-tabs
-        class=" border border-gray-800/60 ui-card [--card-padding:--spacing(1)] [--card-radius:var(--global-main-radius)] bg-gray-800 dark:bg-gray-900/50 text-gray-300 grid mt-6 first:mt-0">
+    <div data-tab-fx-site x-f-tabs
+        class=" border border-gray-800/60 ui-card [--card-padding:--spacing(1)] [--card-radius:var(--radius-ui)] bg-gray-800 dark:bg-gray-900/50 text-gray-300 grid mt-6 first:mt-0">
         <div data-tab-list-wrapper
             class="grid overflow-hidden grid-cols-[1fr_2rem] gap-3 px-5 items-center h-10 pt-1 w-full">
             <ul role="tablist" data-tab-list class="flex items-center gap-x-3 flex-1 overflow-hidden overflow-x-auto">
@@ -51,16 +50,18 @@ new class extends Component
             @foreach ($data as $item)
                 @php
                     $id = Str::slug($item['name']);
+                    $isFirst = $loop->first;
                 @endphp
-                <section wire:key="tab-{{ $id }}" data-tab-panel aria-labelledby="{{ $id }}" role="tabpanel"
-                    id="{{ $id }}" tabindex="0" aria-hidden="{{ $loop->first ? 'false' : 'true' }}"
-                    data-state="{{ $loop->first ? 'active' : 'inactive' }}"
+                <section wire:key="tab-{{ $id }}" data-tab-panel aria-labelledby="{{ $id }}"
+                    role="tabpanel" id="{{ $id }}" tabindex="0"
+                    aria-hidden="{{ $loop->first ? 'false' : 'true' }}"
+                    data-state="{{ $isFirst ? 'active' : 'inactive' }}"
                     class="hidden fx-active:flex active:outline-gray-800/50 focus:outline-gray-800/50 w-full">
                     <div data-code-component data-code-block data-code-box-collapsible
-                        class="relative group overflow-hidden max-h-[35rem] w-full grid border border-border-strong/30 bg-(--astro-code-color-background) inner-radius">
-                        <div
-                            class="w-full flex h-full overflow-auto">
-                            <livewire:base.render-block-code wire:key="tab-{{ $id }}" :code="$item['code']" :lang="$item['lang']" :lines="$item['lines'] ?? []" />
+                        class="relative group overflow-hidden max-h-140 w-full grid border border-border-strong/30 bg-(--astro-code-color-background) inner-radius">
+                        <div class="w-full flex h-full overflow-auto">
+                            <livewire:base.render-block-code :defer="!$isFirst" wire:key="tab-{{ $id }}"
+                                    :code="$item['code']" :lang="$item['lang']" :lines="$item['lines'] ?? []" />
                         </div>
                     </div>
                 </section>

@@ -1,0 +1,66 @@
+{
+    "name": "flexiwind-ui",
+    "title": "Flexiwind UI",
+    "description": "Flexiwind UI components for Laravel Blade.",
+    "components": [
+{
+            "version": "1.0.0",
+            "name": "flexiwind-base",
+            "title": "Flexiwind utilities",
+            "description": "Base styles for Flexiwind UI components.",
+            "files": [
+                {
+                    "path": "resources/css/flexiwind/base.css",
+                    "type": "registry:styles",
+                    "target": "resources/css/flexiwind/base.css"
+                },
+                {
+                    "path": "resources/css/flexiwind/button.css",
+                    "type": "registry:styles",
+                    "target": "resources/css/flexiwind/button.css"
+                },
+                {
+                    "path": "resources/css/flexiwind/form.css",
+                    "type": "registry:styles",
+                    "target": "resources/css/flexiwind/form.css"
+                },
+                {
+                    "path": "resources/css/flexiwind/ui.css",
+                    "type": "registry:styles",
+                    "target": "resources/css/flexiwind/ui.css"
+                },
+                {
+                    "path": "resources/css/flexiwind/utils.css",
+                    "type": "registry:styles",
+                    "target": "resources/css/flexiwind/utils.css"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "button-helper",
+            "title": "Button helper",
+            "description": "A reusable button helper for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "app/Flexiwind/ButtonHelper.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/ButtonHelper.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "ui-helper",
+            "title": "Ui helper",
+            "description": "A reusable UI helper for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "app/Flexiwind/UiHelper.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/UiHelper.php"
+                }
+            ]
+        }
+    ]
+}

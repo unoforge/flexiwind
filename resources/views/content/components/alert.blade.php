@@ -3,7 +3,7 @@
     <livewire:base.component-tab-preview-code component="components.examples.alert.default" />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add alert" />
+    <livewire:base.terminal code="php artisan flexi:add alert" />
 
 
     <x-md.h2>Examples</x-md.h2>

@@ -10,7 +10,7 @@
     'firstColClass' => 'font-medium text-fg-muted',
 ])
 
-<x-ui.table noDivider :wrapper="$wrapperClass">
+<x-ui.table :divider="false" :wrapper="$wrapperClass">
     <x-ui.table.columns :header-bg-style="$headerBg" :class="'*:first:rounded-l-md *:last:rounded-r-md ' . $headerClass">
         @foreach($columns as $column)
             <x-ui.table.column :class="$column['class'] ?? ''">

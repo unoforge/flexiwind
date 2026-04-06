@@ -12,7 +12,7 @@
     ];
 
     $icons = [
-        'update' => 'ph--none',
+        'update' => 'ph--clock-clockwise',
         'note' => 'ph--lightbulb-filament',
         'warning' => 'ph--warning',
         'important' => 'ph--call-bell',

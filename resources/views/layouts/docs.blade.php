@@ -6,22 +6,22 @@
 
     $seo = [
         'ogImage' => [
-            'src' => $current['ogImage']['src'] ?? config('base.default_og_image'),
-            'alt' => $current['ogImage']['alt'] ?? config('base.default_og_alt'),
+            'src' => $current['ogImage']['src'] ?? "/cover-flexiwind.webp",
+            'alt' => $current['ogImage']['alt'] ?? "Flexiwind UI Kit",
         ],
-        'keywords' => trim(config('base.keywords_def') . ($current['keywords'] ? ', ' . $current['keywords'] : '')),
+        'keywords' => trim(($current['keywords'] ? ', ' . $current['keywords'] : 'flexiwind, laravel, components, ui')),
         'title' => 'Flexiwind | ' . $current['title'],
         'description' => $current['seoDescription'] ?? 'Easily add interactive Components to your App.',
     ];
 @endphp
 
-<x-layouts.base body-class="bg-bg " :seo="$seo">
+<x-layouts.base body-class="bg-bg lg:bg-gray-50/50 dark:lg:bg-bg " :seo="$seo">
     <x-slot name="head">
         @vite(['resources/css/code-theme.css', 'resources/css/docs.css', 'resources/js/docs.js'])
     </x-slot>
     <x-organisms.doc-navbar />
     <div
-        class="grid lg:grid-cols-[16rem_minmax(0,1fr)] xl:grid-cols-[17rem_minmax(0,1fr)] lg:pl-8 xl:pr-8 docs-container">
+        class="grid lg:grid-cols-[14rem_minmax(0,1fr)] xl:grid-cols-[14rem_minmax(0,1fr)] lg:pl-8 xl:pr-8 docs-container">
         <x-organisms.doc-sidebar :path="$path"/>
         <div class="grid relative">
             <x-molecules.top-docs-nav />

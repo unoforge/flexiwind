@@ -1,0 +1,37 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "otp",
+    "type": "registry:component",
+    "title": "OTP",
+    "description": "A reusable otp component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "input"
+    ],
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/pin-input"
+        ]
+    },
+    "files": [
+        {
+            "path": "resources/views/components/ui/otp.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/otp.blade.php",
+            "content": "@props(['validation' => null])\n\n@php\n    $predefinedValidations = [\n        'number'       => '/\\d/',\n        'alpha'        => '/[a-zA-Z]/',\n        'alphanumeric' => '/[a-zA-Z0-9]/',\n    ];\n\n    $resolvedValidation = $predefinedValidations[$validation] \n        ?? ($validation ?: null);\n\n    $alpineExpression = $resolvedValidation \n        ? \"{ validation: {$resolvedValidation} }\" \n        : '';\n@endphp\n\n<div \n    x-data \n    x-pin-input=\"{{ $alpineExpression }}\"  \n    {{ $attributes->class(['flex items-center gap-2 relative cursor-text']) }}\n>\n    {{ $slot }}\n</div>"
+        },
+        {
+            "path": "resources/views/components/ui/otp/input.blade.php",
+            "type": "registry:component",
+            "target": "resources/views/components/ui/otp/input.blade.php",
+            "content": "@props([\n    'type' => 'text',\n    'size' => 'md',\n    'disabled' => false,\n    'readonly' => false,\n    'variant' => 'default',\n])\n\n<x-ui.input data-pin-input maxlength=\"1\" :type=\"$type\" :size=\"$size\" :disabled=\"$disabled\" :readonly=\"$readonly\"\n    :variant=\"$variant\" {{ $attributes->class(['text-center']) }}/>"
+        },
+        {
+            "path": "resources/js/plugins/pin-input.js",
+            "type": "registry:script",
+            "target": "resources/js/plugins/pin-input.js",
+            "content": "export function PinInputPlugin(Alpine) {\n        Alpine.directive(\n        \"pin-input\",\n        (el, { expression }, { evaluate, cleanup }) => {\n            let options = expression ? evaluate(expression) : {};\n            let { validation = /.*/ } = options;\n            let listeners = [];\n\n            let state = {\n                value: \"\",\n                validation,\n                isComplete: false,\n                inputs: () => el.querySelectorAll(\"[data-pin-input]\"),\n\n                validateInputsLength() {\n                    this.isComplete = [...this.inputs()].every(\n                        (i) => i.value.trim() !== \"\"\n                    );\n                },\n\n                updateValue() {\n                    this.value = [...this.inputs()]\n                        .map((i) => i.value)\n                        .join(\"\");\n                    this.validateInputsLength();\n                    el.dispatchEvent(\n                        new CustomEvent(\"otp-change\", { detail: this.value })\n                    );\n                },\n\n                handleInput(e, index) {\n                    this.updateValue();\n                    if (e.target.value !== \"\") {\n                        const next = this.inputs()[index + 1];\n                        if (next) this.focusEnd(next);\n                    }\n                },\n\n                focusEnd(input) {\n                    input.focus();\n                    requestAnimationFrame(() => {\n                        input.select();\n                    });\n                },\n\n                handlePaste(e) {\n                    const paste = e.clipboardData\n                        .getData(\"text\")\n                        .slice(0, this.inputs().length);\n\n                    let j = 0;\n                    for (let i = 0; i < paste.length; i++) {\n                        const char = paste[i];\n                        const input = this.inputs()[j];\n                        if (input && this.validation.test(char)) {\n                            input.value = char;\n                            j++;\n                        }\n                    }\n                    this.updateValue();\n                },\n\n                handleBackspace(e, index) {\n                    if (e.target.value === \"\" && index > 0) {\n                        const prev = this.inputs()[index - 1];\n                        this.focusEnd(prev);\n                    }\n                    this.updateValue();\n                },\n\n                handleKeydown(e, index) {\n                    if (\n                        e.key.length === 1 && \n                        !this.validation.test(e.key)\n                    ) {\n                        e.preventDefault();\n                        return;\n                    }\n\n                    if (e.key === \"ArrowLeft\" && index > 0) {\n                        const prev = this.inputs()[index - 1];\n                        this.focusEnd(prev);\n                    } else if (\n                        e.key === \"ArrowRight\" &&\n                        index < this.inputs().length - 1\n                    ) {\n                        if (this.inputs()[index].value.trim() !== \"\") {\n                            const next = this.inputs()[index + 1];\n                            this.focusEnd(next);\n                        }\n                    }\n                },\n\n                handleFocus(e, index) {\n                    const firstEmptyIndex = [...this.inputs()].findIndex(\n                        (i) => i.value.trim() === \"\"\n                    );\n\n                    if (firstEmptyIndex !== -1 && index > firstEmptyIndex) {\n                        e.preventDefault();\n                        this.focusEnd(this.inputs()[firstEmptyIndex]);\n                    }\n                },\n            };\n\n            for (const [index, input] of state.inputs().entries()) {\n                const onInput = (e) => state.handleInput(e, index);\n                const onKeydown = (e) => {\n                    if (e.key === \"Backspace\") state.handleBackspace(e, index);\n                    else state.handleKeydown(e, index);\n                };\n                const onPaste = (e) => state.handlePaste(e);\n                const onFocus = (e) => state.handleFocus(e, index);\n\n                input.addEventListener(\"input\", onInput);\n                input.addEventListener(\"keydown\", onKeydown);\n                input.addEventListener(\"paste\", onPaste);\n                input.addEventListener(\"focus\", onFocus);\n\n                listeners.push({ input, onInput, onKeydown, onPaste, onFocus });\n            }\n\n            cleanup(() => {\n                for (const {\n                    input,\n                    onInput,\n                    onKeydown,\n                    onPaste,\n                    onFocus,\n                } of listeners) {\n                    input.removeEventListener(\"input\", onInput);\n                    input.removeEventListener(\"keydown\", onKeydown);\n                    input.removeEventListener(\"paste\", onPaste);\n                    input.removeEventListener(\"focus\", onFocus);\n                }\n            });\n        }\n    );\n}\n"
+        }
+    ]
+}

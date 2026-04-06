@@ -2,7 +2,7 @@
 
 <td
     {{ $attributes->class([
-        'px-5 py-2.5',
+        'px-(--gutter-x) py-(--gutter-y)',
         'text-left' => $align == 'left',
         'text-center' => $align == 'center',
         'text-right' => $align == 'right',

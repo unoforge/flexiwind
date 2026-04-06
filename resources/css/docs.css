@@ -1,4 +1,10 @@
 @import url(./font-mono.css);
+
+
+
+strong{
+    font-weight: 600;
+}
 .steps {
     counter-reset: step;
     position: relative;

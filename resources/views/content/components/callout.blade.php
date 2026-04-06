@@ -3,18 +3,47 @@
     <livewire:base.component-tab-preview-code component="components.examples.callout.demo" no-in-tabs />
 
     <x-md.h2>Installation</x-md.h2>
-    <livewire:base.terminal code="flexi-cli add callout" />
+    <livewire:base.terminal code="php artisan flexi:add callout" />
 
+
+
+    <x-md.h2>API</x-md.h2>
+    <x-docs.table>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="type" /> (default|update|note|warning|important)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Defines semantic tone and default icon/intent mapping.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="intent" /> (string)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Overrides default type intent when custom coloring is needed.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="variant" /> (solid|soft|subtle|outline|default)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Visual style inherited from alert primitives.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="size" /> (xs|sm|default|lg)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Controls spacing and typography density.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="title" /> / <x-docs.inline-code no-wrap text="message" /></x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Quick title/message API when not using slot composition.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="icon" /> (boolean)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Controls leading icon visibility. Default: true</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="iconWrapper" /> (string)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.table-description>Additional classes for icon container customization.</x-docs.table-description></x-ui.table.cell>
+        </x-ui.table.row>
+    </x-docs.table>
 
     <x-md.h2>Examples</x-md.h2>
-
-
     <x-md.h3>Message</x-md.h3>
     <livewire:base.component-tab-preview-code component="components.examples.callout.message" no-in-tabs />
 
-
     <x-md.h3>With Title</x-md.h3>
     <livewire:base.component-tab-preview-code component="components.examples.callout.with-title" no-in-tabs />
-
 
 </x-layouts.doc-page-wrapper>

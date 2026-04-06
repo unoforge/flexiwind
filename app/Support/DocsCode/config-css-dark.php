@@ -31,8 +31,13 @@ return [
     --bg-subtle: var(--color-gray-900);
     --bg-surface: --alpha(var(--color-gray-900)/70%);
     --bg-muted: var(--color-gray-800);
-    --bg-surface-elevated: var(--color-gray-700);
+
+    
     --checkbox-bg: var(--bg);
+    --ui-radius: var(--radius-lg);
+    --card-radius: var(--radius-lg);
+    --checkbox-radius: var(--radius-sm);
+    --checkbox-checked-color: var(--color-primary);
 
 
     --progressbar: var(--bg-muted);
@@ -44,7 +49,6 @@ return [
     --overlay-gray: var(--bg-subtle);
 
     --border-strong: var(--color-gray-700);
-    --border-amphasis: var(--color-gray-600);
     --border: var(--color-gray-900);
     --border-sub: var(--color-gray-900);
     --border-card:var(--color-gray-800);

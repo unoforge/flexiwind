@@ -3,7 +3,7 @@
     'lines' => 8,
 ])
 <div
-    {{ $attributes->merge(['class' => "rounded-global border border border-border-strong/30 bg-(--astro-code-color-background) p-4 font-mono text-sm w-full flex flex-col space-y-2 $class"]) }}>
+    {{ $attributes->merge(['class' => "rounded-ui border border border-border-strong/30 bg-(--astro-code-color-background) p-4 font-mono text-sm w-full flex flex-col space-y-2 $class"]) }}>
 
     @for ($i = 0; $i < $lines; $i++)
         <div class="flex items-center space-x-2">

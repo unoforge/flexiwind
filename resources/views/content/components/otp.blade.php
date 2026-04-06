@@ -5,27 +5,31 @@
     <x-md.h2>Installation</x-md.h2>
     <x-docs.steps>
         <x-docs.step>
-            <x-md.h3>Add the component</x-md.h3>
-            <livewire:base.terminal code="flexi-cli add otp" />
+            <x-md.h3>Install the component</x-md.h3>
+            <livewire:base.terminal code="php artisan flexi:add otp" />
         </x-docs.step>
         <x-docs.step>
-            <x-md.h3>Install Otp Plugin</x-md.h3>
+            <x-md.h3>Install </x-md.h3>
             <x-docs.callout intent="gray" type="note">
-                This component require JS. By default we're using our own Interactive Component Library
+                By default we're using our own Interactive Component Library
                 <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. Install this only if you
-                didn't accept dependencies installation during component addition.
+                did not accept dependency installation when adding the component.
             </x-docs.callout>
+
+            <x-md.paragraph>
+                Install this only if you're not using AlpineJS
+            </x-md.paragraph>
+
+             <livewire:base.terminal :code="'npm i @flexilla/pin-input'" />
+        </x-docs.step>
+        <x-docs.step>
             <x-md.ol>
-                <x-md.li><strong>With Alpine</strong></x-md.li>
-                <livewire:base.terminal :code="'npm i @flexilla/alpine-pin-input'" />
+                <x-md.li><strong>With Alpine/Livewire</strong></x-md.li>
                 <x-md.paragraph>Add plugin in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
 
                 <livewire:base.load-code :name="['add-otp-plugin-in-app']" />
                 <x-md.li><strong>Without Alpine</strong></x-md.li>
-                <x-docs.callout intent="gray" type="note">
-                    Make sure that the dropdown package is not installed
-                </x-docs.callout>
-                <livewire:base.terminal :code="'npm i @flexilla/pin-input'" />
+               
                 <x-md.paragraph>Initialize Pin Input in <x-docs.inline-code text="flexilla.js" /></x-md.paragraph>
                 <livewire:base.load-code :name="['add-otp-in-app']" />
             </x-md.ol>
@@ -160,13 +164,13 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="noBorder" />
+                <x-docs.inline-code no-wrap text="border" />
             </x-ui.table.cell>
             <x-ui.table.cell>boolean</x-ui.table.cell>
-            <x-ui.table.cell>false</x-ui.table.cell>
+            <x-ui.table.cell>true</x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    When true, removes the border from the input.
+                    Controls the border visibility on the input.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -191,13 +195,12 @@
             Documentation</x-docs.link>.
     </x-md.paragraph>
 
-    <x-md.h3>Accessibility</x-md.h3>
+    <x-md.h2>Accessibility</x-md.h2>
     <x-md.paragraph>
         The OTP component is built with accessibility in mind:
     </x-md.paragraph>
     <x-md.ul>
-        <x-md.li>Proper ARIA attributes for screen readers</x-md.li>
-        <x-md.li>Keyboard navigation support (Tab, Shift+Tab, Arrow keys)</x-md.li>
+        <x-md.li>Keyboard navigation support (Arrow keys)</x-md.li>
         <x-md.li>Auto-focus management between fields</x-md.li>
         <x-md.li>Paste support for easier code entry</x-md.li>
     </x-md.ul>

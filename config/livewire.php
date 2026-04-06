@@ -32,6 +32,7 @@ return [
     'component_namespaces' => [
         'layouts' => resource_path('views/layouts'),
         'pages' => resource_path('views/pages'),
+        'profile' => resource_path('views/profile'),
     ],
 
     /*
@@ -71,6 +72,11 @@ return [
     'make_command' => [
         'type' => 'sfc', // Options: 'sfc', 'mfc', 'class'
         'emoji' => true, // Options: true, false
+        'with' => [
+            'js' => false,
+            'css' => false,
+            'test' => false,
+        ],
     ],
 
     /*
