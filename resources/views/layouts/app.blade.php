@@ -1,7 +1,7 @@
 @php
     $seo = [
         'ogImage' => [
-            'src' => $ogImage['src'] ?? '/illustrations/blocks-light.webp',
+            'src' => $ogImage['src'] ?? '/cover-flexiwind.webp',
             'alt' => $ogImage['alt'] ?? "Flexiwind Cover",
         ],
         'keywords' => trim('docs, flexiwind, laravel components, laravel blocks, laravel ui'),

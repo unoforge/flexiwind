@@ -15,14 +15,14 @@
         </strong>
     </x-md.paragraph>
     <x-md.paragraph>
-        <strong>Flexiwind Laravel</strong> brings the proven design system philosophy
+        <strong>Flexiwind</strong> brings the proven design system philosophy
         of open-source UI (like shadcn ui) components into the Laravel
         ecosystem—empowering developers with full <strong>code ownership</strong>, <strong>transparency</strong>, and
         <strong>flexibility</strong>.
     </x-md.paragraph>
 
     <x-md.paragraph>
-        This is what Flexiwind Laravel aims to solve. It is built around the following principles:
+        This is what Flexiwind aims to solve. It is built around the following principles:
     </x-md.paragraph>
     <x-md.ul>
         <x-md.li>

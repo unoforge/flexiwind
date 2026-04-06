@@ -1,7 +1,7 @@
 @props([
     'seo' => [
         'ogImage' => [
-            'src' => '/blocks-light.webp',
+            'src' => '/cover-flexiwind.webp',
             'alt' => 'Flexiwind Cover',
         ],
         'keywords' => '',

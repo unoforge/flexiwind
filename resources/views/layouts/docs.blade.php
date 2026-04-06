@@ -6,8 +6,8 @@
 
     $seo = [
         'ogImage' => [
-            'src' => $current['ogImage']['src'] ?? config('base.default_og_image'),
-            'alt' => $current['ogImage']['alt'] ?? config('base.default_og_alt'),
+            'src' => $current['ogImage']['src'] ?? "/cover-flexiwind.webp",
+            'alt' => $current['ogImage']['alt'] ?? "Flexiwind UI Kit",
         ],
         'keywords' => trim(($current['keywords'] ? ', ' . $current['keywords'] : 'flexiwind, laravel, components, ui')),
         'title' => 'Flexiwind | ' . $current['title'],
