@@ -11,9 +11,6 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
     <meta name="description" content="Blocks for Laravel + Tailwind v4" />
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
     <script>
         (function() {
             const sessionTheme = document.documentElement.dataset.theme;

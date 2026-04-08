@@ -14,37 +14,37 @@
     "files": [
         {
             "path": "resources/views/components/ui/tabs.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/tabs.blade.php",
             "content": "@props(['orientation' => 'vertical'])\n\n<div x-data x-f-tabs data-app-tabs role=\"tab\" {{ $attributes->class([\n    'flex flex-col' => $orientation === \"vertical\",\n    'flex flex-row' => $orientation === \"horizontal\"\n]) }}>\n    {{ $slot }}\n</div>"
         },
         {
             "path": "resources/views/components/ui/tabs/list-wrapper.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/tabs/list-wrapper.blade.php",
             "content": "<div data-tab-list-wrapper {{ $attributes }}>\n    {{ $slot }}\n</div>\n"
         },
         {
             "path": "resources/views/components/ui/tabs/list.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/tabs/list.blade.php",
             "content": "@props(['unStyled' => false])\n\n@php\n\n@endphp\n\n<ul data-tab-list role=\"tablist\"\n    {{ $attributes->class([\n        'pt-2 mb-2 border-b border-border flex items-center gap-5 text-fg-muted' => !$unStyled,\n    ]) }}>\n    {{ $slot }}\n</ul>\n"
         },
         {
             "path": "resources/views/components/ui/tabs/panel-wrapper.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/tabs/panel-wrapper.blade.php",
             "content": "<div data-panels-container {{ $attributes }}>\n    {{ $slot }}\n</div>"
         },
         {
             "path": "resources/views/components/ui/tabs/panel.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/tabs/panel.blade.php",
             "content": "@props(['id', 'class' => '', 'showAsGrid' => false, 'active' => false])\n\n@php\n    $active_class = $showAsGrid ? 'fx-active:grid' : 'fx-active:flex';\n    $className = \"hidden {$active_class} ring-offset-gray-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-danger-500 focus-visible:ring-offset-2 {$class}\";\n@endphp\n\n<section role=\"tabpanel\" data-tab-panel aria-hidden=\"{{ $active ? 'false' : 'true' }}\"\n    data-state=\"{{ $active ? 'active' : 'inactive' }}\" tabindex=\"0\"\n    {{ $attributes->merge([\n        'class' => $className,\n        'id' => $id,\n    ]) }}>\n    {{ $slot }}\n</section>\n"
         },
         {
             "path": "resources/views/components/ui/tabs/trigger.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/tabs/trigger.blade.php",
             "content": "@props(['wrapperClass' => '', 'id', 'isDisabled' => false, 'unStyled' => false])\n<li role=\"presentation\" class=\"{{ $wrapperClass }}\">\n    <button data-tabs-trigger data-target=\"{{ $id }}\" @if ($isDisabled) disabled @endif\n        {{ $attributes->class([\n            'disabled:cursor-not-allowed disabled:opacity-80',\n            'flex items-center pb-2.5 border-b-3 border-transparent fx-active:text-fg-title fx-active:border-fg-title' => !$unStyled,\n        ]) }}>\n        {{ $slot }}\n    </button>\n</li>\n"
         },

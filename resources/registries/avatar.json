@@ -8,7 +8,7 @@
     "files": [
         {
             "path": "resources/views/components/ui/avatar.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/avatar.blade.php",
             "content": "@props(['size' => 'default', 'radius' => 'circle'])\n\n@php\n    $sizes = [\n        'default' => 'avatar-md',\n        'xs' => 'avatar-xs',\n        'sm' => 'avatar-sm',\n        'md' => 'avatar-md',\n        'lg' => 'avatar-lg',\n        'xl' => 'avatar-xl',\n    ];\n\n    $radii = [\n        'none' => '',\n        'ui'=>'rounded-ui',\n        'md' => 'rounded-md',\n        'xl' => 'rounded-xl',\n        'circle' => 'rounded-full',\n    ];\n@endphp\n\n<img \n    {{ $attributes->class([\n        $sizes[$size] ?? $sizes['default'],\n        'object-cover',\n        $radii[$radius] ?? $radii['circle'],\n    ]) }}\n>\n"
         }

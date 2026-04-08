@@ -8,7 +8,7 @@
     "files": [
         {
             "path": "resources/views/components/ui/progress.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/progress.blade.php",
             "content": "@props(['size' => 'md', 'class' => '', 'radius' => true])\n\n@php\n    $progress_sizes = [\n        '2xs' => 'h-0.5',\n        'xs' => 'h-1',\n        'sm' => 'h-1.5',\n        'md' => 'h-2',\n        'lg' => 'h-3',\n        'xl' => 'h-6',\n    ];\n    $size = $progress_sizes[$size] ?? $progress_sizes['md'];\n    $radiusClass = $radius ? '[--ui-progressbar-radius:20px]' : '';\n    $className = \"ui-progressbar {$radiusClass} {$size} [--ui-progressbar-bg:var(--c-progressbar)] {$class}\";\n@endphp\n\n<progress {{ $attributes->merge(['class' => $className]) }}></progress>\n"
         }

@@ -1,6 +1,9 @@
 <?php
 
 use Livewire\Component;
+use App\Support\ConfigData;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
 
 new class extends Component {
     public string $name;
@@ -31,7 +34,7 @@ new class extends Component {
     public function mount(string $name)
     {
         $this->name = $name;
-        $registry = config('registry');
+        $registry = ConfigData::registry();
         $filePath = $registry[$name] ?? null;
 
         if ($filePath === null) {
@@ -41,43 +44,60 @@ new class extends Component {
             return;
         }
 
-        $block_data = cache()->remember("block-data:{$name}", now()->addHours(72), function () use ($filePath) {
-            $path = resource_path("registries/{$filePath}");
+        $path = resource_path("registries/{$filePath}");
 
-            if (!file_exists($path)) {
-                return null;
-            }
-
-            return json_decode(file_get_contents($path), true);
-        });
-
-        if ($block_data === null) {
+        if (! File::exists($path)) {
             $this->isSingle = true;
             $this->data = ['code' => '', 'lang' => 'text', 'name' => 'any-.php'];
 
             return;
         }
 
-        $files = $block_data['files'] ?? [];
-        $this->isSingle = count($files) === 1;
+        $cacheKey = 'block-data:'.md5($name.'|'.$path.'|'.File::lastModified($path));
 
-        if ($this->isSingle) {
-            $file = $files[0];
-            $target = $file['target'] ?? $file['path'];
-            $this->data = [
-                'name' => basename($target),
-                'code' => $file['content'],
-                'lang' => self::resolveLang($target),
+        $blockData = Cache::memo()->rememberForever($cacheKey, function () use ($path) {
+            $decoded = json_decode(File::get($path), true);
+
+            if (! is_array($decoded)) {
+                return null;
+            }
+
+            $files = $decoded['files'] ?? [];
+            $isSingle = count($files) === 1;
+
+            if ($isSingle) {
+                $file = $files[0] ?? [];
+                $target = $file['target'] ?? $file['path'] ?? 'any-.php';
+
+                return [
+                    'isSingle' => true,
+                    'data' => [
+                        'name' => basename($target),
+                        'code' => $file['content'] ?? '',
+                        'lang' => self::resolveLang($target),
+                    ],
+                ];
+            }
+
+            return [
+                'isSingle' => false,
+                'data' => array_map(fn (array $file) => [
+                    'name' => basename($file['target'] ?? $file['path']),
+                    'code' => $file['content'] ?? '',
+                    'lang' => self::resolveLang($file['target'] ?? $file['path']),
+                ], $files),
             ];
+        });
+
+        if ($blockData === null) {
+            $this->isSingle = true;
+            $this->data = ['code' => '', 'lang' => 'text', 'name' => 'any-.php'];
 
             return;
         }
 
-        $this->data = array_map(fn(array $file) => [
-            'name' => basename($file['target'] ?? $file['path']),
-            'code' => $file['content'],
-            'lang' => self::resolveLang($file['target'] ?? $file['path']),
-        ], $files);
+        $this->isSingle = $blockData['isSingle'];
+        $this->data = $blockData['data'];
     }
 };
 ?>
@@ -85,7 +105,7 @@ new class extends Component {
 <div class="w-full overflow-hidden inner-radius">
     @if ($isSingle)
     <div data-code-block class="bg-[#07090F] group *:py-0 [&_figure>pre]:py-4 [&_figure>pre]:min-w-full [&_figure>pre]:w-max [&_figure>pre]:px-3 inner-radius overflow-auto max-h-140 xl:max-h-160 relative">
-        <livewire:base.render-block-code defer :code="$data['code']" :lang="$data['lang']" :lines="$data['lines'] ?? []" />
+        <x-base.render-block-code :code="$data['code']" :lang="$data['lang']" :lines="$data['lines'] ?? []" />
          <x-atoms.btn-copy-code
             class="absolute top-4 right-4 z-40 invisible flex opacity-0 group-hover:visible group-hover:opacity-100 text-gray-300" />
     </div>
@@ -121,8 +141,7 @@ new class extends Component {
                         <div data-code-component data-code-block data-code-box-collapsible
                             class="relative group overflow-hidden max-h-140 xl:max-h-160 w-full grid inner-radius">
                             <div class="w-full flex h-full overflow-auto *:py-0 [&_figure>pre]:py-4 [&_figure>pre]:min-w-full [&_figure>pre]:w-max [&_figure>pre]:px-3">
-                               <livewire:base.render-block-code defer wire:key="code-{{ $id }}"
-                                        :code="$item['code']" :lang="$item['lang']" :lines="$item['lines'] ?? []" />
+                               <x-base.render-block-code :code="$item['code']" :lang="$item['lang']" :lines="$item['lines'] ?? []" />
                             </div>
                         </div>
                     </x-ui.tabs.panel>

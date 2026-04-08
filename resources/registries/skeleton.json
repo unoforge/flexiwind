@@ -8,7 +8,7 @@
     "files": [
         {
             "path": "resources/views/components/ui/skeleton.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/skeleton.blade.php",
             "content": "@props(['radius' => 'circle', 'bgNone' => false])\n\n\n<div\n    {{ $attributes->class([\n        'animate-pulse',\n        'rounded-full' => $radius === 'circle',\n        'rounded-ui' => $radius === 'ui',\n        'bg-bg-muted' => !$bgNone,\n    ]) }}>\n</div>\n"
         }

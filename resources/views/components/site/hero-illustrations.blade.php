@@ -63,8 +63,8 @@
                 <x-ui.card class="shadow-sm [--ui-padding:1.125rem]">
                     <div class="flex items-center gap-4">
                         <div class="size-10">
-                            <x-ui.avatar size="lg" src="/defaultavatar.webp" alt="User default" loading="lazy"
-                                decoding="async" fetchpriority="auto" width="150" height="150" />
+                            <x-ui.avatar size="lg" src="/tresor_scott.webp" alt="User default" loading="eager"
+                                decoding="async" fetchpriority="high" width="150" height="150" />
                         </div>
                         <div class="space-y-0.5 flex flex-col">
                             <span class="font-semibold text-sm text-fg-title">Tresor Kasenda</span>
@@ -103,13 +103,13 @@
                         </div>
                         <div class="flex justify-between mt-1.5">
                             <div class="flex -space-x-2">
-                                <x-ui.avatar src="/avatar1.webp" alt="Avatar 1" loading="lazy" size="xs"
-                                    fetchpriority="auto" width="100" height="100" class="border border-bg-muted" />
-                                <x-ui.avatar src="/avatar2.webp" alt="Avatar 1" loading="lazy" size="xs"
-                                    fetchpriority="auto" width="100" height="100"
+                                <x-ui.avatar src="/avatar1.webp" alt="Avatar 1" loading="lazy" decoding="async" size="xs"
+                                    fetchpriority="low" width="100" height="100" class="border border-bg-muted" />
+                                <x-ui.avatar src="/avatar2.webp" alt="Avatar 1" loading="lazy" decoding="async" size="xs"
+                                    fetchpriority="low" width="100" height="100"
                                     class="border border-bg-muted" />
-                                <x-ui.avatar src="/avatar2.webp" alt="Avatar 1" loading="lazy" size="xs"
-                                    fetchpriority="auto" width="100" height="100"
+                                <x-ui.avatar src="/avatar2.webp" alt="Avatar 1" loading="lazy" decoding="async" size="xs"
+                                    fetchpriority="low" width="100" height="100"
                                     class="border border-bg-muted" />
                             </div>
                             <div class="flex gap-2 items-center text-sm text-fg-muted">
@@ -169,7 +169,7 @@
                                     'info' => [
                                         'full_name' => 'Johnkat MJ',
                                         'email' => 'johnkatmj@gmail.com',
-                                        'avatar' => 'https://avatars.githubusercontent.com/u/59884686?v=4',
+                                        'avatar' => '/johnkat_mj.webp',
                                         'initial' => 'JK',
                                     ],
                                     'tokens' => [
@@ -184,7 +184,7 @@
                                     'info' => [
                                         'full_name' => 'Tresor Kasenda',
                                         'email' => 'tres@doe.john',
-                                        'avatar' => 'https://avatars.githubusercontent.com/u/34010260?v=4',
+                                        'avatar' => '/tresor_scott.webp',
                                         'initial' => 'TS',
                                     ],
                                     'tokens' => [
@@ -212,10 +212,10 @@
                                 [
                                     'id' => '04',
                                     'info' => [
-                                        'full_name' => 'Tresor Kasenda',
-                                        'email' => 'tres@doe.john',
+                                        'full_name' => 'Ganelon Banze',
+                                        'email' => 'ganb@unoforge.com',
                                         'avatar' => '',
-                                        'initial' => 'TS',
+                                        'initial' => 'GB',
                                     ],
                                     'tokens' => [
                                         'used' => 1200,
@@ -249,7 +249,8 @@
                                 <x-ui.table.cell class="pl-2">
                                     <div class="flex items-center gap-2">
                                         @if ($user['info']['avatar'] !== '')
-                                            <x-ui.avatar  radius="none" class="rounded-ui bg-bg-muted/60" size="sm" :src="$user['info']['avatar']" />
+                                            <x-ui.avatar radius="none" class="rounded-ui bg-bg-muted/60" size="sm"
+                                                :src="$user['info']['avatar']" loading="lazy" decoding="async" />
                                         @else
                                             <x-ui.avatar-placeholder radius-none class="rounded-ui" size="sm"  :text="$user['info']['initial']" />
                                         @endif

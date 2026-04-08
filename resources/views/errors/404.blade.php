@@ -86,7 +86,7 @@
 </main>
     <x-blocks.modal-search />
     @livewireScripts
-    @vite(['resources/js/app.js'])
+    @vite(['resources/js/app.js', 'resources/js/site-ui.js', 'resources/js/search.js'])
 
 </body>
 

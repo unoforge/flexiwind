@@ -9,7 +9,8 @@
                 <span aria-hidden="true" class="flex iconify ph--heart"></span>
             </button>
         </div>
-        <img src="/images/bottes-cuir.webp" alt="bottes cuir" class="w-full h-auto rounded-md">
+        <img src="/images/bottes-cuir.webp" alt="bottes cuir" class="w-full h-auto rounded-md" loading="lazy"
+            decoding="async" fetchpriority="low">
     </div>
     <div class="flex justify-between items-start gap-2 px-4 pt-3 pb-2 text-sm">
         <x-ui.card.title weight="medium" size="none" class="flex-1" text="Air Nike"/>

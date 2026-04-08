@@ -4,7 +4,8 @@
             Top Seller
         </span>
     </div>
-    <img src="/images/sports-shoe.webp" alt="Sport Shoe" class="w-full h-auto rounded-md">
+    <img src="/images/sports-shoe.webp" alt="Sport Shoe" class="w-full h-auto rounded-md" loading="lazy"
+        decoding="async" fetchpriority="low">
     <x-ui.card.content gap="2" class="px-4 pb-2 text-sm">
         <div class="flex justify-between items-start gap-2">
             <x-ui.card.title size="none" class="flex-1 text-fg-title font-medium" text="Air Nike" />

@@ -9,6 +9,8 @@ export default defineConfig({
                 'resources/css/site-font.css',
                 'resources/css/app.css', 
                 'resources/js/app.js',
+                'resources/js/search.js',
+                'resources/js/site-ui.js',
                 'resources/css/docs.css',
                 'resources/js/flexilla.js',
                 'resources/js/docs.js',

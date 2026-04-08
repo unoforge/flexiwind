@@ -71,7 +71,7 @@
             <li class="w-full">
                 <x-ui.button size="none" variant="ghost" aria-label="Show Profile dropdown"
                     class="gap-3 w-full p-1.5 border border-border-strong/40">
-                    <x-ui.avatar src="https://avatars.githubusercontent.com/u/59884686?v=4" height="50" width="50"
+                    <x-ui.avatar src="/avatar1.webp" height="50" width="50" loading="lazy" decoding="async"
                         alt="Johnkat MJ's avatar" size="md" radius="ui" />
 
                     <div class="flex flex-1 justify-between items-center overflow-hidden">

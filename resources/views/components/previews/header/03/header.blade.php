@@ -51,7 +51,7 @@
 
                 <x-ui.button size="none" variant="ghost"
                     class="items-center space-x-2 cursor-pointer transition-colors">
-                    <x-ui.avatar src="https://avatars.githubusercontent.com/u/34010260?v=4" alt="User avatar" width="200"
+                    <x-ui.avatar src="/avatar2.webp" alt="User avatar" width="200" loading="lazy" decoding="async"
                         height="200" class="size-8 rounded-full" />
                     <span aria-hidden="true" class="iconify ph--caret-down text-xs text-fg-muted"></span>
                 </x-ui.button>

@@ -36,9 +36,11 @@
             <div
                 class="mx-auto max-w-6xl aspect-[5/2.3] overflow-hidden bg-fg-title  ui-card [--card-radius:20px] [--card-padding:--spacing(3)] rounded-b-none pb-0">
                 <img src="/images/dash-light.webp" width="1440" height="1024" alt="product image"
-                    class="inner-radius w-full h-auto dark:hidden">
+                    class="inner-radius w-full h-auto dark:hidden" loading="eager" decoding="async"
+                    fetchpriority="high">
                 <img src="/images/dash-dark.webp" width="1440" height="1024" alt="product image"
-                    class="inner-radius w-full h-auto hidden dark:flex">
+                    class="inner-radius w-full h-auto hidden dark:flex" loading="eager" decoding="async"
+                    fetchpriority="high">
             </div>
         </div>
     </div>

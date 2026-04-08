@@ -11,7 +11,7 @@
     "files": [
         {
             "path": "resources/views/components/ui/pagination.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/pagination.blade.php",
             "content": "@props([\n    'class' => null,\n    'justify' => 'center',\n])\n\n<nav role=\"navigation\" aria-label=\"pagination\" data-slot=\"pagination\"\n    {{ $attributes->class([\n        'mx-auto flex w-full',\n        'justify-center' => $justify == 'center',\n        'justify-start' => $justify == 'start',\n        'justify-end' => $justify == 'end',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</nav>\n"
         }

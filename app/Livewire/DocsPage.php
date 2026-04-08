@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Support\PageViewResolver;
 use App\Support\SidebarPaginator;
-use Illuminate\Support\Facades\View;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -25,41 +25,37 @@ class DocsPage extends Component
 
     public string $path = '';
 
+    public array $seo = [];
+
     public function mount(?string $main = null, ?string $children = null)
     {
-        if ($main) {
-            $this->view .= ".{$main}";
-        }
-        if ($children) {
-            $this->view .= ".{$children}";
+        $resolvedPage = PageViewResolver::resolve($this->view, [$main, $children], 'content');
+
+        if (! $resolvedPage['exists']) {
+            abort(404);
         }
 
-        $segments = explode('.', $this->view);
-        if ($segments[0] === 'livewire') {
-            array_shift($segments);
-        }
+        $this->view = $resolvedPage['view'];
+        $this->path = $resolvedPage['path'];
 
-        // str_replace('/content', '', $this->path
-        $this->path = str_replace('/content', '', '/'.implode('/', $segments));
+        $pageData = SidebarPaginator::getPageData($this->path);
+
+        $this->prevSlug = $pageData['prev'];
+        $this->nextSlug = $pageData['next'];
+        $this->current = $pageData['current'];
+        $this->title = $pageData['title'];
+        $this->description = $pageData['description'];
+        $this->keywords = $pageData['keywords'];
+        $this->seo = $pageData['seo'];
     }
 
     #[Layout('layouts::docs')]
     public function render()
     {
-        if (! View::exists($this->view)) {
-            abort(404);
-        }
-
-        $pagger = SidebarPaginator::getPagger($this->path);
-        $this->prevSlug = $pagger['prev'];
-        $this->nextSlug = $pagger['next'];
-        $this->current = $pagger['current'];
-
-        $this->title = $this->current['title'] ?? '';
-        $this->description = $this->current['seoDescription'] ?? '';
-        $this->keywords = $this->current['keywords'] ?? '';
-
-
-        return view($this->view);
+        return view($this->view)->layoutData([
+            'path' => $this->path,
+            'current' => $this->current,
+            'seo' => $this->seo,
+        ]);
     }
 }

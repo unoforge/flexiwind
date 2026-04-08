@@ -11,9 +11,6 @@
     <title>Flexiwind</title>
 
     <meta name="description" content="Blocks for Laravel + Tailwind v4" />
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
     <script>
         (function() {
             const sessionTheme = document.documentElement.dataset.theme;
@@ -40,7 +37,7 @@
 <body x-data class="min-h-screen font-sans {{ $class }}">
     {{ $slot }}
     @livewireScripts
-    @vite(['resources/js/app.js', 'resources/js/flexilla.js', 'resources/js/sidebar-plugin.js'])
+    @vite(['resources/js/app.js', 'resources/js/flexilla.js'])
 
     @if (!config('app.debug'))
         <!-- Google tag (gtag.js) -->

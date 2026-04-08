@@ -1,6 +1,7 @@
 <?php
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 
 new class extends Component {
@@ -20,22 +21,21 @@ new class extends Component {
 
     protected function loadComponentCode(): void
     {
-        // Generate cache key based on file path and last modified time
-        $cacheKey = 'component_code_' . md5($this->filePath . File::lastModified($this->filePath));
+        if (! File::exists($this->filePath)) {
+            $this->code = '';
 
-        // Use cache to store highlighted code
-        $this->code = cache()->remember($cacheKey, self::CACHE_TTL, function () {
-            if (!File::exists($this->filePath)) {
-                return '';
-            }
-            $code = File::get($this->filePath);
-            // Use singleton instance of ShikiService
-            return $code;
+            return;
+        }
+
+        $cacheKey = 'component_code_'.md5($this->filePath.File::lastModified($this->filePath));
+
+        $this->code = Cache::memo()->rememberForever($cacheKey, function (): string {
+            return File::get($this->filePath);
         });
     }
 };
 ?>
 
 <x-docs.code-view-box class="bg-(--astro-code-color-background) inner-radius">
-    <livewire:base.render-block-code :code="$code" lang="blade" />
+    <x-base.render-block-code :code="$code" lang="blade" />
 </x-docs.code-view-box>
