@@ -47,7 +47,7 @@
 
                 <div
                     class="items-center space-x-2 p-2 btn btn-ghost btn-ghost-gray rounded-md cursor-pointer transition-colors">
-                    <img src="https://avatars.githubusercontent.com/u/34010260?v=4" alt="User avatar" width="200"
+                    <img src="/avatar2.webp" alt="User avatar" width="200" loading="lazy" decoding="async"
                         height="200" class="size-8 rounded-full" />
                     <div class="hidden md:flex flex-col flex-1">
                         <p class="text-sm font-medium text-fg-title line-clamp-1">

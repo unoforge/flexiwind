@@ -8,7 +8,7 @@
     "files": [
         {
             "path": "resources/views/components/ui/avatar-placeholder.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/avatar-placeholder.blade.php",
             "content": "@props(['size' => 'default', 'text' => null, 'variant' => 'solid', 'intent' => 'gray', 'radius' => 'circle'])\n\n@php\n    use App\\Flexiwind\\UiHelper;\n\n    $av_p_sizes = [\n        'default' => 'avatar-placeholder-md',\n        'xs' => 'avatar-placeholder-xs',\n        'sm' => 'avatar-placeholder-sm',\n        'md' => 'avatar-placeholder-md',\n        'lg' => 'avatar-placeholder-lg',\n        'xl' => 'avatar-placeholder-xl',\n    ];\n\n    $radii = [\n        'none' => '',\n        'ui'=>'rounded-ui',\n        'md' => 'rounded-md',\n        'xl' => 'rounded-xl',\n        'circle' => 'rounded-full',\n    ];\n@endphp\n\n<span\n    {{ $attributes->class([\n        'avatar-placeholder',\n        $av_p_sizes[$size] ?? $av_p_sizes['default'],\n        UiHelper::getClasses($variant, $intent),\n        $radii[$radius] ?? $radii['circle'],\n    ]) }}>\n    @if ($text)\n        {{ $text }}\n    @else\n        {{ $slot }}\n    @endif\n</span>\n"
         }

@@ -1,45 +1,10 @@
 
 
 @php
-    $groups = [
-         [
-            'name' => 'home',
-            'title' => 'Home',
-            'path' => '/',
-            'icon' => 'ph--house',
-            'noWire'=>false,
-            'hidden'=>true
-        ],
-        [
-            'name' => 'getting-started',
-            'title' => 'Getting Started',
-            'path' => '/docs',
-            'icon' => 'ph--sparkle',
-            'noWire'=>false
-        ],
-        [
-            'name' => 'components',
-            'title' => 'Components',
-            'path' => '/components',
-            'icon' => 'ph--diamonds-four',
-            'noWire'=>false
-        ],
-                [
-            'name' => 'blocks',
-            'title' => 'Blocks',
-            'path' => '/blocks',
-            'icon' => 'ph--cube',
-            'noWire'=>true
-        ],
-        [
-            'name' => 'templates',
-            'title' => 'Templates',
-            'path' => '/templates',
-            'icon' => 'ph--airplay',
-            'noWire'=>true
-        ]
-    ];
-    $sidebarItems = config('sidebar');
+    use App\Support\SidebarData;
+
+    $groups = SidebarData::groups();
+    $sidebarItems = SidebarData::items();
 @endphp
 
 

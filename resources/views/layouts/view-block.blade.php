@@ -9,8 +9,9 @@
 ])
 
 @php
+    use App\Support\ConfigData;
 
-    $blocks = config('blocks');
+    $blocks = ConfigData::blocks();
 
     $blockCategory = request()->route('blockCategory');
     $blockName = request()->route('blockName');
@@ -32,10 +33,11 @@
 
 @endphp
 
-<x-layouts.base body-class="bg-bg " :seo="$seo">
-    <x-slot name="head">
-        @vite(['resources/js/block.js'])
-    </x-slot>
+<x-layouts.base
+    body-class="bg-bg "
+    :seo="$seo"
+    :script-entries="['resources/js/app.js', 'resources/js/flexilla.js', 'resources/js/search.js', 'resources/js/block.js']"
+>
     <x-organisms.navbar />
     <div class="relative w-full -mt-20 h-20">
         <div aria-hidden="true" class="absolute inset-0 pointer-events-none">

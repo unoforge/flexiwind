@@ -60,8 +60,7 @@ new class extends Component {
                     <div data-code-component data-code-block data-code-box-collapsible
                         class="relative group overflow-hidden max-h-140 w-full grid border border-border-strong/30 bg-(--astro-code-color-background) inner-radius">
                         <div class="w-full flex h-full overflow-auto">
-                            <livewire:base.render-block-code :defer="!$isFirst" wire:key="tab-{{ $id }}"
-                                    :code="$item['code']" :lang="$item['lang']" :lines="$item['lines'] ?? []" />
+                            <x-base.render-block-code :code="$item['code']" :lang="$item['lang']" :lines="$item['lines'] ?? []" />
                         </div>
                     </div>
                 </section>

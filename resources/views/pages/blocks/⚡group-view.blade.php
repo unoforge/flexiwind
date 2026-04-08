@@ -2,6 +2,7 @@
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;
+use App\Support\ConfigData;
 
 new #[Layout('layouts.view-block')] 
 class extends Component {
@@ -18,7 +19,7 @@ class extends Component {
         $this->category = $blockCategory;
 
         // Get all blocks from config
-        $blocks = config('blocks');
+        $blocks = ConfigData::blocks();
         $this->allBlocks = $blocks[$blockCategory];
 
         // Check if the block exists

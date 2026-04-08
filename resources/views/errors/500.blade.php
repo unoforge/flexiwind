@@ -23,7 +23,7 @@
             document.documentElement.classList.toggle('dark', isDark);
         })();
     </script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/site-ui.js', 'resources/js/search.js'])
     @livewireStyles
 </head>
 

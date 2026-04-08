@@ -1,29 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\View;
+
+use App\Support\PageViewResolver;
 
 class PreviewUiController extends Controller
 {
     public function __invoke(?string $group = null, ?string $preview = null)
     {
-        $view = 'pages-preview';
-        $path = '';
+        $resolvedPage = PageViewResolver::resolve('pages-preview', [$group, $preview]);
+        $view = $resolvedPage['view'];
+        $path = $resolvedPage['path'];
 
-        if ($group) {
-            $view .= ".{$group}";
-        }
-        if ($preview) {
-            $view .= ".{$preview}";
-        }
-
-        $segments = explode('.', $view);
-        if ($segments[0] === 'pages') {
-            array_shift($segments);
-        }
-        $path = '/' . implode('/', $segments);
-
-        if (!View::exists($view)) {
+        if (! $resolvedPage['exists']) {
             abort(404);
         }
 

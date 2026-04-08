@@ -1,4 +1,9 @@
-@props(['seo' => [], 'bodyClass' => ''])
+@props([
+    'seo' => [],
+    'bodyClass' => '',
+    'styleEntries' => ['resources/css/site-font.css', 'resources/css/app.css'],
+    'scriptEntries' => ['resources/js/app.js'],
+])
 
 <!doctype html>
 <html lang="en" class="bg-bg" data-palette="default">
@@ -7,9 +12,6 @@
     <x-molecules.seo :seo="$seo">
         {{-- <link rel="sitemap" href="/sitemap-index.xml" /> --}}
     </x-molecules.seo>
-
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
     <script>
         (function() {
@@ -30,14 +32,14 @@
         })();
     </script>
     @livewireStyles
-    @vite(['resources/css/site-font.css', 'resources/css/app.css'])
+    @vite($styleEntries)
     {{ $head ?? '' }}
 </head>
 
 <body x-data class="min-h-screen overflow-hidden overflow-y-auto {{ $bodyClass }} font-sans">
     {{ $slot }}
     @livewireScripts
-    @vite(['resources/js/app.js', 'resources/js/flexilla.js'])
+    @vite($scriptEntries)
 
     @if (!config('app.debug'))
         <!-- Google tag (gtag.js) -->

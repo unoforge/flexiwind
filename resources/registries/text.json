@@ -8,7 +8,7 @@
     "files": [
         {
             "path": "resources/views/components/ui/text.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/text.blade.php",
             "content": "@props(['intent' => 'muted', 'as' => 'p'])\n\n@php\n    $tag = $as;\n\n@endphp\n<{{ $tag }}\n    {{ $attributes->class([\n        'text-fg-muted' => $intent == 'muted',\n        'text-fg' => $intent == 'body',\n        'text-fg-title' => $intent == 'title',\n        'text-gray-500' => $intent == 'caption',\n        'text-primary' => $intent == 'primary',\n        'text-secondary' => ($intent == 'secondary'),\n        'text-warning' => $intent == 'warning',\n        'text-danger' => $intent == 'danger',\n    ]) }}>\n    {{ $slot }}\n</{{ $tag }}>\n"
         }

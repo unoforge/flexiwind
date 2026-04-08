@@ -8,7 +8,7 @@
     "files": [
         {
             "path": "resources/views/components/ui/heading.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/heading.blade.php",
             "content": "@props([\n    'level' => '1',\n    'intent' => 'title',\n    'class' => '',\n])\n\n@php\n    $tag = match ($level) {\n        '1' => 'h1',\n        '2' => 'h2',\n        '3' => 'h3',\n        '4' => 'h4',\n        '5' => 'h5',\n        default => 'h1',\n    };\n\n    $sizeClasses = match ($level) {\n        '1' => 'text-3xl font-bold tracking-tight',\n        '2' => 'text-2xl font-semibold tracking-tight',\n        '3' => 'text-xl font-semibold',\n        '4' => 'text-lg font-medium',\n        '5' => 'text-base font-medium',\n        default => 'text-3xl font-bold tracking-tight',\n    };\n@endphp\n\n<{{ $tag }} {{ $attributes->class([\n    $sizeClasses,\n    'text-fg-title' => $intent == 'title',\n    'text-fg' => $intent == 'body',\n    'text-fg-muted' => $intent == 'muted',\n    'text-primary' => $intent == 'primary',\n    'text-secondary' => $intent == 'secondary',\n    'text-danger' => $intent == 'danger',\n    'text-warning' => $intent == 'warning',\n    $class,\n]) }}>\n    {{ $slot }}\n</{{ $tag }}>\n"
         }

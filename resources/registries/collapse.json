@@ -14,19 +14,19 @@
     "files": [
         {
             "path": "resources/views/components/ui/collapse.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/collapse.blade.php",
             "content": "@props(['id', 'closeHeight' => null])\n\n<div x-f-collapse data-app-collapse id=\"f_collapse_{{ $id }}\"\n    @if ($closeHeight && is_numeric($closeHeight)) data-close-height=\"{{ $closeHeight }}\" @endif\n    {{ $attributes->class([\n        'transition-[height] duration-300 ease-linear overflow-hidden w-full fx-open:h-auto',\n    ]) }}>\n    {{ $slot }}\n</div>\n"
         },
         {
             "path": "resources/views/components/ui/collapse/trigger.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/collapse/trigger.blade.php",
             "content": "@props([\n    'target',\n    'withIndicator' => true,\n    'indicatorType' => 'icon',\n    'indicatorIcon' => 'ph--caret-down',\n    'indicatorClass' => '',\n])\n\n<button data-collapse-trigger data-target=\"f_collapse_{{ $target }}\"\n    {{ $attributes->class(['flex items-center']) }}>\n    {{ $slot }}\n    @if ($withIndicator)\n        <x-ui.collapse.indicator :type=\"$indicatorType\" :icon=\"$indicatorIcon\" :indicator-class=\"$indicatorClass\" />\n    @endif\n</button>\n"
         },
         {
             "path": "resources/views/components/ui/collapse/indicator.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/collapse/indicator.blade.php",
             "content": "@props(['type' => 'icon', 'icon' => 'ph--caret-down'])\n\n@if ($type === 'icon')\n    <span aria-hidden\n        {{ $attributes->class([\n            'flex opacity-80 iconify size-3.5 group-aria-expanded:rotate-180 in-aria-expanded:rotate-180',\n            'ease-linear duration-200',\n            $icon,\n        ]) }}></span>\n@elseif($type === 'plus-sign')\n    <span aria-hidden\n        {{ $attributes->class([\n            'flex opacity-80 relative size-2.5 disclosure-indicator-plus disclosure-indicator-to-minus',\n        ]) }}></span>\n@endif\n"
         },

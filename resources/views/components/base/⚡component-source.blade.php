@@ -2,6 +2,7 @@
 
 use Livewire\Component;
 use Livewire\Attributes\Computed;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Cache;
 
 new class extends Component {
@@ -15,32 +16,46 @@ new class extends Component {
     #[Computed]
     public function data()
     {
-        return collect($this->files)
-            ->map(function ($filePath) {
-                $fullPath = base_path($filePath);
+        return once(function (): array {
+            $fileSnapshots = collect($this->files)
+                ->map(function (string $filePath): array {
+                    $fullPath = base_path($filePath);
+                    $exists = File::exists($fullPath);
 
-                if (!file_exists($fullPath)) {
                     return [
-                        'lang' => str_contains($filePath, '.blade') ? 'blade' : $this->determineLang($filePath),
-                        'code' => '',
-                        'name' => basename($filePath),
+                        'filePath' => $filePath,
+                        'fullPath' => $fullPath,
+                        'exists' => $exists,
+                        'lastModified' => $exists ? File::lastModified($fullPath) : 'missing',
                     ];
-                }
+                })
+                ->values()
+                ->all();
 
-                $lastModified = filemtime($fullPath);
-                $cacheKey = 'file_content_' . md5($filePath . '_' . $lastModified);
+            $cacheKey = 'component-source:data:'.md5(json_encode($fileSnapshots));
 
-                $code = Cache::rememberForever($cacheKey, function () use ($fullPath) {
-                    return file_get_contents($fullPath) ?: '';
-                });
+            return Cache::memo()->rememberForever($cacheKey, function () use ($fileSnapshots): array {
+                return collect($fileSnapshots)
+                    ->map(function (array $fileSnapshot): array {
+                        $filePath = $fileSnapshot['filePath'];
 
-                return [
-                    'lang' => str_contains($filePath, '.blade') ? 'blade' : $this->determineLang($filePath),
-                    'code' => $code,
-                    'name' => basename($filePath),
-                ];
-            })
-            ->toArray();
+                        if (! $fileSnapshot['exists']) {
+                            return [
+                                'lang' => str_contains($filePath, '.blade') ? 'blade' : $this->determineLang($filePath),
+                                'code' => '',
+                                'name' => basename($filePath),
+                            ];
+                        }
+
+                        return [
+                            'lang' => str_contains($filePath, '.blade') ? 'blade' : $this->determineLang($filePath),
+                            'code' => File::get($fileSnapshot['fullPath']),
+                            'name' => basename($filePath),
+                        ];
+                    })
+                    ->toArray();
+            });
+        });
     }
 
     protected function determineLang(string $path): string

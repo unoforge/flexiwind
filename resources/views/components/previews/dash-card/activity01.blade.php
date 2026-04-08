@@ -8,7 +8,8 @@
     <div class="px-6 pb-6 space-y-4">
         <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-bg-subtle/50 transition-colors">
             <div class="size-8 rounded-full overflow-hidden">
-                <img src="/defaultavatar.webp" alt="Sarah Chen" class="w-full h-full object-cover" />
+                <img src="/defaultavatar.webp" alt="Sarah Chen" class="w-full h-full object-cover" width="32"
+                    height="32" loading="lazy" decoding="async" />
             </div>
             <div class="flex-1 space-y-1">
                 <div class="flex items-center space-x-2">
@@ -28,7 +29,8 @@
 
         <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-bg-subtle/50 transition-colors">
             <div class="size-8 rounded-full overflow-hidden">
-                <img src="/defaultavatar.webp" alt="Sarah Chen" class="w-full h-full object-cover" />
+                <img src="/defaultavatar.webp" alt="Sarah Chen" class="w-full h-full object-cover" width="32"
+                    height="32" loading="lazy" decoding="async" />
             </div>
             <div class="flex-1 space-y-1">
                 <div class="flex items-center space-x-2">
@@ -47,7 +49,8 @@
 
         <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-bg-subtle/50 transition-colors">
             <div class="size-8 rounded-full overflow-hidden">
-                <img src="/defaultavatar.webp" alt="Sarah Chen" class="w-full h-full object-cover" />
+                <img src="/defaultavatar.webp" alt="Sarah Chen" class="w-full h-full object-cover" width="32"
+                    height="32" loading="lazy" decoding="async" />
             </div>
             <div class="flex-1 space-y-1">
                 <div class="flex items-center space-x-2">

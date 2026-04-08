@@ -17,13 +17,13 @@
     "files": [
         {
             "path": "resources/views/components/ui/otp.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/otp.blade.php",
             "content": "@props(['validation' => null])\n\n@php\n    $predefinedValidations = [\n        'number'       => '/\\d/',\n        'alpha'        => '/[a-zA-Z]/',\n        'alphanumeric' => '/[a-zA-Z0-9]/',\n    ];\n\n    $resolvedValidation = $predefinedValidations[$validation] \n        ?? ($validation ?: null);\n\n    $alpineExpression = $resolvedValidation \n        ? \"{ validation: {$resolvedValidation} }\" \n        : '';\n@endphp\n\n<div \n    x-data \n    x-pin-input=\"{{ $alpineExpression }}\"  \n    {{ $attributes->class(['flex items-center gap-2 relative cursor-text']) }}\n>\n    {{ $slot }}\n</div>"
         },
         {
             "path": "resources/views/components/ui/otp/input.blade.php",
-            "type": "registry:component",
+            "type": "registry:ui",
             "target": "resources/views/components/ui/otp/input.blade.php",
             "content": "@props([\n    'type' => 'text',\n    'size' => 'md',\n    'disabled' => false,\n    'readonly' => false,\n    'variant' => 'default',\n])\n\n<x-ui.input data-pin-input maxlength=\"1\" :type=\"$type\" :size=\"$size\" :disabled=\"$disabled\" :readonly=\"$readonly\"\n    :variant=\"$variant\" {{ $attributes->class(['text-center']) }}/>"
         },

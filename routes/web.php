@@ -6,9 +6,13 @@ use App\Livewire\DocsPage;
 use App\Livewire\PagePreview;
 use Illuminate\Support\Facades\Route;
 
-Route::livewire('/', 'pages::home-page')->name('pages.home-page');
-Route::livewire('/the-club', 'pages::the-club')->name('pages.the-club');
-Route::livewire('/templates', 'pages::templates')->name('pages.templates');
+Route::get('/', function () {
+    return view('pages.home-page', [
+        'allBlocks' => config('blocks'),
+    ]);
+})->name('pages.home-page');
+Route::view('/the-club', 'pages.the-club')->name('pages.the-club');
+Route::view('/templates', 'pages.templates')->name('pages.templates');
 
 Route::redirect('/docs', '/docs/introduction');
 Route::livewire('/docs/{main?}/{children?}', DocsPage::class)->name('documentation');

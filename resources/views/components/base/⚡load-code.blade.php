@@ -13,7 +13,7 @@ new class extends Component {
         $this->name = $name;
         $this->isSingle = is_string($name);
 
-        $docs = cache()->remember('docs_code_all_', now()->addHours(24), fn() => DocsCode::all());
+        $docs = DocsCode::all();
 
         if ($this->isSingle) {
             $this->data = $docs[$name] ?? ['code' => '', 'lang' => 'text'];

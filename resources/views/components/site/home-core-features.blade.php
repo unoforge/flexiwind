@@ -5,21 +5,18 @@
             'icon' => 'ph--hand-arrow-down',
             'subtitle' => 'Own Your Code.',
             'title' => 'Generate clean Blade and Livewire code directly inside your project.',
-            'illustration' => '/images/illustrations/code-ownership.png',
         ],
         [
             'name' => 'blade-livewire',
             'icon' => 'ph--stack-simple',
             'subtitle' => 'Native Blade + Livewire.',
             'title' => 'Built specifically for the TALL ecosystem — no adapters, no hacks.',
-            'illustration' => '/images/illustrations/blade-livewire.png',
         ],
         [
             'name' => 'cli-ai',
             'icon' => 'ph--terminal',
             'subtitle' => 'CLI-Driven. AI-Ready.',
             'title' => 'Install fast. Automate workflows. Build with modern AI tooling in mind.',
-            'illustration' => '/images/illustrations/cli-ai.png',
         ],
     ];
 @endphp
@@ -43,9 +40,11 @@
                 </h2>
                 <div class="mt-5 aspect-video bg-bg-surface rounded-ui pointer-events-none">
                     <img src="/illustrations/components-light.webp" class="w-full h-full object-cover dark:hidden"
-                        alt="Illustration components light" width="1280" height="720">
+                        alt="Illustration components light" width="1280" height="720" loading="lazy"
+                        decoding="async" fetchpriority="low">
                     <img src="/illustrations/components-dark.webp" class="w-full h-full object-cover not-dark:hidden"
-                        alt="Illustration components dark" width="1280" height="720">
+                        alt="Illustration components dark" width="1280" height="720" loading="lazy"
+                        decoding="async" fetchpriority="low">
                 </div>
             </div>
             <div class="border-b p-3.5 sm:p-5 lg:p-6.5">
@@ -58,9 +57,11 @@
                 </h2>
                 <div class="mt-5 aspect-video bg-bg-surface rounded-ui pointer-events-none">
                     <img src="/illustrations/blocks-light.webp" class="w-full h-full object-cover dark:hidden"
-                        alt="Illustration blocks light" width="1477" height="831">
+                        alt="Illustration blocks light" width="1477" height="831" loading="lazy"
+                        decoding="async" fetchpriority="low">
                     <img src="/illustrations/blocks-dark.webp" class="w-full h-full object-cover not-dark:hidden"
-                        alt="Illustration blocks dark" width="1477" height="831">
+                        alt="Illustration blocks dark" width="1477" height="831" loading="lazy"
+                        decoding="async" fetchpriority="low">
                 </div>
             </div>
             <div class="sm:col-span-full grid sm:grid-cols-2 md:grid-cols-3 divide-border-strong/70 divide-dashed">
