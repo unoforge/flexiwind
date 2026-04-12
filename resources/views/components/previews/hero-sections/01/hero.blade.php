@@ -20,7 +20,7 @@
             </p>
             <div class="flex flex-col items-center gap-5 w-full mx-auto max-w-md">
                 <x-ui.input.group radius-none size="none" class="pl-6 w-full pr-0.5 py-0.5 gap-3 items-center rounded-full">
-                    <x-ui.input un-styled type="email" name="email" id="email" placeholder="johndoe@gmail.com"
+                    <x-ui.input variant="unstyled" type="email" name="email" id="email" placeholder="johndoe@gmail.com"
                         class="w-full flex-1"/>
                     <x-ui.button radius-none aria-label="sign up" 
                         class="min-w-max rounded-full relative overflow-hidden duration-300 ease-linear">

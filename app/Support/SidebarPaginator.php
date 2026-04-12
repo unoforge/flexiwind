@@ -70,14 +70,18 @@ class SidebarPaginator
 
     public static function getSeo(?array $current): array
     {
+        $baseKeywords = 'flexiwind, laravel components, laravel ui, tailwind css, tailwind v4, blade components, livewire';
+        $pageKeywords = $current['keywords'] ?? '';
+        $keywords = $pageKeywords ? $baseKeywords.', '.$pageKeywords : $baseKeywords;
+
         return [
             'ogImage' => [
-                'src' => $current['ogImage']['src'] ?? '/cover-flexiwind.webp',
-                'alt' => $current['ogImage']['alt'] ?? 'Flexiwind UI Kit',
+                'src' => $current['ogImage']['src'] ?? '/cover-flexiwind.png',
+                'alt' => $current['ogImage']['alt'] ?? 'Flexiwind — Tailwind CSS Components & Blocks for Laravel',
             ],
-            'keywords' => trim(($current['keywords'] ?? '') ? ', '.$current['keywords'] : 'flexiwind, laravel, components, ui'),
+            'keywords' => $keywords,
             'title' => 'Flexiwind | '.($current['title'] ?? ''),
-            'description' => $current['seoDescription'] ?? 'Easily add interactive Components to your App.',
+            'description' => $current['seoDescription'] ?? 'Beautifully designed, copy-paste ready Tailwind CSS v4 components and Livewire blocks for Laravel. Build stunning UIs faster.',
         ];
     }
 

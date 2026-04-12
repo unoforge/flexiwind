@@ -31,13 +31,13 @@
             "path": "resources/views/components/ui/modal/body.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/modal/body.blade.php",
-            "content": "\n@props(['gutter'=>true])\n<div data-slot=\"modal-body\" {{ $attributes->class([\n    \"flex flex-1\",\n    \"flex-1 flex-col\",\n    \"px-(--gutter) py-1\"=>$gutter\n]) }}>\n    {{ $slot }}\n</div>\n"
+            "content": "\n@props(['gutter'=>true])\n<div data-slot=\"modal-body\" {{ $attributes->class([\n    \"flex flex-1\",\n    \"flex-1 flex-col\",\n    \"px-(--gutter) py-(--gutter-y,var(--gutter))\"=>$gutter\n]) }}>\n    {{ $slot }}\n</div>\n"
         },
         {
             "path": "resources/views/components/ui/modal/close.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/modal/close.blade.php",
-            "content": "@props(['size' => 'sm', 'variant' => 'solid', 'intent' => 'white'])\n\n<x-ui.button wire:ignore data-close-modal\n    {{ $attributes->merge([\n        'type' => 'button',\n        'size' => $size,\n        'variant' => $variant,\n        'intent' => $intent,\n    ]) }}>\n    {{ $slot }}\n</x-ui.button>\n"
+            "content": "@props(['size' => 'sm', 'variant' => 'soft', 'intent' => 'gray'])\n\n<x-ui.button wire:ignore data-close-modal\n    {{ $attributes->merge([\n        'type' => 'button',\n        'size' => $size,\n        'variant' => $variant,\n        'intent' => $intent,\n    ]) }}>\n    {{ $slot }}\n</x-ui.button>\n"
         },
         {
             "path": "resources/views/components/ui/modal/description.blade.php",
@@ -49,13 +49,13 @@
             "path": "resources/views/components/ui/modal/footer.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/modal/footer.blade.php",
-            "content": "@props(['justify' => 'start'])\n\n<div data-slot=\"modal-footer\"\n    {{ $attributes->class([\n        'relative',\n        'p-(--gutter) pt-[calc(var(--gutter)---spacing(3)) flex items-center gap-(--gap,--spacing(3))',\n        'justify-start' => $justify == 'start',\n        'justify-end' => $justify == 'end',\n        'justify-between' => $justify == 'between',\n        'justify-center' => $justify == 'center'\n    ]) }}>\n    {{ $slot }}\n</div>\n"
+            "content": "@props(['justify' => 'start'])\n\n<div data-slot=\"modal-footer\"\n    {{ $attributes->class([\n        'relative',\n        'p-(--gutter) pt-[calc(var(--gutter)---spacing(3))] flex items-center gap-(--gap,--spacing(3))',\n        'justify-start' => $justify == 'start',\n        'justify-end' => $justify == 'end',\n        'justify-between' => $justify == 'between',\n        'justify-center' => $justify == 'center'\n    ]) }}>\n    {{ $slot }}\n</div>\n"
         },
         {
             "path": "resources/views/components/ui/modal/header.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/modal/header.blade.php",
-            "content": "@props([\n    'title' => null,\n    'description' => null,\n    'class' => '',\n    'titleClass' => '',\n    'descriptionClass' => '',\n    'paddingNone' => false,\n])\n\n@php\n    $title_class = $titleClass;\n    $description_class = $descriptionClass;\n    $className = '';\n@endphp\n\n\n<div data-slot=\"sheet-header\"\n    {{ $attributes->class([\n        'relative flex items-start gap-3.5',\n        'p-(--gutter) pb-[calc(var(--gutter)---spacing(3)) space-y-1' => !$paddingNone,\n        $class,\n    ]) }}>\n    @if (isset($title) || isset($titleSlot))\n        <div class=\"flex-1 space-y-1 pr-14\">\n            <x-ui.modal.title class=\"{{ $title_class }}\">\n                @if (isset($title))\n                    {{ $title }}\n                @else\n                    {{ $titleSlot }}\n                @endif\n                </x-ui.smodal.title>\n                @if (isset($description) || isset($descriptionSlot))\n                    <x-ui.modal.description class=\"{{ $description_class }}\">\n                        @if (isset($description))\n                            {{ $description }}\n                        @else\n                            {{ $descriptionSlot }}\n                        @endif\n                    </x-ui.modal.description>\n                @endif\n        </div>\n    @else\n        {{ $slot }}\n    @endif\n</div>\n"
+            "content": "@props([\n    'title' => null,\n    'description' => null,\n    'class' => '',\n    'titleClass' => '',\n    'descriptionClass' => '',\n    'paddingNone' => false,\n])\n\n@php\n    $title_class = $titleClass;\n    $description_class = $descriptionClass;\n    $className = '';\n@endphp\n\n\n<div data-slot=\"sheet-header\"\n    {{ $attributes->class([\n        'relative flex items-start gap-3.5',\n        'p-(--gutter) pb-[calc(var(--gutter)---spacing(3))] space-y-1' => !$paddingNone,\n        $class,\n    ]) }}>\n    @if (isset($title) || isset($titleSlot))\n        <div class=\"flex-1 space-y-1 pr-14\">\n            <x-ui.modal.title class=\"{{ $title_class }}\">\n                @if (isset($title))\n                    {{ $title }}\n                @else\n                    {{ $titleSlot }}\n                @endif\n                </x-ui.smodal.title>\n                @if (isset($description) || isset($descriptionSlot))\n                    <x-ui.modal.description class=\"{{ $description_class }}\">\n                        @if (isset($description))\n                            {{ $description }}\n                        @else\n                            {{ $descriptionSlot }}\n                        @endif\n                    </x-ui.modal.description>\n                @endif\n        </div>\n    @else\n        {{ $slot }}\n    @endif\n</div>\n"
         },
         {
             "path": "resources/views/components/ui/modal/title.blade.php",
@@ -67,7 +67,7 @@
             "path": "resources/views/components/ui/modal/trigger.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/modal/trigger.blade.php",
-            "content": "@props(['modalId', 'size' => 'sm', 'variant' => 'solid', 'intent' => 'white', 'radius' => 'lg'])\n\n<x-ui.button data-modal-id=\"{{ $modalId }}\" data-modal-trigger aria-haspopup=\"dialog\" :size=\"$size\"\n    :variant=\"$variant\" :intent=\"$intent\" :radius=\"$radius\" type=\"button\" {{ $attributes }}>\n    {{ $slot }}\n</x-ui.button>\n"
+            "content": "@props(['modalId', 'size' => 'sm', 'variant' => 'solid', 'intent' => 'primary', 'iconOnly'=>false])\n\n<x-ui.button data-modal-id=\"{{ $modalId }}\" data-modal-trigger aria-haspopup=\"dialog\" :size=\"$size\"\n    :variant=\"$variant\" :intent=\"$intent\" :icon-only=\"$iconOnly\" type=\"button\" {{ $attributes }}>\n    {{ $slot }}\n</x-ui.button>\n"
         },
         {
             "path": "resources/js/plugins/modal.js",

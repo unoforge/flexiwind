@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Flexiwind- Laravel</title>
+    <title>Flexiwind — Tailwind CSS Components & Blocks for Laravel</title>
 
-    <meta name="description" content="Blocks for Laravel + Tailwind v4" />
+    <meta name="description" content="Beautifully designed, copy-paste ready Tailwind CSS v4 components and Livewire blocks for Laravel. Build stunning UIs faster." />
 
     <script>
         (function() {

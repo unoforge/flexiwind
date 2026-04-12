@@ -1,12 +1,12 @@
 @php
     $seo = [
         'ogImage' => [
-            'src' => $ogImage['src'] ?? '/cover-flexiwind.webp',
-            'alt' => $ogImage['alt'] ?? "Flexiwind Cover",
+            'src' => $ogImage['src'] ?? '/cover-flexiwind.png',
+            'alt' => $ogImage['alt'] ?? 'Flexiwind — Tailwind CSS Components & Blocks for Laravel',
         ],
-        'keywords' => trim('docs, flexiwind, laravel components, laravel blocks, laravel ui'),
-        'title' => 'Flexiwind',
-        'description' => $description ?? 'Easily add interactive Components to your App.',
+        'keywords' => trim('flexiwind, laravel ui, laravel components, laravel blocks, livewire components, tailwind css, tailwind v4, blade components, laravel ui kit, copy paste ui, laravel blade'),
+        'title' => 'Flexiwind — Tailwind CSS Components & Blocks for Laravel',
+        'description' => $description ?? 'Beautifully designed, copy-paste ready Tailwind CSS v4 components and Livewire blocks for Laravel. Build stunning UIs faster.',
     ];
 @endphp
 

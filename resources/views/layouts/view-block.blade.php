@@ -28,7 +28,7 @@
             'docs, flexiwind, blocks, components, laravel blocks, livewire blocks',
         ),
         'title' => "Flexiwind | {$blockName}",
-        'description' => $block['description'] ?? 'Easily add interactive Components to your App.',
+        'description' => $block['description'] ?? 'Beautifully designed, copy-paste ready Tailwind CSS v4 components and Livewire blocks for Laravel. Build stunning UIs faster.',
     ];
 
 @endphp

@@ -28,13 +28,13 @@
             "path": "resources/views/components/previews/sidebar/01/sidebar-item.blade.php",
             "type": "registry:component",
             "target": "resources/views/components/atoms/sidebar-item.blade.php",
-            "content": "@props(['icon', 'text', 'href', 'isActive' => false])\n\n<li>\n    <a href=\"{{ $href }}\" data-state=\"{{ $isActive ? 'active' : 'inactive' }}\" class=\"flex items-center gap-3 px-2 h-9 fx-current:bg-white dark:fx-current:bg-bg-surface fx-current:text-fg-title fx-current:ring-border-input/70\n            fx-active:bg-white dark:fx-active:bg-bg-surface fx-active:text-fg-title fx-active:ring-border-input/70\n            text-fg-muted hover:bg-bg-muted/50 ring ring-transparent rounded-ui text-sm\">\n        <x-ui.icon size=\"sm\" :name=\"$icon\"\n            class=\"opacity-70 in-fx-active:text-primary in-fx-current:text-primary\"/>\n        <span>{{ $text }}</span>\n    </a>\n</li>"
+            "content": "@props(['icon', 'text', 'href', 'isActive' => false])\n\n<li>\n    <a href=\"{{ $href }}\" data-state=\"{{ $isActive ? 'active' : 'inactive' }}\" class=\"flex items-center gap-3 px-2 h-9 fx-current:bg-bg-muted/60 fx-current:text-fg-title fx-active:bg-bg-muted/60 fx-active:text-fg-title text-fg-muted hover:bg-bg-muted/50 rounded-ui text-sm\">\n        <x-ui.icon size=\"sm\" :name=\"$icon\"\n            class=\"opacity-70 in-fx-active:text-primary in-fx-current:text-primary\"/>\n        <span>{{ $text }}</span>\n    </a>\n</li>"
         },
         {
             "path": "resources/views/components/previews/sidebar/01/sidebar-nav-group.blade.php",
             "type": "registry:component",
             "target": "resources/views/components/atoms/sidebar-nav-group.blade.php",
-            "content": "@props(['title', 'items' => []])\n<div class=\"mt-6 first:mt-1\">\n    <div class=\"px-2 text-xs font-medium text-fg-muted/70 uppercase tracking-wider\">\n        {{ $title }}\n    </div>\n    <ul class=\"flex flex-col mt-1.5 space-y-0.5\">\n        @foreach ($items as $item)\n            <x-previews.sidebar.01.sidebar-item :href=\"$item['href']\" :text=\"$item['text']\" :icon=\"$item['icon']\"\n                :is-active=\"$item['isActive'] ?? false\" />\n        @endforeach\n    </ul>\n</div>\n"
+            "content": "@props(['title', 'items' => []])\n<div class=\"mt-6 first:mt-1\">\n    <div class=\"px-2 text-xs font-medium text-fg-muted/70 uppercase tracking-wider\">\n        {{ $title }}\n    </div>\n    <ul class=\"flex flex-col mt-1.5 space-y-0.5\">\n        @foreach ($items as $item)\n            <x-atoms.sidebar-item :href=\"$item['href']\" :text=\"$item['text']\" :icon=\"$item['icon']\"\n                :is-active=\"$item['isActive'] ?? false\" />\n        @endforeach\n    </ul>\n</div>\n"
         },
         {
             "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
