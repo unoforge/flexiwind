@@ -1,4 +1,4 @@
-@props(['size' => 'sm', 'variant' => 'solid', 'intent' => 'white'])
+@props(['size' => 'sm', 'variant' => 'soft', 'intent' => 'gray'])
 
 <x-ui.button wire:ignore data-offcanvas-close
     {{ $attributes->merge([

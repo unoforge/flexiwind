@@ -1,4 +1,4 @@
-![Flexiwind Cover](public/cover-image.webp)
+![Flexiwind Cover](public/illustrations/components-light.webp)
 
 # Flexiwind
 

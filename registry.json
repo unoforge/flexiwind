@@ -1107,7 +1107,10 @@
         {
           "path": "resources/views/components/previews/sidebar/01/sidebar-nav-group.blade.php",
           "type": "registry:component",
-          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php"
+          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php",
+          "replace": {
+            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item"
+          }
         },
         {
           "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
@@ -1261,21 +1264,18 @@
         {
           "path": "resources/views/components/previews/sidebar/01/sidebar-nav-group.blade.php",
           "type": "registry:component",
-          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php"
+          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php",
+          "replace": {
+            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item"
+          }
         },
         {
           "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
           "type": "registry:block",
           "target": "resources/views/components/layouts/sidebar01.blade.php",
           "replace": {
-            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item",
             "x-previews.sidebar.01.sidebar-nav-group": "x-atoms.sidebar-nav-group"
           }
-        },
-        {
-          "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
-          "type": "registry:block",
-          "target": "resources/views/components/layouts/wrapper.blade.php"
         }
       ],
       "message": [

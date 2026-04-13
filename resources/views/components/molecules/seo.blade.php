@@ -1,16 +1,26 @@
 @props([
     'seo' => [
         'ogImage' => [
-            'src' => '/cover-flexiwind.webp',
-            'alt' => 'Flexiwind Cover',
+            'src' => '/cover-flexiwind.png',
+            'alt' => 'Flexiwind — Tailwind CSS Components & Blocks for Laravel',
         ],
-        'keywords' => '',
+        'keywords' => 'flexiwind',
         'title' => '',
         'description' => '',
     ],
     'siteUrl' => 'https://flexiwind.unoforge.com',
     'siteDomain' => 'flexiwind.unoforge.com',
 ])
+
+@php
+    $ogImageExt = strtolower(pathinfo($seo['ogImage']['src'], PATHINFO_EXTENSION));
+    $ogImageType = match ($ogImageExt) {
+        'webp' => 'image/webp',
+        'jpg', 'jpeg' => 'image/jpeg',
+        'gif' => 'image/gif',
+        default => 'image/png',
+    };
+@endphp
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +35,7 @@
 <meta property="og:title" content="{{ $seo['title'] }}" />
 <meta property="og:description" content="{{ $seo['description'] }}" />
 <meta property="og:image" content="{{ $seo['ogImage']['src'] }}" />
-<meta property="og:image:type" content="image/png">
+<meta property="og:image:type" content="{{ $ogImageType }}">
 <meta property="og:image:alt" content="{{ $seo['ogImage']['alt'] }}" />
 <meta name="og:image:width" content="1181" />
 <meta name="og:image:height" content="578" />
@@ -36,7 +46,7 @@
 <meta name="twitter:title" content="{{ $seo['title'] }}" />
 <meta name="twitter:description" content="{{ $seo['description'] }}" />
 <meta name="twitter:image" content="{{ $seo['ogImage']['src'] }}" />
-<meta name="twitter:image:type" content="image/png">
+<meta name="twitter:image:type" content="{{ $ogImageType }}">
 <meta name="twitter:image:alt" content="{{ $seo['ogImage']['alt'] }}" />
 <meta name="twitter:image:width" content="1181" />
 <meta name="twitter:image:height" content="578" />
