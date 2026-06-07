@@ -13,7 +13,7 @@
             <x-md.h3>Install dependencies</x-md.h3>
             <x-docs.callout intent="gray" type="note">
                 By default we're using our own Interactive Component Library
-                <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. Install this only if you
+                <x-docs.link href="https://flexilla.unoforge.com/">Flexilla</x-docs.link>. Install this only if you
                 did not accept dependency installation when adding the component.
             </x-docs.callout>
             <livewire:base.terminal :code="'npm i @flexilla/tabs'" />
@@ -140,7 +140,7 @@
     <x-md.h3>JavaScript API</x-md.h3>
     <x-md.paragraph>
         To know more about the JavaScript API, check the <x-docs.link
-            href="https://flexilla-docs.vercel.app/components/tabs">Flexilla</x-docs.link> documentation.
+            href="https://flexilla.unoforge.com/components/tabs">Flexilla</x-docs.link> documentation.
     </x-md.paragraph>
     
 </x-layouts.doc-page-wrapper>

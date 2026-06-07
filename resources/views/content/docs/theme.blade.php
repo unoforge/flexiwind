@@ -1,7 +1,3 @@
-@php
-
-@endphp
-
 <x-layouts.doc-page-wrapper :current="$current" :prev-slug="$prevSlug" :next-slug="$nextSlug" :links="[]">
     <x-md.h2>Theming Tokens</x-md.h2>
     <x-md.paragraph>

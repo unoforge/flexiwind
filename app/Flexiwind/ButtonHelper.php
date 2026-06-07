@@ -15,9 +15,9 @@ class ButtonHelper
                 'danger' => 'btn-solid-danger text-white',
                 'info' => 'btn-solid-info text-white',
                 'warning' => 'btn-solid-warning text-white',
-                'neutral'=>'btn-solid-neutral text-bg',
-                'gray'=>'btn-solid-gray text-white',
-                'white'=>'btn-solid-white border border-border text-fg'
+                'neutral' => 'btn-solid-neutral text-bg',
+                'gray' => 'btn-solid-gray text-white',
+                'white' => 'btn-solid-white border border-border text-fg',
             ],
         ],
         'soft' => [
@@ -41,11 +41,11 @@ class ButtonHelper
                 'secondary' => 'btn-outline-secondary',
                 'accent' => 'btn-outline-accent',
                 'danger' => 'btn-outline-danger',
-                'info'=>'btn-outline-info',
-                'warning'=>'btn-outline-warning',
+                'info' => 'btn-outline-info',
+                'warning' => 'btn-outline-warning',
                 'success' => 'btn-outline-success',
                 'gray' => 'btn-outline-gray',
-                'neutral'=>'btn-outline-neutral'
+                'neutral' => 'btn-outline-neutral',
             ],
         ],
         'ghost' => [

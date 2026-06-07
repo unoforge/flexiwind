@@ -8,8 +8,9 @@
     'labelPosition' => 'top',
     'labelClass' => '',
     'invalid' => false,
+    'invalidMessage' => null,
     'class' => '',
-    'groupWrapperClass'=>null
+    'groupWrapperClass' => null,
 ])
 
 @php
@@ -26,29 +27,20 @@
         'unstyled' => '',
     };
 
-    $sizeClass = $variant === 'unstyled' ? '' : ($sizes[$size] ?? $sizes['md']);
+    $sizeClass = $variant === 'unstyled' ? '' : $sizes[$size] ?? $sizes['md'];
     $id = $attributes->get('id') ?? $attributes->get('name', uniqid('input-'));
 @endphp
 
 @if ($label)
-    <div class="{{ $labelPosition === 'inline' ? 'flex items-center gap-2' : 'flex flex-col space-y-2' }} {{ $groupWrapperClass ?? '' }}">
+    <div
+        class="{{ $labelPosition === 'inline' ? 'flex items-center gap-2' : 'flex flex-col space-y-2' }} {{ $groupWrapperClass ?? '' }}">
         <x-ui.label for="{{ $id }}" :text="$label" class="{{ $labelClass }}" />
-        <input
-            type="{{ $type }}"
-            id="{{ $id }}"
-            @if ($disabled) disabled @endif
-            @if ($readonly) readonly @endif
-            @if ($invalid) data-invalid @endif
-            {{ $attributes->class([$variantClasses, $sizeClass, $class]) }}
-        />
+        <input type="{{ $type }}" id="{{ $id }}" @if ($disabled) disabled @endif
+            @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
+            {{ $attributes->class([$variantClasses, $sizeClass, $class]) }} />
     </div>
 @else
-    <input
-        type="{{ $type }}"
-        id="{{ $id }}"
-        @if ($disabled) disabled @endif
-        @if ($readonly) readonly @endif
-        @if ($invalid) data-invalid @endif
-        {{ $attributes->class([$variantClasses, $sizeClass, $class]) }}
-    />
+    <input type="{{ $type }}" id="{{ $id }}" @if ($disabled) disabled @endif
+        @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
+        {{ $attributes->class([$variantClasses, $sizeClass, $class]) }} />
 @endif

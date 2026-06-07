@@ -101,7 +101,7 @@
         Size Classes
     </x-md.h3>
     <x-md.paragraph>
-        The switch component automatically applies size classes based on the <x-docs.inline-code no-wrap text="size" /> prop:
+        The switch component automatically applies size classes based on the <x-docs.inline-code no-wrap text="size" /> prop, plus a base size class for vertical alignment:
     </x-md.paragraph>
     <x-docs.table>
         <x-ui.table.row>
@@ -110,7 +110,7 @@
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Applies <x-docs.inline-code no-wrap text="switch-xs" /> or <x-docs.inline-code no-wrap text="switch-outline-xs" /> class
+                    Applies <x-docs.inline-code no-wrap text="switch-xs" /> + <x-docs.inline-code no-wrap text="switch-base-xs" />
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -120,7 +120,7 @@
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Applies <x-docs.inline-code no-wrap text="switch-sm" /> or <x-docs.inline-code no-wrap text="switch-outline-sm" /> class
+                    Applies <x-docs.inline-code no-wrap text="switch-sm" /> + <x-docs.inline-code no-wrap text="switch-base-sm" />
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -130,7 +130,7 @@
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Applies <x-docs.inline-code no-wrap text="switch-md" /> or <x-docs.inline-code no-wrap text="switch-outline-md" /> class (default)
+                    Applies <x-docs.inline-code no-wrap text="switch-md" /> + <x-docs.inline-code no-wrap text="switch-base-md" /> (default)
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -140,10 +140,13 @@
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Applies <x-docs.inline-code no-wrap text="switch-lg" /> or <x-docs.inline-code no-wrap text="switch-outline-lg" /> class
+                    Applies <x-docs.inline-code no-wrap text="switch-lg" /> + <x-docs.inline-code no-wrap text="switch-base-lg" />
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>
+    <x-md.paragraph>
+        When <x-docs.inline-code no-wrap text="outlined" /> is <x-docs.inline-code no-wrap text="true" />, the component adds <x-docs.inline-code no-wrap text="ring ring-border-strong shadow" /> — it does <strong>not</strong> use a separate <x-docs.inline-code no-wrap text="switch-outline-*" /> class prefix.
+    </x-md.paragraph>
 
 </x-layouts.doc-page-wrapper>

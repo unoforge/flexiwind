@@ -12,7 +12,7 @@
             <x-md.h3>Install tooltip dependencies</x-md.h3>
             <x-docs.callout intent="gray" type="note">
                 This component requires JS behavior. Flexiwind examples use
-                <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>.
+                <x-docs.link href="https://flexilla.unoforge.com/">Flexilla</x-docs.link>.
             </x-docs.callout>
             <x-md.ol>
                 <x-md.li><strong>With Alpine/Livewire</strong></x-md.li>

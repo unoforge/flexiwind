@@ -30,7 +30,7 @@ function build() {
         name: "flexiwind-ui",
         title: "Flexiwind UI",
         description: "Flexiwind UI components and blocks for Laravel Blade and Livewire.",
-        homepage: "https://flexiwind.laravel.com",
+        homepage: "https://flexiwind.unoforge.com",
         author: "Johnkat MJ <johnkatembue4@gmail.com>",
         components: [
             ...(components && components.components ? components.components : []),

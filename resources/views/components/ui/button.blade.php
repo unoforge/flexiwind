@@ -7,6 +7,7 @@
     'type' => 'button',
     'href' => null,
     'radius' => true,
+    'inSameWindow' => false,
 ])
 @php
     use App\Flexiwind\ButtonHelper;
@@ -67,12 +68,16 @@
         $variantClasses,
         $sizeClasses,
         'rounded-ui' => $radius,
-        'cursor-not-allowed' => $disabled,
+        'cursor-not-allowed opacity-50' => $disabled,
     ]);
 
     $isInternal = true;
     if ($href) {
-        $isInternal = ($href && Str::startsWith($href, '/')) || Str::startsWith($href, '#');
+        $isInternal = Str::startsWith($href, '/') || Str::startsWith($href, '#');
+        if (!$isInternal) {
+            $host = parse_url($href, PHP_URL_HOST);
+            $isInternal = $host === null || $host === request()->getHost();
+        }
     }
 
     $attributes =
@@ -95,7 +100,7 @@
         {{ $slot }}
     </button>
 @else
-    <a {{ $attributes }} @if (!$isInternal) target="_blank"  rel="noopener noreferrer" @endif>
+    <a {{ $attributes }} @if (!$isInternal && !$inSameWindow) target="_blank"  rel="noopener noreferrer" @endif>
         {{ $slot }}
     </a>
 @endif

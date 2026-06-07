@@ -1,6 +1,5 @@
 <?php
 
-
 return [
     'ui-subtle-light' => [
         'lang' => 'css',

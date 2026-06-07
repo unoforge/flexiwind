@@ -16,7 +16,7 @@
             <x-md.h3>Install Autoresize plugin</x-md.h3>
             <x-docs.callout intent="gray" type="note">
                 This component requires JS. By default we're using our own Interactive Component Library
-                <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. You can install the
+                <x-docs.link href="https://flexilla.unoforge.com/">Flexilla</x-docs.link>. You can install the
                 Alpine Plugin if using Alpine or the vanilla JS version as you need
             </x-docs.callout>
             

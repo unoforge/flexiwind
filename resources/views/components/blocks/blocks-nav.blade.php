@@ -14,7 +14,7 @@
         class="flex-1 flex items-center gap-0.5 h-12 pr-6 sm:pr-8 overflow-hidden overflow-x-auto scrollbar-hidden text-sm relative">
         @foreach ($allBlocks as $blockKey => $block)
             <li class="border-b-2 border-transparent has-fx-current:border-primary h-full flex items-center group">
-                <a href="{{ route('blocks.show', [$category, $blockKey]) }}"
+                <a href="{{ route('blocks.show', [$block['category'], $blockKey]) }}"
                     class="px-3 py-1 inline-flex text-nowrap text-fg-muted fx-current:text-fg-subtitle hover:bg-bg-muted fx-current:bg-bg-muted/70 fx-current:border-border/60 border border-transparent rounded-ui ease-linear duration-200 relative"
                     wire:navigate>
                     {{ $block['title'] ?? ucfirst($blockKey) }}

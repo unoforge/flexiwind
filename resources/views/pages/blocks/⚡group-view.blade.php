@@ -4,8 +4,7 @@ use Livewire\Component;
 use Livewire\Attributes\Layout;
 use App\Support\ConfigData;
 
-new #[Layout('layouts.view-block')] 
-class extends Component {
+new #[Layout('layouts.view-block')] class extends Component {
     public $category;
     public $blockName;
 
@@ -18,11 +17,14 @@ class extends Component {
         $this->blockName = $blockName;
         $this->category = $blockCategory;
 
-        // Get all blocks from config
         $blocks = ConfigData::blocks();
-        $this->allBlocks = $blocks[$blockCategory];
 
-        // Check if the block exists
+        $this->allBlocks = [];
+        foreach ($blocks as $categoryBlocks) {
+            $this->allBlocks = array_merge($this->allBlocks, $categoryBlocks);
+        }
+
+
         if (!isset($blocks[$blockCategory][$blockName])) {
             $this->blockGroup = [];
         } else {
@@ -34,7 +36,7 @@ class extends Component {
 ?>
 
 <main class="w-full ">
-    <x-blocks.blocks-nav :category="$category" :all-blocks="$allBlocks" />
+    <x-blocks.blocks-nav :all-blocks="$allBlocks" />
     @if (isset($blockGroup) && isset($blockGroup['blocks']) && count($blockGroup['blocks']) > 0)
         <x-blocks.block-page-header :title="$blockGroup['title'] ?? 'Block Group'" :description="$blockGroup['description'] ?? 'Block Group Description'" />
         <section class="mt-10 space-y-12 pb-16 w-full overflow-hidden">

@@ -12,7 +12,7 @@
             <x-md.h3>Install </x-md.h3>
             <x-docs.callout intent="gray" type="note">
                 By default we're using our own Interactive Component Library
-                <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>. Install this only if you
+                <x-docs.link href="https://flexilla.unoforge.com/">Flexilla</x-docs.link>. Install this only if you
                 did not accept dependency installation when adding the component.
             </x-docs.callout>
 

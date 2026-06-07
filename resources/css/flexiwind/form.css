@@ -129,14 +129,7 @@
   --knob-checked-left: 1.125rem;
 }
 
-@utility switch-outline-xs {
-  --toggle-width: 2.25rem;
-  --toggle-height: 1.25rem;
-  --knob-size: 1rem;
-  --knob-left: calc(0.125rem - var(--switch-border-width));
-  --knob-top: calc(0.125rem - var(--switch-border-width));
-  --knob-checked-left: calc(1.125rem - var(--switch-border-width));
-}
+
 
 @utility switch-sm {
   --toggle-width: 2.5rem;
@@ -147,14 +140,6 @@
   --knob-checked-left: 1.125rem;
 }
 
-@utility switch-outline-sm {
-  --toggle-width: 2.5rem;
-  --toggle-height: 1.5rem;
-  --knob-size: 1.25rem;
-  --knob-left: calc(0.125rem - var(--switch-border-width));
-  --knob-top: calc(0.125rem - var(--switch-border-width));
-  --knob-checked-left: calc(1.125rem - var(--switch-border-width));
-}
 
 @utility switch-md {
   --toggle-width: 3rem;
@@ -165,15 +150,6 @@
   --knob-checked-left: 1.5rem;
 }
 
-@utility switch-outline-md {
-  --toggle-width: 3rem;
-  --toggle-height: 1.75rem;
-  --knob-size: 1.25rem;
-  --knob-left: calc(0.25rem - var(--switch-border-width));
-  --knob-top: calc(0.25rem - var(--switch-border-width));
-  --knob-checked-left: calc(1.5rem - var(--switch-border-width));
-}
-
 @utility switch-lg {
   --toggle-width: 3.5rem;
   --toggle-height: 2rem;
@@ -181,15 +157,6 @@
   --knob-left: 0.25rem;
   --knob-top: 0.25rem;
   --knob-checked-left: 1.75rem;
-}
-
-@utility switch-outline-lg {
-  --toggle-width: 3.5rem;
-  --toggle-height: 2rem;
-  --knob-size: 1.5rem;
-  --knob-left: calc(0.25rem - var(--switch-border-width));
-  --knob-top: calc(0.25rem - var(--switch-border-width));
-  --knob-checked-left: calc(1.75rem - var(--switch-border-width));
 }
 
 

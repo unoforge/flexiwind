@@ -16,7 +16,7 @@ class UiHelper
                 'warning' => 'ui-solid-warning',
                 'info' => 'ui-solid-info',
                 'gray' => 'ui-solid-gray',
-                'neutral'=>'ui-solid-neutral'
+                'neutral' => 'ui-solid-neutral',
             ],
         ],
         'soft' => [
@@ -24,13 +24,13 @@ class UiHelper
             'intent' => [
                 'primary' => 'ui-soft-primary',
                 'secondary' => 'ui-soft-secondary',
-                'accent'=>'ui-soft-accent',
+                'accent' => 'ui-soft-accent',
                 'success' => 'ui-soft-success',
                 'danger' => 'ui-soft-danger',
                 'warning' => 'ui-soft-warning',
                 'info' => 'ui-soft-info',
                 'gray' => 'ui-soft-gray',
-                'neutral' => 'ui-soft-neutral'
+                'neutral' => 'ui-soft-neutral',
             ],
         ],
         'subtle' => [
@@ -40,11 +40,11 @@ class UiHelper
                 'secondary' => 'ui-subtle-secondary',
                 'success' => 'ui-subtle-success',
                 'danger' => 'ui-subtle-danger',
-                'accent'=>'ui-subtle-accent',
+                'accent' => 'ui-subtle-accent',
                 'warning' => 'ui-subtle-warning',
                 'info' => 'ui-subtle-info',
                 'gray' => 'ui-subtle-gray',
-                'neutral' => 'ui-subtle-neutral'
+                'neutral' => 'ui-subtle-neutral',
             ],
         ],
         'outline' => [
@@ -57,11 +57,10 @@ class UiHelper
                 'warning' => 'ui-outline-warning',
                 'info' => 'ui-outline-info',
                 'gray' => 'ui-outline-gray',
-                'neutral' => 'ui-outline-neutral'
+                'neutral' => 'ui-outline-neutral',
             ],
         ],
     ];
-
 
     public static function getVariants()
     {
@@ -73,6 +72,7 @@ class UiHelper
         $variantConfig = self::$variants[$variant] ?? [];
         $base = $variantConfig['base'] ?? '';
         $intentClass = $variantConfig['intent'][$intent] ?? '';
+
         return trim("$base $intentClass");
     }
 }

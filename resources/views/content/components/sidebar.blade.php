@@ -127,6 +127,16 @@
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell>
+                <x-docs.inline-code no-wrap text="withoutOverlay" /> (boolean)
+            </x-ui.table.cell>
+            <x-ui.table.cell>
+                <x-docs.table-description>
+                    Hide the mobile backdrop overlay. Default: false
+                </x-docs.table-description>
+            </x-ui.table.cell>
+        </x-ui.table.row>
     </x-docs.table>
 
     <x-md.paragraph>
@@ -134,6 +144,35 @@
     </x-md.paragraph>
     <livewire:base.load-code :name="['sidebar-wrapper-structure']" />
 
+    <x-md.h3>
+        Sidebar Overlay Component
+    </x-md.h3>
+    <x-md.paragraph>
+        The <x-docs.inline-code no-wrap text="x-ui.sidebar-overlay" /> component is automatically rendered by the sidebar
+        wrapper on mobile. It provides a backdrop to close the sidebar when tapped outside.
+    </x-md.paragraph>
+    <x-docs.table>
+        <x-ui.table.row>
+            <x-ui.table.cell>
+                <x-docs.inline-code no-wrap text="blured" /> (boolean)
+            </x-ui.table.cell>
+            <x-ui.table.cell>
+                <x-docs.table-description>
+                    Apply a backdrop blur effect. Default: true
+                </x-docs.table-description>
+            </x-ui.table.cell>
+        </x-ui.table.row>
+        <x-ui.table.row>
+            <x-ui.table.cell>
+                <x-docs.inline-code no-wrap text="appearance" /> (string)
+            </x-ui.table.cell>
+            <x-ui.table.cell>
+                <x-docs.table-description>
+                    Visual style variant. Default: "default"
+                </x-docs.table-description>
+            </x-ui.table.cell>
+        </x-ui.table.row>
+    </x-docs.table>
 
     <x-md.h2>
         Usage Examples

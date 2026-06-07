@@ -1,11 +1,10 @@
 <?php
 
-
 return [
-  'css-variables-color-both' => [
-    'lang' => 'css',
-    'name' => 'both',
-    'code' => <<<'CSS'
+    'css-variables-color-both' => [
+        'lang' => 'css',
+        'name' => 'both',
+        'code' => <<<'CSS'
 :root {
     --primary: var(--color-primary-600);
     --secondary: var(--color-secondary-600);
@@ -97,6 +96,6 @@ return [
     --dropdown-item-danger-fg: var(--color-danger-500);
 }
 CSS
-  ]
+    ],
 
 ];

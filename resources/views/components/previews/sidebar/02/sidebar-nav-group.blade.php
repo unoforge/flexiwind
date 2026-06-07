@@ -5,7 +5,7 @@
     </div>
     <ul class="flex flex-col mt-1.5 space-y-0.5">
         @foreach ($items as $item)
-            <x-previews.sidebar.01.sidebar-item :href="$item['href']" :text="$item['text']" :icon="$item['icon']"
+            <x-previews.sidebar.02.sidebar-item :href="$item['href']" :text="$item['text']" :icon="$item['icon']"
                 :is-active="$item['isActive'] ?? false" />
         @endforeach
     </ul>

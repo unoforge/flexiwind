@@ -1,7 +1,9 @@
-@props(['overlayBlured'=>true])
+@props(['overlayBlured' => true, 'withoutOverlay' => false])
 
-<div data-sidebar-overlay
-    class="fixed inset-0 z-40 bg-gray-800/40 {{ $overlayBlured ? 'backdrop-blur-sm' : '' }} hidden fx-open:flex lg:fx-open:hidden"></div>
+@if (!$withoutOverlay)
+    <x-ui.sidebar-overlay :blured="$overlayBlured" />
+@endif
+
 <aside x-data x-sidebar {{ $attributes }}>
     {{ $slot }}
 </aside>

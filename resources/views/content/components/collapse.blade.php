@@ -16,7 +16,7 @@
             <x-md.h3>Install dependencies</x-md.h3>
             <x-docs.callout type="note">
                 This component requires JS. By default we're using our own Interactive Component Library
-                <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>.
+                <x-docs.link href="https://flexilla.unoforge.com/">Flexilla</x-docs.link>.
             </x-docs.callout>
             <livewire:base.terminal :code="'npm i @flexilla/collapse'" />
         </x-docs.step>

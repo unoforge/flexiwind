@@ -19,8 +19,8 @@ export default defineConfig({
 JS,
         'lines' => [
             2 => 'added',
-            7 => 'added'
-        ]
-    ]
+            7 => 'added',
+        ],
+    ],
 
 ];

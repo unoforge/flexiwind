@@ -10,11 +10,18 @@
     'intent' => 'neutral',
     'ariaLabel' => null,
     'disabled' => false,
+    'inSameWindow' => false,
 ])
 
 @php
 
-    $isInternal = ($href && Str::startsWith($href, '/')) || Str::startsWith($href, '#');
+    $isInternal = $href && (Str::startsWith($href, '/') || Str::startsWith($href, '#'));
+    if (!$isInternal && $href) {
+        $host = parse_url($href, PHP_URL_HOST);
+        $isInternal = $host === null || $host === request()->getHost();
+    }
+
+    $openExternally = !$isInternal && !$inSameWindow;
 
     $offsets = [
         'none' => '',
@@ -36,8 +43,8 @@
         'aria-label' => $label,
         'aria-disabled' => $disabled ? 'true' : null,
         'tabindex' => $disabled ? '-1' : null,
-        'target' => $isInternal ? null : '_blank',
-        'rel' => $isInternal ? null : 'noopener noreferrer',
+        'target' => $openExternally ? '_blank' : null,
+        'rel' => $openExternally ? 'noopener noreferrer' : null,
     ]);
 @endphp
 

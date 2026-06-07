@@ -1,7 +1,5 @@
 <?php
 
-
-
 return [
     'btn-outline-light' => [
         'lang' => 'css',

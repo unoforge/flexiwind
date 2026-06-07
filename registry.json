@@ -2,7 +2,7 @@
   "name": "flexiwind-ui",
   "title": "Flexiwind UI",
   "description": "Flexiwind UI components and blocks for Laravel Blade and Livewire.",
-  "homepage": "https://flexiwind.laravel.com",
+  "homepage": "https://flexiwind.unoforge.com",
   "author": "Johnkat MJ <johnkatembue4@gmail.com>",
   "components": [
     {
@@ -270,6 +270,27 @@
           "@flexilla/collapse"
         ]
       }
+    },
+    {
+      "version": "1.0.0",
+      "name": "dissmissible",
+      "title": "Dissmissible",
+      "description": "A reusable divider component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/dissmissible/index.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dissmissible/index.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dissmissible/close.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dissmissible/close.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
     },
     {
       "version": "1.0.0",
@@ -1068,6 +1089,11 @@
           "target": "resources/views/components/ui/sidebar-wrapper.blade.php"
         },
         {
+          "path": "resources/views/components/ui/sidebar-overlay.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/sidebar-overlay.blade.php"
+        },
+        {
           "path": "resources/js/sidebar-plugin.js",
           "type": "registry:ui",
           "target": "resources/js/sidebar-plugin.js"
@@ -1088,15 +1114,14 @@
       "version": "1.0.0",
       "name": "sidebar01",
       "title": "Sidebar 01",
-      "description": "A full sidebar layout with grouped navigation.",
+      "description": "A full sidebar layout.",
       "files": [
         {
           "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
           "type": "registry:block",
-          "target": "resources/views/components/layouts/sidebar.blade.php",
+          "target": "resources/views/components/layouts/sidebar01.blade.php",
           "replace": {
-            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item",
-            "x-previews.sidebar.01.sidebar-nav-group": "x-atoms.sidebar-nav-group"
+            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item"
           }
         },
         {
@@ -1105,15 +1130,53 @@
           "target": "resources/views/components/atoms/sidebar-item.blade.php"
         },
         {
-          "path": "resources/views/components/previews/sidebar/01/sidebar-nav-group.blade.php",
-          "type": "registry:component",
-          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php",
+          "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/wrapper.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "icon",
+        "sidebar-wrapper"
+      ],
+      "message": [
+        "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+        "Use <x-atoms.sidebar-item> inside the sidebar nav for each link (accepts href, icon, text, isActive).",
+        "Place <x-layouts.wrapper> after the sidebar; it offsets by md:pl-64 and holds your header + content.",
+        "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "sidebar02",
+      "title": "Sidebar 02",
+      "description": "A full sidebar layout with grouped navigation.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/sidebar/02/sidebar.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/sidebar02.blade.php",
           "replace": {
-            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item"
+            "x-previews.sidebar.02.sidebar-item": "x-atoms.sidebar-item",
+            "x-previews.sidebar.02.sidebar-nav-group": "x-atoms.sidebar-nav-group"
           }
         },
         {
-          "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
+          "path": "resources/views/components/previews/sidebar/02/sidebar-item.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-item.blade.php"
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/02/sidebar-nav-group.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php",
+          "replace": {
+            "x-previews.sidebar.02.sidebar-item": "x-atoms.sidebar-item"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/02/wrapper.blade.php",
           "type": "registry:block",
           "target": "resources/views/components/layouts/wrapper.blade.php"
         }
@@ -1133,25 +1196,25 @@
     },
     {
       "version": "1.0.0",
-      "name": "sidebar02",
-      "title": "Sidebar 02",
+      "name": "sidebar03",
+      "title": "Sidebar 03",
       "description": "A full sidebar layout.",
       "files": [
         {
-          "path": "resources/views/components/previews/sidebar/02/sidebar.blade.php",
+          "path": "resources/views/components/previews/sidebar/03/sidebar.blade.php",
           "type": "registry:block",
-          "target": "resources/views/components/layouts/sidebar.blade.php",
+          "target": "resources/views/components/layouts/sidebar03.blade.php",
           "replace": {
-            "x-previews.sidebar.02.sidebar-item": "x-atoms.sidebar-item"
+            "x-previews.sidebar.03.sidebar-item": "x-atoms.sidebar-item"
           }
         },
         {
-          "path": "resources/views/components/previews/sidebar/02/sidebar-item.blade.php",
+          "path": "resources/views/components/previews/sidebar/03/sidebar-item.blade.php",
           "type": "registry:component",
           "target": "resources/views/components/atoms/sidebar-item.blade.php"
         },
         {
-          "path": "resources/views/components/previews/sidebar/02/wrapper.blade.php",
+          "path": "resources/views/components/previews/sidebar/03/wrapper.blade.php",
           "type": "registry:block",
           "target": "resources/views/components/layouts/wrapper.blade.php"
         }
@@ -1203,7 +1266,39 @@
         {
           "path": "resources/views/components/previews/dash-card/kpi01.blade.php",
           "type": "registry:page",
-          "target": "resources/views/components/dash-card/kpi01.blade.php"
+          "target": "resources/views/components/card/kpi01.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "kpi02",
+      "title": "KPI 02",
+      "description": "A full KPI layout with icons.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/dash-card/kpi02.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/card/kpi02.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "kpi03",
+      "title": "KPI 03",
+      "description": "A full KPI layout with icons.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/dash-card/kpi03.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/card/kpi03.blade.php"
         }
       ],
       "registryDependencies": [
@@ -1255,27 +1350,6 @@
           "replace": {
             "x-previews.sidebar.01.sidebar": "x-layouts.sidebar01"
           }
-        },
-        {
-          "path": "resources/views/components/previews/sidebar/01/sidebar-item.blade.php",
-          "type": "registry:component",
-          "target": "resources/views/components/atoms/sidebar-item.blade.php"
-        },
-        {
-          "path": "resources/views/components/previews/sidebar/01/sidebar-nav-group.blade.php",
-          "type": "registry:component",
-          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php",
-          "replace": {
-            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item"
-          }
-        },
-        {
-          "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
-          "type": "registry:block",
-          "target": "resources/views/components/layouts/sidebar01.blade.php",
-          "replace": {
-            "x-previews.sidebar.01.sidebar-nav-group": "x-atoms.sidebar-nav-group"
-          }
         }
       ],
       "message": [
@@ -1289,7 +1363,8 @@
       "registryDependencies": [
         "button",
         "icon",
-        "sidebar-wrapper"
+        "sidebar-wrapper",
+        "sidebar01"
       ]
     },
     {
@@ -1313,6 +1388,32 @@
       "files": [
         {
           "path": "resources/views/components/previews/table/01.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/tables/table.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "table02",
+      "title": "Table 02",
+      "description": "Data table component.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/table/02.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/tables/table.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "table03",
+      "title": "Table 03",
+      "description": "Data table component.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/table/03.blade.php",
           "type": "registry:block",
           "target": "resources/views/components/tables/table.blade.php"
         }

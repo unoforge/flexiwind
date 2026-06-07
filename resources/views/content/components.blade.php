@@ -97,6 +97,8 @@
             description="Vertically collapsing panels for managing dense content." />
         <x-md.reference href="/components/collapse" title="Collapse"
             description="Toggle visibility of content sections with smooth height transitions." />
+        <x-md.reference href="/components/dissmissible" title="Dissmissible"
+            description="User-dismissible content wrapper for alerts, notifications, and temporary messages." />
     </x-md.references-grid>
 
     <x-md.h2>
