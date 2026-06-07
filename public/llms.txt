@@ -5,7 +5,7 @@
 ## Overview
 
 - Components are Blade-based, Tailwind v4-styled, and optionally Livewire-powered
-- Interactive components (accordion, modal, dropdown, etc.) use [Flexilla](https://flexilla-docs.vercel.app/) for JS behavior
+- Interactive components (accordion, modal, dropdown, etc.) use [Flexilla](https://flexilla.unoforge.com/) for JS behavior
 - A semantic design token system drives all theming (colors, surfaces, borders, radii)
 - The Flexi CLI (`unoforge/flexiwind-cli`) manages component installation and updates
 
@@ -203,7 +203,7 @@ Without Alpine: install `@flexilla/utilities` and use its theme API.
 
 ## Links
 
-- Homepage: https://flexiwind.laravel.com
+- Homepage: https://flexiwind.unoforge.com
 - GitHub CLI: https://github.com/unoforge/flexiwind-cli
-- Flexilla docs: https://flexilla-docs.vercel.app/
+- Flexilla docs: https://flexilla.unoforge.com/
 - Author: Johnkat MJ (https://x.com/johnkat_Mj)

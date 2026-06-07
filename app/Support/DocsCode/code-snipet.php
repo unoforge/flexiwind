@@ -197,10 +197,10 @@ JS,
         'name' => 'app.js',
         'code' => <<<'JS'
 // Import Flexilla navbar plugin
-import PluginNavbar from "@flexilla/alpine-navbar";
+import NavbarPlugin from "./plugins/nav-bar";
 
 // Register the plugin with Alpine
-Alpine.plugin(PluginNavbar);
+Alpine.plugin(NavbarPlugin);
 
 // Your other app.js imports and initialization code
 // ...
@@ -440,9 +440,9 @@ JS,
         'lang' => 'js',
         'name' => 'flexilla.js',
         'code' => <<<'JS'
-import AlpineTooltip from "@flexilla/alpine-tooltip"
+import {TooltipPlugin} from "./plugins/tooltip"
 
-Alpine.plugin(AlpineTooltip)
+Alpine.plugin(TooltipPlugin)
 JS,
         'lines' => [
             1 => 'added',
@@ -468,9 +468,9 @@ JS,
         'lang' => 'js',
         'name' => 'flexilla.js',
         'code' => <<<'JS'
-import AlpinePinInput from "@flexilla/alpine-pin-input"
+import { PinInputPlugin } from "./plugins/pin-input"
 
-Alpine.plugin(AlpinePinInput)
+Alpine.plugin(PinInputPlugin)
 JS,
         'lines' => [
             1 => 'added',
@@ -496,9 +496,37 @@ JS,
         'lang' => 'js',
         'name' => 'flexilla.js',
         'code' => <<<'JS'
-import AlpineOffcanvas from "@flexilla/alpine-offcanvas"
+import { OffcanvasPlugin } from "./plugins/offcanvas"
 
-Alpine.plugin(AlpineOffcanvas)
+Alpine.plugin(OffcanvasPlugin)
+JS,
+        'lines' => [
+            1 => 'added',
+            3 => 'added',
+        ],
+    ],
+
+    'add-dissmissible-in-app' => [
+        'lang' => 'js',
+        'name' => 'flexilla.js',
+        'code' => <<<'JS'
+import { Dismissible } from "@flexilla/dismissible"
+
+// init Dismissible for all Element with data-app-dissmissible attribute
+Dismissible.autoInit('[data-app-dissmissible]') 
+JS,
+        'lines' => [
+            1 => 'added',
+            4 => 'added',
+        ],
+    ],
+    'add-dissmissible-plugin-in-app' => [
+        'lang' => 'js',
+        'name' => 'flexilla.js',
+        'code' => <<<'JS'
+import { DissmissiblePlugin } from "./plugins/dissmissible";
+
+Alpine.plugin(DissmissiblePlugin)
 JS,
         'lines' => [
             1 => 'added',

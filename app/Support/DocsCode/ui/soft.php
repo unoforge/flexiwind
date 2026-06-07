@@ -1,6 +1,5 @@
 <?php
 
-
 return [
     'ui-soft-light' => [
         'lang' => 'css',

@@ -271,6 +271,27 @@
         },
         {
             "version": "1.0.0",
+            "name": "dissmissible",
+            "title": "Dissmissible",
+            "description": "A reusable divider component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "resources/views/components/ui/dissmissible/index.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dissmissible/index.blade.php"
+                },
+                {
+                    "path": "resources/views/components/ui/dissmissible/close.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dissmissible/close.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "button"
+            ]
+        },
+        {
+            "version": "1.0.0",
             "name": "divider",
             "title": "Divider",
             "description": "A reusable divider component for Laravel Blade/Livewire.",

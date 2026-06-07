@@ -11,10 +11,11 @@ import { PinInputPlugin } from "./plugins/pin-input";
 import { NavbarPlugin } from "./plugins/nav-bar";
 import "./sidebar-plugin";
 import { CollapsePlugin } from "./plugins/collapse";
+import { DissmissiblePlugin } from "./plugins/dissimissible";
 
 Alpine.plugin(AccordionPlugin);
 Alpine.plugin(ModalPlugin);
-Alpine.plugin(CollapsePlugin)
+Alpine.plugin(CollapsePlugin);
 Alpine.plugin(DropdownPlugin);
 Alpine.plugin(TabsPlugin);
 Alpine.plugin(RangeIndicatorPlugin);
@@ -24,3 +25,4 @@ Alpine.plugin(PopoverPlugin);
 Alpine.plugin(TooltipPlugin);
 Alpine.plugin(PinInputPlugin);
 Alpine.plugin(NavbarPlugin);
+Alpine.plugin(DissmissiblePlugin);

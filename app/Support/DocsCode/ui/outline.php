@@ -1,6 +1,5 @@
 <?php
 
-
 return [
     'ui-outline-light' => [
         'lang' => 'css',

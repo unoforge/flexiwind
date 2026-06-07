@@ -26,6 +26,13 @@ return [
                 'seoDescription' => 'Learn how to use Flexi CLI to manage components and streamline your Flexiwind development workflow.',
             ],
             [
+                'title' => 'AI Skills',
+                'path' => '/docs/skills',
+                'description' => 'AI-assistant skills that help Cursor, Cline, Windsurf, and other AI tools generate accurate Flexiwind code.',
+                'keywords' => 'AI Skills, Cursor, Cline, Windsurf, Boost, MCP, AI Assistant, Installation',
+                'seoDescription' => 'Install and use Flexiwind AI Skills to help your AI assistant generate accurate components, blocks, and theme code for your Laravel project.',
+            ],
+            [
                 'title' => 'Dark Mode',
                 'path' => '/docs/dark-mode',
                 'description' => 'Implementing and toggling dark mode support in your Laravel application.',
@@ -342,6 +349,13 @@ return [
                 'description' => 'Toggle visibility of content sections with smooth height transitions.',
                 'keywords' => 'collapse, expand, show more, toggle, disclosure',
                 'seoDescription' => 'Learn how to use Flexiwind\'s collapse component to create expandable content sections.',
+            ],
+            [
+                'title' => 'Dissmissible',
+                'path' => '/components/dissmissible',
+                'description' => 'User-dismissible content wrapper for alerts, notifications, and temporary messages.',
+                'keywords' => 'dismissible, closable, alert, notification, banner, temporary message',
+                'seoDescription' => 'Create dismissible alerts and notifications with Flexiwind\'s dissmissible component.',
             ],
         ],
     ],

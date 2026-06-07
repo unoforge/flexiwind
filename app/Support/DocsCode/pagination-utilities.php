@@ -1,10 +1,10 @@
 <?php
 
 return [
-  'pagination-utilities' => [
-    'lang' => 'css',
-    'name' => 'pagination-utilities',
-    'code' => <<<'CSS'
+    'pagination-utilities' => [
+        'lang' => 'css',
+        'name' => 'pagination-utilities',
+        'code' => <<<'CSS'
 @utility btn-pagination-link-variables {
   --ring-bg-color: var(--btn-pagination-link-ring-color, transparent);
   --link-bg: var(--btn-pagination-link-bg, transparent);
@@ -19,11 +19,11 @@ return [
   --link-hover-bg: var(--btn-pagination-active-link-hover-bg, --alpha(var(--color-bg-muted)/80%));
 }
 CSS
-  ],
-  'pagination-custom-theme' => [
-    'lang' => 'css',
-    'name' => 'pagination-custom-theme',
-    'code' => <<<'CSS'
+    ],
+    'pagination-custom-theme' => [
+        'lang' => 'css',
+        'name' => 'pagination-custom-theme',
+        'code' => <<<'CSS'
 /* Custom pagination theme */
 :root {
   /* Regular pagination links */
@@ -39,5 +39,5 @@ CSS
   --btn-pagination-active-link-hover-bg: var(--color-primary);
 }
 CSS
-  ]
+    ],
 ];

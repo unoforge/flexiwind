@@ -3,6 +3,7 @@
 @php
     use App\Flexiwind\UiHelper;
     $sizes = [
+        'none' => '',
         'default' => 'badge-md',
         'xs' => 'badge-xs',
         'sm' => 'badge-sm',

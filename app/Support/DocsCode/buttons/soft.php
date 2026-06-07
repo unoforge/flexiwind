@@ -74,7 +74,6 @@ $btnSoftLight = <<<'CSS'
 }
 CSS;
 
-
 $btnSoftBoth = <<<'CSS'
 @utility btn-soft-primary {
     --btn-soft-bg-color: var(--color-primary-50);

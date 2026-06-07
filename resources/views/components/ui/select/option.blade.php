@@ -1,2 +1,2 @@
 @props(['value', 'label', 'selected' => false])
-<option value="{{ $value }}" {{ $selected ? 'selected' : '' }}"> {{ $label }}</option>
+<option value="{{ $value }}" @if($selected) selected @endif> {{ $label }}</option>

@@ -12,7 +12,7 @@
             <x-md.h3>Install popover dependencies</x-md.h3>
             <x-docs.callout intent="gray" type="note">
                 Flexiwind uses
-                <x-docs.link href="https://flexilla-docs.vercel.app/">Flexilla</x-docs.link>.
+                <x-docs.link href="https://flexilla.unoforge.com/">Flexilla</x-docs.link>.
             </x-docs.callout>
             <x-md.paragraph>
                 By default when adding the component with the CLI it will ask if you want to install dependdencies,

@@ -4,6 +4,7 @@ return [
     'application' => [
         'login-form' => [
             'key' => 'login-form',
+            'category' => 'application',
             'title' => 'Login',
             'description' => 'User login form components with various layouts and styles',
             'illustrations' => [
@@ -27,6 +28,7 @@ return [
         ],
         'signup-form' => [
             'key' => 'signup-form',
+            'category' => 'application',
             'title' => 'Signup',
             'description' => 'User registration and signup form components',
             'illustrations' => [
@@ -42,6 +44,7 @@ return [
         ],
         'sidebar' => [
             'key' => 'sidebar',
+            'category' => 'application',
             'title' => 'Sidebar',
             'description' => 'Navigation sidebar components with different layouts and styles',
             'illustrations' => [
@@ -57,11 +60,15 @@ return [
                     'name' => 'sidebar02',
                     'preview' => '/preview-ui/sidebar/02',
                 ],
+                'sidebar03' => [
+                    'name' => 'sidebar03',
+                    'preview' => '/preview-ui/sidebar/03',
+                ],
             ],
         ],
         'auth-form' => [
             'key' => 'auth-form',
-
+            'category' => 'application',
             'title' => 'Auth',
             'description' => 'Authentication components including password reset, confirmation, and OTP forms',
             'illustrations' => [
@@ -77,6 +84,7 @@ return [
         ],
         'header' => [
             'key' => 'headers',
+            'category' => 'application',
             'title' => 'Header nav',
             'description' => 'Navigation header',
             'illustrations' => [
@@ -100,6 +108,7 @@ return [
         ],
         'app-table' => [
             'key' => 'application-table',
+            'category' => 'application',
             'title' => 'Table',
             'description' => 'Application Table...',
             'illustrations' => [
@@ -111,10 +120,19 @@ return [
                     'name' => 'table01',
                     'preview' => '/preview-ui/table/01',
                 ],
+                'table02' => [
+                    'name' => 'table02',
+                    'preview' => '/preview-ui/table/02',
+                ],
+                'table03' => [
+                    'name' => 'table03',
+                    'preview' => '/preview-ui/table/03',
+                ],
             ],
         ],
         'app-shell' => [
             'key' => 'application-shell',
+            'category' => 'application',
             'title' => 'Application shell',
             'description' => 'Application shells...',
             'illustrations' => [
@@ -130,6 +148,7 @@ return [
         ],
         'dash-card-kpi' => [
             'key' => 'dash-card-kpi',
+            'category' => 'application',
             'title' => 'Dash KPI',
             'description' => 'KPI cards',
             'illustrations' => [
@@ -141,10 +160,19 @@ return [
                     'name' => 'kpi01',
                     'preview' => '/preview-ui/dash-card/kpi01',
                 ],
+                'kpi02' => [
+                    'name' => 'kpi02',
+                    'preview' => '/preview-ui/dash-card/kpi02',
+                ],
+                'kpi03' => [
+                    'name' => 'kpi03',
+                    'preview' => '/preview-ui/dash-card/kpi03',
+                ],
             ],
         ],
         'empty-states' => [
             'key' => 'empty-states',
+            'category' => 'application',
             'title' => 'Empty States',
             'description' => 'Empty stated...',
             'illustrations' => [
@@ -160,6 +188,7 @@ return [
         ],
         'dash-widgets' => [
             'key' => 'dash-widgets',
+            'category' => 'application',
             'title' => 'Widgets',
             'description' => 'Widgets',
             'illustrations' => [
@@ -177,6 +206,7 @@ return [
     'marketing' => [
         'hero-sections' => [
             'key' => 'hero-sections',
+            'category' => 'marketing',
             'title' => 'Hero Sections',
             'description' => 'Hero sections...',
             'illustrations' => [
@@ -192,6 +222,7 @@ return [
         ],
         'features' => [
             'key' => 'features',
+            'category' => 'marketing',
             'title' => 'Features',
             'description' => 'Features sections...',
             'illustrations' => [

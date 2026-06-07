@@ -1,11 +1,10 @@
 <?php
 
-
 return [
-  'css-variables-colors' => [
-    'lang' => 'css',
-    'name' => 'app.css',
-    'code' => <<<'CSS'
+    'css-variables-colors' => [
+        'lang' => 'css',
+        'name' => 'app.css',
+        'code' => <<<'CSS'
 @theme inline {
     --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --radius-ui: var(--ui-radius);
@@ -64,6 +63,6 @@ return [
     --color-gray-950:...;
 }
 CSS
-  ]
+    ],
 
 ];

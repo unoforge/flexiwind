@@ -1,0 +1,25 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "dissmissible",
+    "type": "registry:component",
+    "title": "Dissmissible",
+    "description": "A reusable divider component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "button"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/dissmissible/index.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/dissmissible/index.blade.php",
+            "content": "@props(['action' => 'remove-from-dom', 'closable' => true, 'absolute' => false])\n\n<div x-f-dissmissible data-action=\"{{ $action }}\" {{ $attributes->class(['', 'relative' => !$absolute]) }}>\n    {{ $slot }}\n    @if ($closable)\n        <x-ui.dissmissible.close variant=\"ghost\" size=\"sm\" icon-only class=\"absolute top-2 right-2\">\n            <x-ui.icon name=\"ph--x\" />\n        </x-ui.dissmissible.close>\n    @endif\n</div>\n"
+        },
+        {
+            "path": "resources/views/components/ui/dissmissible/close.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/dissmissible/close.blade.php",
+            "content": "@props(['variant' => 'none', 'size' => 'none', 'iconOnly' => false])\n\n<x-ui.button data-dismiss-btn variant=\"{{ $variant }}\" size=\"{{ $size }}\" :icon-only=\"$iconOnly\" {{ $attributes }}>\n    {{ $slot }}\n</x-ui.button>\n"
+        }
+    ]
+}

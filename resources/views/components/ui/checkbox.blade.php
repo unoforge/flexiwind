@@ -20,7 +20,7 @@
     $sizeClasses = $sizes[$size] ?? $sizes['sm'];
     $stateClasses = $disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer';
 
-    $id ??= $name;
+    $id = $attributes->get('id') ?? $attributes->get('name', uniqid('checkbox-'));
 
     $attributes = $attributes->class([$baseClasses, $sizeClasses, $stateClasses])->merge([
         'type' => 'checkbox',
