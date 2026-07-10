@@ -43,3 +43,4 @@ Alpine.plugin(TooltipPlugin);
 
 - Do not use `id` directly on the trigger — use `tooltip-id` instead.
 - Do not skip the JS plugin import; the tooltip will not function without it.
+- Do not nest `<x-ui.button>` inside `<x-ui.tooltip.trigger>` — the trigger already renders as a button and accepts button props directly.

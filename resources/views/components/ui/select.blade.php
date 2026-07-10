@@ -37,14 +37,14 @@
         <x-ui.label for="{{ $id }}" :text="$label" class="{{ $labelClass }}" />
         <select id="{{ $id }}" @if ($disabled) disabled @endif
             @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
-            {{ $attributes->class([$variantClasses, $sizeClass, $indicatorClass, $class]) }}>
+            {{ $attributes->except('id')->class([$variantClasses, $sizeClass, $indicatorClass, $class]) }}>
             {{ $slot }}
         </select>
     </div>
 @else
     <select id="{{ $id }}" @if ($disabled) disabled @endif
         @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
-        {{ $attributes->class([$variantClasses, $sizeClass, $indicatorClass, $class]) }}>
+        {{ $attributes->except('id')->class([$variantClasses, $sizeClass, $indicatorClass, $class]) }}>
         {{ $slot }}
     </select>
 @endif

@@ -27,3 +27,11 @@ These are the most important mistakes to avoid when answering Flexiwind question
 - do not hardcode one-off colors when semantic tokens exist
 - do not scatter button variant styling across many files if the theme docs centralize it
 - do not treat Flexiwind as plain Tailwind snippets only; theme tokens are part of the system
+
+## Do Not Nest Components Incorrectly
+
+- do not put `<x-ui.button>` inside `<x-ui.modal.trigger>`, `<x-ui.slideover.trigger>`, or `<x-ui.dropdown.trigger>` — triggers already render as buttons and accept button props directly
+- do not put a button or link inside `<x-ui.modal.close>` — it inherits `x-ui.button` props and renders its own button
+- do not nest `<x-ui.link>` inside `<x-ui.button>` — use `x-ui.button href` instead
+- do not nest `<x-ui.button>` inside `<x-ui.link asButton>` — `asButton` already delegates to `x-ui.button`
+- do not use raw `<button>` or `<a>` tags when a Flexiwind component covers the need

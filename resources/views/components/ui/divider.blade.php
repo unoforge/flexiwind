@@ -18,7 +18,7 @@
         $className = "divider-custom w-full {$div_size} flex items-center {$label_placement} {$class}";
     @endphp
     <div {{ $attributes->merge(['class' => $className]) }}>
-        <span class="{{ $labelClass }}">
+        <span class="relative {{ $labelClass }}">
             {{ $label }}
         </span>
     </div>

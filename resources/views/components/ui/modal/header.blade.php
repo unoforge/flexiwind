@@ -28,16 +28,16 @@
                 @else
                     {{ $titleSlot }}
                 @endif
-                </x-ui.smodal.title>
-                @if (isset($description) || isset($descriptionSlot))
-                    <x-ui.modal.description class="{{ $description_class }}">
-                        @if (isset($description))
-                            {{ $description }}
-                        @else
-                            {{ $descriptionSlot }}
-                        @endif
-                    </x-ui.modal.description>
-                @endif
+            </x-ui.modal.title>
+            @if (isset($description) || isset($descriptionSlot))
+                <x-ui.modal.description class="{{ $description_class }}">
+                    @if (isset($description))
+                        {{ $description }}
+                    @else
+                        {{ $descriptionSlot }}
+                    @endif
+                </x-ui.modal.description>
+            @endif
         </div>
     @else
         {{ $slot }}

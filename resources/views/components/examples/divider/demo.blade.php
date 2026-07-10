@@ -2,5 +2,5 @@
     <x-ui.divider class="border-primary"/>
     <x-ui.divider class="border-secondary"/>
     <x-ui.divider class="border-danger"/>
-    <x-ui.divider class="border-gray"/>
+    <x-ui.divider class="border-gray-500"/>
 </div>

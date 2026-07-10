@@ -27,7 +27,7 @@
                 @else
                     {{ $titleSlot }}
                 @endif
-            </x-ui.sliderover.title>
+            </x-ui.slideover.title>
             @if (isset($description) || isset($descriptionSlot))
                 <x-ui.slideover.description class="{{ $description_class }}">
                     @if (isset($description))

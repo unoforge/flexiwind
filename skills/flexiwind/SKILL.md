@@ -35,6 +35,7 @@ Use the files in this skill first. The public docs site is also available at `ht
 - [references/colors.md](./references/colors.md) — color token setup for light/dark/both modes
 - [references/button-utilities.md](./references/button-utilities.md) — CSS utility definitions for button variants
 - [references/components.md](./references/components.md) — full component reference index
+- [references/interactions.md](./references/interactions.md) — Flexilla interaction setup, plugin imports, and livewire compatibility
 
 ## Working Rules
 
@@ -54,8 +55,15 @@ Use the files in this skill first. The public docs site is also available at `ht
 4. Prefer documented composition patterns over custom abstractions.
 5. When a component, prop, command, or block is not present in the skill files or the live docs, do not invent it.
 6. Do not reference repository-local paths, examples, or source files in user-facing answers. Use Blade component syntax.
-7. Components that require Flexilla JS must include the npm install and Alpine plugin import in any answer.
+7. Components that require Flexilla JS must include the npm install and Alpine plugin import in any answer. For detailed Flexilla guidance (JS APIs, events, accessibility), suggest installing the Flexilla skill: `php artisan boost:add-skill unoforge/flexilla`.
 8. The `dissmissible` component name is intentionally spelled with double-s in the codebase and CLI slug. Use that spelling exactly.
+
+9. Follow component composition safety rules:
+   - Trigger components (`x-ui.modal.trigger`, `x-ui.slideover.trigger`, `x-ui.dropdown.trigger`) already render as `<button>` elements. Do **not** nest another `<x-ui.button>` or `<button>` inside them — they accept button props directly.
+   - `x-ui.modal.close` inherits `x-ui.button` props — do not nest a `<button>` or `<x-ui.button>` inside it. Passing text or an icon is fine.
+   - `x-ui.dropdown.trigger` accepts button props (`variant`, `intent`, `size`, etc.) — pass them directly to the trigger rather than wrapping in a button.
+   - Do not nest `<x-ui.link>` inside `<x-ui.button>` or vice versa. If you need a link that looks like a button, use `x-ui.button href` or `x-ui.link asButton`.
+   - `x-ui.link` renders an `<a>` tag by default — do not put interactive elements (buttons, links) inside it.
 
 ## Answering Pattern
 
@@ -142,12 +150,12 @@ Use the files in this skill first. The public docs site is also available at `ht
 | Modal | `flexi:add modal` | `x-ui.modal` | Yes |
 | Alert Dialog | built on modal | `x-ui.modal` | Yes |
 | Slideover | `flexi:add slideover` | `x-ui.slideover` | Yes |
-| Dropdown | `flexi:add dropdown` | `x-ui.dropdown` | — |
-| Popover | `flexi:add popover` | `x-ui.popover` | — |
-| Tooltip | `flexi:add tooltip` | `x-ui.tooltip` | — |
-| Accordion | `flexi:add accordion` | `x-ui.accordion` | — |
-| Collapse | `flexi:add collapse` | `x-ui.collapse` | — |
-| Dissmissible | `flexi:add dissmissible` | `x-ui.dissmissible` | — |
+| Dropdown | `flexi:add dropdown` | `x-ui.dropdown` | Yes |
+| Popover | `flexi:add popover` | `x-ui.popover` | Yes |
+| Tooltip | `flexi:add tooltip` | `x-ui.tooltip` | Yes |
+| Accordion | `flexi:add accordion` | `x-ui.accordion` | Yes |
+| Collapse | `flexi:add collapse` | `x-ui.collapse` | Yes |
+| Dissmissible | `flexi:add dissmissible` | `x-ui.dissmissible` | Yes |
 
 ### Typography
 | Component | Install | Blade |
@@ -180,9 +188,9 @@ Rules: `variant="unstyled"` inside group, never pass `label` to grouped input.
 ### Modal
 ```blade
 <x-ui.modal id="edit-profile">
-    <x-ui.modal.trigger modal-id="edit-profile">
-        <x-ui.button>Open</x-ui.button>
-    </x-ui.modal.trigger>
+<x-ui.modal.trigger modal-id="edit-profile" variant="solid" intent="primary">
+    Open
+</x-ui.modal.trigger>
     <x-ui.modal.content size="md">
         <x-ui.modal.header>
             <x-ui.modal.title>Title</x-ui.modal.title>
@@ -235,16 +243,23 @@ Blocks are full sections composed from components. Available block categories fr
 
 | Category | Blocks |
 |----------|--------|
-| Login Form | `login01`, `login02`, `login03` |
-| Signup Form | `signup01` |
-| Sidebar | `sidebar01`, `sidebar02` |
-| Auth (OTP) | `otp01` |
-| Header Nav | `header01`, `header02`, `header03` |
-| Table | `table01`, `table02`, `table03` |
-| App Shell | `shell01` |
-| Dash KPI | `kpi01`, `kpi02`, `kpi03` |
-| Empty States | `empty-state01` |
-| Widgets | `activity01` |
+| Login Form | `login01`, `login02`, `login03`, `login04`, `login05` |
+| Signup Form | `signup01`, `signup02` |
+| Sidebar | `sidebar01`, `sidebar02`, `sidebar03` |
+| Auth (OTP) | `otp01`, `password-reset01` |
+| Header Nav | `header01`, `header02`, `header03`, `header04`, `header05` |
+| Table | `table01`, `table02`, `table03`, `table04`, `table05`, `table06`, `table07` |
+| App Shell | `shell01`, `shell02`, `shell03` |
+| Dash KPI | `kpi01`, `kpi02`, `kpi03`, `kpi04`, `kpi05` |
+| Empty States | `empty-state01`, `empty-state02` |
+| Widgets | `activity01`, `activity02`, `top-products` |
+| Modal Form | `create-user-modal`, `confirm-action-modal` |
+| Slideover Form | `settings-slideover`, `notification-preferences` |
+| Dropdown Menu | `user-dropdown`, `table-actions-dropdown` |
+| Stats Panel | `project-stats-panel`, `team-performance-card` |
+| Toast Notification | `inline-toast`, `notification-stack` |
+| User Management | `user-list` |
+| Dashboard Analytics | `dash-analytics` |
 
 ### Marketing Blocks
 
@@ -335,3 +350,57 @@ php artisan flexi:help
 ```
 
 Docs: `https://flexiwind.unoforge.com/docs/introduction`
+
+## Anti-Patterns
+
+These are documented mistakes that agents must avoid when generating Flexiwind code.
+
+### Button-in-Trigger
+
+❌ Wrong:
+```blade
+<x-ui.modal.trigger modal-id="edit-profile">
+    <x-ui.button>Open</x-ui.button>
+</x-ui.modal.trigger>
+```
+
+✅ Correct:
+```blade
+<x-ui.modal.trigger modal-id="edit-profile" variant="solid" intent="primary">
+    Open
+</x-ui.modal.trigger>
+```
+
+Triggers already render as `<button>` elements and accept button props (`variant`, `intent`, `size`, etc.). Nesting a button inside creates invalid HTML (button inside button).
+
+### Link-in-Button / Button-in-Link
+
+❌ Wrong:
+```blade
+<x-ui.button><x-ui.link href="/dashboard">Dashboard</x-ui.link></x-ui.button>
+<x-ui.link asButton><x-ui.button>Click</x-ui.button></x-ui.link>
+```
+
+✅ Correct:
+```blade
+<x-ui.button href="/dashboard">Dashboard</x-ui.button>
+<x-ui.link asButton href="/login">Login</x-ui.link>
+```
+
+### Button-inside-Close
+
+❌ Wrong:
+```blade
+<x-ui.modal.close>
+    <x-ui.button>Close</x-ui.button>
+</x-ui.modal.close>
+```
+
+✅ Correct:
+```blade
+<x-ui.modal.close>
+    Cancel
+</x-ui.modal.close>
+```
+
+`x-ui.modal.close` already wraps `<x-ui.button>` — nesting another button inside creates invalid HTML. Passing text or an icon is the correct usage.

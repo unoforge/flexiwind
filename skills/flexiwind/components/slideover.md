@@ -2,9 +2,9 @@
 
 ```html
 <x-ui.slideover id="settings">
-    <x-ui.slideover.trigger slideover-id="settings">
-        <x-ui.button>Edit Setting</x-ui.button>
-    </x-ui.slideover.trigger>
+<x-ui.slideover.trigger slideover-id="settings" variant="solid" intent="primary">
+    Edit Setting
+</x-ui.slideover.trigger>
     <x-ui.slideover.content>
         <x-ui.slideover.header>
             <x-ui.slideover.title>Update User Settings</x-ui.slideover.title>
@@ -89,3 +89,4 @@ Offcanvas.autoInit('[data-app-offcanvas]');
 
 - Do not flatten into a single tag.
 - Do not put `id` on `x-ui.slideover.content`; it belongs on `x-ui.slideover`.
+- Do not nest `<x-ui.button>` inside `<x-ui.slideover.trigger>` — the trigger already renders as a button and accepts button props directly.

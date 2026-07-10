@@ -32,10 +32,10 @@ php artisan flexi:add link
 ### As button
 
 ```html
-<x-ui.link href="#" as-button intent="neutral">
+<x-ui.link href="#" intent="neutral" asButton>
     Click me
 </x-ui.link>
-<x-ui.link href="#" as-button variant="soft" intent="gray">
+<x-ui.link href="#" asButton variant="soft" intent="gray">
     Click me
     <span aria-hidden="true" class="flex iconify ph--caret-right text-sm"></span>
 </x-ui.link>
@@ -49,3 +49,5 @@ php artisan flexi:add link
 ## Avoid
 
 - Do not use raw `<a>` tags when `x-ui.link` covers the need — the link component provides consistent styling and accessibility.
+- Do not nest `<x-ui.button>` inside `<x-ui.link asButton>` — `asButton` already delegates to the button component.
+- Do not nest `<x-ui.link>` inside `<x-ui.button>` — use `x-ui.button href` instead.

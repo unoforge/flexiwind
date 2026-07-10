@@ -49,7 +49,8 @@
 @endphp
 
 @if ($asButton)
-    <x-ui.button variant="{{ $variant }}" intent="{{ $intent }}" size="{{ $size }}" {{ $attributes }}>
+    <x-ui.button variant="{{ $variant }}" intent="{{ $intent }}" size="{{ $size }}"
+        {{ $attributes->except(['href', 'target', 'rel', 'aria-disabled', 'tabindex']) }}>
         {{ $slot }}
     </x-ui.button>
 @else

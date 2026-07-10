@@ -20,7 +20,7 @@
     $sizeClasses = $sizes[$size] ?? $sizes['sm'];
     $stateClasses = $disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer';
 
-    $id = $id ?? $name;
+    $id = $attributes->get('id') ?? $id ?: uniqid('radio-');
 
     $attributes = $attributes->class([$baseClasses, $sizeClasses, $stateClasses])->merge([
         'id' => $id,

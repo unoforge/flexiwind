@@ -100,3 +100,5 @@ Variant controls the visual treatment of the button, while intent communicates t
 - Do not use raw `<button>` tags when `x-ui.button` covers the need.
 - Do not scatter button variant styling across templates — centralize in `button-styles.css` using the documented CSS utilities.
 - Do not invent variant names outside `solid`, `soft`, `outline`, `ghost`, `none`.
+- Do not nest `<x-ui.link>` inside `<x-ui.button>` or vice versa. For a link that looks like a button, use `x-ui.button href` (renders as `<a>`) or `x-ui.link asButton`.
+- Do not nest interactive elements (buttons, links) inside `<x-ui.link>` — it renders as an `<a>` tag.

@@ -37,11 +37,11 @@
         <textarea id="{{ $id }}" @if ($disabled) disabled @endif
             @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
             @if ($autoResize) x-auto-resize-area @endif
-            {{ $attributes->class([$variantClasses, $sizeClass, $class]) }}>{{ $slot }}</textarea>
+            {{ $attributes->except('id')->class([$variantClasses, $sizeClass, $class]) }}>{{ $slot }}</textarea>
     </div>
 @else
     <textarea id="{{ $id }}" @if ($disabled) disabled @endif
         @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
         @if ($autoResize) x-auto-resize-area @endif
-        {{ $attributes->class([$variantClasses, $sizeClass, $class]) }}>{{ $slot }}</textarea>
+        {{ $attributes->except('id')->class([$variantClasses, $sizeClass, $class]) }}>{{ $slot }}</textarea>
 @endif
