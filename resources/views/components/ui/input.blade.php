@@ -37,10 +37,10 @@
         <x-ui.label for="{{ $id }}" :text="$label" class="{{ $labelClass }}" />
         <input type="{{ $type }}" id="{{ $id }}" @if ($disabled) disabled @endif
             @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
-            {{ $attributes->class([$variantClasses, $sizeClass, $class]) }} />
+            {{ $attributes->except('id')->class([$variantClasses, $sizeClass, $class]) }} />
     </div>
 @else
     <input type="{{ $type }}" id="{{ $id }}" @if ($disabled) disabled @endif
         @if ($readonly) readonly @endif @if ($invalid) data-invalid @endif
-        {{ $attributes->class([$variantClasses, $sizeClass, $class]) }} />
+        {{ $attributes->except('id')->class([$variantClasses, $sizeClass, $class]) }} />
 @endif

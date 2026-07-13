@@ -1,6 +1,6 @@
 @props(['text' => null])
 
-<h2 data-slot="callout-title" {{ $attributes->class(['text-balance font-mdium text-base']) }}>
+<h2 data-slot="callout-title" {{ $attributes->class(['text-balance font-medium text-base']) }}>
     @if ($text)
         {{ $text }}
     @else

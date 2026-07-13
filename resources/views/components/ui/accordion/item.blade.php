@@ -4,13 +4,13 @@
     use App\Flexiwind\UiHelper;
     $variants = UiHelper::getVariants();
 
-    $className = '';
-    $variantClass = UiHelper::getClasses($variant, $intent);
     if ($variant === 'default') {
         $className = ' border-b border-border ';
+    } else {
+        $className = UiHelper::getClasses($variant, $intent);
     }
 
-    $className .= "{$class} {$variantClass}";
+    $className .= " {$class}";
 
 @endphp
 

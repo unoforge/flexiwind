@@ -50,3 +50,4 @@ Alpine.plugin(PopoverPlugin);
 
 - Do not use `id` on the trigger — use `popover-id` instead.
 - Do not skip the JS plugin import; the popover will not open without it.
+- Do not nest `<x-ui.button>` inside `<x-ui.popover.trigger>` — the trigger already renders as a button and accepts button props directly.

@@ -2,9 +2,9 @@
 
 ```html
 <x-ui.modal id="edit-profile">
-    <x-ui.modal.trigger modal-id="edit-profile">
-        <x-ui.button>Show Modal</x-ui.button>
-    </x-ui.modal.trigger>
+<x-ui.modal.trigger modal-id="edit-profile" variant="solid" intent="primary">
+    Show Modal
+</x-ui.modal.trigger>
     <x-ui.modal.content>
         <x-ui.modal.header>
             <x-ui.modal.title>Edit profile</x-ui.modal.title>
@@ -95,3 +95,5 @@ Modal.autoInit('[data-app-modal]');
 
 - Do not flatten modal into a single tag — always use trigger + content structure.
 - Do not put `id` on `x-ui.modal.content`; it belongs on `x-ui.modal`.
+- Do not nest `<x-ui.button>` inside `<x-ui.modal.trigger>` — the trigger already renders as a button and accepts button props directly.
+- Do not nest a `<button>` or `<x-ui.button>` inside `<x-ui.modal.close>` — close inherits `x-ui.button` props. Passing text or an icon is fine.

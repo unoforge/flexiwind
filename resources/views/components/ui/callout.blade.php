@@ -21,7 +21,7 @@
 
     $icons = [
         'default' => 'ph--info',
-        'update' => 'ph--none',
+        'update' => 'ph--clock-clockwise',
         'note' => 'ph--lightbulb-filament',
         'warning' => 'ph--warning',
         'important' => 'ph--smiley-sad',

@@ -72,3 +72,4 @@ Alpine.plugin(DropdownPlugin);
 
 - Do not put `id` on the trigger — it goes on `x-ui.dropdown`.
 - Do not skip the JS plugin import; the dropdown will not open without it.
+- Do not nest `<x-ui.button>` inside `<x-ui.dropdown.trigger>` — the trigger already renders as a button and accepts button props (`variant`, `intent`, `size`, etc.) directly.

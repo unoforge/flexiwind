@@ -26,6 +26,13 @@ Examples:
 - docs page `aspect-ratio`, install slug `aspect`, Blade primitive `x-ui.aspect`
 - docs page `sidebar`, install slug `sidebar-wrapper`, Blade primitive `x-ui.sidebar-wrapper`
 
+## Use Correct Component Composition
+
+- trigger components (`x-ui.modal.trigger`, `x-ui.slideover.trigger`, `x-ui.dropdown.trigger`) render as `<button>` elements — pass button props directly instead of nesting a button inside
+- `x-ui.dropdown.trigger` accepts `variant`, `intent`, `size`, and other `x-ui.button` props
+- for links that should look like buttons, use `x-ui.button href` (renders as `<a>`) or `x-ui.link asButton` — never nest both
+- `x-ui.modal.close` inherits `x-ui.button` props — do not nest a button inside it. Pass text or an icon through the slot.
+
 ## Theming
 
 - prefer semantic tokens and documented utilities over hardcoded colors
