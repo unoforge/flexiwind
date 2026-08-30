@@ -15,7 +15,7 @@
 
     <x-md.paragraph>
         Each variant defines the visual treatment of the button.
-        Intents (such as primary, secondary, success, or danger) control semantic meaning.
+        Intents (such as primary, secondary, success, or destructive) control semantic meaning.
         Combine both to build a predictable button system.
     </x-md.paragraph>
 

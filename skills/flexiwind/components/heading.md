@@ -23,7 +23,7 @@ php artisan flexi:add heading
 | Prop | Description |
 | --- | --- |
 | level (1\|2\|3\|4\|5) | Heading level determining HTML tag (h1-h5) and size |
-| intent (title\|body\|muted\|primary\|secondary\|danger\|warning) | Semantic color intent |
+| intent (title\|body\|muted\|primary\|secondary\|destructive\|warning) | Semantic color intent |
 
 ## Guidance
 

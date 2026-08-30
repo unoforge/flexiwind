@@ -16,7 +16,7 @@
     data-trigger-strategy="{{ $trigger }}"
     {{ $attributes->class([
         'opacity-0 invisible translate-y-1.5 scale-99 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 fx-open:scale-100',
-        'text-sm border border-border shadow rounded-ui flex flex-col overflow-hidden text-fg ease-linear transition-transform',
+        'text-sm border border-border shadow rounded-ui flex flex-col overflow-hidden text-foreground ease-linear transition-transform',
         'ui-popper ui-card [--card-padding:--spacing(5)] [--card-radius:var(--radius-lg)]',
         'bg-popover' => !$gray,
         'bg-popover-gray' => $gray,

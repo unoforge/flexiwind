@@ -1,6 +1,6 @@
 <x-ui.card class="space-y-6">
     <div class="size-12 border border-border-strong border-dashed rounded d-flex-place-center">
-        <span class="iconify ph--acorn text-xl"></span>
+        <x-ui.icon name="ph--acorn" class="text-xl" />
     </div>
     <x-ui.card.content>
         <x-ui.card.title> Card Title</x-ui.card.title>

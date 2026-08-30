@@ -6,7 +6,7 @@
         <form class="size-full">
             <x-ui.modal.header padding-none class="relative w-full p-4 flex items-center gap-2">
                 <span class="ui-soft ui-soft-gray size-12 d-flex-place-center rounded-ui">
-                    <span class="iconify ph--cube text-xl"></span>
+                    <x-ui.icon name="ph--cube" class="text-xl" />
                 </span>
                 <div class="flex flex-col flex-1">
                     <x-ui.modal.title>Waitlist</x-ui.modal.title>
@@ -14,12 +14,12 @@
                 </div>
             </x-ui.modal.header>
             <x-ui.modal.body no-gutter
-                class="mb-2 bg-bg-surface border border-border ui-card [--card-radius:var(--radius-ui)] [--card-padding:--spacing(4)] shadow-sm  flex flex-col space-y-4">
+                class="mb-2 bg-card border border-border ui-card [--card-radius:var(--radius-ui)] [--card-padding:--spacing(4)] shadow-sm  flex flex-col space-y-4">
                 <x-ui.input type="email" label="Your Email" placeholder="johndoe@gmail.com" />
                 <x-ui.input type="text" label="Your Name" placeholder="johnkatmj@gmail.com" />
             </x-ui.modal.body>
             <x-ui.modal.footer
-                class="[--gutter:--spacing(2)] flex items-center justify-end text-xs text-fg-muted gap-2">
+                class="[--gutter:--spacing(2)] flex items-center justify-end text-xs text-muted-foreground gap-2">
                 <x-ui.button intent="primary" class="justify-center flex-1">
                     Join waitlist
                 </x-ui.button>

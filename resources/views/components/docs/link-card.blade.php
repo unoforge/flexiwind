@@ -3,8 +3,8 @@
 
 @php
     $className =
-        'flex flex-col w-full ui-card text-fg ease-linear duration-200 relative ' .
-        'hover:border-primary border border-gray-200 dark:border-gray-800/60 bg-bg hover:bg-bg-subtle ' .
+        'flex flex-col w-full ui-card text-foreground ease-linear duration-200 relative ' .
+        'hover:border-primary border border-gray-200 dark:border-gray-800/60 bg-background  hover:bg-muted ' .
         '[--card-padding:calc(var(--spacing,_0.25rem)_*_5)] [--card-radius:var(--radius-ui)]';
     $isImage = Str::startsWith($icon, '/') || Str::startsWith($icon, 'http');
     $icon = $icon ?? '';
@@ -24,20 +24,18 @@
                     class="h-5 w-auto">
             @endif
         @else
-            <span aria-hidden="true" class="flex iconify {{ $icon }} text-primary text-2xl"></span>
+            <x-ui.icon name="{{ $icon }}" class="flex text-primary text-2xl" />
         @endif
     </span>
 
     @if (Str::startsWith($href, 'http'))
-        <span aria-hidden="true"
-            class="absolute in-hover:text-primary top-(--card-padding) right-(--card-padding) text-fg-muted text-xs iconify ph--arrow-square-out"></span>
+        <x-ui.icon name="ph--arrow-square-out" class="absolute in-hover:text-primary top-(--card-padding) right-(--card-padding) text-muted-foreground text-xs" />
     @else
-        <span aria-hidden="true"
-            class="absolute in-hover:text-primary top-(--card-padding) right-(--card-padding) text-fg-muted text-xs iconify ph--arrow-up-right"></span>
+        <x-ui.icon name="ph--arrow-up-right" class="absolute in-hover:text-primary top-(--card-padding) right-(--card-padding) text-muted-foreground text-xs" />
     @endif
 
-    <h3 class="font-medium text-lg text-fg-title mt-4">{{ $title }}</h3>
-    <p class="text-sm text-fg-muted mt-1 leading-6">
+    <h3 class="font-medium text-lg text-foreground mt-4">{{ $title }}</h3>
+    <p class="text-sm text-muted-foreground mt-1 leading-6">
         {{ $description }}
     </p>
 </x-atoms.ui-link>

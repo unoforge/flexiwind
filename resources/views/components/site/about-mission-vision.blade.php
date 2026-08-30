@@ -7,27 +7,27 @@
 
         <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-strong/70 divide-dashed mt-14">
             <div class="p-3.5 sm:p-5 lg:p-6.5">
-                <span class="flex items-center text-sm text-fg-muted">
-                    <span aria-hidden="true" class="iconify ph--target mr-2"></span>
+                <span class="flex items-center text-sm text-muted-foreground">
+                    <x-ui.icon name="ph--target" class="mr-2" />
                     Mission
                 </span>
-                <h2 class="font-semibold text-fg-title text-xl md:text-2xl mt-4">
+                <h2 class="font-semibold text-foreground text-xl md:text-2xl mt-4">
                     Help teams turn ideas into shipping software through reusable systems and sharp execution.
                 </h2>
-                <p class="text-fg-muted text-sm mt-3 max-w-md">
+                <p class="text-muted-foreground text-sm mt-3 max-w-md">
                     We remove UI friction, standardize decisions, and provide building blocks teams can trust in
                     production.
                 </p>
             </div>
             <div class="p-3.5 sm:p-5 lg:p-6.5">
-                <span class="flex items-center text-sm text-fg-muted">
-                    <span aria-hidden="true" class="iconify ph--eye mr-2"></span>
+                <span class="flex items-center text-sm text-muted-foreground">
+                    <x-ui.icon name="ph--eye" class="mr-2" />
                     Vision
                 </span>
-                <h2 class="font-semibold text-fg-title text-xl md:text-2xl mt-4">
+                <h2 class="font-semibold text-foreground text-xl md:text-2xl mt-4">
                     Become the go-to execution partner for ambitious Laravel product teams.
                 </h2>
-                <p class="text-fg-muted text-sm mt-3 max-w-md">
+                <p class="text-muted-foreground text-sm mt-3 max-w-md">
                     We aim to set a high bar for modern web products across Africa and beyond, with practical systems
                     and measurable delivery impact.
                 </p>

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "settings-slideover",
+    "type": "registry:component",
+    "title": "Settings Slideover",
+    "description": "Slideover panel with workspace settings form.",
+    "registryDependencies": [
+        "button",
+        "divider",
+        "input",
+        "label",
+        "select",
+        "slideover",
+        "switch",
+        "textarea"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/slideover-form/settings-slideover.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/slideover-form/settings-slideover.blade.php",
+            "content": "<div class=\"w-full max-w-5xl mx-auto px-4 py-10 d-flex-place-center min-h-96\">\n    <x-ui.slideover.trigger slideover-id=\"settings-panel\" variant=\"outline\" intent=\"gray\">\n        <x-ui.icon name=\"ph--gear\" class=\"size-4 mr-1.5\" />\n        Open Settings\n    </x-ui.slideover.trigger>\n\n    <x-ui.slideover id=\"settings-panel\" position=\"right\" size=\"lg\">\n        <x-ui.slideover.content class=\"border-l border-border\">\n            <x-ui.slideover.header title=\"Workspace Settings\" description=\"Configure your workspace preferences and team permissions.\" />\n            <x-ui.slideover.body class=\"space-y-6 border-y border-border\">\n                <div class=\"space-y-4\">\n                    <h4 class=\"text-sm font-semibold text-foreground uppercase tracking-wider\">General</h4>\n                    <x-ui.input type=\"text\" label=\"Workspace Name\" placeholder=\"Acme Corp\" />\n                    <x-ui.textarea label=\"Description\" placeholder=\"A short description of your workspace...\" rows=\"3\" />\n                    <x-ui.select label=\"Default Language\">\n                        <x-ui.select.option value=\"en\" label=\"English\" selected />\n                        <x-ui.select.option value=\"fr\" label=\"French\" />\n                        <x-ui.select.option value=\"de\" label=\"German\" />\n                        <x-ui.select.option value=\"es\" label=\"Spanish\" />\n                    </x-ui.select>\n                </div>\n                <x-ui.divider class=\"before:bg-muted\" />\n                <div class=\"space-y-4\">\n                    <h4 class=\"text-sm font-semibold text-foreground uppercase tracking-wider\">Notifications</h4>\n                    <div class=\"space-y-3\">\n                        <x-ui.switch id=\"settings-email\" label=\"Email notifications\" checked />\n                        <x-ui.switch id=\"settings-push\" label=\"Push notifications\" checked />\n                        <x-ui.switch id=\"settings-slack\" label=\"Slack integration\" />\n                    </div>\n                </div>\n            </x-ui.slideover.body>\n            <x-ui.slideover.footer justify=\"end\" class=\"gap-3\">\n                <x-ui.slideover.close size=\"md\" variant=\"outline\" intent=\"gray\">Cancel</x-ui.slideover.close>\n                <x-ui.button size=\"md\">Save Changes</x-ui.button>\n            </x-ui.slideover.footer>\n        </x-ui.slideover.content>\n    </x-ui.slideover>\n</div>"
+        }
+    ]
+}

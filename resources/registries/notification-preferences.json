@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "notification-preferences",
+    "type": "registry:component",
+    "title": "Notification Preferences",
+    "description": "Slideover panel for managing notification preferences.",
+    "registryDependencies": [
+        "button",
+        "slideover",
+        "switch"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/slideover-form/notification-preferences.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/slideover-form/notification-preferences.blade.php",
+            "content": "<div class=\"w-full max-w-5xl mx-auto px-4 py-10 d-flex-place-center min-h-96\">\n    <x-ui.slideover.trigger slideover-id=\"notif-prefs\" variant=\"outline\" intent=\"gray\">\n        <x-ui.icon name=\"ph--bell-ringing\" class=\"size-4 mr-1.5\" />\n        Notification Preferences\n    </x-ui.slideover.trigger>\n\n    <x-ui.slideover id=\"notif-prefs\" position=\"right\" size=\"md\">\n        <x-ui.slideover.content class=\"border-l border-border\">\n            <x-ui.slideover.header title=\"Notification Preferences\" description=\"Choose what updates you want to receive.\" />\n            <x-ui.slideover.body class=\"space-y-1 border-y border-border divide-y divide-border\">\n                <div class=\"flex items-center justify-between py-4 first:pt-0\">\n                    <div>\n                        <p class=\"text-sm font-medium text-foreground\">Mentions</p>\n                        <p class=\"text-xs text-muted-foreground\">When someone mentions you</p>\n                    </div>\n                    <x-ui.switch id=\"pref-mentions\" size=\"sm\" bg=\"default\" track=\"title\" knob=\"bg\" checked />\n                </div>\n                <div class=\"flex items-center justify-between py-4\">\n                    <div>\n                        <p class=\"text-sm font-medium text-foreground\">Comments</p>\n                        <p class=\"text-xs text-muted-foreground\">Replies to your comments</p>\n                    </div>\n                    <x-ui.switch id=\"pref-comments\" size=\"sm\" bg=\"default\" track=\"title\" knob=\"bg\" checked />\n                </div>\n                <div class=\"flex items-center justify-between py-4\">\n                    <div>\n                        <p class=\"text-sm font-medium text-foreground\">Task updates</p>\n                        <p class=\"text-xs text-muted-foreground\">Status changes on assigned tasks</p>\n                    </div>\n                    <x-ui.switch id=\"pref-tasks\" size=\"sm\" bg=\"default\" track=\"title\" knob=\"bg\" checked />\n                </div>\n                <div class=\"flex items-center justify-between py-4\">\n                    <div>\n                        <p class=\"text-sm font-medium text-foreground\">Weekly digest</p>\n                        <p class=\"text-xs text-muted-foreground\">Summary of weekly activity</p>\n                    </div>\n                    <x-ui.switch id=\"pref-digest\" size=\"sm\" bg=\"default\" track=\"title\" knob=\"bg\" />\n                </div>\n                <div class=\"flex items-center justify-between py-4\">\n                    <div>\n                        <p class=\"text-sm font-medium text-foreground\">Marketing emails</p>\n                        <p class=\"text-xs text-muted-foreground\">Product updates and offers</p>\n                    </div>\n                    <x-ui.switch id=\"pref-marketing\" size=\"sm\" bg=\"default\" track=\"title\" knob=\"bg\" />\n                </div>\n            </x-ui.slideover.body>\n            <x-ui.slideover.footer justify=\"end\" class=\"gap-3\">\n                <x-ui.slideover.close size=\"md\" variant=\"outline\" intent=\"gray\">Reset</x-ui.slideover.close>\n                <x-ui.button size=\"md\">Save Preferences</x-ui.button>\n            </x-ui.slideover.footer>\n        </x-ui.slideover.content>\n    </x-ui.slideover>\n</div>"
+        }
+    ]
+}

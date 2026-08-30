@@ -32,7 +32,7 @@ php artisan flexi:add select
         <option value="NG">Nigeria</option>
     </x-ui.select>
     <x-ui.select inlined-label label="Country" label-class="min-w-max" name="select-country_inlined" id="select-country_inlined"
-        variant="flush" class="bg-bg-muted">
+        variant="flush" class="bg-muted">
         <option value="DRC">DR Congo</option>
         <option value="TZ">Tanzania</option>
         <option value="MA">Morocco</option>
@@ -53,15 +53,15 @@ php artisan flexi:add select
             <option value="MA">Morocco</option>
             <option value="NG">Nigeria</option>
         </x-ui.select>
-        <x-ui.input.leading absolute class="text-fg-muted">
-            <span aria-hidden="true" class="flex iconify ph--flag text-sm"></span>
+        <x-ui.input.leading absolute class="text-muted-foreground">
+            <x-ui.icon name="ph--flag" class="text-sm" />
         </x-ui.input.leading>
     </x-ui.input.group>
 
     <x-ui.input.group>
         <x-ui.input.leading aria-hidden="true"
-            class="py-2 px-3 text-fg-muted bg-bg-subtle rounded-l-ui">
-            <span aria-hidden="true" class="flex iconify ph--flag size-4"></span>
+            class="py-2 px-3 text-muted-foreground bg-muted rounded-l-ui">
+            <x-ui.icon name="ph--flag" class="size-4" />
         </x-ui.input.leading>
         <x-ui.select variant="unstyled" class="rounded-r-ui px-3" name="select-country_label_2" id="select-country_label_2">
             <option value="DRC">DR Congo</option>
@@ -84,8 +84,8 @@ php artisan flexi:add select
         <option value="NG">Nigeria</option>
     </x-ui.select>
     <span aria-hidden="true"
-        class="absolute right-3 inset-y-px text-fg-muted pointer-events-none flex items-center">
-        <span class="flex iconify ph--caret-up-down text-sm"></span>                             
+        class="absolute right-3 inset-y-px text-muted-foreground pointer-events-none flex items-center">
+        <x-ui.icon name="ph--caret-up-down" class="text-sm" />                             
     </span>
 </div>
 ```

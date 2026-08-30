@@ -90,12 +90,12 @@ new class extends Component {
         <div
             class="-mt-4.5 px-3.5 sm:px-8 md:px-16 lg:px-8 xl:px-0 mx-auto w-full max-w-3xl lg:max-w-5xl overflow-auto flex items-center gap-2">
             <div
-                class="h-9 bg-bg-muted/60 backdrop-blur-sm flex items-center w-max ui-card [--card-padding:--spacing(0.5)] [--card-radius:var(--radius-ui)]">
+                class="h-9 bg-muted/60 backdrop-blur-sm flex items-center w-max ui-card [--card-padding:--spacing(0.5)] [--card-radius:var(--radius-ui)]">
                 @foreach ($groups as $group)
                     <button wire:click="selectGroup('{{ $group['id'] }}')" wire:key="group-{{ $group['id'] }}"
                         data-state="{{ $selectedGroup === $group['id'] ? 'active' : 'inactive' }}"
-                        class="text-sm cursor-pointer text-fg-muted fx-active:text-fg-title px-2 h-full flex items-center fx-active:bg-bg fx-active:ring-border/50 ring-1 ring-transparent inner-radius">
-                        <span aria-hidden="true" class="iconify size-3.5 {{ $group['icon'] }} mr-1"></span>
+                        class="text-sm cursor-pointer text-muted-foreground fx-active:text-foreground px-2 h-full flex items-center fx-active:bg-background  fx-active:ring-border/50 ring-1 ring-transparent inner-radius">
+                        <x-ui.icon name="{{ $group['icon'] }}" class="size-3.5 mr-1" />
                         <span>
                             {{ $group['text'] }}
                         </span>
@@ -103,7 +103,7 @@ new class extends Component {
                 @endforeach
             </div>
             <div class="flex items-center h-px relative flex-1 bg-linear-to-r from-border-strong/70">
-                <span class="size-2 rounded-ui bg-bg border border-border-strong/70"></span>
+                <span class="size-2 rounded-ui bg-background  border border-border-strong/70"></span>
             </div>
         </div>
         <ul class="pb-10 px-4 sm:px-6 lg:px-8 mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-3.5 gap-y-6">

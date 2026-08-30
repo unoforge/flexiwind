@@ -7,7 +7,7 @@
 @endphp
 
 <x-layouts.base
-    body-class="bg-bg lg:bg-gray-50/50 dark:lg:bg-bg "
+    body-class="bg-background  lg:bg-gray-50/50 dark:lg:bg-background  "
     :seo="$seo"
     :script-entries="['resources/js/app.js', 'resources/js/flexilla.js', 'resources/js/search.js', 'resources/js/docs.js']"
 >

@@ -1,8 +1,8 @@
 <main class="flex min-h-screen justify-center items-center px-5 sm:px-10 lg:px-0 py-5">
     <x-ui.card size="none" class="rounded-ui p-5 sm:p-8 max-w-md">
         <div class="text-center mb-6">
-            <h2 class="text-xl font-semibold text-fg-title">Sign In</h2>
-            <p class="text-fg-muted text-sm mt-2">
+            <h2 class="text-xl font-semibold text-foreground">Sign In</h2>
+            <p class="text-muted-foreground text-sm mt-2">
                 Welcome back! Please sign in to your account.
             </p>
         </div>
@@ -21,7 +21,7 @@
             </x-ui.button>
         </form>
         <div class="mt-6 text-center">
-            <p class="text-sm text-fg-muted">
+            <p class="text-sm text-muted-foreground">
                 Don't have an account?
                 <x-ui.link href="#" class="text-primary">Sign up</x-ui.link>
             </p>

@@ -30,7 +30,7 @@ php artisan flexi:add range
 
 ## Guidance
 
-- Use `class="text-{intent}"` to color the range slider (e.g., `text-primary`, `text-danger`).
+- Use `class="text-{intent}"` to color the range slider (e.g., `text-primary`, `text-destructive`).
 - Use `step` attribute for discrete values.
 - The component is a styled native `<input type="range">`.
 

@@ -20,7 +20,7 @@ Flexiwind has three layers that work together:
 
 2. **Blocks** — Pre-built sections (login forms, sidebars, KPIs, hero sections, etc.) composed from components. Listed in `config/blocks.php`.
 
-3. **Theme** — CSS variable tokens (`--primary`, `--bg`, `--fg`, `--border`, etc.) consumed through Tailwind v4 `@theme` utilities (`bg-primary`, `text-fg`, `border-border`).
+3. **Theme** — CSS variable tokens (`--primary`, `--background`, `--foreground`, `--title-foreground`, `--border`, etc.) consumed through Tailwind v4 `@theme` utilities (`bg-primary`, `text-foreground`, `text-title-foreground`, `border-border`).
 
 ## Source of truth
 
@@ -59,8 +59,10 @@ Use the files in this skill first. The public docs site is also available at `ht
 8. The `dissmissible` component name is intentionally spelled with double-s in the codebase and CLI slug. Use that spelling exactly.
 
 9. Follow component composition safety rules:
-   - Trigger components (`x-ui.modal.trigger`, `x-ui.slideover.trigger`, `x-ui.dropdown.trigger`) already render as `<button>` elements. Do **not** nest another `<x-ui.button>` or `<button>` inside them — they accept button props directly.
-   - `x-ui.modal.close` inherits `x-ui.button` props — do not nest a `<button>` or `<x-ui.button>` inside it. Passing text or an icon is fine.
+   - Trigger components (`x-ui.modal.trigger`, `x-ui.slideover.trigger`, `x-ui.dropdown.trigger`, `x-ui.popover.trigger`, `x-ui.tooltip.trigger`) already render as `<button>` elements. Do **not** nest another `<x-ui.button>` or `<button>` inside them — they accept button props directly.
+   - Triggers must be placed **outside** their overlay wrapper (`<x-ui.modal>`, `<x-ui.slideover>`). These wrappers are invisible when closed — a trigger inside would be unclickable.
+   - Trigger attribute names: `modal-id`, `slide-over-id` (not `slideover-id`), `dropdown-id`, `popover-id`, `tooltip-id`.
+   - `x-ui.modal.close` and `x-ui.slideover.close` inherit `x-ui.button` props — do not nest a `<button>` or `<x-ui.button>` inside them. Passing text or an icon is fine.
    - `x-ui.dropdown.trigger` accepts button props (`variant`, `intent`, `size`, etc.) — pass them directly to the trigger rather than wrapping in a button.
    - Do not nest `<x-ui.link>` inside `<x-ui.button>` or vice versa. If you need a link that looks like a button, use `x-ui.button href` or `x-ui.link asButton`.
    - `x-ui.link` renders an `<a>` tag by default — do not put interactive elements (buttons, links) inside it.
@@ -119,6 +121,7 @@ Use the files in this skill first. The public docs site is also available at `ht
 |-----------|---------|-------|
 | Card | `flexi:add card` | `x-ui.card` |
 | Divider | `flexi:add divider` | `x-ui.divider` |
+| Field | `flexi:add field` | `x-ui.field` |
 | Aspect Ratio | `flexi:add aspect` | `x-ui.aspect` |
 
 ### Navigation
@@ -169,7 +172,7 @@ Use the files in this skill first. The public docs site is also available at `ht
 ### Button
 ```blade
 <x-ui.button variant="solid" intent="primary" size="md">
-    <span aria-hidden="true" class="flex iconify ph--atom mr-1.5"></span>
+    <x-ui.icon name="ph--atom" class="mr-1.5" />
     With Icon
 </x-ui.button>
 ```
@@ -178,8 +181,8 @@ Use the files in this skill first. The public docs site is also available at `ht
 ```blade
 <x-ui.input.group>
     <x-ui.input variant="unstyled" type="email" placeholder="you@example.com" class="ps-9 px-3" />
-    <x-ui.input.leading absolute class="text-fg text-sm">
-        <span class="flex size-4 iconify ph--at"></span>
+    <x-ui.input.leading absolute class="text-foreground text-sm">
+        <x-ui.icon name="ph--at" class="size-4" />
     </x-ui.input.leading>
 </x-ui.input.group>
 ```
@@ -187,15 +190,13 @@ Rules: `variant="unstyled"` inside group, never pass `label` to grouped input.
 
 ### Modal
 ```blade
-<x-ui.modal id="edit-profile">
 <x-ui.modal.trigger modal-id="edit-profile" variant="solid" intent="primary">
     Open
 </x-ui.modal.trigger>
+
+<x-ui.modal id="edit-profile">
     <x-ui.modal.content size="md">
-        <x-ui.modal.header>
-            <x-ui.modal.title>Title</x-ui.modal.title>
-            <x-ui.modal.close/>
-        </x-ui.modal.header>
+        <x-ui.modal.header title="Title" description="Optional description." />
         <x-ui.modal.body>Content</x-ui.modal.body>
         <x-ui.modal.footer>
             <x-ui.button>Save</x-ui.button>
@@ -203,7 +204,7 @@ Rules: `variant="unstyled"` inside group, never pass `label` to grouped input.
     </x-ui.modal.content>
 </x-ui.modal>
 ```
-Requires Flexilla JS: `npm i @flexilla/modal`. Import plugin in Alpine.
+The trigger **must be outside** `<x-ui.modal>` — the dialog is hidden when closed. Requires Flexilla JS: `npm i @flexilla/modal`. Import plugin in Alpine.
 
 ### Card
 ```blade
@@ -282,31 +283,49 @@ Block preview URLs follow the pattern: `https://flexiwind.unoforge.com/preview-u
 | `info` | Informational messages |
 | `success` | Positive states |
 | `warning` | Caution states |
-| `danger` | Destructive actions |
+| `destructive` | Destructive actions |
 | `gray` | Neutrals and backgrounds |
 
 ### Token Families
 
-- Background: `bg-bg`, `bg-bg-subtle`, `bg-bg-surface`, `bg-bg-muted`, `bg-card`, `bg-card-gray`
-- Foreground: `text-fg-title`, `text-fg`, `text-fg-muted`
-- Border: `border-border-strong`, `border-border`, `border-border-subtle`, `border-border-input`
+- Background: `bg-background `, `bg-muted`, `bg-card`, `surface-background`
+- Foreground: `text-foreground`, `text-title-foreground`, `text-muted-foreground`
+- Border: `border-border`, `border-input`, `border-border-strong`, `border-border-card`
 
 ### CSS Setup
 
 ```css
 /* app.css */
 @import "tailwindcss";
+@reference "./flexiwind/base.css";
+@reference "./flexiwind/form.css";
+@reference "./flexiwind/button.css";
+@reference "./flexiwind/ui.css";
+@reference "./flexiwind/utils.css";
+@reference "./flexiwind/intents.css";
 
 @theme inline {
     --color-primary: var(--primary);
     --color-secondary: var(--secondary);
-    --color-fg: var(--fg);
-    --color-bg: var(--bg);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-title-foreground: var(--title-foreground);
     --color-border: var(--border);
     --radius-ui: var(--ui-radius);
     --radius-card: var(--card-radius);
 }
 ```
+
+## Requirements
+
+| Dependency | Minimum | Recommended |
+|---|---|---|
+| PHP | `^8.3` | `^8.4` |
+| Laravel | `^13.29` | `^13.29` |
+| Livewire | `^4.4` | `^4.4` |
+| Tailwind CSS | v4 | v4 |
+
+> **As of 2026-08-29:** Laravel 13.29.0, Livewire 4.4.2. Update `composer.json` constraints accordingly before running `composer update`.
 
 ## CLI Reference
 
@@ -342,6 +361,7 @@ Do not load everything at once. Read only the files relevant to the current task
 ## Quick Start (CLI)
 
 ```bash
+# Requires PHP ^8.4, Laravel ^13.29, Livewire ^4.4, Tailwind CSS v4
 composer require --dev unoforge/flexiwind-cli
 php artisan flexi:init
 php artisan flexi:add flexiwind-base

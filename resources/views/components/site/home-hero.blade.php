@@ -10,22 +10,22 @@
             <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
             <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
             <span
-                class="absolute top-8.5 -left-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                class="absolute top-8.5 -left-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
             <span
-                class="absolute top-12.5 left-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                class="absolute top-12.5 left-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
             <span
-                class="absolute top-8.5 -right-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                class="absolute top-8.5 -right-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
             <span
-                class="absolute top-12.5 right-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                class="absolute top-12.5 right-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
 
             <span
-                class="absolute bottom-7 -left-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                class="absolute bottom-7 -left-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
 
             <svg width="401" height="401" viewBox="0 0 401 401" fill="none"
                 class="absolute right-4 size-40 md:size-56 lg:size-64 top-13.5" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M0 0H401V401H291.912C257.067 401 232.196 365.878 238.503 331.609C246.986 285.517 249.519 227.824 220 195.989C187.027 160.428 121.321 164.958 70.2625 175.681C35.8141 182.915 0 157.979 0 122.78V0Z"
-                    fill="#F5F0F0" class="fill-bg-muted/40"/>
+                    fill="#F5F0F0" class="fill-muted/40"/>
             </svg>
 
 
@@ -34,29 +34,29 @@
     <div class="relative z-5 flex flex-col px-3.5 sm:px-4 pt-16 md:pt-20 pb-20 md:pb-28">
         <div class="sm:max-w-4xl sm:mx-auto w-full">
             <a href="#"
-                class="rounded-ui text-fg bg-bg border border-border-strong/60 backdrop-saturate-50 text-sm pl-2 pr-1 py-1 flex w-max">
+                class="rounded-ui text-foreground bg-background  border border-border-strong/60 backdrop-saturate-50 text-sm pl-2 pr-1 py-1 flex w-max">
                 Introducing Flexiwind v1
                 <span
-                    class="ml-2 w-max py-0.5 px-1 text-xs overflow-hidden rounded-[calc(var(--radius-ui)-3px)] bg-bg-muted/80 flex items-center">
-                    <span aria-hidden="true" class="iconify ph--arrow-right"></span>
+                    class="ml-2 w-max py-0.5 px-1 text-xs overflow-hidden rounded-[calc(var(--radius-ui)-3px)] bg-muted/80 flex items-center">
+                    <x-ui.icon name="ph--arrow-right" />
                 </span>
             </a>
             <h1
-                class="mt-6.5 font-bold text-3xl sm:text-4xl/tight md:text-5xl/[1.2] max-w-xl text-balance text-transparent bg-clip-text bg-linear-to-br from-fg-title to-fg-muted/60 dark:via-fg">
+                class="mt-6.5 font-bold text-3xl sm:text-4xl/tight md:text-5xl/[1.2] max-w-xl text-balance text-transparent bg-clip-text bg-linear-to-br from-foreground to-muted-foreground/60 dark:via-foreground">
                 Craft and scale modern apps with composable TALL UI blocks
             </h1>
-            <p class="max-w-md text-fg-muted text-sm md:text-base mt-6.5">
+            <p class="max-w-md text-muted-foreground text-sm md:text-base mt-6.5">
                 Production-ready UI blocks and components designed for Laravel Artisans. Built on the TALL Stack to help
                 you move faster, stay consistent, and ship with confidence.
             </p>
             <div class="flex flex-wrap gap-3 mt-9">
                 <x-ui.button href="/blocks" size="sm" class="sm:btn-md">
-                    <span aria-hidden="true" class="iconify ph--cube-duotone opacity-80 mr-2 size-3.5"></span>
+                    <x-ui.icon name="ph--cube-duotone" class="opacity-80 mr-2 size-3.5" />
                     Start Building
                 </x-ui.button>
 
                 <x-ui.button href="/components/button" variant="outline" size="sm" class="sm:btn-md">
-                    <span aria-hidden="true" class="iconify ph--diamonds-four-duotone mr-2 size-3.5"></span>
+                    <x-ui.icon name="ph--diamonds-four-duotone" class="mr-2 size-3.5" />
                     Components
                 </x-ui.button>
             </div>

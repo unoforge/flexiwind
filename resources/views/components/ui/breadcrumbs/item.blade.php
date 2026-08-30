@@ -2,7 +2,7 @@
     'wrapper' => '',
     'href' => null,
     'active' => false,
-    'activeClass' => 'text-fg-title font-medium',
+    'activeClass' => 'text-foreground font-medium',
     'class' => '',
     'separator' => 'ph--caret-right',
     'separatorNotIcon' => false,
@@ -26,7 +26,7 @@
 <li class="flex items-center {{ $spacing_ }} ">
     @if ($href && !$active)
         <a href="{{ $href }}"
-            {{ $attributes->class(['flex items-center ease-linear hover:text-fg-subtitle', $class]) }}>
+            {{ $attributes->class(['flex items-center ease-linear hover:text-foreground', $class]) }}>
             @if ($text)
                 {{ $text }}
             @else

@@ -16,7 +16,7 @@
             "path": "resources/views/components/ui/tabs.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/tabs.blade.php",
-            "content": "@props(['orientation' => 'vertical'])\n\n<div x-data x-f-tabs data-app-tabs role=\"tab\" {{ $attributes->class([\n    'flex flex-col' => $orientation === \"vertical\",\n    'flex flex-row' => $orientation === \"horizontal\"\n]) }}>\n    {{ $slot }}\n</div>"
+            "content": "@props(['orientation' => 'vertical'])\n\n<div x-data x-f-tabs data-app-tabs role=\"tablist\" {{ $attributes->class([\n    'flex flex-col' => $orientation === \"vertical\",\n    'flex flex-row' => $orientation === \"horizontal\"\n]) }}>\n    {{ $slot }}\n</div>"
         },
         {
             "path": "resources/views/components/ui/tabs/list-wrapper.blade.php",
@@ -28,7 +28,7 @@
             "path": "resources/views/components/ui/tabs/list.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/tabs/list.blade.php",
-            "content": "@props(['unStyled' => false])\n\n@php\n\n@endphp\n\n<ul data-tab-list role=\"tablist\"\n    {{ $attributes->class([\n        'pt-2 mb-2 border-b border-border flex items-center gap-5 text-fg-muted' => !$unStyled,\n    ]) }}>\n    {{ $slot }}\n</ul>\n"
+            "content": "@props(['unStyled' => false])\n\n@php\n\n@endphp\n\n<ul data-tab-list role=\"tablist\"\n    {{ $attributes->class([\n        'pt-2 mb-2 border-b border-border flex items-center gap-5 text-muted-foreground' => !$unStyled,\n    ]) }}>\n    {{ $slot }}\n</ul>\n"
         },
         {
             "path": "resources/views/components/ui/tabs/panel-wrapper.blade.php",
@@ -46,7 +46,7 @@
             "path": "resources/views/components/ui/tabs/trigger.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/tabs/trigger.blade.php",
-            "content": "@props(['wrapperClass' => '', 'id', 'isDisabled' => false, 'unStyled' => false])\n<li role=\"presentation\" class=\"{{ $wrapperClass }}\">\n    <button data-tabs-trigger data-target=\"{{ $id }}\" @if ($isDisabled) disabled @endif\n        {{ $attributes->class([\n            'disabled:cursor-not-allowed disabled:opacity-80',\n            'flex items-center pb-2.5 border-b-3 border-transparent fx-active:text-fg-title fx-active:border-fg-title' => !$unStyled,\n        ]) }}>\n        {{ $slot }}\n    </button>\n</li>\n"
+            "content": "@props(['wrapperClass' => '', 'id', 'isDisabled' => false, 'unStyled' => false])\n<li role=\"presentation\" class=\"{{ $wrapperClass }}\">\n    <button data-tabs-trigger data-target=\"{{ $id }}\" @if ($isDisabled) disabled @endif\n        {{ $attributes->class([\n            'disabled:cursor-not-allowed disabled:opacity-80',\n            'flex items-center pb-2.5 border-b-3 border-transparent fx-active:text-foreground fx-active:border-foreground' => !$unStyled,\n        ]) }}>\n        {{ $slot }}\n    </button>\n</li>\n"
         },
         {
             "path": "resources/js/plugins/tabs.js",

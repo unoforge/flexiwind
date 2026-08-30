@@ -65,11 +65,11 @@
 @endphp
 
 <x-ui.sidebar-wrapper
-    class="w-64 bg-bg lg:bg-gray-50/50 lg:dark:bg-bg border-r border-border flex-col flex z-60 lg:z-20 fixed left-0 transition-all duration-200 -translate-x-full invisible fx-open:visible fx-open:translate-x-0 lg:translate-x-0 lg:transition-none lg:visible transform h-dvh">
+    class="w-64 bg-background  lg:bg-muted/80 border-r border-border flex-col flex z-60 lg:z-20 fixed left-0 transition-all duration-200 -translate-x-full invisible fx-open:visible fx-open:translate-x-0 lg:translate-x-0 lg:transition-none lg:visible transform h-dvh">
     <div class="h-14 flex items-center px-3 border-b border-border-strong/60">
         <div class="w-full flex items-center gap-2.5 py-1.5 group text-left">
             <div
-                class="size-8 bg-fg-title text-bg rounded-ui d-flex-place-center shadow-sm transition-colors duration-300">
+                class="size-8 bg-foreground text-background rounded-ui d-flex-place-center shadow-sm transition-colors duration-300">
                 <svg aria-hidden="true" width="488" height="488" class="size-5" viewBox="0 0 488 488" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_13_164)">
@@ -80,7 +80,7 @@
                             d="M483.659 249.5C483.659 274.629 436.788 344.5 411.659 344.5C386.53 344.5 392.659 274.629 392.659 249.5C392.659 224.371 413.03 204 438.159 204C463.288 204 483.659 224.371 483.659 249.5Z"
                             fill="currentColor" class=""></path>
                         <circle cx="243.429" cy="243.759" r="110" transform="rotate(48.3973 243.429 243.759)"
-                            fill="currentColor" stroke="white" stroke-width="80" class="stroke-fg-title"></circle>
+                            fill="currentColor" stroke="white" stroke-width="80" class="stroke-foreground"></circle>
                         <path
                             d="M309 71C309 96.129 212.629 101 187.5 101C162.371 101 142 80.629 142 55.5C142 30.371 162.371 10 187.5 10C212.629 10 309 45.871 309 71Z"
                             fill="currentColor" class=""></path>
@@ -90,21 +90,21 @@
                     </g>
                     <defs>
                         <clipPath id="clip0_13_164">
-                            <rect width="488" height="488" fill="currentColor" class="text-bg"></rect>
+                            <rect width="488" height="488" fill="currentColor" class="text-background"></rect>
                         </clipPath>
                     </defs>
                 </svg>
             </div>
             <div class="flex-1 min-w-0">
-                <p class="text-sm font-medium text-fg-title truncate">
+                <p class="text-sm font-medium text-foreground truncate">
                     UnoFlex
                 </p>
-                <p class="text-[10px] text-fg-muted/60 font-medium truncate">
+                <p class="text-[10px] text-muted-foreground/60 font-medium truncate">
                     Sales
                 </p>
             </div>
             <x-ui.button variant="ghost" size="sm" icon-only aria-label="Resize sidebar" data-toggle-sidebar-size>
-                <span class="flex iconify ph--caret-up-down"></span>  
+                <x-ui.icon name="ph--caret-up-down" class="flex" />  
             </x-ui.button>
         </div>
     </div>
@@ -118,13 +118,13 @@
         <x-ui.button variant="ghost" size="none"
             class="gap-3 w-full px-2 py-2 text-sm font-medium rounded-ui transition-colors">
             <div
-                class="size-6 rounded-full bg-linear-to-tr from-bg-muted to-bg-surface d-flex-place-center text-fg-muted font-semibold ring-1 ring-bg">
+                class="size-6 rounded-full bg-linear-to-tr from-muted to-card d-flex-place-center text-muted-foreground font-semibold ring-1 ring-background">
                 JM
             </div>
             <div class="text-left flex-1">
-                <p class="text-xs font-medium text-fg-title truncate">Johnkat MJ</p>
+                <p class="text-xs font-medium text-foreground truncate">Johnkat MJ</p>
             </div>
-            <span aria-hidden="true" class="iconify size-3.5 opacity-80 ph--caret-up"></span>
+            <x-ui.icon name="ph--caret-up" class="size-3.5 opacity-80" />
         </x-ui.button>
     </div>
 </x-ui.sidebar-wrapper>

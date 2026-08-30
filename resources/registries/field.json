@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "field",
+    "type": "registry:component",
+    "title": "Field",
+    "description": "A form field wrapper with label, hint, error message, and required indicator.",
+    "files": [
+        {
+            "path": "resources/views/components/ui/field.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/field.blade.php",
+            "content": "@props([\n    'label' => null,\n    'for' => null,\n    'hint' => null,\n    'error' => null,\n    'required' => false,\n    'labelClass' => '',\n    'class' => '',\n])\n\n<div {{ $attributes->merge(['class' => \"flex flex-col space-y-2 {$class}\"]) }}>\n    @if ($label)\n        <x-ui.label for=\"{{ $for }}\" class=\"{{ $labelClass }}\">\n            {{ $label }}\n            @if ($required)\n                <span class=\"text-destructive ms-0.5\">*</span>\n            @endif\n        </x-ui.label>\n    @endif\n\n    {{ $slot }}\n\n    @if ($hint && !$error)\n        <p class=\"text-xs text-muted-foreground\">{{ $hint }}</p>\n    @endif\n\n    @if ($error && is_string($error))\n        <p class=\"text-xs text-destructive\">{{ $error }}</p>\n    @endif\n</div>\n"
+        }
+    ]
+}

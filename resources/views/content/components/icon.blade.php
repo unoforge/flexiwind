@@ -28,7 +28,7 @@
             <x-ui.table.cell><x-docs.table-description>Predefined size for the icon.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell><x-docs.inline-code no-wrap text="intent" /> (fg|muted|primary|secondary|success|warning|danger)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="intent" /> (fg|muted|primary|secondary|success|warning|destructive)</x-ui.table.cell>
             <x-ui.table.cell><x-docs.table-description>Semantic color intent for the icon.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>

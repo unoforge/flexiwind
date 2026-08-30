@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="bg-bg" data-palette="default">
+<html lang="en" class="bg-background " data-palette="default">
 
 <head>
     <meta charset="UTF-8" />

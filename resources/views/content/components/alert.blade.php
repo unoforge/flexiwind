@@ -42,8 +42,8 @@
             <x-ui.table.cell>'gray'</x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    The color intent of the alert. Common intents include 'primary', 'success', 'warning', 'danger', and
-                    'info'
+                    The color intent of the alert. Common intents include 'primary', 'success', 'warning', 'destructive', and
+                    'gray'
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>

@@ -9,13 +9,13 @@
                 <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
                 <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
                 <span
-                    class="absolute -top-4.5 -left-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                    class="absolute -top-4.5 -left-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                 <span
-                    class="absolute -top-1 left-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                    class="absolute -top-1 left-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                 <span
-                    class="absolute -top-4.5 right-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                    class="absolute -top-4.5 right-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                 <span
-                    class="absolute -top-1 -right-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                    class="absolute -top-1 -right-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
             </div>
         </div>
         <x-atoms.site-section-header class="relative" subtitle="Just Ship It"
@@ -27,9 +27,9 @@
             <x-ui.tabs.list-wrapper
                 class="-mt-1.5 px-3.5 sm:px-8 md:px-16 lg:px-8 xl:px-0 mx-auto w-full max-w-3xl lg:max-w-5xl overflow-auto flex items-center gap-2">
                 <x-ui.tabs.list unStyled
-                    class="h-9 bg-bg-muted/60 flex items-center w-max ui-card [--card-padding:--spacing(0.5)] [--card-radius:var(--radius-ui)]">
+                    class="h-9 bg-muted/60 flex items-center w-max ui-card [--card-padding:--spacing(0.5)] [--card-radius:var(--radius-ui)]">
                     <x-ui.tabs.trigger unStyled id="tab-app-blocks" wrapper-class="flex h-full"
-                        class="text-sm text-fg-muted fx-active:text-fg-title px-3 h-full flex items-center fx-active:bg-bg fx-active:ring-border/50 ring-1 ring-transparent inner-radius">
+                        class="text-sm text-muted-foreground fx-active:text-foreground px-3 h-full flex items-center fx-active:bg-background  fx-active:ring-border/50 ring-1 ring-transparent inner-radius">
                         <span>
 
                         </span>
@@ -38,7 +38,7 @@
                         </span>
                     </x-ui.tabs.trigger>
                     <x-ui.tabs.trigger unStyled is-disabled id="tab-marketing" wrapper-class="flex h-full"
-                        class="text-sm text-fg-muted fx-active:text-fg-title px-3 h-full flex items-center fx-active:bg-bg fx-active:ring-border/50 ring-1 ring-transparent inner-radius">
+                        class="text-sm text-muted-foreground fx-active:text-foreground px-3 h-full flex items-center fx-active:bg-background  fx-active:ring-border/50 ring-1 ring-transparent inner-radius">
                         <span>
 
                         </span>
@@ -47,7 +47,7 @@
                         </span>
                     </x-ui.tabs.trigger>
                     <x-ui.tabs.trigger unStyled is-disabled id="tab-template" wrapper-class="flex h-full"
-                        class="text-sm text-fg-muted fx-active:text-fg-title px-3 h-full flex items-center fx-active:bg-bg fx-active:ring-border/50 ring-1 ring-transparent inner-radius">
+                        class="text-sm text-muted-foreground fx-active:text-foreground px-3 h-full flex items-center fx-active:bg-background  fx-active:ring-border/50 ring-1 ring-transparent inner-radius">
                         <span>
 
                         </span>
@@ -57,7 +57,7 @@
                     </x-ui.tabs.trigger>
                 </x-ui.tabs.list>
                 <div class="flex items-center h-px relative flex-1 bg-linear-to-r from-border-strong/70">
-                    <span class="size-2 rounded-ui bg-bg border border-border-strong/70"></span>
+                    <span class="size-2 rounded-ui bg-background  border border-border-strong/70"></span>
                 </div>
             </x-ui.tabs.list-wrapper>
             <x-ui.tabs.panel-wrapper class="px-4 sm:px-6 lg:px-8 mt-14">
@@ -70,7 +70,7 @@
                             </li>
                         @endforeach
                         <div
-                            class="absolute bottom-0 inset-x-0 pb-4 pt-12 h-24 bg-linear-to-t from-bg flex justify-center">
+                            class="absolute bottom-0 inset-x-0 pb-4 pt-12 h-24 bg-linear-to-t from-background flex justify-center">
                             <x-ui.button href="/blocks" aria-label="Link to all blocks page" intent="neutral">
                                 Browse All
                             </x-ui.button>

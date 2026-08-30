@@ -7,8 +7,8 @@
             {{ $subtitle }}
         </span>
     @endif
-    <h2 class="font-semibold text-fg-title text-3xl sm:text-4xl max-w-xl {{ $subtitle ? 'mt-2' : '' }}">{{ $title }}
+    <h2 class="font-semibold text-foreground text-3xl sm:text-4xl max-w-xl {{ $subtitle ? 'mt-2' : '' }}">{{ $title }}
     </h2>
-    <p class="text-fg-muted max-w-md text-sm mt-2.5">{{ $description }}</p>
+    <p class="text-muted-foreground max-w-md text-sm mt-2.5">{{ $description }}</p>
     {{ $slot }}
 </div>

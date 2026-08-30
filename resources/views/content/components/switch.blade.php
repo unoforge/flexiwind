@@ -69,7 +69,7 @@
     <x-docs.table>
         <x-ui.table.row>
             <x-ui.table.cell>
-                <x-docs.inline-code no-wrap text="--knob-bg" />
+                <x-docs.inline-code no-wrap text="--knob-background" />
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>

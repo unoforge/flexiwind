@@ -1,7 +1,7 @@
 ## Demo
 
 ```html
-<x-ui.link underlined href="#" class="text-fg hover:text-fg-title">
+<x-ui.link underlined href="#" class="text-foreground hover:text-primary">
     Profile Page
 </x-ui.link>
 ```
@@ -37,7 +37,7 @@ php artisan flexi:add link
 </x-ui.link>
 <x-ui.link href="#" asButton variant="soft" intent="gray">
     Click me
-    <span aria-hidden="true" class="flex iconify ph--caret-right text-sm"></span>
+    <x-ui.icon name="ph--caret-right" class="text-sm" />
 </x-ui.link>
 ```
 

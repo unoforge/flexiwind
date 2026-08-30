@@ -2,14 +2,13 @@
 
     <x-md.h2>Prerequisites</x-md.h2>
     <x-md.paragraph>
-        Flexiwind color tokens are defined with CSS variables and consumed through Tailwind utilities.
-        Ensure your main stylesheet (usually <x-docs.inline-code text="app.css" />) is loaded globally,
-        and load Flexiwind token definitions before custom overrides.
+        Define semantic color variables in your CSS, then register them in <x-docs.inline-code text="@theme" />
+        so Tailwind utilities like <x-docs.inline-code text="bg-primary" /> and <x-docs.inline-code text="text-foreground" /> are generated.
     </x-md.paragraph>
 
     <x-md.paragraph>
         Avoid hardcoded hex values in components.
-        Use semantic tokens so theme updates happen in one place.
+        Change token values in one place and all components update automatically.
     </x-md.paragraph>
 
     <x-md.h2>Theme Modes</x-md.h2>
@@ -58,18 +57,17 @@
 
     <x-md.h2>Variable Tokens</x-md.h2>
     <x-md.paragraph>
-        Start from the mode that matches your project, then adjust only semantic token values.
-        Keep token names stable to avoid breaking class usage in templates.
+        These are the CSS variables your theme defines. Update the values to match your brand,
+        but keep token names stable so utility usage in templates stays unchanged.
     </x-md.paragraph>
 
     <livewire:base.load-code :name="['css-variables-color-both', 'css-variables-color-light', 'css-variables-color-dark']" />
 
     <x-md.h2>Theme Settings</x-md.h2>
     <x-md.paragraph>
-        Register color tokens in <x-docs.inline-code text="@theme" /> so utilities are generated consistently.
-        Once registered, use classes like <x-docs.inline-code text="bg-primary" />,
-        <x-docs.inline-code text="text-fg" />, and <x-docs.inline-code text="border-border" />
-        throughout your UI.
+        Register your tokens in <x-docs.inline-code text="@theme" /> so Tailwind generates utility classes for them.
+        This connects your CSS variables to classes like <x-docs.inline-code text="bg-primary" />,
+        <x-docs.inline-code text="text-foreground" />, and <x-docs.inline-code text="border-border" />.
     </x-md.paragraph>
 
     <livewire:base.load-code :name="['css-variables-colors']" />

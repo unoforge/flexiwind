@@ -24,7 +24,7 @@ php artisan flexi:add icon
 | --- | --- |
 | name (string) | Iconify icon class name (e.g., ph--house, ph--user) |
 | size (xs\|sm\|md\|lg\|xl\|2xl) | Predefined size |
-| intent (fg\|muted\|primary\|secondary\|success\|warning\|danger) | Semantic color intent |
+| intent (fg\|muted\|primary\|secondary\|success\|warning\|destructive) | Semantic color intent |
 | class (string) | Additional CSS classes |
 
 ## Guidance

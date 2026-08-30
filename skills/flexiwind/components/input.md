@@ -3,7 +3,7 @@
 ```html
 <form class="space-y-4 w-full">
     <x-ui.input placeholder="Start typing..."/>
-    <x-ui.input placeholder="Start typing..." variant="flush" class="bg-bg-subtle"/>
+    <x-ui.input placeholder="Start typing..." variant="flush" class="bg-muted"/>
 </form>
 ```
 
@@ -43,28 +43,28 @@ When using x-ui.input.group , the input itself must be rendered in variant mode.
 <form class="space-y-4 max-w-sm w-full">
     <x-ui.input.group>
         <x-ui.input variant="unstyled" type="email" placeholder="jackdoe" class="ps-9 px-3" />
-        <x-ui.input.leading absolute class="text-fg text-sm">
-            <span class="flex size-4 iconify ph--at"></span>
+        <x-ui.input.leading absolute class="text-foreground text-sm">
+            <x-ui.icon name="ph--at" class="size-4" />
         </x-ui.input.leading>
     </x-ui.input.group>
     <x-ui.input.group>
         <x-ui.input variant="unstyled" type="text" placeholder="24" class="ps-11 px-3" />
         <x-ui.input.leading absolute
-            class="text-sm text-fg">
+            class="text-sm text-foreground">
             CDF
         </x-ui.input.leading>
     </x-ui.input.group>
     <x-ui.input.group>
         <x-ui.input variant="unstyled" type="text" placeholder="my-website.com" class="ps-16" />
         <x-ui.input.leading absolute
-            class="text-sm text-fg">
+            class="text-sm text-foreground">
             https://
         </x-ui.input.leading>
     </x-ui.input.group>
     <x-ui.input.group class="flex">
         <x-ui.input.leading aria-hidden="true"
-            class="px-3 text-fg bg-bg-muted/80 rounded-l-ui">
-            <span class="flex size-4 iconify ph--at"></span>
+            class="px-3 text-foreground bg-muted/80 rounded-l-ui">
+            <x-ui.icon name="ph--at" class="size-4" />
         </x-ui.input.leading>
         <x-ui.input variant="unstyled" type="text" placeholder="johndoe" class="rounded-r-ui px-3" />
     </x-ui.input.group>
@@ -77,26 +77,26 @@ When using x-ui.input.group , the input itself must be rendered in variant mode.
 <form class="space-y-4 max-w-sm w-full">
     <x-ui.input.group>
         <x-ui.input variant="unstyled" type="email" placeholder="johndoe" class="pe-9 px-3" />
-        <x-ui.input.trailing absolute class="text-fg">
-            <span class="flex size-4 iconify ph--at"></span>
+        <x-ui.input.trailing absolute class="text-foreground">
+            <x-ui.icon name="ph--at" class="size-4" />
         </x-ui.input.trailing>
     </x-ui.input.group>
     <x-ui.input.group>
         <x-ui.input variant="unstyled" type="text" placeholder="24" class="pe-11 px-3" />
-        <x-ui.input.trailing absolute class="text-sm text-fg">
+        <x-ui.input.trailing absolute class="text-sm text-foreground">
             CDF
         </x-ui.input.trailing>
     </x-ui.input.group>
     <x-ui.input.group>
         <x-ui.input variant="unstyled" type="text" placeholder="Your email here" class="pe-16 px-3" />
-        <x-ui.input.trailing absolute class="text-sm text-fg">
+        <x-ui.input.trailing absolute class="text-sm text-foreground">
             @gmail.com    
         </x-ui.input.trailing>
     </x-ui.input.group>
     <x-ui.input.group>
         <x-ui.input variant="unstyled" type="text" placeholder="jackdoe" class="rounded-r-ui px-3 flex-1" />
-        <x-ui.input.trailing class="px-3 text-fg bg-bg-muted/80 rounded-r-ui">
-            <span class="flex size-4 iconify ph--at"></span>
+        <x-ui.input.trailing class="px-3 text-foreground bg-muted/80 rounded-r-ui">
+            <x-ui.icon name="ph--at" class="size-4" />
         </x-ui.input.trailing>
     </x-ui.input.group>
 </form>

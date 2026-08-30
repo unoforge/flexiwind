@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "header05",
+    "type": "registry:component",
+    "title": "Header 05",
+    "description": "Compact header with breadcrumbs, segmented toggle, and action icons.",
+    "registryDependencies": [
+        "avatar",
+        "breadcrumbs",
+        "button"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/header/05/header.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/header/05/header.blade.php",
+            "content": "<header class=\"sticky top-0 z-50 bg-background \">\n    <div class=\"flex items-center justify-between h-14 px-4 sm:px-6\">\n        <div class=\"flex items-center gap-4\">\n            <div class=\"flex items-center gap-2\">\n                <div class=\"flex md:hidden border-r border-border pr-2\">\n                    <x-ui.button variant=\"ghost\" size=\"sm\" iconOnly>\n                        <x-ui.icon name=\"ph--list\" class=\"size-5\" />\n                    </x-ui.button>\n                </div>\n                <span class=\"text-lg font-bold text-foreground tracking-tight\">Analytics</span>\n            </div>\n            <div class=\"h-5 w-px bg-border hidden sm:block\"></div>\n            <x-ui.breadcrumbs class=\"hidden sm:flex text-sm\">\n                <x-ui.breadcrumbs.item href=\"#\">Home</x-ui.breadcrumbs.item>\n                <x-ui.breadcrumbs.item href=\"#\">Analytics</x-ui.breadcrumbs.item>\n                <x-ui.breadcrumbs.item active>Overview</x-ui.breadcrumbs.item>\n            </x-ui.breadcrumbs>\n        </div>\n        <div class=\"flex items-center gap-2\">\n            <div class=\"hidden md:flex items-center bg-muted/50 rounded-lg p-0.5 border border-border\">\n                <x-ui.button size=\"xs\" variant=\"ghost\" class=\"text-foreground font-medium\">Daily</x-ui.button>\n                <x-ui.button size=\"xs\" variant=\"ghost\" class=\"text-muted-foreground\">Weekly</x-ui.button>\n                <x-ui.button size=\"xs\" variant=\"ghost\" class=\"text-muted-foreground\">Monthly</x-ui.button>\n            </div>\n            <div class=\"h-5 w-px bg-border mx-1 hidden sm:block\"></div>\n            <x-ui.button variant=\"ghost\" size=\"sm\" iconOnly>\n                <x-ui.icon name=\"ph--download\" class=\"size-4.5\" />\n            </x-ui.button>\n            <x-ui.button variant=\"ghost\" size=\"sm\" iconOnly>\n                <x-ui.icon name=\"ph--gear\" class=\"size-4.5\" />\n            </x-ui.button>\n            <x-ui.button variant=\"ghost\" size=\"sm\" iconOnly class=\"relative\">\n                <x-ui.icon name=\"ph--bell\" class=\"size-4.5\" />\n                <span class=\"absolute top-1.5 right-1.5 size-1.5 bg-destructive rounded-full\"></span>\n            </x-ui.button>\n            <x-ui.avatar src=\"/defaultavatar.webp\" alt=\"User\" size=\"sm\" radius=\"full\" />\n        </div>\n    </div>\n</header>"
+        }
+    ]
+}

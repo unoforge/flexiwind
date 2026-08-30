@@ -8,7 +8,7 @@
         'update' => 'ui-subtle-info',
         'note' => 'ui-subtle-gray',
         'warning' => 'ui-subtle-warning',
-        'important' => 'ui-subtle-danger',
+        'important' => 'ui-subtle-destructive',
     ];
 
     $icons = [
@@ -25,7 +25,7 @@
 <div data-alert class="p-4 flex items-start gap-4 rounded-ui mt-4 first:mt-0 ui-subtle {{ $alertClass }}">
     @unless ($withoutIcon)
         <div class="pt-0.5">
-            <span aria-hidden="true" class="flex iconify {{ $iconClass }} text-2xl"></span>
+            <x-ui.icon name="{{ $iconClass }}" class="flex text-2xl" />
         </div>
     @endunless
     <div {{ $attributes->class(['flex-1']) }}>

@@ -3,5 +3,5 @@
     <x-ui.range name="range_slide" thumb-bg-current  min="0" max="80" value="20" class="text-secondary" />
     <x-ui.range name="range_slide" min="0" max="80" value="20" class="text-secondary" />
     <x-ui.range name="range_slide" min="0" max="80" value="20" class="text-accent" />
-    <x-ui.range name="range_slide" min="0" max="80" value="20" class="text-danger" />
+    <x-ui.range name="range_slide" min="0" max="80" value="20" class="text-destructive" />
 </div>

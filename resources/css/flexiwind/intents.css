@@ -1,0 +1,120 @@
+/*
+ * Variant + intent tokens
+ *
+ * Reduced matrix — only officially supported combinations.
+ * Add custom intents by defining a utility and extending the PHP helper.
+ */
+
+
+/* ═══════════════════════════════════════════════════
+   Button intents
+   ═══════════════════════════════════════════════════ */
+
+/* ── solid ── */
+
+@utility btn-solid-primary {
+  --btn-color: var(--color-primary);
+  --btn-fg: var(--color-primary-foreground);
+}
+
+@utility btn-solid-secondary {
+  --btn-color: var(--color-secondary);
+  --btn-fg: var(--color-secondary-foreground);
+}
+
+@utility btn-solid-accent {
+  --btn-color: var(--color-accent);
+  --btn-fg: var(--color-accent-foreground);
+}
+
+@utility btn-solid-neutral {
+  --btn-color: var(--color-foreground);
+  --btn-fg: var(--color-background);
+}
+
+@utility btn-solid-destructive {
+  --btn-color: var(--color-destructive);
+  --btn-fg: var(--color-destructive-foreground);
+}
+
+@utility btn-solid-success {
+  --btn-color: var(--color-success);
+  --btn-fg: var(--color-white);
+}
+
+/* ── soft ── */
+
+@utility btn-soft-primary {
+  --btn-color: var(--color-primary);
+  --btn-fg: var(--color-primary);
+}
+
+@utility btn-soft-destructive {
+  --btn-color: var(--color-destructive);
+  --btn-fg: var(--color-destructive);
+}
+
+@utility btn-soft-success {
+  --btn-color: var(--color-success);
+  --btn-fg: var(--color-success);
+}
+
+@utility btn-soft-gray {
+  --btn-color: var(--color-muted-foreground);
+  --btn-fg: var(--color-foreground);
+}
+
+/* ── ghost ── */
+
+@utility btn-ghost-gray {
+  --btn-fg: var(--color-foreground);
+  --btn-hover-color: var(--color-muted);
+  --btn-active-color: color-mix(in oklab, var(--color-muted) 82%, var(--color-foreground));
+  --btn-ring-color: var(--color-ring);
+}
+
+@utility btn-ghost-success {
+  --btn-fg: var(--color-success);
+  --btn-hover-color: color-mix(in oklab, var(--color-success) 10%, transparent);
+  --btn-active-color: color-mix(in oklab, var(--color-success) 16%, transparent);
+  --btn-ring-color: var(--color-success);
+}
+
+/* ── outline ── */
+
+@utility btn-outline-gray {
+  --btn-color: var(--color-background);
+  --btn-fg: var(--color-foreground);
+  --btn-border-color: var(--color-border);
+  --btn-hover-color: var(--color-muted);
+  --btn-active-color: color-mix(in oklab, var(--color-muted) 82%, var(--color-foreground));
+  --btn-ring-color: var(--color-ring);
+}
+
+
+/* ═══════════════════════════════════════════════════
+   UI intents (badges, alerts, tags, etc.)
+   ═══════════════════════════════════════════════════ */
+
+@utility ui-solid-primary { --ui-color: var(--color-primary); --ui-fg: var(--color-primary-foreground); }
+@utility ui-solid-secondary { --ui-color: var(--color-secondary); --ui-fg: var(--color-secondary-foreground); }
+@utility ui-solid-accent { --ui-color: var(--color-accent); --ui-fg: var(--color-accent-foreground); }
+@utility ui-solid-success { --ui-color: var(--color-success); --ui-fg: var(--color-white); }
+@utility ui-solid-destructive { --ui-color: var(--color-destructive); --ui-fg: var(--color-destructive-foreground); }
+@utility ui-solid-gray { --ui-color: var(--color-muted); --ui-fg: var(--color-foreground); }
+@utility ui-solid-neutral { --ui-color: var(--color-foreground); --ui-fg: var(--color-background); }
+
+@utility ui-soft-primary { --ui-color: var(--color-primary); --ui-fg: var(--color-primary-foreground); }
+@utility ui-soft-destructive { --ui-color: var(--color-destructive); --ui-fg: var(--color-destructive-foreground); }
+@utility ui-soft-success { --ui-color: var(--color-success); --ui-fg: var(--color-white); }
+@utility ui-soft-gray { --ui-color: var(--color-muted-foreground); --ui-fg: var(--color-foreground); }
+
+@utility ui-outline-primary { --ui-color: var(--color-primary); --ui-fg: var(--color-primary-foreground); }
+@utility ui-outline-destructive { --ui-color: var(--color-destructive); --ui-fg: var(--color-destructive-foreground); }
+@utility ui-outline-success { --ui-color: var(--color-success); --ui-fg: var(--color-white); }
+@utility ui-outline-gray { --ui-color: var(--color-muted-foreground); --ui-fg: var(--color-foreground); }
+
+@utility ui-subtle-primary { --ui-color: var(--color-primary); --ui-fg: var(--color-primary-foreground); }
+@utility ui-subtle-destructive { --ui-color: var(--color-destructive); --ui-fg: var(--color-destructive-foreground); }
+@utility ui-subtle-success { --ui-color: var(--color-success); --ui-fg: var(--color-white); }
+@utility ui-subtle-gray { --ui-color: var(--color-muted-foreground); --ui-fg: var(--color-foreground); }

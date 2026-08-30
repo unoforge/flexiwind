@@ -32,7 +32,7 @@
             class="py-8 sm:py-16 px-3.5 sm:px-8 md:px-16 lg:px-8 xl:px-0 mx-auto w-full max-w-3xl lg:max-w-5xl grid sm:grid-cols-2 gap-6">
             @foreach ($templates as $template)
                 <div class="relative">
-                    <div class="bg-bg-muted rounded-ui aspect-standard-tv overflow-hidden relative group z-4 ring ring-border/40">
+                    <div class="bg-muted rounded-ui aspect-standard-tv overflow-hidden relative group z-4 ring ring-border/40">
                         <img src="{{ $template['cover']['light'] }}" alt="Cover light template" width="1911"
                             height="1433" class="size-full object-cover rounded-ui dark:hidden ease-linear duration-300 group-hover:scale-105">
                         <img src="{{ $template['cover']['dark'] }}" alt="Cover light template" width="1911"
@@ -55,7 +55,7 @@
                     </div>
                     <div class="pt-3 px-3 flex flex-col flex-1">
                         <h3 class="flex items-center justify-between gap-3 flex-1">
-                            <x-ui.link href="{{ $template['links']['source'] }}" class="font-semibold text-lg text-fg-title before:absolute before:inset-0">
+                            <x-ui.link href="{{ $template['links']['source'] }}" class="font-semibold text-lg text-foreground before:absolute before:inset-0">
                                 {{ $template['title'] }}
                             </x-ui.link>
                             <x-ui.badge size="sm" intent="{{ $template['isFree'] ? 'gray' : 'neutral' }}">
@@ -66,7 +66,7 @@
                                 @endif
                             </x-ui.badge>
                         </h3>
-                        <p class="text-sm text-fg-muted">
+                        <p class="text-sm text-muted-foreground">
                             {{ $template['description'] }}
                         </p>
                     </div>

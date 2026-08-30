@@ -6,7 +6,7 @@
         <option value="NG">Nigeria</option>
     </x-ui.select>
     <span aria-hidden="true"
-        class="absolute right-3 inset-y-px text-fg-muted pointer-events-none flex items-center">
-        <span class="flex iconify ph--caret-up-down text-sm"></span>                             
+        class="absolute right-3 inset-y-px text-muted-foreground pointer-events-none flex items-center">
+        <x-ui.icon name="ph--caret-up-down" class="flex text-sm" />                             
     </span>
 </div>

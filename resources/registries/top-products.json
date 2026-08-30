@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "top-products",
+    "type": "registry:component",
+    "title": "Top Products",
+    "description": "Top selling products widget with revenue and sales data.",
+    "files": [
+        {
+            "path": "resources/views/components/previews/dash-card/top-products.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/widgets/top-products.blade.php",
+            "content": "@php\n    $products = [\n        ['name' => 'Pro Plan Annual', 'revenue' => '$12,450', 'sales' => 43, 'trend' => 'up'],\n        ['name' => 'Team Bundle', 'revenue' => '$8,910', 'sales' => 90, 'trend' => 'up'],\n        ['name' => 'Pro Plan Monthly', 'revenue' => '$4,350', 'sales' => 150, 'trend' => 'up'],\n        ['name' => 'Starter Plan', 'revenue' => '$2,160', 'sales' => 240, 'trend' => 'down'],\n        ['name' => 'Enterprise Add-on', 'revenue' => '$1,800', 'sales' => 6, 'trend' => 'up'],\n    ];\n@endphp\n\n<div class=\"w-full max-w-sm mx-auto px-4 py-10\">\n    <x-ui.card>\n        <div class=\"flex items-center justify-between mb-4\">\n            <h3 class=\"text-sm font-semibold text-foreground\">Top Products</h3>\n            <x-ui.button size=\"xs\" variant=\"outline\">View All</x-ui.button>\n        </div>\n        <div class=\"divide-y divide-border-input\">\n            @foreach ($products as $product)\n                <div class=\"flex items-center justify-between py-3 first:pt-0 last:pb-0\">\n                    <div class=\"flex-1 min-w-0\">\n                        <p class=\"text-sm font-medium text-foreground truncate\">{{ $product['name'] }}</p>\n                        <p class=\"text-xs text-muted-foreground\">{{ $product['sales'] }} sales</p>\n                    </div>\n                    <div class=\"text-right ml-4\">\n                        <p class=\"text-sm font-semibold text-foreground\">{{ $product['revenue'] }}</p>\n                        <span class=\"inline-flex items-center text-xs {{ $product['trend'] === 'up' ? 'text-success' : 'text-destructive' }}\">\n                            <x-ui.icon name=\"ph--trend-up\" class=\"{{ $product['trend'] === 'up' ? ' ' : 'ph--trend-down' }} mr-0.5\" />\n                            {{ $product['trend'] === 'up' ? '+12%' : '-3%' }}\n                        </span>\n                    </div>\n                </div>\n            @endforeach\n        </div>\n    </x-ui.card>\n</div>\n"
+        }
+    ]
+}

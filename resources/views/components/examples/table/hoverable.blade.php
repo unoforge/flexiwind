@@ -60,8 +60,8 @@
                 </x-ui.table.cell>
                 <x-ui.table.cell>
                     <div class="w-full flex justify-end items-center">
-                        <x-ui.button size="sm" iconOnly intent="danger">
-                            <span aria-hidden="true" class="flex iconify ph--trash"></span>
+                        <x-ui.button size="sm" iconOnly intent="destructive">
+                            <x-ui.icon name="ph--trash" class="flex" />
                         </x-ui.button>
                     </div>
                 </x-ui.table.cell>

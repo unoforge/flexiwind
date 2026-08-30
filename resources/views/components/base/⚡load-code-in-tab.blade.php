@@ -33,7 +33,7 @@ new class extends Component {
                                 <img src="/icons/{{ $icon }}" alt="icon {{ $item['name'] }}" width="20"
                                     class="h-4 w-auto mr-2">
                             @else
-                                <span class="flex mr-2 text-xs iconify {{ $icon }}"></span>
+                                <x-ui.icon name="{{ $icon }}" class="flex mr-2 text-xs" />
                             @endif
                             {{ $item['name'] }}
                         </a>

@@ -4,8 +4,8 @@
 <div class="flex flex-wrap gap-4">
     <x-ui.badge variant="subtle">Badge</x-ui.badge>
     <x-ui.badge variant="soft" intent="primary">Badge</x-ui.badge>
-    <x-ui.badge variant="outline" intent="warning">Badge</x-ui.badge>
-    <x-ui.badge intent="danger">Badge</x-ui.badge>
+    <x-ui.badge variant="outline" intent="destructive">Badge</x-ui.badge>
+    <x-ui.badge intent="success">Badge</x-ui.badge>
     <x-ui.badge intent="neutral">Badge</x-ui.badge>
 </div>
 ```
@@ -29,10 +29,22 @@ php artisan flexi:add badge
 | size (xs\|sm\|default\|lg) | Controls badge size |
 | radius (string) | Rounding token |
 
+## Intent Matrix
+
+| Intent | solid | soft | subtle | outline |
+| --- | --- | --- | --- | --- |
+| primary | ✅ | ✅ | ✅ | ✅ |
+| secondary | ✅ | — | — | — |
+| accent | ✅ | — | — | — |
+| neutral | ✅ | — | — | — |
+| destructive | ✅ | ✅ | ✅ | ✅ |
+| success | ✅ | ✅ | ✅ | ✅ |
+| gray | — | ✅ | ✅ | ✅ |
+
 ## Guidance
 
 - Badge variants: solid, soft, subtle, outline.
-- Intents: gray, neutral, primary, secondary, accent, warning, danger, info, success.
+- Intents: gray, primary, secondary, accent, neutral, destructive, success.
 - Do not invent badge variants not documented here or in the live docs.
 
 ## Avoid

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "user-dropdown",
+    "type": "registry:component",
+    "title": "User Dropdown",
+    "description": "User menu dropdown with profile info, links, and sign out.",
+    "registryDependencies": [
+        "avatar",
+        "button",
+        "dropdown"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/dropdown-menu/user-dropdown.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/dropdown-menu/user-dropdown.blade.php",
+            "content": "<div class=\"w-full max-w-5xl mx-auto px-4 py-10 d-flex-place-center min-h-96\">\n    <x-ui.dropdown.trigger variant=\"ghost\" size=\"none\" dropdownId=\"user-menu\"\n        class=\"flex items-center gap-3 p-1.5 pr-3 rounded-ui border border-border\">\n        <x-ui.avatar src=\"/avatar2.webp\" alt=\"User\" size=\"sm\" radius=\"full\" />\n        <div class=\"text-left hidden sm:block\">\n            <p class=\"text-sm font-medium text-foreground leading-tight\">Alex Rivera</p>\n            <p class=\"text-xs text-muted-foreground leading-tight\">alex@company.com</p>\n        </div>\n        <x-ui.icon name=\"ph--caret-down\" class=\"text-muted-foreground size-3.5\" />\n    </x-ui.dropdown.trigger>\n    <x-ui.dropdown id=\"user-menu\" placement=\"bottom-end\" class=\"w-56\">\n        <x-ui.dropdown.header>\n            <div class=\"flex items-center gap-3\">\n                <x-ui.avatar src=\"/avatar2.webp\" alt=\"User\" size=\"sm\" radius=\"full\" />\n                <div>\n                    <p class=\"text-sm font-medium text-foreground\">Alex Rivera</p>\n                    <p class=\"text-xs text-muted-foreground\">alex@example.com</p>\n                </div>\n            </div>\n        </x-ui.dropdown.header>\n        <x-ui.dropdown.separator />\n        <x-ui.dropdown.item href=\"#\">\n            <x-ui.dropdown.icon><x-ui.icon name=\"ph--user\" /></x-ui.dropdown.icon>\n            <x-ui.dropdown.label>My Profile</x-ui.dropdown.label>\n        </x-ui.dropdown.item>\n        <x-ui.dropdown.item href=\"#\">\n            <x-ui.dropdown.icon><x-ui.icon name=\"ph--credit-card\" /></x-ui.dropdown.icon>\n            <x-ui.dropdown.label>Billing</x-ui.dropdown.label>\n        </x-ui.dropdown.item>\n        <x-ui.dropdown.item href=\"#\">\n            <x-ui.dropdown.icon><x-ui.icon name=\"ph--gear\" /></x-ui.dropdown.icon>\n            <x-ui.dropdown.label>Settings</x-ui.dropdown.label>\n        </x-ui.dropdown.item>\n        <x-ui.dropdown.separator />\n        <x-ui.dropdown.item href=\"#\">\n            <x-ui.dropdown.icon><x-ui.icon name=\"ph--users-three\" /></x-ui.dropdown.icon>\n            <x-ui.dropdown.label>Switch Team</x-ui.dropdown.label>\n        </x-ui.dropdown.item>\n        <x-ui.dropdown.item href=\"#\" intent=\"danger\">\n            <x-ui.dropdown.icon class=\"text-current\"><x-ui.icon name=\"ph--sign-out\" /></x-ui.dropdown.icon>\n            <x-ui.dropdown.label>Sign Out</x-ui.dropdown.label>\n        </x-ui.dropdown.item>\n    </x-ui.dropdown>\n</div>\n"
+        }
+    ]
+}

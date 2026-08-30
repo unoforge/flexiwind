@@ -6,61 +6,51 @@ return [
         'name' => 'app.css',
         'code' => <<<'CSS'
 @theme inline {
-    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;
     --radius-ui: var(--ui-radius);
     --radius-card: var(--card-radius);
-    --radius-checkbox: var(--checkbox-radius); 
-    
 
-    --color-white: var(--color-white);
-    --color-dark: var(--color-gray-950);
+    /* ═══ Intent tokens ═══ */
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-title-foreground: var(--title-foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
 
     --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
     --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
     --color-accent: var(--accent);
-    --color-info: var(--info);
-    --color-warning: var(--warning);
-    --color-danger: var(--danger);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
     --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-info: var(--info);
 
-    --color-fg-title: var(--fg-title);
-    --color-fg-subtitle: var(--fg-subtitle);
-    --color-fg: var(--fg);
-    --color-fg-muted: var(--fg-muted);
-
-    --color-bg: var(--bg);
-    --color-bg-subtle: var(--bg-subtle);
-    --color-bg-surface: var(--bg-surface);
-    --color-bg-muted: var(--bg-muted);
-    --color-card: var(--card);
-    --color-card-gray: var(--card-gray);
-    --color-popover: var(--bg);
-    --color-popover-gray: var(--card-gray);
-    --color-overlay: var(--overlay);
-    --color-overlay-gray: var(--overlay-gray);
-    --color-progressbar: var(--progressbar);
-
-    --color-border-strong: var(--border-strong);
     --color-border: var(--border);
-    --color-border-sub: var(--border-sub);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* ═══ Flexiwind extensions ═══ */
+
+    --color-surface: var(--surface-background);
+    --color-border-strong: var(--border-strong);
     --color-border-card: var(--border-card);
     --color-border-input: var(--border-input);
-
-
-
-    --color-primary-50: ...;
-    /* ... */
-    --color-primary-950: ..;
-
-    --color-secondary-50: ....;
-    /* ..... */
-    --color-secondary-950: ....;
-
-
-    /* override the default gray  */
-    --color-gray-50:...;
-    /* ... */
-    --color-gray-950:...;
 }
 CSS
     ],

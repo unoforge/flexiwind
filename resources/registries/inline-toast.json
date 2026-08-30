@@ -1,0 +1,20 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "inline-toast",
+    "type": "registry:component",
+    "title": "Inline Toast",
+    "description": "Stacked callout-style toasts for different notification types.",
+    "registryDependencies": [
+        "button",
+        "callout"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/toast-notification/inline-toast.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/toast-notification/inline-toast.blade.php",
+            "content": "<div class=\"w-full max-w-2xl mx-auto px-4 py-10 space-y-4\">\n    <x-ui.callout type=\"update\">\n        <x-ui.callout.title text=\"Project published successfully\" />\n        <x-ui.callout.description>All team members have been notified.</x-ui.callout.description>\n    </x-ui.callout>\n\n    <x-ui.callout variant=\"subtle\" type=\"important\">\n        <x-ui.callout.title text=\"Deployment failed\" />\n        <x-ui.callout.description>\n            <span>The build process encountered an error. Check the logs for details.</span>\n            <div class=\"flex gap-2 mt-3\">\n                <x-ui.button size=\"sm\" intent=\"danger\">View logs</x-ui.button>\n                <x-ui.button size=\"sm\" variant=\"outline\" intent=\"gray\">Retry</x-ui.button>\n            </div>\n        </x-ui.callout.description>\n    </x-ui.callout>\n\n    <x-ui.callout type=\"warning\">\n        <x-ui.callout.title text=\"SSL certificate expiring\" />\n        <x-ui.callout.description>Your SSL certificate will expire in 14 days. Renew now to avoid disruption.</x-ui.callout.description>\n    </x-ui.callout>\n\n    <x-ui.callout type=\"note\">\n        <x-ui.callout.title text=\"New update available\" />\n        <x-ui.callout.description>Version 3.2.0 includes performance improvements and bug fixes.</x-ui.callout.description>\n    </x-ui.callout>\n</div>"
+        }
+    ]
+}

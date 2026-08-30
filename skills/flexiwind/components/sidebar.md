@@ -32,12 +32,12 @@ import "./sidebar-plugin.js";
 ## Basic usage
 
 ```html
-<x-ui.sidebar-wrapper class="fixed h-dvh w-72 bg-bg-surface border-r border-bg-muted transition-all -translate-x-full fx-open:translate-x-0 lg:translate-x-0 z-80">
+<x-ui.sidebar-wrapper class="fixed h-dvh w-72 bg-card border-r border-muted transition-all -translate-x-full fx-open:translate-x-0 lg:translate-x-0 z-80">
     <nav class="flex-1 p-4">
         <ul class="space-y-2">
             <li>
-                <a href="#" class="flex items-center gap-x-2.5 px-3 py-2 rounded-md hover:bg-bg-muted">
-                    <span class="iconify ph--house"></span>
+                <a href="#" class="flex items-center gap-x-2.5 px-3 py-2 rounded-md hover:bg-muted">
+                    <x-ui.icon name="ph--house" />
                     <span>Dashboard</span>
                 </a>
             </li>

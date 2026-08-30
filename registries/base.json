@@ -3,7 +3,7 @@
     "title": "Flexiwind UI",
     "description": "Flexiwind UI components for Laravel Blade.",
     "components": [
-{
+        {
             "version": "1.0.0",
             "name": "flexiwind-base",
             "title": "Flexiwind utilities",
@@ -33,6 +33,11 @@
                     "path": "resources/css/flexiwind/utils.css",
                     "type": "registry:styles",
                     "target": "resources/css/flexiwind/utils.css"
+                },
+                {
+                    "path": "resources/css/flexiwind/intents.css",
+                    "type": "registry:styles",
+                    "target": "resources/css/flexiwind/intents.css"
                 }
             ]
         },

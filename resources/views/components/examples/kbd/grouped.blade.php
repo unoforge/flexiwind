@@ -1,13 +1,13 @@
 <div class="flex flex-wrap gap-3">
     <div class="flex items-center gap-x-2">
         <x-ui.kbd class="flex items-center gap-0.5">
-            <span aria-hidden="true" class="flex iconify ph--command"></span> K
+            <x-ui.icon name="ph--command" class="flex" /> K
         </x-ui.kbd>
-        <span class="text-fg">
+        <span class="text-foreground">
             And
         </span>
         <x-ui.kbd class="flex items-center gap-0.5">
-            <span aria-hidden="true" class="flex iconify ph--command"></span> + R
+            <x-ui.icon name="ph--command" class="flex" /> + R
         </x-ui.kbd>
     </div>
 </div>

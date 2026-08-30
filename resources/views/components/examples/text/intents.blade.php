@@ -6,5 +6,5 @@
     <x-ui.text intent="primary">Primary colored text</x-ui.text>
     <x-ui.text intent="secondary">Secondary colored text</x-ui.text>
     <x-ui.text intent="warning">Warning colored text</x-ui.text>
-    <x-ui.text intent="danger">Danger colored text</x-ui.text>
+    <x-ui.text intent="destructive">Danger colored text</x-ui.text>
 </div>

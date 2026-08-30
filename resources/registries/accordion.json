@@ -22,7 +22,7 @@
             "path": "resources/views/components/ui/accordion/item.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/accordion/item.blade.php",
-            "content": "@props(['variant' => 'default', 'intent' => 'gray', 'id', 'class' => null])\n\n@php\n    use App\\Flexiwind\\UiHelper;\n    $variants = UiHelper::getVariants();\n\n    $className = '';\n    $variantClass = UiHelper::getClasses($variant, $intent);\n    if ($variant === 'default') {\n        $className = ' border-b border-border ';\n    }\n\n    $className .= \"{$class} {$variantClass}\";\n\n@endphp\n\n<div data-accordion-item data-accordion-value=\"{{ $id }}\" class=\"{{ $className }}\">\n    {{ $slot }}\n</div>\n"
+            "content": "@props(['variant' => 'default', 'intent' => 'gray', 'id', 'class' => null])\n\n@php\n    use App\\Flexiwind\\UiHelper;\n    $variants = UiHelper::getVariants();\n\n    if ($variant === 'default') {\n        $className = ' border-b border-border ';\n    } else {\n        $className = UiHelper::getClasses($variant, $intent);\n    }\n\n    $className .= \" {$class}\";\n\n@endphp\n\n<div data-accordion-item data-accordion-value=\"{{ $id }}\" class=\"{{ $className }}\">\n    {{ $slot }}\n</div>\n"
         },
         {
             "path": "resources/views/components/ui/accordion/trigger.blade.php",
@@ -40,7 +40,7 @@
             "path": "resources/views/components/ui/accordion/indicator.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/accordion/indicator.blade.php",
-            "content": "@props(['type' => 'icon', 'icon' => 'ph--caret-down'])\n\n@if ($type === 'icon')\n    <span aria-hidden\n        {{ $attributes->class([\n            'flex text-fg-muted size-3.5 iconify group-aria-expanded:rotate-180 in-aria-expanded:rotate-180',\n            'ease-linear duration-200',\n            $icon,\n        ]) }}></span>\n@elseif($type === 'plus-sign')\n    <span aria-hidden\n        {{ $attributes->class([\n            'flex text-fg-muted relative size-2.5 disclosure-indicator-plus disclosure-indicator-to-minus',\n        ]) }}></span>\n@endif\n"
+            "content": "@props(['type' => 'icon', 'icon' => 'ph--caret-down'])\n\n@if ($type === 'icon')\n    <span aria-hidden\n        {{ $attributes->class([\n            'flex text-muted-foreground size-3.5 iconify group-aria-expanded:rotate-180 in-aria-expanded:rotate-180',\n            'ease-linear duration-200',\n            $icon,\n        ]) }}></span>\n@elseif($type === 'plus-sign')\n    <span aria-hidden\n        {{ $attributes->class([\n            'flex text-muted-foreground relative size-2.5 disclosure-indicator-plus disclosure-indicator-to-minus',\n        ]) }}></span>\n@endif\n"
         },
         {
             "path": "resources/js/plugins/accordion.js",

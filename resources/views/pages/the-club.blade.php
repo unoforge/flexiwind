@@ -13,18 +13,18 @@
                     <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
                     <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
                     <span
-                        class="absolute top-8.5 -left-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        class="absolute top-8.5 -left-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                     <span
-                        class="absolute top-12.5 left-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        class="absolute top-12.5 left-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                     <span
-                        class="absolute top-8.5 -right-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        class="absolute top-8.5 -right-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                     <span
-                        class="absolute top-12.5 right-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        class="absolute top-12.5 right-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                     <svg width="401" height="401" viewBox="0 0 401 401" fill="none"
                         class="absolute right-4 size-40 md:size-56 lg:size-64 top-13.5" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M0 0H401V401H291.912C257.067 401 232.196 365.878 238.503 331.609C246.986 285.517 249.519 227.824 220 195.989C187.027 160.428 121.321 164.958 70.2625 175.681C35.8141 182.915 0 157.979 0 122.78V0Z"
-                            fill="#F5F0F0" class="fill-bg-muted/40" />
+                            fill="#F5F0F0" class="fill-muted/40" />
                     </svg>
                 </div>
             </div>
@@ -34,10 +34,10 @@
                     Coming soon
                 </span>
                 <h2
-                    class="font-bold text-3xl md:text-4xl/tight lg:text-5xl/[1.1] max-w-2xl text-balance text-transparent bg-clip-text bg-linear-to-br from-fg-title to-fg-muted/60 dark:via-fg mt-4">
+                    class="font-bold text-3xl md:text-4xl/tight lg:text-5xl/[1.1] max-w-2xl text-balance text-transparent bg-clip-text bg-linear-to-br from-foreground to-muted-foreground/60 dark:via-foreground mt-4">
                     The club for those who want to scale fast, build better.
                 </h2>
-                <p class="text-fg-muted max-w-md text-sm mt-6.5">
+                <p class="text-muted-foreground max-w-md text-sm mt-6.5">
                     Inside the club: tips and snippets, advanced blocks and components, and ready app UI starters.
                 </p>
                 <div class="flex flex-wrap gap-3 mt-9">
@@ -74,23 +74,23 @@
                 <div
                     class="w-full mx-auto md:max-w-300 relative grid gap-x-4 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:gap-x-12 py-6 sm:py-10 px-3.5 sm:px-10 md:px-16 lg:px-24">
                     <span aria-hidden="true" class="absolute -inset-x-1 flex justify-between items-center h-px">
-                        <span class="size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
-                        <span class="size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        <span class="size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        <span class="size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                     </span>
                     <span aria-hidden="true"
                         class="absolute bottom-0 -inset-x-1 bg-border-strong/60 flex justify-between items-center h-px">
-                        <span class="size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
-                        <span class="size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        <span class="size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        <span class="size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                     </span>
                     @foreach ($items as $item)
                         <div class="flex flex-col items-start">
                             <div class="h-7 px-5 flex items-center rounded-ui bg-primary text-white w-max">
                                 <span aria-hidden class="iconify {{ $item['icon'] }} size-4"></span>
                             </div>
-                            <h2 class="font-semibold text-fg-title mt-3 text-sm">
+                            <h2 class="font-semibold text-foreground mt-3 text-sm">
                                 {{ $item['title'] }}
                             </h2>
-                            <p class="text-sm text-fg-muted mt-1">
+                            <p class="text-sm text-muted-foreground mt-1">
                                 {{ $item['description'] }}
                             </p>
                         </div>

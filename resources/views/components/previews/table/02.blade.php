@@ -77,8 +77,8 @@
     <!-- Header with Search and Filter -->
     <div class="flex items-center justify-between gap-4 pb-8">
         <div>
-            <h2 class="text-xl font-semibold text-fg mb-1">Organizations</h2>
-            <p class="text-fg-muted text-sm">Manage your customer relationships and track organization details.</p>
+            <h2 class="text-xl font-semibold text-foreground mb-1">Organizations</h2>
+            <p class="text-muted-foreground text-sm">Manage your customer relationships and track organization details.</p>
         </div>
         <div class="flex items-center gap-2">
             <x-ui.button size="sm">
@@ -120,22 +120,22 @@
                             <x-ui.avatar-placeholder size="sm" text="{{ $organization['initials'] }}"
                                 variant="solid" intent="neutral" />
                             <div>
-                                <div class="font-medium text-fg">{{ $organization['name'] }}</div>
-                                <div class="text-xs text-fg-muted">{{ $organization['email'] }}</div>
+                                <div class="font-medium text-foreground">{{ $organization['name'] }}</div>
+                                <div class="text-xs text-muted-foreground">{{ $organization['email'] }}</div>
                             </div>
                         </div>
                     </x-ui.table.cell>
                     <x-ui.table.cell>
                         <div class="flex items-center gap-2">
                             <x-ui.icon name="{{ $organization['industryIcon'] }}" size="sm"
-                                class="text-fg-muted" />
-                            <span class="text-sm text-fg">{{ $organization['industry'] }}</span>
+                                class="text-muted-foreground" />
+                            <span class="text-sm text-foreground">{{ $organization['industry'] }}</span>
                         </div>
                     </x-ui.table.cell>
                     <x-ui.table.cell>
                         <div>
-                            <div class="text-sm font-medium text-fg">{{ $organization['contact'] }}</div>
-                            <div class="text-xs text-fg-muted">{{ $organization['phone'] }}</div>
+                            <div class="text-sm font-medium text-foreground">{{ $organization['contact'] }}</div>
+                            <div class="text-xs text-muted-foreground">{{ $organization['phone'] }}</div>
                         </div>
                     </x-ui.table.cell>
                     <x-ui.table.cell>
@@ -153,20 +153,20 @@
                             </span>
                         @else
                             <span
-                                class="ui-soft ui-soft-danger inline-flex items-center gap-x-1 rounded-md px-2 py-1 text-xs font-medium">
+                                class="ui-soft ui-soft-destructive inline-flex items-center gap-x-1 rounded-md px-2 py-1 text-xs font-medium">
                                 <span class="size-2 rounded-full bg-danger"></span>
                                 Churned
                             </span>
                         @endif
                     </x-ui.table.cell>
                     <x-ui.table.cell>
-                        <span class="text-sm font-semibold text-fg">{{ $organization['revenue'] }}</span>
+                        <span class="text-sm font-semibold text-foreground">{{ $organization['revenue'] }}</span>
                     </x-ui.table.cell>
                     <x-ui.table.cell>
-                        <span class="text-sm text-fg">{{ $organization['employees'] }}</span>
+                        <span class="text-sm text-foreground">{{ $organization['employees'] }}</span>
                     </x-ui.table.cell>
                     <x-ui.table.cell>
-                        <span class="text-xs text-fg-muted">{{ $organization['lastActivity'] }}</span>
+                        <span class="text-xs text-muted-foreground">{{ $organization['lastActivity'] }}</span>
                     </x-ui.table.cell>
                     <x-ui.table.cell class="pr-0.5">
                         <x-ui.button size="xs" variant="outline" intent="warning">
@@ -178,16 +178,16 @@
         </x-ui.table.rows>
     </x-ui.table>
     <div class="pt-6 flex items-center md:justify-between border-t border-border">
-        <div class="text-sm text-fg-muted">
+        <div class="text-sm text-muted-foreground">
             Showing 1 to {{ count($organizations) }} of {{ count($organizations) }} organizations
         </div>
         <div class="flex items-center gap-2">
             <x-ui.button size="sm" variant="ghost" icon-only aria-label="Go prev"
-                class="border border-border-input" disabled>
+                class="border border-input" disabled>
                 <x-ui.icon name="ph--caret-left" />
             </x-ui.button>
             <x-ui.button size="sm" variant="ghost" icon-only aria-label="Go next"
-                class="border border-border-input">
+                class="border border-input">
                 <x-ui.icon name="ph--caret-right" />
             </x-ui.button>
         </div>

@@ -34,7 +34,7 @@
 @endphp
 
 <x-layouts.base
-    body-class="bg-bg "
+    body-class="bg-background  "
     :seo="$seo"
     :script-entries="['resources/js/app.js', 'resources/js/flexilla.js', 'resources/js/search.js', 'resources/js/block.js']"
 >
@@ -47,13 +47,13 @@
                 <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
                 <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
                 <span
-                    class="absolute top-8.5 -left-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                    class="absolute top-8.5 -left-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                 <span
-                    class="absolute top-12.5 left-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                    class="absolute top-12.5 left-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                 <span
-                    class="absolute top-8.5 -right-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                    class="absolute top-8.5 -right-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                 <span
-                    class="absolute top-12.5 right-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                    class="absolute top-12.5 right-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
 
             </div>
         </div>

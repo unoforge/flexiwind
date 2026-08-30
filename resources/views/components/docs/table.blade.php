@@ -5,9 +5,9 @@
     ],
     'headerBg' => 'gray',
     'wrapperClass' => 'rounded-lg border border-border-strong/70 p-1 mt-6',
-    'headerClass' => 'bg-bg-muted/80',
+    'headerClass' => 'bg-muted/80',
     'rowClass' => '',
-    'firstColClass' => 'font-medium text-fg-muted',
+    'firstColClass' => 'font-medium text-muted-foreground',
 ])
 
 <x-ui.table :divider="false" :wrapper="$wrapperClass">

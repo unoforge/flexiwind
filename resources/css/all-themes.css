@@ -1,66 +1,114 @@
-@import url(./themes/default-colors.css);
-
-
 :root {
-    --checkbox-radius: var(--radius-sm);
-    --checkbox-bg: var(--color-bg);
-    --checkbox-checked-color: var(--color-primary);
+  --c-primary-200: oklch(88.3% 0.06 237);
+  --c-primary-500: oklch(60.8% 0.185 233);
+  --c-primary-600: oklch(53.7% 0.185 230);
+  --c-primary-800: oklch(40.2% 0.135 227);
 
-    --c-primary: var(--c-primary-600);
-    --c-secondary: var(--c-secondary-600);
-    --c-accent: var(--c-accent-600);
-    --c-info: var(--c-info-600);
-    --c-warning: var(--c-warning-600);
-    --c-danger: var(--c-danger-600);
-    --c-success: var(--c-success-600);
+  --c-secondary-500: hsl(245 86% 67%);
+  --c-secondary-600: hsl(243 75% 59%);
 
-    --c-fg-title: var(--c-gray-900);
-    --c-fg-subtitle: var(--c-gray-800);
-    --c-fg: var(--c-gray-700);
-    --c-fg-muted: var(--c-gray-600);
+  --c-accent-500: hsl(208 84% 48%);
+  --c-accent-600: hsl(209 92% 36%);
 
-    --c-bg: var(--c-white);
-    --c-bg-subtle: var(--c-gray-100);
-    --c-bg-surface: var(--c-gray-50);
-    --c-bg-muted: var(--c-gray-200);
-    --c-card: var(--c-bg);
-    --c-card-gray: var(--c-bg-subtle);
-    --c-overlay: var(--c-bg);
-    --c-overlay-gray: var(--c-bg-subtle);
+  --c-success-500: hsl(160 84% 39%);
+  --c-success-600: hsl(161 94% 30%);
 
-    --c-progressbar: var(--color-bg-muted);
-    --c-bg-range: var(--color-bg-muted);
+  --c-warning-500: hsl(25 95% 53%);
+  --c-warning-600: hsl(21 90% 48%);
 
-    --c-border-strong: var(--c-gray-300);
-    --c-border: var(--c-gray-200);
-    --c-border-sub: var(--c-gray-100);
-    --c-border-card: var(--c-gray-200);
-    --c-border-input: var(--c-gray-200);
+  --c-info-500: hsl(199 89% 48%);
+  --c-info-600: hsl(200 98% 39%);
+
+  --c-destructive-500: hsl(0 84% 60%);
+  --c-destructive-600: hsl(0 72% 51%);
+
+  --gray-50: oklch(98.5% 0 0);
+  --gray-100: oklch(96.7% 0.001 286.375);
+  --gray-200: oklch(92% 0.004 286.32);
+  --gray-300: oklch(87.1% 0.006 286.286);
+  --gray-400: oklch(70.5% 0.015 286.067);
+  --gray-500: oklch(55.2% 0.016 285.938);
+  --gray-600: oklch(44.2% 0.017 285.786);
+  --gray-700: oklch(37% 0.013 285.805);
+  --gray-800: oklch(27.4% 0.006 286.033);
+  --gray-900: oklch(21% 0.006 285.885);
+  --gray-950: oklch(14.1% 0.005 285.823);
+
+  --background: var(--color-white);
+  --foreground: var(--gray-700);
+  --title-foreground: var(--card-foreground);
+
+  --card: var(--color-white);
+  --card-foreground: var(--gray-900);
+
+  --popover: var(--color-white);
+  --popover-foreground: var(--gray-700);
+
+  --primary: var(--c-primary-600);
+  --primary-foreground: var(--color-white);
+
+  --secondary: var(--c-secondary-600);
+  --secondary-foreground: var(--color-white);
+
+  --accent: var(--c-accent-600);
+  --accent-foreground: var(--color-white);
+
+  --muted: var(--gray-100);
+  --muted-foreground: var(--gray-500);
+
+  --destructive: var(--c-destructive-600);
+  --destructive-foreground: var(--color-white);
+
+  --success: var(--c-success-600);
+  --warning: var(--c-warning-600);
+  --info: var(--c-info-600);
+
+  --border: var(--gray-200);
+  --input: var(--gray-200);
+  --ring: var(--primary);
+
+
+  --border-strong: var(--gray-300);
+  --border-card: var(--gray-200);
+  --border-input: var(--input);
+
+  --chart-1: var(--primary);
+  --chart-2: var(--secondary);
+  --chart-3: var(--accent);
+  --chart-4: color-mix(in oklab, var(--primary) 70%, white);
+  --chart-5: color-mix(in oklab, var(--secondary) 70%, white);
+
+  --checkbox-radius: var(--radius-sm);
+  --checkbox-bg: var(--background);
+  --checkbox-checked-color: var(--primary);
 }
 
-
 .dark {
-    --c-primary: var(--c-primary-500);
-    --c-secondary: var(--c-secondary-500);
-    --c-accent: var(--c-accent-500);
-    --c-info: var(--c-info-500);
-    --c-warning: var(--c-warning-500);
-    --c-danger: var(--c-danger-500);
-    --c-success: var(--c-success-500);
+  --background: var(--gray-950);
+  --foreground: var(--gray-300);
+  --title-foreground: var(--card-foreground);
 
-    --c-fg-title: var(--c-white);
-    --c-fg-subtitle: var(--c-gray-100);
-    --c-fg: var(--c-gray-300);
-    --c-fg-muted: var(--c-gray-400);
+  --card: var(--gray-950);
+  --card-foreground: var(--color-white);
 
-    --c-bg: var(--c-gray-950);
-    --c-bg-subtle: var(--c-gray-900);
-    --c-bg-surface: color-mix(in oklab, var(--c-gray-900) 70%, transparent);
-    --c-bg-muted: var(--c-gray-800);
+  --popover: var(--gray-950);
+  --popover-foreground: var(--gray-300);
 
-    --c-border-strong: var(--c-gray-700);
-    --c-border: var(--c-gray-900);
-    --c-border-sub: var(--c-gray-900);
-    --c-border-card: var(--c-gray-800);
-    --c-border-input: var(--color-gray-800);
+  --primary: var(--c-primary-500);
+  --secondary: var(--c-secondary-500);
+  --accent: var(--c-accent-500);
+  --destructive: var(--c-destructive-500);
+  --success: var(--c-success-500);
+  --warning: var(--c-warning-500);
+  --info: var(--c-info-500);
+
+  --muted: var(--gray-900);
+  --muted-foreground: var(--gray-400);
+
+  --border: var(--gray-900);
+  --input: var(--gray-800);
+  --ring: var(--primary);
+  --border-strong: var(--gray-700);
+  --border-card: var(--gray-800);
+  --border-input: var(--input);
 }

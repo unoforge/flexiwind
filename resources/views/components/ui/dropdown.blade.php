@@ -21,7 +21,7 @@
     @if ($keepOpen) data-prevent-close-inside @endif data-placement="{{ $finaPosition }}"
     @if ($keepOpenOutside) data-prevent-close-outside @endif
     {{ $attributes->class([
-        'opacity-0 invisible translate-y-1.5 scale-99 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 fx-open:scale-100 text-sm border border-border shadow rounded-ui flex flex-col overflow-hidden text-fg ease-linear transition-transform',
+        'opacity-0 invisible translate-y-1.5 scale-99 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 fx-open:scale-100 text-sm border border-border shadow rounded-ui flex flex-col overflow-hidden text-foreground ease-linear transition-transform',
         'ui-popper [--dropdown-padding:--spacing(1)] [--dropdown-radius:var(--radius-ui)] z-40',
         'rounded-(--dropdown-radius) p-(--dropdown-padding) ',
         "grid max-h-[inherit] grid-cols-[auto_1fr] gap-y-1 overflow-y-auto overflow-x-hidden overscroll-contain outline-hidden *:[[role='group']+[role=group]]:mt-3",

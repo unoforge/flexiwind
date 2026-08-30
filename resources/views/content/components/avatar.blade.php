@@ -117,7 +117,7 @@
             <x-ui.table.cell>
                 <x-docs.table-description>
                     The color intent of the avatar placeholder. Common intents include 'primary', 'success', 'warning',
-                    'danger', etc.
+                    'destructive', etc.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>

@@ -43,15 +43,15 @@
     <div class="px-5 sm:px-10 md:px-12 lg:px-5 lg:max-w-7xl mx-auto w-full">
         <div class="flex flex-col md:flex-row md:justify-between md:items-end">
             <div class="max-w-lg space-y-4">
-                <span class="block w-max border border-border shadow-sm text-fg rounded-ui px-2 py-0.5">
+                <span class="block w-max border border-border shadow-sm text-foreground rounded-ui px-2 py-0.5">
                     Why us
                 </span>
-                <h1 class="font-semibold text-fg-title text-3xl md:text-4xl/tight">
+                <h1 class="font-semibold text-foreground text-3xl md:text-4xl/tight">
                     Choose the perfect SEO partner for your business growth
                 </h1>
             </div>
             <div class="max-w-sm">
-                <p class="text-fg-muted">
+                <p class="text-muted-foreground">
                     We help businesses rank higher, grow organic traffic, and dominate search engines through tailored
                     SEO strategies.
                 </p>

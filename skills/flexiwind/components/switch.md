@@ -97,20 +97,20 @@ All props are optional unless noted.
 
 | Value | CSS Variable |
 |-------|-------------|
-| default | `--switch-bg:var(--color-bg-muted)` |
-| muted | `--switch-bg:var(--color-bg-subtle)` |
-| surface | `--switch-bg:var(--color-bg-surface)` |
-| bg | `--switch-bg:var(--color-bg)` |
+| default | `--switch-bg:var(--color-muted)` |
+| muted | `--switch-bg:var(--color-muted)` |
+| surface | `--switch-bg:var(--color-card)` |
+| bg | `--switch-bg:var(--color-background)` |
 
 #### track — checked track color (uses CSS `color` with `checked:bg-current`)
 
 | Value | CSS |
 |-------|-----|
-| default | `color:var(--color-primary-600)` |
-| muted | `color:var(--color-bg-muted)` |
-| surface | `color:var(--color-fg)` |
-| neutral | `color:var(--color-fg-muted)` |
-| title | `color:var(--color-fg-title)` |
+| default | `color:var(--color-primary)` |
+| muted | `color:var(--color-muted)` |
+| surface | `color:var(--color-foreground)` |
+| neutral | `color:var(--color-muted-foreground)` |
+| title | `color:var(--color-foreground)` |
 | transparent | `color:transparent` |
 
 Any arbitrary CSS color value also works (pass it as a string) — it will be used as `var(--color-{value})`.
@@ -120,9 +120,9 @@ Any arbitrary CSS color value also works (pass it as a string) — it will be us
 | Value | CSS Variable |
 |-------|-------------|
 | white | `var(--color-white)` |
-| bg | `var(--color-bg)` |
-| muted | `var(--color-fg-muted)` |
-| neutral | `var(--color-fg)` |
+| bg | `var(--color-background)` |
+| muted | `var(--color-muted-foreground)` |
+| neutral | `var(--color-foreground)` |
 
 Any arbitrary color value also works — it will be used as `var(--color-{value})`.
 

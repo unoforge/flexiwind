@@ -98,7 +98,7 @@
 
         <x-ui.table class="text-left">
             <x-ui.table.columns
-                wrapper="bg-bg-surface border-y border-border-input/60 [--gutter-x:--spacing(4)] [--gutter-y:--spacing(3)]">
+                wrapper="bg-card border-y border-input/60 [--gutter-x:--spacing(4)] [--gutter-y:--spacing(3)]">
                 <x-ui.table.column class="pr-0 text-xs uppercase tracking-wider w-8">
                     <x-ui.checkbox />
                 </x-ui.table.column>
@@ -132,17 +132,17 @@
                             <div class="flex items-center gap-3">
                                 <x-ui.avatar-placeholder size="sm" text="{{ $user['initials'] }}" variant="solid"
                                     intent="neutral" />
-                                <span class="font-medium text-fg">{{ $user['name'] }}</span>
+                                <span class="font-medium text-foreground">{{ $user['name'] }}</span>
                             </div>
                         </x-ui.table.cell>
                         <x-ui.table.cell>
-                            <span class="text-fg-muted">{{ $user['email'] }}</span>
+                            <span class="text-muted-foreground">{{ $user['email'] }}</span>
                         </x-ui.table.cell>
                         <x-ui.table.cell>
-                            <span class="text-fg">{{ $user['role'] }}</span>
+                            <span class="text-foreground">{{ $user['role'] }}</span>
                         </x-ui.table.cell>
                         <x-ui.table.cell>
-                            <span class="text-fg-muted">{{ $user['department'] }}</span>
+                            <span class="text-muted-foreground">{{ $user['department'] }}</span>
                         </x-ui.table.cell>
                         <x-ui.table.cell>
                             @if ($user['status'] === 'active')
@@ -158,7 +158,7 @@
                                     Pending
                                 </x-ui.badge>
                             @else
-                                <x-ui.badge variant="soft" intent="danger" size="sm"
+                                <x-ui.badge variant="soft" intent="destructive" size="sm"
                                     class="inline-flex items-center gap-x-1 font-medium">
                                     <span class="size-2 rounded-full bg-current"></span>
                                     Inactive
@@ -166,11 +166,11 @@
                             @endif
                         </x-ui.table.cell>
                         <x-ui.table.cell>
-                            <span class="text-fg-muted text-sm">{{ $user['joined'] }}</span>
+                            <span class="text-muted-foreground text-sm">{{ $user['joined'] }}</span>
                         </x-ui.table.cell>
                         <x-ui.table.cell>
                             <x-ui.button size="xs" variant="ghost" icon-only>
-                                <span aria-hidden="true" class="iconify ph--dots-three-vertical"></span>
+                                <x-ui.icon name="ph--dots-three-vertical" />
                             </x-ui.button>
                         </x-ui.table.cell>
                     </x-ui.table.row>
@@ -179,12 +179,12 @@
         </x-ui.table>
 
         <div class="p-4 flex items-center md:justify-between border-t border-border">
-            <div class="text-sm text-fg-muted">
+            <div class="text-sm text-muted-foreground">
                 Showing 1 to {{ count($users) }} of {{ count($users) }} users
             </div>
             <div class="flex-1 md:justify-center flex">
                 <x-ui.input.group class="sm:max-w-38">
-                    <x-ui.input.leading class="text-xs text-fg-muted px-3 border-r border-border-input">
+                    <x-ui.input.leading class="text-xs text-muted-foreground px-3 border-r border-input">
                         Per Page
                     </x-ui.input.leading>
                     <x-ui.select class="ps-3 pe-4" variant="unstyled" :indicator="false">
@@ -195,18 +195,18 @@
                         <x-ui.select.option value="200" selected label="200" />
                     </x-ui.select>
                     <x-ui.input.trailing absolute>
-                        <span class="flex iconify ph--caret-up-down text-sm"></span>
+                        <x-ui.icon name="ph--caret-up-down" class="flex text-sm" />
                     </x-ui.input.trailing>
                 </x-ui.input.group>
             </div>
             <div class="flex items-center gap-2">
                 <x-ui.button size="sm" variant="ghost" icon-only aria-label="Go prev"
-                    class="border border-border-input" disabled>
-                    <span aria-hidden="true" class="iconify size-3.5 ph--caret-left"></span>
+                    class="border border-input" disabled>
+                    <x-ui.icon name="ph--caret-left" class="size-3.5" />
                 </x-ui.button>
                 <x-ui.button size="sm" variant="ghost" icon-only aria-label="Go next"
-                    class="border border-border-input">
-                    <span aria-hidden="true" class="iconify size-3.5 ph--caret-right"></span>
+                    class="border border-input">
+                    <x-ui.icon name="ph--caret-right" class="size-3.5" />
                 </x-ui.button>
             </div>
         </div>

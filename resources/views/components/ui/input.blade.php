@@ -21,9 +21,9 @@
     ];
 
     $variantClasses = match ($variant) {
-        'default' => 'ui-form-base ui-form-input rounded-ui bg-bg border border-border-input text-fg',
-        'ghost' => 'ui-form-base ui-form-input rounded-ui border border-border-input text-fg',
-        'flush' => 'ui-form-base ui-form-input rounded-ui border-transparent text-fg',
+        'default' => 'ui-form-base ui-form-input rounded-ui bg-background  border border-input text-foreground',
+        'ghost' => 'ui-form-base ui-form-input rounded-ui border border-input text-foreground',
+        'flush' => 'ui-form-base ui-form-input rounded-ui border-transparent text-foreground',
         'unstyled' => '',
     };
 

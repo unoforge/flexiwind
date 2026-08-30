@@ -61,10 +61,10 @@
                 <x-ui.table.cell>
                     <div class="w-full flex justify-end items-center gap-2 min-w-max">
                         <x-ui.button size="sm" iconOnly variant="outline" intent="gray">
-                            <span aria-hidden="true" class="flex iconify ph--pen"></span>
+                            <x-ui.icon name="ph--pen" class="flex" />
                         </x-ui.button>
-                        <x-ui.button size="sm" iconOnly intent="danger">
-                            <span aria-hidden="true" class="flex iconify ph--trash"></span>
+                        <x-ui.button size="sm" iconOnly intent="destructive">
+                            <x-ui.icon name="ph--trash" class="flex" />
                         </x-ui.button>
                     </div>
                 </x-ui.table.cell>

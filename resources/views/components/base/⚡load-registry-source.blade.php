@@ -120,7 +120,7 @@ new class extends Component {
                     @endphp
                         <x-ui.tabs.trigger un-styled :id="'tab-code-' . $id" 
                         class="text-sm flex items-center rounded-md text-gray-400 fx-active:bg-gray-950 px-2 py-1 fx-active:text-white hover:text-white ease-linear duration-200 focus:outline-none text-nowrap border border-transparent fx-active:border-gray-700">
-                            <span class="iconify size-3.5 ph--file mr-1"></span>
+                            <x-ui.icon name="ph--file" class="size-3.5 mr-1" />
                             <span>{{ $item['name'] }}</span>
                         </x-ui.tabs.trigger>
                     @endforeach

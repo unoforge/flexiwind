@@ -7,7 +7,7 @@
             <h4 class="font-medium leading-none">
                 Dimensions
             </h4>
-            <p class="text-sm text-fg-muted">
+            <p class="text-sm text-muted-foreground">
                 Set the dimensions for the layer.
             </p>
         </div>

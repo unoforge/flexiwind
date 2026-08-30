@@ -22,7 +22,7 @@ php artisan flexi:add text
 
 | Prop | Description |
 | --- | --- |
-| intent (muted\|body\|title\|caption\|primary\|secondary\|warning\|danger) | Semantic color intent |
+| intent (muted\|body\|title\|caption\|primary\|secondary\|warning\|destructive) | Semantic color intent |
 | as (string) | HTML tag to render. Default: p |
 
 ## Guidance

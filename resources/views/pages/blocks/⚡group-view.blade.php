@@ -48,11 +48,11 @@ new #[Layout('layouts.view-block')] class extends Component {
     @else
         <div class="lg:max-w-336 xl:max-w-352 mx-auto px-2 sm:px-4 xl:px-8 w-full">
             <div
-                class="mt-10 w-full bg-bg-surface border border-border-card/60 p-5 sm:p-10 lg:py-16 rounded-ui flex flex-col text-center items-center">
-                <h2 class="text-fg-title font-semibold text-3xl">
+                class="mt-10 w-full bg-card border border-border-card/60 p-5 sm:p-10 lg:py-16 rounded-ui flex flex-col text-center items-center">
+                <h2 class="text-foreground font-semibold text-3xl">
                     No Block found for <span class="text-primary">{{ $blockGroup['title'] ?? $blockName }}</span>
                 </h2>
-                <p class="mx-auto max-w-lg text-fg mt-4">
+                <p class="mx-auto max-w-lg text-foreground mt-4">
                     We're working on this, we'll release it soon
                 </p>
                 <div class="mt-8">

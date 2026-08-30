@@ -34,7 +34,7 @@ php artisan flexi:add avatar avatar-placeholder
 ```html
 <x-ui.avatar-placeholder size="md" variant="subtle" intent="primary" text="JK" />
 <x-ui.avatar-placeholder size="md" variant="subtle" intent="gray">
-    <span class="iconify ph--user"></span>
+    <x-ui.icon name="ph--user" />
 </x-ui.avatar-placeholder>
 ```
 

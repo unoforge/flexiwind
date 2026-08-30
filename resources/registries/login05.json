@@ -1,0 +1,22 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "login05",
+    "type": "registry:component",
+    "title": "Login 05",
+    "description": "Side-by-side login page with testimonial card.",
+    "registryDependencies": [
+        "avatar",
+        "button",
+        "checkbox",
+        "input"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/auth/login05.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/auth/login05.blade.php",
+            "content": "<div class=\"flex min-h-screen\">\n    <div class=\"flex-1 flex items-center justify-center px-5 sm:px-10 py-10 bg-background \">\n        <div class=\"w-full max-w-sm\">\n            <div class=\"text-center mb-8\">\n                <div class=\"size-14 bg-primary/10 text-primary rounded-full d-flex-place-center mx-auto mb-4\">\n                    <x-ui.icon name=\"ph--key\" class=\"size-6\" />\n                </div>\n                <h1 class=\"text-2xl font-bold text-foreground\">Welcome back</h1>\n                <p class=\"text-muted-foreground text-sm mt-1\">Sign in to continue to your workspace.</p>\n            </div>\n            <form class=\"space-y-4\">\n                <x-ui.input type=\"email\" placeholder=\"you@example.com\" label=\"Email\" />\n                <x-ui.input type=\"password\" placeholder=\"••••••••\" label=\"Password\" />\n                <div class=\"flex items-center justify-between\">\n                    <x-ui.checkbox id=\"login05-remember\" label=\"Remember this device\" />\n                </div>\n                <x-ui.button type=\"submit\" class=\"w-full justify-center text-base py-3\">\n                    Sign in with SSO\n                </x-ui.button>\n            </form>\n            <div class=\"relative my-6\">\n                <div class=\"absolute inset-0 flex items-center\">\n                    <div class=\"w-full border-t border-border\"></div>\n                </div>\n                <div class=\"relative flex justify-center text-sm\">\n                    <span class=\"px-3 bg-background  text-muted-foreground\">or</span>\n                </div>\n            </div>\n            <x-ui.button variant=\"outline\" intent=\"gray\" class=\"w-full justify-center\">\n                <x-ui.icon name=\"ph--envelope\" class=\"mr-2\" />\n                Continue with magic link\n            </x-ui.button>\n            <x-ui.button variant=\"ghost\" intent=\"gray\" class=\"w-full justify-center mt-3\">\n                <x-ui.icon name=\"ph--lock\" class=\"mr-2\" />\n                Enterprise SSO\n            </x-ui.button>\n        </div>\n    </div>\n    <div class=\"hidden lg:flex flex-1 bg-linear-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 items-center justify-center p-12\">\n        <div class=\"max-w-sm text-center\">\n            <blockquote class=\"text-lg font-medium text-foreground leading-relaxed\">\n                \"This platform has transformed how our team collaborates. The simplicity is unmatched.\"\n            </blockquote>\n            <div class=\"mt-6 flex items-center justify-center gap-3\">\n                <x-ui.avatar src=\"/avatar2.webp\" alt=\"Testimonial\" size=\"md\" radius=\"full\" />\n                <div class=\"text-left\">\n                    <p class=\"text-sm font-semibold text-foreground\">Sarah Mitchell</p>\n                    <p class=\"text-xs text-muted-foreground\">CTO, TechFlow Inc.</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+        }
+    ]
+}

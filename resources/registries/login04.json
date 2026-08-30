@@ -1,0 +1,24 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "login04",
+    "type": "registry:component",
+    "title": "Login 04",
+    "description": "Split-screen login page with feature highlights.",
+    "registryDependencies": [
+        "button",
+        "checkbox",
+        "divider",
+        "input",
+        "label",
+        "link"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/auth/login04.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/auth/login04.blade.php",
+            "content": "<div class=\"flex min-h-screen\">\n    <div class=\"hidden lg:flex flex-1 bg-linear-to-br from-primary/5 to-accent/5 items-center justify-center p-12\">\n        <div class=\"max-w-md text-center\">\n            <div class=\"size-20 bg-primary/10 text-primary rounded-2xl d-flex-place-center mx-auto mb-6\">\n                <x-ui.icon name=\"ph--lightning\" class=\"size-10\" />\n            </div>\n            <h2 class=\"text-3xl font-bold text-foreground mb-3\">Build something great</h2>\n            <p class=\"text-muted-foreground leading-relaxed\">\n                Join thousands of teams already using our platform to streamline their workflow, collaborate in real time, and ship faster than ever.\n            </p>\n            <div class=\"mt-8 flex items-center justify-center gap-4 text-sm text-muted-foreground\">\n                <span class=\"flex items-center gap-1.5\">\n                    <x-ui.icon name=\"ph--check-circle\" class=\"text-success size-4\" />\n                    No credit card\n                </span>\n                <span class=\"flex items-center gap-1.5\">\n                    <x-ui.icon name=\"ph--check-circle\" class=\"text-success size-4\" />\n                    14-day free trial\n                </span>\n                <span class=\"flex items-center gap-1.5\">\n                    <x-ui.icon name=\"ph--check-circle\" class=\"text-success size-4\" />\n                    Cancel anytime\n                </span>\n            </div>\n        </div>\n    </div>\n    <div class=\"w-full lg:w-160 flex items-center justify-center px-5 sm:px-10 py-10\">\n        <div class=\"w-full max-w-sm\">\n            <div class=\"mb-8\">\n                <div class=\"size-10 bg-primary text-white rounded-lg d-flex-place-center mb-4\">\n                    <x-ui.icon name=\"ph--stack\" class=\"size-5\" />\n                </div>\n                <h1 class=\"text-2xl font-bold text-foreground\">Sign in to your account</h1>\n                <p class=\"text-muted-foreground mt-1\">Enter your credentials to access the dashboard.</p>\n            </div>\n            <form class=\"space-y-4\">\n                <x-ui.input type=\"email\" label=\"Email\" placeholder=\"name@company.com\" />\n                <x-ui.input type=\"password\" label=\"Password\" placeholder=\"••••••••\" />\n                <div class=\"flex items-center justify-between\">\n                    <x-ui.checkbox id=\"login04-remember\" label=\"Keep me signed in\" />\n                    <x-ui.link href=\"#\" underlined class=\"text-sm text-primary\">Forgot password?</x-ui.link>\n                </div>\n                <x-ui.button type=\"submit\" class=\"w-full justify-center\">\n                    <x-ui.icon name=\"ph--arrow-right\" class=\"size-4 mr-2\" />\n                    Sign in\n                </x-ui.button>\n            </form>\n            <x-ui.divider label-placement=\"middle\" label=\"Or continue with\" class=\"before:bg-muted my-6\"\n                label-class=\"px-3 bg-background  text-muted-foreground text-sm\" />\n            <div class=\"grid grid-cols-2 gap-3\">\n                <x-ui.button variant=\"outline\" intent=\"gray\" class=\"justify-center\">\n                    <x-ui.icon name=\"ph--google-logo\" class=\"mr-2\" />\n                    Google\n                </x-ui.button>\n                <x-ui.button variant=\"outline\" intent=\"gray\" class=\"justify-center\">\n                    <x-ui.icon name=\"ph--github-logo\" class=\"mr-2\" />\n                    GitHub\n                </x-ui.button>\n            </div>\n            <p class=\"text-center text-sm text-muted-foreground mt-6\">\n                Don't have an account?\n                <x-ui.link href=\"#\" class=\"text-primary font-medium ml-1\">Sign up</x-ui.link>\n            </p>\n        </div>\n    </div>\n</div>"
+        }
+    ]
+}

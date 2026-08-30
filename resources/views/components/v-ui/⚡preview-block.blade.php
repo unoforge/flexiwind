@@ -23,7 +23,7 @@ new class extends Component
 };
 ?>
 
-<div class="w-full h-full bg-bg duration-300 ease-linear ui-preview-frame flex items-center justify-center relative overflow-hidden"
+<div class="w-full h-full bg-background  duration-300 ease-linear ui-preview-frame flex items-center justify-center relative overflow-hidden"
     x-data="{ frameIsLoading: true, minLoadingDone: false }"
     x-init="setTimeout(() => minLoadingDone = true, 800)"
     x-effect="if (minLoadingDone && $refs.frame?.contentDocument?.readyState === 'complete') frameIsLoading = false">

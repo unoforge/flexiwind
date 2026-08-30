@@ -1,6 +1,6 @@
 ## Theming Tokens
 
-Flexiwind uses semantic tokens instead of hardcoded color values. You define meaning-first roles such as primary , secondary , and danger , then consume them through utilities across the UI.
+Flexiwind uses semantic tokens instead of hardcoded color values. You define meaning-first roles such as primary , secondary , and destructive , then consume them through utilities across the UI.
 
 Practical rule: update token values once in your theme layer, then let components inherit those values. This keeps theming predictable and avoids one-off styling.
 
@@ -14,47 +14,44 @@ Practical rule: update token values once in your theme layer, then let component
 | info | Used to communicate neutral or informative messages, such as tips, hints, or informational alerts. |
 | success | Indicates successful actions or positive states, such as confirmations, completed tasks, or valid inputs. |
 | warning | Signals caution or potential issues that require user attention but are not critical errors. |
-| danger | Represents destructive actions, errors, or critical states that may cause data loss or irreversible changes. |
+| destructive | Represents destructive actions, errors, or critical states that may cause data loss or irreversible changes. |
 | gray | A neutral color scale used for backgrounds, borders, text, disabled states, and non-emphasized UI elements. |
 
 ### Background
 
-Background tokens define app surfaces and elevation layers. Use utilities such as bg-bg , bg-bg-muted , bg-card , and bg-card-gray .
+Background tokens define app surfaces and elevation layers. Use utilities such as `bg-background `, `bg-muted`, `bg-card`, and `surface-background`.
 
 | Token | Description |
 | --- | --- |
-| --bg | Default app background. |
-| --bg-subtle | Subtle background to separate sections. |
-| --bg-surface | Elevated or surface layers (panels, sheets). |
-| --bg-muted | Muted background for less emphasis. |
+| --background | Default app background. |
+| --muted | Subtle background to separate sections. |
 | --card | Card background. |
-| --card-gray | Neutral/gray variant for cards. |
+| --surface-background | Neutral surface background for panels and repeated items. |
 | --popover | Popover/tooltip background. |
-| --popover-gray | Neutral/gray variant for popovers. |
-| --overlay | Overlays and scrims (modals, drawers). |
+| --popover-foreground | Foreground used inside popovers and tooltips. |
 
 ### Foreground
 
-Foreground tokens control text and icon hierarchy. Use text-fg for default content, text-fg-title for high-emphasis headings, and muted tokens for secondary content.
+Foreground tokens control text and icon hierarchy. Use `text-foreground` for body text, `text-title-foreground` for high-emphasis headings, then use `text-muted-foreground` for supporting copy.
 
 | Token | Description |
 | --- | --- |
-| --fg | Default foreground for body text and icons. |
-| --fg-title | High-emphasis titles and headings. |
-| --fg-subtitle | Secondary headings and labels. |
-| --fg-muted | Muted/tertiary text, placeholders, help text. |
+| --foreground | Default foreground for body text and icons. |
+| --title-foreground | High-emphasis titles and headings. |
+| --muted-foreground | Muted/tertiary text, placeholders, help text. |
 
 ### Border
 
-Border tokens define separators, outlines, and control edges. Use border-border as default, raise contrast with border-border-strong , and tune intensity with opacity utilities such as border-border/40 .
+Border tokens define separators, outlines, and control edges. Use `border-border` as default, raise contrast with `border-border-strong`, and tune intensity with opacity utilities such as `border-border/40`.
 
 | Token | Description |
 | --- | --- |
 | --border | Default border color for components. |
 | --border-strong | Stronger emphasis borders and outlines. |
-| --border-subtle | Subtle dividers and separators. |
 | --border-card | Card borders. |
 | --border-input | Input and form control borders. |
+| --input | Native input border token exposed as `border-input`. |
+| --ring | Focus ring token exposed as `ring-ring`. |
 
 ### Border radius
 

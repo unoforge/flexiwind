@@ -24,7 +24,7 @@
             <x-ui.table.cell><x-docs.table-description>Heading level determining the HTML tag (h1-h5) and size.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell><x-docs.inline-code no-wrap text="intent" /> (title|body|muted|primary|secondary|danger|warning)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="intent" /> (title|body|muted|primary|secondary|destructive|warning)</x-ui.table.cell>
             <x-ui.table.cell><x-docs.table-description>Semantic color intent for the heading.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
     </x-docs.table>

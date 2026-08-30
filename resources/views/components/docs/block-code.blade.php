@@ -24,7 +24,7 @@
             class="h-4 w-auto"
           />
         @else
-          <span aria-hidden="true" class="flex iconify {{ $iconVal }}"></span>
+          <x-ui.icon name="{{ $iconVal }}" class="flex" />
         @endif
       @endif
       {{ $title }}

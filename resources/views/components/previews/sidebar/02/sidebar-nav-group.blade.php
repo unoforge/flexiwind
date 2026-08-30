@@ -1,6 +1,6 @@
 @props(['title', 'items' => []])
 <div class="mt-6 first:mt-1">
-    <div class="px-2 text-xs font-medium text-fg-muted/70 uppercase tracking-wider">
+    <div class="px-2 text-xs font-medium text-muted-foreground/70 uppercase tracking-wider">
         {{ $title }}
     </div>
     <ul class="flex flex-col mt-1.5 space-y-0.5">

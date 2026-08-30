@@ -23,11 +23,11 @@
 @endphp
 
 <x-ui.sidebar-wrapper
-    class="fixed h-dvh py-3 overflow-hidden w-11/12 max-w-64 md:w-64 transition-all -translate-x-full fx-open:translate-x-0 md:translate-x-0 bg-bg-surface border-r border-bg-muted/70 flex flex-col justify-between px-4 md:transition-none ease-linear z-80">
+    class="fixed h-dvh py-3 overflow-hidden w-11/12 max-w-64 md:w-64 transition-all -translate-x-full fx-open:translate-x-0 md:translate-x-0 bg-muted/80 border-r border-muted/70 flex flex-col justify-between px-4 md:transition-none ease-linear z-80">
     <div class="min-h-max py-2 border-b border-border">
-        <a href="#" class="flex items-center gap-x-3 font-semibold text-fg-subtitle">
+        <a href="#" class="flex items-center gap-x-3 font-semibold text-foreground">
             <div
-                class="size-8 bg-fg-title text-bg rounded-ui d-flex-place-center shadow-sm transition-colors duration-300">
+                class="size-8 bg-foreground text-background rounded-ui d-flex-place-center shadow-sm transition-colors duration-300">
                 <svg aria-hidden="true" width="488" height="488" class="size-5" viewBox="0 0 488 488" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_13_164)">
@@ -38,7 +38,7 @@
                             d="M483.659 249.5C483.659 274.629 436.788 344.5 411.659 344.5C386.53 344.5 392.659 274.629 392.659 249.5C392.659 224.371 413.03 204 438.159 204C463.288 204 483.659 224.371 483.659 249.5Z"
                             fill="currentColor" class=""></path>
                         <circle cx="243.429" cy="243.759" r="110" transform="rotate(48.3973 243.429 243.759)"
-                            fill="currentColor" stroke="white" stroke-width="80" class="stroke-fg-title"></circle>
+                            fill="currentColor" stroke="white" stroke-width="80" class="stroke-foreground"></circle>
                         <path
                             d="M309 71C309 96.129 212.629 101 187.5 101C162.371 101 142 80.629 142 55.5C142 30.371 162.371 10 187.5 10C212.629 10 309 45.871 309 71Z"
                             fill="currentColor" class=""></path>
@@ -48,7 +48,7 @@
                     </g>
                     <defs>
                         <clipPath id="clip0_13_164">
-                            <rect width="488" height="488" fill="currentColor" class="text-bg"></rect>
+                            <rect width="488" height="488" fill="currentColor" class="text-background"></rect>
                         </clipPath>
                     </defs>
                 </svg>
@@ -57,8 +57,8 @@
         </a>
     </div>
     <nav class="flex-1 pt-6 flex flex-col">
-        <span class="mb-2 text-sm text-fg-muted uppercase">Navigation</span>
-        <ul class="text-fg-muted space-y-2">
+        <span class="mb-2 text-sm text-muted-foreground uppercase">Navigation</span>
+        <ul class="text-muted-foreground space-y-2">
             @foreach ($items as $item)
                 <x-previews.sidebar.01.sidebar-item text="{{ $item['text'] }}" href="{{ $item['href'] }}"
                     icon="{{ $item['icon'] }}" :is-active="$item['isActive'] ?? false" />
@@ -66,7 +66,7 @@
         </ul>
     </nav>
     <div>
-        <ul class="flex flex-col gap-y-2 text-fg-muted">
+        <ul class="flex flex-col gap-y-2 text-muted-foreground">
             <x-previews.sidebar.01.sidebar-item text="Settings" href="#" icon="ph--gear" />
             <li class="w-full">
                 <x-ui.button size="none" variant="ghost" aria-label="Show Profile dropdown"
@@ -76,15 +76,15 @@
 
                     <div class="flex flex-1 justify-between items-center overflow-hidden">
                         <div class="flex flex-col -space-y-0.5 text-left flex-1 overflow-hidden">
-                            <span class="font-semibold text-sm text-fg-title truncate">
+                            <span class="font-semibold text-sm text-foreground truncate">
                                 Johnkat MJ
                             </span>
-                            <span class="text-xs text-fg-muted truncate">
+                            <span class="text-xs text-muted-foreground truncate">
                                 johnkatmj@gmail.com
                             </span>
                         </div>
-                        <span aria-hidden="true" class="flex min-w-max text-fg-muted opacity-60">
-                            <span class="iconify ph--caret-up-down"></span>
+                        <span aria-hidden="true" class="flex min-w-max text-muted-foreground opacity-60">
+                            <x-ui.icon name="ph--caret-up-down" />
                         </span>
                     </div>
                 </x-ui.button>

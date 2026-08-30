@@ -5,16 +5,16 @@
         <div
             class="min-h-max relative mx-auto pt-32 lg:pt-40 px-5 sm:px-10 md:px-12 lg:px-5 lg:max-w-7xl w-full text-center space-y-10">
             <a href="#"
-                class="flex items-center gap-x-2 mx-auto w-max px-2 pr-1 py-1 rounded-full bg-bg-surface border border-border-strong/40 text-sm text-fg">
+                class="flex items-center gap-x-2 mx-auto w-max px-2 pr-1 py-1 rounded-full bg-card border border-border-strong/40 text-sm text-foreground">
                 mySto v2.1 is out
                 <span class="pr-1">
-                    <span class="iconify ph--caret-right text-sm flex"></span>
+                    <x-ui.icon name="ph--caret-right" class="text-sm flex" />
                 </span>
             </a>
-            <h1 class="mx-auto max-w-5xl font-semibold text-fg-title text-4xl/tight sm:text-5xl/tight lg:text-6xl/tight">
+            <h1 class="mx-auto max-w-5xl font-semibold text-foreground text-4xl/tight sm:text-5xl/tight lg:text-6xl/tight">
                 The Tool that lets you have full control on your stock & sales
             </h1>
-            <p class="mx-auto max-w-2xl text-fg">
+            <p class="mx-auto max-w-2xl text-foreground">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt saepe atque enim quasi a ipsum
                 asperiores necessitatibus deleniti, sint quo vel corporis dignissimos
             </p>
@@ -29,12 +29,12 @@
                         </span>
                     </x-ui.button>
                 </x-ui.input.group>
-                <span class="text-center text-sm text-fg-muted inline-flex items-center">
-                    Powerfull, AI Integreted <span class="iconify ph--sparkle inline-flex"></span>
+                <span class="text-center text-sm text-muted-foreground inline-flex items-center">
+                    Powerfull, AI Integreted <x-ui.icon name="ph--sparkle" class="inline-flex" />
                 </span>
             </div>
             <div
-                class="mx-auto max-w-6xl aspect-[5/2.3] overflow-hidden bg-fg-title  ui-card [--card-radius:20px] [--card-padding:--spacing(3)] rounded-b-none pb-0">
+                class="mx-auto max-w-6xl aspect-[5/2.3] overflow-hidden bg-foreground  ui-card [--card-radius:20px] [--card-padding:--spacing(3)] rounded-b-none pb-0">
                 <img src="/images/dash-light.webp" width="1440" height="1024" alt="product image"
                     class="inner-radius w-full h-auto dark:hidden" loading="eager" decoding="async"
                     fetchpriority="high">

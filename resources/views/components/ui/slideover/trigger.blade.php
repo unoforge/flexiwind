@@ -9,4 +9,3 @@
     ]) }}>
     {{ $slot }}
 </x-ui.button>
-

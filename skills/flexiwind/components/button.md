@@ -59,19 +59,19 @@ Variant controls the visual treatment of the button, while intent communicates t
 
 ```html
 <x-ui.button size="xs" iconOnly>
-    <span aria-hidden="true" class="flex iconify ph--atom"></span>
+    <x-ui.icon name="ph--atom" />
 </x-ui.button>
 <x-ui.button size="sm" iconOnly>
-    <span aria-hidden="true" class="flex iconify ph--atom"></span>
+    <x-ui.icon name="ph--atom" />
 </x-ui.button>
 <x-ui.button size="md" iconOnly>
-    <span aria-hidden="true" class="flex iconify ph--atom"></span>
+    <x-ui.icon name="ph--atom" />
 </x-ui.button>
 <x-ui.button size="lg" iconOnly>
-    <span aria-hidden="true" class="flex iconify ph--atom"></span>
+    <x-ui.icon name="ph--atom" />
 </x-ui.button>
 <x-ui.button size="xl" iconOnly>
-    <span aria-hidden="true" class="flex iconify ph--atom"></span>
+    <x-ui.icon name="ph--atom" />
 </x-ui.button>
 ```
 
@@ -79,12 +79,12 @@ Variant controls the visual treatment of the button, while intent communicates t
 
 ```html
 <x-ui.button aria-label="Default button">
-    <span aria-hidden="true" class="flex iconify ph--atom mr-1.5"></span>
+    <x-ui.icon name="ph--atom" class="mr-1.5" />
     leading
 </x-ui.button>
 <x-ui.button aria-label="Default button">
     trailing
-    <span aria-hidden="true" class="flex iconify ph--atom ml-1.5"></span>
+    <x-ui.icon name="ph--atom" class="ml-1.5" />
 </x-ui.button>
 ```
 
@@ -98,7 +98,7 @@ Variant controls the visual treatment of the button, while intent communicates t
 ## Avoid
 
 - Do not use raw `<button>` tags when `x-ui.button` covers the need.
-- Do not scatter button variant styling across templates — centralize in `button-styles.css` using the documented CSS utilities.
+- Do not scatter button variant styling across templates — centralize intent utilities in `resources/css/flexiwind/intents.css`.
 - Do not invent variant names outside `solid`, `soft`, `outline`, `ghost`, `none`.
 - Do not nest `<x-ui.link>` inside `<x-ui.button>` or vice versa. For a link that looks like a button, use `x-ui.button href` (renders as `<a>`) or `x-ui.link asButton`.
 - Do not nest interactive elements (buttons, links) inside `<x-ui.link>` — it renders as an `<a>` tag.

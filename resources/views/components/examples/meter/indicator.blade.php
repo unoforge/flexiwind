@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-8 w-full">
     <div>
         <div class="flex justify-end" style="width: 40%">
-            <span class="text-sm text-fg">40%</span>
+            <span class="text-sm text-foreground">40%</span>
         </div>
         <x-ui.meter max="10" value="4" class="text-primary" />
     </div>

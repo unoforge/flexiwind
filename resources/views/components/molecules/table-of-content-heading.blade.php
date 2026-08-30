@@ -3,7 +3,7 @@
 <li class="flex flex-col ml-4">
   <a
     href="#{{ $heading->slug }}"
-    class="text-fg-muted hover:text-fg-title ease-linear duration-200"
+    class="text-muted-foreground hover:text-foreground ease-linear duration-200"
   >
     {{ $heading->text }}
   </a>
@@ -14,7 +14,7 @@
         <li>
           <a
             href="#{{ $sub->slug }}"
-            class="d-flex-items-center gap-x-1 text-fg-muted hover:text-fg-title ease-linear duration-200"
+            class="d-flex-items-center gap-x-1 text-muted-foreground hover:text-foreground ease-linear duration-200"
           >
             {{ $sub->text }}
           </a>

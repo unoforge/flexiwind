@@ -4,16 +4,16 @@
             <div class="flex items-center">
                 <div class="size-8 text-white flex items-center justify-center rounded-full bg-accent" role="img"
                     aria-label="Total Users icon">
-                    <span class="iconify ph--users" aria-hidden="true"></span>
+                    <x-ui.icon name="ph--users" />
                 </div>
-                <h3 class="flex-1 flex text-fg-muted ml-3">Total Users</h3>
+                <h3 class="flex-1 flex text-muted-foreground ml-3">Total Users</h3>
             </div>
-            <div class="py-3 flex text-center justify-center font-semibold text-3xl text-fg">12,543</div>
+            <div class="py-3 flex text-center justify-center font-semibold text-3xl text-foreground">12,543</div>
             <div class="flex justify-between items-center">
-                <p class="text-xs text-fg-muted flex-1 line-clamp-1">Total registered users</p>
+                <p class="text-xs text-muted-foreground flex-1 line-clamp-1">Total registered users</p>
                 <div class="size-6 text-white text-sm rounded-full flex items-center justify-center bg-success"
                     role="img" aria-label="Trend indicator">
-                    <span aria-hidden="true" class="iconify ph--trend-up"></span>
+                    <x-ui.icon name="ph--trend-up" />
                 </div>
             </div>
         </x-ui.card>
@@ -21,16 +21,16 @@
             <div class="flex items-center">
                 <div class="size-8 text-white flex items-center justify-center rounded-full bg-primary" role="img"
                     aria-label="New Signups icon">
-                    <span class="iconify ph--user-plus" aria-hidden="true"></span>
+                    <x-ui.icon name="ph--user-plus" />
                 </div>
-                <h3 class="flex-1 flex text-fg-muted ml-3">New Signups</h3>
+                <h3 class="flex-1 flex text-muted-foreground ml-3">New Signups</h3>
             </div>
-            <div class="py-3 flex text-center justify-center font-semibold text-3xl text-fg">342</div>
+            <div class="py-3 flex text-center justify-center font-semibold text-3xl text-foreground">342</div>
             <div class="flex justify-between items-center">
-                <p class="text-xs text-fg-muted flex-1 line-clamp-1">New signups this month</p>
+                <p class="text-xs text-muted-foreground flex-1 line-clamp-1">New signups this month</p>
                 <div class="size-6 text-white text-sm rounded-full flex items-center justify-center bg-success"
                     role="img" aria-label="Trend indicator">
-                    <span aria-hidden="true" class="iconify ph--trend-up"></span>
+                    <x-ui.icon name="ph--trend-up" />
                 </div>
             </div>
         </x-ui.card>
@@ -38,16 +38,16 @@
             <div class="flex items-center">
                 <div class="size-8 text-white flex items-center justify-center rounded-full bg-success" role="img"
                     aria-label="Active Users icon">
-                    <span class="iconify ph--users" aria-hidden="true"></span>
+                    <x-ui.icon name="ph--users" />
                 </div>
-                <h3 class="flex-1 flex text-fg-muted ml-3">Active Users</h3>
+                <h3 class="flex-1 flex text-muted-foreground ml-3">Active Users</h3>
             </div>
-            <div class="py-3 flex text-center justify-center font-semibold text-3xl text-fg">8,921</div>
+            <div class="py-3 flex text-center justify-center font-semibold text-3xl text-foreground">8,921</div>
             <div class="flex justify-between items-center">
-                <p class="text-xs text-fg-muted flex-1 line-clamp-1">Currently active users</p>
+                <p class="text-xs text-muted-foreground flex-1 line-clamp-1">Currently active users</p>
                 <div class="size-6 text-white text-sm rounded-full flex items-center justify-center bg-success"
                     role="img" aria-label="Trend indicator">
-                    <span aria-hidden="true" class="iconify ph--trend-up"></span>
+                    <x-ui.icon name="ph--trend-up" />
                 </div>
             </div>
         </x-ui.card>
@@ -55,16 +55,16 @@
             <div class="flex items-center">
                 <div class="size-8 text-white flex items-center justify-center rounded-full bg-warning" role="img"
                     aria-label="Churn Rate icon">
-                    <span class="iconify ph--chart-line-down" aria-hidden="true"></span>
+                    <x-ui.icon name="ph--chart-line-down" />
                 </div>
-                <h3 class="flex-1 flex text-fg-muted ml-3">Churn Rate</h3>
+                <h3 class="flex-1 flex text-muted-foreground ml-3">Churn Rate</h3>
             </div>
-            <div class="py-3 flex text-center justify-center font-semibold text-3xl text-fg">2.3%</div>
+            <div class="py-3 flex text-center justify-center font-semibold text-3xl text-foreground">2.3%</div>
             <div class="flex justify-between items-center">
-                <p class="text-xs text-fg-muted flex-1 line-clamp-1">Monthly churn rate</p>
+                <p class="text-xs text-muted-foreground flex-1 line-clamp-1">Monthly churn rate</p>
                 <div class="size-6 text-white text-sm rounded-full flex items-center justify-center bg-danger"
                     role="img" aria-label="Trend indicator">
-                    <span aria-hidden="true" class="iconify ph--trend-down"></span>
+                    <x-ui.icon name="ph--trend-down" />
                 </div>
             </div>
         </x-ui.card>

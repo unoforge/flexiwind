@@ -25,7 +25,7 @@
         'dropdown-item-selected-avatar-icon',
         'dropdown-item-selected-avatar',
         'ease-linear duration-200',
-        'text-fg-muted',
+        'text-muted-foreground',
         'cursor-not-allowed' => $disabled,
     ]);
 
@@ -36,5 +36,5 @@
 
 <button data-dropdown-trigger data-dropdown-id="dropdown-{{ $dropdownId }}" {{ $attributes }}>
     {{ $slot }}
-    <span slot="chevron" data-slot="chevron" class="flex iconify ph--caret-right absolute right-2 text-xs"></span>
+    <x-ui.icon name="ph--caret-right" icon-slot="chevron" data-slot="chevron" class="absolute right-2 text-xs" />
 </button>

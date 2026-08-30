@@ -13,9 +13,9 @@
     ];
 
     $variantClasses = match ($variant) {
-        'default' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex rounded-ui bg-bg border border-border-input text-fg',
-        'ghost' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex rounded-ui bg-bg border border-border-input text-fg',
-        'flush' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex border-transparent bg-bg text-fg',
+        'default' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex rounded-ui bg-background  border border-input text-foreground',
+        'ghost' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex rounded-ui bg-background  border border-input text-foreground',
+        'flush' => 'ui-form-group-base ui-form-group ui-form-group-input relative flex border-transparent bg-background  text-foreground',
         'unstyled' => 'relative flex',
     };
 

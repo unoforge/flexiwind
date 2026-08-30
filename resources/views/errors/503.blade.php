@@ -27,7 +27,7 @@
     @livewireStyles
 </head>
 
-<body class="antialiased bg-bg">
+<body class="antialiased bg-background ">
     <x-organisms.navbar />
     <main class="">
         <section class="relative">
@@ -44,23 +44,23 @@
                     <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
                     <div class="relative h-full w-4 border-x border-pattern-fg/70 linear-gradient-pattern"></div>
                     <span
-                        class="absolute top-8.5 -left-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        class="absolute top-8.5 -left-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                     <span
-                        class="absolute top-12.5 left-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        class="absolute top-12.5 left-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                     <span
-                        class="absolute top-8.5 -right-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        class="absolute top-8.5 -right-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
                     <span
-                        class="absolute top-12.5 right-[11px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        class="absolute top-12.5 right-[11px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
 
                     <span
-                        class="absolute bottom-7 -left-[3.5px] size-2 bg-bg border border-border-strong/60 shadow-sm rounded-ui"></span>
+                        class="absolute bottom-7 -left-[3.5px] size-2 bg-background  border border-border-strong/60 shadow-sm rounded-ui"></span>
 
                     <svg width="401" height="401" viewBox="0 0 401 401" fill="none"
                         class="absolute right-4 size-40 md:size-56 lg:size-64 top-13.5"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M0 0H401V401H291.912C257.067 401 232.196 365.878 238.503 331.609C246.986 285.517 249.519 227.824 220 195.989C187.027 160.428 121.321 164.958 70.2625 175.681C35.8141 182.915 0 157.979 0 122.78V0Z"
-                            fill="#F5F0F0" class="fill-bg-muted/40" />
+                            fill="#F5F0F0" class="fill-muted/40" />
                     </svg>
 
 
@@ -70,10 +70,10 @@
                 class="min-h-[calc(100dvh-4rem)] relative z-5 flex flex-col justify-center px-3.5 sm:px-4 pt-16 md:pt-20 pb-20 md:pb-28">
                 <div class="sm:max-w-4xl sm:mx-auto w-full">
                     <h1
-                        class="font-bold text-3xl sm:text-4xl/tight md:text-5xl/[1.2] max-w-xl text-balance text-transparent bg-clip-text bg-linear-to-br from-fg-title to-fg-muted/60 dark:via-fg">
+                        class="font-bold text-3xl sm:text-4xl/tight md:text-5xl/[1.2] max-w-xl text-balance text-transparent bg-clip-text bg-linear-to-br from-foreground to-muted-foreground/60 dark:via-foreground">
                         404
                     </h1>
-                    <p class="max-w-md text-fg-muted text-sm md:text-base mt-6.5">
+                    <p class="max-w-md text-muted-foreground text-sm md:text-base mt-6.5">
                         Oops, the page you're looking for is not found
                     </p>
                     <div class="flex flex-wrap gap-3 mt-9">

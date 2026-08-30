@@ -1,293 +1,107 @@
-## Prerequisites
+## Color Tokens
 
-Flexiwind color tokens are defined with CSS variables and consumed through Tailwind utilities. Ensure your main stylesheet (usually app.css ) is loaded globally, and load Flexiwind token definitions before custom overrides.
+Flexiwind uses semantic CSS variables and exposes them through Tailwind CSS v4 `@theme inline` utilities. Components should use semantic classes such as `bg-background `, `text-foreground`, `text-title-foreground`, `border-border`, and `text-destructive`.
 
-Avoid hardcoded hex values in components. Use semantic tokens so theme updates happen in one place.
+Avoid hardcoded hex values and avoid legacy aliases such as `text-destructive`, `bg-danger`, `--color-bg`, or `--color-fg`.
 
 ## Theme Modes
 
-Choose one mode strategy based on product requirements. Most applications should start with both to support light and dark interfaces.
+Choose the mode during `php artisan flexi:init`.
 
 | Mode | Description |
 | --- | --- |
-| both | Define variables for both light and dark modes. Best default for applications with user theme switching. |
-| light | Define only light mode variables. Use this when dark mode is intentionally not supported. |
-| dark | Define only dark mode variables. Useful for dark-first products and internal tools. |
+| Both | Defines `:root` light tokens and `.dark` tokens. Best default for apps with theme switching. |
+| Light | Defines only light tokens in `:root`. |
+| Dark | Defines dark-first tokens in `:root`. |
 
-## Variable Tokens
+Theme stubs live in separate light and dark sets in the CLI. The generated `app.css` should be treated as the project theme entry point.
 
-Start from the mode that matches your project, then adjust only semantic token values. Keep token names stable to avoid breaking class usage in templates.
+## Core Tokens
 
-### Both
+These are the public semantic variables authors should customize.
 
 ```css
 :root {
-    --primary: var(--color-primary-600);
-    --secondary: var(--color-secondary-600);
-    --accent: var(--color-accent-600);
-    --info: var(--color-info-600);
-    --warning: var(--color-warning-600);
-    --danger: var(--color-danger-600);
-    --success: var(--color-success-600);
+    --background: hsl(0 0% 100%);
+    --foreground: oklch(37% 0.013 285.805);
+    --title-foreground: oklch(21% 0.006 285.885);
 
-    --fg-title: var(--color-gray-900);
-    --fg-subtitle: var(--color-gray-800);
-    --fg: var(--color-gray-700);
-    --fg-muted: var(--color-gray-600);
+    --card: hsl(0 0% 100%);
+    --card-foreground: var(--title-foreground);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: var(--foreground);
+    --surface-background: oklch(98.5% 0 none);
 
-    --bg: var(--color-white);
-    --bg-subtle: var(--color-gray-100);
-    --bg-surface: var(--color-gray-50);
-    --bg-muted: var(--color-gray-200);
-    --card: var(--color-bg);
-    --card-gray: var(--color-bg-subtle);
-    --overlay: var(--color-bg);
-    --overlay-gray: var(--color-bg-subtle);
+    --primary: hsl(243 75% 59%);
+    --primary-foreground: hsl(0 0% 100%);
+    --secondary: hsl(187 92% 36%);
+    --secondary-foreground: hsl(0 0% 100%);
+    --accent: hsl(209 92% 36%);
+    --accent-foreground: hsl(0 0% 100%);
 
-    --progressbar: var(--color-bg-muted);
-    --bg-range:var(--color-bg-muted);
+    --muted: oklch(96.7% 0.001 286.375);
+    --muted-foreground: oklch(44.2% 0.017 285.786);
+    --destructive: oklch(57.7% 0.245 27.325);
+    --destructive-foreground: hsl(0 0% 100%);
+    --success: oklch(59.6% 0.145 163.225);
+    --warning: oklch(64.6% 0.222 41.116);
+    --info: oklch(58.8% 0.158 241.966);
 
-    --border-strong: var(--color-gray-300);
-    --border: var(--color-gray-200);
-    --border-sub: var(--color-gray-100);
-    --border-card:var(--color-gray-200);
-    --border-input: var(--color-gray-200);
-
-    --ui-input-focus-outline: var(--color-primary);
-    --ui-input-place-holder: var(--color-gray-500);
-    --ui-input-invalid-outline: var(--color-danger);
-    --ring-bg: var(--color-primary);
-    --ring-offset-color: var(--color-bg);
-
-    --focus-ring: var(--color-primary-200);
-
-    --ui-radius: var(--radius-lg);
-    --card-radius: var(--radius-lg);
-    --checkbox-radius: var(--radius-sm);
-    --checkbox-bg: var(--color-bg);
-    --checkbox-checked-color: var(--color-primary);
-
-    --dropdown-item-outline: var(--color-primary);
-    --dropdown-item-bg-hover: var(--color-gray-100);
-    --dropdown-item-fg: var(--color-gray-800);
-    --dropdown-item-fg-hover: var(--color-gray-900);
-
-    --dropdown-item-danger-outline: var(--color-danger);
-    --dropdown-item-danger-bg-hover: var(--color-danger-100);
-    --dropdown-item-danger-fg: var(--color-danger-600);
-}
-
-.dark {
-    --primary: var(--color-primary-500);
-    --secondary: var(--color-secondary-500);
-    --accent: var(--color-accent-500);
-    --info: var(--color-info-500);
-    --warning: var(--color-warning-500);
-    --danger: var(--color-danger-500);
-    --success: var(--color-success-500);
-
-    --fg-title: var(--color-white);
-    --fg-subtitle: var(--color-gray-100);
-    --fg: var(--color-gray-300);
-    --fg-muted: var(--color-gray-400);
-
-    --bg: var(--color-gray-950);
-    --bg-subtle: var(--color-gray-900);
-    --bg-surface: --alpha(var(--color-gray-900)/70%);
-    --bg-muted: var(--color-gray-800);
-
-    --border-strong: var(--color-gray-700);
-    --border: var(--color-gray-900);
-    --border-sub: var(--color-gray-900);
-    --border-card:var(--color-gray-800);
-    --border-input:var(--color-gray-800);
-    --focus-ring: --alpha(var(--c-primary-800)/30%);
-    --dropdown-item-bg-hover: var(--color-gray-900);
-    --dropdown-item-fg: var(--color-gray-200);
-    --dropdown-item-fg-hover: var(--color-gray-50);
-    --dropdown-item-danger-bg-hover: --alpha(var(--color-danger-500)/10%);
-    --dropdown-item-danger-fg: var(--color-danger-500);
+    --border: oklch(92% 0.004 286.32);
+    --input: oklch(92% 0.004 286.32);
+    --ring: var(--primary);
+    --border-strong: oklch(87.1% 0.006 286.286);
+    --border-card: var(--border);
+    --border-input: var(--input);
 }
 ```
 
-### Light only
-```css
-:root {
-    --primary: var(--color-primary-600);
-    --secondary: var(--color-secondary-600);
-    --accent: var(--color-accent-600);
-    --info: var(--color-info-600);
-    --warning: var(--color-warning-600);
-    --danger: var(--color-danger-600);
-    --success: var(--color-success-600);
+## Tailwind Mapping
 
-    --fg-title: var(--color-gray-900);
-    --fg-subtitle: var(--color-gray-800);
-    --fg: var(--color-gray-700);
-    --fg-muted: var(--color-gray-600);
+The CLI registers tokens with `@theme inline`. Keep this mapping stable so utilities stay predictable.
 
-    --bg: var(--color-white);
-    --bg-subtle: var(--color-gray-100);
-    --bg-surface: var(--color-gray-50);
-    --bg-muted: var(--color-gray-200);
-    --card: var(--color-bg);
-    --card-gray: var(--color-bg-subtle);
-    --overlay: var(--color-bg);
-    --overlay-gray: var(--color-bg-subtle);
-
-    --progressbar: var(--color-bg-muted);
-    --bg-range:var(--color-bg-muted);
-
-    --border-strong: var(--color-gray-300);
-    --border: var(--color-gray-200);
-    --border-sub: var(--color-gray-100);
-    --border-card:var(--color-gray-200);
-    --border-input: var(--color-gray-200);
-
-    --ui-input-focus-outline: var(--color-primary);
-    --ui-input-place-holder: var(--color-gray-500);
-    --ui-input-invalid-outline: var(--color-danger);
-    --ring-bg: var(--color-primary);
-    --ring-offset-color: var(--color-bg);
-
-    --focus-ring: var(--color-primary-200);
-
-    --ui-radius: var(--radius-lg);
-    --card-radius: var(--radius-lg);
-    --checkbox-radius: var(--radius-sm);
-    --checkbox-bg: var(--color-bg);
-    --checkbox-checked-color: var(--color-primary);
-
-    --dropdown-item-outline: var(--color-primary);
-    --dropdown-item-bg-hover: var(--color-gray-100);
-    --dropdown-item-fg: var(--color-gray-800);
-    --dropdown-item-fg-hover: var(--color-gray-900);
-
-    --dropdown-item-danger-outline: var(--color-danger);
-    --dropdown-item-danger-bg-hover: var(--color-danger-100);
-    --dropdown-item-danger-fg: var(--color-danger-600);
-}
-```
-
-
-### Dark Only
-```css
-:root {
-
-    --primary: var(--color-primary-500);
-    --secondary: var(--color-secondary-500);
-    --accent: var(--color-accent-500);
-    --info: var(--color-info-500);
-    --warning: var(--color-warning-500);
-    --danger: var(--color-danger-500);
-    --success: var(--color-success-500);
-
-    --ui-input-focus-outline: var(--primary);
-    --ui-input-place-holder: var(--color-gray-500);
-    --ui-input-invalid-outline: var(--danger);
-    --ring-offset-color: var(--bg);
-
-    --fg-title: var(--color-white);
-    --fg-subtitle: var(--color-gray-100);
-    --fg: var(--color-gray-300);
-    --fg-muted: var(--color-gray-400);
-
-    --bg: var(--color-gray-950);
-    --bg-subtle: var(--color-gray-900);
-    --bg-surface: --alpha(var(--color-gray-900)/70%);
-    --bg-muted: var(--color-gray-800);
-
-    
-    --checkbox-bg: var(--bg);
-    --ui-radius: var(--radius-lg);
-    --card-radius: var(--radius-lg);
-    --checkbox-radius: var(--radius-sm);
-    --checkbox-checked-color: var(--color-primary);
-
-    --progressbar: var(--bg-muted);
-    --bg-range:var(--bg-muted);
-
-    --card: var(--bg);
-    --card-gray: var(--bg-subtle);
-    --overlay: var(--bg);
-    --overlay-gray: var(--bg-subtle);
-
-    --border-strong: var(--color-gray-700);
-    --border: var(--color-gray-900);
-    --border-sub: var(--color-gray-900);
-    --border-card:var(--color-gray-800);
-    --border-input:var(--color-gray-800);
-
-    --focus-ring: --alpha(var(--c-primary-800)/30%);
-
-    --dropdown-item-bg-hover: var(--color-gray-900);
-    --dropdown-item-fg: var(--color-gray-200);
-    --dropdown-item-outline: var(--primary);
-    --dropdown-item-fg-hover: var(--color-gray-50);
-    --dropdown-item-danger-bg-hover: --alpha(var(--color-danger-500)/10%);
-    --dropdown-item-danger-fg: var(--color-danger-500);
-    --dropdown-item-danger-outline: var(--danger);
-}
-```
-
-## Theme Settings
-
-Register color tokens in @theme so utilities are generated consistently. Once registered, use classes like bg-primary , text-fg , and border-border throughout your UI.
-
-app.css
 ```css
 @theme inline {
-    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --radius-ui: var(--ui-radius);
-    --radius-card: var(--card-radius);
-    --radius-checkbox: var(--checkbox-radius); 
-    
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-title-foreground: var(--title-foreground);
 
-    --color-white: var(--color-white);
-    --color-dark: var(--color-gray-950);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-surface: var(--surface-background);
 
     --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
     --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
     --color-accent: var(--accent);
-    --color-info: var(--info);
-    --color-warning: var(--warning);
-    --color-danger: var(--danger);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
     --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-info: var(--info);
 
-    --color-fg-title: var(--fg-title);
-    --color-fg-subtitle: var(--fg-subtitle);
-    --color-fg: var(--fg);
-    --color-fg-muted: var(--fg-muted);
-
-    --color-bg: var(--bg);
-    --color-bg-subtle: var(--bg-subtle);
-    --color-bg-surface: var(--bg-surface);
-    --color-bg-muted: var(--bg-muted);
-    --color-card: var(--card);
-    --color-card-gray: var(--card-gray);
-    --color-popover: var(--bg);
-    --color-popover-gray: var(--card-gray);
-    --color-overlay: var(--overlay);
-    --color-overlay-gray: var(--overlay-gray);
-    --color-progressbar: var(--progressbar);
-
-    --color-border-strong: var(--border-strong);
     --color-border: var(--border);
-    --color-border-sub: var(--border-sub);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-border-strong: var(--border-strong);
     --color-border-card: var(--border-card);
     --color-border-input: var(--border-input);
-
-    --color-primary-50: ...;
-    /* ... */
-    --color-primary-950: ..;
-
-    --color-secondary-50: ....;
-    /* ..... */
-    --color-secondary-950: ....;
-
-    /* override the default gray  */
-    --color-gray-50:...;
-    /* ... */
-    --color-gray-950:...;
 }
 ```
+
+## Usage
+
+Use the generated utilities in components and snippets:
+
+- Backgrounds: `bg-background `, `bg-muted`, `bg-card`, `surface-background`
+- Text/icons: `text-foreground`, `text-title-foreground`, `text-muted-foreground`, `text-destructive`
+- Borders/rings: `border-border`, `border-input`, `border-border-strong`, `ring-ring`
+
+Use `destructive` for public intent names. `danger` may be normalized internally for backwards compatibility, but new examples and docs should not use it.

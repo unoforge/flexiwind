@@ -4,6 +4,6 @@
     </x-ui.link>
     <x-ui.link href="#" as-button variant="soft" intent="gray" class="gap-x-2.5">
         Click me
-        <span aria-hidden="true" class="flex iconify ph--caret-right text-sm"></span>
+        <x-ui.icon name="ph--caret-right" class="flex text-sm" />
     </x-ui.link>
 </div>

@@ -7,7 +7,7 @@
         'text-sm divide-(--table-border-color)',
         'divide-y' => $divider,
         'in-fx-table-grid:divide-y',
-        'in-fx-striped:*:even:bg-bg-muted/40',
+        'in-fx-striped:*:even:bg-muted/40',
         $class,
     ]) }}>
     {{ $slot }}

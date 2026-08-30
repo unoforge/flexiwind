@@ -21,7 +21,7 @@ php artisan flexi:add alert
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | variant | string | 'solid' | solid, soft, outline, subtle, link |
-| intent | string | 'gray' | primary, success, warning, danger, info |
+| intent | string | 'gray' | primary, success, warning, destructive, gray |
 | size | string | 'default' | xs, sm, default, lg |
 | radius | string | 'md' | none, sm, md, lg, full |
 | class | string | '' | Additional CSS classes |
@@ -29,7 +29,7 @@ php artisan flexi:add alert
 ## Guidance
 
 - Alerts are inline notifications, not to be confused with Alert Dialog or Callout.
-- Use `intent` for semantic coloring: primary, success, warning, danger, info.
+- Use `intent` for semantic coloring: primary, success, warning, destructive, gray.
 
 ## Avoid
 

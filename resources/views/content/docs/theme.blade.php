@@ -3,7 +3,7 @@
     <x-md.paragraph>
         Flexiwind uses semantic tokens instead of hardcoded color values.
         You define meaning-first roles such as <x-docs.inline-code text="primary" />,
-        <x-docs.inline-code text="secondary" />, and <x-docs.inline-code text="danger" />,
+        <x-docs.inline-code text="secondary" />, and <x-docs.inline-code text="destructive" />,
         then consume them through utilities across the UI.
     </x-md.paragraph>
     <x-md.paragraph>
@@ -25,7 +25,7 @@
             </x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
-            <x-ui.table.cell class="font-mediuma">
+            <x-ui.table.cell class="font-medium">
                 <x-docs.inline-code no-wrap text="secondary" />
             </x-ui.table.cell>
             <x-ui.table.cell>
@@ -76,7 +76,7 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="danger" />
+                <x-docs.inline-code no-wrap text="destructive" />
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
@@ -99,13 +99,13 @@
     <x-md.h3>Background</x-md.h3>
     <x-md.paragraph>
         Background tokens define app surfaces and elevation layers.
-        Use utilities such as <x-docs.inline-code text="bg-bg" />, <x-docs.inline-code text="bg-bg-muted" />,
-        <x-docs.inline-code text="bg-card" />, and <x-docs.inline-code text="bg-card-gray" />.
+        Use utilities such as <x-docs.inline-code text="bg-background " />, <x-docs.inline-code text="bg-muted" />,
+        <x-docs.inline-code text="bg-card" />, and <x-docs.inline-code text="surface-background" />.
     </x-md.paragraph>
     <x-docs.table :columns="[['label' => 'Token', 'class' => 'w-60'], ['label' => 'Description', 'class' => '']]">
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--bg" />
+                <x-docs.inline-code no-wrap text="--background" />
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
@@ -115,7 +115,7 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--bg-subtle" />
+                <x-docs.inline-code no-wrap text="--muted" />
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
@@ -125,41 +125,21 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--bg-surface" />
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Elevated or surface layers (panels, sheets).
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--bg-muted" />
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Muted background for less emphasis.
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell class="font-medium">
                 <x-docs.inline-code no-wrap text="--card" />
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Card background.
+                    Card and panel background.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--card-gray" />
+                <x-docs.inline-code no-wrap text="--surface-background" />
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
-                    Neutral/gray variant for cards.
+                    Additional neutral surface exposed as <x-docs.inline-code text="surface-background" />.
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
@@ -173,39 +153,20 @@
                 </x-docs.table-description>
             </x-ui.table.cell>
         </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--popover-gray" />
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Neutral/gray variant for popovers.
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--overlay" />
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Overlays and scrims (modals, drawers).
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
     </x-docs.table>
 
 
     <x-md.h3>Foreground</x-md.h3>
     <x-md.paragraph>
         Foreground tokens control text and icon hierarchy.
-        Use <x-docs.inline-code text="text-fg" /> for default content, <x-docs.inline-code text="text-fg-title" />
-        for high-emphasis headings, and muted tokens for secondary content.
+        Use <x-docs.inline-code text="text-foreground" /> for body text, <x-docs.inline-code text="text-title-foreground" />
+        for high-emphasis headings, then use
+        <x-docs.inline-code text="text-muted-foreground" /> for supporting copy.
     </x-md.paragraph>
     <x-docs.table :columns="[['label' => 'Token', 'class' => 'w-60'], ['label' => 'Description', 'class' => '']]">
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--fg" />
+                <x-docs.inline-code no-wrap text="--foreground" />
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
@@ -215,7 +176,7 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--fg-title" />
+                <x-docs.inline-code no-wrap text="--title-foreground" />
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>
@@ -225,17 +186,7 @@
         </x-ui.table.row>
         <x-ui.table.row>
             <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--fg-subtitle" />
-            </x-ui.table.cell>
-            <x-ui.table.cell>
-                <x-docs.table-description>
-                    Secondary headings and labels.
-                </x-docs.table-description>
-            </x-ui.table.cell>
-        </x-ui.table.row>
-        <x-ui.table.row>
-            <x-ui.table.cell class="font-medium">
-                <x-docs.inline-code no-wrap text="--fg-muted" />
+                <x-docs.inline-code no-wrap text="--muted-foreground" />
             </x-ui.table.cell>
             <x-ui.table.cell>
                 <x-docs.table-description>

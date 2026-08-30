@@ -10,7 +10,7 @@
     <x-md.paragraph>
         If your Laravel project uses Laravel Boost, install the skill directly into any project:
     </x-md.paragraph>
-    <livewire:base.terminal code="php artisan boost:add-skill unoforge/flexiwind flexiwind" />
+    <livewire:base.terminal code="php artisan boost:add-skill unoforge/flexiwind --skill flexiwind" />
 
     <x-md.h3>Via npx / Skills CLI</x-md.h3>
     <x-md.paragraph>

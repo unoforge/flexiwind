@@ -27,13 +27,13 @@ Documented semantic roles include:
 - `info`
 - `success`
 - `warning`
-- `danger`
+- `destructive`
 - `gray`
 
 Documented utility-oriented token families include:
 
-- background tokens such as `bg-bg`, `bg-bg-muted`, `bg-card`
-- foreground tokens such as `text-fg`, `text-fg-title`, `text-fg-muted`
+- background tokens such as `bg-background `, `bg-muted`, `bg-card`
+- foreground tokens such as `text-foreground` and `text-muted-foreground`
 - border tokens such as `border-border` and `border-border-strong`
 
 ## Dark Mode

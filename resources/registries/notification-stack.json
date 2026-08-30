@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "version": "1.0.0",
+    "name": "notification-stack",
+    "type": "registry:component",
+    "title": "Notification Stack",
+    "description": "Floating notification stack with alert variants and dismiss buttons.",
+    "registryDependencies": [
+        "alert",
+        "button",
+        "icon"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/previews/toast-notification/notification-stack.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/toast-notification/notification-stack.blade.php",
+            "content": "<div class=\"w-full max-w-2xl mx-auto px-4 py-10\">\n    <div class=\"fixed top-4 right-4 w-80 space-y-2 z-100\">\n        <x-ui.alert variant=\"solid\" intent=\"success\" class=\"flex items-start gap-3 shadow-lg\">\n            <x-ui.icon name=\"ph--check-circle\"/>\n            <div class=\"flex-1 min-w-0\">\n                <p class=\"text-sm font-medium\">File uploaded</p>\n                <p class=\"text-xs truncate\">design-mockup-v3.fig</p>\n            </div>\n            <button type=\"button\" class=\"size-5 d-flex-place-center text-muted-foreground hover:text-foreground cursor-pointer shrink-0\">\n                <x-ui.icon name=\"ph--x\" class=\"size-3.5\" />\n            </button>\n        </x-ui.alert>\n\n        <x-ui.alert variant=\"solid\" intent=\"danger\" class=\"flex items-start gap-4 shadow-sm\">\n             <x-ui.icon name=\"ph--warning\"/>\n            <div class=\"flex-1 min-w-0\">\n                <p class=\"text-sm font-medium\">Build failed</p>\n                <p class=\"text-xs\">main &middot; 3 minutes ago</p>\n            </div>\n            <button type=\"button\" class=\"size-5 d-flex-place-center text-gray-300 hover:text-foreground cursor-pointer shrink-0\">\n                <x-ui.icon name=\"ph--x\" class=\"size-3.5\" />\n            </button>\n        </x-ui.alert>\n\n        <x-ui.alert variant=\"solid\" intent=\"primary\" class=\"flex items-start gap-4 shadow-sm\">\n            <x-ui.icon name=\"ph--bell-ringing\" class=\"size-5 shrink-0 mt-0.5\" />\n            <div class=\"flex-1 min-w-0\">\n                <p class=\"text-sm font-medium\">New comment</p>\n                <p class=\"text-xs truncate\">Jordan mentioned you in Design Review</p>\n            </div>\n            <button type=\"button\" class=\"size-5 d-flex-place-center text-gray-300 hover:text-foreground cursor-pointer shrink-0\">\n                <x-ui.icon name=\"ph--x\" class=\"size-3.5\" />\n            </button>\n        </x-ui.alert>\n    </div>\n\n    <div class=\"text-center pt-20\">\n        <span class=\"text-xs\">Floating notification stack in top-right corner</span>\n    </div>\n</div>"
+        }
+    ]
+}
