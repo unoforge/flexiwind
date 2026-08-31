@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
     "version": "1.0.0",
     "name": "skeleton",
     "type": "registry:component",
@@ -10,7 +10,7 @@
             "path": "resources/views/components/ui/skeleton.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/skeleton.blade.php",
-            "content": "@props(['radius' => 'circle', 'bgNone' => false])\n\n\n<div\n    {{ $attributes->class([\n        'animate-pulse',\n        'rounded-full' => $radius === 'circle',\n        'rounded-ui' => $radius === 'ui',\n        'bg-bg-muted' => !$bgNone,\n    ]) }}>\n</div>\n"
+            "content": "@props(['radius' => 'circle', 'bgNone' => false])\n\n\n<div\n    {{ $attributes->class([\n        'animate-pulse',\n        'rounded-full' => $radius === 'circle',\n        'rounded-ui' => $radius === 'ui',\n        'bg-muted' => !$bgNone,\n    ]) }}>\n</div>\n"
         }
     ]
 }

@@ -2,18 +2,19 @@
 
 @php
     $tag = $as;
+    $intent = $intent === 'danger' ? 'destructive' : $intent;
 
 @endphp
 <{{ $tag }}
     {{ $attributes->class([
-        'text-fg-muted' => $intent == 'muted',
-        'text-fg' => $intent == 'body',
-        'text-fg-title' => $intent == 'title',
+        'text-muted-foreground' => $intent == 'muted',
+        'text-foreground' => $intent == 'body',
+        'text-title-foreground' => $intent == 'title',
         'text-gray-500' => $intent == 'caption',
         'text-primary' => $intent == 'primary',
         'text-secondary' => ($intent == 'secondary'),
         'text-warning' => $intent == 'warning',
-        'text-danger' => $intent == 'danger',
+        'text-destructive' => $intent == 'destructive',
     ]) }}>
     {{ $slot }}
 </{{ $tag }}>

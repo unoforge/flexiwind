@@ -11,7 +11,7 @@
     ];
     $size = $progress_sizes[$size] ?? $progress_sizes['md'];
     $radiusClass = $radius ? '[--ui-progressbar-radius:20px]' : '';
-    $className = "ui-progressbar {$radiusClass} {$size} [--ui-progressbar-bg:var(--c-progressbar)] {$class}";
+    $className = "ui-progressbar {$radiusClass} {$size} [--ui-progressbar-bg:var(--color-muted)] {$class}";
 @endphp
 
 <progress {{ $attributes->merge(['class' => $className]) }}></progress>

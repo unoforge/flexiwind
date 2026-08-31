@@ -16,7 +16,7 @@
         'update' => 'info',
         'note' => 'primary',
         'warning' => 'warning',
-        'important' => 'danger',
+        'important' => 'destructive',
     ];
 
     $icons = [
@@ -38,7 +38,7 @@
     ]) }}>
     @if ($icon)
         <span class="w-max {{ $iconWrapper }}">
-            <span aria-hidden="true" class="iconify size-6 {{ $icon }}"></span>
+            <x-ui.icon name="{{ $icon }}" class="size-6" />
         </span>
     @endif
 

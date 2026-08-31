@@ -1,6 +1,6 @@
-<div class="lg:pl-64 flex-1 flex flex-col h-full relative overflow-hidden bg-bg">
+<div class="lg:pl-64 flex-1 flex flex-col h-full relative overflow-hidden bg-background ">
     <header
-        class="h-14 bg-bg border-b border-border-strong/60 flex items-center justify-between px-6 sticky top-0 z-10">
+        class="h-14 bg-background  border-b border-border-strong/60 flex items-center justify-between px-6 sticky top-0 z-10">
         <div class="flex items-center gap-4">
             <div class="flex lg:hidden border-r border-border pr-2">
                 <x-ui.button data-toggle-sidebar variant="soft" size="sm" icon-only aria-label="Open Sidebar">

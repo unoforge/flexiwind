@@ -21,37 +21,42 @@
                     </g>
                     <defs>
                         <clipPath id="clip0_13_164">
-                            <rect width="488" height="488" fill="currentColor" class="text-bg"></rect>
+                            <rect width="488" height="488" fill="currentColor" class="text-background"></rect>
                         </clipPath>
                     </defs>
                 </svg>
         </div>
         <div class="text-center">
-            <h1 class="text-fg-title mb-1 text-xl font-semibold">Create your account</h1>
-            <p class="text-sm text-fg-muted">
+            <h1 class="text-foreground mb-1 text-xl font-semibold">Create your account</h1>
+            <p class="text-sm text-muted-foreground">
                 Fill in your details to get started
             </p>
         </div>
         <x-ui.divider class="my-8 border-border-strong/60" />
         <form class="grid grid-cols-2 gap-4">
-            <x-ui.input type="text" placeholder="John" label="First Name" />
-            <x-ui.input type="text" placeholder="Doe" label="Last Name" />
-            <x-ui.input type="email" placeholder="johndoe@example.com" label="Email"
-                group-wrapper-class="col-span-full" />
-            <x-ui.input type="password" placeholder="••••••••" label="Create Password"
-                group-wrapper-class="col-span-full" />
-            <x-ui.input type="password" placeholder="••••••••" label="Confirm Password"
-                group-wrapper-class="col-span-full" />
-            <div class="text-xs text-fg-muted -mt-2 col-span-full">
-                Use 8 or more characters with a mix of letters, numbers & symbols
-            </div>
+            <x-ui.field label="First Name" for="signup01-first-name">
+                <x-ui.input type="text" id="signup01-first-name" placeholder="John" />
+            </x-ui.field>
+            <x-ui.field label="Last Name" for="signup01-last-name">
+                <x-ui.input type="text" id="signup01-last-name" placeholder="Doe" />
+            </x-ui.field>
+            <x-ui.field label="Email" for="signup01-email" class="col-span-full">
+                <x-ui.input type="email" id="signup01-email" placeholder="johndoe@example.com" />
+            </x-ui.field>
+            <x-ui.field label="Create Password" for="signup01-password" class="col-span-full"
+                hint="Use 8 or more characters with a mix of letters, numbers & symbols">
+                <x-ui.input type="password" id="signup01-password" placeholder="••••••••" />
+            </x-ui.field>
+            <x-ui.field label="Confirm Password" for="signup01-password-confirm" class="col-span-full">
+                <x-ui.input type="password" id="signup01-password-confirm" placeholder="••••••••" />
+            </x-ui.field>
             <x-ui.button class="justify-center w-full mt-2 col-span-full">
                 Create Account
             </x-ui.button>
         </form>
 
         <div class="text-center mt-6">
-            <p class="text-sm text-fg-muted">
+            <p class="text-sm text-muted-foreground">
                 Already have an account?
                 <x-ui.link href="#" class="font-medium text-primary ml-1">Login</x-ui.link>
             </p>

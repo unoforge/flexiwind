@@ -6,94 +6,62 @@ return [
         'name' => 'both',
         'code' => <<<'CSS'
 :root {
-    --primary: var(--color-primary-600);
-    --secondary: var(--color-secondary-600);
-    --accent: var(--color-accent-600);
-    --info: var(--color-info-600);
-    --warning: var(--color-warning-600);
-    --danger: var(--color-danger-600);
-    --success: var(--color-success-600);
+    --primary: oklch(54.6% 0.215 262.88);
+    --primary-foreground: oklch(100% 0 0);
+    --secondary: oklch(62.7% 0.194 149.21);
+    --secondary-foreground: oklch(100% 0 0);
+    --accent: oklch(66.6% 0.179 58.32);
+    --accent-foreground: oklch(100% 0 0);
+    --destructive: oklch(57.7% 0.245 27.33);
+    --destructive-foreground: oklch(100% 0 0);
+    --success: oklch(62.7% 0.194 149.21);
+    --warning: oklch(76.9% 0.188 70.08);
+    --info: oklch(68.5% 0.169 237.32);
 
-    --fg-title: var(--color-gray-900);
-    --fg-subtitle: var(--color-gray-800);
-    --fg: var(--color-gray-700);
-    --fg-muted: var(--color-gray-600);
+    --background: oklch(100% 0 0);
+    --foreground: oklch(21% 0.034 264.67);
+    --title-foreground: var(--card-foreground);
+    --card: oklch(100% 0 0);
+    --card-foreground: var(--foreground);
+    --popover: oklch(100% 0 0);
+    --popover-foreground: var(--foreground);
+    --muted: oklch(96.7% 0.003 264.54);
+    --muted-foreground: oklch(44.6% 0.03 256.8);
 
-    --bg: var(--color-white);
-    --bg-subtle: var(--color-gray-100);
-    --bg-surface: var(--color-gray-50);
-    --bg-muted: var(--color-gray-200);
-    --card: var(--color-bg);
-    --card-gray: var(--color-bg-subtle);
-    --overlay: var(--color-bg);
-    --overlay-gray: var(--color-bg-subtle);
+    --border: oklch(92.8% 0.006 264.53);
+    --input: oklch(92.8% 0.006 264.53);
+    --ring: var(--primary);
 
-    --progressbar: var(--color-bg-muted);
-    --bg-range:var(--color-bg-muted);
-
-    --border-strong: var(--color-gray-300);
-    --border: var(--color-gray-200);
-    --border-sub: var(--color-gray-100);
-    --border-card:var(--color-gray-200);
-    --border-input: var(--color-gray-200);
-
-
-    --ui-input-focus-outline: var(--color-primary);
-    --ui-input-place-holder: var(--color-gray-500);
-    --ui-input-invalid-outline: var(--color-danger);
-    --ring-bg: var(--color-primary);
-    --ring-offset-color: var(--color-bg);
-
-    --focus-ring: var(--color-primary-200);
-
-    --ui-radius: var(--radius-lg);
-    --card-radius: var(--radius-lg);
-    --checkbox-radius: var(--radius-sm);
-    --checkbox-bg: var(--color-bg);
-    --checkbox-checked-color: var(--color-primary);
-
-    --dropdown-item-outline: var(--color-primary);
-    --dropdown-item-bg-hover: var(--color-gray-100);
-    --dropdown-item-fg: var(--color-gray-800);
-    --dropdown-item-fg-hover: var(--color-gray-900);
-
-
-    --dropdown-item-danger-outline: var(--color-danger);
-    --dropdown-item-danger-bg-hover: var(--color-danger-100);
-    --dropdown-item-danger-fg: var(--color-danger-600);
+    --surface-background: oklch(98.5% 0.002 247.84);
+    --border-strong: oklch(87.2% 0.01 258.34);
+    --border-card: var(--border);
+    --border-input: var(--input);
 }
 
-
 .dark {
-    --primary: var(--color-primary-500);
-    --secondary: var(--color-secondary-500);
-    --accent: var(--color-accent-500);
-    --info: var(--color-info-500);
-    --warning: var(--color-warning-500);
-    --danger: var(--color-danger-500);
-    --success: var(--color-success-500);
+    --primary: oklch(62.3% 0.214 259.82);
+    --secondary: oklch(72.3% 0.192 149.58);
+    --accent: oklch(76.9% 0.188 70.08);
+    --accent-foreground: oklch(14.5% 0 0);
+    --destructive: oklch(63.7% 0.237 25.33);
+    --success: oklch(72.3% 0.192 149.58);
 
-    --fg-title: var(--color-white);
-    --fg-subtitle: var(--color-gray-100);
-    --fg: var(--color-gray-300);
-    --fg-muted: var(--color-gray-400);
+    --background: oklch(13% 0.028 261.69);
+    --foreground: oklch(87.2% 0.01 258.34);
+    --title-foreground: var(--card-foreground);
+    --card: oklch(13% 0.028 261.69);
+    --popover: oklch(13% 0.028 261.69);
+    --muted: oklch(21% 0.034 264.67);
+    --muted-foreground: oklch(70.7% 0.022 261.33);
 
-    --bg: var(--color-gray-950);
-    --bg-subtle: var(--color-gray-900);
-    --bg-surface: --alpha(var(--color-gray-900)/70%);
-    --bg-muted: var(--color-gray-800);
+    --border: oklch(21% 0.034 264.67);
+    --input: oklch(27.8% 0.033 256.85);
+    --ring: var(--primary);
 
-    --border-strong: var(--color-gray-700);
-    --border: var(--color-gray-900);
-    --border-sub: var(--color-gray-900);
-    --border-card:var(--color-gray-800);
-    --border-input:var(--color-gray-800);
-    --focus-ring: --alpha(var(--c-primary-800)/30%);
-    --dropdown-item-bg-hover: var(--color-gray-900);
-    --dropdown-item-fg: var(--color-gray-200);
-    --dropdown-item-fg-hover: var(--color-gray-50);
-    --dropdown-item-danger-bg-hover: --alpha(var(--color-danger-500)/10%);
-    --dropdown-item-danger-fg: var(--color-danger-500);
+    --surface-background: color-mix(in oklab, var(--muted) 70%, transparent);
+    --border-strong: oklch(37.3% 0.034 259.73);
+    --border-card: var(--input);
+    --border-input: var(--input);
 }
 CSS
     ],

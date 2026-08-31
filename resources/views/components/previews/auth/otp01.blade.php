@@ -22,12 +22,12 @@
                     </g>
                     <defs>
                         <clipPath id="clip0_13_164">
-                            <rect width="488" height="488" fill="currentColor" class="text-bg"></rect>
+                            <rect width="488" height="488" fill="currentColor" class="text-background"></rect>
                         </clipPath>
                     </defs>
                 </svg>
             </div>
-            <h1 class="text-xl font-semibold text-fg-title text-balance">
+            <h1 class="text-xl font-semibold text-foreground text-balance">
                 We sent a 6-digit code to your email address
             </h1>
         </div>
@@ -38,7 +38,7 @@
                     <x-ui.otp.input size="none" class="size-10 flex-1" />
                     <x-ui.otp.input size="none" class="size-10 flex-1" />
                 </div>
-                <span class="flex min-w-max px-3 text-2xl font-semibold text-fg-muted">
+                <span class="flex min-w-max px-3 text-2xl font-semibold text-muted-foreground">
                     -
                 </span>
                 <div class="flex items-center gap-2 flex-1">
@@ -48,7 +48,7 @@
                 </div>
             </x-ui.otp>
 
-            <p class="text-sm text-fg-muted text-center">
+            <p class="text-sm text-muted-foreground text-center">
                 Didn't receive the code?
                 <x-ui.link href="#" underlined class="text-primary">
                     Resend
@@ -58,7 +58,7 @@
                 Verify
             </x-ui.button>
         </form>
-        <p class="px-6 text-center text-fg-muted mx-auto max-w-md text-sm mt-3">
+        <p class="px-6 text-center text-muted-foreground mx-auto max-w-md text-sm mt-3">
             By clicking continue, you agree to our
             <x-ui.link href="#" underlined class="text-primary">Terms of Service</x-ui.link>
             and <x-ui.link href="#" underlined class="text-primary">Privacy Policy</x-ui.link>.

@@ -11,6 +11,6 @@
     ];
     $size = $meter_sizes[$size] ?? $meter_sizes['md'];
     $radiusClass = $radius ? '[--ui-meter-radius:20px]' : '';
-    $className = "ui-meter {$radiusClass} {$size} bg-bg-muted {$class}";
+    $className = "ui-meter {$radiusClass} {$size} bg-muted {$class}";
 @endphp
 <meter {{ $attributes->merge(['class' => $className]) }}></meter>

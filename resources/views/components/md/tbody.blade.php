@@ -1,3 +1,3 @@
-<tbody class="mdx-tbody text-fg-muted">
+<tbody class="mdx-tbody text-muted-foreground">
     {{ $slot }}
 </tbody>

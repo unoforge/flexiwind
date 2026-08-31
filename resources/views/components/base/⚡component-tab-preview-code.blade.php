@@ -48,7 +48,7 @@ new class extends Component {
     <div
         class="grid w-full gap-1 border border-gray-200 dark:border-gray-800/60 ui-card [--card-padding:--spacing(1)] [--card-radius:var(--radius-ui)] bg-gray-50 dark:bg-gray-900/50 my-5 first:mt-0">
         <div data-gen-ignore
-            class="inner-radius bg-bg shadow border border-gray-200 dark:border-gray-800/60 flex justify-center min-h-max {{ $className }}">
+            class="inner-radius bg-background  shadow border border-gray-200 dark:border-gray-800/60 flex justify-center min-h-max {{ $className }}">
             @if ($isLivewire)
                 <span>
                     Sorry can't resolve this
@@ -74,7 +74,7 @@ new class extends Component {
             class="border border-gray-200 dark:border-gray-800/60 ui-card [--card-padding:--spacing(1)] [--card-radius:var(--radius-ui)] bg-gray-50 dark:bg-gray-900/50 items-center justify-center min-h-60 lg:min-h-80"
             active>
             <div data-gen-ignore
-                class="size-full inner-radius flex items-center justify-center bg-bg shadow border border-gray-200 dark:border-gray-800/60 {{ $className }}">
+                class="size-full inner-radius flex items-center justify-center bg-background  shadow border border-gray-200 dark:border-gray-800/60 {{ $className }}">
                 @if ($isLivewire)
                     <span>
                         Sorry can't resolve this

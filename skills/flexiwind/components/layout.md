@@ -8,12 +8,14 @@ For detailed API references, examples, and props tables, see the individual comp
 
 - [card.md](./card.md)
 - [divider.md](./divider.md)
+- [field.md](./field.md)
 - [aspect-ratio.md](./aspect-ratio.md)
 
 ## Public Docs
 
 - `https://flexiwind.unoforge.com/components/card`
 - `https://flexiwind.unoforge.com/components/divider`
+- `https://flexiwind.unoforge.com/components/field`
 - `https://flexiwind.unoforge.com/components/aspect-ratio`
 - `https://flexiwind.unoforge.com/components/link`
 - `https://flexiwind.unoforge.com/components/heading`
@@ -28,6 +30,7 @@ For detailed API references, examples, and props tables, see the individual comp
 - `x-ui.card.content`
 - `x-ui.card.footer`
 - `x-ui.divider`
+- `x-ui.field`
 - `x-ui.aspect`
 - `x-ui.link`
 - `x-ui.heading`

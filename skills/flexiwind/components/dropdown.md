@@ -2,17 +2,17 @@
 
 ```html
 <x-ui.dropdown.trigger variant="outline" intent="gray" size="sm" dropdown-id="menu">
-    <span class="iconify ph--dots-three-vertical"></span>
+    <x-ui.icon name="ph--dots-three-vertical" />
 </x-ui.dropdown.trigger>
 
 <x-ui.dropdown id="menu" class="w-46">
     <x-ui.dropdown.item>
-        <x-ui.dropdown.icon><span class="iconify ph--eye"></span></x-ui.dropdown.icon>
+        <x-ui.dropdown.icon><x-ui.icon name="ph--eye" /></x-ui.dropdown.icon>
         <x-ui.dropdown.label>View deal</x-ui.dropdown.label>
     </x-ui.dropdown.item>
     <x-ui.dropdown.separator/>
-    <x-ui.dropdown.item intent="danger">
-        <x-ui.dropdown.icon><span class="iconify ph--trash"></span></x-ui.dropdown.icon>
+    <x-ui.dropdown.item intent="destructive">
+        <x-ui.dropdown.icon><x-ui.icon name="ph--trash" /></x-ui.dropdown.icon>
         <x-ui.dropdown.label>Delete</x-ui.dropdown.label>
     </x-ui.dropdown.item>
 </x-ui.dropdown>
@@ -55,18 +55,30 @@ Alpine.plugin(DropdownPlugin);
 | x-ui.dropdown | Menu container; receives the `id` |
 | x-ui.dropdown.trigger | Toggles dropdown. Must have `dropdown-id` attribute |
 | x-ui.dropdown.item | Standard menu item |
-| x-ui.dropdown.item-submenu | Creates a nested submenu |
+| x-ui.dropdown.item-submenu | Submenu trigger item; needs `dropdown-id` matching the submenu dropdown's `id` |
 | x-ui.dropdown.separator | Horizontal divider |
 | x-ui.dropdown.header | Header section for grouping items |
+| x-ui.dropdown.section | Group wrapper for visually grouping items |
 | x-ui.dropdown.icon | Icon next to menu items |
 | x-ui.dropdown.label | Label for menu items |
 | x-ui.dropdown.kbd | Keyboard shortcut display |
 
 ## Guidance
 
-- Use `intent="danger"` on items for destructive actions.
+- Use `intent="destructive"` on items for destructive actions.
 - The `dropdown-id` on trigger must match the `id` on the dropdown.
-- Submenus use `x-ui.dropdown.item-submenu` + a separate `x-ui.dropdown` submenu.
+- For submenus: use `x-ui.dropdown.item-submenu` with `dropdown-id="submenu-id"` as the trigger item, and a separate `<x-ui.dropdown submenu id="submenu-id">` as the menu. The `submenu` boolean tells the dropdown to position itself to the right instead of below.
+
+```html
+<x-ui.dropdown.item-submenu dropdown-id="my-submenu">
+    <x-ui.dropdown.icon><x-ui.icon name="ph--archive" /></x-ui.dropdown.icon>
+    <x-ui.dropdown.label>More options</x-ui.dropdown.label>
+</x-ui.dropdown.item-submenu>
+
+<x-ui.dropdown submenu id="my-submenu" class="w-40">
+    <x-ui.dropdown.item>...</x-ui.dropdown.item>
+</x-ui.dropdown>
+```
 
 ## Avoid
 

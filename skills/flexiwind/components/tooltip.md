@@ -2,7 +2,7 @@
 
 ```html
 <x-ui.tooltip.trigger tooltip-id="demo-1" size="sm" iconOnly variant="outline" intent="gray">
-    <span class="flex iconify ph--caret-down"></span>
+    <x-ui.icon name="ph--caret-down" />
 </x-ui.tooltip.trigger>
 <x-ui.tooltip id="demo-1" content="Tooltip content"/>
 ```
@@ -32,6 +32,14 @@ Alpine.plugin(TooltipPlugin);
 | placement (top\|right\|bottom\|left...) | Preferred tooltip placement |
 | bg (default\|gray\|neutral\|dark) | Background style preset |
 | trigger (hover\|click) | Trigger strategy. Default: hover |
+| content | string | Tooltip text content (shorthand; can also use slot for rich content) |
+
+### Trigger Props
+
+| Prop | Description |
+| --- | --- |
+| tooltip-id (required) | Links to the tooltip's `id` |
+| radius | Button border-radius preset. Default: lg |
 
 ## Guidance
 

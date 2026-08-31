@@ -4,7 +4,7 @@
 <div class="flex flex-col gap-4 w-full">
     <x-ui.divider class="border-primary"/>
     <x-ui.divider class="border-secondary"/>
-    <x-ui.divider class="border-danger"/>
+    <x-ui.divider class="border-destructive"/>
     <x-ui.divider class="border-gray-500"/>
 </div>
 ```
@@ -18,10 +18,10 @@ php artisan flexi:add divider
 ## With label
 
 ```html
-<x-ui.divider label="Label Start" class="before:bg-bg-muted" label-class="pr-3 bg-bg text-fg"/>
-<x-ui.divider label="Label Center" class="before:bg-bg-muted" label-placement="middle" label-class="px-3 bg-bg text-fg"/>
-<x-ui.divider label="Label End" class="before:bg-bg-muted" label-placement="end" label-class="pl-3 bg-bg text-fg"/>
-<x-ui.divider label="Label Center" class="before:bg-bg-muted" label-placement="middle" label-class="px-3 bg-emerald-600 dark:bg-emerald-500 text-sm text-white rounded-full py-px"/>
+<x-ui.divider label="Label Start" class="before:bg-muted" label-class="pr-3 bg-background  text-foreground"/>
+<x-ui.divider label="Label Center" class="before:bg-muted" label-placement="middle" label-class="px-3 bg-background  text-foreground"/>
+<x-ui.divider label="Label End" class="before:bg-muted" label-placement="end" label-class="pl-3 bg-background  text-foreground"/>
+<x-ui.divider label="Label Center" class="before:bg-muted" label-placement="middle" label-class="px-3 bg-emerald-600 dark:bg-emerald-500 text-sm text-white rounded-full py-px"/>
 ```
 
 ## With size
@@ -29,7 +29,7 @@ php artisan flexi:add divider
 ```html
 <x-ui.divider size="2" class="border-primary"/>
 <x-ui.divider size="3" class="border-primary"/>
-<x-ui.divider label="Thick" size="3" class="before:bg-bg-muted" label-placement="middle" label-class="px-3 bg-bg text-fg"/>
+<x-ui.divider label="Thick" size="3" class="before:bg-muted" label-placement="middle" label-class="px-3 bg-background  text-foreground"/>
 ```
 
 ## API
@@ -62,18 +62,18 @@ The `divider-custom` utilities live in `resources/css/flexiwind/ui.css`:
 @utility divider-custom-3 { @apply before:h-[3px]; }
 ```
 
-The `::before` pseudo-element creates the full-width line. The label `<span>` sits on top of it — its background (`bg-bg` or any color) covers the line behind the text.
+The `::before` pseudo-element creates the full-width line. The label `<span>` sits on top of it — its background (`bg-background ` or any color) covers the line behind the text.
 
 ## Guidance
 
 - **Spacing**: Add vertical margin with `my-*` / `my-*` directly in `class`. Common: `my-6`, `my-8`, `my-4`, `mt-6 mb-6`.
-- **Label background is required**: Always include a background on `label-class` (e.g., `bg-bg`) to mask the line behind the text. Without it, the line shows through the label.
+- **Label background is required**: Always include a background on `label-class` (e.g., `bg-background `) to mask the line behind the text. Without it, the line shows through the label.
 - **Label padding**: Use `px-*` for centered labels, `pr-*` for start, `pl-*` for end to create gap between text and line ends.
-- **Label color**: `text-fg` (regular), `text-fg-muted` (subtle), `text-white` (on colored pills).
+- **Label color**: `text-foreground` (regular), `text-muted-foreground` (subtle), `text-white` (on colored pills).
 - **Pill-style labels**: Combine `bg-{color} text-{color} rounded-full py-px` in `label-class`.
-- **As section separator**: Drop `<x-ui.divider class="before:bg-bg-muted" />` between sections in forms, slideovers, cards.
+- **As section separator**: Drop `<x-ui.divider class="before:bg-muted" />` between sections in forms, slideovers, cards.
 - **In dropdowns**: `<x-ui.divider class="col-span-full -mx-1 py-0.5 border-border" />` — uses `border-border` because no label (renders `<hr>`).
-- **In auth forms**: `<x-ui.divider label-placement="middle" label="Or continue with" class="before:bg-bg-muted my-6" label-class="px-3 bg-bg text-fg-muted text-sm" />`.
+- **In auth forms**: `<x-ui.divider label-placement="middle" label="Or continue with" class="before:bg-muted my-6" label-class="px-3 bg-background  text-muted-foreground text-sm" />`.
 
 ## Avoid
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Flexiwind;
 
 class UiHelper
@@ -8,71 +10,65 @@ class UiHelper
         'none' => [],
         'solid' => [
             'base' => 'ui-solid',
-            'intent' => [
+            'intents' => [
                 'primary' => 'ui-solid-primary',
                 'secondary' => 'ui-solid-secondary',
+                'accent' => 'ui-solid-accent',
                 'success' => 'ui-solid-success',
-                'danger' => 'ui-solid-danger',
-                'warning' => 'ui-solid-warning',
-                'info' => 'ui-solid-info',
+                'destructive' => 'ui-solid-destructive',
                 'gray' => 'ui-solid-gray',
                 'neutral' => 'ui-solid-neutral',
             ],
         ],
         'soft' => [
             'base' => 'ui-soft',
-            'intent' => [
+            'intents' => [
                 'primary' => 'ui-soft-primary',
-                'secondary' => 'ui-soft-secondary',
-                'accent' => 'ui-soft-accent',
+                'destructive' => 'ui-soft-destructive',
                 'success' => 'ui-soft-success',
-                'danger' => 'ui-soft-danger',
                 'warning' => 'ui-soft-warning',
-                'info' => 'ui-soft-info',
                 'gray' => 'ui-soft-gray',
-                'neutral' => 'ui-soft-neutral',
             ],
         ],
         'subtle' => [
             'base' => 'ui-subtle',
-            'intent' => [
+            'intents' => [
                 'primary' => 'ui-subtle-primary',
-                'secondary' => 'ui-subtle-secondary',
+                'destructive' => 'ui-subtle-destructive',
                 'success' => 'ui-subtle-success',
-                'danger' => 'ui-subtle-danger',
-                'accent' => 'ui-subtle-accent',
                 'warning' => 'ui-subtle-warning',
-                'info' => 'ui-subtle-info',
                 'gray' => 'ui-subtle-gray',
-                'neutral' => 'ui-subtle-neutral',
             ],
         ],
         'outline' => [
             'base' => 'ui-outline',
-            'intent' => [
+            'intents' => [
                 'primary' => 'ui-outline-primary',
-                'secondary' => 'ui-outline-secondary',
+                'destructive' => 'ui-outline-destructive',
                 'success' => 'ui-outline-success',
-                'danger' => 'ui-outline-danger',
-                'warning' => 'ui-outline-warning',
-                'info' => 'ui-outline-info',
                 'gray' => 'ui-outline-gray',
-                'neutral' => 'ui-outline-neutral',
             ],
         ],
     ];
 
-    public static function getVariants()
+    public static function getVariants(): array
     {
         return self::$variants;
     }
 
     public static function getClasses(string $variant = 'solid', ?string $intent = 'gray'): string
     {
+        $intent = self::normalizeIntent($intent);
+
         $variantConfig = self::$variants[$variant] ?? [];
         $base = $variantConfig['base'] ?? '';
-        $intentClass = $variantConfig['intent'][$intent] ?? '';
+        $intentClass = $variantConfig['intents'][$intent] ?? '';
 
         return trim("$base $intentClass");
+    }
+
+    public static function normalizeIntent(?string $intent): ?string
+    {
+        return $intent === 'danger' ? 'destructive' : $intent;
     }
 }

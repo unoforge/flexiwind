@@ -5,19 +5,24 @@ return [
         'lang' => 'css',
         'name' => 'light',
         'code' => <<<'CSS'
+@utility ui-soft-primary {
+    --ui-color: color-mix(in oklab, var(--color-primary) 15%, transparent);
+    --ui-fg: var(--color-primary);
+}
+
+@utility ui-soft-destructive {
+    --ui-color: color-mix(in oklab, var(--color-destructive) 15%, transparent);
+    --ui-fg: var(--color-destructive);
+}
+
 @utility ui-soft-success {
-    --ui-soft-bg: --alpha(var(--color-success-100) / 40%);
-    --ui-soft-text: var(--color-success-600);
+    --ui-color: color-mix(in oklab, var(--color-success) 15%, transparent);
+    --ui-fg: var(--color-success);
 }
 
-@utility ui-soft-warning {
-    --ui-soft-bg: --alpha(var(--color-warning-100) / 40%);
-    --ui-soft-text: var(--color-warning-600);
-}
-
-@utility ui-soft-danger {
-    --ui-soft-bg: --alpha(var(--color-danger-100) / 40%);
-    --ui-soft-text: var(--color-danger-600);
+@utility ui-soft-gray {
+    --ui-color: var(--color-background);
+    --ui-fg: var(--color-foreground);
 }
 CSS,
     ],
@@ -25,33 +30,43 @@ CSS,
         'lang' => 'css',
         'name' => 'both',
         'code' => <<<'CSS'
+@utility ui-soft-primary {
+    --ui-color: color-mix(in oklab, var(--color-primary) 15%, transparent);
+    --ui-fg: var(--color-primary);
+
+    &:is(.dark *) {
+        --ui-color: color-mix(in oklab, var(--color-primary) 15%, transparent);
+        --ui-fg: var(--color-primary);
+    }
+}
+
+@utility ui-soft-destructive {
+    --ui-color: color-mix(in oklab, var(--color-destructive) 15%, transparent);
+    --ui-fg: var(--color-destructive);
+
+    &:is(.dark *) {
+        --ui-color: color-mix(in oklab, var(--color-destructive) 15%, transparent);
+        --ui-fg: var(--color-destructive);
+    }
+}
+
 @utility ui-soft-success {
-    --ui-soft-bg: --alpha(var(--color-success-100) / 40%);
-    --ui-soft-text: var(--color-success-600);
+    --ui-color: color-mix(in oklab, var(--color-success) 15%, transparent);
+    --ui-fg: var(--color-success);
 
     &:is(.dark *) {
-        --ui-soft-bg: --alpha(var(--color-success-900) / 30%);
-        --ui-soft-text: var(--color-success-300);
+        --ui-color: color-mix(in oklab, var(--color-success) 15%, transparent);
+        --ui-fg: var(--color-success);
     }
 }
 
-@utility ui-soft-warning {
-    --ui-soft-bg: --alpha(var(--color-warning-100) / 40%);
-    --ui-soft-text: var(--color-warning-600);
+@utility ui-soft-gray {
+    --ui-color: var(--color-background);
+    --ui-fg: var(--color-foreground);
 
     &:is(.dark *) {
-        --ui-soft-bg: --alpha(var(--color-warning-900) / 30%);
-        --ui-soft-text: var(--color-warning-300);
-    }
-}
-
-@utility ui-soft-danger {
-    --ui-soft-bg: --alpha(var(--color-danger-100) / 40%);
-    --ui-soft-text: var(--color-danger-600);
-
-    &:is(.dark *) {
-        --ui-soft-bg: --alpha(var(--color-danger-900) / 30%);
-        --ui-soft-text: var(--color-danger-300);
+        --ui-color: color-mix(in oklab, var(--color-muted-foreground) 15%, transparent);
+        --ui-fg: var(--color-muted-foreground);
     }
 }
 CSS,
@@ -60,19 +75,24 @@ CSS,
         'lang' => 'css',
         'name' => 'dark',
         'code' => <<<'CSS'
+@utility ui-soft-primary {
+    --ui-color: color-mix(in oklab, var(--color-primary) 15%, transparent);
+    --ui-fg: var(--color-primary);
+}
+
+@utility ui-soft-destructive {
+    --ui-color: color-mix(in oklab, var(--color-destructive) 15%, transparent);
+    --ui-fg: var(--color-destructive);
+}
+
 @utility ui-soft-success {
-        --ui-soft-bg: --alpha(var(--color-success-900) / 30%);
-        --ui-soft-text: var(--color-success-300);
+    --ui-color: color-mix(in oklab, var(--color-success) 15%, transparent);
+    --ui-fg: var(--color-success);
 }
 
-@utility ui-soft-warning {
-    --ui-soft-bg: --alpha(var(--color-warning-900) / 30%);
-    --ui-soft-text: var(--color-warning-300);
-}
-
-@utility ui-soft-danger {
-    --ui-soft-bg: --alpha(var(--color-danger-900) / 30%);
-    --ui-soft-text: var(--color-danger-300);
+@utility ui-soft-gray {
+    --ui-color: color-mix(in oklab, var(--color-muted-foreground) 15%, transparent);
+    --ui-fg: var(--color-muted-foreground);
 }
 CSS,
     ],

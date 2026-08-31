@@ -6,7 +6,7 @@
 ])
 
 <!doctype html>
-<html lang="en" class="bg-bg" data-palette="default">
+<html lang="en" class="bg-background " data-palette="default">
 
 <head>
     <x-molecules.seo :seo="$seo">

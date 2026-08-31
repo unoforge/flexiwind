@@ -1,4 +1,4 @@
-@props(['name', 'size' => 'sm', 'intent' => 'current', 'class' => ''])
+@props(['name', 'size' => 'sm', 'intent' => 'current', 'class' => '', 'iconSlot' => 'icon', 'dataSlot' => 'icon'])
 
 @php
     $sizeClasses = [
@@ -14,16 +14,22 @@
 
     $intentClasses = [
         'current'=>'text-current',
-        'fg' => 'text-fg',
-        'muted' => 'text-fg-muted',
+        'fg' => 'text-foreground',
+        'muted' => 'text-muted-foreground',
         'primary' => 'text-primary',
         'secondary' => 'text-secondary',
         'success' => 'text-success',
         'warning' => 'text-warning',
-        'danger' => 'text-danger',
+        'danger' => 'text-destructive',
+        'destructive' => 'text-destructive',
     ];
 
     $intentClass = $intent ? $intentClasses[$intent] ?? '' : '';
 @endphp
 
-<span slot="icon" data-slot="icon" aria-hidden="true" {{ $attributes->class(['flex iconify', $name, $sizeClass, $intentClass, $class]) }}></span>
+<span
+    @if ($iconSlot) slot="{{ $iconSlot }}" @endif
+    @if ($dataSlot) data-slot="{{ $dataSlot }}" @endif
+    aria-hidden="true"
+    {{ $attributes->class(['flex iconify', $name, $sizeClass, $intentClass, $class]) }}
+></span>

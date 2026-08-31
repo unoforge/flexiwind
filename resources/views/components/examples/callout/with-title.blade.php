@@ -10,7 +10,7 @@
     </x-ui.callout.description>
     <div class="pt-1">
         <x-ui.button variant="outline" intent="gray" size="sm">
-            <span class="iconify ph--arrows-clockwise mr-2"></span>
+            <x-ui.icon name="ph--arrows-clockwise" class="mr-2" />
             Try again
         </x-ui.button>
     </div>

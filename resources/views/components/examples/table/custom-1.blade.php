@@ -55,10 +55,10 @@
                         <x-ui.avatar size="sm" radius="ui" src="{{ $user['avatar'] }}" alt="avatar for {{ $user['name'] }}"
                             width="300" height="300" />
                         <div class="flex-1 flex flex-col">
-                            <span class="text-sm font-semibold text-fg-title">
+                            <span class="text-sm font-semibold text-foreground">
                                 {{ $user['name'] }}
                             </span>
-                            <span class="text-xs text-fg-muted mt-px">
+                            <span class="text-xs text-muted-foreground mt-px">
                                 {{ $user['email'] }}
                             </span>
                         </div>
@@ -71,7 +71,7 @@
                 </x-ui.table.cell>
                 <x-ui.table.cell class="w-9">
                     <x-ui.button size="sm" iconOnly variant="soft">
-                        <span aria-hidden="true" class="flex iconify ph--dots-three-vertical"></span>
+                        <x-ui.icon name="ph--dots-three-vertical" class="flex" />
                     </x-ui.button>
                 </x-ui.table.cell>
             </x-ui.table.row>

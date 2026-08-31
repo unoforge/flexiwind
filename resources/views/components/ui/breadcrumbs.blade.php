@@ -1,5 +1,5 @@
 @props([
-    'class' => 'text-fg-muted',
+    'class' => 'text-muted-foreground',
     'wrapper' => '',
     'spacing' => '3.5',
 ])

@@ -78,7 +78,7 @@ new class extends Component {
     <x-ui.modal.content size="sm" :closable="false"
         class="p-(--gutter) flex flex-col gap-y-4 items-center text-center">
         <div class="w-max h-max p-3 rounded-full ui-soft ui-soft-gray border border-border">
-            <span aria-hidden="true" class="flex iconify ph--question text-xl"></span>
+            <x-ui.icon name="ph--question" class="text-xl" />
         </div>
         <x-ui.modal.title>
             Confirm subscription ({{ $author->user->name }})
@@ -103,7 +103,7 @@ new class extends Component {
 
 ## Form Handling
 
-### Basic Form
+### Basic Form (simple)
 ```blade
 <form wire:submit="save" class="space-y-4">
     <x-ui.input
@@ -123,14 +123,30 @@ new class extends Component {
 </form>
 ```
 
-### Validation State
+### Basic Form (with validation, hints, required)
 ```blade
-<x-ui.input
-    type="email"
-    label="Email"
-    wire:model="email"
-    :invalid="$errors->has('email')"
-/>
+<form wire:submit="save" class="space-y-4">
+    <x-ui.field label="Email" for="email" hint="We'll never share it" required
+        :error="$errors->first('email')">
+        <x-ui.input
+            type="email"
+            id="email"
+            wire:model="email"
+            placeholder="you@example.com"
+            :invalid="$errors->has('email')"
+        />
+    </x-ui.field>
+
+    <x-ui.field label="Role" for="role" :error="$errors->first('role')">
+        <x-ui.select id="role" wire:model="role">
+            <option value="">Select...</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </x-ui.select>
+    </x-ui.field>
+
+    <x-ui.button type="submit" intent="primary">Save</x-ui.button>
+</form>
 ```
 
 ## Slideover Programmatic Control

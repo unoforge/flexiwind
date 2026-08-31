@@ -14,7 +14,7 @@
       You can add components to your app using our CLI.
     </p>
   </x-ui.alert>
-  <x-ui.alert variant="subtle" intent="danger">
+  <x-ui.alert variant="subtle" intent="destructive">
     <h3 class="font-semibold">Danger zone</h3>
     <p class="text-sm mt-0.5">
       You can add components to your app using our CLI.

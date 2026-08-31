@@ -3,7 +3,7 @@
         <x-ui.icon name="ph--megaphone" />
     </div>
     <div class="flex-1">
-        <h3 class="font-semibold text-fg-title">
+        <h3 class="font-semibold text-foreground">
             New Feature Available
         </h3>
         <x-ui.text intent="muted">

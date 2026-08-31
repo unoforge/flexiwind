@@ -22,9 +22,9 @@
     $indicatorClass = $indicator ? 'ui-form-select-indicator' : '';
 
     $variantClasses = match ($variant) {
-        'default' => 'ui-form-base ui-form-input ui-form-select rounded-ui bg-bg border border-border-input text-fg ',
-        'ghost' => 'ui-form-base ui-form-input ui-form-select rounded-ui text-fg ',
-        'flush' => 'ui-form-base ui-form-input ui-form-select rounded-ui border-transparent text-fg ',
+        'default' => 'ui-form-base ui-form-input ui-form-select rounded-ui bg-background  border border-input text-foreground ',
+        'ghost' => 'ui-form-base ui-form-input ui-form-select rounded-ui text-foreground ',
+        'flush' => 'ui-form-base ui-form-input ui-form-select rounded-ui border-transparent text-foreground ',
         'unstyled' => '',
     };
 

@@ -87,7 +87,7 @@ new class extends Component {
 <x-ui.slideover.body class="pt-10">
     <!-- Groups Section -->
     <div class="mb-8">
-        <span class="text-fg-title font-medium text-sm mb-3 block">
+        <span class="text-foreground font-medium text-sm mb-3 block">
             Groups
         </span>
         <div class="flex flex-wrap gap-2">
@@ -96,10 +96,10 @@ new class extends Component {
                     wire:key="group-{{ $group['id'] }}-{{ $selectedGroup }}"
                     data-state="{{ $selectedGroup === $group['id'] ? 'active' : 'inactive' }}"
                     class="h-7 text-sm px-2 flex items-center rounded-ui transition-colors duration-200 ring ring-border-strong/60
-                    fx-active:bg-bg-muted/50 fx-active:border-border-strong/70 fx-active:text-fg-title fx-active:shadow-md fx-active:shadow-black/5
-                    text-fg-muted hover:bg-bg-muted/70 hover:text-fg-subtitle
+                    fx-active:bg-muted/50 fx-active:border-border-strong/70 fx-active:text-foreground fx-active:shadow-md fx-active:shadow-black/5
+                    text-muted-foreground hover:bg-muted/70 hover:text-foreground
                     ">
-                    <span class="iconify size-3 {{ $group['icon'] }} mr-1.5"></span>
+                    <x-ui.icon name="{{ $group['icon'] }}" class="size-3 mr-1.5" />
                     <span class="text-sm font-medium">{{ $group['text'] }}</span>
                 </button>
             @endforeach
@@ -109,12 +109,12 @@ new class extends Component {
     <!-- Categories Section -->
     <div>
         <div class="flex items-center justify-between mb-3">
-            <span class="text-fg-title font-medium text-sm">
+            <span class="text-foreground font-medium text-sm">
                 Categories
             </span>
             @if (count($selectedCategories) > 0)
                 <button wire:click="clearCategories"
-                    class="text-sm text-fg-muted hover:text-fg transition-colors duration-200">
+                    class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
                     Clear
                 </button>
             @endif
@@ -124,14 +124,14 @@ new class extends Component {
                 <a href="{{ route('blocks.show', [$category['group'], $category['id']]) }}" wire:navigate
                     wire:key="category-{{ $category['id'] }}-{{ $selectedGroup }}"
                     class="h-7 text-sm px-2 flex items-center rounded-ui transition-colors duration-200 ring ring-border-strong/60
-                    fx-current:bg-bg-muted/50 fx-current:border-border-strong/70 fx-current:text-fg-title fx-current:shadow-md fx-current:shadow-black/5
-                    text-fg-muted hover:bg-bg-muted/70 hover:text-fg-subtitle">
+                    fx-current:bg-muted/50 fx-current:border-border-strong/70 fx-current:text-foreground fx-current:shadow-md fx-current:shadow-black/5
+                    text-muted-foreground hover:bg-muted/70 hover:text-foreground">
                     {{ $category['name'] }}
                     <span
                         class="ml-1 pl-1.5 opacity-70 border-l border-border-strong/90">{{ $category['count'] }}</span>
                 </a>
             @empty
-                <p class="text-fg-muted text-sm">No categories available for this group.</p>
+                <p class="text-muted-foreground text-sm">No categories available for this group.</p>
             @endforelse
         </div>
     </div>

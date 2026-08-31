@@ -13,7 +13,7 @@
                 $delay = $i * 100; // staggered animation delay
             @endphp
 
-            <x-ui.skeleton no-bg class="h-4 bg-gray-800 dark:bg-gray-900" style="width: {{ $width }}%; animation-delay: {{ $delay }}ms" />
+            <x-ui.skeleton no-background class="h-4 bg-gray-800 dark:bg-gray-900" style="width: {{ $width }}%; animation-delay: {{ $delay }}ms" />
         </div>
     @endfor
 </div>

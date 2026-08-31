@@ -1,0 +1,7 @@
+<x-layouts.block-ui class="grid w-full min-h-screen">
+    <div class="w-full h-full py-10 d-flex-place-center">
+        <div class="max-w-sm mx-auto">
+            <x-previews.dash-card.activity02 />
+        </div>
+    </div>
+</x-layouts.block-ui>

@@ -12,6 +12,6 @@
 >
     {{ $slot }}
     @unless($isInternalLink)
-        <span aria-hidden="true" class="iconify ph--arrow-up-right text-sm"></span>
+        <x-ui.icon name="ph--arrow-up-right" class="text-sm" />
     @endunless
 </x-atoms.ui-link>

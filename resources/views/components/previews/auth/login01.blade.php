@@ -23,13 +23,13 @@
                     </g>
                     <defs>
                         <clipPath id="clip0_13_164">
-                            <rect width="488" height="488" fill="currentColor" class="text-bg"></rect>
+                            <rect width="488" height="488" fill="currentColor" class="text-background"></rect>
                         </clipPath>
                     </defs>
                 </svg>
             </div>
-            <h2 class="text-2xl font-semibold text-fg-title">Welcome back</h2>
-            <p class="text-fg-muted mt-1">Sign in to your account</p>
+            <h2 class="text-2xl font-semibold text-foreground">Welcome back</h2>
+            <p class="text-muted-foreground mt-1">Sign in to your account</p>
         </div>
 
 
@@ -39,9 +39,9 @@
                 <x-ui.label for="login-password" class="block">Password</x-ui.label>
                 <x-ui.input.group>
                     <x-ui.input id="login-password" variant="unstyled" type="password" placeholder="***********" class="pe-11 px-3" />
-                    <x-ui.input.trailing absolute class="text-fg" clickable>
+                    <x-ui.input.trailing absolute class="text-foreground" clickable>
                         <button type="button" class="flex items-center cursor-pointer">
-                            <span class="iconify ph--eye text-fg-muted/80"></span>
+                            <x-ui.icon name="ph--eye" class="text-muted-foreground/80" />
                         </button>
                     </x-ui.input.trailing>
                 </x-ui.input.group>
@@ -57,24 +57,24 @@
             </x-ui.button>
         </form>
 
-        <x-ui.divider label-placement="middle" label="Or continue with" class="before:bg-bg-muted my-6"
-            label-class="pr-3 bg-bg text-fg relative" />
+        <x-ui.divider label-placement="middle" label="Or continue with" class="before:bg-muted my-6"
+            label-class="px-3 bg-background  text-foreground text-sm" />
 
         <!-- Social Login -->
         <div class="grid grid-cols-2 gap-3">
             <x-ui.button variant="outline" intent="gray" class="justify-center">
-                <span class="iconify ph--google-logo mr-2"></span>
+                <x-ui.icon name="ph--google-logo" class="mr-2" />
                 <span>Google</span>
             </x-ui.button>
             <x-ui.button variant="outline" intent="gray" class="justify-center">
-                <span class="iconify ph--github-logo mr-2"></span>
+                <x-ui.icon name="ph--github-logo" class="mr-2" />
                 <span>GitHub</span>
             </x-ui.button>
         </div>
 
         <!-- Sign Up Link -->
         <div class="text-center mt-6">
-            <p class="text-sm text-fg-muted">
+            <p class="text-sm text-muted-foreground">
                 Don't have an account?
                 <x-ui.link href="#" class="font-medium text-primary ml-1">Sign up</x-ui.link>
             </p>

@@ -1,10 +1,10 @@
 :root {
-    --astro-code-color-background: var(--c-gray-900);
+    --astro-code-color-background: var(--gray-900);
 
 }
 
 html.dark {
-    --astro-code-color-background: --alpha(var(--c-gray-950)/50%);
+    --astro-code-color-background: --alpha(var(--gray-950)/50%);
 }
 
 /* line line--added */
@@ -32,23 +32,23 @@ html.dark {
 }
 
 .line.line--added {
-    background: var(--c-gray-800);
+    background: var(--gray-800);
 }
 
 .dark .line.line--added {
-    background: --alpha(var(--c-gray-800)/80%);
+    background: --alpha(var(--gray-800)/80%);
 }
 
 .line.line--added::before {
-    border-left-color: var(--c-success-500);
+    border-left-color: var(--color-success);
 }
 
 .line.line--removed {
-    background: --alpha(var(--c-danger-800)/30%);
+    background: color-mix(in oklab, var(--color-destructive) 18%, transparent);
 }
 
 .line.line--removed::before {
-    border-left-color: var(--c-danger-500);
+    border-left-color: var(--color-destructive);
 }
 
 
@@ -69,7 +69,7 @@ figure pre {
     transform: translateY(-50%);
     left: 0px;
     font-size: 14px;
-    color: var(--c-orange-500);
+    color: var(--color-warning);
     content: '$';
 }
 

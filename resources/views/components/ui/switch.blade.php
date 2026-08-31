@@ -30,26 +30,26 @@
     ];
 
     $bgMap = [
-        'default' => '--switch-bg:var(--color-bg-muted)',
-        'muted' => '--switch-bg:var(--color-bg-subtle)',
-        'surface' => '--switch-bg:var(--color-bg-surface)',
-        'bg' => '--switch-bg:var(--color-bg)',
+        'default' => '--switch-bg:var(--color-muted)',
+        'muted' => '--switch-bg:var(--color-muted)',
+        'surface' => '--switch-bg:var(--color-card)',
+        'bg' => '--switch-bg:var(--color-background)',
     ];
 
     $trackMap = [
         'default' => 'color:var(--color-primary-600)',
-        'muted' => 'color:var(--color-bg-muted)',
-        'surface' => 'color:var(--color-fg)',
-        'neutral' => 'color:var(--color-fg-muted)',
-        'title' => 'color:var(--color-fg-title)',
+        'muted' => 'color:var(--color-muted)',
+        'surface' => 'color:var(--color-foreground)',
+        'neutral' => 'color:var(--color-muted-foreground)',
+        'title' => 'color:var(--color-foreground)',
         'transparent' => 'color:transparent',
     ];
 
     $knobMap = [
         'white' => 'var(--color-white)',
-        'bg' => 'var(--color-bg)',
-        'muted' => 'var(--color-fg-muted)',
-        'neutral' => 'var(--color-fg)',
+        'bg' => 'var(--color-background)',
+        'muted' => 'var(--color-muted-foreground)',
+        'neutral' => 'var(--color-foreground)',
     ];
 
     $sizeClass = $sizes[$size] ?? $sizes['md'];

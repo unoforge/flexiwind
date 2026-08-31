@@ -4,7 +4,7 @@
     "description": "Flexiwind UI components for Laravel Blade.",
     "components": [
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "accordion",
             "title": "Accordion",
             "description": "A reusable accordion component for Laravel Blade/Livewire.",
@@ -48,7 +48,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "alert",
             "title": "Alert",
             "description": "A reusable alert component for Laravel Blade/Livewire.",
@@ -64,7 +64,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "aspect",
             "title": "Aspect Ratio",
             "description": "A reusable aspect ratio component for Laravel Blade/Livewire.",
@@ -77,7 +77,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "avatar-placeholder",
             "title": "Avatar Placeholder",
             "description": "A reusable avatar placeholder component for Laravel Blade/Livewire.",
@@ -90,7 +90,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "avatar",
             "title": "Avatar",
             "description": "A reusable avatar component for Laravel Blade/Livewire.",
@@ -103,7 +103,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "badge",
             "title": "Badge",
             "description": "A reusable badge component for Laravel Blade/Livewire.",
@@ -116,7 +116,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "breadcrumbs",
             "title": "Breadcrumbs",
             "description": "A reusable breadcrumbs component for Laravel Blade/Livewire.",
@@ -139,7 +139,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "button",
             "title": "Button",
             "description": "A reusable button component for Laravel Blade/Livewire.",
@@ -155,7 +155,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "callout",
             "title": "Callout",
             "description": "A reusable callout component for Laravel Blade/Livewire.",
@@ -182,7 +182,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "card",
             "title": "Card",
             "description": "A reusable card component for Laravel Blade/Livewire.",
@@ -223,7 +223,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "checkbox",
             "title": "Checkbox",
             "description": "A reusable checkbox component for Laravel Blade/Livewire.",
@@ -236,7 +236,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "collapse",
             "title": "Collapse",
             "description": "A reusable collapse component for Laravel Blade/Livewire.",
@@ -270,7 +270,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "dissmissible",
             "title": "Dissmissible",
             "description": "A reusable divider component for Laravel Blade/Livewire.",
@@ -291,7 +291,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "divider",
             "title": "Divider",
             "description": "A reusable divider component for Laravel Blade/Livewire.",
@@ -304,7 +304,20 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
+            "name": "field",
+            "title": "Field",
+            "description": "A form field wrapper with label, hint, error message, and required indicator.",
+            "files": [
+                {
+                    "path": "resources/views/components/ui/field.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/field.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "2.0.0",
             "name": "dropdown",
             "title": "Dropdown",
             "description": "A reusable dropdown component for Laravel Blade/Livewire.",
@@ -373,10 +386,31 @@
                 "node": [
                     "@flexilla/dropdown"
                 ]
+            },
+            "cssVars": {
+                "light": {
+                    "--dropdown-item-outline": "var(--color-primary)",
+                    "--dropdown-item-danger-outline": "var(--color-destructive)",
+                    "--dropdown-item-hover-and-select": "var(--color-muted)",
+                    "--dropdown-item-hover-and-select-fg": "var(--color-foreground)",
+                    "--dropdown-item-selected-fg": "var(--color-foreground)",
+                    "--dropdown-item-danger-fg": "var(--color-destructive)",
+                    "--dropdown-item-warning-fg": "var(--color-warning)",
+                    "--dropdown-item-danger-hover-and-select": "color-mix(in oklab, var(--color-destructive) 10%, transparent)",
+                    "--dropdown-item-danger-hover-and-select-fg": "var(--color-destructive)",
+                    "--dropdown-item-warning-hover-and-select": "color-mix(in oklab, var(--color-warning) 10%, transparent)",
+                    "--dropdown-item-warning-hover-and-select-fg": "var(--color-warning)"
+                },
+                "dark": {
+                    "--dropdown-item-danger-hover-and-select": "color-mix(in oklab, var(--color-destructive) 18%, transparent)",
+                    "--dropdown-item-danger-hover-and-select-fg": "var(--color-destructive)",
+                    "--dropdown-item-warning-hover-and-select": "color-mix(in oklab, var(--color-warning) 18%, transparent)",
+                    "--dropdown-item-warning-hover-and-select-fg": "var(--color-warning)"
+                }
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "input",
             "title": "Input",
             "description": "A reusable input component for Laravel Blade/Livewire.",
@@ -393,7 +427,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "input-group",
             "title": "Input Group",
             "description": "A reusable input component for Laravel Blade/Livewire.",
@@ -419,7 +453,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "kbd",
             "title": "Kbd",
             "description": "A reusable kbd component for Laravel Blade/Livewire.",
@@ -432,7 +466,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "label",
             "title": "Label",
             "description": "A reusable label component for Laravel Blade/Livewire.",
@@ -445,7 +479,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "link",
             "title": "Link",
             "description": "A reusable link component for Laravel Blade/Livewire.",
@@ -461,7 +495,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "meter",
             "title": "Meter",
             "description": "A reusable meter component for Laravel Blade/Livewire.",
@@ -474,7 +508,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "modal",
             "title": "Modal",
             "description": "A reusable modal component for Laravel Blade/Livewire.",
@@ -541,7 +575,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "otp",
             "title": "OTP",
             "description": "A reusable otp component for Laravel Blade/Livewire.",
@@ -573,7 +607,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "pagination",
             "title": "Pagination",
             "description": "A reusable pagination component for Laravel Blade/Livewire.",
@@ -589,7 +623,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "popover",
             "title": "Popover",
             "description": "A reusable popover component for Laravel Blade/Livewire.",
@@ -618,7 +652,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "progress",
             "title": "Progress",
             "description": "A reusable progress component for Laravel Blade/Livewire.",
@@ -631,7 +665,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "radio",
             "title": "Radio",
             "description": "A reusable radio component for Laravel Blade/Livewire.",
@@ -644,7 +678,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "range",
             "title": "Range",
             "description": "A reusable range component for Laravel Blade/Livewire.",
@@ -668,7 +702,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "select",
             "title": "Select",
             "description": "A reusable select component for Laravel Blade/Livewire.",
@@ -685,7 +719,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "skeleton",
             "title": "Skeleton",
             "description": "A reusable skeleton component for Laravel Blade/Livewire.",
@@ -698,7 +732,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "slideover",
             "title": "Slideover",
             "description": "A reusable slideover component for Laravel Blade/Livewire.",
@@ -765,7 +799,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "switch",
             "title": "Switch",
             "description": "A reusable switch component for Laravel Blade/Livewire.",
@@ -778,7 +812,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "table",
             "title": "Table",
             "description": "A reusable table component for Laravel Blade/Livewire.",
@@ -816,7 +850,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "tabs",
             "title": "Tabs",
             "description": "A reusable tabs component for Laravel Blade/Livewire.",
@@ -865,7 +899,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "textarea",
             "title": "Textarea",
             "description": "A reusable textarea component for Laravel Blade/Livewire.",
@@ -889,7 +923,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "tooltip",
             "title": "Tooltip",
             "description": "A reusable tooltip component for Laravel Blade/Livewire.",
@@ -921,7 +955,7 @@
             }
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "icon",
             "title": "Icon",
             "description": "A reusable icon component for Laravel Blade/Livewire using Iconify.",
@@ -934,7 +968,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "text",
             "title": "Text",
             "description": "A reusable text component for Laravel Blade/Livewire with intent-based styling.",
@@ -947,7 +981,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "heading",
             "title": "Heading",
             "description": "A reusable heading component for Laravel Blade/Livewire with semantic levels.",

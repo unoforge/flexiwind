@@ -41,14 +41,14 @@
     $backdrop_blur = $backdropBlured ? 'backdrop-blur-sm' : '';
 @endphp
 
-<div x-data x-offcanvas data-slideover data-offcanvas-backdrop="fixed inset-0 bg-bg/50 z-60 {{ $backdrop_blur }}"
+<div x-data x-offcanvas data-slideover data-offcanvas-backdrop="fixed inset-0 bg-background /50 z-60 {{ $backdrop_blur }}"
     data-ax="{{ $pos_ax }}" id="{{ $id }}" aria-labelledby="{{ $id }}"
     data-floated="{{ $isFloated ? 'true' : null }}" @if ($staticBackdrop) data-static-backdrop @endif
     @if ($scrollableBody) data-allow-body-scroll @endif
     {{ $attributes->class([
         'fixed w-screen h-dvh ease-linear duration-200 z-110 flex',
         'opacity-0 fx-open:opacity-100',
-        'transition-[transform_opacity] duration-300 ease-linear',
+        'transition-[transform_opacity] duration-300 ease-linear group',
         $size_class,
         $u_position,
         'p-2 *:rounded-lg' => $isFloated,
@@ -58,8 +58,8 @@
 
     @if ($closable)
         <x-ui.slideover.close size="sm" iconOnly variant="none" intent="none"
-            class="absolute top-4 right-4 hover:bg-bg-muted rounded-full text-fg">
-            <span aria-hidden="true" class="flex iconify ph--x"></span>
+            class="absolute top-4 right-4 hover:bg-muted rounded-full text-foreground">
+            <x-ui.icon name="ph--x" class="flex" />
         </x-ui.slideover.close>
     @endif
 </div>

@@ -5,19 +5,28 @@ return [
         'lang' => 'css',
         'name' => 'light',
         'code' => <<<'CSS'
+@utility ui-outline-primary {
+    --ui-color: transparent;
+    --ui-fg: var(--color-primary);
+    --ui-border-color: var(--color-primary);
+}
+
+@utility ui-outline-destructive {
+    --ui-color: transparent;
+    --ui-fg: var(--color-destructive);
+    --ui-border-color: var(--color-destructive);
+}
+
 @utility ui-outline-success {
-    --ui-outline-border: var(--color-success-600);
-    --ui-outline-text: var(--color-success-600);
+    --ui-color: transparent;
+    --ui-fg: var(--color-success);
+    --ui-border-color: var(--color-success);
 }
 
-@utility ui-outline-warning {
-    --ui-outline-border: var(--color-warning-600);
-    --ui-outline-text: var(--color-warning-600);
-}
-
-@utility ui-outline-danger {
-    --ui-outline-border: var(--color-danger-600);
-    --ui-outline-text: var(--color-danger-600);
+@utility ui-outline-gray {
+    --ui-color: transparent;
+    --ui-fg: var(--color-foreground);
+    --ui-border-color: var(--color-border);
 }
 CSS,
     ],
@@ -25,33 +34,51 @@ CSS,
         'lang' => 'css',
         'name' => 'both',
         'code' => <<<'CSS'
+@utility ui-outline-primary {
+    --ui-color: transparent;
+    --ui-fg: var(--color-primary);
+    --ui-border-color: var(--color-primary);
+
+    &:is(.dark *) {
+        --ui-color: transparent;
+        --ui-fg: var(--color-primary);
+        --ui-border-color: var(--color-primary);
+    }
+}
+
+@utility ui-outline-destructive {
+    --ui-color: transparent;
+    --ui-fg: var(--color-destructive);
+    --ui-border-color: var(--color-destructive);
+
+    &:is(.dark *) {
+        --ui-color: transparent;
+        --ui-fg: var(--color-destructive);
+        --ui-border-color: var(--color-destructive);
+    }
+}
+
 @utility ui-outline-success {
-    --ui-outline-border: var(--color-success-600);
-    --ui-outline-text: var(--color-success-600);
+    --ui-color: transparent;
+    --ui-fg: var(--color-success);
+    --ui-border-color: var(--color-success);
 
     &:is(.dark *) {
-        --ui-outline-border: var(--color-secondary-500);
-        --ui-outline-text: var(--color-secondary-500);
+        --ui-color: transparent;
+        --ui-fg: var(--color-success);
+        --ui-border-color: var(--color-success);
     }
 }
 
-@utility ui-outline-warning {
-    --ui-outline-border: var(--color-warning-600);
-    --ui-outline-text: var(--color-warning-600);
+@utility ui-outline-gray {
+    --ui-color: transparent;
+    --ui-fg: var(--color-foreground);
+    --ui-border-color: var(--color-border);
 
     &:is(.dark *) {
-        --ui-outline-border: var(--color-warning-500);
-        --ui-outline-text: var(--color-warning-500);
-    }
-}
-
-@utility ui-outline-danger {
-    --ui-outline-border: var(--color-danger-600);
-    --ui-outline-text: var(--color-danger-600);
-
-    &:is(.dark *) {
-        --ui-outline-border: var(--color-danger-500);
-        --ui-outline-text: var(--color-danger-500);
+        --ui-color: transparent;
+        --ui-fg: var(--color-muted-foreground);
+        --ui-border-color: var(--color-foreground);
     }
 }
 CSS,
@@ -60,19 +87,28 @@ CSS,
         'lang' => 'css',
         'name' => 'dark',
         'code' => <<<'CSS'
+@utility ui-outline-primary {
+    --ui-color: transparent;
+    --ui-fg: var(--color-primary);
+    --ui-border-color: var(--color-primary);
+}
+
+@utility ui-outline-destructive {
+    --ui-color: transparent;
+    --ui-fg: var(--color-destructive);
+    --ui-border-color: var(--color-destructive);
+}
+
 @utility ui-outline-success {
-    --ui-outline-border: var(--color-secondary-500);
-    --ui-outline-text: var(--color-secondary-500);
+    --ui-color: transparent;
+    --ui-fg: var(--color-success);
+    --ui-border-color: var(--color-success);
 }
 
-@utility ui-outline-warning {
-    --ui-outline-border: var(--color-warning-500);
-    --ui-outline-text: var(--color-warning-500);
-}
-
-@utility ui-outline-danger {
-    --ui-outline-border: var(--color-danger-500);
-    --ui-outline-text: var(--color-danger-500);
+@utility ui-outline-gray {
+    --ui-color: transparent;
+    --ui-fg: var(--color-muted-foreground);
+    --ui-border-color: var(--color-foreground);
 }
 CSS,
     ],

@@ -31,7 +31,7 @@
     ];
     $baseClasses = 'btn ease-linear duration-200  ';
     if ($variant !== 'none') {
-        $baseClasses .= isset($btn_variants[$variant]) ? $btn_variants[$variant]['base'] : 'ee';
+        $baseClasses .= isset($btn_variants[$variant]) ? $btn_variants[$variant]['base'] : '';
     }
 
     $defaultIntents = [
@@ -40,6 +40,9 @@
         'outline' => 'gray',
         'ghost' => 'gray',
     ];
+
+    // Normalize danger → destructive
+    $intent = ButtonHelper::normalizeIntent($intent);
 
     if ($intent === null && $variant !== 'none') {
         $intent = $defaultIntents[$variant] ?? 'primary';
@@ -50,7 +53,6 @@
         if (isset($btn_variants[$variant]['intents'][$intent])) {
             $variantClasses = $btn_variants[$variant]['intents'][$intent];
         } else {
-            // Fallback to variant-specific default intent if provided
             $fallbackIntent = $defaultIntents[$variant] ?? 'primary';
             if (isset($btn_variants[$variant]['intents'][$fallbackIntent])) {
                 $variantClasses = $btn_variants[$variant]['intents'][$fallbackIntent];

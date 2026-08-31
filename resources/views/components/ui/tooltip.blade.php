@@ -15,9 +15,9 @@
         'opacity-0 invisible translate-y-1.5 scale-99 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 fx-open:scale-100 ',
         'text-sm overflow-hidden ease-linear transition-transform',
         'ui-popper rounded-ui py-1 px-2',
-        'bg-popover border border-border shadow text-fg' => $bg == 'default',
-        'bg-popover-gray text-fg' => $bg == 'gray',
-        'bg-fg-title text-bg' => $bg == 'neutral',
+        'bg-popover border border-border shadow text-foreground' => $bg == 'default',
+        'bg-popover-gray text-foreground' => $bg == 'gray',
+        'bg-foreground text-background' => $bg == 'neutral',
         'bg-gray-950 text-white' => $bg == 'dark',
         $class,
     ]) }}>

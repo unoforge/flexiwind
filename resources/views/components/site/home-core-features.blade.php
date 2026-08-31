@@ -31,14 +31,14 @@
         <div class="h-4 linear-gradient-pattern border-y border-dashed border-border-strong/70 mt-16"></div>
         <div class="grid sm:grid-cols-2 divide-border-strong/70 divide-dashed">
             <div class="border-b sm:border-r p-3.5 sm:p-5 lg:p-6.5">
-                <span class="flex items-center text-sm text-fg-muted">
-                    <span aria-hidden="true" class="iconify ph--cube mr-2"></span>
+                <span class="flex items-center text-sm text-muted-foreground">
+                    <x-ui.icon name="ph--cube" class="mr-2" />
                     Ready Primitives
                 </span>
-                <h2 class="font-semibold text-fg-title text-xl md:text-2xl mt-4">
+                <h2 class="font-semibold text-foreground text-xl md:text-2xl mt-4">
                     Production-ready primitives you can extend, customize, and compose without friction.
                 </h2>
-                <div class="mt-5 aspect-video bg-bg-surface rounded-ui pointer-events-none">
+                <div class="mt-5 aspect-video bg-card rounded-ui pointer-events-none">
                     <img src="/illustrations/components-light.webp" class="w-full h-full object-cover dark:hidden"
                         alt="Illustration components light" width="1280" height="720" loading="lazy"
                         decoding="async" fetchpriority="low">
@@ -48,14 +48,14 @@
                 </div>
             </div>
             <div class="border-b p-3.5 sm:p-5 lg:p-6.5">
-                <span class="flex items-center text-sm text-fg-muted">
-                    <span aria-hidden="true" class="iconify ph--wall mr-2"></span>
+                <span class="flex items-center text-sm text-muted-foreground">
+                    <x-ui.icon name="ph--wall" class="mr-2" />
                     Smart Blocks
                 </span>
-                <h2 class="font-semibold text-fg-title text-xl md:text-2xl mt-4">
+                <h2 class="font-semibold text-foreground text-xl md:text-2xl mt-4">
                     Skip repetitive layout work. Drop in production-ready blocks and focus on business logic.
                 </h2>
-                <div class="mt-5 aspect-video bg-bg-surface rounded-ui pointer-events-none">
+                <div class="mt-5 aspect-video bg-card rounded-ui pointer-events-none">
                     <img src="/illustrations/blocks-light.webp" class="w-full h-full object-cover dark:hidden"
                         alt="Illustration blocks light" width="1477" height="831" loading="lazy"
                         decoding="async" fetchpriority="low">
@@ -68,15 +68,15 @@
                 @foreach ($bottomFeatures as $feature)
                     <div
                         class="border-b md:border-b-0 md:border-r md:last:border-r-0 last:borderb-0 px-3.5 py-4 sm:px-5 sm:py-6 grid">
-                        <span class="flex items-center text-sm text-fg-muted">
-                            <span aria-hidden="true" class="iconify {{ $feature['icon'] }} mr-2"></span>
+                        <span class="flex items-center text-sm text-muted-foreground">
+                            <x-ui.icon name="{{ $feature['icon'] }}" class="mr-2" />
                             {{ $feature['subtitle'] }}
                         </span>
-                        <h2 class="font-semibold text-xl text-fg-title mt-4 mb-5">
+                        <h2 class="font-semibold text-xl text-foreground mt-4 mb-5">
                             {{ $feature['title'] }}
                         </h2>
                         @if ($feature['name'] == 'code-own')
-                            <div class="rounded-ui bg-bg-surface mt-auto h-52 relative">
+                            <div class="rounded-ui bg-card mt-auto h-52 relative">
                                 <span aria-hidden="true"
                                     class="absolute inset-x-3 md:inset-x-6 h-px bg-linear-to-r from-border-strong/40 via-border-strong/60 to-border top-5"></span>
                                 <span aria-hidden="true"
@@ -92,48 +92,46 @@
                             </div>
                         @elseif ($feature['name'] == 'blade-livewire')
                             <div aria-hidden="true"
-                                class="rounded-ui bg-bg-surface mt-auto h-52 px-10 py-10 flex items-center justify-center relative">
+                                class="rounded-ui bg-card mt-auto h-52 px-10 py-10 flex items-center justify-center relative">
                                 <span class="inset-1 absolute text-border ui-grid ui-striper-overlay-mask rotate-180 [--unify-ui-grid-width:--spacing(4)] [--unify-ui-grid-height:--spacing(4)] not-dark:opacity-50"></span>
-                                <span class="absolute top-1/2 left-1/2 -translate-1/2 w-7 h-15 bg-linear-to-t from-fg-muted via-fg-title to-fg rounded-full blur-lg dark:blur-2xl not-dark:opacity-35"></span>
+                                <span class="absolute top-1/2 left-1/2 -translate-1/2 w-7 h-15 bg-linear-to-t from-muted-foreground via-foreground to-foreground rounded-full blur-lg dark:blur-2xl not-dark:opacity-35"></span>
                                 <div class="grid grid-cols-3 w-full relative">
                                     <div class="flex items-center gap-0.5">
-                                        <span class="size-10 rounded-ui bg-bg border border-border d-flex-place-center">
-                                            <span class="flex iconify simple-icons--tailwindcss text-primary"></span>
+                                        <span class="size-10 rounded-ui bg-background  border border-border d-flex-place-center">
+                                            <x-ui.icon name="simple-icons--tailwindcss" class="flex text-primary" />
                                         </span>
                                         <span
                                             class="h-px flex items-center justify-end flex-1 bg-linear-to-l from-border-strong relative">
-                                            <span class="size-2 border border-border-strong bg-bg rounded-full"></span>
+                                            <span class="size-2 border border-border-strong bg-background  rounded-full"></span>
                                         </span>
                                     </div>
                                     <div class="flex items-center">
                                         <span
                                             class="h-px flex items-center flex-1 bg-linear-to-r from-border-strong relative">
-                                            <span class="size-2 border border-border-strong bg-bg rounded-full"></span>
+                                            <span class="size-2 border border-border-strong bg-background  rounded-full"></span>
                                         </span>
-                                        <span class="size-10 rounded-ui bg-bg border border-border d-flex-place-center">
-                                            <span
-                                                class="flex iconify simple-icons--laravel text-red-600 dark:text-red-500"></span>
+                                        <span class="size-10 rounded-ui bg-background  border border-border d-flex-place-center">
+                                            <x-ui.icon name="simple-icons--laravel" class="flex text-red-600 dark:text-red-500" />
                                         </span>
                                         <span
                                             class="h-px flex justify-end items-center flex-1 bg-linear-to-l from-border-strong relative">
-                                            <span class="size-2 border border-border-strong bg-bg rounded-full"></span>
+                                            <span class="size-2 border border-border-strong bg-background  rounded-full"></span>
                                         </span>
                                     </div>
                                     <div class="flex items-center gap-0.5">
                                         <span
                                             class="h-px flex items-center flex-1 bg-linear-to-r from-border-strong relative">
-                                            <span class="size-2 border border-border-strong bg-bg rounded-full"></span>
+                                            <span class="size-2 border border-border-strong bg-background  rounded-full"></span>
                                         </span>
-                                        <span class="size-10 rounded-ui bg-bg border border-border d-flex-place-center">
-                                            <span
-                                                class="flex iconify simple-icons--livewire text-pink-600 dark:text-pink-500"></span>
+                                        <span class="size-10 rounded-ui bg-background  border border-border d-flex-place-center">
+                                            <x-ui.icon name="simple-icons--livewire" class="flex text-pink-600 dark:text-pink-500" />
                                         </span>
                                     </div>
                                 </div>
                             </div>
                         @else
                             <div
-                                class="rounded-ui bg-bg-surface mt-auto h-52 flex d-flex-place-center relative">
+                                class="rounded-ui bg-card mt-auto h-52 flex d-flex-place-center relative">
                                 <span aria-hidden="true"
                                     class="absolute inset-x-3 md:inset-x-6 h-px bg-linear-to-r from-border-strong/40 via-border-strong/60 to-border top-5"></span>
                                 <span aria-hidden="true"

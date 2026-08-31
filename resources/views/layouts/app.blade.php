@@ -11,7 +11,7 @@
 @endphp
 
 <x-layouts.base
-    body-class="bg-bg flex flex-col"
+    body-class="bg-background  flex flex-col"
     :seo="$seo"
     :script-entries="['resources/js/app.js', 'resources/js/site-ui.js', 'resources/js/search.js']"
 >

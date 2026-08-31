@@ -3,7 +3,7 @@
         <x-ui.icon name="ph--warning" />
     </div>
     <div class="flex-1 space-y-3">
-        <p class="text-fg-muted">The data export you requested is ready!</p>
+        <p class="text-muted-foreground">The data export you requested is ready!</p>
         <div class="flex items-center gap-2">
             <x-ui.button href="#" size="sm" intent="neutral" aria-label="Trigger Modal Show Data">
                 View the Data

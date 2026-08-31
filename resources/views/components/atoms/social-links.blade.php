@@ -20,7 +20,7 @@
             aria-label="{{ $link['title'] }}" 
             class="btn btn-icon-sm rounded-ui btn-ghost btn-ghost-gray"
         >
-            <span aria-hidden="true" class="flex iconify {{ $link['icon'] }}"></span>
+            <x-ui.icon name="{{ $link['icon'] }}" class="flex" />
         </x-atoms.ui-link>
     @endforeach
 </div>

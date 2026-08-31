@@ -11,5 +11,5 @@
         $class
     ]) }}
 >
-   <span class="iconify ph--dots-three"></span>
+   <x-ui.icon name="ph--dots-three" />
 </span>

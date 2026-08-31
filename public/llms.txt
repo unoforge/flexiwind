@@ -55,11 +55,11 @@ php artisan flexi:init
 
 ### Background Tokens
 
-`--bg`, `--bg-subtle`, `--bg-surface`, `--bg-muted`, `--card`, `--card-gray`, `--popover`, `--popover-gray`, `--overlay`
+`--bg`, `--bg-subtle`, `--surface-background`, `--muted`, `--card`, `--card-gray`, `--popover`, `--popover-gray`, `--overlay`
 
 ### Foreground Tokens
 
-`--fg`, `--fg-title`, `--fg-subtitle`, `--fg-muted`
+`--fg`, `--title-foreground`, `--fg-subtitle`, `--fg-muted`
 
 ### Border Tokens
 
@@ -75,13 +75,13 @@ Variants: `solid`, `soft`, `outline`, `ghost`, `flexi`, `none`
 
 Intents: `primary`, `secondary`, `accent`, `success`, `danger`, `warning`, `info`, `gray`, `neutral`, `white`
 
-CSS class pattern: `btn-{variant}-{intent}` (e.g. `btn-solid-primary`, `btn-soft-danger`)
+CSS class pattern: `btn-{variant}-{intent}` (e.g. `btn-solid-primary`, `btn-soft-destructive`)
 
 ### UI Utilities
 
 Variants: `solid`, `soft`, `subtle`, `outline`
 
-CSS class pattern: `ui-{variant}-{intent}` (e.g. `ui-soft-primary`, `ui-subtle-danger`)
+CSS class pattern: `ui-{variant}-{intent}` (e.g. `ui-soft-primary`, `ui-subtle-destructive`)
 
 ### Dark Mode
 

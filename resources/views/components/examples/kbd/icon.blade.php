@@ -1,6 +1,6 @@
 <div class="flex flex-wrap items-center gap-3">
     <x-ui.kbd>
-        <span aria-hidden="true" class="flex iconify ph--caret-down"></span>
+        <x-ui.icon name="ph--caret-down" class="flex" />
     </x-ui.kbd>
     <x-ui.kbd variant="outline">
         <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"

@@ -3,22 +3,22 @@
 }
 
 @utility btn-pagination-link-variables {
-  --ring-bg-color: var(--btn-pagination-link-ring-color, transparent);
+  --ring-background-color: var(--btn-pagination-link-ring-color, transparent);
   --link-bg: var(--btn-pagination-link-bg, transparent);
-  --link-text-color: var(--btn-pagination-link-text-color, var(--color-fg-muted));
-  --link-hover-bg: var(--btn-pagination-link-hover-bg, --alpha(var(--color-bg-muted)/60%));
+  --link-text-color: var(--btn-pagination-link-text-color, var(--color-muted-foreground));
+  --link-hover-bg: var(--btn-pagination-link-hover-bg, --alpha(var(--color-muted)/60%));
 }
 
 @utility btn-pagination-link {
-  --tw-ring-color: var(--ring-bg-color);
+  --tw-ring-color: var(--ring-background-color);
   @apply ring-1 bg-(--link-bg) hover:bg-(--link-hover-bg) text-(--link-text-color) focus-visible:outline-(--link-hover-bg);
 }
 
 @utility btn-pagination-active {
-  --ring-bg-color: var(--btn-pagination-active-link-ring-color, var(--color-border));
+  --ring-background-color: var(--btn-pagination-active-link-ring-color, var(--color-border));
   --link-bg: var(--btn-pagination-active-link-bg, transparent);
-  --link-text-color: var(--btn-pagination-active-link-text-color, var(--color-fg-title));
-  --link-hover-bg: var(--btn-pagination-active-link-hover-bg, --alpha(var(--color-bg-muted)/80%));
+  --link-text-color: var(--btn-pagination-active-link-text-color, var(--color-foreground));
+  --link-hover-bg: var(--btn-pagination-active-link-hover-bg, --alpha(var(--color-muted)/80%));
 }
 
 @utility btn-xs {
@@ -63,50 +63,65 @@
 
 
 @utility btn-solid {
-  @apply bg-(--btn-solid-color) hover:bg-(--btn-solid-color-hover) active:bg-(--btn-solid-color-press) focus-visible:outline-(--btn-solid-color-hover) [--btn-focus-outline-color:var(--btn-solid-color-hover)];
+  color: var(--btn-fg);
+  background-color: var(--btn-color);
+  --btn-focus-outline-color: color-mix(in oklab, var(--btn-color) 65%, transparent);
   background-image: radial-gradient(farthest-corner at 50% -50%, rgba(255, 255, 255, .1) 0%, transparent 100%);
-  box-shadow: inset 0px 2px 0 var(--btn-solid-top-shadow), inset 0px -2px 0 var(--btn-solid-bottom-shadow);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 22%, transparent),
+    inset 0 -1px 0 color-mix(in oklab, black 18%, transparent);
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--btn-color) 88%, black);
+  }
+
+  &:active {
+    background-color: color-mix(in oklab, var(--btn-color) 78%, black);
+  }
 }
 
 
 @utility btn-outline {
-  background-image: radial-gradient(76% 151% at 52% -52%, rgba(255, 255, 255, var(--outline-radial-opacity)) 0%, transparent 100%);
-  box-shadow: rgba(255, 255, 255, var(--inner-border-color)) 0px 1px 0px 0px inset, var(--btn-outline-color) 0px 0px 0px 1px, 0px 1px 2px rgba(0, 0, 0, 0.1);
-  @apply hover:brightness-[0.98] active:brightness-100 bg-(--btn-outline-bg) hover:bg-(--btn-outline-bg-hover) active:bg-(--btn-outline-bg) [--outline-radial-opacity:0.6] [--inner-border-color:1] text-(--btn-outline-text-color) focus-visible:outline-(--btn-outline-color-hover);
+  color: var(--btn-fg);
+  background-color: var(--btn-color);
+  border-color: var(--btn-border-color);
+  --btn-focus-outline-color: var(--btn-ring-color);
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0 1px 2px color-mix(in oklab, black 10%, transparent);
 
-  &:is(.dark *) {
-    background-image: none;
-    --inner-border-color: 0;
-    --outline-radial-opacity: 0.2;
+  &:hover {
+    background-color: var(--btn-hover-color);
+  }
+
+  &:active {
+    background-color: var(--btn-active-color);
   }
 }
 
 @utility btn-soft {
-  @apply bg-(--btn-soft-bg-color) hover:bg-(--btn-soft-bg-color-hover) active:bg-(--btn-soft-bg-color-press) text-(--btn-soft-text-color) [--btn-focus-outline-color:--btn-soft-text-color];
+  color: var(--btn-fg);
+  background-color: color-mix(in oklab, var(--btn-color) 10%, transparent);
+  --btn-focus-outline-color: color-mix(in oklab, var(--btn-color) 55%, transparent);
 
   &:hover {
-    @media (hover: hover) {
-      color: var(--btn-soft-text-color-hover, --btn-soft-text-color);
-    }
+    background-color: color-mix(in oklab, var(--btn-color) 16%, transparent);
   }
 
   &:active {
-    color: var(--btn-soft-text-color-hover, --btn-soft-text-color);
+    background-color: color-mix(in oklab, var(--btn-color) 22%, transparent);
   }
 }
 
-
-
 @utility btn-ghost {
-  @apply hover:bg-(--btn-ghost-bg-color-hover) active:bg-(--btn-ghost-bg-color-press) text-(--btn-ghost-text-color) [--btn-focus-outline-color:--btn-ghost-text-color];
+  color: var(--btn-fg);
+  --btn-focus-outline-color: var(--btn-ring-color);
 
   &:hover {
-    @media (hover: hover) {
-      color: var(--btn-ghost-text-color-hover, --btn-ghost-text-color);
-    }
+    background-color: var(--btn-hover-color);
   }
 
   &:active {
-    color: var(--btn-ghost-text-color-hover, --btn-ghost-text-color);
+    background-color: var(--btn-active-color);
   }
 }

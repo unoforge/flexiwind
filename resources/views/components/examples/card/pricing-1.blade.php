@@ -9,8 +9,8 @@ $features = [
 @endphp
 
 <x-ui.card class="md:[--card-padding:--spacing(8)] max-w-sm">
-    <span class="text-fg-title font-bold text-xl">Enterprise Plan</span>
-    <p class="text-fg my-6">
+    <span class="text-foreground font-bold text-xl">Enterprise Plan</span>
+    <p class="text-foreground my-6">
         Perfect for growing businesses that need powerful features and dedicated support.
     </p>
     <div class="flex items-end gap-4 py-4 border-y border-border-strong/50">
@@ -25,7 +25,7 @@ $features = [
     <ul class="flex flex-col gap-y-3 *:flex *:items-center *:gap-x-4 py-8">
         @foreach ($features as $feature)
             <li>
-                <span aria-hidden="true" class="flex iconify ph--folder-open text-primary size-4"></span>
+                <x-ui.icon name="ph--folder-open" class="flex text-primary size-4" />
                 {{ $feature }}
             </li>
         @endforeach

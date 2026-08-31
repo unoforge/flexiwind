@@ -1,17 +1,24 @@
 @utility ui-soft {
-  @apply bg-(--ui-soft-bg) text-(--ui-soft-text);
+  color: var(--ui-color);
+  background-color: color-mix(in oklab, var(--ui-color) 10%, transparent);
 }
 
 @utility ui-solid {
-  @apply bg-(--ui-solid-bg) text-(--ui-solid-text);
+  color: var(--ui-fg);
+  background-color: var(--ui-color);
 }
 
 @utility ui-outline {
-  @apply text-(--ui-outline-text) border border-(--ui-outline-border);
+  color: var(--ui-color);
+  border-color: color-mix(in oklab, var(--ui-color) 45%, transparent);
+  @apply border;
 }
 
 @utility ui-subtle {
-  @apply bg-(--ui-subtle-bg) border text-(--ui-subtle-text) border-(--ui-subtle-border);
+  color: var(--ui-color);
+  background-color: color-mix(in oklab, var(--ui-color) 7%, transparent);
+  border-color: color-mix(in oklab, var(--ui-color) 25%, transparent);
+  @apply border;
 }
 
 @utility ui-popper {

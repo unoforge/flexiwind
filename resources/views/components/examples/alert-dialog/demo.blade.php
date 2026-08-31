@@ -5,7 +5,7 @@
     <x-ui.modal.content size="sm" :closable="false" 
         class="p-(--gutter) flex flex-col gap-y-4 items-center text-center">
         <div class="w-max h-max p-3 rounded-full ui-soft ui-soft-gray border border-border">
-            <span aria-hidden="true" class="flex iconify ph--question text-xl"></span>
+            <x-ui.icon name="ph--question" class="flex text-xl" />
         </div>
         <x-ui.modal.title>Confirm your action</x-ui.modal.title>
         <x-ui.modal.description>

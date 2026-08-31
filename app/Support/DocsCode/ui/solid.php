@@ -5,28 +5,39 @@ return [
         'lang' => 'css',
         'name' => 'light',
         'code' => <<<'CSS'
-@utility ui-solid-gray {
-    --ui-solid-bg: var(--color-gray-100);
-    --ui-solid-text: var(--color-gray-700);
+@utility ui-solid-primary {
+    --ui-color: var(--color-primary);
+    --ui-fg: var(--color-primary-foreground);
 }
+
+@utility ui-solid-secondary {
+    --ui-color: var(--color-secondary);
+    --ui-fg: var(--color-secondary-foreground);
+}
+
+@utility ui-solid-accent {
+    --ui-color: var(--color-accent);
+    --ui-fg: var(--color-accent-foreground);
+}
+
 @utility ui-solid-success {
-    --ui-solid-bg: var(--color-success-600);
-    --ui-solid-text: var(--color-white);
+    --ui-color: var(--color-success);
+    --ui-fg: var(--color-white);
 }
 
-@utility ui-solid-warning {
-    --ui-solid-bg: var(--color-warning-600);
-    --ui-solid-text: var(--color-white);
+@utility ui-solid-destructive {
+    --ui-color: var(--color-destructive);
+    --ui-fg: var(--color-white);
 }
 
-@utility ui-solid-danger {
-    --ui-solid-bg: var(--color-danger-600);
-    --ui-solid-text: var(--color-white);
+@utility ui-solid-gray {
+    --ui-color: var(--color-muted);
+    --ui-fg: var(--color-foreground);
 }
 
 @utility ui-solid-neutral {
-    --ui-solid-bg: var(--color-gray-900);
-    --ui-solid-text: var(--color-white);
+    --ui-color: var(--color-foreground);
+    --ui-fg: var(--color-white);
 }
 CSS,
     ],
@@ -34,85 +45,48 @@ CSS,
         'lang' => 'css',
         'name' => 'both',
         'code' => <<<'CSS'
+@utility ui-solid-primary {
+    --ui-color: var(--color-primary);
+    --ui-fg: var(--color-primary-foreground);
+}
+
+@utility ui-solid-secondary {
+    --ui-color: var(--color-secondary);
+    --ui-fg: var(--color-secondary-foreground);
+}
+
+@utility ui-solid-accent {
+    --ui-color: var(--color-accent);
+    --ui-fg: var(--color-accent-foreground);
+}
+
+@utility ui-solid-success {
+    --ui-color: var(--color-success);
+    --ui-fg: var(--color-white);
+}
+
+@utility ui-solid-destructive {
+    --ui-color: var(--color-destructive);
+    --ui-fg: var(--color-white);
+}
+
 @utility ui-solid-gray {
-    --ui-solid-bg: var(--color-gray-100);
-    --ui-solid-text: var(--color-gray-700);
+    --ui-color: var(--color-muted);
+    --ui-fg: var(--color-foreground);
 
     &:is(.dark *) {
-        --ui-solid-bg: var(--color-gray-900);
-        --ui-solid-text: var(--color-gray-300);
-    }
-}
-@utility ui-solid-success {
-    --ui-solid-bg: var(--color-success-600);
-    --ui-solid-text: var(--color-white);
-
-    &:is(.dark *) {
-        --ui-solid-bg: var(--color-success-500);
-    }
-}
-
-@utility ui-solid-warning {
-    --ui-solid-bg: var(--color-warning-600);
-    --ui-solid-text: var(--color-white);
-
-    &:is(.dark *) {
-        --ui-solid-bg: var(--color-warning-500);
-    }
-}
-
-@utility ui-solid-danger {
-    --ui-solid-bg: var(--color-danger-600);
-    --ui-solid-text: var(--color-white);
-
-    &:is(.dark *) {
-        --ui-solid-bg: var(--color-danger-500);
+        --ui-color: var(--color-foreground);
+        --ui-fg: var(--color-muted-foreground);
     }
 }
 
 @utility ui-solid-neutral {
-    --ui-solid-bg: var(--color-gray-900);
-    --ui-solid-text: var(--color-white);
+    --ui-color: var(--color-foreground);
+    --ui-fg: var(--color-white);
 
     &:is(.dark *) {
-        --ui-solid-bg: var(--color-white);
-        --ui-solid-text: var(--color-gray-900);
-    }
-}
-@utility ui-solid-success {
-    --ui-solid-bg: var(--color-success-600);
-    --ui-solid-text: var(--color-white);
-
-    &:is(.dark *) {
-        --ui-solid-bg: var(--color-success-500);
-    }
-}
-
-@utility ui-solid-warning {
-    --ui-solid-bg: var(--color-warning-600);
-    --ui-solid-text: var(--color-white);
-
-    &:is(.dark *) {
-        --ui-solid-bg: var(--color-warning-500);
-    }
-}
-
-@utility ui-solid-danger {
-    --ui-solid-bg: var(--color-danger-600);
-    --ui-solid-text: var(--color-white);
-
-    &:is(.dark *) {
-        --ui-solid-bg: var(--color-danger-500);
-    }
-}
-
-@utility ui-solid-neutral {
-    --ui-solid-bg: var(--color-gray-900);
-    --ui-solid-text: var(--color-white);
-
-    &:is(.dark *) {
-        --ui-solid-bg: var(--color-white);
-        --ui-solid-text: var(--color-gray-900);
+        --ui-color: var(--color-white);
+        --ui-fg: var(--color-foreground);
     }
 }
 CSS,
@@ -121,29 +95,39 @@ CSS,
         'lang' => 'css',
         'name' => 'dark',
         'code' => <<<'CSS'
-@utility ui-solid-gray {
-    --ui-solid-bg: var(--color-gray-900);
-    --ui-solid-text: var(--color-gray-300);
+@utility ui-solid-primary {
+    --ui-color: var(--color-primary);
+    --ui-fg: var(--color-primary-foreground);
 }
+
+@utility ui-solid-secondary {
+    --ui-color: var(--color-secondary);
+    --ui-fg: var(--color-secondary-foreground);
+}
+
+@utility ui-solid-accent {
+    --ui-color: var(--color-accent);
+    --ui-fg: var(--color-accent-foreground);
+}
+
 @utility ui-solid-success {
-    --ui-solid-text: var(--color-white);
-    --ui-solid-bg: var(--color-success-500);
+    --ui-color: var(--color-success);
+    --ui-fg: var(--color-white);
 }
 
-@utility ui-solid-warning {
-    --ui-solid-text: var(--color-white);
-    --ui-solid-bg: var(--color-warning-500);
-
+@utility ui-solid-destructive {
+    --ui-color: var(--color-destructive);
+    --ui-fg: var(--color-white);
 }
 
-@utility ui-solid-danger {
-    --ui-solid-text: var(--color-white);
-    --ui-solid-bg: var(--color-danger-500);
+@utility ui-solid-gray {
+    --ui-color: var(--color-foreground);
+    --ui-fg: var(--color-muted-foreground);
 }
 
 @utility ui-solid-neutral {
-`   --ui-solid-bg: var(--color-white);
-    --ui-solid-text: var(--color-gray-900);`
+    --ui-color: var(--color-white);
+    --ui-fg: var(--color-foreground);
 }
 CSS,
     ],

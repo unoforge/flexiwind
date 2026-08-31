@@ -13,10 +13,10 @@ return [
         'code' => <<<'HTML'
 <x-ui.button variant="ghost" size="sm" iconOnly radius="none" x-on:click="$store.theme.toggle()"
     aria-label="toggle theme" class="relative">
-    <span
-        class="absolute top-1/2 -translate-1/2 left-1/2 ease-linear duration-200 iconify ph--sun invisible dark:visible"></span>
-    <span
-        class="absolute top-1/2 -translate-1/2 left-1/2 ease-linear duration-200 iconify ph--moon-stars visible dark:invisible"></span>
+    <x-ui.icon name="ph--sun"
+        class="absolute top-1/2 -translate-1/2 left-1/2 ease-linear duration-200 invisible dark:visible" />
+    <x-ui.icon name="ph--moon-stars"
+        class="absolute top-1/2 -translate-1/2 left-1/2 ease-linear duration-200 visible dark:invisible" />
 </x-ui.button>  
 HTML
     ],

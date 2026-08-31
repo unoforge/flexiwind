@@ -11,13 +11,13 @@
     {{ $attributes->merge(['class' => 'mt-5 first:mt-0 grid ' . ($class ?? '')]) }}>
     <div data-gen-ignore data-tab-list-wrapper class="w-full {{ $tabListContainer !== '' ? $tabListContainer : '' }}">
         <ul role="tablist" data-tab-list
-            class="flex items-center gap-x-3 {{ $tabList !== '' ? $tabList : 'border-b border-border-strong/60 relative text-fg-muted' }}">
+            class="flex items-center gap-x-3 {{ $tabList !== '' ? $tabList : 'border-b border-border-strong/60 relative text-muted-foreground' }}">
             @foreach ($values as $value)
                 @if (is_string($value))
                     <li role="presentation" class="flex">
                         <a data-tabs-trigger data-target="{{ $value }}" href="#{{ $value }}" role="tab"
                             aria-controls="{{ $value }}" aria-label="{{ $value }}"
-                            class="relative text-nowrap flex disabled:cursor-not-allowed disabled:opacity-80 fx-active:text-fg-title outline-none focus:outline-0 focus:outline-transparent focus-visible:outline focus-visible:outline-primary {{ $triggersClass !== '' ? $triggersClass : 'px-4 pt-1.5 pb-2.5' }}">
+                            class="relative text-nowrap flex disabled:cursor-not-allowed disabled:opacity-80 fx-active:text-foreground outline-none focus:outline-0 focus:outline-transparent focus-visible:outline focus-visible:outline-primary {{ $triggersClass !== '' ? $triggersClass : 'px-4 pt-1.5 pb-2.5' }}">
                             {{ $value }}
                         </a>
                     </li>
@@ -26,9 +26,9 @@
                         <a data-tabs-trigger data-target="{{ $value['value'] ?? '' }}"
                             href="#{{ $value['value'] ?? '' }}" role="tab"
                             aria-controls="{{ $value['value'] ?? '' }}" aria-label="{{ $value['value'] ?? '' }}"
-                            class="relative flex items-center disabled:cursor-not-allowed disabled:opacity-80 fx-active:text-fg-title outline-none focus:outline-0 focus:outline-transparent focus-visible:outline focus-visible:outline-primary {{ $triggersClass !== '' ? $triggersClass : 'px-4 pt-1.5 pb-2.5' }}">
+                            class="relative flex items-center disabled:cursor-not-allowed disabled:opacity-80 fx-active:text-foreground outline-none focus:outline-0 focus:outline-transparent focus-visible:outline focus-visible:outline-primary {{ $triggersClass !== '' ? $triggersClass : 'px-4 pt-1.5 pb-2.5' }}">
                             @if (isset($value['icon']) && $value['icon'] !== '')
-                                <span aria-hidden="true" class="iconify text-sm mr-2 {{ $value['icon'] ?? '' }}"></span>
+                                <x-ui.icon name="{{ $value['icon'] ?? '' }}" class="text-sm mr-2" />
                             @endif
                             <span>{{ $value['text'] ?? '' }}</span>
                         </a>

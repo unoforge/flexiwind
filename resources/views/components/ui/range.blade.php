@@ -27,8 +27,8 @@
     
     $range_size = $range_sizes[$size] ?? $range_sizes['md'];
     $radius = $radius ? '[--ui-progressbar-radius:20px]' : '[--ui-progressbar-radius:0px]';
-    $thumBg = $thumbBackground === 'current' ? '[--ui-input-range-thumb-bg:currentColor]' : '[--ui-input-range-thumb-bg:var(--c-bg)]';
-    $className = "ui-input-range [--ui-input-range-track-bg:var(--c-bg-range)] {$radius} {$range_size} {$thumBg} {$class}";
+    $thumBg = $thumbBackground === 'current' ? '[--ui-input-range-thumb-bg:currentColor]' : '[--ui-input-range-thumb-bg:var(--color-background)]';
+    $className = "ui-input-range [--ui-input-range-track-bg:var(--color-muted)] {$radius} {$range_size} {$thumBg} {$class}";
 
     $indicator_sizes = [
         'xs' => 'h-0.5',

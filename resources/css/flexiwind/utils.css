@@ -25,7 +25,7 @@
 
 
 @utility dropdown-item-icon {
-  @apply *:data-[slot=icon]:col-start-1 *:data-[slot=icon]:row-start-1 *:data-[slot=icon]:me-(--mr-icon) *:data-[slot=icon]:-ms-0.5 *:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='text-'])]:text-fg-muted;
+  @apply *:data-[slot=icon]:col-start-1 *:data-[slot=icon]:row-start-1 *:data-[slot=icon]:me-(--mr-icon) *:data-[slot=icon]:-ms-0.5 *:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='text-'])]:text-muted-foreground;
 }
 
 
@@ -155,7 +155,7 @@
 
 
 @utility ui-grid-dotted {
-  background-image: radial-gradient(currentColor var(--dotsize), var(--bg-grid-dotted) var(--dotsize));
+  background-image: radial-gradient(currentColor var(--dotsize), var(--background-grid-dotted) var(--dotsize));
   background-size: var(--unify-ui-grid-width) var(--unify-ui-grid-height);
 }
 

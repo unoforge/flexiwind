@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
     "version": "1.0.0",
     "name": "tooltip",
     "type": "registry:component",
@@ -19,7 +19,7 @@
             "path": "resources/views/components/ui/tooltip.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/tooltip.blade.php",
-            "content": "@props([\n    'id',\n    'class' => '',\n    'placement' => 'bottom',\n    'bg' => 'default',\n    'trigger' => 'hover',\n    'content' => null,\n])\n\n\n\n<div x-data x-f-tooltip wire:ignore.self role=\"tooltip\" id=\"tooltip-{{ $id }}\" data-app-tooltip\n    data-placement=\"{{ $placement }}\" data-trigger-strategy=\"{{ $trigger }}\"\n    {{ $attributes->class([\n        'opacity-0 invisible z-40 translate-y-3 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 text-sm overflow-hidden ease-linear transition-transform',\n        'ui-popper rounded-ui py-1 px-2',\n        'bg-popover border border-border shadow text-fg' => $bg == 'default',\n        'bg-popover-gray text-fg' => $bg == 'gray',\n        'bg-fg-title text-bg' => $bg == 'neutral',\n        'bg-gray-950 text-white' => $bg == 'dark',\n        $class,\n    ]) }}>\n    @if (isset($content))\n        {{ $content }}\n    @else\n        {{ $slot }}\n    @endif\n</div>\n"
+            "content": "@props([\n    'id',\n    'class' => '',\n    'placement' => 'bottom',\n    'bg' => 'default',\n    'trigger' => 'hover',\n    'content' => null,\n])\n\n\n\n<div x-data x-f-tooltip wire:ignore.self role=\"tooltip\" id=\"tooltip-{{ $id }}\" data-app-tooltip\n    data-placement=\"{{ $placement }}\" data-trigger-strategy=\"{{ $trigger }}\"\n    {{ $attributes->class([\n        'opacity-0 invisible translate-y-1.5 scale-99 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 fx-open:scale-100 ',\n        'text-sm overflow-hidden ease-linear transition-transform',\n        'ui-popper rounded-ui py-1 px-2',\n        'bg-popover border border-border shadow text-foreground' => $bg == 'default',\n        'bg-popover-gray text-foreground' => $bg == 'gray',\n        'bg-foreground text-background' => $bg == 'neutral',\n        'bg-gray-950 text-white' => $bg == 'dark',\n        $class,\n    ]) }}>\n    @if (isset($content))\n        {{ $content }}\n    @else\n        {{ $slot }}\n    @endif\n</div>\n"
         },
         {
             "path": "resources/views/components/ui/tooltip/trigger.blade.php",

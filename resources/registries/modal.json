@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
     "version": "1.0.0",
     "name": "modal",
     "type": "registry:component",
@@ -25,7 +25,7 @@
             "path": "resources/views/components/ui/modal/content.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/modal/content.blade.php",
-            "content": "@props([\n    'size' => 'md',\n    'class' => '',\n    'closable' => true,\n    'gutter' => true,\n    'enterAnimation' => 'modal-animation-in .4s linear',\n    'exitAnimation' => 'modal-animation-out .1s linear',\n    'animation' => true,\n])\n\n@php\n    $sizes = [\n        'xs' => 'sm:max-w-sm',\n        'sm' => 'sm:max-w-md',\n        'md' => 'sm:max-w-lg',\n        'lg' => 'sm:max-w-xl',\n        'xl' => 'sm:max-w-2xl',\n        '2xl' => 'sm:max-w-3xl',\n        '3xl' => 'sm:max-w-4xl',\n        '4xl' => 'sm:max-w-5xl',\n        'full' => 'max-w-full',\n    ];\n\n    $size_ = $sizes[$size] ?? $sizes['lg'];\n\n@endphp\n\n<div data-modal-content wire:ignore.self\n    @if ($animation) data-enter-animation=\"{{ $enterAnimation }}\" data-exit-animation=\"{{ $exitAnimation }}\" @endif\n    {{ $attributes->class([\n        'w-full flex flex-col relative bg-bg border border-border shadow-sm rounded-ui overflow-hidden',\n        '[--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]' => $gutter,\n        'animated-modal-content ease-linear transition-all' => $animation,\n        $size_,\n        $class,\n    ]) }}>\n    {{ $slot }}\n\n    @if ($closable)\n        <x-ui.modal.close size=\"sm\" iconOnly variant=\"none\" intent=\"none\"\n            class=\"absolute top-4 right-4 hover:bg-bg-muted rounded-full text-fg z-90\">\n            <span aria-hidden=\"true\" class=\"flex iconify ph--x\"></span>\n        </x-ui.modal.close>\n    @endif\n</div>\n"
+            "content": "@props([\n    'size' => 'md',\n    'class' => '',\n    'closable' => true,\n    'gutter' => true,\n    'enterAnimation' => 'modal-animation-in .4s linear',\n    'exitAnimation' => 'modal-animation-out .1s linear',\n    'animation' => true,\n])\n\n@php\n    $sizes = [\n        'xs' => 'sm:max-w-sm',\n        'sm' => 'sm:max-w-md',\n        'md' => 'sm:max-w-lg',\n        'lg' => 'sm:max-w-xl',\n        'xl' => 'sm:max-w-2xl',\n        '2xl' => 'sm:max-w-3xl',\n        '3xl' => 'sm:max-w-4xl',\n        '4xl' => 'sm:max-w-5xl',\n        'full' => 'max-w-full',\n    ];\n\n    $size_ = $sizes[$size] ?? $sizes['lg'];\n\n@endphp\n\n<div data-modal-content wire:ignore.self\n    @if ($animation) data-enter-animation=\"{{ $enterAnimation }}\" data-exit-animation=\"{{ $exitAnimation }}\" @endif\n    {{ $attributes->class([\n        'w-full flex flex-col relative bg-background  border border-border shadow-sm rounded-ui overflow-hidden',\n        '[--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]' => $gutter,\n        'animated-modal-content ease-linear transition-all' => $animation,\n        $size_,\n        $class,\n    ]) }}>\n    {{ $slot }}\n\n    @if ($closable)\n        <x-ui.modal.close size=\"sm\" iconOnly variant=\"none\" intent=\"none\"\n            class=\"absolute top-4 right-4 hover:bg-muted rounded-full text-foreground z-90\">\n            <x-ui.icon name=\"ph--x\" class=\"flex\" />\n        </x-ui.modal.close>\n    @endif\n</div>\n"
         },
         {
             "path": "resources/views/components/ui/modal/body.blade.php",
@@ -43,7 +43,7 @@
             "path": "resources/views/components/ui/modal/description.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/modal/description.blade.php",
-            "content": "\n\n<p {{ $attributes->merge(['class' => 'text-pretty text-fg-muted text-sm/6']) }}>\n    {{ $slot }}\n</p>"
+            "content": "\n\n<p {{ $attributes->merge(['class' => 'text-pretty text-muted-foreground text-sm/6']) }}>\n    {{ $slot }}\n</p>"
         },
         {
             "path": "resources/views/components/ui/modal/footer.blade.php",
@@ -55,13 +55,13 @@
             "path": "resources/views/components/ui/modal/header.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/modal/header.blade.php",
-            "content": "@props([\n    'title' => null,\n    'description' => null,\n    'class' => '',\n    'titleClass' => '',\n    'descriptionClass' => '',\n    'paddingNone' => false,\n])\n\n@php\n    $title_class = $titleClass;\n    $description_class = $descriptionClass;\n    $className = '';\n@endphp\n\n\n<div data-slot=\"sheet-header\"\n    {{ $attributes->class([\n        'relative flex items-start gap-3.5',\n        'p-(--gutter) pb-[calc(var(--gutter)---spacing(3))] space-y-1' => !$paddingNone,\n        $class,\n    ]) }}>\n    @if (isset($title) || isset($titleSlot))\n        <div class=\"flex-1 space-y-1 pr-14\">\n            <x-ui.modal.title class=\"{{ $title_class }}\">\n                @if (isset($title))\n                    {{ $title }}\n                @else\n                    {{ $titleSlot }}\n                @endif\n                </x-ui.smodal.title>\n                @if (isset($description) || isset($descriptionSlot))\n                    <x-ui.modal.description class=\"{{ $description_class }}\">\n                        @if (isset($description))\n                            {{ $description }}\n                        @else\n                            {{ $descriptionSlot }}\n                        @endif\n                    </x-ui.modal.description>\n                @endif\n        </div>\n    @else\n        {{ $slot }}\n    @endif\n</div>\n"
+            "content": "@props([\n    'title' => null,\n    'description' => null,\n    'class' => '',\n    'titleClass' => '',\n    'descriptionClass' => '',\n    'paddingNone' => false,\n])\n\n@php\n    $title_class = $titleClass;\n    $description_class = $descriptionClass;\n    $className = '';\n@endphp\n\n\n<div data-slot=\"sheet-header\"\n    {{ $attributes->class([\n        'relative flex items-start gap-3.5',\n        'p-(--gutter) pb-[calc(var(--gutter)---spacing(3))] space-y-1' => !$paddingNone,\n        $class,\n    ]) }}>\n    @if (isset($title) || isset($titleSlot))\n        <div class=\"flex-1 space-y-1 pr-14\">\n            <x-ui.modal.title class=\"{{ $title_class }}\">\n                @if (isset($title))\n                    {{ $title }}\n                @else\n                    {{ $titleSlot }}\n                @endif\n            </x-ui.modal.title>\n            @if (isset($description) || isset($descriptionSlot))\n                <x-ui.modal.description class=\"{{ $description_class }}\">\n                    @if (isset($description))\n                        {{ $description }}\n                    @else\n                        {{ $descriptionSlot }}\n                    @endif\n                </x-ui.modal.description>\n            @endif\n        </div>\n    @else\n        {{ $slot }}\n    @endif\n</div>\n"
         },
         {
             "path": "resources/views/components/ui/modal/title.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/modal/title.blade.php",
-            "content": "<h2 data-slot=\"modal-title\" {{ $attributes->merge(['class' => 'text-balance font-semibold text-fg-title text-lg/6']) }}>\n    {{ $slot }}\n</h2>\n"
+            "content": "<h2 data-slot=\"modal-title\" {{ $attributes->merge(['class' => 'text-balance font-semibold text-foreground text-lg/6']) }}>\n    {{ $slot }}\n</h2>\n"
         },
         {
             "path": "resources/views/components/ui/modal/trigger.blade.php",

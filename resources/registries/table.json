@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
     "version": "1.0.0",
     "name": "table",
     "type": "registry:component",
@@ -28,19 +28,19 @@
             "path": "resources/views/components/ui/table/columns.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/table/columns.blade.php",
-            "content": "@props(['wrapper' => '', 'headerBgStyle' => 'none', 'columnDivider' => false])\n\n<thead class=\"{{ $wrapper }}\">\n    <tr\n        {{ $attributes->class([\n            'capitalize text-sm font-medium text-fg-title divide-(--table-border-color)',\n            'bg-bg-muted/60' => $headerBgStyle === 'gray',\n            'divide-x' => $columnDivider,\n            'in-fx-table-grid:divide-x'\n        ]) }}>\n        {{ $slot }}\n    </tr>\n</thead>\n"
+            "content": "@props(['wrapper' => '', 'headerBgStyle' => 'none', 'columnDivider' => false])\n\n<thead class=\"{{ $wrapper }}\">\n    <tr\n        {{ $attributes->class([\n            'capitalize text-sm font-medium text-foreground divide-(--table-border-color)',\n            'bg-muted/60' => $headerBgStyle === 'gray',\n            'divide-x' => $columnDivider,\n            'in-fx-table-grid:divide-x'\n        ]) }}>\n        {{ $slot }}\n    </tr>\n</thead>\n"
         },
         {
             "path": "resources/views/components/ui/table/row.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/table/row.blade.php",
-            "content": "@props(['class' => '', 'divider' => false])\n\n\n<tr\n    {{ $attributes->class([\n        'text-sm divide-(--table-border-color) transition-colors ease-linear',\n        'in-fx-hoverable:hover:bg-bg-muted/40',\n        'in-fx-striped:in-fx-hoverable:hover:bg-bg-muted/40',\n        'divide-x' => $divider,\n        'in-fx-table-grid:divide-x',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</tr>\n"
+            "content": "@props(['class' => '', 'divider' => false])\n\n\n<tr\n    {{ $attributes->class([\n        'text-sm divide-(--table-border-color) transition-colors ease-linear',\n        'in-fx-hoverable:hover:bg-muted/40',\n        'in-fx-striped:in-fx-hoverable:hover:bg-muted/40',\n        'divide-x' => $divider,\n        'in-fx-table-grid:divide-x',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</tr>\n"
         },
         {
             "path": "resources/views/components/ui/table/rows.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/table/rows.blade.php",
-            "content": "@props(['divider' => true, 'class' => ''])\n\n\n\n<tbody\n    {{ $attributes->class([\n        'text-sm divide-(--table-border-color)',\n        'divide-y' => $divider,\n        'in-fx-table-grid:divide-y',\n        'in-fx-striped:*:even:bg-bg-muted/40',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</tbody>\n"
+            "content": "@props(['divider' => true, 'class' => ''])\n\n\n\n<tbody\n    {{ $attributes->class([\n        'text-sm divide-(--table-border-color)',\n        'divide-y' => $divider,\n        'in-fx-table-grid:divide-y',\n        'in-fx-striped:*:even:bg-muted/40',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</tbody>\n"
         }
     ]
 }

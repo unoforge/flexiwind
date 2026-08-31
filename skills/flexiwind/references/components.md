@@ -22,6 +22,7 @@ Full index of Flexiwind components. Each component is installed individually via
 |-----------|-------------|-----------|----------|
 | Card | `card` | `x-ui.card` | /components/card |
 | Divider | `divider` | `x-ui.divider` | /components/divider |
+| Field | `field` | `x-ui.field` | /components/field |
 | Aspect Ratio | `aspect` | `x-ui.aspect` | /components/aspect-ratio |
 
 ## Navigation

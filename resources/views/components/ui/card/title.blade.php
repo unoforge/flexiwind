@@ -11,7 +11,7 @@
 
 <{{ $tag }}
     {{ $attributes->class([
-        'text-balance text-fg-title',
+        'text-balance text-foreground',
         'text-lg/6 md:text-xl/6' => $size == 'lg',
         'text-sm md:text-base/6' => $size == 'sm',
         'text-base/6 md:text-lg/6' => $size == 'md',

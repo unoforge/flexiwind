@@ -17,7 +17,7 @@
     <x-md.h2>API</x-md.h2>
     <x-docs.table>
         <x-ui.table.row>
-            <x-ui.table.cell><x-docs.inline-code no-wrap text="intent" /> (muted|body|title|caption|primary|secondary|warning|danger)</x-ui.table.cell>
+            <x-ui.table.cell><x-docs.inline-code no-wrap text="intent" /> (muted|body|title|caption|primary|secondary|warning|destructive)</x-ui.table.cell>
             <x-ui.table.cell><x-docs.table-description>Semantic color intent for the text.</x-docs.table-description></x-ui.table.cell>
         </x-ui.table.row>
         <x-ui.table.row>
