@@ -4,7 +4,7 @@
     "description": "Flexiwind UI components for Laravel Blade.",
     "components": [
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "flexiwind-base",
             "title": "Flexiwind utilities",
             "description": "Base styles for Flexiwind UI components.",
@@ -42,7 +42,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "button-helper",
             "title": "Button helper",
             "description": "A reusable button helper for Laravel Blade/Livewire.",
@@ -55,7 +55,7 @@
             ]
         },
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "name": "ui-helper",
             "title": "Ui helper",
             "description": "A reusable UI helper for Laravel Blade/Livewire.",

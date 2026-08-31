@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/unoforge/flexi-core/main/registry-item.json",
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
     "version": "1.0.0",
     "name": "accordion",
     "type": "registry:component",

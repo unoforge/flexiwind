@@ -6,8 +6,8 @@ function build() {
     const componentsPath = path.join(root, "registries", "components.json");
     const blocksPath = path.join(root, "registries", "blocks.json");
     const marketingBlocksPath = path.join(root, "registries", "marketing.json");
-    const basePaths = path.join(root,"registries","base.json")
-
+    const basePaths = path.join(root, "registries", "base.json");
+    const themesPath = path.join(root, "registries", "themes.json");
 
     const outPath = path.join(root, "registry.json");
 
@@ -21,11 +21,17 @@ function build() {
         }
     }
 
+    function readJsonOptional(p) {
+        if (!fs.existsSync(p)) return null;
+        return readJsonSync(p);
+    }
+
     const components = readJsonSync(componentsPath);
     const blocks = readJsonSync(blocksPath);
-    const marketing = readJsonSync(marketingBlocksPath)
-    const base = readJsonSync(basePaths)
-    
+    const marketing = readJsonSync(marketingBlocksPath);
+    const base = readJsonSync(basePaths);
+    const themes = readJsonOptional(themesPath);
+
     const finalRegistry = {
         name: "flexiwind-ui",
         title: "Flexiwind UI",
@@ -37,6 +43,7 @@ function build() {
             ...(blocks && blocks.components ? blocks.components : []),
             ...(marketing && marketing.components ? marketing.components : []),
             ...(base && base.components ? base.components : []),
+            ...(themes && themes.components ? themes.components : []),
         ],
     };
 

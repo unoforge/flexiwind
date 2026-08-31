@@ -1,1597 +1,3220 @@
 {
-    "name": "flexiwind-ui",
-    "title": "Flexiwind UI",
-    "description": "Flexiwind UI components and blocks for Laravel Blade and Livewire.",
-    "homepage": "https://flexiwind.unoforge.com",
-    "author": "Johnkat MJ <johnkatembue4@gmail.com>",
-    "components": [
+  "name": "flexiwind-ui",
+  "title": "Flexiwind UI",
+  "description": "Flexiwind UI components and blocks for Laravel Blade and Livewire.",
+  "homepage": "https://flexiwind.unoforge.com",
+  "author": "Johnkat MJ <johnkatembue4@gmail.com>",
+  "components": [
+    {
+      "version": "1.0.0",
+      "name": "accordion",
+      "title": "Accordion",
+      "description": "A reusable accordion component for Laravel Blade/Livewire.",
+      "files": [
         {
-            "version": "1.0.0",
-            "name": "accordion",
-            "title": "Accordion",
-            "description": "A reusable accordion component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/accordion.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/accordion.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/accordion/item.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/accordion/item.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/accordion/trigger.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/accordion/trigger.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/accordion/content.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/accordion/content.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/accordion/indicator.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/accordion/indicator.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/accordion.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/accordion.js"
-                }
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/accordion"
-                ]
-            }
+          "path": "resources/views/components/ui/accordion.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/accordion.blade.php"
         },
         {
-            "version": "1.0.0",
-            "name": "alert",
-            "title": "Alert",
-            "description": "A reusable alert component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/alert.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/alert.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "ui-helper"
-            ]
+          "path": "resources/views/components/ui/accordion/item.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/accordion/item.blade.php"
         },
         {
-            "version": "1.0.0",
-            "name": "aspect",
-            "title": "Aspect Ratio",
-            "description": "A reusable aspect ratio component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/aspect.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/aspect.blade.php"
-                }
-            ]
+          "path": "resources/views/components/ui/accordion/trigger.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/accordion/trigger.blade.php"
         },
         {
-            "version": "1.0.0",
-            "name": "avatar-placeholder",
-            "title": "Avatar Placeholder",
-            "description": "A reusable avatar placeholder component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/avatar-placeholder.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/avatar-placeholder.blade.php"
-                }
-            ]
+          "path": "resources/views/components/ui/accordion/content.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/accordion/content.blade.php"
         },
         {
-            "version": "1.0.0",
-            "name": "avatar",
-            "title": "Avatar",
-            "description": "A reusable avatar component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/avatar.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/avatar.blade.php"
-                }
-            ]
+          "path": "resources/views/components/ui/accordion/indicator.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/accordion/indicator.blade.php"
         },
         {
-            "version": "1.0.0",
-            "name": "badge",
-            "title": "Badge",
-            "description": "A reusable badge component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/badge.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/badge.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "breadcrumbs",
-            "title": "Breadcrumbs",
-            "description": "A reusable breadcrumbs component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/breadcrumbs.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/breadcrumbs.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/breadcrumbs/item.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/breadcrumbs/item.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/breadcrumbs/separator.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/breadcrumbs/separator.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "button",
-            "title": "Button",
-            "description": "A reusable button component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/button.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/button.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button-helper"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "callout",
-            "title": "Callout",
-            "description": "A reusable callout component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/callout.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/callout.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/callout/description.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/callout/description.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/callout/title.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/callout/title.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "alert",
-                "ui-helper"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "card",
-            "title": "Card",
-            "description": "A reusable card component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/card.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/card.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/card/content.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/card/content.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/card/description.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/card/description.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/card/footer.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/card/footer.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/card/header.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/card/header.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/card/title.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/card/title.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "ui-helper"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "checkbox",
-            "title": "Checkbox",
-            "description": "A reusable checkbox component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/checkbox.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/checkbox.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "collapse",
-            "title": "Collapse",
-            "description": "A reusable collapse component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/collapse.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/collapse.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/collapse/trigger.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/collapse/trigger.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/collapse/indicator.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/collapse/indicator.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/collapse.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/collapse.js"
-                }
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/collapse"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "dissmissible",
-            "title": "Dissmissible",
-            "description": "A reusable divider component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/dissmissible/index.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dissmissible/index.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dissmissible/close.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dissmissible/close.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "divider",
-            "title": "Divider",
-            "description": "A reusable divider component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/divider.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/divider.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "field",
-            "title": "Field",
-            "description": "A form field wrapper with label, hint, error message, and required indicator.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/field.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/field.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "dropdown",
-            "title": "Dropdown",
-            "description": "A reusable dropdown component for Laravel Blade/Livewire.",
-            "registryDependencies": [
-                "kbd",
-                "divider"
-            ],
-            "files": [
-                {
-                    "path": "resources/views/components/ui/dropdown.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dropdown/icon.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown/icon.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dropdown/item.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown/item.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dropdown/item-submenu.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown/item-submenu.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dropdown/trigger.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown/trigger.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dropdown/description.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown/description.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dropdown/header.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown/header.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dropdown/kbd.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown/kbd.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dropdown/label.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown/label.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/dropdown/separator.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/dropdown/separator.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/dropdown.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/dropdown.js"
-                }
-            ],
-            "dependencies": {
-                "node": [
-                    "@flexilla/dropdown"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "input",
-            "title": "Input",
-            "description": "A reusable input component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/input.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/input.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "label",
-                "input-group"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "input-group",
-            "title": "Input Group",
-            "description": "A reusable input component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/input/group.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/input/group.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/input/leading.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/input/leading.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/input/trailing.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/input/trailing.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "label"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "kbd",
-            "title": "Kbd",
-            "description": "A reusable kbd component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/kbd.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/kbd.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "label",
-            "title": "Label",
-            "description": "A reusable label component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/label.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/label.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "link",
-            "title": "Link",
-            "description": "A reusable link component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/link.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/link.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "meter",
-            "title": "Meter",
-            "description": "A reusable meter component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/meter.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/meter.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "modal",
-            "title": "Modal",
-            "description": "A reusable modal component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/modal.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/modal.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/modal/content.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/modal/content.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/modal/body.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/modal/body.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/modal/close.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/modal/close.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/modal/description.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/modal/description.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/modal/footer.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/modal/footer.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/modal/header.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/modal/header.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/modal/title.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/modal/title.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/modal/trigger.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/modal/trigger.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/modal.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/modal.js"
-                }
-            ],
-            "registryDependencies": [
-                "button"
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/modal"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "otp",
-            "title": "OTP",
-            "description": "A reusable otp component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/otp.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/otp.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/otp/input.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/otp/input.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/pin-input.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/pin-input.js"
-                }
-            ],
-            "registryDependencies": [
-                "input"
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/pin-input"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "pagination",
-            "title": "Pagination",
-            "description": "A reusable pagination component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/pagination.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/pagination.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "popover",
-            "title": "Popover",
-            "description": "A reusable popover component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/popover.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/popover.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/popover/trigger.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/popover/trigger.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/popover.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/popover.js"
-                }
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/popover"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "progress",
-            "title": "Progress",
-            "description": "A reusable progress component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/progress.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/progress.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "radio",
-            "title": "Radio",
-            "description": "A reusable radio component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/radio.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/radio.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "range",
-            "title": "Range",
-            "description": "A reusable range component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/range.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/range.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/range-indicator.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/range-indicator.js"
-                }
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/custom-range"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "select",
-            "title": "Select",
-            "description": "A reusable select component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/select.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/select.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "input-group",
-                "label"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "skeleton",
-            "title": "Skeleton",
-            "description": "A reusable skeleton component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/skeleton.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/skeleton.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "slideover",
-            "title": "Slideover",
-            "description": "A reusable slideover component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/slideover.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/slideover.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/slideover/body.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/slideover/body.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/slideover/close.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/slideover/close.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/slideover/content.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/slideover/content.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/slideover/description.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/slideover/description.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/slideover/footer.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/slideover/footer.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/slideover/header.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/slideover/header.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/slideover/title.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/slideover/title.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/slideover/trigger.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/slideover/trigger.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/offcanvas.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/offcanvas.js"
-                }
-            ],
-            "registryDependencies": [
-                "button"
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/offcanvas"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "switch",
-            "title": "Switch",
-            "description": "A reusable switch component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/switch.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/switch.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "table",
-            "title": "Table",
-            "description": "A reusable table component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/table.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/table.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/table/cell.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/table/cell.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/table/column.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/table/column.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/table/columns.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/table/columns.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/table/row.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/table/row.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/table/rows.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/table/rows.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "tabs",
-            "title": "Tabs",
-            "description": "A reusable tabs component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/tabs.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/tabs.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/tabs/list-wrapper.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/tabs/list-wrapper.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/tabs/list.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/tabs/list.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/tabs/panel-wrapper.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/tabs/panel-wrapper.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/tabs/panel.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/tabs/panel.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/tabs/trigger.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/tabs/trigger.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/tabs.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/tabs.js"
-                }
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/tabs"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "textarea",
-            "title": "Textarea",
-            "description": "A reusable textarea component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/textarea.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/textarea.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/auto-resize-area.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/auto-resize-area.js"
-                }
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/auto-resize-area"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "tooltip",
-            "title": "Tooltip",
-            "description": "A reusable tooltip component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/tooltip.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/tooltip.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/tooltip/trigger.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/tooltip/trigger.blade.php"
-                },
-                {
-                    "path": "resources/js/plugins/tooltip.js",
-                    "type": "registry:script",
-                    "target": "resources/js/plugins/tooltip.js"
-                }
-            ],
-            "registryDependencies": [
-                "button"
-            ],
-            "dependencies": {
-                "composer": [],
-                "node": [
-                    "@flexilla/tooltip"
-                ]
-            }
-        },
-        {
-            "version": "1.0.0",
-            "name": "icon",
-            "title": "Icon",
-            "description": "A reusable icon component for Laravel Blade/Livewire using Iconify.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/icon.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/icon.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "text",
-            "title": "Text",
-            "description": "A reusable text component for Laravel Blade/Livewire with intent-based styling.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/text.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/text.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "heading",
-            "title": "Heading",
-            "description": "A reusable heading component for Laravel Blade/Livewire with semantic levels.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/heading.blade.php",
-                    "type": "registry:ui",
-                    "target": "resources/views/components/ui/heading.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "auth-split",
-            "title": "Auth Split",
-            "description": "A reusable auth split component for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/auth-split.blade.php",
-                    "type": "registry:component",
-                    "target": "resources/views/components/ui/auth-split.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "login01",
-            "title": "Login",
-            "description": "A full auth login page.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/auth/login01.blade.php",
-                    "type": "registry:page",
-                    "target": "resources/views/components/auth/login.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button",
-                "label",
-                "checkbox",
-                "link",
-                "input",
-                "card"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "login02",
-            "title": "Login",
-            "description": "A full auth login page.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/auth/login02.blade.php",
-                    "type": "registry:page",
-                    "target": "resources/views/components/auth/login.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button",
-                "label",
-                "checkbox",
-                "link",
-                "input",
-                "card"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "login03",
-            "title": "Login",
-            "description": "A full auth login page.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/auth/login03.blade.php",
-                    "type": "registry:page",
-                    "target": "resources/views/components/auth/login.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button",
-                "label",
-                "checkbox",
-                "link",
-                "input"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "signup01",
-            "title": "Signup",
-            "description": "A full auth signup page.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/auth/signup01.blade.php",
-                    "type": "registry:page",
-                    "target": "resources/views/components/auth/signup.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button",
-                "label",
-                "checkbox",
-                "link",
-                "input",
-                "card"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "otp01",
-            "title": "Otp ",
-            "description": "A full auth OTP page.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/auth/otp01.blade.php",
-                    "type": "registry:page",
-                    "target": "resources/views/components/auth/otp.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button",
-                "label",
-                "checkbox",
-                "link",
-                "input"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "sidebar-wrapper",
-            "title": "Sidebar Wrapper",
-            "description": "A full sidebar wrapper layout.",
-            "files": [
-                {
-                    "path": "resources/views/components/ui/sidebar-wrapper.blade.php",
-                    "type": "registry:component",
-                    "target": "resources/views/components/ui/sidebar-wrapper.blade.php"
-                },
-                {
-                    "path": "resources/views/components/ui/sidebar-overlay.blade.php",
-                    "type": "registry:component",
-                    "target": "resources/views/components/ui/sidebar-overlay.blade.php"
-                },
-                {
-                    "path": "resources/js/sidebar-plugin.js",
-                    "type": "registry:ui",
-                    "target": "resources/js/sidebar-plugin.js"
-                }
-            ],
-            "dependencies": {
-                "node": [
-                    "@flexilla/utilities"
-                ]
-            },
-            "message": [
-                "Wrap your sidebar markup with <x-ui.sidebar-wrapper> to get open/close toggle behaviour.",
-                "Import resources/js/sidebar-plugin.js in your Vite entry point (e.g. app.js) to activate the sidebar plugin.",
-                "Add data-toggle-sidebar to any button that should open/close the sidebar on mobile."
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "sidebar01",
-            "title": "Sidebar 01",
-            "description": "A full sidebar layout.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/sidebar01.blade.php",
-                    "replace": {
-                        "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item"
-                    }
-                },
-                {
-                    "path": "resources/views/components/previews/sidebar/01/sidebar-item.blade.php",
-                    "type": "registry:component",
-                    "target": "resources/views/components/atoms/sidebar-item.blade.php"
-                },
-                {
-                    "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/wrapper.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button",
-                "icon",
-                "sidebar-wrapper"
-            ],
-            "message": [
-                "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
-                "Use <x-atoms.sidebar-item> inside the sidebar nav for each link (accepts href, icon, text, isActive).",
-                "Place <x-layouts.wrapper> after the sidebar; it offsets by md:pl-64 and holds your header + content.",
-                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "sidebar02",
-            "title": "Sidebar 02",
-            "description": "A full sidebar layout with grouped navigation.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/sidebar/02/sidebar.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/sidebar02.blade.php",
-                    "replace": {
-                        "x-previews.sidebar.02.sidebar-item": "x-atoms.sidebar-item",
-                        "x-previews.sidebar.02.sidebar-nav-group": "x-atoms.sidebar-nav-group"
-                    }
-                },
-                {
-                    "path": "resources/views/components/previews/sidebar/02/sidebar-item.blade.php",
-                    "type": "registry:component",
-                    "target": "resources/views/components/atoms/sidebar-item.blade.php"
-                },
-                {
-                    "path": "resources/views/components/previews/sidebar/02/sidebar-nav-group.blade.php",
-                    "type": "registry:component",
-                    "target": "resources/views/components/atoms/sidebar-nav-group.blade.php",
-                    "replace": {
-                        "x-previews.sidebar.02.sidebar-item": "x-atoms.sidebar-item"
-                    }
-                },
-                {
-                    "path": "resources/views/components/previews/sidebar/02/wrapper.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/wrapper.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button",
-                "icon",
-                "sidebar-wrapper"
-            ],
-            "message": [
-                "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
-                "Use <x-atoms.sidebar-nav-group> inside the sidebar to group nav links under a labelled section.",
-                "Use <x-atoms.sidebar-item> inside each nav group (accepts href, icon, text, isActive).",
-                "Place <x-layouts.wrapper> after the sidebar; it offsets by lg:pl-64 and holds your header + content.",
-                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "sidebar03",
-            "title": "Sidebar 03",
-            "description": "A full sidebar layout.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/sidebar/03/sidebar.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/sidebar03.blade.php",
-                    "replace": {
-                        "x-previews.sidebar.03.sidebar-item": "x-atoms.sidebar-item"
-                    }
-                },
-                {
-                    "path": "resources/views/components/previews/sidebar/03/sidebar-item.blade.php",
-                    "type": "registry:component",
-                    "target": "resources/views/components/atoms/sidebar-item.blade.php"
-                },
-                {
-                    "path": "resources/views/components/previews/sidebar/03/wrapper.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/wrapper.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button",
-                "icon",
-                "sidebar-wrapper"
-            ],
-            "message": [
-                "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
-                "Use <x-atoms.sidebar-item> inside the sidebar nav for each link (accepts href, icon, text, isActive).",
-                "Place <x-layouts.wrapper> after the sidebar; it offsets by md:pl-64 and holds your header + content.",
-                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "header01",
-            "title": "Header 01",
-            "description": "Header navbar for dashboard layout",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/header/01/header.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/nav-header.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "header02",
-            "title": "Header 02",
-            "description": "Header navbar for dashboard layout",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/header/02/header.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/nav-header.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "kpi01",
-            "title": "KPI 01",
-            "description": "A full KPI layout.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/dash-card/kpi01.blade.php",
-                    "type": "registry:page",
-                    "target": "resources/views/components/card/kpi01.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "card"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "kpi02",
-            "title": "KPI 02",
-            "description": "A full KPI layout with icons.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/dash-card/kpi02.blade.php",
-                    "type": "registry:page",
-                    "target": "resources/views/components/card/kpi02.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "card"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "kpi03",
-            "title": "KPI 03",
-            "description": "A full KPI layout with icons.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/dash-card/kpi03.blade.php",
-                    "type": "registry:page",
-                    "target": "resources/views/components/card/kpi03.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "card"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "activity01",
-            "title": "Activity 01",
-            "description": "A full Activity layout.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/dash-card/activity01.blade.php",
-                    "type": "registry:page",
-                    "target": "resources/views/components/dash-card/activity01.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "card"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "empty-state01",
-            "title": "Empty State 01",
-            "description": "Empty State.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/empty-state/01.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/empty-state.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "shell01",
-            "title": "App Shell 01",
-            "description": "Application shell layout.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/app-shell/shell-01.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/app-shell.blade.php",
-                    "replace": {
-                        "x-previews.sidebar.01.sidebar": "x-layouts.sidebar01"
-                    }
-                }
-            ],
-            "message": [
-                "Use <x-layouts.app-shell> as your root layout — it composes the sidebar and main content area.",
-                "The shell embeds <x-layouts.sidebar02> automatically; customise that file to change the sidebar.",
-                "Use <x-atoms.sidebar-item> for each nav link inside the sidebar (accepts href, icon, text, isActive).",
-                "Use <x-atoms.sidebar-nav-group> to group sidebar links under a labelled section heading.",
-                "Place <x-layouts.wrapper> inside the shell for the header + scrollable content region.",
-                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
-            ],
-            "registryDependencies": [
-                "button",
-                "icon",
-                "sidebar-wrapper",
-                "sidebar01"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "header03",
-            "title": "Header 03",
-            "description": "Header navbar for dashboard layout",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/header/03/header.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/layouts/nav-header.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "table01",
-            "title": "Table 01",
-            "description": "Data table component.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/table/01.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/tables/table.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "table02",
-            "title": "Table 02",
-            "description": "Data table component.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/table/02.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/tables/table.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "table03",
-            "title": "Table 03",
-            "description": "Data table component.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/table/03.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/tables/table.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "user-list",
-            "title": "User List",
-            "description": "Complete user management page with search, filter, table, action dropdowns, pagination, and create modal.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/user-management/user-list.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/user-management/user-list.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "dash-analytics",
-            "title": "Dashboard Analytics",
-            "description": "Analytics dashboard with KPI cards, revenue chart area, top products, and recent orders table.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/dash-card/dash-analytics.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/dash-card/dash-analytics.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "top-products",
-            "title": "Top Products",
-            "description": "Top selling products widget with revenue and sales data.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/dash-card/top-products.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/widgets/top-products.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "table07",
-            "title": "Table 07",
-            "description": "User management table with avatars, status badges, role filter, action dropdowns, and pagination.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/table/07.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/table/07.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "features01",
-            "title": "Features 01",
-            "description": "Feature sections.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/features/01/features.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/blocks/features.blade.php",
-                    "replace": {
-                        "x-previews.features.01.feature-card": "x-blocks.feature-card"
-                    }
-                },
-                {
-                    "path": "resources/views/components/previews/features/01/feature-card.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/blocks/feature-card.blade.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "hero01",
-            "title": "HeroSection 01",
-            "description": "Hero section.",
-            "files": [
-                {
-                    "path": "resources/views/components/previews/hero-sections/01/hero.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/blocks/hero.blade.php",
-                    "replace": {
-                        "x-previews.hero-sections.01.navbar": "x-blocks.navbar"
-                    }
-                },
-                {
-                    "path": "resources/views/components/previews/hero-sections/01/navbar.blade.php",
-                    "type": "registry:block",
-                    "target": "resources/views/components/blocks/navbar.blade.php"
-                }
-            ],
-            "registryDependencies": [
-                "button"
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "flexiwind-base",
-            "title": "Flexiwind utilities",
-            "description": "Base styles for Flexiwind UI components.",
-            "files": [
-                {
-                    "path": "resources/css/flexiwind/base.css",
-                    "type": "registry:styles",
-                    "target": "resources/css/flexiwind/base.css"
-                },
-                {
-                    "path": "resources/css/flexiwind/button.css",
-                    "type": "registry:styles",
-                    "target": "resources/css/flexiwind/button.css"
-                },
-                {
-                    "path": "resources/css/flexiwind/form.css",
-                    "type": "registry:styles",
-                    "target": "resources/css/flexiwind/form.css"
-                },
-                {
-                    "path": "resources/css/flexiwind/ui.css",
-                    "type": "registry:styles",
-                    "target": "resources/css/flexiwind/ui.css"
-                },
-                {
-                    "path": "resources/css/flexiwind/utils.css",
-                    "type": "registry:styles",
-                    "target": "resources/css/flexiwind/utils.css"
-                },
-                {
-                    "path": "resources/css/flexiwind/intents.css",
-                    "type": "registry:styles",
-                    "target": "resources/css/flexiwind/intents.css"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "button-helper",
-            "title": "Button helper",
-            "description": "A reusable button helper for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "app/Flexiwind/ButtonHelper.php",
-                    "type": "registry:helper",
-                    "target": "app/Flexiwind/ButtonHelper.php"
-                }
-            ]
-        },
-        {
-            "version": "1.0.0",
-            "name": "ui-helper",
-            "title": "Ui helper",
-            "description": "A reusable UI helper for Laravel Blade/Livewire.",
-            "files": [
-                {
-                    "path": "app/Flexiwind/UiHelper.php",
-                    "type": "registry:helper",
-                    "target": "app/Flexiwind/UiHelper.php"
-                }
-            ]
+          "path": "resources/js/plugins/accordion.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/accordion.js"
         }
-    ]
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/accordion"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "alert",
+      "title": "Alert",
+      "description": "A reusable alert component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/alert.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/alert.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "ui-helper"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "aspect",
+      "title": "Aspect Ratio",
+      "description": "A reusable aspect ratio component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/aspect.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/aspect.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "avatar-placeholder",
+      "title": "Avatar Placeholder",
+      "description": "A reusable avatar placeholder component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/avatar-placeholder.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/avatar-placeholder.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "avatar",
+      "title": "Avatar",
+      "description": "A reusable avatar component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/avatar.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/avatar.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "badge",
+      "title": "Badge",
+      "description": "A reusable badge component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/badge.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/badge.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "breadcrumbs",
+      "title": "Breadcrumbs",
+      "description": "A reusable breadcrumbs component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/breadcrumbs.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/breadcrumbs.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/breadcrumbs/item.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/breadcrumbs/item.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/breadcrumbs/separator.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/breadcrumbs/separator.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "button",
+      "title": "Button",
+      "description": "A reusable button component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/button.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/button.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button-helper"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "callout",
+      "title": "Callout",
+      "description": "A reusable callout component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/callout.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/callout.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/callout/description.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/callout/description.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/callout/title.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/callout/title.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "alert",
+        "ui-helper"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "card",
+      "title": "Card",
+      "description": "A reusable card component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/card.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/card.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/card/content.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/card/content.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/card/description.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/card/description.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/card/footer.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/card/footer.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/card/header.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/card/header.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/card/title.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/card/title.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "ui-helper"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "checkbox",
+      "title": "Checkbox",
+      "description": "A reusable checkbox component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/checkbox.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/checkbox.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "collapse",
+      "title": "Collapse",
+      "description": "A reusable collapse component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/collapse.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/collapse.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/collapse/trigger.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/collapse/trigger.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/collapse/indicator.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/collapse/indicator.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/collapse.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/collapse.js"
+        }
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/collapse"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "dissmissible",
+      "title": "Dissmissible",
+      "description": "A reusable divider component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/dissmissible/index.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dissmissible/index.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dissmissible/close.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dissmissible/close.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "divider",
+      "title": "Divider",
+      "description": "A reusable divider component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/divider.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/divider.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "field",
+      "title": "Field",
+      "description": "A form field wrapper with label, hint, error message, and required indicator.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/field.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/field.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "dropdown",
+      "title": "Dropdown",
+      "description": "A reusable dropdown component for Laravel Blade/Livewire.",
+      "registryDependencies": [
+        "kbd",
+        "divider"
+      ],
+      "files": [
+        {
+          "path": "resources/views/components/ui/dropdown.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dropdown/icon.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown/icon.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dropdown/item.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown/item.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dropdown/item-submenu.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown/item-submenu.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dropdown/trigger.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown/trigger.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dropdown/description.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown/description.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dropdown/header.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown/header.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dropdown/kbd.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown/kbd.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dropdown/label.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown/label.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/dropdown/separator.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/dropdown/separator.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/dropdown.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/dropdown.js"
+        }
+      ],
+      "dependencies": {
+        "node": [
+          "@flexilla/dropdown"
+        ]
+      },
+      "cssVars": {
+        "light": {
+          "--dropdown-item-outline": "var(--color-primary)",
+          "--dropdown-item-danger-outline": "var(--color-destructive)",
+          "--dropdown-item-hover-and-select": "var(--color-muted)",
+          "--dropdown-item-hover-and-select-fg": "var(--color-foreground)",
+          "--dropdown-item-selected-fg": "var(--color-foreground)",
+          "--dropdown-item-danger-fg": "var(--color-destructive)",
+          "--dropdown-item-warning-fg": "var(--color-warning)",
+          "--dropdown-item-danger-hover-and-select": "color-mix(in oklab, var(--color-destructive) 10%, transparent)",
+          "--dropdown-item-danger-hover-and-select-fg": "var(--color-destructive)",
+          "--dropdown-item-warning-hover-and-select": "color-mix(in oklab, var(--color-warning) 10%, transparent)",
+          "--dropdown-item-warning-hover-and-select-fg": "var(--color-warning)"
+        },
+        "dark": {
+          "--dropdown-item-danger-hover-and-select": "color-mix(in oklab, var(--color-destructive) 18%, transparent)",
+          "--dropdown-item-danger-hover-and-select-fg": "var(--color-destructive)",
+          "--dropdown-item-warning-hover-and-select": "color-mix(in oklab, var(--color-warning) 18%, transparent)",
+          "--dropdown-item-warning-hover-and-select-fg": "var(--color-warning)"
+        }
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "input",
+      "title": "Input",
+      "description": "A reusable input component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/input.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/input.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "label",
+        "input-group"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "input-group",
+      "title": "Input Group",
+      "description": "A reusable input component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/input/group.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/input/group.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/input/leading.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/input/leading.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/input/trailing.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/input/trailing.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "label"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "kbd",
+      "title": "Kbd",
+      "description": "A reusable kbd component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/kbd.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/kbd.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "label",
+      "title": "Label",
+      "description": "A reusable label component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/label.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/label.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "link",
+      "title": "Link",
+      "description": "A reusable link component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/link.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/link.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "meter",
+      "title": "Meter",
+      "description": "A reusable meter component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/meter.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/meter.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "modal",
+      "title": "Modal",
+      "description": "A reusable modal component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/modal.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/modal.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/modal/content.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/modal/content.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/modal/body.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/modal/body.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/modal/close.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/modal/close.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/modal/description.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/modal/description.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/modal/footer.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/modal/footer.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/modal/header.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/modal/header.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/modal/title.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/modal/title.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/modal/trigger.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/modal/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/modal.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/modal.js"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/modal"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "otp",
+      "title": "OTP",
+      "description": "A reusable otp component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/otp.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/otp.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/otp/input.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/otp/input.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/pin-input.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/pin-input.js"
+        }
+      ],
+      "registryDependencies": [
+        "input"
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/pin-input"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "pagination",
+      "title": "Pagination",
+      "description": "A reusable pagination component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/pagination.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/pagination.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "popover",
+      "title": "Popover",
+      "description": "A reusable popover component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/popover.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/popover.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/popover/trigger.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/popover/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/popover.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/popover.js"
+        }
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/popover"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "progress",
+      "title": "Progress",
+      "description": "A reusable progress component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/progress.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/progress.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "radio",
+      "title": "Radio",
+      "description": "A reusable radio component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/radio.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/radio.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "range",
+      "title": "Range",
+      "description": "A reusable range component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/range.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/range.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/range-indicator.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/range-indicator.js"
+        }
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/custom-range"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "select",
+      "title": "Select",
+      "description": "A reusable select component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/select.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/select.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "input-group",
+        "label"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "skeleton",
+      "title": "Skeleton",
+      "description": "A reusable skeleton component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/skeleton.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/skeleton.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "slideover",
+      "title": "Slideover",
+      "description": "A reusable slideover component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/slideover.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/slideover.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/slideover/body.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/slideover/body.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/slideover/close.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/slideover/close.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/slideover/content.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/slideover/content.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/slideover/description.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/slideover/description.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/slideover/footer.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/slideover/footer.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/slideover/header.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/slideover/header.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/slideover/title.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/slideover/title.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/slideover/trigger.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/slideover/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/offcanvas.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/offcanvas.js"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/offcanvas"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "switch",
+      "title": "Switch",
+      "description": "A reusable switch component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/switch.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/switch.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "table",
+      "title": "Table",
+      "description": "A reusable table component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/table.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/table.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/table/cell.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/table/cell.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/table/column.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/table/column.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/table/columns.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/table/columns.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/table/row.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/table/row.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/table/rows.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/table/rows.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "tabs",
+      "title": "Tabs",
+      "description": "A reusable tabs component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/tabs.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/tabs.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/tabs/list-wrapper.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/tabs/list-wrapper.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/tabs/list.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/tabs/list.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/tabs/panel-wrapper.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/tabs/panel-wrapper.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/tabs/panel.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/tabs/panel.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/tabs/trigger.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/tabs/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/tabs.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/tabs.js"
+        }
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/tabs"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "textarea",
+      "title": "Textarea",
+      "description": "A reusable textarea component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/textarea.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/textarea.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/auto-resize-area.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/auto-resize-area.js"
+        }
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/auto-resize-area"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "tooltip",
+      "title": "Tooltip",
+      "description": "A reusable tooltip component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/tooltip.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/tooltip.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/tooltip/trigger.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/tooltip/trigger.blade.php"
+        },
+        {
+          "path": "resources/js/plugins/tooltip.js",
+          "type": "registry:script",
+          "target": "resources/js/plugins/tooltip.js"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "dependencies": {
+        "composer": [],
+        "node": [
+          "@flexilla/tooltip"
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "name": "icon",
+      "title": "Icon",
+      "description": "A reusable icon component for Laravel Blade/Livewire using Iconify.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/icon.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/icon.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "text",
+      "title": "Text",
+      "description": "A reusable text component for Laravel Blade/Livewire with intent-based styling.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/text.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/text.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "heading",
+      "title": "Heading",
+      "description": "A reusable heading component for Laravel Blade/Livewire with semantic levels.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/heading.blade.php",
+          "type": "registry:ui",
+          "target": "resources/views/components/ui/heading.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "auth-split",
+      "title": "Auth Split",
+      "description": "A reusable auth split component for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/auth-split.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/auth-split.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "login01",
+      "title": "Login",
+      "description": "A full auth login page.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/auth/login01.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/auth/login.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input",
+        "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "login02",
+      "title": "Login",
+      "description": "A full auth login page.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/auth/login02.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/auth/login.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input",
+        "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "login03",
+      "title": "Login",
+      "description": "A full auth login page.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/auth/login03.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/auth/login.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "signup01",
+      "title": "Signup",
+      "description": "A full auth signup page.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/auth/signup01.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/auth/signup.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input",
+        "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "otp01",
+      "title": "Otp ",
+      "description": "A full auth OTP page.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/auth/otp01.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/auth/otp.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "checkbox",
+        "link",
+        "input"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "sidebar-wrapper",
+      "title": "Sidebar Wrapper",
+      "description": "A full sidebar wrapper layout.",
+      "files": [
+        {
+          "path": "resources/views/components/ui/sidebar-wrapper.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/sidebar-wrapper.blade.php"
+        },
+        {
+          "path": "resources/views/components/ui/sidebar-overlay.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/ui/sidebar-overlay.blade.php"
+        },
+        {
+          "path": "resources/js/sidebar-plugin.js",
+          "type": "registry:ui",
+          "target": "resources/js/sidebar-plugin.js"
+        }
+      ],
+      "dependencies": {
+        "node": [
+          "@flexilla/utilities"
+        ]
+      },
+      "message": [
+        "Wrap your sidebar markup with <x-ui.sidebar-wrapper> to get open/close toggle behaviour.",
+        "Import resources/js/sidebar-plugin.js in your Vite entry point (e.g. app.js) to activate the sidebar plugin.",
+        "Add data-toggle-sidebar to any button that should open/close the sidebar on mobile."
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "sidebar01",
+      "title": "Sidebar 01",
+      "description": "A full sidebar layout.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/sidebar/01/sidebar.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/sidebar01.blade.php",
+          "replace": {
+            "x-previews.sidebar.01.sidebar-item": "x-atoms.sidebar-item"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/01/sidebar-item.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-item.blade.php"
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/01/wrapper.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/wrapper.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "icon",
+        "sidebar-wrapper"
+      ],
+      "message": [
+        "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+        "Use <x-atoms.sidebar-item> inside the sidebar nav for each link (accepts href, icon, text, isActive).",
+        "Place <x-layouts.wrapper> after the sidebar; it offsets by md:pl-64 and holds your header + content.",
+        "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "sidebar02",
+      "title": "Sidebar 02",
+      "description": "A full sidebar layout with grouped navigation.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/sidebar/02/sidebar.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/sidebar02.blade.php",
+          "replace": {
+            "x-previews.sidebar.02.sidebar-item": "x-atoms.sidebar-item",
+            "x-previews.sidebar.02.sidebar-nav-group": "x-atoms.sidebar-nav-group"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/02/sidebar-item.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-item.blade.php"
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/02/sidebar-nav-group.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-nav-group.blade.php",
+          "replace": {
+            "x-previews.sidebar.02.sidebar-item": "x-atoms.sidebar-item"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/02/wrapper.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/wrapper.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "icon",
+        "sidebar-wrapper"
+      ],
+      "message": [
+        "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+        "Use <x-atoms.sidebar-nav-group> inside the sidebar to group nav links under a labelled section.",
+        "Use <x-atoms.sidebar-item> inside each nav group (accepts href, icon, text, isActive).",
+        "Place <x-layouts.wrapper> after the sidebar; it offsets by lg:pl-64 and holds your header + content.",
+        "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "sidebar03",
+      "title": "Sidebar 03",
+      "description": "A full sidebar layout.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/sidebar/03/sidebar.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/sidebar03.blade.php",
+          "replace": {
+            "x-previews.sidebar.03.sidebar-item": "x-atoms.sidebar-item"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/03/sidebar-item.blade.php",
+          "type": "registry:component",
+          "target": "resources/views/components/atoms/sidebar-item.blade.php"
+        },
+        {
+          "path": "resources/views/components/previews/sidebar/03/wrapper.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/wrapper.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "icon",
+        "sidebar-wrapper"
+      ],
+      "message": [
+        "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+        "Use <x-atoms.sidebar-item> inside the sidebar nav for each link (accepts href, icon, text, isActive).",
+        "Place <x-layouts.wrapper> after the sidebar; it offsets by md:pl-64 and holds your header + content.",
+        "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "header01",
+      "title": "Header 01",
+      "description": "Header navbar for dashboard layout",
+      "files": [
+        {
+          "path": "resources/views/components/previews/header/01/header.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/nav-header.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "header02",
+      "title": "Header 02",
+      "description": "Header navbar for dashboard layout",
+      "files": [
+        {
+          "path": "resources/views/components/previews/header/02/header.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/nav-header.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "kpi01",
+      "title": "KPI 01",
+      "description": "A full KPI layout.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/dash-card/kpi01.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/card/kpi01.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "kpi02",
+      "title": "KPI 02",
+      "description": "A full KPI layout with icons.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/dash-card/kpi02.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/card/kpi02.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "kpi03",
+      "title": "KPI 03",
+      "description": "A full KPI layout with icons.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/dash-card/kpi03.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/card/kpi03.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "activity01",
+      "title": "Activity 01",
+      "description": "A full Activity layout.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/dash-card/activity01.blade.php",
+          "type": "registry:page",
+          "target": "resources/views/components/dash-card/activity01.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "empty-state01",
+      "title": "Empty State 01",
+      "description": "Empty State.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/empty-state/01.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/empty-state.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "shell01",
+      "title": "App Shell 01",
+      "description": "Application shell layout.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/app-shell/shell-01.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/app-shell.blade.php",
+          "replace": {
+            "x-previews.sidebar.01.sidebar": "x-layouts.sidebar01"
+          }
+        }
+      ],
+      "message": [
+        "Use <x-layouts.app-shell> as your root layout — it composes the sidebar and main content area.",
+        "The shell embeds <x-layouts.sidebar02> automatically; customise that file to change the sidebar.",
+        "Use <x-atoms.sidebar-item> for each nav link inside the sidebar (accepts href, icon, text, isActive).",
+        "Use <x-atoms.sidebar-nav-group> to group sidebar links under a labelled section heading.",
+        "Place <x-layouts.wrapper> inside the shell for the header + scrollable content region.",
+        "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+      ],
+      "registryDependencies": [
+        "button",
+        "icon",
+        "sidebar-wrapper",
+        "sidebar01"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "header03",
+      "title": "Header 03",
+      "description": "Header navbar for dashboard layout",
+      "files": [
+        {
+          "path": "resources/views/components/previews/header/03/header.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/layouts/nav-header.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "table01",
+      "title": "Table 01",
+      "description": "Data table component.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/table/01.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/tables/table.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "table02",
+      "title": "Table 02",
+      "description": "Data table component.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/table/02.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/tables/table.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "table03",
+      "title": "Table 03",
+      "description": "Data table component.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/table/03.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/tables/table.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "user-list",
+      "title": "User List",
+      "description": "Complete user management page with search, filter, table, action dropdowns, pagination, and create modal.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/user-management/user-list.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/user-management/user-list.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "dash-analytics",
+      "title": "Dashboard Analytics",
+      "description": "Analytics dashboard with KPI cards, revenue chart area, top products, and recent orders table.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/dash-card/dash-analytics.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/dash-card/dash-analytics.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "top-products",
+      "title": "Top Products",
+      "description": "Top selling products widget with revenue and sales data.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/dash-card/top-products.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/widgets/top-products.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "table07",
+      "title": "Table 07",
+      "description": "User management table with avatars, status badges, role filter, action dropdowns, and pagination.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/table/07.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/table/07.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "features01",
+      "title": "Features 01",
+      "description": "Feature sections.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/features/01/features.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/blocks/features.blade.php",
+          "replace": {
+            "x-previews.features.01.feature-card": "x-blocks.feature-card"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/features/01/feature-card.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/blocks/feature-card.blade.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "hero01",
+      "title": "HeroSection 01",
+      "description": "Hero section.",
+      "files": [
+        {
+          "path": "resources/views/components/previews/hero-sections/01/hero.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/blocks/hero.blade.php",
+          "replace": {
+            "x-previews.hero-sections.01.navbar": "x-blocks.navbar"
+          }
+        },
+        {
+          "path": "resources/views/components/previews/hero-sections/01/navbar.blade.php",
+          "type": "registry:block",
+          "target": "resources/views/components/blocks/navbar.blade.php"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "flexiwind-base",
+      "title": "Flexiwind utilities",
+      "description": "Base styles for Flexiwind UI components.",
+      "files": [
+        {
+          "path": "resources/css/flexiwind/base.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/base.css"
+        },
+        {
+          "path": "resources/css/flexiwind/button.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/button.css"
+        },
+        {
+          "path": "resources/css/flexiwind/form.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/form.css"
+        },
+        {
+          "path": "resources/css/flexiwind/ui.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/ui.css"
+        },
+        {
+          "path": "resources/css/flexiwind/utils.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/utils.css"
+        },
+        {
+          "path": "resources/css/flexiwind/intents.css",
+          "type": "registry:styles",
+          "target": "resources/css/flexiwind/intents.css"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "button-helper",
+      "title": "Button helper",
+      "description": "A reusable button helper for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "app/Flexiwind/ButtonHelper.php",
+          "type": "registry:helper",
+          "target": "app/Flexiwind/ButtonHelper.php"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "name": "ui-helper",
+      "title": "Ui helper",
+      "description": "A reusable UI helper for Laravel Blade/Livewire.",
+      "files": [
+        {
+          "path": "app/Flexiwind/UiHelper.php",
+          "type": "registry:helper",
+          "target": "app/Flexiwind/UiHelper.php"
+        }
+      ]
+    },
+    {
+      "name": "theme-air",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Air Theme",
+      "description": "Light and airy with soft, breathable colors",
+      "message": "Theme \"air\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.1% 0 none)",
+          "--title-foreground": "oklch(20.5% 0 none)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(20.5% 0 none)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.1% 0 none)",
+          "--primary": "hsl(15, 100%, 48%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(2, 85%, 47%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(37, 67%, 40%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(97% 0 none)",
+          "--muted-foreground": "oklch(43.9% 0 none)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.2% 0 none)",
+          "--input": "oklch(92.2% 0 none)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.5% 0 none)",
+          "--border-strong": "oklch(87% 0 none)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "hsl(210 15% 98%)",
+          "--gray-100": "hsl(210 12% 96%)",
+          "--gray-200": "hsl(214 10% 91%)",
+          "--gray-300": "hsl(214 8% 83%)",
+          "--gray-400": "hsl(214 6% 64%)",
+          "--gray-500": "hsl(214 5% 45%)",
+          "--gray-600": "hsl(214 6% 33%)",
+          "--gray-700": "hsl(214 8% 25%)",
+          "--gray-800": "hsl(214 10% 15%)",
+          "--gray-900": "hsl(210 12% 9%)",
+          "--gray-950": "hsl(210 15% 4%)"
+        },
+        "dark": {
+          "--background": "oklch(14.5% 0 none)",
+          "--foreground": "oklch(87% 0 none)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(14.5% 0 none)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(14.5% 0 none)",
+          "--popover-foreground": "oklch(87% 0 none)",
+          "--primary": "hsl(15, 100%, 48%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(2, 85%, 47%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(37, 67%, 40%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(20.5% 0 none)",
+          "--muted-foreground": "oklch(70.8% 0 none)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(20.5% 0 none)",
+          "--input": "oklch(26.9% 0 none)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.1% 0 none)",
+          "--border-card": "oklch(26.9% 0 none)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-caffeine",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Caffeine Theme",
+      "description": "Rich espresso browns and warm coffee tones",
+      "message": "Theme \"caffeine\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(35 20% 97%)",
+          "--foreground": "hsl(20 15% 22%)",
+          "--title-foreground": "hsl(20 18% 12%)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "hsl(20 18% 12%)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "hsl(20 15% 22%)",
+          "--primary": "hsl(25 55% 35%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(35 35% 88%)",
+          "--secondary-foreground": "hsl(20 15% 22%)",
+          "--accent": "hsl(30 60% 40%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "hsl(30 15% 94%)",
+          "--muted-foreground": "hsl(20 10% 42%)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "hsl(30 15% 88%)",
+          "--input": "hsl(30 15% 88%)",
+          "--ring": "var(--primary)",
+          "--surface-background": "hsl(35 15% 95%)",
+          "--border-strong": "hsl(30 10% 78%)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "hsl(30 40% 45%)",
+          "--chart-5": "hsl(35 30% 50%)",
+          "--gray-50": "hsl(40 15% 98%)",
+          "--gray-100": "hsl(35 12% 95%)",
+          "--gray-200": "hsl(30 10% 89%)",
+          "--gray-300": "hsl(30 8% 82%)",
+          "--gray-400": "hsl(30 6% 63%)",
+          "--gray-500": "hsl(30 5% 44%)",
+          "--gray-600": "hsl(30 6% 32%)",
+          "--gray-700": "hsl(30 8% 25%)",
+          "--gray-800": "hsl(30 10% 15%)",
+          "--gray-900": "hsl(30 12% 10%)",
+          "--gray-950": "hsl(30 15% 4%)"
+        },
+        "dark": {
+          "--background": "hsl(20 15% 8%)",
+          "--foreground": "hsl(30 12% 82%)",
+          "--title-foreground": "hsl(30 15% 93%)",
+          "--card": "hsl(20 15% 11%)",
+          "--card-foreground": "hsl(30 15% 93%)",
+          "--popover": "hsl(20 15% 11%)",
+          "--popover-foreground": "hsl(30 12% 82%)",
+          "--primary": "hsl(25 55% 40%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(35 45% 35%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(30 65% 45%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "hsl(20 12% 16%)",
+          "--muted-foreground": "hsl(25 10% 58%)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "hsl(20 12% 18%)",
+          "--input": "hsl(20 10% 22%)",
+          "--ring": "var(--primary)",
+          "--surface-background": "hsl(20 12% 6%)",
+          "--border-strong": "hsl(20 10% 30%)",
+          "--border-card": "hsl(20 10% 20%)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "hsl(30 40% 50%)",
+          "--chart-5": "hsl(35 30% 55%)"
+        }
+      }
+    },
+    {
+      "name": "theme-claude",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Claude Theme",
+      "description": "Inspired by Claude AI — warm terracotta and cream tones",
+      "message": "Theme \"claude\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(40 20% 98%)",
+          "--foreground": "hsl(30 10% 25%)",
+          "--title-foreground": "hsl(30 10% 15%)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "hsl(30 10% 15%)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "hsl(30 10% 25%)",
+          "--primary": "hsl(20 70% 50%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(35 25% 92%)",
+          "--secondary-foreground": "hsl(30 10% 25%)",
+          "--accent": "hsl(15 60% 45%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "hsl(35 15% 95%)",
+          "--muted-foreground": "hsl(30 8% 45%)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "hsl(35 15% 89%)",
+          "--input": "hsl(35 15% 89%)",
+          "--ring": "var(--primary)",
+          "--surface-background": "hsl(40 15% 96%)",
+          "--border-strong": "hsl(35 10% 80%)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "hsl(15 55% 55%)",
+          "--chart-3": "hsl(30 40% 45%)",
+          "--chart-4": "hsl(35 25% 35%)",
+          "--chart-5": "hsl(20 50% 60%)",
+          "--gray-50": "hsl(40 15% 98%)",
+          "--gray-100": "hsl(35 12% 95%)",
+          "--gray-200": "hsl(30 10% 89%)",
+          "--gray-300": "hsl(30 8% 82%)",
+          "--gray-400": "hsl(30 6% 63%)",
+          "--gray-500": "hsl(30 5% 44%)",
+          "--gray-600": "hsl(30 6% 32%)",
+          "--gray-700": "hsl(30 8% 25%)",
+          "--gray-800": "hsl(30 10% 15%)",
+          "--gray-900": "hsl(30 12% 10%)",
+          "--gray-950": "hsl(30 15% 4%)"
+        },
+        "dark": {
+          "--background": "hsl(30 5% 12%)",
+          "--foreground": "hsl(35 10% 85%)",
+          "--title-foreground": "hsl(35 15% 95%)",
+          "--card": "hsl(30 5% 14%)",
+          "--card-foreground": "hsl(35 15% 95%)",
+          "--popover": "hsl(30 5% 14%)",
+          "--popover-foreground": "hsl(35 10% 85%)",
+          "--primary": "hsl(20 70% 55%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(30 30% 25%)",
+          "--secondary-foreground": "hsl(35 15% 90%)",
+          "--accent": "hsl(15 60% 50%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "hsl(30 5% 18%)",
+          "--muted-foreground": "hsl(30 8% 60%)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "hsl(30 5% 20%)",
+          "--input": "hsl(30 5% 24%)",
+          "--ring": "var(--primary)",
+          "--surface-background": "hsl(30 5% 10%)",
+          "--border-strong": "hsl(30 5% 32%)",
+          "--border-card": "hsl(30 5% 22%)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "hsl(15 55% 60%)",
+          "--chart-3": "hsl(30 40% 50%)",
+          "--chart-4": "hsl(35 25% 40%)",
+          "--chart-5": "hsl(20 50% 65%)"
+        }
+      }
+    },
+    {
+      "name": "theme-default",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Default Theme",
+      "description": "Default Flexiwind theme with balanced blue-purple tones",
+      "message": "Theme \"default\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37% 0.013 285.805)",
+          "--title-foreground": "oklch(21% 0.006 285.885)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(21% 0.006 285.885)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37% 0.013 285.805)",
+          "--primary": "hsl(243 75% 59%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(187 92% 36%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(209 92% 36%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.7% 0.001 286.375)",
+          "--muted-foreground": "oklch(44.2% 0.017 285.786)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92% 0.004 286.32)",
+          "--input": "oklch(92% 0.004 286.32)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.5% 0 none)",
+          "--border-strong": "oklch(87.1% 0.006 286.286)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "oklch(98.5% 0 0)",
+          "--gray-100": "oklch(96.7% 0.001 286.375)",
+          "--gray-200": "oklch(92% 0.004 286.32)",
+          "--gray-300": "oklch(87.1% 0.006 286.286)",
+          "--gray-400": "oklch(70.5% 0.015 286.067)",
+          "--gray-500": "oklch(55.2% 0.016 285.938)",
+          "--gray-600": "oklch(44.2% 0.017 285.786)",
+          "--gray-700": "oklch(37% 0.013 285.805)",
+          "--gray-800": "oklch(27.4% 0.006 286.033)",
+          "--gray-900": "oklch(21% 0.006 285.885)",
+          "--gray-950": "oklch(14.1% 0.005 285.823)"
+        },
+        "dark": {
+          "--background": "oklch(14.1% 0.005 285.823)",
+          "--foreground": "oklch(87.1% 0.006 286.286)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(14.1% 0.005 285.823)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(14.1% 0.005 285.823)",
+          "--popover-foreground": "oklch(87.1% 0.006 286.286)",
+          "--primary": "hsl(243 75% 59%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(187 92% 36%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(209 92% 36%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(21% 0.006 285.885)",
+          "--muted-foreground": "oklch(70.5% 0.015 286.067)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(21% 0.006 285.885)",
+          "--input": "oklch(27.4% 0.006 286.033)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37% 0.013 285.805)",
+          "--border-card": "oklch(27.4% 0.006 286.033)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-earth",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Earth Theme",
+      "description": "Natural earthy tones — browns, greens, warm neutrals",
+      "message": "Theme \"earth\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.2% 0.044 257.287)",
+          "--title-foreground": "oklch(20.8% 0.042 265.755)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(20.8% 0.042 265.755)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.2% 0.044 257.287)",
+          "--primary": "hsl(149, 54%, 30%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(37, 67%, 40%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(2, 85%, 47%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.8% 0.007 247.896)",
+          "--muted-foreground": "oklch(44.6% 0.043 257.281)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.9% 0.013 255.508)",
+          "--input": "oklch(92.9% 0.013 255.508)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.4% 0.003 247.858)",
+          "--border-strong": "oklch(86.9% 0.022 252.894)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "hsl(195 38% 97%)",
+          "--gray-100": "hsl(200 25% 95%)",
+          "--gray-200": "hsl(200 20% 91%)",
+          "--gray-300": "hsl(196 18% 80%)",
+          "--gray-400": "hsl(200 11% 64%)",
+          "--gray-500": "hsl(200 9% 47%)",
+          "--gray-600": "hsl(200 12% 35%)",
+          "--gray-700": "hsl(200 18% 27%)",
+          "--gray-800": "hsl(204 22% 17%)",
+          "--gray-900": "hsl(200 26% 8%)",
+          "--gray-950": "hsl(200 33% 1%)"
+        },
+        "dark": {
+          "--background": "oklch(12.9% 0.042 264.695)",
+          "--foreground": "oklch(86.9% 0.022 252.894)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(12.9% 0.042 264.695)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(12.9% 0.042 264.695)",
+          "--popover-foreground": "oklch(86.9% 0.022 252.894)",
+          "--primary": "hsl(149, 54%, 30%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(37, 67%, 40%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(2, 85%, 47%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(20.8% 0.042 265.755)",
+          "--muted-foreground": "oklch(70.4% 0.04 256.788)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(20.8% 0.042 265.755)",
+          "--input": "oklch(27.9% 0.041 260.031)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.2% 0.044 257.287)",
+          "--border-card": "oklch(27.9% 0.041 260.031)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-energy",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Energy Theme",
+      "description": "High-energy vibrant colors for dynamic interfaces",
+      "message": "Theme \"energy\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.4% 0.01 67.558)",
+          "--title-foreground": "oklch(21.6% 0.006 56.043)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(21.6% 0.006 56.043)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.4% 0.01 67.558)",
+          "--primary": "oklch(66.6% 0.179 58.318)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(68.1% 0.162 75.834)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(64.8% 0.2 131.684)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(97% 0.001 106.424)",
+          "--muted-foreground": "oklch(44.4% 0.011 73.639)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.3% 0.003 48.717)",
+          "--input": "oklch(92.3% 0.003 48.717)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.5% 0.001 106.423)",
+          "--border-strong": "oklch(86.9% 0.005 56.366)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "oklch(98.5% 0.001 106.423)",
+          "--gray-100": "oklch(97% 0.001 106.424)",
+          "--gray-200": "oklch(92.3% 0.003 48.717)",
+          "--gray-300": "oklch(86.9% 0.005 56.366)",
+          "--gray-400": "oklch(70.9% 0.01 56.259)",
+          "--gray-500": "oklch(55.3% 0.013 58.071)",
+          "--gray-600": "oklch(44.4% 0.011 73.639)",
+          "--gray-700": "oklch(37.4% 0.01 67.558)",
+          "--gray-800": "oklch(26.8% 0.007 34.298)",
+          "--gray-900": "oklch(21.6% 0.006 56.043)",
+          "--gray-950": "oklch(14.7% 0.004 49.25)"
+        },
+        "dark": {
+          "--background": "oklch(14.7% 0.004 49.25)",
+          "--foreground": "oklch(86.9% 0.005 56.366)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(14.7% 0.004 49.25)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(14.7% 0.004 49.25)",
+          "--popover-foreground": "oklch(86.9% 0.005 56.366)",
+          "--primary": "oklch(66.6% 0.179 58.318)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(68.1% 0.162 75.834)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(64.8% 0.2 131.684)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(21.6% 0.006 56.043)",
+          "--muted-foreground": "oklch(70.9% 0.01 56.259)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(21.6% 0.006 56.043)",
+          "--input": "oklch(26.8% 0.007 34.298)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.4% 0.01 67.558)",
+          "--border-card": "oklch(26.8% 0.007 34.298)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-fire",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Fire Theme",
+      "description": "Bold reds and warm oranges evoking flame and heat",
+      "message": "Theme \"fire\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.4% 0.01 67.558)",
+          "--title-foreground": "oklch(21.6% 0.006 56.043)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(21.6% 0.006 56.043)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.4% 0.01 67.558)",
+          "--primary": "hsl(2, 85%, 47%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(15, 100%, 48%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(209, 92%, 36%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(97% 0.001 106.424)",
+          "--muted-foreground": "oklch(44.4% 0.011 73.639)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.3% 0.003 48.717)",
+          "--input": "oklch(92.3% 0.003 48.717)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.5% 0.001 106.423)",
+          "--border-strong": "oklch(86.9% 0.005 56.366)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "hsl(60 9% 98%)",
+          "--gray-100": "hsl(60 5% 96%)",
+          "--gray-200": "hsl(20 6% 90%)",
+          "--gray-300": "hsl(24 6% 83%)",
+          "--gray-400": "hsl(24 5% 64%)",
+          "--gray-500": "hsl(25 5% 45%)",
+          "--gray-600": "hsl(33 5% 32%)",
+          "--gray-700": "hsl(30 6% 25%)",
+          "--gray-800": "hsl(12 6% 15%)",
+          "--gray-900": "hsl(24 10% 10%)",
+          "--gray-950": "hsl(20 14% 4%)"
+        },
+        "dark": {
+          "--background": "oklch(14.7% 0.004 49.25)",
+          "--foreground": "oklch(86.9% 0.005 56.366)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(14.7% 0.004 49.25)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(14.7% 0.004 49.25)",
+          "--popover-foreground": "oklch(86.9% 0.005 56.366)",
+          "--primary": "hsl(2, 85%, 47%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(15, 100%, 48%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(209, 92%, 36%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(21.6% 0.006 56.043)",
+          "--muted-foreground": "oklch(70.9% 0.01 56.259)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(21.6% 0.006 56.043)",
+          "--input": "oklch(26.8% 0.007 34.298)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.4% 0.01 67.558)",
+          "--border-card": "oklch(26.8% 0.007 34.298)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-flexiwind",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Flexiwind Theme",
+      "description": "Official Flexiwind branded theme",
+      "message": "Theme \"flexiwind\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37% 0.013 285.805)",
+          "--title-foreground": "oklch(21% 0.006 285.885)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(21% 0.006 285.885)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37% 0.013 285.805)",
+          "--primary": "hsl(243 75% 59%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(187 92% 36%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(209 92% 36%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.7% 0.001 286.375)",
+          "--muted-foreground": "oklch(44.2% 0.017 285.786)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92% 0.004 286.32)",
+          "--input": "oklch(92% 0.004 286.32)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.5% 0 none)",
+          "--border-strong": "oklch(87.1% 0.006 286.286)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "oklch(98.5% 0 0)",
+          "--gray-100": "oklch(96.7% 0.001 286.375)",
+          "--gray-200": "oklch(92% 0.004 286.32)",
+          "--gray-300": "oklch(87.1% 0.006 286.286)",
+          "--gray-400": "oklch(70.5% 0.015 286.067)",
+          "--gray-500": "oklch(55.2% 0.016 285.938)",
+          "--gray-600": "oklch(44.2% 0.017 285.786)",
+          "--gray-700": "oklch(37% 0.013 285.805)",
+          "--gray-800": "oklch(27.4% 0.006 286.033)",
+          "--gray-900": "oklch(21% 0.006 285.885)",
+          "--gray-950": "oklch(14.1% 0.005 285.823)"
+        },
+        "dark": {
+          "--background": "oklch(14.1% 0.005 285.823)",
+          "--foreground": "oklch(87.1% 0.006 286.286)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(14.1% 0.005 285.823)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(14.1% 0.005 285.823)",
+          "--popover-foreground": "oklch(87.1% 0.006 286.286)",
+          "--primary": "hsl(243 75% 59%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(187 92% 36%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(209 92% 36%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(21% 0.006 285.885)",
+          "--muted-foreground": "oklch(70.5% 0.015 286.067)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(21% 0.006 285.885)",
+          "--input": "oklch(27.4% 0.006 286.033)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37% 0.013 285.805)",
+          "--border-card": "oklch(27.4% 0.006 286.033)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-mystery",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Mystery Theme",
+      "description": "Deep purples and dark tones for a mysterious feel",
+      "message": "Theme \"mystery\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.2% 0.044 257.287)",
+          "--title-foreground": "oklch(20.8% 0.042 265.755)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(20.8% 0.042 265.755)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.2% 0.044 257.287)",
+          "--primary": "oklch(55.8% 0.288 302.321)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(59.1% 0.293 322.896)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(59.2% 0.249 0.584)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.8% 0.007 247.896)",
+          "--muted-foreground": "oklch(44.6% 0.043 257.281)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.9% 0.013 255.508)",
+          "--input": "oklch(92.9% 0.013 255.508)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.4% 0.003 247.858)",
+          "--border-strong": "oklch(86.9% 0.022 252.894)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "oklch(98.4% 0.003 247.858)",
+          "--gray-100": "oklch(96.8% 0.007 247.896)",
+          "--gray-200": "oklch(92.9% 0.013 255.508)",
+          "--gray-300": "oklch(86.9% 0.022 252.894)",
+          "--gray-400": "oklch(70.4% 0.04 256.788)",
+          "--gray-500": "oklch(55.4% 0.046 257.417)",
+          "--gray-600": "oklch(44.6% 0.043 257.281)",
+          "--gray-700": "oklch(37.2% 0.044 257.287)",
+          "--gray-800": "oklch(27.9% 0.041 260.031)",
+          "--gray-900": "oklch(20.8% 0.042 265.755)",
+          "--gray-950": "oklch(12.9% 0.042 264.695)"
+        },
+        "dark": {
+          "--background": "oklch(12.9% 0.042 264.695)",
+          "--foreground": "oklch(86.9% 0.022 252.894)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(12.9% 0.042 264.695)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(12.9% 0.042 264.695)",
+          "--popover-foreground": "oklch(86.9% 0.022 252.894)",
+          "--primary": "oklch(55.8% 0.288 302.321)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(59.1% 0.293 322.896)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(59.2% 0.249 0.584)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(20.8% 0.042 265.755)",
+          "--muted-foreground": "oklch(70.4% 0.04 256.788)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(20.8% 0.042 265.755)",
+          "--input": "oklch(27.9% 0.041 260.031)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.2% 0.044 257.287)",
+          "--border-card": "oklch(27.9% 0.041 260.031)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-nature",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Nature Theme",
+      "description": "Fresh greens and organic colors inspired by nature",
+      "message": "Theme \"nature\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.2% 0.044 257.287)",
+          "--title-foreground": "oklch(20.8% 0.042 265.755)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(20.8% 0.042 265.755)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.2% 0.044 257.287)",
+          "--primary": "oklch(62.7% 0.194 149.214)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(64.8% 0.2 131.684)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(60% 0.118 184.704)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.8% 0.007 247.896)",
+          "--muted-foreground": "oklch(44.6% 0.043 257.281)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.9% 0.013 255.508)",
+          "--input": "oklch(92.9% 0.013 255.508)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.4% 0.003 247.858)",
+          "--border-strong": "oklch(86.9% 0.022 252.894)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "oklch(97.59% 0.006 223.46)",
+          "--gray-100": "oklch(95.22% 0.004 271.37)",
+          "--gray-200": "oklch(93.68% 0.012 247.96)",
+          "--gray-300": "oklch(84.77% 0.018 219.68)",
+          "--gray-400": "oklch(72.20% 0.020 227.39)",
+          "--gray-500": "oklch(57.98% 0.021 227.53)",
+          "--gray-600": "oklch(46.82% 0.022 227.71)",
+          "--gray-700": "oklch(39.10% 0.025 229.77)",
+          "--gray-800": "oklch(28.64% 0.021 240.03)",
+          "--gray-900": "oklch(19.64% 0.014 243.66)",
+          "--gray-950": "oklch(9.51% 0.006 243.12)"
+        },
+        "dark": {
+          "--background": "oklch(12.9% 0.042 264.695)",
+          "--foreground": "oklch(86.9% 0.022 252.894)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(12.9% 0.042 264.695)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(12.9% 0.042 264.695)",
+          "--popover-foreground": "oklch(86.9% 0.022 252.894)",
+          "--primary": "oklch(62.7% 0.194 149.214)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(64.8% 0.2 131.684)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(60% 0.118 184.704)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(20.8% 0.042 265.755)",
+          "--muted-foreground": "oklch(70.4% 0.04 256.788)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(20.8% 0.042 265.755)",
+          "--input": "oklch(27.9% 0.041 260.031)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.2% 0.044 257.287)",
+          "--border-card": "oklch(27.9% 0.041 260.031)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-oz",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Oz Theme",
+      "description": "Emerald-inspired fantasy theme",
+      "message": "Theme \"oz\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37% 0.013 285.805)",
+          "--title-foreground": "oklch(21% 0.006 285.885)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(21% 0.006 285.885)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37% 0.013 285.805)",
+          "--primary": "oklch(51.1% 0.262 276.966)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(60.9% 0.126 221.723)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(59.1% 0.293 322.896)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.7% 0.001 286.375)",
+          "--muted-foreground": "oklch(44.2% 0.017 285.786)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92% 0.004 286.32)",
+          "--input": "oklch(92% 0.004 286.32)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.5% 0 none)",
+          "--border-strong": "oklch(87.1% 0.006 286.286)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "oklch(98.62% 0.005 286.30)",
+          "--gray-100": "oklch(97.13% 0.005 286.30)",
+          "--gray-200": "oklch(93.06% 0.012 286.16)",
+          "--gray-300": "oklch(87.94% 0.015 286.09)",
+          "--gray-400": "oklch(73.67% 0.023 285.83)",
+          "--gray-500": "oklch(54.50% 0.029 285.38)",
+          "--gray-600": "oklch(42.72% 0.030 285.08)",
+          "--gray-700": "oklch(35.55% 0.029 284.81)",
+          "--gray-800": "oklch(24.82% 0.034 283.65)",
+          "--gray-900": "oklch(18.98% 0.028 283.38)",
+          "--gray-950": "oklch(9.75% 0.034 278.10)"
+        },
+        "dark": {
+          "--background": "oklch(14.1% 0.005 285.823)",
+          "--foreground": "oklch(87.1% 0.006 286.286)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(14.1% 0.005 285.823)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(14.1% 0.005 285.823)",
+          "--popover-foreground": "oklch(87.1% 0.006 286.286)",
+          "--primary": "oklch(51.1% 0.262 276.966)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(60.9% 0.126 221.723)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(59.1% 0.293 322.896)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(21% 0.006 285.885)",
+          "--muted-foreground": "oklch(70.5% 0.015 286.067)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(21% 0.006 285.885)",
+          "--input": "oklch(27.4% 0.006 286.033)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37% 0.013 285.805)",
+          "--border-card": "oklch(27.4% 0.006 286.033)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-passion",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Passion Theme",
+      "description": "Deep reds and passionate warm tones",
+      "message": "Theme \"passion\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.1% 0 none)",
+          "--title-foreground": "oklch(20.5% 0 none)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(20.5% 0 none)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.1% 0 none)",
+          "--primary": "oklch(57.7% 0.245 27.325)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(64.6% 0.222 41.116)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(66.6% 0.179 58.318)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(97% 0 none)",
+          "--muted-foreground": "oklch(43.9% 0 none)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.2% 0 none)",
+          "--input": "oklch(92.2% 0 none)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.5% 0 none)",
+          "--border-strong": "oklch(87% 0 none)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "hsl(0 12% 98%)",
+          "--gray-100": "hsl(0 10% 95%)",
+          "--gray-200": "hsl(5 8% 89%)",
+          "--gray-300": "hsl(5 7% 82%)",
+          "--gray-400": "hsl(5 5% 64%)",
+          "--gray-500": "hsl(5 4% 45%)",
+          "--gray-600": "hsl(5 5% 33%)",
+          "--gray-700": "hsl(5 7% 25%)",
+          "--gray-800": "hsl(5 9% 15%)",
+          "--gray-900": "hsl(0 11% 10%)",
+          "--gray-950": "hsl(0 14% 4%)"
+        },
+        "dark": {
+          "--background": "oklch(14.5% 0 none)",
+          "--foreground": "oklch(87% 0 none)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(14.5% 0 none)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(14.5% 0 none)",
+          "--popover-foreground": "oklch(87% 0 none)",
+          "--primary": "oklch(57.7% 0.245 27.325)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(64.6% 0.222 41.116)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(66.6% 0.179 58.318)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(20.5% 0 none)",
+          "--muted-foreground": "oklch(70.8% 0 none)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(20.5% 0 none)",
+          "--input": "oklch(26.9% 0 none)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.1% 0 none)",
+          "--border-card": "oklch(26.9% 0 none)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-romance",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Romance Theme",
+      "description": "Soft pinks and romantic pastels",
+      "message": "Theme \"romance\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37% 0.013 285.805)",
+          "--title-foreground": "oklch(21% 0.006 285.885)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(21% 0.006 285.885)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37% 0.013 285.805)",
+          "--primary": "oklch(58.6% 0.253 17.585)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(57.7% 0.245 27.325)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(64.6% 0.222 41.116)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.7% 0.001 286.375)",
+          "--muted-foreground": "oklch(44.2% 0.017 285.786)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92% 0.004 286.32)",
+          "--input": "oklch(92% 0.004 286.32)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.5% 0 none)",
+          "--border-strong": "oklch(87.1% 0.006 286.286)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "hsl(330 12% 98%)",
+          "--gray-100": "hsl(330 10% 95%)",
+          "--gray-200": "hsl(335 8% 90%)",
+          "--gray-300": "hsl(335 6% 83%)",
+          "--gray-400": "hsl(335 5% 64%)",
+          "--gray-500": "hsl(335 4% 45%)",
+          "--gray-600": "hsl(335 5% 33%)",
+          "--gray-700": "hsl(335 7% 25%)",
+          "--gray-800": "hsl(335 9% 15%)",
+          "--gray-900": "hsl(330 11% 10%)",
+          "--gray-950": "hsl(330 14% 4%)"
+        },
+        "dark": {
+          "--background": "oklch(14.1% 0.005 285.823)",
+          "--foreground": "oklch(87.1% 0.006 286.286)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(14.1% 0.005 285.823)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(14.1% 0.005 285.823)",
+          "--popover-foreground": "oklch(87.1% 0.006 286.286)",
+          "--primary": "oklch(58.6% 0.253 17.585)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(57.7% 0.245 27.325)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(64.6% 0.222 41.116)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(21% 0.006 285.885)",
+          "--muted-foreground": "oklch(70.5% 0.015 286.067)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(21% 0.006 285.885)",
+          "--input": "oklch(27.4% 0.006 286.033)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37% 0.013 285.805)",
+          "--border-card": "oklch(27.4% 0.006 286.033)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-spotify",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Spotify Theme",
+      "description": "Inspired by Spotify — vibrant green on dark backgrounds",
+      "message": "Theme \"spotify\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "hsl(0 0% 15%)",
+          "--title-foreground": "hsl(0 0% 7%)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "hsl(0 0% 7%)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "hsl(0 0% 15%)",
+          "--primary": "hsl(141 73% 37%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(0 0% 95%)",
+          "--secondary-foreground": "hsl(0 0% 15%)",
+          "--accent": "hsl(141 63% 43%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "hsl(0 0% 96%)",
+          "--muted-foreground": "hsl(0 0% 40%)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "hsl(141 73% 37%)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "hsl(0 0% 90%)",
+          "--input": "hsl(0 0% 90%)",
+          "--ring": "var(--primary)",
+          "--surface-background": "hsl(0 0% 98%)",
+          "--border-strong": "hsl(0 0% 82%)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "hsl(141 50% 50%)",
+          "--chart-3": "hsl(141 40% 60%)",
+          "--chart-4": "hsl(0 0% 60%)",
+          "--chart-5": "hsl(0 0% 75%)",
+          "--gray-50": "hsl(0 0% 98%)",
+          "--gray-100": "hsl(0 0% 96%)",
+          "--gray-200": "hsl(0 0% 90%)",
+          "--gray-300": "hsl(0 0% 83%)",
+          "--gray-400": "hsl(0 0% 64%)",
+          "--gray-500": "hsl(0 0% 45%)",
+          "--gray-600": "hsl(0 0% 32%)",
+          "--gray-700": "hsl(0 0% 25%)",
+          "--gray-800": "hsl(0 0% 15%)",
+          "--gray-900": "hsl(0 0% 9%)",
+          "--gray-950": "hsl(0 0% 4%)"
+        },
+        "dark": {
+          "--background": "hsl(0 0% 7%)",
+          "--foreground": "hsl(0 0% 87%)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "hsl(0 0% 11%)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "hsl(0 0% 11%)",
+          "--popover-foreground": "hsl(0 0% 87%)",
+          "--primary": "hsl(141 73% 42%)",
+          "--primary-foreground": "hsl(0 0% 0%)",
+          "--secondary": "hsl(0 0% 18%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(141 63% 48%)",
+          "--accent-foreground": "hsl(0 0% 0%)",
+          "--muted": "hsl(0 0% 15%)",
+          "--muted-foreground": "hsl(0 0% 65%)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "hsl(141 73% 42%)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "hsl(0 0% 18%)",
+          "--input": "hsl(0 0% 22%)",
+          "--ring": "var(--primary)",
+          "--surface-background": "hsl(0 0% 9%)",
+          "--border-strong": "hsl(0 0% 30%)",
+          "--border-card": "hsl(0 0% 18%)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "hsl(141 50% 55%)",
+          "--chart-3": "hsl(141 40% 65%)",
+          "--chart-4": "hsl(0 0% 45%)",
+          "--chart-5": "hsl(0 0% 55%)"
+        }
+      }
+    },
+    {
+      "name": "theme-spring",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Spring Theme",
+      "description": "Fresh spring greens and floral accents",
+      "message": "Theme \"spring\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.2% 0.044 257.287)",
+          "--title-foreground": "oklch(20.8% 0.042 265.755)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(20.8% 0.042 265.755)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.2% 0.044 257.287)",
+          "--primary": "oklch(64.8% 0.2 131.684)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(62.7% 0.194 149.214)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(68.1% 0.162 75.834)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.8% 0.007 247.896)",
+          "--muted-foreground": "oklch(44.6% 0.043 257.281)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.9% 0.013 255.508)",
+          "--input": "oklch(92.9% 0.013 255.508)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.4% 0.003 247.858)",
+          "--border-strong": "oklch(86.9% 0.022 252.894)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "oklch(97.59% 0.006 223.46)",
+          "--gray-100": "oklch(95.22% 0.004 271.37)",
+          "--gray-200": "oklch(93.68% 0.012 247.96)",
+          "--gray-300": "oklch(84.77% 0.018 219.68)",
+          "--gray-400": "oklch(72.20% 0.020 227.39)",
+          "--gray-500": "oklch(57.98% 0.021 227.53)",
+          "--gray-600": "oklch(46.82% 0.022 227.71)",
+          "--gray-700": "oklch(39.10% 0.025 229.77)",
+          "--gray-800": "oklch(28.64% 0.021 240.03)",
+          "--gray-900": "oklch(19.64% 0.014 243.66)",
+          "--gray-950": "oklch(9.51% 0.006 243.12)"
+        },
+        "dark": {
+          "--background": "oklch(12.9% 0.042 264.695)",
+          "--foreground": "oklch(86.9% 0.022 252.894)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(12.9% 0.042 264.695)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(12.9% 0.042 264.695)",
+          "--popover-foreground": "oklch(86.9% 0.022 252.894)",
+          "--primary": "oklch(64.8% 0.2 131.684)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(62.7% 0.194 149.214)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(68.1% 0.162 75.834)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(20.8% 0.042 265.755)",
+          "--muted-foreground": "oklch(70.4% 0.04 256.788)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(20.8% 0.042 265.755)",
+          "--input": "oklch(27.9% 0.041 260.031)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.2% 0.044 257.287)",
+          "--border-card": "oklch(27.9% 0.041 260.031)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-trust",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Trust Theme",
+      "description": "Professional blues conveying trust and reliability",
+      "message": "Theme \"trust\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.2% 0.044 257.287)",
+          "--title-foreground": "oklch(20.8% 0.042 265.755)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(20.8% 0.042 265.755)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.2% 0.044 257.287)",
+          "--primary": "oklch(54.6% 0.245 262.881)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(55.8% 0.288 302.321)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(64.8% 0.2 131.684)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.8% 0.007 247.896)",
+          "--muted-foreground": "oklch(44.6% 0.043 257.281)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.9% 0.013 255.508)",
+          "--input": "oklch(92.9% 0.013 255.508)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.4% 0.003 247.858)",
+          "--border-strong": "oklch(86.9% 0.022 252.894)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "oklch(98.4% 0.003 247.858)",
+          "--gray-100": "oklch(96.8% 0.007 247.896)",
+          "--gray-200": "oklch(92.9% 0.013 255.508)",
+          "--gray-300": "oklch(86.9% 0.022 252.894)",
+          "--gray-400": "oklch(70.4% 0.04 256.788)",
+          "--gray-500": "oklch(55.4% 0.046 257.417)",
+          "--gray-600": "oklch(44.6% 0.043 257.281)",
+          "--gray-700": "oklch(37.2% 0.044 257.287)",
+          "--gray-800": "oklch(27.9% 0.041 260.031)",
+          "--gray-900": "oklch(20.8% 0.042 265.755)",
+          "--gray-950": "oklch(12.9% 0.042 264.695)"
+        },
+        "dark": {
+          "--background": "oklch(12.9% 0.042 264.695)",
+          "--foreground": "oklch(86.9% 0.022 252.894)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(12.9% 0.042 264.695)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(12.9% 0.042 264.695)",
+          "--popover-foreground": "oklch(86.9% 0.022 252.894)",
+          "--primary": "oklch(54.6% 0.245 262.881)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(55.8% 0.288 302.321)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(64.8% 0.2 131.684)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(20.8% 0.042 265.755)",
+          "--muted-foreground": "oklch(70.4% 0.04 256.788)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(20.8% 0.042 265.755)",
+          "--input": "oklch(27.9% 0.041 260.031)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.2% 0.044 257.287)",
+          "--border-card": "oklch(27.9% 0.041 260.031)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-water",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Water Theme",
+      "description": "Cool blues and aqua tones inspired by water",
+      "message": "Theme \"water\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.2% 0.044 257.287)",
+          "--title-foreground": "oklch(20.8% 0.042 265.755)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(20.8% 0.042 265.755)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.2% 0.044 257.287)",
+          "--primary": "hsl(209, 50%, 48%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(172, 50%, 40%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(210, 60%, 50%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.8% 0.007 247.896)",
+          "--muted-foreground": "oklch(44.6% 0.043 257.281)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.9% 0.013 255.508)",
+          "--input": "oklch(92.9% 0.013 255.508)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.4% 0.003 247.858)",
+          "--border-strong": "oklch(86.9% 0.022 252.894)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "hsl(210 20% 98%)",
+          "--gray-100": "hsl(220 14% 96%)",
+          "--gray-200": "hsl(220 13% 91%)",
+          "--gray-300": "hsl(216 12% 84%)",
+          "--gray-400": "hsl(218 11% 65%)",
+          "--gray-500": "hsl(220 9% 46%)",
+          "--gray-600": "hsl(215 14% 34%)",
+          "--gray-700": "hsl(217 19% 27%)",
+          "--gray-800": "hsl(215 28% 17%)",
+          "--gray-900": "hsl(221 39% 11%)",
+          "--gray-950": "hsl(224 71% 4%)"
+        },
+        "dark": {
+          "--background": "oklch(12.9% 0.042 264.695)",
+          "--foreground": "oklch(86.9% 0.022 252.894)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(12.9% 0.042 264.695)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(12.9% 0.042 264.695)",
+          "--popover-foreground": "oklch(86.9% 0.022 252.894)",
+          "--primary": "hsl(209, 55%, 60%)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "hsl(172, 50%, 55%)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "hsl(210, 55%, 60%)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(20.8% 0.042 265.755)",
+          "--muted-foreground": "oklch(70.4% 0.04 256.788)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(20.8% 0.042 265.755)",
+          "--input": "oklch(27.9% 0.041 260.031)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.2% 0.044 257.287)",
+          "--border-card": "oklch(27.9% 0.041 260.031)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    },
+    {
+      "name": "theme-winter",
+      "type": "registry:style",
+      "version": "1.0.0",
+      "title": "Winter Theme",
+      "description": "Cool whites and icy blue winter palette",
+      "message": "Theme \"winter\" CSS variables have been applied to your entry CSS file.",
+      "cssVars": {
+        "light": {
+          "--background": "hsl(0 0% 100%)",
+          "--foreground": "oklch(37.2% 0.044 257.287)",
+          "--title-foreground": "oklch(20.8% 0.042 265.755)",
+          "--card": "hsl(0 0% 100%)",
+          "--card-foreground": "oklch(20.8% 0.042 265.755)",
+          "--popover": "hsl(0 0% 100%)",
+          "--popover-foreground": "oklch(37.2% 0.044 257.287)",
+          "--primary": "oklch(60.9% 0.126 221.723)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(58.8% 0.158 241.966)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(59.6% 0.145 163.225)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(96.8% 0.007 247.896)",
+          "--muted-foreground": "oklch(44.6% 0.043 257.281)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(92.9% 0.013 255.508)",
+          "--input": "oklch(92.9% 0.013 255.508)",
+          "--ring": "var(--primary)",
+          "--surface-background": "oklch(98.4% 0.003 247.858)",
+          "--border-strong": "oklch(86.9% 0.022 252.894)",
+          "--border-card": "var(--border)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)",
+          "--gray-50": "oklch(98.22% 0.004 271.37)",
+          "--gray-100": "oklch(95.84% 0.025 229.11)",
+          "--gray-200": "oklch(93.62% 0.017 250.85)",
+          "--gray-300": "oklch(88.32% 0.032 255.59)",
+          "--gray-400": "oklch(71.07% 0.035 256.79)",
+          "--gray-500": "oklch(58.13% 0.047 245.42)",
+          "--gray-600": "oklch(44.55% 0.037 257.28)",
+          "--gray-700": "oklch(40.19% 0.045 244.38)",
+          "--gray-800": "oklch(27.27% 0.043 246.11)",
+          "--gray-900": "oklch(20.09% 0.046 251.13)",
+          "--gray-950": "oklch(11.28% 0.043 258.66)"
+        },
+        "dark": {
+          "--background": "oklch(12.9% 0.042 264.695)",
+          "--foreground": "oklch(86.9% 0.022 252.894)",
+          "--title-foreground": "hsl(0 0% 100%)",
+          "--card": "oklch(12.9% 0.042 264.695)",
+          "--card-foreground": "hsl(0 0% 100%)",
+          "--popover": "oklch(12.9% 0.042 264.695)",
+          "--popover-foreground": "oklch(86.9% 0.022 252.894)",
+          "--primary": "oklch(60.9% 0.126 221.723)",
+          "--primary-foreground": "hsl(0 0% 100%)",
+          "--secondary": "oklch(58.8% 0.158 241.966)",
+          "--secondary-foreground": "hsl(0 0% 100%)",
+          "--accent": "oklch(59.6% 0.145 163.225)",
+          "--accent-foreground": "hsl(0 0% 100%)",
+          "--muted": "oklch(20.8% 0.042 265.755)",
+          "--muted-foreground": "oklch(70.4% 0.04 256.788)",
+          "--destructive": "oklch(57.7% 0.245 27.325)",
+          "--destructive-foreground": "hsl(0 0% 100%)",
+          "--success": "oklch(59.6% 0.145 163.225)",
+          "--warning": "oklch(64.6% 0.222 41.116)",
+          "--info": "oklch(58.8% 0.158 241.966)",
+          "--border": "oklch(20.8% 0.042 265.755)",
+          "--input": "oklch(27.9% 0.041 260.031)",
+          "--ring": "var(--primary)",
+          "--surface-background": "color-mix(in oklab, var(--muted) 70%, transparent)",
+          "--border-strong": "oklch(37.2% 0.044 257.287)",
+          "--border-card": "oklch(27.9% 0.041 260.031)",
+          "--border-input": "var(--input)",
+          "--chart-1": "var(--primary)",
+          "--chart-2": "var(--secondary)",
+          "--chart-3": "var(--accent)",
+          "--chart-4": "color-mix(in oklab, var(--primary) 70%, white)",
+          "--chart-5": "color-mix(in oklab, var(--secondary) 70%, white)"
+        }
+      }
+    }
+  ]
 }

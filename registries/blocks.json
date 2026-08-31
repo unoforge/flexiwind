@@ -1,7 +1,7 @@
 {
   "components": [
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "auth-split",
       "title": "Auth Split",
       "description": "A reusable auth split component for Laravel Blade/Livewire.",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "login01",
       "title": "Login",
       "description": "A full auth login page.",
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "login02",
       "title": "Login",
       "description": "A full auth login page.",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "login03",
       "title": "Login",
       "description": "A full auth login page.",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "signup01",
       "title": "Signup",
       "description": "A full auth signup page.",
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "otp01",
       "title": "Otp ",
       "description": "A full auth OTP page.",
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "sidebar-wrapper",
       "title": "Sidebar Wrapper",
       "description": "A full sidebar wrapper layout.",
@@ -150,7 +150,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "sidebar01",
       "title": "Sidebar 01",
       "description": "A full sidebar layout.",
@@ -187,7 +187,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "sidebar02",
       "title": "Sidebar 02",
       "description": "A full sidebar layout with grouped navigation.",
@@ -234,7 +234,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "sidebar03",
       "title": "Sidebar 03",
       "description": "A full sidebar layout.",
@@ -271,7 +271,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "header01",
       "title": "Header 01",
       "description": "Header navbar for dashboard layout",
@@ -284,7 +284,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "header02",
       "title": "Header 02",
       "description": "Header navbar for dashboard layout",
@@ -297,7 +297,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "kpi01",
       "title": "KPI 01",
       "description": "A full KPI layout.",
@@ -313,7 +313,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "kpi02",
       "title": "KPI 02",
       "description": "A full KPI layout with icons.",
@@ -329,7 +329,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "kpi03",
       "title": "KPI 03",
       "description": "A full KPI layout with icons.",
@@ -345,7 +345,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "activity01",
       "title": "Activity 01",
       "description": "A full Activity layout.",
@@ -361,7 +361,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "empty-state01",
       "title": "Empty State 01",
       "description": "Empty State.",
@@ -377,7 +377,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "shell01",
       "title": "App Shell 01",
       "description": "Application shell layout.",
@@ -407,7 +407,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "header03",
       "title": "Header 03",
       "description": "Header navbar for dashboard layout",
@@ -420,7 +420,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "table01",
       "title": "Table 01",
       "description": "Data table component.",
@@ -433,7 +433,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "table02",
       "title": "Table 02",
       "description": "Data table component.",
@@ -446,7 +446,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "table03",
       "title": "Table 03",
       "description": "Data table component.",
@@ -459,7 +459,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "user-list",
       "title": "User List",
       "description": "Complete user management page with search, filter, table, action dropdowns, pagination, and create modal.",
@@ -472,7 +472,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "dash-analytics",
       "title": "Dashboard Analytics",
       "description": "Analytics dashboard with KPI cards, revenue chart area, top products, and recent orders table.",
@@ -485,7 +485,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "top-products",
       "title": "Top Products",
       "description": "Top selling products widget with revenue and sales data.",
@@ -498,7 +498,7 @@
       ]
     },
     {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "name": "table07",
       "title": "Table 07",
       "description": "User management table with avatars, status badges, role filter, action dropdowns, and pagination.",
