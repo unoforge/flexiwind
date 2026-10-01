@@ -1,0 +1,1 @@
+<div {{ $attributes->class(['col-span-full px-2.5 py-1.5 text-xs/3 font-medium text-muted-foreground']) }}>{{ $slot }}</div>

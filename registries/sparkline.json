@@ -1,0 +1,19 @@
+{
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
+    "version": "1.0.0",
+    "name": "sparkline",
+    "type": "registry:component",
+    "title": "Sparkline",
+    "description": "A tiny trend line, area or bar series for KPI cards and tables.",
+    "registryDependencies": [
+        "chart-helper"
+    ],
+    "files": [
+        {
+            "path": "resources/views/components/ui/sparkline.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/sparkline.blade.php",
+            "content": "{{--\n    Mini-tendance sans axes, pour une carte KPI ou une ligne de tableau.\n\n    <x-ui.sparkline :data=\"[12, 18, 9, 24, 31]\" class=\"h-10 w-28\" />\n    <x-ui.sparkline :data=\"$rows\" key=\"revenue\" type=\"area\" color=\"var(--success)\" />\n\n    `data` est une liste de nombres, ou de lignes dont on lit `key`.\n    Une ligne ou une aire suit la tendance (échelle du min au max) ; des\n    barres partent de zéro.\n--}}\n@props([\n    'data' => [],\n    'key' => null,\n    'type' => 'line',\n    'color' => 'var(--chart-1)',\n    'strokeWidth' => 2,\n    'dot' => true,\n    'label' => 'Trend',\n])\n\n@php\n    $values = [];\n    foreach ($data as $row) {\n        $values[] = $key !== null ? data_get($row, $key) : $row;\n    }\n\n    $type = in_array($type, ['line', 'area', 'bar'], true) ? $type : 'line';\n    $geometry = \\App\\Flexiwind\\ChartHelper::sparkline($values, $type);\n    $color = \\App\\Flexiwind\\ChartHelper::color($color, 0);\n    $numbers = array_values(array_filter($values, 'is_numeric'));\n    // Le lecteur d'écran entend la tendance, pas une image muette.\n    $summary = $numbers === []\n        ? $label\n        : $label.': from '.$numbers[0].' to '.$numbers[array_key_last($numbers)];\n    $uid = 'fx-spark-'.substr(md5(serialize([$values, $type, $color])), 0, 8);\n@endphp\n\n<span role=\"img\" aria-label=\"{{ $summary }}\" data-slot=\"sparkline\" {{ $attributes->class('relative inline-block h-8 w-24 shrink-0 align-middle') }}>\n    @if ($type === 'bar')\n        @foreach ($geometry['bars'] as $bar)\n            <span class=\"absolute rounded-t-[2px]\" style=\"left: {{ $bar['left'] }}%; width: {{ $bar['width'] }}%; top: {{ $bar['top'] }}%; height: {{ $bar['height'] }}%; background: {{ $color }}\"></span>\n        @endforeach\n    @elseif ($geometry['line'] !== '')\n        <svg class=\"absolute inset-0 size-full overflow-visible\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\">\n            @if ($type === 'area')\n                <defs>\n                    <linearGradient id=\"{{ $uid }}\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n                        <stop offset=\"0%\" style=\"stop-color: {{ $color }}; stop-opacity: 0.3\"></stop>\n                        <stop offset=\"100%\" style=\"stop-color: {{ $color }}; stop-opacity: 0\"></stop>\n                    </linearGradient>\n                </defs>\n                <path d=\"{{ $geometry['area'] }}\" fill=\"url(#{{ $uid }})\"></path>\n            @endif\n            <path d=\"{{ $geometry['line'] }}\" fill=\"none\" vector-effect=\"non-scaling-stroke\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\n                style=\"stroke: {{ $color }}; stroke-width: {{ (float) $strokeWidth }}px\"></path>\n        </svg>\n        @if ($dot && $geometry['last'])\n            <span class=\"absolute size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full\"\n                style=\"left: {{ $geometry['last']['x'] }}%; top: {{ $geometry['last']['y'] }}%; background: {{ $color }}\"></span>\n        @endif\n    @endif\n</span>\n"
+        }
+    ]
+}

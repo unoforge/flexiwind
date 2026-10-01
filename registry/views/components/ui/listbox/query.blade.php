@@ -1,0 +1,1 @@
+<span data-select-empty-query {{ $attributes }}></span>

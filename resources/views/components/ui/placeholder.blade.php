@@ -1,2 +1,0 @@
-@props([])
-<div {{ $attributes }}></div>

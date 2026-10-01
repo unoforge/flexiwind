@@ -1,0 +1,1 @@
+<span data-slot="label" slot="label" {{ $attributes->class(['col-start-2 min-w-0 truncate group-has-data-[slot=icon]:pe-6 group-has-data-[slot=avatar]:pe-6']) }}>{{ $slot }}</span>

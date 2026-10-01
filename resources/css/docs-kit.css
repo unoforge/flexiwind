@@ -1,0 +1,299 @@
+/*
+ * docs-kit — la couche de style de la documentation.
+ *
+ * Source unique, partagée par le site free et le site du Club. Les deux
+ * avaient divergé : le Club n'avait aucune de ces utilities, d'où une sidebar
+ * qui ne collait pas et des blocs de code sans thème.
+ *
+ * Importé depuis le app.css du site hôte :
+ *   @import "../../../flexiwind/resources/css/docs-kit.css";
+ * et, une fois le paquet publié :
+ *   @import "../../vendor/unoforge/flexiwind/resources/css/docs-kit.css";
+ */
+
+/*
+ * La fonte mono est FOURNIE par le site hôte (resources/css/font-mono.css),
+ * pas par le docs-kit : c'est lui qui sert le fichier. Le docs-kit se
+ * contente de la demander, avec une pile de repli si elle manque.
+ */
+
+/* ─────────────────────────────  mise en page  ───────────────────────────── */
+
+@utility docs-sidebar {
+    @apply fixed lg:sticky top-0 left-0 -translate-x-full lg:top-16 fx-open:translate-x-0 invisible fx-open:visible lg:visible transition-all lg:transition-none duration-300 ease-linear lg:transition-none w-11/12 max-w-80 lg:max-w-none md:w-full h-dvh lg:h-[calc(100dvh-4rem)] lg:translate-x-0;
+}
+
+@utility docs-container {
+    @apply lg:max-w-[84rem] w-full mx-auto;
+}
+
+@utility tab-content-ui {
+    top: calc(var(--spacing, 0.25rem) * 25);
+    @apply fixed right-4 sm:right-8 xl:sticky flex flex-col w-full overflow-hidden overflow-y-auto;
+}
+
+@utility tab-content-ui-states {
+    @apply invisible fx-open:visible opacity-0 translate-y-4 fx-open:translate-y-0 fx-open:opacity-100 xl:fx-open:opacity-100 xl:fx-open:visible xl:opacity-100 xl:visible xl:translate-y-0 xl:fx-open:translate-y-0;
+}
+
+@utility tab-content-ui-background {
+    @apply border border-border/90 bg-muted/70 backdrop-blur-xl lg:bg-transparent lg:border-transparent;
+}
+
+@utility box-tab-content {
+    @apply rounded-lg xl:p-0 z-40 h-max max-h-90 xl:max-h-none xl:h-[calc(100dvh-4rem)] w-60 xl:w-full;
+}
+
+@utility tab-content-animation {
+    @apply ease-linear duration-200 dark:ease-linear;
+}
+
+@utility inline-code {
+    background-color: --alpha(var(--gray-100)/ 60%);
+    border-width: 1px;
+    border-color: --alpha(var(--gray-200)/ 90%);
+    border-radius: 0.5rem;
+    padding: 0.125rem 0.5rem;
+    color: var(--c-gray-700);
+
+    &:is(.dark *) {
+        background-color: --alpha(var(--gray-900)/ 60%);
+        border-color: --alpha(var(--gray-800)/ 60%);
+        color: var(--gray-300);
+    }
+}
+
+@utility strong-text {
+    @apply text-foreground;
+}
+
+@utility ui-line-single-card {
+
+    &::after,
+    &::before {
+        @apply h-px flex bg-linear-to-l from-muted/60 via-15% via-muted to-85% to-muted/60
+    }
+}
+
+@utility ui-preview-height {
+    @apply h-[calc(100vh-6rem)] lg:max-h-170
+}
+
+@utility ui-preview-frame {
+    @media (width >=64rem) {
+
+        &:is(:where(.group)[data-size="tablet"] *),
+        &:is(:where(.group)[data-size="mobile"] *) {
+            @apply border border-border-strong shadow rounded-ui overflow-hidden;
+        }
+    }
+}
+
+@utility ui-preview-frame-box {
+    @media (width >=64rem) {
+        &[data-size="tablet"] {
+            @apply py-4;
+        }
+
+        &[data-size="mobile"] {
+            @apply py-8;
+        }
+    }
+}
+
+@utility noise-subtle {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+}
+
+@utility linear-gradient-pattern {
+    background-image: repeating-linear-gradient(-315deg, var(--pattern-fg) 0, var(--pattern-fg) 1px, transparent 0, transparent 50%);
+    background-size: 16px 16px;
+    background-attachment: fixed;
+}
+/*
+ * Sidebar défilante.
+ *
+ * @persist insère un <div x-persist> sans classe entre l'aside et le conteneur
+ * de scroll : c'est LUI l'élément flex, donc c'est lui qui doit porter la
+ * contrainte de hauteur. Sans ça, min-height:auto le laisse prendre la hauteur
+ * de son contenu et overflow-y-auto ne s'applique jamais — la sidebar
+ * fusionnée (14 groupes, 68 pages) devient inatteignable au-delà du pli.
+ */
+[data-app-sidebar] > [x-persist] {
+    display: flex;
+    flex: 1 1 0%;
+    min-height: 0;
+}
+
+/* ─────────────────────────────  contenu  ────────────────────────────────── */
+
+
+strong{
+    font-weight: 600;
+}
+.steps {
+    counter-reset: step;
+    position: relative;
+}
+
+.step {
+    position: relative;
+    padding-left: 2.5rem;
+    padding-bottom: 2rem;
+    counter-increment: step;
+}
+
+.step:last-child {
+    padding-bottom: 0rem;
+}
+
+.step::before {
+    position: absolute;
+    display: flex;
+    content: counter(step);
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: calc(1.5rem + 1px);
+    height: calc(1.5rem + 1px);
+    font-size: 0.675rem;
+    font-weight: 400;
+    border-radius: 0.375rem;
+}
+
+.step::after {
+    position: absolute;
+    top: calc(1.875rem + 1px);
+    left: 0.6875rem;
+    bottom: 0;
+    content: "";
+    width: 1px;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+pre.shiki{
+    background: transparent !important;
+}
+
+pre {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-weight: 100;
+    font-size: 0.875rem;
+}
+
+.hidden-scrollbar {
+  content: '';
+}
+
+@media (max-width: 1279px) {
+  .hidden-scrollbar {
+    overflow: hidden !important;
+  }
+}
+/* ─────────────────────────  thème des blocs de code  ────────────────────── */
+
+:root {
+    --astro-code-color-background: var(--gray-900);
+
+}
+
+html.dark {
+    --astro-code-color-background: --alpha(var(--gray-950)/50%);
+}
+
+/* line line--added */
+.line.line--added, .line.line--removed {
+    transition: background-color 0.5s;
+    position: relative;
+    z-index: 1;
+    margin: 0 -20px;
+    padding: 0 20px;
+    width: calc(100% + 40px);
+    display: inline-block;
+}
+
+
+.line.line--added::before,
+.line.line--removed::before {
+    position: absolute;
+    left: -4px;
+    top: 0px;
+    bottom: 0px;
+    width: 24px;
+    padding-left: 4px;
+    border-left-width: 5px;
+    content: "";
+}
+
+.line.line--added {
+    background: var(--gray-800);
+}
+
+.dark .line.line--added {
+    background: --alpha(var(--gray-800)/80%);
+}
+
+.line.line--added::before {
+    border-left-color: var(--color-success);
+}
+
+.line.line--removed {
+    background: color-mix(in oklab, var(--color-destructive) 18%, transparent);
+}
+
+.line.line--removed::before {
+    border-left-color: var(--color-destructive);
+}
+
+
+
+figure pre {
+    padding-left: 1.45rem;
+    padding-right: 1.45rem;
+}
+
+[data-shell-indicator=true] figure pre {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+[data-shell-indicator=true] .line {
+    position: relative;
+    padding-left: 24px;
+}
+
+[data-shell-indicator=true] .line::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    font-size: 14px;
+    color: var(--color-warning);
+    content: '$';
+}
+
+
+[data-code-snippet] code {
+    padding-top: 0.75rem;
+    /* 12px */
+    padding-bottom: 0.75rem;
+    /* 12px */
+}
+
+
+
+[data-invisible-scrollbar], [data-tab-list] {
+    scrollbar-width: none !important;
+}
+
+[data-invisible-scrollbar]::-webkit-scrollbar, [data-tab-list]::-webkit-scrollbar {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
