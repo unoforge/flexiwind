@@ -43,7 +43,7 @@
     ]) }}>
     @if ($check)
         <span aria-hidden="true" data-slot="check-indicator"
-            class="mr-1.5 -ml-0.5 flex h-lh shrink-0 text-xs text-foreground iconify ph--check-bold invisible group-aria-selected:visible
+            class="mr-1.5 -ml-0.5 hidden group-selected:flex h-lh shrink-0 text-xs text-foreground iconify ph--check-bold invisible group-selected:visible
                 group-has-data-[slot=icon]:absolute group-has-data-[slot=icon]:top-1/2 group-has-data-[slot=icon]:right-2.5 group-has-data-[slot=icon]:mr-0 group-has-data-[slot=icon]:-translate-y-1/2
                 group-has-data-[slot=avatar]:absolute group-has-data-[slot=avatar]:top-1/2 group-has-data-[slot=avatar]:right-2.5 group-has-data-[slot=avatar]:mr-0 group-has-data-[slot=avatar]:-translate-y-1/2"></span>
     @endif

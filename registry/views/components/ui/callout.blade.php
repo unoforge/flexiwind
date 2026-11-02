@@ -1,0 +1,69 @@
+@props([
+    'class' => '',
+    'variant' => 'solid',
+    'intent' => '',
+    'type' => 'default',
+    'size' => 'default',
+    'title' => null,
+    'message' => null,
+    'icon' => true,
+    'iconWrapper' => '',
+])
+
+@php
+    $callout_types = [
+        'default' => 'gray',
+        'update' => 'info',
+        'note' => 'primary',
+        'warning' => 'warning',
+        'important' => 'destructive',
+    ];
+
+    $icons = [
+        'default' => 'ph--info',
+        'update' => 'ph--clock-clockwise',
+        'note' => 'ph--lightbulb-filament',
+        'warning' => 'ph--warning',
+        'important' => 'ph--smiley-sad',
+    ];
+
+    $intent_ = isset($intent) && $intent != '' ? $intent : $callout_types[$type] ?? $callout_types['default'];
+    $icon = $icons[$type] ?? $icons['default'];
+@endphp
+
+<x-ui.alert :variant="$variant" :intent="$intent_" :size="$size"
+    {{ $attributes->class([
+        'flex items-start gap-4' => $icon,
+        $class,
+    ]) }}>
+    @if ($icon)
+        <span class="w-max {{ $iconWrapper }}">
+            <x-ui.icon name="{{ $icon }}" class="size-6" />
+        </span>
+    @endif
+
+    @if ($title || $message)
+        @if ($icon)
+            <div class="flex-1 flex flex-col gap-3">
+                @if ($title)
+                    <x-ui.callout.title text="{{ $title }}" />
+                @endif
+                @if ($message)
+                    <x-ui.callout.description>
+                        {{ $message }}
+                    </x-ui.callout.description>
+                @endif
+            </div>
+        @else
+            {{ $slot }}
+        @endif
+    @else
+        @if ($icon)
+            <div class="flex-1 flex flex-col gap-3">
+                {{ $slot }}
+            </div>
+        @else
+            {{ $slot }}
+        @endif
+    @endif
+</x-ui.alert>

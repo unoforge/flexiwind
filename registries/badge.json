@@ -5,9 +5,12 @@
     "type": "registry:component",
     "title": "Badge",
     "description": "A reusable badge component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "ui-helper"
+    ],
     "files": [
         {
-            "path": "resources/views/components/ui/badge.blade.php",
+            "path": "registry/views/components/ui/badge.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/badge.blade.php",
             "content": "@props(['class' => '', 'variant' => 'solid', 'intent' => 'gray', 'size' => 'default', 'radius' => 'md'])\n\n@php\n    use App\\Flexiwind\\UiHelper;\n    $sizes = [\n        'none' => '',\n        'default' => 'badge-md',\n        'xs' => 'badge-xs',\n        'sm' => 'badge-sm',\n        'lg' => 'badge-lg',\n    ];\n\n    $variantClass = $variant == 'default' ? ' bg-muted text-foreground' : UiHelper::getClasses($variant, $intent);\n\n    $className = \"{$sizes[$size ?? 'default']} rounded-ui {$variantClass} {$class}\";\n@endphp\n<span {{ $attributes->merge(['class' => $className]) }}>\n    {{ $slot }}\n</span>\n"

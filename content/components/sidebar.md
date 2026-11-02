@@ -108,7 +108,7 @@ wrapper on mobile. It provides a backdrop to close the sidebar when tapped outsi
 
 ### Demo Example
 
-::preview{example="sidebar/demo"}
+::preview{example="sidebar/demo" iframe height="520"}
 
 ### Basic Sidebar Implementation
 

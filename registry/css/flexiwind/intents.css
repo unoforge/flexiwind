@@ -1,0 +1,207 @@
+/*
+ * Variant + intent tokens
+ *
+ * Reduced matrix — only officially supported combinations.
+ * Add custom intents by defining a utility and extending the PHP helper.
+ * Every class named in UiHelper / ButtonHelper must exist here (a test checks it).
+ */
+
+
+/* ═══════════════════════════════════════════════════
+   Button intents
+   ═══════════════════════════════════════════════════ */
+
+/* ── solid ── */
+
+@utility btn-solid-primary {
+  --btn-color: var(--color-primary);
+  --btn-fg: var(--color-primary-foreground);
+}
+
+@utility btn-solid-secondary {
+  --btn-color: var(--color-secondary);
+  --btn-fg: var(--color-secondary-foreground);
+}
+
+@utility btn-solid-accent {
+  --btn-color: var(--color-accent);
+  --btn-fg: var(--color-accent-foreground);
+}
+
+@utility btn-solid-neutral {
+  --btn-color: var(--color-foreground);
+  --btn-fg: var(--color-background);
+}
+
+@utility btn-solid-destructive {
+  --btn-color: var(--color-destructive);
+  --btn-fg: var(--color-destructive-foreground);
+}
+
+@utility btn-solid-success {
+  --btn-color: var(--color-success);
+  --btn-fg: var(--color-white);
+}
+
+@utility btn-solid-warning {
+  --btn-color: var(--color-warning);
+  --btn-fg: var(--color-white);
+}
+
+@utility btn-solid-info {
+  --btn-color: var(--color-info);
+  --btn-fg: var(--color-white);
+}
+
+/* ── soft ── */
+
+@utility btn-soft-primary {
+  --btn-color: var(--color-primary);
+  --btn-fg: var(--color-primary);
+}
+
+@utility btn-soft-destructive {
+  --btn-color: var(--color-destructive);
+  --btn-fg: var(--color-destructive);
+}
+
+@utility btn-soft-success {
+  --btn-color: var(--color-success);
+  --btn-fg: var(--color-success);
+}
+
+@utility btn-soft-warning {
+  --btn-color: var(--color-warning);
+  --btn-fg: var(--color-warning);
+}
+
+@utility btn-soft-info {
+  --btn-color: var(--color-info);
+  --btn-fg: var(--color-info);
+}
+
+@utility btn-soft-gray {
+  --btn-color: var(--color-muted-foreground);
+  --btn-fg: var(--color-foreground);
+}
+
+/* ── ghost ── */
+
+@utility btn-ghost-gray {
+  --btn-fg: var(--color-foreground);
+  --btn-hover-color: var(--color-muted);
+  --btn-active-color: color-mix(in oklab, var(--color-muted) 82%, var(--color-foreground));
+  --btn-ring-color: var(--color-ring);
+}
+
+@utility btn-ghost-success {
+  --btn-fg: var(--color-success);
+  --btn-hover-color: color-mix(in oklab, var(--color-success) 10%, transparent);
+  --btn-active-color: color-mix(in oklab, var(--color-success) 16%, transparent);
+  --btn-ring-color: var(--color-success);
+}
+
+@utility btn-ghost-destructive {
+  --btn-fg: var(--color-destructive);
+  --btn-hover-color: color-mix(in oklab, var(--color-destructive) 10%, transparent);
+  --btn-active-color: color-mix(in oklab, var(--color-destructive) 16%, transparent);
+  --btn-ring-color: var(--color-destructive);
+}
+
+/* ── outline ── */
+
+@utility btn-outline-gray {
+  --btn-color: var(--color-background);
+  --btn-fg: var(--color-foreground);
+  --btn-border-color: var(--color-border);
+  /* En sombre, --border se fond dans le fond de page : on s'appuie sur --border-strong. */
+  @variant dark {
+    --btn-border-color: color-mix(in oklab, var(--color-border-strong, var(--color-border)) 75%, var(--color-border));
+  }
+  --btn-hover-color: var(--color-muted);
+  --btn-active-color: color-mix(in oklab, var(--color-muted) 82%, var(--color-foreground));
+  --btn-ring-color: var(--color-ring);
+}
+
+
+/* Outline en couleur : le texte et la bordure de l'intent, un voile au survol. */
+@utility btn-outline-primary {
+  --btn-color: var(--color-background);
+  --btn-fg: var(--color-primary);
+  --btn-border-color: color-mix(in oklab, var(--color-primary) 45%, transparent);
+  --btn-hover-color: color-mix(in oklab, var(--color-primary) 8%, var(--color-background));
+  --btn-active-color: color-mix(in oklab, var(--color-primary) 14%, var(--color-background));
+  --btn-ring-color: var(--color-primary);
+}
+
+@utility btn-outline-destructive {
+  --btn-color: var(--color-background);
+  --btn-fg: var(--color-destructive);
+  --btn-border-color: color-mix(in oklab, var(--color-destructive) 45%, transparent);
+  --btn-hover-color: color-mix(in oklab, var(--color-destructive) 8%, var(--color-background));
+  --btn-active-color: color-mix(in oklab, var(--color-destructive) 14%, var(--color-background));
+  --btn-ring-color: var(--color-destructive);
+}
+
+@utility btn-outline-success {
+  --btn-color: var(--color-background);
+  --btn-fg: var(--color-success);
+  --btn-border-color: color-mix(in oklab, var(--color-success) 45%, transparent);
+  --btn-hover-color: color-mix(in oklab, var(--color-success) 8%, var(--color-background));
+  --btn-active-color: color-mix(in oklab, var(--color-success) 14%, var(--color-background));
+  --btn-ring-color: var(--color-success);
+}
+
+@utility btn-outline-warning {
+  --btn-color: var(--color-background);
+  --btn-fg: var(--color-warning);
+  --btn-border-color: color-mix(in oklab, var(--color-warning) 45%, transparent);
+  --btn-hover-color: color-mix(in oklab, var(--color-warning) 8%, var(--color-background));
+  --btn-active-color: color-mix(in oklab, var(--color-warning) 14%, var(--color-background));
+  --btn-ring-color: var(--color-warning);
+}
+
+@utility btn-outline-info {
+  --btn-color: var(--color-background);
+  --btn-fg: var(--color-info);
+  --btn-border-color: color-mix(in oklab, var(--color-info) 45%, transparent);
+  --btn-hover-color: color-mix(in oklab, var(--color-info) 8%, var(--color-background));
+  --btn-active-color: color-mix(in oklab, var(--color-info) 14%, var(--color-background));
+  --btn-ring-color: var(--color-info);
+}
+
+
+/* ═══════════════════════════════════════════════════
+   UI intents (badges, alerts, tags, etc.)
+   ═══════════════════════════════════════════════════ */
+
+@utility ui-solid-primary { --ui-color: var(--color-primary); --ui-fg: var(--color-primary-foreground); }
+@utility ui-solid-secondary { --ui-color: var(--color-secondary); --ui-fg: var(--color-secondary-foreground); }
+@utility ui-solid-accent { --ui-color: var(--color-accent); --ui-fg: var(--color-accent-foreground); }
+@utility ui-solid-success { --ui-color: var(--color-success); --ui-fg: var(--color-white); }
+@utility ui-solid-destructive { --ui-color: var(--color-destructive); --ui-fg: var(--color-destructive-foreground); }
+@utility ui-solid-gray { --ui-color: var(--color-muted); --ui-fg: var(--color-foreground); }
+@utility ui-solid-warning { --ui-color: var(--color-warning); --ui-fg: var(--color-white); }
+@utility ui-solid-info { --ui-color: var(--color-info); --ui-fg: var(--color-white); }
+@utility ui-solid-neutral { --ui-color: var(--color-foreground); --ui-fg: var(--color-background); }
+
+@utility ui-soft-primary { --ui-color: var(--color-primary); --ui-fg: var(--color-primary-foreground); }
+@utility ui-soft-destructive { --ui-color: var(--color-destructive); --ui-fg: var(--color-destructive-foreground); }
+@utility ui-soft-success { --ui-color: var(--color-success); --ui-fg: var(--color-white); }
+@utility ui-soft-warning { --ui-color: var(--color-warning); --ui-fg: var(--color-white); }
+@utility ui-soft-info { --ui-color: var(--color-info); --ui-fg: var(--color-white); }
+@utility ui-soft-gray { --ui-color: var(--color-muted-foreground); --ui-fg: var(--color-foreground); }
+
+@utility ui-outline-primary { --ui-color: var(--color-primary); --ui-fg: var(--color-primary-foreground); }
+@utility ui-outline-destructive { --ui-color: var(--color-destructive); --ui-fg: var(--color-destructive-foreground); }
+@utility ui-outline-success { --ui-color: var(--color-success); --ui-fg: var(--color-white); }
+@utility ui-outline-warning { --ui-color: var(--color-warning); --ui-fg: var(--color-white); }
+@utility ui-outline-info { --ui-color: var(--color-info); --ui-fg: var(--color-white); }
+@utility ui-outline-gray { --ui-color: var(--color-muted-foreground); --ui-fg: var(--color-foreground); }
+
+@utility ui-subtle-primary { --ui-color: var(--color-primary); --ui-fg: var(--color-primary-foreground); }
+@utility ui-subtle-destructive { --ui-color: var(--color-destructive); --ui-fg: var(--color-destructive-foreground); }
+@utility ui-subtle-success { --ui-color: var(--color-success); --ui-fg: var(--color-white); }
+@utility ui-subtle-warning { --ui-color: var(--color-warning); --ui-fg: var(--color-white); }
+@utility ui-subtle-info { --ui-color: var(--color-info); --ui-fg: var(--color-white); }
+@utility ui-subtle-gray { --ui-color: var(--color-muted-foreground); --ui-fg: var(--color-foreground); }

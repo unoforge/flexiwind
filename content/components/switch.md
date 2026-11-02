@@ -3,9 +3,9 @@ title: "Switch"
 group: "Actions & Inputs"
 order: 80
 tier: "free"
-description: "Modern toggle switch for boolean settings and binary choices."
-seoDescription: "Implement toggle switches with Flexiwind's accessible switch component."
-keywords: "switch, toggle, boolean, setting"
+description: "An on/off control for settings that apply right away."
+seoDescription: "Accessible toggle switch for Laravel Blade and Livewire with Tailwind CSS: labels, descriptions, sizes and colors."
+keywords: "switch, toggle, boolean, setting, livewire switch"
 ---
 
 ## Demo
@@ -18,79 +18,85 @@ keywords: "switch, toggle, boolean, setting"
 php artisan flexi:add switch
 ```
 
-## With label
+The switch is a native checkbox with `role="switch"`: it submits with a form, works with `wire:model` and needs no JavaScript.
+
+Use a switch for a setting that takes effect at once, and a [checkbox](/components/checkbox) for a choice confirmed by a submit button.
+
+## With a label
+
+`label` wraps the switch and its text in one `<label>`: the whole line toggles it, no `id` needed. `description` adds a second line, linked with `aria-describedby`.
 
 ::preview{example="switch/with-label" inline}
+
+## Settings list
+
+`reverse` puts the text first and the switch at the end of the line.
+
+::preview{example="switch/settings" inline}
 
 ## Sizes
 
 ::preview{example="switch/sizes" inline}
 
+## Colors
+
+`track` colors the switch when it is on. It takes `title`, `muted` or any theme color: `success`, `warning`, `destructive`…
+
+::preview{example="switch/colors" inline}
+
 ## Outlined
 
 ::preview{example="switch/outlined" inline}
 
+## With Livewire
+
+```blade
+<x-ui.switch wire:model.live="notifications" label="Notifications" />
+```
+
+Attributes you pass, `wire:model` included, go to the input.
+
 ## References
 
-### Switch Props
-
-To configure the switch component you can use the following props.
-All props are optional.
+### Switch props
 
 | Prop | Description |
 | --- | --- |
-| `size` (string) | The size of the switch. Options: "xs", "sm", "md", "lg". Default: "md" |
-| `outlined` (boolean) | When true, renders the switch with an outline style instead of filled. Default: false |
-| `class` (string) | Additional CSS classes for the switch. Default: '' |
+| `name`, `value`, `id` (string) | Passed to the input. |
+| `checked` (boolean) | On at first. |
+| `disabled` (boolean) | Can't be toggled. |
+| `label` (string) | Text next to the switch. The slot can replace it. |
+| `description` (string) | Second line under the label. |
+| `reverse` (boolean) | Text first, switch at the end of a full-width line. |
+| `size` (xs\|sm\|md\|lg) | Default: `md`. |
+| `outlined` (boolean) | Adds a ring around the switch. |
+| `bg` (string) | Color when off. Default: `border-strong` (`muted` when outlined). |
+| `track` (string) | Color when on. Default: `primary`. |
+| `knob` (string) | Knob color. Default: `white`. |
+| `knob-checked` (string) | Knob color when on. Default: `--switch-knob-checked-color` (the theme's `--primary-foreground`) on the theme track, so it stays visible on a light primary; the `knob` color otherwise. |
+
+Color props take `bg`, `surface`, `muted`, `title`, `neutral`, `white`, `transparent` or a theme color name such as `success`.
 
 ## Styling
 
-The switch component can be customized using CSS classes and CSS custom properties. The component renders as an `input type=` element.
+Classes go to the input. A `bg-*` class replaces the off color, a `text-*` color replaces the on color, and these custom properties tune the knob:
 
-### CSS Custom Properties
-
-| Prop | Description |
+| Property | Description |
 | --- | --- |
-| `--knob-background` | Controls the background color of the switch knob (the circular part that moves). |
+| `--knob-bg` | Knob color. |
+| `--knob-bg-checked` | Knob color when on. |
+| `--switch-knob-checked-color` | Theme token: knob color when on, on the default track. Every theme sets it to `var(--primary-foreground)`. |
+| `--knob-size`, `--knob-width`, `--knob-height` | Knob size. |
+| `--knob-radius` | Knob radius. Default: `9999px`. |
+| `--toggle-radius` | Switch radius. Default: `9999px`. |
 
-### Styling Examples
-
-**Basic styling with background and knob color:**
-
-```blade title="switch-basic-styling.blade.php"
-<!-- Basic switch with custom colors -->
-<x-ui.switch name="switch_basic" id="switch_basic" 
-    class="bg-muted text-primary-600 [--knob-bg:var(--color-white)]" />
+```blade
+<x-ui.switch name="square" class="bg-muted text-success [--toggle-radius:6px] [--knob-radius:4px]" aria-label="Square switch" />
 ```
 
-**Outlined switch styling:**
+## Accessibility
 
-```blade title="switch-outlined-styling.blade.php"
-<!-- Outlined switch -->
-<x-ui.switch outlined name="switch_outline" id="switch_outline" 
-    class="bg-background  text-transparent [--knob-bg:var(--color-muted-foreground)]" />
-```
-
-**Custom colors and sizes:**
-
-```blade title="switch-custom-styling.blade.php"
-<!-- Custom colors and sizes -->
-<x-ui.switch size="xs" name="switch_custom" id="switch_custom" 
-    class="bg-accent text-accent [--knob-bg:var(--color-white)]" />
-
-<x-ui.switch size="lg" name="switch_custom2" id="switch_custom2" 
-    class="bg-success text-success [--knob-bg:var(--color-foreground)]" />
-```
-
-### Size Classes
-
-The switch component automatically applies size classes based on the `size` prop, plus a base size class for vertical alignment:
-
-| Prop | Description |
-| --- | --- |
-| `xs` | Applies `switch-xs` + `switch-base-xs` |
-| `sm` | Applies `switch-sm` + `switch-base-sm` |
-| `md` | Applies `switch-md` + `switch-base-md` (default) |
-| `lg` | Applies `switch-lg` + `switch-base-lg` |
-
-When `outlined` is `true`, the component adds `ring ring-border-strong shadow` — it does **not** use a separate `switch-outline-*` class prefix.
+- The input has `role="switch"`: screen readers announce "on" and "off".
+- Without `label`, give the switch an `aria-label` or point a `<label for>` at its `id`.
+- Space toggles it; the focus ring shows only for keyboard focus.
+- The knob stops sliding when the system asks for reduced motion.

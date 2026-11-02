@@ -33,6 +33,25 @@ Variant controls the visual treatment of the button, while intent communicates t
 | disabled (boolean)                          | Disables interaction and applies accessibility attributes.        |
 | href (string\|null)                         | When set, renders as anchor; external links open in a new tab.    |
 
+## Intents by variant
+
+An intent only works with the variants that define it. An unknown pair falls back to the variant's default intent (`primary` for solid, `gray` for the others). `danger` is accepted as an alias of `destructive`.
+
+| Variant | Intents |
+| ------- | ------- |
+| solid | primary, secondary, accent, neutral, destructive, success, warning, info |
+| soft | primary, destructive, success, warning, info, gray |
+| outline | gray, primary, destructive, success, warning, info |
+| ghost | gray, destructive, success |
+
+Pick the intent from the meaning of the action: one `solid primary` per view for the main action, `ghost gray` or `outline gray` for the secondary one (Cancel, Discard), `ghost destructive` or `soft destructive` for a quiet destructive one (Revoke, Remove), `solid destructive` only for the confirmation of an irreversible action.
+
+```html
+<x-ui.button variant="ghost" intent="gray">Cancel</x-ui.button>
+<x-ui.button variant="ghost" intent="destructive">Revoke</x-ui.button>
+<x-ui.button variant="solid" intent="destructive">Delete project</x-ui.button>
+```
+
 ## Examples
 
 ### Sizes
@@ -91,6 +110,7 @@ Variant controls the visual treatment of the button, while intent communicates t
 ## Guidance
 
 - Use `variant` for visual treatment and `intent` for semantic tone.
+- Check the intents table before pairing a variant and an intent; `ghost` has `gray`, `destructive` and `success` only.
 - Use `href` for navigation-style buttons — it renders an `<a>` tag.
 - External `href` values open in a new tab.
 - Use `iconOnly` with `aria-label` for icon-only buttons.

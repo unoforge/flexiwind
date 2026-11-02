@@ -15,8 +15,7 @@
                 The Tool that lets you have full control on your stock & sales
             </h1>
             <p class="mx-auto max-w-2xl text-foreground">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt saepe atque enim quasi a ipsum
-                asperiores necessitatibus deleniti, sint quo vel corporis dignissimos
+                Follow every lead from first contact to signed deal, with your notes and follow-ups in one place.
             </p>
             <div class="flex flex-col items-center gap-5 w-full mx-auto max-w-md">
                 <x-ui.input.group radius-none size="none" class="pl-6 w-full pr-0.5 py-0.5 gap-3 items-center rounded-full">

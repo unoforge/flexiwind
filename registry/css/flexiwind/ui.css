@@ -1,0 +1,295 @@
+@utility ui-soft {
+  color: var(--ui-color);
+  background-color: color-mix(in oklab, var(--ui-color) 10%, transparent);
+}
+
+@utility ui-solid {
+  color: var(--ui-fg);
+  background-color: var(--ui-color);
+}
+
+@utility ui-outline {
+  color: var(--ui-color);
+  border-color: color-mix(in oklab, var(--ui-color) 45%, transparent);
+  @apply border;
+}
+
+@utility ui-subtle {
+  color: var(--ui-color);
+  background-color: color-mix(in oklab, var(--ui-color) 7%, transparent);
+  border-color: color-mix(in oklab, var(--ui-color) 25%, transparent);
+  @apply border;
+}
+
+@utility ui-popper {
+  @apply fixed left-(--fx-popper-placement-x) top-(--fx-popper-placement-y);
+}
+
+/*
+  Animation des panneaux flottants (dropdown, popover, tooltip, listbox,
+  autocomplete) : data-state="open" vient de Flexilla, data-show-placement
+  (top, bottom-start, right…) de flexipop.
+
+  Entrée : fondu, léger agrandissement et glissement depuis le déclencheur,
+  sur une courbe douce. Sortie : plus courte ; la visibilité ne se coupe qu'à
+  la fin, pour que la fermeture soit animée aussi. Ouvert, le panneau finit
+  sans transform : il ne devient pas le repère des éléments fixed qu'il
+  contient.
+*/
+@utility fx-popper-motion {
+  --fx-motion-distance: 0.375rem;
+  --fx-motion-x: 0px;
+  --fx-motion-y: calc(var(--fx-motion-distance) * -1);
+  transform-origin: var(--fx-motion-origin, top center);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(var(--fx-motion-x), var(--fx-motion-y)) scale(0.96);
+  transition:
+    opacity 110ms cubic-bezier(0.4, 0, 1, 1),
+    transform 110ms cubic-bezier(0.4, 0, 1, 1),
+    visibility 0s linear 110ms;
+  will-change: opacity, transform;
+
+  &[data-state="open"] {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity 150ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s;
+  }
+
+  /* Le glissement part du déclencheur, l'agrandissement aussi. */
+  &[data-show-placement^="top"] {
+    --fx-motion-y: var(--fx-motion-distance);
+    --fx-motion-origin: bottom center;
+  }
+  &[data-show-placement^="left"] {
+    --fx-motion-x: var(--fx-motion-distance);
+    --fx-motion-y: 0px;
+    --fx-motion-origin: center right;
+  }
+  &[data-show-placement^="right"] {
+    --fx-motion-x: calc(var(--fx-motion-distance) * -1);
+    --fx-motion-y: 0px;
+    --fx-motion-origin: center left;
+  }
+  &[data-show-placement="bottom-start"] { --fx-motion-origin: top left; }
+  &[data-show-placement="bottom-end"] { --fx-motion-origin: top right; }
+  &[data-show-placement="top-start"] { --fx-motion-origin: bottom left; }
+  &[data-show-placement="top-end"] { --fx-motion-origin: bottom right; }
+  &[data-show-placement="left-start"] { --fx-motion-origin: top right; }
+  &[data-show-placement="left-end"] { --fx-motion-origin: bottom right; }
+  &[data-show-placement="right-start"] { --fx-motion-origin: top left; }
+  &[data-show-placement="right-end"] { --fx-motion-origin: bottom left; }
+
+  @media (prefers-reduced-motion: reduce) {
+    transform: none;
+  }
+}
+
+@utility u-fx-popper {
+  @apply fixed left-(--fx-popper-placement-x) top-(--fx-popper-placement-y);
+}
+
+@utility animated-modal-content {
+  animation: var(--un-modal-animation);
+  /* Après le raccourci `animation`, qui la remettrait à none : la sortie garde son état final. */
+  animation-fill-mode: both;
+}
+
+/* Animations du modal (modal.content : enter-animation / exit-animation).
+   `none` en fin d'entrée, pas translateY(0) : un transform resté en place
+   ferait du contenu le repère des éléments fixes (listbox, dropdown). */
+@keyframes modal-animation-in {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes modal-animation-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+  }
+}
+
+
+
+@utility ui-tabs-indicator {
+  width: var(--un-tab-indicator-width, 0px);
+  height: var(--un-tab-indicator-height, 0px);
+  top: var(--un-tab-indicator-top, 0px);
+  left: var(--un-tab-indicator-left, 0px);
+  position: absolute;
+}
+
+@utility aspect-utrawide {
+  @apply aspect-[21/9];
+}
+
+@utility aspect-standard-tv {
+  @apply aspect-[4/3];
+}
+
+@utility aspect-35mm-film {
+  @apply aspect-[3/2];
+}
+
+@utility avatar-xs {
+  width: calc(var(--spacing, 0.25rem) * 6.5);
+  height: calc(var(--spacing, 0.25rem) * 6.5);
+}
+
+@utility avatar-sm {
+  width: calc(var(--spacing, 0.25rem) * 8);
+  height: calc(var(--spacing, 0.25rem) * 8);
+}
+
+@utility avatar-md {
+  width: calc(var(--spacing, 0.25rem) * 9.5);
+  height: calc(var(--spacing, 0.25rem) * 9.5);
+}
+
+@utility avatar-lg {
+  width: calc(var(--spacing, 0.25rem) * 10.5);
+  height: calc(var(--spacing, 0.25rem) * 10.5);
+}
+
+@utility avatar-xl {
+  width: calc(var(--spacing, 0.25rem) * 12);
+  height: calc(var(--spacing, 0.25rem) * 12);
+}
+
+@utility avatar-placeholder {
+  @apply flex items-center justify-center truncate;
+}
+
+@utility avatar-placeholder-xs {
+  width: calc(var(--spacing, 0.25rem) * 6.5);
+  height: calc(var(--spacing, 0.25rem) * 6.5);
+  @apply text-xs;
+}
+
+@utility avatar-placeholder-sm {
+  width: calc(var(--spacing, 0.25rem) * 8);
+  height: calc(var(--spacing, 0.25rem) * 8);
+  @apply text-sm;
+}
+
+@utility avatar-placeholder-md {
+  width: calc(var(--spacing, 0.25rem) * 8);
+  height: calc(var(--spacing, 0.25rem) * 8);
+  @apply text-sm;
+}
+
+@utility avatar-placeholder-lg {
+  width: calc(var(--spacing, 0.25rem) * 10.5);
+  height: calc(var(--spacing, 0.25rem) * 10.5);
+  @apply text-base;
+}
+
+@utility avatar-placeholder-xl {
+  width: calc(var(--spacing, 0.25rem) * 12);
+  height: calc(var(--spacing, 0.25rem) * 12);
+  @apply text-base;
+}
+
+
+@utility badge-xs {
+  padding: calc(var(--spacing, 0.25rem) * 0.5) calc(var(--spacing, 0.25rem) * 1);
+  @apply text-xs;
+}
+
+@utility badge-sm {
+  padding: calc(var(--spacing, 0.25rem) * 0.65) calc(var(--spacing, 0.25rem) * 1.5);
+  @apply text-xs;
+}
+
+@utility badge-md {
+  @apply text-sm;
+  padding: calc(var(--spacing, 0.25rem) * 1) calc(var(--spacing, 0.25rem) * 2);
+
+}
+
+@utility badge-lg {
+  padding: calc(var(--spacing, 0.25rem) * 1.115) calc(var(--spacing, 0.25rem) * 2.5);
+}
+
+
+@utility kbd-xs {
+  padding: calc(var(--spacing, 0.25rem) * 0.5) calc(var(--spacing, 0.25rem) * 1);
+  @apply text-xs;
+}
+
+@utility kbd-sm {
+  padding: calc(var(--spacing, 0.25rem) * 0.65) calc(var(--spacing, 0.25rem) * 1.5);
+  @apply text-xs;
+}
+
+@utility kbd-md {
+  @apply text-sm;
+  padding: calc(var(--spacing, 0.25rem) * 1) calc(var(--spacing, 0.25rem) * 2);
+
+}
+
+@utility kbd-lg {
+  padding: calc(var(--spacing, 0.25rem) * 1.115) calc(var(--spacing, 0.25rem) * 2.5);
+}
+
+
+
+
+
+@utility divider-custom {
+  @apply relative before:absolute before:inset-x-0 flex items-center;
+}
+
+@utility divider-custom-1 {
+  @apply before:h-px;
+}
+
+@utility divider-custom-2 {
+  @apply before:h-[2px];
+}
+
+@utility divider-custom-3 {
+  @apply before:h-[3px];
+}
+
+@utility divider-custom-4 {
+  @apply before:h-[4px];
+}
+
+@utility divider-custom-6 {
+  @apply before:h-[6px];
+}
+
+@utility divider-custom-8 {
+  @apply before:h-[8px];
+}
+
+
+
+@utility disclosure-indicator-plus { 
+  @apply before:absolute before:left-0 before:w-2.5 before:top-1/2 
+  before:-translate-y-1/2 before:h-[0.15rem] before:bg-current 
+  after:absolute after:left-0 after:w-2.5 after:top-1/2 
+  after:-translate-y-1/2 after:h-[0.15rem] after:bg-current ;
+}
+
+@utility disclosure-indicator-to-minus {
+  @apply after:-rotate-90 after:origin-center group-aria-expanded:after:rotate-0 in-aria-expanded:after:rotate-0 after:ease-linear after:transform after:duration-300;
+}

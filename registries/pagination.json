@@ -10,10 +10,34 @@
     ],
     "files": [
         {
-            "path": "resources/views/components/ui/pagination.blade.php",
+            "path": "registry/views/components/ui/pagination.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/pagination.blade.php",
             "content": "@props([\n    'class' => null,\n    'justify' => 'center',\n])\n\n<nav role=\"navigation\" aria-label=\"pagination\" data-slot=\"pagination\"\n    {{ $attributes->class([\n        'mx-auto flex w-full',\n        'justify-center' => $justify == 'center',\n        'justify-start' => $justify == 'start',\n        'justify-end' => $justify == 'end',\n        $class,\n    ]) }}>\n    {{ $slot }}\n</nav>\n"
+        },
+        {
+            "path": "registry/views/components/ui/pagination/content.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/pagination/content.blade.php",
+            "content": "@props([\n    'class' => null,\n])\n\n<ul\n    data-slot=\"pagination-content\"\n    {{ $attributes->class([\n        '[--gutter:0.25rem]',\n        'gap-(--gutter) flex items-center',\n        $class\n    ]) }}\n>\n    {{ $slot }}\n</ul>"
+        },
+        {
+            "path": "registry/views/components/ui/pagination/ellipsis.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/pagination/ellipsis.blade.php",
+            "content": "@props([\n    'class' => null,\n])\n\n<span\n    aria-hidden=\"true\"\n    aria-label=\"More pages\"\n    data-slot=\"pagination-ellipsis\"\n    {{ $attributes->class([\n        'size-8 flex items-center justify-center',\n        $class\n    ]) }}\n>\n   <span class=\"iconify ph--dots-three\"></span>\n</span>\n"
+        },
+        {
+            "path": "registry/views/components/ui/pagination/item.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/pagination/item.blade.php",
+            "content": "<li data-slot=\"pagination-item\" {{ $attributes }}>\n    {{ $slot }}\n</li>\n"
+        },
+        {
+            "path": "registry/views/components/ui/pagination/link.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/pagination/link.blade.php",
+            "content": "@props([\n    'isActive' => false,\n    'size' => 'sm',\n    'isIconOnly' => false,\n    'href' => '#',\n    'variant' => null,\n])\n\n@php\n    $sizes = [\n        'xs' => 'btn-xs',\n        'sm' => 'btn-sm',\n        'md' => 'btn-md',\n        'lg' => 'btn-lg',\n        'xl' => 'btn-xl',\n    ];\n    $iconSizes = [\n        'xs' => 'btn-icon-xs text-xs',\n        'sm' => 'btn-icon-sm text-xs',\n        'md' => 'btn-icon-md text-sm',\n        'lg' => 'btn-icon-lg text-sm',\n        'xl' => 'btn-icon-xl text-base',\n    ];\n    \n    $sizeMap = $isIconOnly ? $iconSizes : $sizes;\n    $sizeClasses = isset($sizeMap[$size]) ? $sizeMap[$size] : $sizeMap['md'];\n@endphp\n\n<a \n    href=\"{{ $href }}\"\n    {{ $attributes->merge([\n        'aria-current' => $isActive ? 'page' : null,\n        'data-slot' => 'pagination-link',\n        'data-active' => $isActive ? 'true' : null,\n    ])->class([\n        'btn rounded-ui',\n        $sizeClasses,\n        'btn-pagination-link btn-pagination-link-variables data-active:btn-pagination-active'\n    ]) }}\n>\n    {{ $slot }}\n</a>\n"
         }
     ]
 }

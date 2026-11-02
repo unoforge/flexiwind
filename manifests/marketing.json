@@ -1,0 +1,65 @@
+{
+    "components": [
+        {
+            "version": "1.0.0",
+            "name": "features01",
+            "type": "registry:component",
+            "title": "Features 01",
+            "description": "Feature sections.",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/features/01/features.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/blocks/features.blade.php",
+                    "replace": {
+                        "x-previews.free.features.01.feature-card": "x-blocks.feature-card",
+                        "x-previews.free.": "x-previews."
+                    }
+                },
+                {
+                    "path": "registry/views/components/previews/free/features/01/feature-card.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/blocks/feature-card.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "icon"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "hero01",
+            "type": "registry:component",
+            "title": "HeroSection 01",
+            "description": "Hero section.",
+            "registryDependencies": [
+                "button",
+                "icon",
+                "input-group",
+                "input"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/hero-sections/01/hero.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/blocks/hero.blade.php",
+                    "replace": {
+                        "x-previews.free.hero-sections.01.navbar": "x-blocks.navbar",
+                        "x-previews.free.": "x-previews."
+                    }
+                },
+                {
+                    "path": "registry/views/components/previews/free/hero-sections/01/navbar.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/blocks/navbar.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        }
+    ]
+}

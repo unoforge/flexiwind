@@ -60,6 +60,15 @@ Combine both to build a predictable button system.
     --btn-color: var(--color-success);
     --btn-fg: var(--color-white);
 }
+
+@utility btn-solid-warning {
+    --btn-color: var(--color-warning);
+    --btn-fg: var(--color-white);
+}
+@utility btn-solid-info {
+    --btn-color: var(--color-info);
+    --btn-fg: var(--color-white);
+}
 ```
 
 ```css title="light"
@@ -90,6 +99,15 @@ Combine both to build a predictable button system.
 
 @utility btn-solid-success {
     --btn-color: var(--color-success);
+    --btn-fg: var(--color-white);
+}
+
+@utility btn-solid-warning {
+    --btn-color: var(--color-warning);
+    --btn-fg: var(--color-white);
+}
+@utility btn-solid-info {
+    --btn-color: var(--color-info);
     --btn-fg: var(--color-white);
 }
 ```
@@ -124,6 +142,15 @@ Combine both to build a predictable button system.
     --btn-color: var(--color-success);
     --btn-fg: var(--color-white);
 }
+
+@utility btn-solid-warning {
+    --btn-color: var(--color-warning);
+    --btn-fg: var(--color-white);
+}
+@utility btn-solid-info {
+    --btn-color: var(--color-info);
+    --btn-fg: var(--color-white);
+}
 ```
 :::
 
@@ -148,6 +175,37 @@ Combine both to build a predictable button system.
         --btn-border-color: var(--color-foreground);
     }
 }
+
+@utility btn-outline-primary {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-primary);
+    --btn-border-color: color-mix(in oklab, var(--color-primary) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-primary) 8%, var(--color-background));
+}
+@utility btn-outline-destructive {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-destructive);
+    --btn-border-color: color-mix(in oklab, var(--color-destructive) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-destructive) 8%, var(--color-background));
+}
+@utility btn-outline-success {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-success);
+    --btn-border-color: color-mix(in oklab, var(--color-success) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-success) 8%, var(--color-background));
+}
+@utility btn-outline-warning {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-warning);
+    --btn-border-color: color-mix(in oklab, var(--color-warning) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-warning) 8%, var(--color-background));
+}
+@utility btn-outline-info {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-info);
+    --btn-border-color: color-mix(in oklab, var(--color-info) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-info) 8%, var(--color-background));
+}
 ```
 
 ```css title="light"
@@ -156,6 +214,37 @@ Combine both to build a predictable button system.
     --btn-fg: var(--color-foreground);
     --btn-border-color: var(--color-border);
 }
+
+@utility btn-outline-primary {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-primary);
+    --btn-border-color: color-mix(in oklab, var(--color-primary) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-primary) 8%, var(--color-background));
+}
+@utility btn-outline-destructive {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-destructive);
+    --btn-border-color: color-mix(in oklab, var(--color-destructive) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-destructive) 8%, var(--color-background));
+}
+@utility btn-outline-success {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-success);
+    --btn-border-color: color-mix(in oklab, var(--color-success) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-success) 8%, var(--color-background));
+}
+@utility btn-outline-warning {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-warning);
+    --btn-border-color: color-mix(in oklab, var(--color-warning) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-warning) 8%, var(--color-background));
+}
+@utility btn-outline-info {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-info);
+    --btn-border-color: color-mix(in oklab, var(--color-info) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-info) 8%, var(--color-background));
+}
 ```
 
 ```css title="dark"
@@ -163,6 +252,37 @@ Combine both to build a predictable button system.
     --btn-color: transparent;
     --btn-fg: var(--color-muted-foreground);
     --btn-border-color: var(--color-foreground);
+}
+
+@utility btn-outline-primary {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-primary);
+    --btn-border-color: color-mix(in oklab, var(--color-primary) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-primary) 8%, var(--color-background));
+}
+@utility btn-outline-destructive {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-destructive);
+    --btn-border-color: color-mix(in oklab, var(--color-destructive) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-destructive) 8%, var(--color-background));
+}
+@utility btn-outline-success {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-success);
+    --btn-border-color: color-mix(in oklab, var(--color-success) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-success) 8%, var(--color-background));
+}
+@utility btn-outline-warning {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-warning);
+    --btn-border-color: color-mix(in oklab, var(--color-warning) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-warning) 8%, var(--color-background));
+}
+@utility btn-outline-info {
+    --btn-color: var(--color-background);
+    --btn-fg: var(--color-info);
+    --btn-border-color: color-mix(in oklab, var(--color-info) 45%, transparent);
+    --btn-hover-color: color-mix(in oklab, var(--color-info) 8%, var(--color-background));
 }
 ```
 :::
@@ -216,6 +336,15 @@ Combine both to build a predictable button system.
         --btn-fg: var(--color-muted-foreground);
     }
 }
+
+@utility btn-soft-warning {
+    --btn-color: var(--color-warning);
+    --btn-fg: var(--color-warning);
+}
+@utility btn-soft-info {
+    --btn-color: var(--color-info);
+    --btn-fg: var(--color-info);
+}
 ```
 
 ```css title="light"
@@ -238,6 +367,15 @@ Combine both to build a predictable button system.
     --btn-color: var(--color-background);
     --btn-fg: var(--color-foreground);
 }
+
+@utility btn-soft-warning {
+    --btn-color: var(--color-warning);
+    --btn-fg: var(--color-warning);
+}
+@utility btn-soft-info {
+    --btn-color: var(--color-info);
+    --btn-fg: var(--color-info);
+}
 ```
 
 ```css title="dark"
@@ -259,6 +397,15 @@ Combine both to build a predictable button system.
 @utility btn-soft-gray {
     --btn-color: color-mix(in oklab, var(--color-muted-foreground) 15%, transparent);
     --btn-fg: var(--color-muted-foreground);
+}
+
+@utility btn-soft-warning {
+    --btn-color: var(--color-warning);
+    --btn-fg: var(--color-warning);
+}
+@utility btn-soft-info {
+    --btn-color: var(--color-info);
+    --btn-fg: var(--color-info);
 }
 ```
 :::
@@ -283,6 +430,11 @@ Combine both to build a predictable button system.
     }
 }
 
+@utility btn-ghost-destructive {
+    --btn-color: transparent;
+    --btn-fg: var(--color-destructive);
+}
+
 @utility btn-ghost-success {
     --btn-color: transparent;
     --btn-fg: var(--color-success);
@@ -300,6 +452,11 @@ Combine both to build a predictable button system.
     --btn-fg: var(--color-foreground);
 }
 
+@utility btn-ghost-destructive {
+    --btn-color: transparent;
+    --btn-fg: var(--color-destructive);
+}
+
 @utility btn-ghost-success {
     --btn-color: transparent;
     --btn-fg: var(--color-success);
@@ -310,6 +467,11 @@ Combine both to build a predictable button system.
 @utility btn-ghost-gray {
     --btn-color: transparent;
     --btn-fg: var(--color-muted-foreground);
+}
+
+@utility btn-ghost-destructive {
+    --btn-color: transparent;
+    --btn-fg: var(--color-destructive);
 }
 
 @utility btn-ghost-success {

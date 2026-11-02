@@ -343,6 +343,8 @@ final class MarkdownCompiler
 
     private function mapHtml(string $html): string
     {
+        $html = $this->escapeInlineCode($html);
+
         foreach ((array) config('flexiwind-docs.html_map') as $tag => $component) {
             $html = (string) preg_replace(
                 ['#<'.$tag.'(\s[^>]*)?>#i', '#</'.$tag.'>#i'],
@@ -356,6 +358,19 @@ final class MarkdownCompiler
         $html = (string) preg_replace('#<a(\s[^>]*)?>#i', '<'.$link.'$1>', $html);
 
         return (string) preg_replace('#</a>#i', '</'.$link.'>', $html);
+    }
+
+    /**
+     * Le code inline s'affiche, il ne s'exécute pas : `@vite`, `@livewireScripts`
+     * ou `{{ $slot }}` sortent tels quels au lieu d'être compilés par Blade.
+     */
+    private function escapeInlineCode(string $html): string
+    {
+        return (string) preg_replace_callback(
+            '#<code>(.*?)</code>#s',
+            fn (array $m): string => '<code>'.preg_replace(['/@(?=\w)/', '/\{(\{|!!)/'], ['@@', '@{$1'], $m[1]).'</code>',
+            $html
+        );
     }
 
     // -------------------------------------------------------------- internes

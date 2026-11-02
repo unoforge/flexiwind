@@ -7,19 +7,38 @@ pages de doc des composants premium, qui vivent ici comme les autres.
 
 ```
 flexiwind/
-├─ content/                      ← LA documentation (68 pages)
+├─ content/                      ← LA documentation
 │  ├─ docs/**/*.md               → /docs/…
-│  └─ components/**/*.md         → /components/…
-├─ registry/views/components/
-│  ├─ ui/                        ← primitives gratuites   → <x-ui.button />
-│  ├─ blocks/                    ← blocks gratuits        → <x-blocks.hero01 />
-│  └─ examples/                  ← exemples de la doc     → <x-examples.button.sizes />
-├─ registries/*.json             ← index servi au CLI (raw GitHub)
-├─ resources/views/components/   ← docs-kit : preview, locked, source
+│  ├─ components/**/*.md         → /components/…
+│  └─ cookbook/**/*.md           → /cookbook/…
+├─ registry/                     ← LA source unique du code gratuit
+│  ├─ views/components/ui/       ← composants             → <x-ui.button />
+│  ├─ views/components/examples/ ← exemples de la doc     → <x-examples.button.sizes />
+│  ├─ views/components/previews/free/ ← blocks gratuits   → <x-previews.free.auth.login01 />
+│  ├─ views/pages-preview/free/  ← pages des blocks       → /preview-ui/free/…
+│  ├─ views/livewire/            ← démos Livewire de la doc (<livewire:listbox-demo />), jamais installées
+│  ├─ app/Flexiwind/             ← helpers PHP            → App\Flexiwind\UiHelper
+│  ├─ js/                        ← plugins Alpine         → resources/js/… chez l'utilisateur
+│  └─ css/flexiwind/             ← styles de base         → resources/css/flexiwind/…
+├─ manifests/*.json              ← items du registre rangés par famille (components, blocks, marketing, base, themes)
+├─ registry.json                 ← généré par bin/build-registry.mjs : ce que lit `flexi:build`
+├─ registries/*.json             ← sortie de `flexi:build`, servie au CLI — ne pas éditer à la main
+├─ resources/views/components/   ← docs-kit : preview, frame, locked, source
 ├─ src/                          ← moteur de docs
-├─ bin/chart-palettes.mjs        ← palettes --chart-1..5 des thèmes (calcul et --check)
-└─ bin/import-docs.php           ← convertisseur Blade → Markdown (migration, jetable)
+├─ bin/build-registry.mjs        ← assemble manifests/*.json en registry.json
+└─ bin/chart-palettes.mjs        ← palettes --chart-1..5 des thèmes (calcul et --check)
 ```
+
+Le site qui sert la doc rend **ces** fichiers : ce qu'on voit sur le site est
+exactement ce que `flexi add` installe. Il ne garde aucune copie des
+composants, des exemples ni des helpers.
+
+**ECharts reste dans son propre bundle.** `registry/js/charts.js` est une
+entrée Vite à part : le site la déclare dans `input` de `vite.config.js` et ne
+la charge (`@vite([..., 'resources/js/charts.js'])`) que dans les layouts qui
+affichent des charts. `flexilla.js` n'enregistre jamais `EChartsPlugin` et rien
+n'importe `echarts` statiquement ; un nouveau type de chart s'ajoute dans
+`LOADERS` de `echarts-core.js`.
 
 ## Écrire une page
 
@@ -120,17 +139,17 @@ la doc comme dans un projet utilisateur après `flexi add`, on écrit
 
 1. la source dans `registry/views/components/ui/<nom>.blade.php` ;
 2. au moins un exemple dans `registry/views/components/examples/<nom>/demo.blade.php` ;
-3. l'entrée `registries/<nom>.json` — `path` = où le fichier vit ici,
-   `target` = où le CLI le dépose chez l'utilisateur ;
-4. la page `content/components/<nom>.md`.
+3. l'entrée dans `manifests/components.json` (ou la famille qui convient) — `path` = le fichier source dans ce dépôt
+   (`registry/…`), `target` = où le CLI le dépose chez l'utilisateur,
+   `replace` pour renommer des composants au passage (blocks) ;
+4. la page `content/components/<nom>.md` ;
+5. la génération, depuis le site (`flexiwind-pro`) :
 
-## Le convertisseur
+   ```bash
+   npm run build:registry
+   ```
 
-`bin/import-docs.php` a servi à migrer les 68 pages depuis les anciennes vues
-Blade des deux sites. Il est **jetable** : une fois les anciennes vues
-supprimées, il n'a plus de raison d'exister.
-
-```bash
-php bin/import-docs.php --dry   # rapport sans écrire
-php bin/import-docs.php
-```
+   qui enchaîne `node ../flexiwind/bin/build-registry.mjs` (manifests/ → registry.json)
+   et `php artisan flexi:build --schema=../flexiwind/registry.json --output=../flexiwind/registries --override`.
+   `registry.json` et `registries/*.json` ne s'éditent jamais à la main.
+   Monter la `version` d'un item archive l'ancienne sortie dans `registries/<nom>/<version>.json`.

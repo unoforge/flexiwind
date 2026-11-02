@@ -1,0 +1,23 @@
+{
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
+    "version": "1.0.0",
+    "name": "profile01",
+    "type": "registry:component",
+    "title": "Profile 01",
+    "description": "Profile page",
+    "registryDependencies": [
+        "button",
+        "input",
+        "select",
+        "label",
+        "textarea"
+    ],
+    "files": [
+        {
+            "path": "registry/views/components/previews/free/profile/profile01.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/profile01.blade.php",
+            "content": "      <div class=\"max-w-xl w-full px-4 mx-auto py-5\">\n          <div class=\"bg-background rounded-lg shadow border border-border-strong/70 p-6\">\n              <h3 class=\"text-lg font-semibold text-title-foreground  mb-6\" data-testid=\"profile-form-title\">\n                  User Profile Form\n              </h3>\n              <form class=\"grid grid-cols-2 gap-y-6 gap-x-4\" id=\"profile-form\">\n                  <div class=\"flex items-center space-x-6 col-span-full\">\n                      <img src=\"/avatar1.webp\" alt=\"Profile picture\" width=\"200\"\n                          height=\"200\" class=\"size-20 rounded-full border-4 border-border-strong\" />\n                      <div>\n                          <input type=\"file\" name=\"profile_pic\" id=\"profile_pic\" class=\"sr-only\" />\n                          <label for=\"profile_pic\" class=\"btn btn-sm btn-soft btn-soft-primary rounded-md w-max\">\n                              Change Photo\n                          </label>\n                          <p class=\"text-xs text-gray-500 mt-1\">\n                              JPG, GIF or PNG. 1MB max.\n                          </p>\n                      </div>\n                  </div>\n                  <div class=\"flex flex-col space-y-2\">\n                      <x-ui.label for=\"first-name\">First Name</x-ui.label>\n                      <x-ui.input type=\"text\" id=\"first-name\" value=\"John\" class=\"text-sm\"\n                          data-testid=\"input-first-name\" />\n                  </div>\n                  <div class=\"flex flex-col space-y-2\">\n                      <x-ui.label for=\"last-name\">Last Name</x-ui.label>\n                      <x-ui.input type=\"text\" id=\"last-name\" value=\"Doe\" class=\"text-sm\"\n                          data-testid=\"input-last-name\" />\n                  </div>\n\n                  <div class=\"flex flex-col space-y-2 col-span-full\">\n                      <x-ui.label for=\"email\">Email Address</x-ui.label>\n                      <x-ui.input type=\"email\" id=\"email\" value=\"john.doe@company.com\" class=\"text-sm\"\n                          data-testid=\"input-email\" />\n                  </div>\n\n                  <div class=\"flex flex-col space-y-2 col-span-full\">\n                      <x-ui.label for=\"role\">Role</x-ui.label>\n                      <x-ui.select id=\"role\" class=\"text-sm\" data-testid=\"select-role\">\n                          <option value=\"Administrator\" selected>Administrator</option>\n                          <option value=\"Manager\">Manager</option>\n                          <option value=\"Employee\">Employee</option>\n                      </x-ui.select>\n                  </div>\n\n                  <div class=\"flex flex-col space-y-2 col-span-full\">\n                      <x-ui.label for=\"bio\">Bio</x-ui.label>\n                      <x-ui.textarea id=\"bio\" rows=\"3\" placeholder=\"Tell us about yourself...\"\n                          class=\"w-full text-sm h-24 resize-none\" data-testid=\"textarea-bio\"></x-ui.textarea>\n                  </div>\n\n                  <div class=\"flex items-center justify-end space-x-3 pt-4 border-t border-border col-span-full\">\n                      <x-ui.button type=\"button\" variant=\"soft\" size=\"sm\">\n                          Cancel\n                      </x-ui.button>\n                      <x-ui.button type=\"submit\" size=\"sm\">\n                          Save Changes\n                      </x-ui.button>\n                  </div>\n              </form>\n          </div>\n      </div>\n"
+        }
+    ]
+}

@@ -1,11 +1,11 @@
 <div class="flex flex-col w-full space-y-6">
     <x-ui.breadcrumbs class=" text-muted-foreground">
         <x-ui.breadcrumbs.item href="#"
-            class="ease-linear hover:text-foreground px-1.5 py-px border border-border rounded-full">
+            class="ease-linear hover:text-title-foreground/80 px-1.5 py-px border border-border rounded-full">
             Home
         </x-ui.breadcrumbs.item>
         <x-ui.breadcrumbs.item href="#"
-            class="ease-linear hover:text-foreground px-1.5 py-px border border-border rounded-full">
+            class="ease-linear hover:text-title-foreground/80 px-1.5 py-px border border-border rounded-full">
             Navigation
         </x-ui.breadcrumbs.item>
         <x-ui.breadcrumbs.item
@@ -15,11 +15,11 @@
     </x-ui.breadcrumbs>
     <x-ui.breadcrumbs class="text-muted-foreground">
         <x-ui.breadcrumbs.item href="#"
-            class="ease-linear hover:text-foreground px-1.5 py-px border border-border rounded-full">
+            class="ease-linear hover:text-title-foreground/80 px-1.5 py-px border border-border rounded-full">
             Home
         </x-ui.breadcrumbs.item>
         <x-ui.breadcrumbs.item href="#"
-            class="ease-linear hover:text-foreground px-1.5 py-px border border-border rounded-full">
+            class="ease-linear hover:text-title-foreground/80 px-1.5 py-px border border-border rounded-full">
             Navigation
         </x-ui.breadcrumbs.item>
         <x-ui.breadcrumbs.item

@@ -7,7 +7,7 @@
     "description": "A reusable text component for Laravel Blade/Livewire with intent-based styling.",
     "files": [
         {
-            "path": "resources/views/components/ui/text.blade.php",
+            "path": "registry/views/components/ui/text.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/text.blade.php",
             "content": "@props(['intent' => 'muted', 'as' => 'p'])\n\n@php\n    $tag = $as;\n    $intent = $intent === 'danger' ? 'destructive' : $intent;\n\n@endphp\n<{{ $tag }}\n    {{ $attributes->class([\n        'text-muted-foreground' => $intent == 'muted',\n        'text-foreground' => $intent == 'body',\n        'text-title-foreground' => $intent == 'title',\n        'text-gray-500' => $intent == 'caption',\n        'text-primary' => $intent == 'primary',\n        'text-secondary' => ($intent == 'secondary'),\n        'text-warning' => $intent == 'warning',\n        'text-destructive' => $intent == 'destructive',\n    ]) }}>\n    {{ $slot }}\n</{{ $tag }}>\n"

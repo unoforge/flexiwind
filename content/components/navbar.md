@@ -115,4 +115,4 @@ The API is documented above in plugin directives, data attributes, and state beh
 
 ### Demo Example
 
-::preview{example="navbar/demo"}
+::preview{example="navbar/demo" iframe height="320"}

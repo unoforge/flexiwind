@@ -15,7 +15,7 @@ keywords: "textarea, multi-line, form input, notes"
 ## Installation
 
 ```bash
-php artisan flexi:add text-area
+php artisan flexi:add textarea
 ```
 
 ## Resize none

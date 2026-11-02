@@ -7,7 +7,7 @@
     "description": "A reusable label component for Laravel Blade/Livewire.",
     "files": [
         {
-            "path": "resources/views/components/ui/label.blade.php",
+            "path": "registry/views/components/ui/label.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/label.blade.php",
             "content": "@props([\n    'for' => null,\n    'text' => null,\n])\n\n<label for=\"{{ $for }}\"\n    {{ $attributes->merge(['class' => 'text-sm font-medium leading-none text-muted-foreground block peer-disabled:cursor-not-allowed peer-disabled:opacity-70 disabled:opacity-70']) }}>\n    @if (isset($text))\n        {{ $text }}\n    @else\n        {{ $slot }}\n    @endif\n</label>\n"

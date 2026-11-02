@@ -68,6 +68,15 @@ Choose a variant family, then apply the intent classes that match your use case.
         --ui-fg: var(--color-foreground);
     }
 }
+
+@utility ui-solid-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-solid-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
+}
 ```
 
 ```css title="light"
@@ -103,6 +112,15 @@ Choose a variant family, then apply the intent classes that match your use case.
 
 @utility ui-solid-neutral {
     --ui-color: var(--color-foreground);
+    --ui-fg: var(--color-white);
+}
+
+@utility ui-solid-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-solid-info {
+    --ui-color: var(--color-info);
     --ui-fg: var(--color-white);
 }
 ```
@@ -141,6 +159,15 @@ Choose a variant family, then apply the intent classes that match your use case.
 @utility ui-solid-neutral {
     --ui-color: var(--color-white);
     --ui-fg: var(--color-foreground);
+}
+
+@utility ui-solid-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-solid-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
 }
 ```
 :::
@@ -202,6 +229,15 @@ Choose a variant family, then apply the intent classes that match your use case.
         --ui-border-color: var(--color-foreground);
     }
 }
+
+@utility ui-outline-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-outline-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
+}
 ```
 
 ```css title="light"
@@ -228,6 +264,15 @@ Choose a variant family, then apply the intent classes that match your use case.
     --ui-fg: var(--color-foreground);
     --ui-border-color: var(--color-border);
 }
+
+@utility ui-outline-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-outline-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
+}
 ```
 
 ```css title="dark"
@@ -253,6 +298,15 @@ Choose a variant family, then apply the intent classes that match your use case.
     --ui-color: transparent;
     --ui-fg: var(--color-muted-foreground);
     --ui-border-color: var(--color-foreground);
+}
+
+@utility ui-outline-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-outline-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
 }
 ```
 :::
@@ -306,6 +360,15 @@ Choose a variant family, then apply the intent classes that match your use case.
         --ui-fg: var(--color-muted-foreground);
     }
 }
+
+@utility ui-soft-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-soft-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
+}
 ```
 
 ```css title="light"
@@ -328,6 +391,15 @@ Choose a variant family, then apply the intent classes that match your use case.
     --ui-color: var(--color-background);
     --ui-fg: var(--color-foreground);
 }
+
+@utility ui-soft-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-soft-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
+}
 ```
 
 ```css title="dark"
@@ -349,6 +421,15 @@ Choose a variant family, then apply the intent classes that match your use case.
 @utility ui-soft-gray {
     --ui-color: color-mix(in oklab, var(--color-muted-foreground) 15%, transparent);
     --ui-fg: var(--color-muted-foreground);
+}
+
+@utility ui-soft-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-soft-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
 }
 ```
 :::
@@ -410,6 +491,15 @@ Choose a variant family, then apply the intent classes that match your use case.
         --ui-border-color: color-mix(in oklab, var(--color-muted-foreground) 30%, transparent);
     }
 }
+
+@utility ui-subtle-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-subtle-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
+}
 ```
 
 ```css title="light"
@@ -436,6 +526,15 @@ Choose a variant family, then apply the intent classes that match your use case.
     --ui-fg: var(--color-foreground);
     --ui-border-color: var(--color-border);
 }
+
+@utility ui-subtle-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-subtle-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
+}
 ```
 
 ```css title="dark"
@@ -461,6 +560,15 @@ Choose a variant family, then apply the intent classes that match your use case.
     --ui-color: color-mix(in oklab, var(--color-muted-foreground) 15%, transparent);
     --ui-fg: var(--color-muted-foreground);
     --ui-border-color: color-mix(in oklab, var(--color-muted-foreground) 30%, transparent);
+}
+
+@utility ui-subtle-warning {
+    --ui-color: var(--color-warning);
+    --ui-fg: var(--color-white);
+}
+@utility ui-subtle-info {
+    --ui-color: var(--color-info);
+    --ui-fg: var(--color-white);
 }
 ```
 :::

@@ -2,6 +2,8 @@
     'example' => '',
     'tier' => 'free',
     'inline' => false,
+    'iframe' => false,
+    'height' => 560,
 ])
 
 @php
@@ -21,6 +23,13 @@
     $nothingToShow = $artifact->isMissing() && ! $currentTier->grants($required);
 
     $code = $artifact->isFound() ? app(CodeHighlighter::class)->highlight($artifact->code(), 'blade') : '';
+
+    // `iframe` : l'exemple est rendu seul, dans sa propre page, affichée pleine largeur.
+    $route = (string) config('flexiwind-docs.example_preview_route');
+    $frameUrl = $iframe && $route !== '' && \Illuminate\Support\Facades\Route::has($route)
+        ? route($route, ['example' => trim(str_replace('.', '/', $example), '/')])
+        : null;
+    $frameHeight = max(200, min(1600, (int) $height));
 @endphp
 
 @if ($nothingToShow)
@@ -36,12 +45,16 @@
     <div
         class="my-5 first:mt-0 grid w-full gap-1 rounded-ui border border-gray-200 dark:border-gray-800/60 bg-background"
     >
-        <div
-            data-gen-ignore
-            class="flex items-center justify-center min-h-max p-4"
-        >
-            <x-dynamic-component :component="$artifact->component" />
-        </div>
+        @if ($frameUrl)
+            <x-fw-docs::frame :src="$frameUrl" :height="$frameHeight" :title="$example" class="rounded-t-ui" />
+        @else
+            <div
+                data-gen-ignore
+                class="flex items-center justify-center min-h-max p-4"
+            >
+                <x-dynamic-component :component="$artifact->component" />
+            </div>
+        @endif
 
         @if ($sourceLocked)
             <x-fw-docs::locked variant="panel" :example="$example" />
@@ -65,12 +78,16 @@
     >
         <x-docs.tab-panel
             value="Preview"
-            class="bg-background border border-border-input rounded-ui items-center justify-center min-h-60 lg:min-h-80"
+            class="bg-background border border-border-input rounded-ui items-center justify-center min-h-60 lg:min-h-80 {{ $frameUrl ? 'overflow-hidden' : '' }}"
             active
         >
-            <div data-gen-ignore class="size-full flex items-center justify-center p-4 md:p-10">
-                <x-dynamic-component :component="$artifact->component" />
-            </div>
+            @if ($frameUrl)
+                <x-fw-docs::frame :src="$frameUrl" :height="$frameHeight" :title="$example" />
+            @else
+                <div data-gen-ignore class="size-full flex items-center justify-center p-4 md:p-10">
+                    <x-dynamic-component :component="$artifact->component" />
+                </div>
+            @endif
         </x-docs.tab-panel>
         <x-docs.tab-panel
             value="Code"

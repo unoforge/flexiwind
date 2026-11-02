@@ -1,0 +1,127 @@
+@utility btn {
+  @apply flex items-center disabled:opacity-90 disabled:cursor-not-allowed disabled:hover:opacity-70 transition-colors ease-linear outline-offset-2 outline-2 outline-transparent focus-visible:outline-(--btn-focus-outline-color);
+}
+
+@utility btn-pagination-link-variables {
+  --ring-background-color: var(--btn-pagination-link-ring-color, transparent);
+  --link-bg: var(--btn-pagination-link-bg, transparent);
+  --link-text-color: var(--btn-pagination-link-text-color, var(--color-muted-foreground));
+  --link-hover-bg: var(--btn-pagination-link-hover-bg, --alpha(var(--color-muted)/60%));
+}
+
+@utility btn-pagination-link {
+  --tw-ring-color: var(--ring-background-color);
+  @apply ring-1 bg-(--link-bg) hover:bg-(--link-hover-bg) text-(--link-text-color) focus-visible:outline-(--link-hover-bg);
+}
+
+@utility btn-pagination-active {
+  --ring-background-color: var(--btn-pagination-active-link-ring-color, var(--color-border));
+  --link-bg: var(--btn-pagination-active-link-bg, transparent);
+  --link-text-color: var(--btn-pagination-active-link-text-color, var(--color-foreground));
+  --link-hover-bg: var(--btn-pagination-active-link-hover-bg, --alpha(var(--color-muted)/80%));
+}
+
+@utility btn-xs {
+  @apply h-6 px-3.5 text-xs;
+}
+
+@utility btn-icon-xs {
+  @apply size-6 justify-center;
+}
+
+@utility btn-sm {
+  @apply h-8 px-4 text-sm;
+}
+
+@utility btn-icon-sm {
+  @apply size-8 justify-center;
+}
+
+@utility btn-md {
+  @apply h-10 px-5 text-sm;
+}
+
+@utility btn-icon-md {
+  @apply size-10 justify-center;
+}
+
+@utility btn-lg {
+  @apply h-12 px-6 text-sm;
+}
+
+@utility btn-icon-lg {
+  @apply size-12 justify-center;
+}
+
+@utility btn-xl {
+  @apply h-14 px-7 text-sm;
+}
+
+@utility btn-icon-xl {
+  @apply size-14 justify-center
+}
+
+
+@utility btn-solid {
+  color: var(--btn-fg);
+  background-color: var(--btn-color);
+  --btn-focus-outline-color: color-mix(in oklab, var(--btn-color) 65%, transparent);
+  background-image: radial-gradient(farthest-corner at 50% -50%, rgba(255, 255, 255, .1) 0%, transparent 100%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 22%, transparent),
+    inset 0 -1px 0 color-mix(in oklab, black 18%, transparent);
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--btn-color) 88%, black);
+  }
+
+  &:active {
+    background-color: color-mix(in oklab, var(--btn-color) 78%, black);
+  }
+}
+
+
+@utility btn-outline {
+  color: var(--btn-fg);
+  background-color: var(--btn-color);
+  border-color: var(--btn-border-color);
+  --btn-focus-outline-color: var(--btn-ring-color);
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0 1px 2px color-mix(in oklab, black 10%, transparent);
+
+  &:hover {
+    background-color: var(--btn-hover-color);
+  }
+
+  &:active {
+    background-color: var(--btn-active-color);
+  }
+}
+
+@utility btn-soft {
+  color: var(--btn-fg);
+  background-color: color-mix(in oklab, var(--btn-color) 10%, transparent);
+  --btn-focus-outline-color: color-mix(in oklab, var(--btn-color) 55%, transparent);
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--btn-color) 16%, transparent);
+  }
+
+  &:active {
+    background-color: color-mix(in oklab, var(--btn-color) 22%, transparent);
+  }
+}
+
+@utility btn-ghost {
+  color: var(--btn-fg);
+  --btn-focus-outline-color: var(--btn-ring-color);
+
+  &:hover {
+    background-color: var(--btn-hover-color);
+  }
+
+  &:active {
+    background-color: var(--btn-active-color);
+  }
+}

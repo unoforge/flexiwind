@@ -72,7 +72,7 @@
     @if ($hasData)
         {{-- wire:ignore : ECharts possède ce nœud, Livewire ne doit pas le réécrire. --}}
         <div data-echart-canvas wire:ignore aria-hidden="true" class="relative min-h-0 w-full flex-1">
-            <div class="absolute inset-0 animate-pulse rounded-lg bg-subtle in-data-ready:hidden"></div>
+            <div class="absolute inset-0 animate-pulse rounded-ui bg-muted in-data-ready:hidden"></div>
         </div>
 
         {{-- @json échappe <, >, &, ' et " : le JSON ne peut pas refermer la balise. --}}
@@ -110,7 +110,7 @@
         </div>
         @endif
     @else
-        <p class="flex flex-1 items-center justify-center rounded-lg border border-dashed border-border text-sm text-muted-foreground">
+        <p class="flex flex-1 items-center justify-center rounded-ui border border-dashed border-border text-sm text-muted-foreground">
             No data to display
         </p>
     @endif

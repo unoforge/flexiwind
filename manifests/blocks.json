@@ -1,0 +1,877 @@
+{
+    "components": [
+        {
+            "version": "1.0.0",
+            "name": "auth-split",
+            "type": "registry:component",
+            "title": "Auth Split",
+            "description": "A reusable auth split component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/auth-split.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/ui/auth-split.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "login01",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "card",
+                "input-group",
+                "icon",
+                "divider"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/auth/login01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "login02",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "card"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/auth/login02.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "login03",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "divider",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/auth/login03.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "signup01",
+            "type": "registry:component",
+            "title": "Signup",
+            "description": "A full auth signup page.",
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "card",
+                "divider",
+                "field"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/auth/signup01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/signup.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "otp01",
+            "type": "registry:component",
+            "title": "Otp ",
+            "description": "A full auth OTP page.",
+            "registryDependencies": [
+                "button",
+                "label",
+                "checkbox",
+                "link",
+                "input",
+                "otp"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/auth/otp01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/otp.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "sidebar-wrapper",
+            "type": "registry:component",
+            "title": "Sidebar Wrapper",
+            "description": "A full sidebar wrapper layout.",
+            "message": [
+                "Wrap your sidebar markup with <x-ui.sidebar-wrapper> to get open/close toggle behaviour.",
+                "Import resources/js/sidebar-plugin.js in your Vite entry point (e.g. app.js) to activate the sidebar plugin.",
+                "Add data-toggle-sidebar to any button that should open/close the sidebar on mobile."
+            ],
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/utilities"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/sidebar-wrapper.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/ui/sidebar-wrapper.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/sidebar-overlay.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/ui/sidebar-overlay.blade.php"
+                },
+                {
+                    "path": "registry/js/sidebar-plugin.js",
+                    "type": "registry:ui",
+                    "target": "resources/js/sidebar-plugin.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "sidebar01",
+            "type": "registry:component",
+            "title": "Sidebar 01",
+            "description": "A full sidebar layout.",
+            "message": [
+                "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+                "Use <x-atoms.sidebar-item> inside the sidebar nav for each link (accepts href, icon, text, isActive).",
+                "Place <x-layouts.wrapper> after the sidebar; it offsets by md:pl-64 and holds your header + content.",
+                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+            ],
+            "registryDependencies": [
+                "button",
+                "icon",
+                "sidebar-wrapper",
+                "avatar"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/sidebar/01/sidebar.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/sidebar01.blade.php",
+                    "replace": {
+                        "x-previews.free.sidebar.01.sidebar-item": "x-atoms.sidebar-item",
+                        "x-previews.free.": "x-previews."
+                    }
+                },
+                {
+                    "path": "registry/views/components/previews/free/sidebar/01/sidebar-item.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-item.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                },
+                {
+                    "path": "registry/views/components/previews/free/sidebar/01/wrapper.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/wrapper.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "sidebar02",
+            "type": "registry:component",
+            "title": "Sidebar 02",
+            "description": "A full sidebar layout with grouped navigation.",
+            "message": [
+                "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+                "Use <x-atoms.sidebar-nav-group> inside the sidebar to group nav links under a labelled section.",
+                "Use <x-atoms.sidebar-item> inside each nav group (accepts href, icon, text, isActive).",
+                "Place <x-layouts.wrapper> after the sidebar; it offsets by lg:pl-64 and holds your header + content.",
+                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+            ],
+            "registryDependencies": [
+                "button",
+                "icon",
+                "sidebar-wrapper"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/sidebar/02/sidebar.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/sidebar02.blade.php",
+                    "replace": {
+                        "x-previews.free.sidebar.02.sidebar-item": "x-atoms.sidebar-item",
+                        "x-previews.free.sidebar.02.sidebar-nav-group": "x-atoms.sidebar-nav-group",
+                        "x-previews.free.": "x-previews."
+                    }
+                },
+                {
+                    "path": "registry/views/components/previews/free/sidebar/02/sidebar-item.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-item.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                },
+                {
+                    "path": "registry/views/components/previews/free/sidebar/02/sidebar-nav-group.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-nav-group.blade.php",
+                    "replace": {
+                        "x-previews.free.sidebar.02.sidebar-item": "x-atoms.sidebar-item",
+                        "x-previews.free.": "x-previews."
+                    }
+                },
+                {
+                    "path": "registry/views/components/previews/free/sidebar/02/wrapper.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/wrapper.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "sidebar03",
+            "type": "registry:component",
+            "title": "Sidebar 03",
+            "description": "A full sidebar layout.",
+            "message": [
+                "Include <x-layouts.sidebar> at the top level of your page — it renders as a fixed left panel.",
+                "Use <x-atoms.sidebar-item> inside the sidebar nav for each link (accepts href, icon, text, isActive).",
+                "Place <x-layouts.wrapper> after the sidebar; it offsets by md:pl-64 and holds your header + content.",
+                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+            ],
+            "registryDependencies": [
+                "button",
+                "icon",
+                "sidebar-wrapper"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/sidebar/03/sidebar.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/sidebar03.blade.php",
+                    "replace": {
+                        "x-previews.free.sidebar.03.sidebar-item": "x-atoms.sidebar-item",
+                        "x-previews.free.": "x-previews."
+                    }
+                },
+                {
+                    "path": "registry/views/components/previews/free/sidebar/03/sidebar-item.blade.php",
+                    "type": "registry:component",
+                    "target": "resources/views/components/atoms/sidebar-item.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                },
+                {
+                    "path": "registry/views/components/previews/free/sidebar/03/wrapper.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/wrapper.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "header01",
+            "type": "registry:component",
+            "title": "Header 01",
+            "description": "Header navbar for dashboard layout",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/header/01/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "icon",
+                "input-group",
+                "input",
+                "kbd",
+                "button"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "header02",
+            "type": "registry:component",
+            "title": "Header 02",
+            "description": "Header navbar for dashboard layout",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/header/02/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "icon",
+                "breadcrumbs"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "kpi01",
+            "type": "registry:component",
+            "title": "KPI 01",
+            "description": "A full KPI layout.",
+            "registryDependencies": [
+                "card",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dash-card/kpi01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/card/kpi01.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "kpi02",
+            "type": "registry:component",
+            "title": "KPI 02",
+            "description": "A full KPI layout with icons.",
+            "registryDependencies": [
+                "card",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dash-card/kpi02.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/card/kpi02.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "kpi03",
+            "type": "registry:component",
+            "title": "KPI 03",
+            "description": "A full KPI layout with icons.",
+            "registryDependencies": [
+                "card",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dash-card/kpi03.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/card/kpi03.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "activity01",
+            "type": "registry:component",
+            "title": "Activity 01",
+            "description": "A full Activity layout.",
+            "registryDependencies": [
+                "card",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dash-card/activity01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/dash-card/activity01.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "empty-state01",
+            "type": "registry:component",
+            "title": "Empty State 01",
+            "description": "Empty State.",
+            "registryDependencies": [
+                "button",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/empty-state/01.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/empty-state.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "shell01",
+            "type": "registry:component",
+            "title": "App Shell 01",
+            "description": "Application shell layout.",
+            "message": [
+                "Use <x-layouts.app-shell> as your root layout — it composes the sidebar and main content area.",
+                "The shell embeds <x-layouts.sidebar02> automatically; customise that file to change the sidebar.",
+                "Use <x-atoms.sidebar-item> for each nav link inside the sidebar (accepts href, icon, text, isActive).",
+                "Use <x-atoms.sidebar-nav-group> to group sidebar links under a labelled section heading.",
+                "Place <x-layouts.wrapper> inside the shell for the header + scrollable content region.",
+                "Add data-toggle-sidebar to your mobile menu button inside <x-layouts.wrapper> to open the sidebar."
+            ],
+            "registryDependencies": [
+                "button",
+                "icon",
+                "sidebar-wrapper",
+                "sidebar01",
+                "breadcrumbs"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/app-shell/shell-01.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/app-shell.blade.php",
+                    "replace": {
+                        "x-previews.free.sidebar.01.sidebar": "x-layouts.sidebar01",
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "header03",
+            "type": "registry:component",
+            "title": "Header 03",
+            "description": "Header navbar for dashboard layout",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/header/03/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "icon",
+                "input-group",
+                "input",
+                "kbd",
+                "button",
+                "avatar"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table01",
+            "type": "registry:component",
+            "title": "Table 01",
+            "description": "Data table component.",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/table/01.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/tables/table01.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "card",
+                "input-group",
+                "icon",
+                "input",
+                "button",
+                "table",
+                "checkbox",
+                "avatar-placeholder",
+                "badge",
+                "select"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table02",
+            "type": "registry:component",
+            "title": "Table 02",
+            "description": "Data table component.",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/table/02.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/tables/table02.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "button",
+                "table",
+                "avatar-placeholder",
+                "icon"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table03",
+            "type": "registry:component",
+            "title": "Table 03",
+            "description": "Data table component.",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/table/03.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/tables/table03.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "card",
+                "button",
+                "table",
+                "checkbox",
+                "avatar-placeholder",
+                "icon"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "user-list",
+            "type": "registry:component",
+            "title": "User List",
+            "description": "Complete user management page with search, filter, table, action dropdowns, pagination, and create modal.",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/user-management/user-list.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/user-management/user-list.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "modal",
+                "icon",
+                "card",
+                "input-group",
+                "input",
+                "button",
+                "select",
+                "table",
+                "checkbox",
+                "avatar",
+                "avatar-placeholder",
+                "badge",
+                "dropdown"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "dash-analytics",
+            "type": "registry:component",
+            "title": "Dashboard Analytics",
+            "description": "Analytics dashboard with KPI cards, revenue chart area, top products, and recent orders table.",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dash-card/dash-analytics.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/dash-card/dash-analytics.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "card",
+                "icon",
+                "select",
+                "button",
+                "table",
+                "badge"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "top-products",
+            "type": "registry:component",
+            "title": "Top Products",
+            "description": "Top selling products widget with revenue and sales data.",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dash-card/top-products.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/widgets/top-products.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "card",
+                "button",
+                "icon"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table07",
+            "type": "registry:component",
+            "title": "Table 07",
+            "description": "User management table with avatars, status badges, role filter, action dropdowns, and pagination.",
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/table/07.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/table/07.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ],
+            "registryDependencies": [
+                "card",
+                "input-group",
+                "icon",
+                "input",
+                "button",
+                "select",
+                "table",
+                "checkbox",
+                "avatar",
+                "avatar-placeholder",
+                "badge",
+                "dropdown"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "contact-form01",
+            "type": "registry:component",
+            "title": "Contact Form 01",
+            "description": "Contact form with name, email and message fields.",
+            "registryDependencies": [
+                "button",
+                "label",
+                "input",
+                "textarea",
+                "card",
+                "select",
+                "checkbox",
+                "link"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/forms/contact-form01.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/forms/contact-form.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "profile01",
+            "type": "registry:component",
+            "title": "Profile 01",
+            "description": "Profile page",
+            "registryDependencies": [
+                "button",
+                "input",
+                "select",
+                "label",
+                "textarea"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/profile/profile01.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/profile01.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "setting01",
+            "type": "registry:component",
+            "title": "Setting 01",
+            "description": "Setting page",
+            "registryDependencies": [
+                "button",
+                "input",
+                "select",
+                "switch",
+                "label",
+                "textarea",
+                "checkbox"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/settings/setting01.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/setting01.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "setting02",
+            "type": "registry:component",
+            "title": "Setting 02",
+            "description": "Setting page",
+            "registryDependencies": [
+                "button",
+                "badge",
+                "input",
+                "select",
+                "switch",
+                "label",
+                "textarea"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/settings/setting02.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/setting02.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "setting03",
+            "type": "registry:component",
+            "title": "Setting 03",
+            "description": "Setting page",
+            "registryDependencies": [
+                "button",
+                "input",
+                "select",
+                "switch",
+                "label"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/settings/setting03.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/setting03.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "setting04",
+            "type": "registry:component",
+            "title": "Setting 04",
+            "description": "Setting page",
+            "registryDependencies": [
+                "button",
+                "input",
+                "select",
+                "switch"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/settings/setting04.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/setting04.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "setting05",
+            "type": "registry:component",
+            "title": "Setting 05",
+            "description": "Setting page",
+            "registryDependencies": [
+                "button",
+                "input"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/settings/setting05.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/setting05.blade.php"
+                }
+            ]
+        }
+    ]
+}

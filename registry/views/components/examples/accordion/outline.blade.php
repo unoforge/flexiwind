@@ -21,7 +21,7 @@
 <x-ui.accordion class="space-y-2">
     @foreach ($items as $item)
         <x-ui.accordion.item :id="'item-' . $item['id']" variant="outline" class="rounded-md">
-            <x-ui.accordion.trigger class="px-4 py-2 text-foreground font-medium text-lg">
+            <x-ui.accordion.trigger class="px-4 py-2 text-title-foreground/80 font-medium text-lg">
                 {{ $item['title'] }}
                 <x-ui.accordion.indicator/>
             </x-ui.accordion.trigger>

@@ -1,5 +1,5 @@
-<div class="flex flex-col gap-3">
-    <x-ui.switch id="switch" name="switch" label="Use Dark Theme" />
-    <x-ui.switch checked id="switch_lab1" name="switch_lab1" label="Checked" />
-    <x-ui.switch disabled id="switch_lab2" name="switch_lab2" label="Disabled" />
+<div class="flex flex-col gap-4">
+    <x-ui.switch name="dark_theme" label="Use dark theme" />
+    <x-ui.switch name="digest" checked label="Weekly digest" description="A summary of your projects every Monday." />
+    <x-ui.switch name="beta" disabled label="Beta features" description="Not available on your plan." />
 </div>

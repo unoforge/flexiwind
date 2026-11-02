@@ -13,6 +13,14 @@ Use this reference for Flexiwind action and input components that are documented
 - `https://flexiwind.unoforge.com/components/switch`
 - `https://flexiwind.unoforge.com/components/otp`
 - `https://flexiwind.unoforge.com/components/range`
+- `https://flexiwind.unoforge.com/components/listbox`
+- `https://flexiwind.unoforge.com/components/autocomplete`
+- `https://flexiwind.unoforge.com/components/tag-input`
+- `https://flexiwind.unoforge.com/components/tag-group`
+- `https://flexiwind.unoforge.com/components/toggle`
+- `https://flexiwind.unoforge.com/components/toggle-group`
+- `https://flexiwind.unoforge.com/components/file-trigger`
+- `https://flexiwind.unoforge.com/components/plugins/rich-text`
 
 ## Individual Component Files
 
@@ -27,6 +35,15 @@ For detailed API references, examples, and props tables, see the individual comp
 - [switch.md](./switch.md)
 - [otp-input.md](./otp-input.md)
 - [range.md](./range.md)
+- [listbox.md](./listbox.md)
+- [autocomplete.md](./autocomplete.md)
+- [tag-input.md](./tag-input.md)
+- [tag-group.md](./tag-group.md)
+- [toggle.md](./toggle.md)
+- [toggle-group.md](./toggle-group.md)
+- [file-trigger.md](./file-trigger.md)
+- [rich-text.md](./rich-text.md)
+- [rich-text-pro.md](./rich-text-pro.md) (Pro)
 
 ## Verified Install Commands
 
@@ -39,6 +56,14 @@ For detailed API references, examples, and props tables, see the individual comp
 - `php artisan flexi:add switch`
 - `php artisan flexi:add otp`
 - `php artisan flexi:add range`
+- `php artisan flexi:add listbox`
+- `php artisan flexi:add autocomplete`
+- `php artisan flexi:add tag-input`
+- `php artisan flexi:add tag-group`
+- `php artisan flexi:add toggle`
+- `php artisan flexi:add toggle-group`
+- `php artisan flexi:add file-trigger`
+- `php artisan flexi:add rich-text`
 
 ## Verified Blade Primitives
 

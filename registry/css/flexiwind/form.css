@@ -1,0 +1,240 @@
+@utility ui-form-input {
+  @apply disabled:hover:cursor-not-allowed disabled:opacity-80 outline-offset-0 focus:outline-offset-0 focus:border-transparent outline outline-transparent focus:outline-(--ui-input-focus-outline) ring-transparent ring-offset-transparent focus:ring-(--focus-ring) ring-3 ring-offset-1 transition-all ease-linear duration-200;
+}
+
+@utility ui-form-group-base {
+  @apply w-full has-data-invalide:outline-(--ui-input-invalid-outline);
+}
+
+@utility ui-form-group {
+  @apply disabled:hover:cursor-not-allowed disabled:opacity-80 outline-offset-0 focus-within:outline-offset-0 focus-within:border-transparent outline outline-transparent focus-within:outline-(--ui-input-focus-outline) ring-transparent ring-offset-transparent focus-within:ring-(--focus-ring) ring-3 ring-offset-1 transition-all ease-linear duration-200;
+
+  & input,
+  & select {
+    @apply outline-none focus:outline-none appearance-none;
+  }
+}
+
+
+@utility ui-form-group-input {
+
+  & input {
+    @apply outline-none focus:outline-none;
+  }
+
+  & input,
+  & select {
+    @apply flex-1 placeholder-(--ui-input-place-holder) leading-6 text-sm;
+  }
+}
+
+@utility ui-form-input-xs {
+  @apply px-2 text-xs h-6;
+}
+
+@utility ui-form-input-sm {
+  @apply px-2.5 text-sm h-8;
+}
+
+@utility ui-form-input-md {
+  @apply px-3 text-sm h-9;
+}
+
+@utility ui-form-input-lg {
+  @apply px-3 text-sm h-10;
+}
+
+@utility ui-form-input-xl {
+  @apply px-3.5 text-base h-11;
+}
+
+@utility ui-form-base {
+  @apply appearance-none w-full placeholder-(--ui-input-place-holder) data-invalid:outline-(--ui-input-invalid-outline) leading-6;
+}
+
+
+
+@utility ui-form-select {
+  @apply appearance-none w-full placeholder-(--ui-input-place-holder) leading-6;
+}
+
+/*
+ * La flèche du select : deux traits en dégradé, donc une couleur que l'on
+ * choisit (un SVG en data: garderait la sienne). Réglages :
+ *   --ui-select-indicator-color  la couleur (muted-foreground par défaut)
+ *   --ui-select-indicator-size   la demi-largeur de la flèche (5px)
+ *   --ui-select-indicator-stroke l'épaisseur du trait (1.5px)
+ *   --ui-select-indicator-image  une autre image, si l'on veut la sienne
+ */
+@utility ui-form-select-indicator {
+  --_c: var(--ui-select-indicator-color, var(--color-muted-foreground, #6b7280));
+  --_s: var(--ui-select-indicator-size, 5px);
+  --_w: calc(var(--ui-select-indicator-stroke, 1.5px) / 2);
+  background-image: var(--ui-select-indicator-image,
+      linear-gradient(45deg, transparent calc(50% - var(--_w)), var(--_c) calc(50% - var(--_w)), var(--_c) calc(50% + var(--_w)), transparent calc(50% + var(--_w))),
+      linear-gradient(-45deg, transparent calc(50% - var(--_w)), var(--_c) calc(50% - var(--_w)), var(--_c) calc(50% + var(--_w)), transparent calc(50% + var(--_w))));
+  background-position: right calc(0.875rem + var(--_s)) top calc(50% + 1px), right 0.875rem top calc(50% + 1px);
+  background-repeat: no-repeat;
+  background-size: var(--_s) var(--_s);
+  padding-right: 2.5rem;
+  print-color-adjust: exact;
+
+  &:disabled {
+    --_c: color-mix(in oklab, var(--ui-select-indicator-color, var(--color-muted-foreground, #6b7280)) 50%, transparent);
+  }
+}
+
+@utility ui-form-multiselect {
+  @apply [background-image:unset] [background-position:unset] [background-repeat:unset] [background-size:unset] [padding-right:0.75rem] [print-color-adjust:unset]
+}
+
+@utility ui-checkbox-radio-base {
+  --u-check-radio-color: var(--check-radio-offset-color, currentColor);
+  @apply relative appearance-none p-0 [print-color-adjust:exact] inline-block align-middle [background-origin:border-box] [user-select:none] [flex-shrink:0] [--un-shadow:0_0_#0000] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:[outline-color:var(--u-check-radio-color)] focus:ring-0 focus:checked:[background-color:currentColor] checked:hover:[border-color:transparent] [border-color:transparent] [background-color:currentColor] [background-size:100%_100%] [background-position:center] [background-repeat:no-repeat];
+
+  /* Invalide : la bordure, et l'anneau du focus, prennent la couleur d'erreur. */
+  &:is([data-invalid], [aria-invalid="true"]):not(:checked, :indeterminate) {
+    border-color: var(--ui-checkbox-invalid-color, var(--ui-input-invalid-outline, var(--color-destructive, #dc2626)));
+  }
+
+  &:is([data-invalid], [aria-invalid="true"]) {
+    --u-check-radio-color: var(--ui-checkbox-invalid-color, var(--ui-input-invalid-outline, var(--color-destructive, #dc2626)));
+  }
+
+  /*
+   * La marque (coche, tiret, point) est un pseudo-élément : sa couleur vient
+   * de --checkbox-mark-color (primary-foreground, sinon blanc), sa forme d'un masque. On
+   * peut donc avoir une case blanche et une coche de la couleur du thème.
+   */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--ui-checkbox-mark-color, var(--checkbox-mark-color, var(--primary-foreground, #fff)));
+    mask: var(--_mark, none) center / 100% 100% no-repeat;
+    opacity: 0;
+    scale: .6;
+    transition: opacity .12s ease, scale .12s ease;
+    pointer-events: none;
+  }
+
+  /* Le point du radio : un cercle plein, sa taille réglable avec --radio-dot-size (37.5 %). */
+  &[type="radio"]::before {
+    inset: calc((100% - var(--radio-dot-size, 37.5%)) / 2);
+    border-radius: 9999px;
+    mask: none;
+  }
+
+  &:checked::before,
+  &:indeterminate::before {
+    opacity: 1;
+    scale: 1;
+  }
+
+  @media (forced-colors: active) {
+    &::before {
+      background-color: CanvasText;
+    }
+  }
+}
+
+
+
+@utility ui-form-checkbox {
+  @apply disabled:opacity-50 disabled:cursor-not-allowed outline-0 outline-transparent focus-visible:ring-1 focus-visible:ring-current focus:ring-0 focus:ring-transparent focus:ring-offset-transparent focus-visible:ring-offset-2 focus-visible:ring-offset-(--ui-ring-background) bg-(--ui-checkbox-bg) border border-(--ui-checkbox-border) checked:bg-current checked:border-transparent indeterminate:bg-current indeterminate:border-transparent;
+
+  &:checked {
+    --_mark: url('data:image/svg+xml,<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z"/></svg>');
+  }
+
+  &:indeterminate {
+    --_mark: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h8"/></svg>');
+  }
+}
+
+@utility ui-form-radio {
+  @apply disabled:opacity-50 disabled:cursor-not-allowed outline-0 outline-transparent focus-visible:ring-2 focus-visible:ring-current focus:ring-0 focus:ring-transparent focus:ring-offset-transparent focus-visible:ring-offset-(--ui-ring-background) focus-visible:ring-offset-2 checked:bg-current checked:border-transparent indeterminate:bg-current indeterminate:border-transparent;
+
+}
+
+
+
+/* switch  */
+@utility switch {
+  border-radius: var(--toggle-radius, 9999px);
+  --u-knob-width: var(--knob-width, var(--knob-size));
+  --u-knob-height: var(--knob-height, var(--knob-size));
+  --u-knob-bg-checked: var(--knob-bg-checked, var(--knob-bg));
+  --u-knob-radius: var(--knob-radius, 9999px);
+  @apply appearance-none cursor-pointer w-(--toggle-width) h-(--toggle-height) relative before:absolute before:w-(--u-knob-width) before:h-(--u-knob-height) before:bg-(--knob-bg) before:rounded-(--u-knob-radius) ease-linear transition-all duration-300 before:left-(--knob-left) before:top-(--knob-top) checked:before:left-(--knob-checked-left) before:ease-linear before:transition-all before:duration-300 disabled:opacity-70 disabled:cursor-not-allowed checked:bg-current checked:before:bg-(--u-knob-bg-checked) outline-transparent focus-visible:outline-(--ui-input-focus-outline) outline-2 outline-offset-2;
+}
+
+@utility switch-outline {
+  border-radius: var(--toggle-radius, 9999px);
+  --switch-border-width: var(--ui-switch-border-width, 1px);
+  --u-knob-width: var(--knob-width, var(--knob-size));
+  --u-knob-height: var(--knob-height, var(--knob-size));
+  --u-knob-bg-checked: var(--knob-bg-checked, var(--knob-bg));
+  --u-knob-radius: var(--knob-radius, 9999px);
+  @apply appearance-none [border-style:solid] [border-width:var(--switch-border-width)] cursor-pointer w-(--toggle-width) h-(--toggle-height) relative before:absolute before:w-(--u-knob-width) before:h-(--u-knob-height) before:bg-(--knob-bg) before:rounded-(--u-knob-radius) ease-linear transition-all duration-300 before:left-(--knob-left) before:top-(--knob-top) checked:before:left-(--knob-checked-left) before:ease-linear before:transition-all before:duration-300 disabled:opacity-70 disabled:cursor-not-allowed checked:bg-current checked:before:bg-(--u-knob-bg-checked) outline-transparent focus-visible:outline-(--ui-input-focus-outline) outline-2 outline-offset-2;
+}
+
+@utility switch-xs {
+  --toggle-width: 2.25rem;
+  --toggle-height: 1.25rem;
+  --knob-size: 1rem;
+  --knob-left: 0.125rem;
+  --knob-top: 0.125rem;
+  --knob-checked-left: 1.125rem;
+}
+
+
+
+@utility switch-sm {
+  --toggle-width: 2.5rem;
+  --toggle-height: 1.5rem;
+  --knob-size: 1.25rem;
+  --knob-left: 0.125rem;
+  --knob-top: 0.125rem;
+  --knob-checked-left: 1.125rem;
+}
+
+
+@utility switch-md {
+  --toggle-width: 3rem;
+  --toggle-height: 1.75rem;
+  --knob-size: 1.25rem;
+  --knob-left: 0.25rem;
+  --knob-top: 0.25rem;
+  --knob-checked-left: 1.5rem;
+}
+
+@utility switch-lg {
+  --toggle-width: 3.5rem;
+  --toggle-height: 2rem;
+  --knob-size: 1.5rem;
+  --knob-left: 0.25rem;
+  --knob-top: 0.25rem;
+  --knob-checked-left: 1.75rem;
+}
+
+
+/* progress  */
+@utility ui-progressbar {
+  @apply appearance-none w-full [&::-moz-progress-bar]:rounded-(--ui-progressbar-radius) [&::-moz-progress-bar]:bg-current [&::-webkit-progress-bar]:w-full [&::-webkit-progress-bar]:rounded-(--ui-progressbar-radius) [&::-webkit-progress-bar]:bg-(--ui-progressbar-bg) [&::-webkit-progress-value]:rounded-(--ui-progressbar-radius) [&::-webkit-progress-value]:bg-current [&::-webkit-progress-value]:transition-all [&::-webkit-progress-value]:ease-linear [@supports(selector(::-moz-progress-bar))]:rounded-(--ui-progressbar-radius) [@supports(selector(::-moz-progress-bar))]:bg-(--ui-progressbar-bg);
+}
+
+
+
+
+@utility ui-meter {
+  @apply appearance-none block w-full rounded-(--ui-meter-radius) bg-none [&::-webkit-meter-inner-element]:block [&::-webkit-meter-inner-element]:relative [&::-webkit-meter-optimum-value]:border-none [&::-webkit-meter-optimum-value]:bg-none [&::-webkit-meter-optimum-value]:bg-current [&::-webkit-meter-bar]:bg-none [&::-webkit-meter-bar]:border-none [&::-webkit-meter-bar]:h-full [&::-webkit-meter-bar]:bg-transparent [&::-webkit-meter-optimum-value]:transition-all [&::-webkit-meter-optimum-value]:rounded-(--ui-meter-radius) [&::-webkit-meter-optimum-value]:h-full [&::-moz-meter-bar]:bg-current [&::-moz-meter-bar]:border-none [&::-moz-meter-bar]:bg-none [&::-moz-meter-bar]:transition-all [&::-moz-meter-bar]:rounded-(--ui-meter-radius) [&::-moz-meter-bar]:h-full;
+}
+
+
+
+/* input range  */
+
+@utility ui-input-range {
+  @apply w-full appearance-none bg-transparent disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none rounded-md cursor-pointer focus-visible:ring-2 focus-visible:ring-(--ring-background) focus-visible:ring-offset-2 focus-visible:ring-offset-(--ring-offset-color) [&::-webkit-slider-thumb]:relative [&::-webkit-slider-thumb]:z-[1] [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:ring-2 [&::-webkit-slider-thumb]:ring-current [&::-webkit-slider-thumb]:size-(--ui-input-range-size) [&::-webkit-slider-thumb]:-mt-(--ui-input-range-mt) [&::-webkit-slider-runnable-track]:group-disabled:opacity-60 [&::-webkit-slider-runnable-track]:bg-(--ui-input-range-track-bg) [&::-webkit-slider-runnable-track]:h-(--ui-input-range-track-height) [&::-webkit-slider-runnable-track]:rounded-lg [&::-webkit-slider-thumb]:bg-(--ui-input-range-thumb-bg) [&::-moz-range-thumb]:relative [&::-moz-range-thumb]:z-[1] [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:ring-2 [&::-moz-range-thumb]:ring-current [&::-moz-range-thumb]:bg-(--ui-input-range-thumb-bg) [&::-moz-range-thumb]:size-(--ui-input-range-size) [&::-moz-range-thumb]:-mt-(--ui-input-range-mt) [&::-moz-range-track]:group-disabled:opacity-50 [&::-moz-range-track]:bg-(--ui-input-range-track-bg) [&::-moz-range-track]:rounded-lg [&::-moz-range-track]:h-(--ui-input-range-track-height);
+}

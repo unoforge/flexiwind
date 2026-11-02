@@ -14,6 +14,7 @@ use Flexiwind\Docs\PlainCodeHighlighter;
 use Flexiwind\Docs\Tier;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class FlexiwindServiceProvider extends ServiceProvider
 {
@@ -38,6 +39,12 @@ class FlexiwindServiceProvider extends ServiceProvider
         //    <x-ui.button />, <x-blocks.hero01 />, <x-examples.button.sizes />.
         //    Les vues de l'app passent en premier : surcharge possible sans fork.
         View::addLocation(__DIR__.'/../registry/views');
+
+        //    Les démos Livewire des exemples (<livewire:listbox-demo />…) :
+        //    elles servent la documentation, `flexi add` ne les installe pas.
+        if (class_exists(Livewire::class)) {
+            Livewire::addLocation(viewPath: __DIR__.'/../registry/views/livewire');
+        }
 
         // 3. Les vues générées depuis le Markdown.
         View::addNamespace('fw-content', (string) config('flexiwind-docs.compiled_path'));

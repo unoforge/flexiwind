@@ -43,11 +43,11 @@
         @if ($slot->isNotEmpty())
             {{ $slot }}
         @elseif ($mode === 'chips')
-            <span class="inline-flex h-6.5 max-w-full items-center gap-1.5 rounded-md border border-border bg-background ps-2 pe-0.5 text-[13px] text-foreground has-[img:not([hidden])]:ps-1">
+            <span class="inline-flex h-6.5 max-w-full items-center gap-1.5 [--tag-radius:calc(var(--radius-ui)-var(--spacing))] rounded-(--tag-radius) border border-border bg-background ps-2 pe-0.5 text-[13px] text-foreground has-[img:not([hidden])]:ps-1">
                 <img data-bind-src="avatar" alt="" class="size-4.5 shrink-0 rounded-full object-cover">
                 <span class="truncate" data-bind="label"></span>
                 <button type="button" data-select-remove
-                    class="flex size-5 shrink-0 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-(--ui-input-focus-outline)">
+                    class="flex size-5 shrink-0 items-center justify-center rounded-[calc(var(--tag-radius)-var(--spacing)*0.5)] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-(--ui-input-focus-outline)">
                     <span aria-hidden="true" class="iconify ph--x-bold size-3"></span>
                 </button>
             </span>
@@ -59,7 +59,7 @@
                     <span class="truncate text-[13px] text-muted-foreground empty:hidden" data-bind="description"></span>
                 </span>
                 <button type="button" data-select-remove
-                    class="flex size-7 shrink-0 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-(--ui-input-focus-outline)">
+                    class="flex size-7 shrink-0 items-center justify-center rounded-[calc(var(--radius-ui)-var(--spacing))] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-(--ui-input-focus-outline)">
                     <span aria-hidden="true" class="iconify ph--x size-3.5"></span>
                 </button>
             </span>
@@ -72,7 +72,7 @@
     </template>
     @if ($mode === 'chips')
         <template data-selected-more>
-            <span class="inline-flex h-6.5 items-center rounded-md border border-border px-2 text-[13px] text-muted-foreground">+<span data-bind="count"></span></span>
+            <span class="inline-flex h-6.5 items-center [--tag-radius:calc(var(--radius-ui)-var(--spacing))] rounded-(--tag-radius) border border-border px-2 text-[13px] text-muted-foreground">+<span data-bind="count"></span></span>
         </template>
     @endif
     @if ($placeholderIsSlot)

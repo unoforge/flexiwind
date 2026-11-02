@@ -29,7 +29,7 @@
     @if ($clearable)
         <button type="button" wire:ignore x-cloak x-show="canClear" x-on:click="clearInput()" aria-label="{{ $clearLabel }}"
             @if ($search) wire:loading.remove wire:target="{{ $search }}" @endif
-            class="absolute end-1.5 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-(--ui-input-focus-outline)">
+            class="absolute end-1.5 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-[calc(var(--radius-ui)-var(--spacing))] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-(--ui-input-focus-outline)">
             <span aria-hidden="true" class="iconify ph--x size-3.5"></span>
         </button>
     @endif

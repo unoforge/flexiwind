@@ -75,9 +75,7 @@
     $composed = str_contains((string) $slot, 'data-select-content');
 @endphp
 
-{{-- data-fx-teleport-root : le panneau reste ici, à portée de Livewire. --}}
-{{-- data-fx-teleport-root : le panneau reste ici, à portée de Livewire. --}}
-<div data-slot="listbox" data-listbox-id="{{ $id }}" data-fx-teleport-root @if ($isInvalid) data-invalid @endif
+<div data-slot="listbox" data-listbox-id="{{ $id }}" @if ($isInvalid) data-invalid @endif
     x-data="fwListbox(@js([
         'kind' => 'select',
         'multiple' => (bool) $multiple,

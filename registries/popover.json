@@ -5,6 +5,9 @@
     "type": "registry:component",
     "title": "Popover",
     "description": "A reusable popover component for Laravel Blade/Livewire.",
+    "registryDependencies": [
+        "button"
+    ],
     "dependencies": {
         "composer": [],
         "node": [
@@ -13,22 +16,28 @@
     },
     "files": [
         {
-            "path": "resources/views/components/ui/popover.blade.php",
+            "path": "registry/views/components/ui/popover.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/popover.blade.php",
-            "content": "@props([\n    'id',\n    'class' => '',\n    'placement' => 'bottom',\n    'keepOpen' => true,\n    'keepOpenOutside' => false,\n    'gray' => false,\n    'trigger' => 'click',\n])\n\n\n\n<div x-data x-f-popover wire:ignore.self role=\"tooltip\" id=\"popover-{{ $id }}\" data-popover\n    data-placement=\"{{ $placement }}\" @if (!$keepOpen) data-close-inside @endif\n    @if ($keepOpenOutside) data-prevent-close-outside @endif\n    data-trigger-strategy=\"{{ $trigger }}\"\n    {{ $attributes->class([\n        'opacity-0 invisible translate-y-1.5 scale-99 fx-open:opacity-100 fx-open:visible fx-open:translate-y-0 fx-open:scale-100',\n        'text-sm border border-border shadow rounded-ui flex flex-col overflow-hidden text-foreground ease-linear transition-transform',\n        'ui-popper ui-card [--card-padding:--spacing(5)] [--card-radius:var(--radius-lg)]',\n        'bg-popover' => !$gray,\n        'bg-popover-gray' => $gray,\n        $class\n    ]) }}>\n    {{ $slot }}\n</div>\n"
+            "content": "@props([\n    'id',\n    'class' => '',\n    'placement' => 'bottom',\n    'keepOpen' => true,\n    'keepOpenOutside' => false,\n    'gray' => false,\n    'trigger' => 'click',\n])\n\n\n\n{{-- Le panneau est en position fixed : il doit vivre dans <body>, hors des parents\n     transformés qui le décaleraient. C'est Alpine (x-teleport) qui l'y place et non\n     Flexilla : Livewire suit x-teleport, met à jour le panneau à chaque rendu et\n     relie ses wire:click à leur composant. data-fx-teleport-root dit à Flexilla que\n     le panneau est déjà en place. Le x-data extérieur fait marcher x-teleport hors\n     de Livewire. --}}\n<div x-data class=\"contents\">\n<template x-teleport=\"body\">\n<div data-fx-teleport-root x-fw-layer class=\"contents\">\n<div x-data x-f-popover wire:ignore.self role=\"tooltip\" id=\"popover-{{ $id }}\" data-popover\n    data-placement=\"{{ $placement }}\" @if (!$keepOpen) data-close-inside @endif\n    @if ($keepOpenOutside) data-prevent-close-outside @endif\n    data-trigger-strategy=\"{{ $trigger }}\"\n    {{ $attributes->class([\n        'text-sm border border-border shadow rounded-ui flex flex-col overflow-hidden text-foreground',\n        'ui-popper fx-popper-motion ui-card [--card-padding:--spacing(5)] [--card-radius:var(--radius-lg)]',\n        'bg-popover' => !$gray,\n        'bg-muted' => $gray,\n        $class\n    ]) }}>\n    {{ $slot }}\n</div>\n</div>\n</template>\n</div>\n"
         },
         {
-            "path": "resources/views/components/ui/popover/trigger.blade.php",
+            "path": "registry/views/components/ui/popover/trigger.blade.php",
             "type": "registry:ui",
             "target": "resources/views/components/ui/popover/trigger.blade.php",
             "content": "@props(['popoverId', 'variant' => 'none', 'intent' => 'none','size'=>'none'])\n\n<x-ui.button data-popover-trigger data-popover-id=\"popover-{{ $popoverId }}\" :size=\"$size\" :variant=\"$variant\" :intent=\"$intent\"\n    {{ $attributes->merge(['class' => 'group']) }}>\n    {{ $slot }}\n</x-ui.button>\n"
         },
         {
-            "path": "resources/js/plugins/popover.js",
+            "path": "registry/js/plugins/popover.js",
             "type": "registry:script",
             "target": "resources/js/plugins/popover.js",
-            "content": "import { Popover as FlexillaPopover } from \"@flexilla/popover\";\n\nexport function PopoverPlugin(Alpine) {\n    Alpine.directive(\"f-popover\", (el, {}, { cleanup }) => {\n       const popover_ = new FlexillaPopover(el)\n        cleanup(() => {\n            popover_.cleanup()\n        });\n    });\n}\n"
+            "content": "/**\n * Popover Flexiwind : <x-ui.popover>, sur @flexilla/popover.\n *\n * Mêmes réglages que le dropdown pour Livewire : le popover est placé dans\n * <body> par Alpine (<template x-teleport> dans le Blade), pas par Flexilla,\n * et aucune instance n'est créée sur la copie détachée qu'Alpine reçoit\n * pendant un rendu.\n */\n\nimport { Popover as FlexillaPopover } from \"@flexilla/popover\";\nimport { LayerPlugin } from \"./layer\";\n\nexport function PopoverPlugin(Alpine) {\n    LayerPlugin(Alpine);\n\n    Alpine.directive(\"f-popover\", (el, {}, { cleanup }) => {\n        let instance = null;\n        let disposed = false;\n\n        const setup = () => {\n            if (!disposed && el.isConnected) {\n                instance = new FlexillaPopover(el);\n            }\n        };\n\n        // Alpine lance la directive avant que Livewire ait inséré l'élément dans la page.\n        el.isConnected ? setup() : queueMicrotask(setup);\n\n        cleanup(() => {\n            disposed = true;\n            instance?.hide();\n            instance?.cleanup();\n        });\n    });\n}\n"
+        },
+        {
+            "path": "registry/js/plugins/layer.js",
+            "type": "registry:script",
+            "target": "resources/js/plugins/layer.js",
+            "content": "export function LayerPlugin(Alpine) {\n    Alpine.directive(\"fw-layer\", (el) => {\n        // _x_teleportBack : le <template x-teleport> d'où vient ce panneau.\n        const dialog = el._x_teleportBack?.closest?.(\"dialog\");\n\n        if (dialog && el.parentElement !== dialog) {\n            dialog.append(el);\n        }\n    });\n}\n"
         }
     ]
 }

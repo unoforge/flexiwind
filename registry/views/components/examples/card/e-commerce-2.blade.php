@@ -14,6 +14,6 @@
     </div>
     <div class="flex justify-between items-start gap-2 px-4 pt-3 pb-2 text-sm">
         <x-ui.card.title weight="medium" size="none" class="flex-1" text="Air Nike"/>
-        <span class="text-foreground">12$</span>
+        <span class="text-title-foreground/80">12$</span>
     </div>
 </x-ui.card>

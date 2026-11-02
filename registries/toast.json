@@ -1,63 +1,63 @@
 {
-  "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
-  "version": "1.0.0",
-  "name": "toast",
-  "type": "registry:component",
-  "title": "Toast",
-  "description": "Toast notifications from Livewire, a redirect or Alpine, themed with your tokens. Built on Flexilla Toast.",
-  "dependencies": {
-    "composer": [],
-    "node": [
-      "@flexilla/toast@^0.1.1"
-    ]
-  },
-  "files": [
-    {
-      "path": "resources/views/components/ui/toaster.blade.php",
-      "type": "registry:ui",
-      "target": "resources/views/components/ui/toaster.blade.php",
-      "content": "{{--\n    Toaster : à poser une fois dans le layout. Il règle @flexilla/toast\n    (resources/js/plugins/toast.js) et affiche les toasts laissés en session\n    par une redirection :\n\n    return redirect()->route('invoices.index')->with('toast', ['type' => 'success', 'message' => 'Invoice sent']);\n\n    Plusieurs à la fois : `->with('toast', [[…], […]])`.\n--}}\n@props([\n    'position' => 'bottom-right',\n    'duration' => null,\n    'visible' => null,\n    'closeButton' => false,\n    'richColors' => false,\n    'expand' => false,\n    'closeLabel' => 'Close notification',\n])\n\n@php\n    $positions = ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right'];\n@endphp\n\n<div hidden data-fw-toaster\n    data-position=\"{{ in_array($position, $positions, true) ? $position : 'bottom-right' }}\"\n    @if ($duration !== null) data-duration=\"{{ (int) $duration }}\" @endif\n    @if ($visible !== null) data-visible=\"{{ (int) $visible }}\" @endif\n    @if ($closeButton) data-close-button @endif\n    @if ($richColors) data-rich-colors @endif\n    @if ($expand) data-expand @endif\n    data-close-label=\"{{ $closeLabel }}\"></div>\n\n@if (session()->has('toast'))\n    {{-- @json échappe <, >, & et les guillemets : le contenu ne peut pas fermer la balise. --}}\n    <script type=\"application/json\" data-fw-toast>@json(session('toast'))</script>\n@endif\n"
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
+    "version": "1.0.0",
+    "name": "toast",
+    "type": "registry:component",
+    "title": "Toast",
+    "description": "Toast notifications from Livewire, a redirect or Alpine, themed with your tokens. Built on Flexilla Toast.",
+    "message": [
+        "Register the plugin in your Alpine setup: import { ToastPlugin } from \"./plugins/toast\"; Alpine.plugin(ToastPlugin);",
+        "Put <x-ui.toaster /> once in your layout, before @livewireScripts.",
+        "From Livewire: $this->dispatch('toast', type: 'success', message: 'Saved'). After a redirect: ->with('toast', ['type' => 'success', 'message' => 'Saved'])."
+    ],
+    "dependencies": {
+        "composer": [],
+        "node": [
+            "@flexilla/toast@^0.1.1"
+        ]
     },
-    {
-      "path": "resources/js/plugins/toast.js",
-      "type": "registry:script",
-      "target": "resources/js/plugins/toast.js",
-      "content": "/**\n * Toasts Flexiwind, sur @flexilla/toast.\n *\n *  - Alpine : `$toast.success('Link copied')` ;\n *  - Livewire : `$this->dispatch('toast', type: 'success', message: '…')` ;\n *  - après une redirection : `->with('toast', ['type' => 'success', 'message' => '…'])`,\n *    que <x-ui.toaster /> écrit dans la page.\n *\n * Tout ce qui vient du serveur passe par `show()` : types connus seulement,\n * textes convertis en chaînes. Flexilla les écrit en textContent, jamais en\n * HTML. Les couleurs viennent des variables --fx-toast-* du thème.\n */\n\nimport toast from \"@flexilla/toast\";\n\nconst TYPES = [\"message\", \"success\", \"error\", \"warning\", \"info\", \"loading\"];\nconst POSITIONS = [\"top-left\", \"top-center\", \"top-right\", \"bottom-left\", \"bottom-center\", \"bottom-right\"];\n\nlet started = false;\n\nexport function ToastPlugin(Alpine) {\n    Alpine.magic(\"toast\", () => toast);\n    initToasts();\n}\n\n/** Sans Alpine : à appeler une fois. */\nexport function initToasts() {\n    if (started) {\n        return;\n    }\n\n    started = true;\n    window.toast ??= toast;\n    window.addEventListener(\"toast\", (event) => show(event.detail));\n\n    const boot = () => {\n        configure();\n        flushSession();\n    };\n\n    document.readyState === \"loading\" ? document.addEventListener(\"DOMContentLoaded\", boot, { once: true }) : boot();\n    document.addEventListener(\"livewire:navigated\", boot);\n}\n\n/** Affiche un toast décrit par des données (Livewire, session, événement). */\nexport function show(detail = {}) {\n    // Livewire 3 envoyait parfois les paramètres dans un tableau.\n    const data = Array.isArray(detail) ? detail[0] ?? {} : detail ?? {};\n    const message = text(data.message ?? data.title);\n\n    if (!message) {\n        return;\n    }\n\n    const type = TYPES.includes(data.type) ? data.type : \"message\";\n    const options = {};\n    const description = text(data.description);\n\n    if (description) {\n        options.description = description;\n    }\n\n    if (Number.isFinite(Number(data.duration)) && data.duration !== null && data.duration !== undefined) {\n        options.duration = Math.max(0, Number(data.duration));\n    }\n\n    if (typeof data.id === \"string\" || typeof data.id === \"number\") {\n        options.id = data.id;\n    }\n\n    if (POSITIONS.includes(data.position)) {\n        options.position = data.position;\n    }\n\n    // Une action émet un événement Livewire : le composant décide quoi faire.\n    const action = data.action;\n\n    if (action && text(action.label) && typeof action.event === \"string\") {\n        options.action = {\n            label: text(action.label),\n            cancel: Boolean(action.cancel),\n            onClick: () => window.Livewire?.dispatch(action.event, action.params ?? {}),\n        };\n    }\n\n    return toast[type](message, options);\n}\n\n/** Lit les réglages posés par <x-ui.toaster>. */\nfunction configure() {\n    const element = document.querySelector(\"[data-fw-toaster]\");\n\n    if (!element) {\n        return;\n    }\n\n    const { position, duration, visible, closeButton, richColors, expand } = element.dataset;\n    const config = {\n        closeButton: closeButton !== undefined,\n        richColors: richColors !== undefined,\n        expand: expand !== undefined,\n        closeButtonLabel: element.dataset.closeLabel || \"Close notification\",\n    };\n\n    if (POSITIONS.includes(position)) {\n        config.position = position;\n    }\n\n    if (Number.isFinite(Number(duration)) && duration !== \"\") {\n        config.duration = Number(duration);\n    }\n\n    if (Number.isFinite(Number(visible)) && visible !== \"\") {\n        config.visibleToasts = Number(visible);\n    }\n\n    toast.config(config);\n}\n\n/** Les toasts laissés en session par une redirection. */\nfunction flushSession() {\n    document.querySelectorAll(\"script[data-fw-toast]\").forEach((script) => {\n        script.remove();\n\n        try {\n            const payload = JSON.parse(script.textContent);\n\n            (Array.isArray(payload) ? payload : [payload]).forEach((item) => show(item));\n        } catch {\n            // Un contenu illisible ne doit pas casser la page.\n        }\n    });\n}\n\nfunction text(value) {\n    return typeof value === \"string\" || typeof value === \"number\" ? String(value).trim() : \"\";\n}\n"
+    "files": [
+        {
+            "path": "registry/views/components/ui/toaster.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/toaster.blade.php",
+            "content": "{{--\n    Toaster : à poser une fois dans le layout. Il règle @flexilla/toast\n    (resources/js/plugins/toast.js) et affiche les toasts laissés en session\n    par une redirection :\n\n    return redirect()->route('invoices.index')->with('toast', ['type' => 'success', 'message' => 'Invoice sent']);\n\n    Plusieurs à la fois : `->with('toast', [[…], […]])`.\n--}}\n@props([\n    'position' => 'bottom-right',\n    'duration' => null,\n    'visible' => null,\n    'closeButton' => false,\n    'richColors' => false,\n    'expand' => false,\n    'closeLabel' => 'Close notification',\n])\n\n@php\n    $positions = ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right'];\n@endphp\n\n<div hidden data-fw-toaster\n    data-position=\"{{ in_array($position, $positions, true) ? $position : 'bottom-right' }}\"\n    @if ($duration !== null) data-duration=\"{{ (int) $duration }}\" @endif\n    @if ($visible !== null) data-visible=\"{{ (int) $visible }}\" @endif\n    @if ($closeButton) data-close-button @endif\n    @if ($richColors) data-rich-colors @endif\n    @if ($expand) data-expand @endif\n    data-close-label=\"{{ $closeLabel }}\"></div>\n\n@if (session()->has('toast'))\n    {{-- @json échappe <, >, & et les guillemets : le contenu ne peut pas fermer la balise. --}}\n    <script type=\"application/json\" data-fw-toast>@json(session('toast'))</script>\n@endif\n"
+        },
+        {
+            "path": "registry/js/plugins/toast.js",
+            "type": "registry:script",
+            "target": "resources/js/plugins/toast.js",
+            "content": "/**\n * Toasts Flexiwind, sur @flexilla/toast.\n *\n *  - Alpine : `$toast.success('Link copied')` ;\n *  - Livewire : `$this->dispatch('toast', type: 'success', message: '…')` ;\n *  - après une redirection : `->with('toast', ['type' => 'success', 'message' => '…'])`,\n *    que <x-ui.toaster /> écrit dans la page.\n *\n * Tout ce qui vient du serveur passe par `show()` : types connus seulement,\n * textes convertis en chaînes. Flexilla les écrit en textContent, jamais en\n * HTML. Les couleurs viennent des variables --fx-toast-* du thème.\n */\n\nimport toast from \"@flexilla/toast\";\n\nconst TYPES = [\"message\", \"success\", \"error\", \"warning\", \"info\", \"loading\"];\nconst POSITIONS = [\"top-left\", \"top-center\", \"top-right\", \"bottom-left\", \"bottom-center\", \"bottom-right\"];\n\nlet started = false;\n\nexport function ToastPlugin(Alpine) {\n    Alpine.magic(\"toast\", () => toast);\n    initToasts();\n}\n\n/** Sans Alpine : à appeler une fois. */\nexport function initToasts() {\n    if (started) {\n        return;\n    }\n\n    started = true;\n    window.toast ??= toast;\n    window.addEventListener(\"toast\", (event) => show(event.detail));\n\n    const boot = () => {\n        configure();\n        flushSession();\n    };\n\n    document.readyState === \"loading\" ? document.addEventListener(\"DOMContentLoaded\", boot, { once: true }) : boot();\n    document.addEventListener(\"livewire:navigated\", boot);\n}\n\n/** Affiche un toast décrit par des données (Livewire, session, événement). */\nexport function show(detail = {}) {\n    // Livewire 3 envoyait parfois les paramètres dans un tableau.\n    const data = Array.isArray(detail) ? detail[0] ?? {} : detail ?? {};\n    const message = text(data.message ?? data.title);\n\n    if (!message) {\n        return;\n    }\n\n    const type = TYPES.includes(data.type) ? data.type : \"message\";\n    const options = {};\n    const description = text(data.description);\n\n    if (description) {\n        options.description = description;\n    }\n\n    if (Number.isFinite(Number(data.duration)) && data.duration !== null && data.duration !== undefined) {\n        options.duration = Math.max(0, Number(data.duration));\n    }\n\n    if (typeof data.id === \"string\" || typeof data.id === \"number\") {\n        options.id = data.id;\n    }\n\n    if (POSITIONS.includes(data.position)) {\n        options.position = data.position;\n    }\n\n    // Une action émet un événement Livewire : le composant décide quoi faire.\n    const action = data.action;\n\n    if (action && text(action.label) && typeof action.event === \"string\") {\n        options.action = {\n            label: text(action.label),\n            cancel: Boolean(action.cancel),\n            onClick: () => window.Livewire?.dispatch(action.event, action.params ?? {}),\n        };\n    }\n\n    return toast[type](message, options);\n}\n\n/** Lit les réglages posés par <x-ui.toaster>. */\nfunction configure() {\n    const element = document.querySelector(\"[data-fw-toaster]\");\n\n    if (!element) {\n        return;\n    }\n\n    const { position, duration, visible, closeButton, richColors, expand } = element.dataset;\n    const config = {\n        closeButton: closeButton !== undefined,\n        richColors: richColors !== undefined,\n        expand: expand !== undefined,\n        closeButtonLabel: element.dataset.closeLabel || \"Close notification\",\n    };\n\n    if (POSITIONS.includes(position)) {\n        config.position = position;\n    }\n\n    if (Number.isFinite(Number(duration)) && duration !== \"\") {\n        config.duration = Number(duration);\n    }\n\n    if (Number.isFinite(Number(visible)) && visible !== \"\") {\n        config.visibleToasts = Number(visible);\n    }\n\n    toast.config(config);\n}\n\n/** Les toasts laissés en session par une redirection. */\nfunction flushSession() {\n    document.querySelectorAll(\"script[data-fw-toast]\").forEach((script) => {\n        script.remove();\n\n        try {\n            const payload = JSON.parse(script.textContent);\n\n            (Array.isArray(payload) ? payload : [payload]).forEach((item) => show(item));\n        } catch {\n            // Un contenu illisible ne doit pas casser la page.\n        }\n    });\n}\n\nfunction text(value) {\n    return typeof value === \"string\" || typeof value === \"number\" ? String(value).trim() : \"\";\n}\n"
+        }
+    ],
+    "cssVars": {
+        "light": {
+            "--fx-toast-bg": "var(--background)",
+            "--fx-toast-fg": "var(--title-foreground)",
+            "--fx-toast-muted-fg": "var(--muted-foreground)",
+            "--fx-toast-border": "color-mix(in oklab, var(--foreground) 12%, transparent)",
+            "--fx-toast-radius": "calc(var(--ui-radius) * 1.5)",
+            "--fx-toast-font": "var(--font-sans)",
+            "--fx-toast-shadow": "0 10px 30px -12px rgb(0 0 0 / 0.25), 0 2px 6px -2px rgb(0 0 0 / 0.06)",
+            "--fx-toast-action-bg": "var(--title-foreground)",
+            "--fx-toast-action-fg": "var(--background)",
+            "--fx-toast-ring": "var(--primary)",
+            "--fx-toast-success-icon": "var(--success)",
+            "--fx-toast-info-icon": "var(--info)",
+            "--fx-toast-warning-icon": "var(--warning)",
+            "--fx-toast-error-icon": "var(--destructive)",
+            "--fx-toast-success-bg": "color-mix(in oklab, var(--success) 10%, var(--background))",
+            "--fx-toast-success-border": "color-mix(in oklab, var(--success) 28%, var(--background))",
+            "--fx-toast-success-fg": "color-mix(in oklab, var(--success) 72%, var(--title-foreground))",
+            "--fx-toast-info-bg": "color-mix(in oklab, var(--info) 9%, var(--background))",
+            "--fx-toast-info-border": "color-mix(in oklab, var(--info) 26%, var(--background))",
+            "--fx-toast-info-fg": "color-mix(in oklab, var(--info) 72%, var(--title-foreground))",
+            "--fx-toast-warning-bg": "color-mix(in oklab, var(--warning) 11%, var(--background))",
+            "--fx-toast-warning-border": "color-mix(in oklab, var(--warning) 28%, var(--background))",
+            "--fx-toast-warning-fg": "color-mix(in oklab, var(--warning) 72%, var(--title-foreground))",
+            "--fx-toast-error-bg": "color-mix(in oklab, var(--destructive) 9%, var(--background))",
+            "--fx-toast-error-border": "color-mix(in oklab, var(--destructive) 26%, var(--background))",
+            "--fx-toast-error-fg": "color-mix(in oklab, var(--destructive) 72%, var(--title-foreground))"
+        }
     }
-  ],
-  "cssVars": {
-    "light": {
-      "--fx-toast-bg": "var(--background)",
-      "--fx-toast-fg": "var(--title-foreground)",
-      "--fx-toast-muted-fg": "var(--muted-foreground)",
-      "--fx-toast-border": "color-mix(in oklab, var(--foreground) 12%, transparent)",
-      "--fx-toast-radius": "calc(var(--ui-radius) * 1.5)",
-      "--fx-toast-font": "var(--font-sans)",
-      "--fx-toast-shadow": "0 10px 30px -12px rgb(0 0 0 / 0.25), 0 2px 6px -2px rgb(0 0 0 / 0.06)",
-      "--fx-toast-action-bg": "var(--title-foreground)",
-      "--fx-toast-action-fg": "var(--background)",
-      "--fx-toast-ring": "var(--primary)",
-      "--fx-toast-success-icon": "var(--success)",
-      "--fx-toast-info-icon": "var(--info)",
-      "--fx-toast-warning-icon": "var(--warning)",
-      "--fx-toast-error-icon": "var(--destructive)",
-      "--fx-toast-success-bg": "color-mix(in oklab, var(--success) 10%, var(--background))",
-      "--fx-toast-success-border": "color-mix(in oklab, var(--success) 28%, var(--background))",
-      "--fx-toast-success-fg": "color-mix(in oklab, var(--success) 72%, var(--title-foreground))",
-      "--fx-toast-info-bg": "color-mix(in oklab, var(--info) 9%, var(--background))",
-      "--fx-toast-info-border": "color-mix(in oklab, var(--info) 26%, var(--background))",
-      "--fx-toast-info-fg": "color-mix(in oklab, var(--info) 72%, var(--title-foreground))",
-      "--fx-toast-warning-bg": "color-mix(in oklab, var(--warning) 11%, var(--background))",
-      "--fx-toast-warning-border": "color-mix(in oklab, var(--warning) 28%, var(--background))",
-      "--fx-toast-warning-fg": "color-mix(in oklab, var(--warning) 72%, var(--title-foreground))",
-      "--fx-toast-error-bg": "color-mix(in oklab, var(--destructive) 9%, var(--background))",
-      "--fx-toast-error-border": "color-mix(in oklab, var(--destructive) 26%, var(--background))",
-      "--fx-toast-error-fg": "color-mix(in oklab, var(--destructive) 72%, var(--title-foreground))"
-    }
-  },
-  "message": [
-    "Register the plugin in your Alpine setup: import { ToastPlugin } from \"./plugins/toast\"; Alpine.plugin(ToastPlugin);",
-    "Put <x-ui.toaster /> once in your layout, before @livewireScripts.",
-    "From Livewire: $this->dispatch('toast', type: 'success', message: 'Saved'). After a redirect: ->with('toast', ['type' => 'success', 'message' => 'Saved'])."
-  ]
 }

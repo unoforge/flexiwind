@@ -124,6 +124,17 @@ return [
 
     /*
     |----------------------------------------------------------------------
+    | Exemples affichés dans une iframe
+    |----------------------------------------------------------------------
+    | ::preview{example="sidebar/demo" iframe} rend l'exemple seul, dans une
+    | page complète, puis l'affiche dans une iframe : pour les navbars,
+    | sidebars et tout ce qui a besoin d'un vrai viewport. Le site hôte
+    | déclare cette route ; elle reçoit `example` (ex. "sidebar/demo").
+    */
+    'example_preview_route' => 'preview.example',
+
+    /*
+    |----------------------------------------------------------------------
     | Directives autorisées dans le Markdown
     |----------------------------------------------------------------------
     | Jeu fermé et volontairement minuscule. Tout le reste est du Markdown

@@ -32,20 +32,20 @@ These are the public semantic variables authors should customize.
     --popover-foreground: var(--foreground);
     --surface-background: oklch(98.5% 0 none);
 
-    --primary: hsl(243 75% 59%);
+    --primary: oklch(53.7% 0.185 230);
     --primary-foreground: hsl(0 0% 100%);
-    --secondary: hsl(187 92% 36%);
+    --secondary: hsl(243 75% 59%);
     --secondary-foreground: hsl(0 0% 100%);
     --accent: hsl(209 92% 36%);
     --accent-foreground: hsl(0 0% 100%);
 
     --muted: oklch(96.7% 0.001 286.375);
     --muted-foreground: oklch(44.2% 0.017 285.786);
-    --destructive: oklch(57.7% 0.245 27.325);
+    --destructive: hsl(0 72% 51%);
     --destructive-foreground: hsl(0 0% 100%);
-    --success: oklch(59.6% 0.145 163.225);
-    --warning: oklch(64.6% 0.222 41.116);
-    --info: oklch(58.8% 0.158 241.966);
+    --success: hsl(161 94% 30%);
+    --warning: hsl(21 90% 48%);
+    --info: hsl(200 98% 39%);
 
     --border: oklch(92% 0.004 286.32);
     --input: oklch(92% 0.004 286.32);

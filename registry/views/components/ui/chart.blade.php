@@ -75,11 +75,11 @@
     @if ($canNavigate && $brush) data-chart-brush @endif
     {{ $attributes->class([
         'm-0 flex flex-col gap-4 '.$defaultSize,
-        'rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background' => $canNavigate,
+        'rounded-ui outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background' => $canNavigate,
     ]) }}>
     <div data-slot="chart-plot" class="grid min-h-0 flex-1 grid-cols-[auto_minmax(0,1fr)] grid-rows-[minmax(0,1fr)_auto]">
         @if (! $hasData)
-            <p class="col-start-2 row-start-1 flex items-center justify-center rounded-lg border border-dashed border-border text-sm text-muted-foreground">
+            <p class="col-start-2 row-start-1 flex items-center justify-center rounded-ui border border-dashed border-border text-sm text-muted-foreground">
                 No data to display
             </p>
         @elseif ($slot->isEmpty())
@@ -110,7 +110,7 @@
                     @if ($canNavigate)
                         {{-- Bouton : le plugin masque ou affiche la série. --}}
                         <button type="button" data-chart-toggle="{{ $item['key'] }}" aria-pressed="true"
-                            class="flex cursor-pointer items-center gap-1.5 rounded-md px-1 py-0.5 transition-opacity hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:outline-none aria-[pressed=false]:opacity-40 aria-[pressed=false]:line-through">
+                            class="flex cursor-pointer items-center gap-1.5 rounded-[calc(var(--radius-ui)-var(--spacing))] px-1 py-0.5 transition-opacity hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:outline-none aria-[pressed=false]:opacity-40 aria-[pressed=false]:line-through">
                             <span class="size-2.5 shrink-0 rounded-[3px]" style="background: {{ $item['color'] }}"></span>
                             {{ $item['label'] }}
                         </button>

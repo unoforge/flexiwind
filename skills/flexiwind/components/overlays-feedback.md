@@ -15,6 +15,8 @@ For detailed API references, examples, and props tables, see the individual comp
 - [collapse.md](./collapse.md)
 - [alert-dialog.md](./alert-dialog.md)
 - [dissmissible.md](./dissmissible.md)
+- [command-menu.md](./command-menu.md)
+- [toast.md](./toast.md)
 
 ## Public Docs
 
@@ -26,6 +28,8 @@ For detailed API references, examples, and props tables, see the individual comp
 - `https://flexiwind.unoforge.com/components/tooltip`
 - `https://flexiwind.unoforge.com/components/accordion`
 - `https://flexiwind.unoforge.com/components/collapse`
+- `https://flexiwind.unoforge.com/components/command-menu`
+- `https://flexiwind.unoforge.com/components/toast`
 
 ## Verified Blade Primitives
 

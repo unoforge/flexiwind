@@ -85,8 +85,7 @@
     $composed = str_contains((string) $slot, 'data-select-content');
 @endphp
 
-{{-- data-fx-teleport-root : le panneau reste ici, à portée de Livewire. --}}
-<div data-slot="autocomplete" data-listbox-id="{{ $id }}" data-fx-teleport-root @if ($isInvalid) data-invalid @endif
+<div data-slot="autocomplete" data-listbox-id="{{ $id }}" @if ($isInvalid) data-invalid @endif
     x-data="fwListbox(@js([
         'kind' => 'autocomplete',
         'multiple' => (bool) $multiple,

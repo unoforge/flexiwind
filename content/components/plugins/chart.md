@@ -30,7 +30,30 @@ Switching from one to the other is a one-word change. Every chart type has its o
 php artisan flexi:add echarts
 ```
 
-This adds the Blade component, two plugin files and the `echarts` npm package. Register the plugin next to the other Flexiwind plugins:
+This adds the Blade component, two plugin files, the `resources/js/charts.js` entry and the `echarts` npm package.
+
+ECharts gets **its own bundle**, never mixed into `flexilla.js`. Two steps make that happen.
+
+**1. Declare the entry in `vite.config.js`**, next to your other inputs:
+
+```js
+laravel({
+    input: [
+        "resources/css/app.css",
+        "resources/js/app.js",
+        "resources/js/flexilla.js",
+        "resources/js/charts.js",
+    ],
+}),
+```
+
+**2. Load it only in the layouts that show charts:**
+
+```blade
+@vite(['resources/js/app.js', 'resources/js/flexilla.js', 'resources/js/charts.js'])
+```
+
+`resources/js/charts.js` registers the plugin; there is nothing to add to `flexilla.js`:
 
 ```js
 import { EChartsPlugin } from "./plugins/echarts";
@@ -38,31 +61,34 @@ import { EChartsPlugin } from "./plugins/echarts";
 Alpine.plugin(EChartsPlugin);
 ```
 
+:::callout{type="warning"}
+Do not register `EChartsPlugin` in `flexilla.js`, and never `import "echarts"` yourself: ECharts would then be downloaded by every page, with or without a chart.
+:::
+
 :::callout{type="note"}
 Apache ECharts is licensed under Apache 2.0: free for every project and every company, with no revenue threshold and no license key.
 :::
 
 ## Bundle size
 
-ECharts is large, so it is never part of your main bundle. The plugin imports it with dynamic `import()`, and Vite builds it as separate files:
+Because `charts.js` is its own Vite input, the build writes ECharts to separate files, and a layout that does not load `charts.js` never downloads them:
 
 | File | Loaded | Size (gzip) |
 | --- | --- | --- |
-| `flexilla.js`, your plugins | on every page | unchanged |
+| `flexilla.js`, your plugins | on every page | no ECharts code |
+| `charts.js`, the plugin | on pages whose layout loads it | ~4 kB |
 | ECharts core, SVG renderer, grid, tooltip, legend | with the first chart of a page | ~155 kB |
 | One file per chart type (line, bar, pie…) | when a chart of that type appears | 3 to 10 kB each |
 | Zoom | with the first `zoom` chart | ~12 kB |
 | Canvas renderer | with the first large chart | ~5 kB |
 
-A page without charts downloads nothing more. A page with a line chart loads the core and the line module — not candlesticks, not heatmaps.
+Inside that bundle, the plugin still loads the core and each chart type on demand: a page with a line chart loads the core and the line module, not candlesticks, not heatmaps.
 
 Keep it that way:
 
-- **Never import `echarts` from `app.js`.** A static import pulls the whole library into every page.
-- **Register the plugin, not ECharts.** `Alpine.plugin(EChartsPlugin)` weighs a few kilobytes; ECharts only follows when a chart is on screen.
+- **One entry, one bundle.** `charts.js` stays in `input` of `vite.config.js` and in the `@vite` call of the chart layouts only.
+- **Never import `echarts` from `app.js` or `flexilla.js`.** A static import pulls the whole library into every page.
 - **Add chart types in `echarts-core.js`,** as one more line in `LOADERS`. Each new type becomes its own file.
-
-If you prefer a dedicated entry point, move the `Alpine.plugin(EChartsPlugin)` call into its own file, add it to `input` in `vite.config.js`, and load it with `@vite('resources/js/charts.js')` only in the layouts that show charts.
 
 ## Theming
 

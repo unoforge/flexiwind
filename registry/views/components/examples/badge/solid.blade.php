@@ -1,3 +1,4 @@
+{{-- solid porte la palette complète (voir intents.css). --}}
 <div class="flex flex-wrap gap-4">
     <x-ui.badge>Badge Gray</x-ui.badge>
     <x-ui.badge intent="primary">Badge Primary</x-ui.badge>

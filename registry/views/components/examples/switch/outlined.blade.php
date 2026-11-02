@@ -1,4 +1,8 @@
-<div class="flex items-center flex-wrap gap-6">
-    <x-ui.switch outlined name="switch_outline1" id="switch_outline1" bg="bg" track="transparent" knob="gray-500" />
-    <x-ui.switch outlined name="switch_outline2" id="switch_outline2" bg="bg" track="transparent" knob="gray-500" checked />
+<div class="flex flex-wrap items-center gap-4">
+    <x-ui.switch outlined name="outlined_off" aria-label="Outlined, off" />
+    <x-ui.switch outlined name="outlined_on" checked aria-label="Outlined, on" />
+    <x-ui.switch outlined name="outlined_quiet" bg="bg" track="transparent" knob="muted" knob-checked="primary"
+        aria-label="Quiet outlined, off" />
+    <x-ui.switch outlined name="outlined_quiet_on" checked bg="bg" track="transparent" knob="muted" knob-checked="primary"
+        aria-label="Quiet outlined, on" />
 </div>

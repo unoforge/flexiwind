@@ -32,6 +32,12 @@ php artisan flexi:add select
 
 ::preview{example="select/icon-indicator" inline}
 
+## Indicator color
+
+The arrow is drawn in CSS, not with an image: `--ui-select-indicator-color` sets its color (`--muted-foreground` in every theme), `--ui-select-indicator-stroke` its weight and `--ui-select-indicator-size` its width. `--ui-select-indicator-image` replaces it with your own image.
+
+::preview{example="select/indicator-color" inline}
+
 ## References
 
 ### Composition

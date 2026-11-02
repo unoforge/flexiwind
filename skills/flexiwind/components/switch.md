@@ -1,10 +1,10 @@
 ## Demo
 
 ```html
-<div class="flex items-center flex-wrap gap-3">
-    <x-ui.switch name="switch_1" id="switch_1" />
-    <x-ui.switch name="switch_def2" id="switch_def2" bg="muted" track="title" knob="muted" />
-    <x-ui.switch name="switch_def3" id="switch_def3" bg="surface" track="surface" knob="bg" />
+<div class="flex flex-wrap items-center gap-4">
+    <x-ui.switch name="wifi" checked aria-label="Wi-Fi" />
+    <x-ui.switch name="bluetooth" aria-label="Bluetooth" />
+    <x-ui.switch name="airplane" checked disabled aria-label="Airplane mode" />
 </div>
 ```
 
@@ -14,154 +14,67 @@
 php artisan flexi:add switch
 ```
 
+A native checkbox with `role="switch"`: it submits with forms, works with `wire:model`, needs no JavaScript.
+
 ## With label
 
-Use the `label` prop for a simple inline label:
+`label` wraps the switch and its text in one `<label>` (no `id` needed). `description` adds a second line linked by `aria-describedby`. The slot can replace `label`.
 
 ```html
-<div class="flex flex-col gap-3">
-    <x-ui.switch name="switch" id="switch" label="Use Dark Theme" />
-    <x-ui.switch checked name="switch_lab1" id="switch_lab1" label="Checked" />
+<x-ui.switch name="digest" checked label="Weekly digest" description="A summary of your projects every Monday." />
+```
+
+## Settings list
+
+`reverse` puts the text first and the switch at the end of a full-width line.
+
+```html
+<div class="divide-y divide-border rounded-ui border border-border">
+    <div class="p-4">
+        <x-ui.switch reverse name="email_notifications" label="Email notifications" description="Receive updates about your account." />
+    </div>
 </div>
 ```
 
-For more control over label position and layout, use an external `<label for="...">`:
+## Sizes and colors
 
 ```html
-<div class="flex flex-col gap-3">
-    <label for="switch_lab_2" class="flex items-center gap-x-1">
-        <span class="text-sub-title me-3">No</span>
-        <x-ui.switch name="switch_lab_2" id="switch_lab_2" />
-        <span class="text-sub-title ms-3">Yes</span>
-    </label>
-</div>
+<x-ui.switch size="xs" name="a" label="Extra small" />
+<x-ui.switch size="lg" name="b" label="Large" />
+<x-ui.switch name="c" checked track="success" aria-label="Success" />
+<x-ui.switch outlined name="d" aria-label="Outlined" />
 ```
 
-## Sizes
+## Livewire
 
 ```html
-<div class="flex flex-col gap-3 w-full">
-    <label for="switch_xs" class="flex items-center gap-x-1">
-        <x-ui.switch size="xs" name="switch_xs" id="switch_xs" />
-        <span class="text-sub-title ms-3">Xs</span>
-    </label>
-    <label for="switch_sm" class="flex items-center gap-x-1">
-        <x-ui.switch size="sm" name="switch_sm" id="switch_sm" />
-        <span class="text-sub-title ms-3">SM</span>
-    </label>
-    <label for="switch_normal" class="flex items-center gap-x-1">
-        <x-ui.switch name="switch_normal" id="switch_normal" />
-        <span class="text-sub-title ms-3">MD</span>
-    </label>
-    <label for="switch_lg" class="flex items-center gap-x-1">
-        <x-ui.switch size="lg" name="switch_lg" id="switch_lg" />
-        <span class="text-sub-title ms-3">LG</span>
-    </label>
-</div>
+<x-ui.switch wire:model.live="notifications" label="Notifications" />
 ```
 
-## Outlined
-
-```html
-<div class="flex items-center flex-wrap gap-6">
-    <x-ui.switch outlined name="switch_outline1" id="switch_outline1" bg="bg" track="transparent" knob="muted" />
-    <x-ui.switch outlined name="switch_outline2" id="switch_outline2" bg="bg" track="transparent" knob="muted" />
-</div>
-```
-
-## References
-
-### Switch Props
-
-All props are optional unless noted.
+## Props
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| id | string | auto | Input id — auto-generated from name or uniqid |
-| name | string | — | Required for form submission |
-| value | string | — | Input value |
-| checked | boolean | false | Whether switch is toggled on |
-| disabled | boolean | false | Disables interaction |
-| size | string | 'md' | xs, sm, md, lg |
-| outlined | boolean | false | Outlined style with ring |
-| label | string | — | Renders an inline label next to the switch |
-| bg | string | 'default' | Unchecked track background. See bg map below |
-| track | string | 'default' | Checked track color (maps to CSS `color`). See track map |
-| knob | string | 'white' | Knob color. See knob map |
-| knobChecked | string | — | Knob color when checked (falls back to knob) |
-| class | string | '' | Additional CSS classes |
+| name, value, id | string | — | Passed to the input. No id is generated. |
+| checked | boolean | false | On at first |
+| disabled | boolean | false | Can't be toggled |
+| label | string | — | Text next to the switch (or the slot) |
+| description | string | — | Second line under the label |
+| reverse | boolean | false | Text first, switch at the end |
+| size | string | md | xs, sm, md, lg |
+| outlined | boolean | false | Ring around the switch |
+| bg | string | border-strong | Color when off (`muted` when outlined) |
+| track | string | primary | Color when on |
+| knob | string | white | Knob color |
+| knob-checked | string | knob | Knob color when on |
 
-### Semantic Color Maps
+Color props accept `bg`, `surface`, `muted`, `title`, `neutral`, `white`, `transparent`, or any theme color name (`success`, `warning`, `destructive`, `gray-500`…) used as `var(--color-<name>)`.
 
-#### bg — unchecked track background
+## Styling
 
-| Value | CSS Variable |
-|-------|-------------|
-| default | `--switch-bg:var(--color-muted)` |
-| muted | `--switch-bg:var(--color-muted)` |
-| surface | `--switch-bg:var(--color-card)` |
-| bg | `--switch-bg:var(--color-background)` |
-
-#### track — checked track color (uses CSS `color` with `checked:bg-current`)
-
-| Value | CSS |
-|-------|-----|
-| default | `color:var(--color-primary)` |
-| muted | `color:var(--color-muted)` |
-| surface | `color:var(--color-foreground)` |
-| neutral | `color:var(--color-muted-foreground)` |
-| title | `color:var(--color-foreground)` |
-| transparent | `color:transparent` |
-
-Any arbitrary CSS color value also works (pass it as a string) — it will be used as `var(--color-{value})`.
-
-#### knob — knob/dot color
-
-| Value | CSS Variable |
-|-------|-------------|
-| white | `var(--color-white)` |
-| bg | `var(--color-background)` |
-| muted | `var(--color-muted-foreground)` |
-| neutral | `var(--color-foreground)` |
-
-Any arbitrary color value also works — it will be used as `var(--color-{value})`.
-
-#### knobChecked
-
-When set, applies `--knob-bg-checked` for a different knob color in the checked state. Falls back to `--knob-bg` when omitted.
-
-### Styling Examples
-
-```html
-<!-- Default switch -->
-<x-ui.switch name="s1" id="s1" />
-
-<!-- Custom colors via semantic props -->
-<x-ui.switch name="s2" id="s2" bg="surface" track="title" knob="neutral" />
-
-<!-- Outlined with custom knob -->
-<x-ui.switch outlined name="s3" id="s3" bg="bg" track="transparent" knob="muted" />
-
-<!-- With label -->
-<x-ui.switch name="s4" id="s4" label="Enable notifications" />
-
-<!-- Checked with different knob color -->
-<x-ui.switch checked name="s5" id="s5" knob="muted" knobChecked="white" />
-```
-
-### Size Classes
-
-| Prop | Classes Applied |
-| --- | --- |
-| xs | `switch-xs` + `switch-base-xs` |
-| sm | `switch-sm` + `switch-base-sm` |
-| md | `switch-md` + `switch-base-md` (default) |
-| lg | `switch-lg` + `switch-base-lg` |
-
-When `outlined="true"`, the component adds `ring ring-border-strong shadow`.
+Classes go to the input. A `bg-*` class replaces the off color, a `text-<color>` class the on color, `[--knob-bg:…]` the knob: the component then drops its own default for that part. Other custom properties: `--knob-bg-checked`, `--knob-size`, `--knob-radius`, `--toggle-radius`.
 
 ## Avoid
 
-- Do not use `variant`, `intent`, or custom CSS variables for styling — use the semantic props (`bg`, `track`, `knob`, `knobChecked`) instead.
-- Do not omit `name` — it is required for form submission.
-- Do not pass `class` with background colors that conflict with `bg` prop — the `bg` prop sets `--switch-bg`.
+- Do not leave a switch without a name for assistive tech: use `label`, `aria-label`, or a `<label for>` pointing at an `id`.
+- Do not use a switch for a choice that only applies after a submit button — use a checkbox.

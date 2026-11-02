@@ -23,7 +23,7 @@
     ]) }}>
     @if ($brush)
         <div data-chart-brush-overlay hidden @class([
-            'pointer-events-none absolute rounded-md bg-primary/12 ring-1 ring-primary/50 ring-inset',
+            'pointer-events-none absolute rounded-[calc(var(--radius-ui)-var(--spacing)*0.5)] bg-primary/12 ring-1 ring-primary/50 ring-inset',
             'inset-x-0' => $horizontal,
             'inset-y-0' => ! $horizontal,
         ])></div>
@@ -32,8 +32,8 @@
     @if ($cursor)
         <span data-chart-cursor @class([
             'pointer-events-none absolute opacity-0 transition-opacity group-data-open/tooltip:opacity-100',
-            'inset-x-0 rounded-md bg-foreground/5' => $layout === 'band' && $horizontal,
-            'inset-y-0 rounded-md bg-foreground/5' => $layout === 'band' && ! $horizontal,
+            'inset-x-0 rounded-[calc(var(--radius-ui)-var(--spacing)*0.5)] bg-foreground/5' => $layout === 'band' && $horizontal,
+            'inset-y-0 rounded-[calc(var(--radius-ui)-var(--spacing)*0.5)] bg-foreground/5' => $layout === 'band' && ! $horizontal,
             'inset-y-0 w-px bg-border-strong' => $layout === 'point',
         ])></span>
         @if ($layout === 'point')
@@ -46,7 +46,7 @@
     @endif
 
     <div data-chart-panel @class([
-        'pointer-events-none invisible absolute min-w-36 rounded-lg border border-border bg-background px-3 py-2 text-xs opacity-0 shadow-lg transition-opacity group-data-open/tooltip:visible group-data-open/tooltip:opacity-100',
+        'pointer-events-none invisible absolute min-w-36 rounded-ui border border-border bg-background px-3 py-2 text-xs opacity-0 shadow-lg transition-opacity group-data-open/tooltip:visible group-data-open/tooltip:opacity-100',
         '-translate-y-1/2' => $horizontal,
         'top-1' => ! $horizontal,
     ])>

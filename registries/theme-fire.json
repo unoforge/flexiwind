@@ -50,7 +50,11 @@
             "--gray-700": "hsl(30 6% 25%)",
             "--gray-800": "hsl(12 6% 15%)",
             "--gray-900": "hsl(24 10% 10%)",
-            "--gray-950": "hsl(20 14% 4%)"
+            "--gray-950": "hsl(20 14% 4%)",
+            "--checkbox-mark-color": "var(--primary-foreground)",
+            "--ui-select-indicator-color": "var(--muted-foreground)",
+            "--ui-checkbox-invalid-color": "var(--destructive)",
+            "--switch-knob-checked-color": "var(--primary-foreground)"
         },
         "dark": {
             "--background": "oklch(14.7% 0.004 49.25)",
@@ -84,7 +88,11 @@
             "--chart-2": "#3987e5",
             "--chart-3": "#c98500",
             "--chart-4": "#9085e9",
-            "--chart-5": "#199e70"
+            "--chart-5": "#199e70",
+            "--checkbox-mark-color": "var(--primary-foreground)",
+            "--ui-select-indicator-color": "var(--muted-foreground)",
+            "--ui-checkbox-invalid-color": "var(--destructive)",
+            "--switch-knob-checked-color": "var(--primary-foreground)"
         }
     }
 }

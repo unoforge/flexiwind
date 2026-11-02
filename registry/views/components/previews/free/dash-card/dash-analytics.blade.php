@@ -44,7 +44,7 @@
                     <p class="text-sm text-muted-foreground">Total Users</p>
                     <p class="text-2xl font-bold text-foreground mt-1">2,841</p>
                 </div>
-                <div class="size-10 rounded-ui ui-subtle ui-subtle-accent flex items-center justify-center">
+                <div class="size-10 rounded-ui ui-subtle ui-subtle-info flex items-center justify-center">
                     <x-ui.icon name="ph--users" class="text-xl text-accent" />
                 </div>
             </div>
