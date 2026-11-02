@@ -93,7 +93,7 @@ Use the files in this skill first. The public docs site is also available at `ht
 >     Click me
 > </x-ui.button>
 > ```
-> Key props: `variant` (solid|soft|outline|ghost|none), `intent` (any semantic color), `size` (xs|sm|md|lg|xl).
+> Key props: `variant` (solid|soft|outline|ghost|none), `intent` (one the variant supports, see `components/button.md`), `size` (xs|sm|md|lg|xl).
 > Avoid: Do not invent variant names outside the documented set.
 
 ### Example Answer (bad)
@@ -115,6 +115,15 @@ Use the files in this skill first. The public docs site is also available at `ht
 | Switch | `flexi:add switch` | `x-ui.switch` |
 | OTP / Pin | `flexi:add otp` | `x-ui.otp` |
 | Range | `flexi:add range` | `x-ui.range` |
+| Listbox | `flexi:add listbox` | `x-ui.listbox` |
+| Autocomplete | `flexi:add autocomplete` | `x-ui.autocomplete` |
+| Tag input | `flexi:add tag-input` | `x-ui.tag-input` |
+| Tag group | `flexi:add tag-group` | `x-ui.tag-group` |
+| Toggle | `flexi:add toggle` | `x-ui.toggle` |
+| Toggle group | `flexi:add toggle-group` | `x-ui.toggle-group` |
+| File trigger | `flexi:add file-trigger` | `x-ui.file-trigger` |
+| Rich text | `flexi:add rich-text` | `x-ui.rich-text` |
+| Rich text Pro (Pro) | `flexi:add @fx/rich-text-pro` | `x-ui.rich-text-pro` |
 
 ### Layout & Structure
 | Component | Install | Blade |
@@ -146,6 +155,8 @@ Use the files in this skill first. The public docs site is also available at `ht
 | Meter | `flexi:add meter` | `x-ui.meter` |
 | Skeleton | `flexi:add skeleton` | `x-ui.skeleton` |
 | Kbd | `flexi:add kbd` | `x-ui.kbd` |
+| Chart | `flexi:add chart` | `x-ui.chart` |
+| ECharts | `flexi:add echarts` | `x-ui.echart` |
 
 ### Overlays & Disclosure
 | Component | Install | Blade | Flexilla? |
@@ -159,6 +170,8 @@ Use the files in this skill first. The public docs site is also available at `ht
 | Accordion | `flexi:add accordion` | `x-ui.accordion` | Yes |
 | Collapse | `flexi:add collapse` | `x-ui.collapse` | Yes |
 | Dissmissible | `flexi:add dissmissible` | `x-ui.dissmissible` | Yes |
+| Command menu | `flexi:add command-menu` | `x-ui.command-menu` | No |
+| Toast | `flexi:add toast` | `x-ui.toaster` | No |
 
 ### Typography
 | Component | Install | Blade |

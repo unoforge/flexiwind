@@ -15,6 +15,8 @@ For detailed API references, examples, and props tables, see the individual comp
 - [meter.md](./meter.md)
 - [skeleton.md](./skeleton.md)
 - [kbd.md](./kbd.md)
+- [chart.md](./chart.md)
+- [echart.md](./echart.md)
 
 ## Public Docs
 
@@ -27,6 +29,8 @@ For detailed API references, examples, and props tables, see the individual comp
 - `https://flexiwind.unoforge.com/components/meter`
 - `https://flexiwind.unoforge.com/components/skeleton`
 - `https://flexiwind.unoforge.com/components/kbd`
+- `https://flexiwind.unoforge.com/components/chart`
+- `https://flexiwind.unoforge.com/components/plugins/chart`
 - `https://flexiwind.unoforge.com/components/icon`
 - `https://flexiwind.unoforge.com/components/text`
 - `https://flexiwind.unoforge.com/components/heading`
@@ -62,5 +66,4 @@ For detailed API references, examples, and props tables, see the individual comp
 
 ## Avoid
 
-- Do not document `x-ui.placeholder` as a public Flexiwind primitive here; there is an implementation file, but it is not part of the current public component catalog page.
 - Do not invent badge or alert variants that are not demonstrated in the docs or supported by the shared styling model.

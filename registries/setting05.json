@@ -1,0 +1,20 @@
+{
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
+    "version": "1.0.0",
+    "name": "setting05",
+    "type": "registry:component",
+    "title": "Setting 05",
+    "description": "Setting page",
+    "registryDependencies": [
+        "button",
+        "input"
+    ],
+    "files": [
+        {
+            "path": "registry/views/components/previews/free/settings/setting05.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/setting05.blade.php",
+            "content": "<div class=\"max-w-2xl w-full p-4 mx-auto\">\n    <div class=\"bg-background border border-border-strong/40 ring-2 ring-border rounded-lg\">\n        <div class=\"p-6 border-b border-border bg-surface\">\n            <h4 class=\"text-lg font-semibold text-title-foreground \">\n                Two-Factor Authentication\n            </h4>\n            <p class=\"text-sm text-foreground\">\n                Add an extra layer of security to your account\n            </p>\n        </div>\n        <div class=\"p-6 grid gap-4\">\n            <div class=\"flex items-center justify-between p-4 border border-border-strong/60 rounded-lg\">\n                <div class=\"space-y-1 flex-1\">\n                    <h5 class=\"font-medium text-title-foreground \">\n                        SMS Authentication\n                    </h5>\n                    <p class=\"text-sm text-muted-foreground\">\n                        Receive verification codes via SMS\n                    </p>\n                </div>\n                <div class=\"flex items-center space-x-3\">\n                    <span class=\"text-sm text-muted-foreground\">Enabled</span>\n                    <x-ui.button variant=\"soft\" size=\"sm\" class=\"border border-border-strong/60\">\n                        Configure\n                    </x-ui.button>\n                </div>\n            </div>\n\n            <div class=\"flex items-center justify-between p-4 border border-border-strong/60 rounded-lg\">\n                <div class=\"space-y-1 flex-1\">\n                    <h5 class=\"font-medium text-title-foreground \">\n                        Authenticator App\n                    </h5>\n                    <p class=\"text-sm text-muted-foreground\">\n                        Use an authenticator app for verification\n                    </p>\n                </div>\n                <div class=\"flex items-center space-x-3\">\n                    <span class=\"text-sm text-muted-foreground\">Not configured</span>\n                    <x-ui.button size=\"sm\">\n                        Setup\n                    </x-ui.button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+        }
+    ]
+}

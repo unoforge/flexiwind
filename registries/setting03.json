@@ -1,0 +1,23 @@
+{
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
+    "version": "1.0.0",
+    "name": "setting03",
+    "type": "registry:component",
+    "title": "Setting 03",
+    "description": "Setting page",
+    "registryDependencies": [
+        "button",
+        "input",
+        "select",
+        "switch",
+        "label"
+    ],
+    "files": [
+        {
+            "path": "registry/views/components/previews/free/settings/setting03.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/setting03.blade.php",
+            "content": "<div class=\"max-w-2xl w-full p-4 mx-auto\">\n    <div class=\"bg-surface border border-border-strong/40 ring-2 ring-border rounded-lg\">\n        <div class=\"p-6 border-b border-border-strong\">\n            <h4 class=\"text-lg font-semibold text-title-foreground \">\n                Account Settings\n            </h4>\n            <p class=\"text-sm text-foreground\">\n                Manage your account information and preferences\n            </p>\n        </div>\n        <div class=\"p-6 grid md:grid-cols-2 gap-y-6 gap-x-4\">\n            <div class=\"flex flex-col space-y-2\">\n                <x-ui.label>First Name</x-ui.label>\n                <x-ui.input type=\"text\" class=\"text-sm\" value=\"Sarah\" placeholder=\"Enter first name\" />\n            </div>\n            <div class=\"flex flex-col space-y-2\">\n                <x-ui.label>Last Name</x-ui.label>\n                <x-ui.input type=\"text\" class=\"text-sm\" value=\"Chen\" placeholder=\"Enter last name\" />\n            </div>\n            <div class=\"flex flex-col space-y-2 col-span-full\">\n                <x-ui.label>Email Address</x-ui.label>\n                <x-ui.input type=\"email\" class=\"text-sm\" value=\"sarah.chen@company.com\"\n                    placeholder=\"Enter email address\" />\n            </div>\n            <div class=\"flex flex-col space-y-2 col-span-full\">\n                <x-ui.label>Job Title</x-ui.label>\n                <x-ui.input type=\"text\" class=\"text-sm\" value=\"Senior Product Designer\"\n                    placeholder=\"Enter job title\" />\n            </div>\n            <div class=\"flex flex-col space-y-2 col-span-full\">\n                <x-ui.label>Time Zone</x-ui.label>\n                <x-ui.select class=\"text-sm\">\n                    <option>Pacific Standard Time (PST)</option>\n                    <option>Mountain Standard Time (MST)</option>\n                    <option>Central Standard Time (CST)</option>\n                    <option>Eastern Standard Time (EST)</option>\n                </x-ui.select>\n            </div>\n            <div class=\"flex justify-end space-x-3 pt-4 border-t border-border col-span-full\">\n                <x-ui.button size=\"sm\" variant=\"outline\">\n                    Cancel\n                </x-ui.button>\n                <x-ui.button size=\"sm\">\n                    Save Changes\n                </x-ui.button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+        }
+    ]
+}

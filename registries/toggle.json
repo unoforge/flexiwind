@@ -1,0 +1,19 @@
+{
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
+    "version": "1.0.0",
+    "name": "toggle",
+    "type": "registry:component",
+    "title": "Toggle",
+    "description": "A button that stays pressed, with aria-pressed. Ghost, outline and primary variants.",
+    "message": [
+        "wire:model receives a boolean. An icon-only toggle needs an aria-label."
+    ],
+    "files": [
+        {
+            "path": "registry/views/components/ui/toggle.blade.php",
+            "type": "registry:ui",
+            "target": "resources/views/components/ui/toggle.blade.php",
+            "content": "{{--\n    Un bouton qui reste enfoncé : une valeur oui/non qui ressemble aux\n    boutons voisins (barres d'outils, cartes, en-têtes).\n\n    <x-ui.toggle wire:model.live=\"starred\" aria-label=\"Star\">\n        <x-ui.icon name=\"ph--star\" />\n    </x-ui.toggle>\n\n    `aria-pressed` donne l'état : le libellé ne change pas quand on presse.\n    Avec `name`, un champ caché envoie `value` tant que le bouton est pressé.\n--}}\n@props([\n    'pressed' => false,\n    'variant' => 'ghost',\n    'size' => 'md',\n    'iconOnly' => false,\n    'name' => null,\n    'value' => '1',\n    'disabled' => false,\n])\n\n@php\n    $variant = in_array($variant, ['ghost', 'outline', 'primary'], true) ? $variant : 'ghost';\n    $size = in_array($size, ['sm', 'md', 'lg'], true) ? $size : 'md';\n@endphp\n\n<button type=\"button\" data-slot=\"toggle\"\n    x-data=\"{ pressed: @js((bool) $pressed) }\" x-modelable=\"pressed\"\n    x-on:click=\"pressed = !pressed\" x-bind:aria-pressed=\"String(!!pressed)\"\n    aria-pressed=\"{{ $pressed ? 'true' : 'false' }}\"\n    @if ($disabled) disabled @endif\n    {{ $attributes->class([\n        'inline-flex shrink-0 items-center justify-center gap-2 rounded-ui font-medium whitespace-nowrap transition-colors duration-150',\n        'outline-2 outline-offset-2 outline-transparent focus-visible:outline-(--ui-input-focus-outline) disabled:cursor-not-allowed disabled:opacity-50',\n        '*:data-[slot=icon]:shrink-0',\n        'h-8 min-w-8 text-[13px]' => $size === 'sm',\n        'h-9 min-w-9 text-sm' => $size === 'md',\n        'h-10 min-w-10 text-sm' => $size === 'lg',\n        'px-2' => ! $iconOnly && $size === 'sm',\n        'px-2.5' => ! $iconOnly && $size === 'md',\n        'px-3' => ! $iconOnly && $size === 'lg',\n        'text-muted-foreground enabled:hover:bg-muted enabled:hover:text-title-foreground aria-pressed:bg-muted aria-pressed:text-title-foreground' => $variant === 'ghost',\n        'border border-border-input bg-background text-foreground shadow-xs enabled:hover:bg-muted aria-pressed:border-border-strong aria-pressed:bg-muted aria-pressed:text-title-foreground' => $variant === 'outline',\n        'text-muted-foreground enabled:hover:bg-muted enabled:hover:text-title-foreground aria-pressed:bg-primary/10 aria-pressed:text-primary dark:aria-pressed:text-[color-mix(in_oklab,var(--primary)_45%,white)]' => $variant === 'primary',\n    ]) }}>\n    {{ $slot }}\n    @if ($name)\n        <input type=\"hidden\" name=\"{{ $name }}\" value=\"{{ $value }}\" x-bind:disabled=\"!pressed\" @unless ($pressed) disabled @endunless>\n    @endif\n</button>\n"
+        }
+    ]
+}

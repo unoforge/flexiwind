@@ -1,0 +1,22 @@
+{
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
+    "version": "1.0.0",
+    "name": "setting04",
+    "type": "registry:component",
+    "title": "Setting 04",
+    "description": "Setting page",
+    "registryDependencies": [
+        "button",
+        "input",
+        "select",
+        "switch"
+    ],
+    "files": [
+        {
+            "path": "registry/views/components/previews/free/settings/setting04.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/setting04.blade.php",
+            "content": "<div class=\"max-w-2xl w-full p-4 mx-auto\">\n    <div class=\"bg-background border border-border-strong/40 ring-2 ring-border rounded-lg\">\n        <div class=\"p-6 border-b border-border bg-surface\">\n            <h4 class=\"text-lg font-semibold text-title-foreground \">\n                Notification Preferences\n            </h4>\n            <p class=\"text-sm text-foreground\">\n                Choose how you want to be notified about activity\n            </p>\n        </div>\n        <div class=\"p-6 grid gap-6\">\n            <div class=\"space-y-4\">\n                <div class=\"flex items-center justify-between p-4 border border-border-strong/40 rounded-lg\">\n                    <div class=\"space-y-1\">\n                        <h5 class=\"font-medium text-title-foreground \">Email Notifications</h5>\n                        <p class=\"text-sm text-muted-foreground\">\n                            Receive notifications via email\n                        </p>\n                    </div>\n                    <x-ui.switch name=\"email_notif\" id=\"email_notif\"\n                        class=\"text-primary [--knob-bg:var(--color-white)] bg-muted/80\" />\n                </div>\n\n                <div class=\"flex items-center justify-between p-4 border border-border-strong/40 rounded-lg\">\n                    <div class=\"space-y-1 flex-1\">\n                        <h5 class=\"font-medium text-title-foreground \">Push Notifications</h5>\n                        <p class=\"text-sm text-muted-foreground\">\n                            Receive push notifications on your devices\n                        </p>\n                    </div>\n                    <x-ui.switch name=\"email_notif\" id=\"email_notif\"\n                        class=\"text-primary [--knob-bg:var(--color-white)] bg-muted/80\" />\n                </div>\n\n                <div class=\"flex items-center justify-between p-4 border border-border-strong/40 rounded-lg\">\n                    <div class=\"space-y-1 flex-1\">\n                        <h5 class=\"font-medium text-title-foreground \">SMS Notifications</h5>\n                        <p class=\"text-sm text-muted-foreground\">\n                            Receive notifications via text message\n                        </p>\n                    </div>\n                    <x-ui.switch name=\"email_notif\" id=\"email_notif\"\n                        class=\"text-primary [--knob-bg:var(--color-white)] bg-muted/80\" />\n                </div>\n\n                <div class=\"flex items-center justify-between p-4 border border-border-strong/40 rounded-lg\">\n                    <div class=\"space-y-1 flex-1\">\n                        <h5 class=\"font-medium text-title-foreground \">Marketing Updates</h5>\n                        <p class=\"text-sm text-muted-foreground\">\n                            Receive updates about new features and promotions\n                        </p>\n                    </div>\n                    <x-ui.switch name=\"email_notif\" id=\"email_notif\"\n                        class=\"text-primary [--knob-bg:var(--color-white)] bg-muted/80\" />\n                </div>\n            </div>\n            <div class=\"flex justify-end space-x-3 pt-4 border-t border-border col-span-full\">\n                <x-ui.button variant=\"outline\" size=\"sm\">\n                    Cancel\n                </x-ui.button>\n                <x-ui.button size=\"sm\">\n                    Save Changes\n                </x-ui.button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+        }
+    ]
+}

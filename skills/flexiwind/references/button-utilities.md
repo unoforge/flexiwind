@@ -21,7 +21,7 @@ Buttons are composed from:
 - an intent utility such as `btn-solid-primary` or `btn-solid-destructive`
 - the Blade component API: `<x-ui.button variant="solid" intent="primary">`
 
-Supported public intents use `destructive`, not `danger`.
+Supported public intents use `destructive`, not `danger`. `btn-ghost-gray`, `btn-ghost-destructive` and `btn-ghost-success` are the ghost intents.
 
 ```css
 @utility btn-solid-primary {

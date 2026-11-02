@@ -1,0 +1,1 @@
+<span data-slot="description" slot="description" {{ $attributes->class(['col-start-2 min-w-0 text-muted-foreground']) }}>{{ $slot }}</span>

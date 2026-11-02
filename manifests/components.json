@@ -1,0 +1,1844 @@
+{
+    "name": "flexiwind-ui",
+    "title": "Flexiwind UI",
+    "description": "Flexiwind UI components for Laravel Blade.",
+    "components": [
+        {
+            "version": "1.0.0",
+            "name": "accordion",
+            "type": "registry:component",
+            "title": "Accordion",
+            "description": "A reusable accordion component for Laravel Blade/Livewire.",
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/accordion"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/accordion.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/accordion.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/accordion/item.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/accordion/item.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/accordion/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/accordion/trigger.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/accordion/content.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/accordion/content.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/accordion/indicator.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/accordion/indicator.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/accordion.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/accordion.js"
+                }
+            ],
+            "registryDependencies": [
+                "ui-helper"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "alert",
+            "type": "registry:component",
+            "title": "Alert",
+            "description": "A reusable alert component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "ui-helper",
+                "dissmissible"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/alert.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/alert.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "aspect",
+            "type": "registry:component",
+            "title": "Aspect Ratio",
+            "description": "A reusable aspect ratio component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/aspect.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/aspect.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "avatar-placeholder",
+            "type": "registry:component",
+            "title": "Avatar Placeholder",
+            "description": "A reusable avatar placeholder component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/avatar-placeholder.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/avatar-placeholder.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "ui-helper"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "avatar",
+            "type": "registry:component",
+            "title": "Avatar",
+            "description": "A reusable avatar component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/avatar.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/avatar.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "badge",
+            "type": "registry:component",
+            "title": "Badge",
+            "description": "A reusable badge component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/badge.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/badge.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "ui-helper"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "breadcrumbs",
+            "type": "registry:component",
+            "title": "Breadcrumbs",
+            "description": "A reusable breadcrumbs component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/breadcrumbs.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/breadcrumbs.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/breadcrumbs/item.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/breadcrumbs/item.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/breadcrumbs/separator.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/breadcrumbs/separator.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "button",
+            "type": "registry:component",
+            "title": "Button",
+            "description": "A reusable button component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "button-helper"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/button.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/button.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "callout",
+            "type": "registry:component",
+            "title": "Callout",
+            "description": "A reusable callout component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "alert",
+                "ui-helper",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/callout.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/callout.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/callout/description.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/callout/description.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/callout/title.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/callout/title.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "card",
+            "type": "registry:component",
+            "title": "Card",
+            "description": "A reusable card component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "ui-helper"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/card.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/card.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/card/content.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/card/content.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/card/description.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/card/description.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/card/footer.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/card/footer.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/card/header.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/card/header.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/card/title.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/card/title.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "checkbox",
+            "type": "registry:component",
+            "title": "Checkbox",
+            "description": "A reusable checkbox component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/checkbox.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/checkbox.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "label"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "collapse",
+            "type": "registry:component",
+            "title": "Collapse",
+            "description": "A reusable collapse component for Laravel Blade/Livewire.",
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/collapse"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/collapse.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/collapse.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/collapse/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/collapse/trigger.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/collapse/indicator.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/collapse/indicator.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/collapse.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/collapse.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "dissmissible",
+            "type": "registry:component",
+            "title": "Dissmissible",
+            "description": "A reusable divider component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "button",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/dissmissible/index.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dissmissible/index.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dissmissible/close.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dissmissible/close.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "divider",
+            "type": "registry:component",
+            "title": "Divider",
+            "description": "A reusable divider component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/divider.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/divider.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "field",
+            "type": "registry:component",
+            "title": "Field",
+            "description": "A form field wrapper with label, hint, error message, and required indicator.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/field.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/field.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "label"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "dropdown",
+            "type": "registry:component",
+            "title": "Dropdown",
+            "description": "A reusable dropdown component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "kbd",
+                "divider",
+                "icon",
+                "button"
+            ],
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/dropdown"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/dropdown.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/icon.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/icon.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/item.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/item.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/item-submenu.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/item-submenu.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/trigger.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/description.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/description.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/header.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/header.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/kbd.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/kbd.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/label.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/label.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/separator.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/separator.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/dropdown.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/dropdown.js"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/check-indicator.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/check-indicator.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/indicator.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/indicator.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropdown/section.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropdown/section.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/layer.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/layer.js"
+                }
+            ],
+            "cssVars": {
+                "light": {
+                    "--dropdown-item-outline": "var(--color-primary)",
+                    "--dropdown-item-danger-outline": "var(--color-destructive)",
+                    "--dropdown-item-hover-and-select": "var(--color-muted)",
+                    "--dropdown-item-hover-and-select-fg": "var(--color-foreground)",
+                    "--dropdown-item-selected-fg": "var(--color-foreground)",
+                    "--dropdown-item-danger-fg": "var(--color-destructive)",
+                    "--dropdown-item-warning-fg": "var(--color-warning)",
+                    "--dropdown-item-danger-hover-and-select": "color-mix(in oklab, var(--color-destructive) 10%, transparent)",
+                    "--dropdown-item-danger-hover-and-select-fg": "var(--color-destructive)",
+                    "--dropdown-item-warning-hover-and-select": "color-mix(in oklab, var(--color-warning) 10%, transparent)",
+                    "--dropdown-item-warning-hover-and-select-fg": "var(--color-warning)"
+                },
+                "dark": {
+                    "--dropdown-item-danger-hover-and-select": "color-mix(in oklab, var(--color-destructive) 18%, transparent)",
+                    "--dropdown-item-danger-hover-and-select-fg": "var(--color-destructive)",
+                    "--dropdown-item-warning-hover-and-select": "color-mix(in oklab, var(--color-warning) 18%, transparent)",
+                    "--dropdown-item-warning-hover-and-select-fg": "var(--color-warning)"
+                }
+            }
+        },
+        {
+            "version": "1.0.0",
+            "name": "input",
+            "type": "registry:component",
+            "title": "Input",
+            "description": "A reusable input component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "label",
+                "input-group"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/input.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/input.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "input-group",
+            "type": "registry:component",
+            "title": "Input Group",
+            "description": "A reusable input component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "label"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/input/group.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/input/group.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/input/leading.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/input/leading.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/input/trailing.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/input/trailing.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "kbd",
+            "type": "registry:component",
+            "title": "Kbd",
+            "description": "A reusable kbd component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/kbd.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/kbd.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "ui-helper"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "label",
+            "type": "registry:component",
+            "title": "Label",
+            "description": "A reusable label component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/label.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/label.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "link",
+            "type": "registry:component",
+            "title": "Link",
+            "description": "A reusable link component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "button"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/link.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/link.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "meter",
+            "type": "registry:component",
+            "title": "Meter",
+            "description": "A reusable meter component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/meter.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/meter.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "modal",
+            "type": "registry:component",
+            "title": "Modal",
+            "description": "A reusable modal component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "button",
+                "icon"
+            ],
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/modal"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/modal.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/modal.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/modal/content.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/modal/content.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/modal/body.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/modal/body.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/modal/close.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/modal/close.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/modal/description.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/modal/description.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/modal/footer.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/modal/footer.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/modal/header.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/modal/header.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/modal/title.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/modal/title.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/modal/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/modal/trigger.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/modal.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/modal.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "otp",
+            "type": "registry:component",
+            "title": "OTP",
+            "description": "A reusable otp component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "input"
+            ],
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/pin-input"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/otp.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/otp.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/otp/input.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/otp/input.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/pin-input.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/pin-input.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "pagination",
+            "type": "registry:component",
+            "title": "Pagination",
+            "description": "A reusable pagination component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "button"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/pagination.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/pagination.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/pagination/content.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/pagination/content.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/pagination/ellipsis.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/pagination/ellipsis.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/pagination/item.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/pagination/item.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/pagination/link.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/pagination/link.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "popover",
+            "type": "registry:component",
+            "title": "Popover",
+            "description": "A reusable popover component for Laravel Blade/Livewire.",
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/popover"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/popover.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/popover.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/popover/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/popover/trigger.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/popover.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/popover.js"
+                },
+                {
+                    "path": "registry/js/plugins/layer.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/layer.js"
+                }
+            ],
+            "registryDependencies": [
+                "button"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "progress",
+            "type": "registry:component",
+            "title": "Progress",
+            "description": "A reusable progress component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/progress.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/progress.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "radio",
+            "type": "registry:component",
+            "title": "Radio",
+            "description": "A reusable radio component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/radio.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/radio.blade.php"
+                }
+            ],
+            "registryDependencies": [
+                "label"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "range",
+            "type": "registry:component",
+            "title": "Range",
+            "description": "A reusable range component for Laravel Blade/Livewire.",
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/custom-range"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/range.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/range.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/range-indicator.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/range-indicator.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "select",
+            "type": "registry:component",
+            "title": "Select",
+            "description": "A reusable select component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "input-group",
+                "label"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/select.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/select.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/select/option.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/select/option.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "skeleton",
+            "type": "registry:component",
+            "title": "Skeleton",
+            "description": "A reusable skeleton component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/skeleton.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/skeleton.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "slideover",
+            "type": "registry:component",
+            "title": "Slideover",
+            "description": "A reusable slideover component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "button",
+                "icon"
+            ],
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/offcanvas"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/slideover.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/slideover.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/slideover/body.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/slideover/body.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/slideover/close.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/slideover/close.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/slideover/content.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/slideover/content.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/slideover/description.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/slideover/description.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/slideover/footer.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/slideover/footer.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/slideover/header.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/slideover/header.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/slideover/title.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/slideover/title.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/slideover/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/slideover/trigger.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/offcanvas.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/offcanvas.js"
+                },
+                {
+                    "path": "registry/js/plugins/layer.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/layer.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "switch",
+            "type": "registry:component",
+            "title": "Switch",
+            "description": "An accessible on/off switch for Laravel Blade and Livewire: label, description, sizes and colors.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/switch.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/switch.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table",
+            "type": "registry:component",
+            "title": "Table",
+            "description": "A reusable table component for Laravel Blade/Livewire.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/table.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/table.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/table/cell.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/table/cell.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/table/column.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/table/column.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/table/columns.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/table/columns.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/table/row.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/table/row.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/table/rows.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/table/rows.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "tabs",
+            "type": "registry:component",
+            "title": "Tabs",
+            "description": "A reusable tabs component for Laravel Blade/Livewire.",
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/tabs"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/tabs.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tabs.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tabs/list-wrapper.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tabs/list-wrapper.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tabs/list.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tabs/list.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tabs/panel-wrapper.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tabs/panel-wrapper.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tabs/panel.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tabs/panel.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tabs/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tabs/trigger.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/tabs.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/tabs.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "textarea",
+            "type": "registry:component",
+            "title": "Textarea",
+            "description": "A reusable textarea component for Laravel Blade/Livewire.",
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/auto-resize-area"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/textarea.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/textarea.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/auto-resize-area.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/auto-resize-area.js"
+                }
+            ],
+            "registryDependencies": [
+                "label"
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "tooltip",
+            "type": "registry:component",
+            "title": "Tooltip",
+            "description": "A reusable tooltip component for Laravel Blade/Livewire.",
+            "registryDependencies": [
+                "button"
+            ],
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/tooltip"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/tooltip.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tooltip.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tooltip/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tooltip/trigger.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/tooltip.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/tooltip.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "icon",
+            "type": "registry:component",
+            "title": "Icon",
+            "description": "A reusable icon component for Laravel Blade/Livewire using Iconify.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/icon.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/icon.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "text",
+            "type": "registry:component",
+            "title": "Text",
+            "description": "A reusable text component for Laravel Blade/Livewire with intent-based styling.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/text.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/text.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "heading",
+            "type": "registry:component",
+            "title": "Heading",
+            "description": "A reusable heading component for Laravel Blade/Livewire with semantic levels.",
+            "files": [
+                {
+                    "path": "registry/views/components/ui/heading.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/heading.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "autocomplete",
+            "type": "registry:component",
+            "title": "Autocomplete",
+            "description": "Search first: a known list or a Livewire search, one or several values. Built on Flexilla Autocomplete.",
+            "registryDependencies": [
+                "listbox",
+                "label"
+            ],
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/autocomplete@^0.1.3"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/autocomplete.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/autocomplete.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/autocomplete/input.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/autocomplete/input.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/layer.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/layer.js"
+                }
+            ],
+            "message": [
+                "Uses the listbox plugin: import { ListboxPlugin } from \"./plugins/listbox\"; Alpine.plugin(ListboxPlugin);",
+                "Server search: `search=\"query\"` names the Livewire property that receives the typed text. Filter with bound parameters (whereLike), never by concatenating SQL."
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "chart",
+            "type": "registry:component",
+            "title": "Chart",
+            "description": "Bar, line, area, pie, donut and radial charts rendered by Blade, with no chart library.",
+            "registryDependencies": [
+                "chart-helper"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/chart.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/chart.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/chart/grid.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/chart/grid.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/chart/y-axis.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/chart/y-axis.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/chart/x-axis.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/chart/x-axis.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/chart/bar.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/chart/bar.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/chart/line.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/chart/line.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/chart/tooltip.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/chart/tooltip.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/chart/pie.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/chart/pie.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/chart/radial.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/chart/radial.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/chart.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/chart.js"
+                }
+            ],
+            "message": [
+                "Register the chart script once in your Alpine setup: import { ChartPlugin } from \"./plugins/chart\"; Alpine.plugin(ChartPlugin);",
+                "Without Alpine, import { initChartInteractions } from \"./plugins/chart\" and call initChartInteractions() once.",
+                "Add `interactive` to the charts that should respond to the keyboard and legend clicks."
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "chart-helper",
+            "type": "registry:component",
+            "title": "Chart helper",
+            "description": "Server-side geometry for Flexiwind charts: scales, bars, paths, slices, rings and value formatting.",
+            "files": [
+                {
+                    "path": "registry/app/Flexiwind/ChartHelper.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/ChartHelper.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "command-menu",
+            "type": "registry:component",
+            "title": "Command menu",
+            "description": "A ⌘K palette: grouped commands, nested pages, keyboard navigation and Livewire search, in a native dialog.",
+            "message": [
+                "Register the plugin in your Alpine setup: import { CommandMenuPlugin } from \"./plugins/command-menu\"; Alpine.plugin(CommandMenuPlugin);",
+                "Open it with its shortcut (mod+k by default), <x-ui.command-menu.trigger />, or $commandMenu.open()."
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/command-menu.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/command-menu.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/command-menu/empty.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/command-menu/empty.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/command-menu/group.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/command-menu/group.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/command-menu/item.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/command-menu/item.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/command-menu/page.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/command-menu/page.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/command-menu/query.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/command-menu/query.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/command-menu/separator.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/command-menu/separator.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/command-menu/shortcut.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/command-menu/shortcut.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/command-menu/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/command-menu/trigger.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/command-menu.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/command-menu.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "echarts",
+            "type": "registry:component",
+            "title": "Advanced Charts (ECharts)",
+            "description": "Zoomable time series, candlesticks, heatmaps, radar, scatter and funnels, drawn by Apache ECharts, loaded on demand and themed with your Flexiwind tokens.",
+            "registryDependencies": [
+                "chart-helper"
+            ],
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "echarts@^6.1.0"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/echart.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/echart.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/echarts.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/echarts.js"
+                },
+                {
+                    "path": "registry/js/plugins/echarts-core.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/echarts-core.js"
+                },
+                {
+                    "path": "registry/js/charts.js",
+                    "type": "registry:script",
+                    "target": "resources/js/charts.js"
+                }
+            ],
+            "message": [
+                "ECharts has its own bundle: add 'resources/js/charts.js' to `input` in vite.config.js.",
+                "Load it only in the layouts that show charts: @vite(['resources/js/app.js', 'resources/js/flexilla.js', 'resources/js/charts.js']).",
+                "Do not register EChartsPlugin in flexilla.js and never import 'echarts' yourself: it would land in every page.",
+                "Add chart types to resources/js/plugins/echarts-core.js if you need more: each one stays its own file, loaded on demand.",
+                "Apache ECharts is Apache-2.0 licensed: free for every project, no license key."
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "file-trigger",
+            "type": "registry:component",
+            "title": "File trigger & Dropzone",
+            "description": "Open the file picker from any button, or drop files on a zone. Type and size checks before upload, Livewire progress.",
+            "message": [
+                "Register the plugin in your Alpine setup: import { FilesPlugin } from \"./plugins/files\"; Alpine.plugin(FilesPlugin);",
+                "Browser checks only help: validate again in Livewire with `mimes` and `max`, and store files with store()."
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/file-trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/file-trigger.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/file-trigger/files.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/file-trigger/files.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/dropzone.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/dropzone.blade.php"
+                },
+                {
+                    "path": "registry/app/Flexiwind/FileRules.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/FileRules.php"
+                },
+                {
+                    "path": "registry/js/plugins/files.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/files.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "listbox",
+            "type": "registry:component",
+            "title": "Listbox",
+            "description": "A select you can style and compose part by part: one or several values, search, icons, avatars and groups. Built on Flexilla Select.",
+            "registryDependencies": [
+                "label",
+                "icon"
+            ],
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/select@^0.1.3"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/listbox.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/trigger.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/trigger.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/value.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/value.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/clear.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/clear.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/content.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/content.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/search.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/search.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/list.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/list.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/item.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/item.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/label.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/label.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/description.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/description.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/icon.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/icon.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/avatar.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/avatar.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/group.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/group.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/header.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/header.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/separator.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/separator.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/empty.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/empty.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/query.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/query.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/inputs.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/inputs.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/items.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/items.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/listbox/partials/item.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/listbox/partials/item.blade.php"
+                },
+                {
+                    "path": "registry/app/Flexiwind/OptionList.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/OptionList.php"
+                },
+                {
+                    "path": "registry/js/plugins/listbox.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/listbox.js"
+                },
+                {
+                    "path": "registry/js/plugins/layer.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/layer.js"
+                }
+            ],
+            "message": [
+                "Register the plugin in your Alpine setup: import { ListboxPlugin } from \"./plugins/listbox\"; Alpine.plugin(ListboxPlugin);",
+                "wire:model receives a string, or an array with `multiple`. In a plain form, `name` posts one hidden field per value.",
+                "When options depend on another field, give the listbox a wire:key that changes with them.",
+                "Every part is a component: <x-ui.listbox.trigger>, .value, .content, .search, .list, .item, .label, .description, .icon, .avatar, .group, .empty… Bring your own <x-ui.listbox.content> and the composition is yours."
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "sparkline",
+            "type": "registry:component",
+            "title": "Sparkline",
+            "description": "A tiny trend line, area or bar series for KPI cards and tables.",
+            "registryDependencies": [
+                "chart-helper"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/sparkline.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/sparkline.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "tag-group",
+            "type": "registry:component",
+            "title": "Tag group",
+            "description": "Short labels to show, remove, or pick as filters: icons, dots, avatars and counts. Livewire-ready.",
+            "registryDependencies": [
+                "icon"
+            ],
+            "message": [
+                "Register the plugin in your Alpine setup: import { TagsPlugin } from \"./plugins/tags\"; Alpine.plugin(TagsPlugin);",
+                "wire:model receives a string, or an array with `multiple` or `removable`.",
+                "Compose tags with <x-ui.tag>, <x-ui.tag.dot>, <x-ui.tag.count> and <x-ui.tag.avatar>, or pass :options."
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/tag.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tag.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tag/avatar.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tag/avatar.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tag/count.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tag/count.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tag/dot.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tag/dot.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/tag-group.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tag-group.blade.php"
+                },
+                {
+                    "path": "registry/app/Flexiwind/OptionList.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/OptionList.php"
+                },
+                {
+                    "path": "registry/js/plugins/tags.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/tags.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "tag-input",
+            "type": "registry:component",
+            "title": "Tag input",
+            "description": "A field that turns typed text into tags: topics, emails, keywords. Validation, limits, suggestions and Livewire search.",
+            "registryDependencies": [
+                "label"
+            ],
+            "message": [
+                "Register the plugin in your Alpine setup: import { TagsPlugin } from \"./plugins/tags\"; Alpine.plugin(TagsPlugin);",
+                "wire:model receives an array. Validate it again in Livewire: the browser checks only help people type."
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/tag-input.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tag-input.blade.php"
+                },
+                {
+                    "path": "registry/app/Flexiwind/OptionList.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/OptionList.php"
+                },
+                {
+                    "path": "registry/js/plugins/tags.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/tags.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "rich-text",
+            "type": "registry:component",
+            "title": "Rich text",
+            "description": "A rich text editor with no dependency: marks, headings, lists, links, images and uploads. Every part is a component.",
+            "registryDependencies": [
+                "label"
+            ],
+            "message": [
+                "Register the plugin in your Alpine setup: import { RichTextPlugin } from \"./plugins/rich-text\"; Alpine.plugin(RichTextPlugin);",
+                "wire:model receives HTML. Clean it again on the server before you store or show it: App\\Flexiwind\\RichText::clean($this->body).",
+                "Image uploads go through Livewire: `upload` names a WithFileUploads property, `store` the method that validates it and returns the image URL."
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/rich-text.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/rich-text/blocks.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text/blocks.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/rich-text/bubble.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text/bubble.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/rich-text/button.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text/button.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/rich-text/content.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text/content.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/rich-text/count.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text/count.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/rich-text/footer.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text/footer.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/rich-text/group.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text/group.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/rich-text/separator.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text/separator.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/rich-text/toolbar.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/rich-text/toolbar.blade.php"
+                },
+                {
+                    "path": "registry/app/Flexiwind/RichText.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/RichText.php"
+                },
+                {
+                    "path": "registry/app/Flexiwind/FileRules.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/FileRules.php"
+                },
+                {
+                    "path": "registry/js/plugins/rich-text.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/rich-text.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "toast",
+            "type": "registry:component",
+            "title": "Toast",
+            "description": "Toast notifications from Livewire, a redirect or Alpine, themed with your tokens. Built on Flexilla Toast.",
+            "dependencies": {
+                "composer": [],
+                "node": [
+                    "@flexilla/toast@^0.1.1"
+                ]
+            },
+            "files": [
+                {
+                    "path": "registry/views/components/ui/toaster.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/toaster.blade.php"
+                },
+                {
+                    "path": "registry/js/plugins/toast.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/toast.js"
+                }
+            ],
+            "cssVars": {
+                "light": {
+                    "--fx-toast-bg": "var(--background)",
+                    "--fx-toast-fg": "var(--title-foreground)",
+                    "--fx-toast-muted-fg": "var(--muted-foreground)",
+                    "--fx-toast-border": "color-mix(in oklab, var(--foreground) 12%, transparent)",
+                    "--fx-toast-radius": "calc(var(--ui-radius) * 1.5)",
+                    "--fx-toast-font": "var(--font-sans)",
+                    "--fx-toast-shadow": "0 10px 30px -12px rgb(0 0 0 / 0.25), 0 2px 6px -2px rgb(0 0 0 / 0.06)",
+                    "--fx-toast-action-bg": "var(--title-foreground)",
+                    "--fx-toast-action-fg": "var(--background)",
+                    "--fx-toast-ring": "var(--primary)",
+                    "--fx-toast-success-icon": "var(--success)",
+                    "--fx-toast-info-icon": "var(--info)",
+                    "--fx-toast-warning-icon": "var(--warning)",
+                    "--fx-toast-error-icon": "var(--destructive)",
+                    "--fx-toast-success-bg": "color-mix(in oklab, var(--success) 10%, var(--background))",
+                    "--fx-toast-success-border": "color-mix(in oklab, var(--success) 28%, var(--background))",
+                    "--fx-toast-success-fg": "color-mix(in oklab, var(--success) 72%, var(--title-foreground))",
+                    "--fx-toast-info-bg": "color-mix(in oklab, var(--info) 9%, var(--background))",
+                    "--fx-toast-info-border": "color-mix(in oklab, var(--info) 26%, var(--background))",
+                    "--fx-toast-info-fg": "color-mix(in oklab, var(--info) 72%, var(--title-foreground))",
+                    "--fx-toast-warning-bg": "color-mix(in oklab, var(--warning) 11%, var(--background))",
+                    "--fx-toast-warning-border": "color-mix(in oklab, var(--warning) 28%, var(--background))",
+                    "--fx-toast-warning-fg": "color-mix(in oklab, var(--warning) 72%, var(--title-foreground))",
+                    "--fx-toast-error-bg": "color-mix(in oklab, var(--destructive) 9%, var(--background))",
+                    "--fx-toast-error-border": "color-mix(in oklab, var(--destructive) 26%, var(--background))",
+                    "--fx-toast-error-fg": "color-mix(in oklab, var(--destructive) 72%, var(--title-foreground))"
+                }
+            },
+            "message": [
+                "Register the plugin in your Alpine setup: import { ToastPlugin } from \"./plugins/toast\"; Alpine.plugin(ToastPlugin);",
+                "Put <x-ui.toaster /> once in your layout, before @livewireScripts.",
+                "From Livewire: $this->dispatch('toast', type: 'success', message: 'Saved'). After a redirect: ->with('toast', ['type' => 'success', 'message' => 'Saved'])."
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "toggle",
+            "type": "registry:component",
+            "title": "Toggle",
+            "description": "A button that stays pressed, with aria-pressed. Ghost, outline and primary variants.",
+            "message": [
+                "wire:model receives a boolean. An icon-only toggle needs an aria-label."
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/toggle.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/toggle.blade.php"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "toggle-group",
+            "type": "registry:component",
+            "title": "Toggle group",
+            "description": "Pressed buttons that work together: toolbars, segmented controls, view switchers. One value or several.",
+            "registryDependencies": [
+                "icon"
+            ],
+            "message": [
+                "Register the plugin in your Alpine setup: import { ToggleGroupPlugin } from \"./plugins/toggle-group\"; Alpine.plugin(ToggleGroupPlugin);",
+                "wire:model receives a string with type=\"single\", an array with type=\"multiple\"."
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/toggle-group.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/toggle-group.blade.php"
+                },
+                {
+                    "path": "registry/views/components/ui/toggle-group/item.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/toggle-group/item.blade.php"
+                },
+                {
+                    "path": "registry/app/Flexiwind/OptionList.php",
+                    "type": "registry:helper",
+                    "target": "app/Flexiwind/OptionList.php"
+                },
+                {
+                    "path": "registry/js/plugins/toggle-group.js",
+                    "type": "registry:script",
+                    "target": "resources/js/plugins/toggle-group.js"
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "tracker",
+            "type": "registry:component",
+            "title": "Tracker",
+            "description": "A row of status blocks for uptime, job runs or attendance.",
+            "registryDependencies": [
+                "chart-helper"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/ui/tracker.blade.php",
+                    "type": "registry:ui",
+                    "target": "resources/views/components/ui/tracker.blade.php"
+                }
+            ]
+        }
+    ]
+}
