@@ -135,25 +135,49 @@ so you can customize every detail. Install one component or several at once:
 php artisan flexi:add button input
 ```
 
-{{--
+Want to see what's available? Browse the source catalog (from `index.json`):
 
-Want to see what's available? Run `php artisan flexi:list` to browse all components
-with descriptions and previews.
+```bash
+php artisan flexi:list @flexiwind
+```
 
---}}
+Install everything published by a source:
+
+```bash
+php artisan flexi:add @flexiwind/*
+```
 
 ### Need help?
 
 Run `php artisan flexi:help` anytime to see all available commands and options.
+See also the [Flexi CLI](/docs/cli) page for source indexes and bulk install.
+
+### Teach your AI agent
+
+Install the [AI Skills](/docs/skills) so Cursor, Claude Code, and similar tools
+use real Flexiwind components instead of inventing markup:
+
+```bash
+php artisan boost:add-skill unoforge/flexiwind --skill flexiwind
+```
+
+### When free is not enough
+
+The open-source kit ships screens. Pro unlocks the rest of the blocks, the
+advanced components, and **full Laravel app templates** (billing, CRM) built
+with the same design system — so you stop assembling every dashboard from
+scratch. Browse [Templates](/templates) or continue below to wire the Pro
+registry.
 
 ## Flexiwind Pro
 
-Club adds premium components, blocks and templates on top of the open-source
-foundation. They install exactly like the free ones — the only difference is
-the `@fx/` prefix, which tells the CLI to fetch them from your licensed
-registry instead of the public one.
+Pro adds premium components, blocks and full app templates on top of the
+open-source foundation. They install exactly like the free ones — the only
+difference is the `@fx/` prefix, which tells the CLI to fetch them from your
+licensed registry instead of the public one.
 
-You need a Flexiwind Pro license, and Flexiwind already set up in the project.
+You need a [Flexiwind Pro](/pricing) license, and Flexiwind already set up in
+the project.
 
 ::::steps
 :::step
@@ -164,9 +188,9 @@ Open `flexiwind.yaml` at the root of your project and add the source:
 ```yaml title="flexiwind.yaml" lines="2:added,3:added,4:added,5:added"
 registries:
   '@fx':
-    url: https://club.flexiwind.dev/api/v1/registry/@fx/{name}
+    url: https://flexiwind.unoforge.com/api/v1/pro/{name}
     headers:
-      Authorization: "Bearer ${FLEXIWIND_CLUB_TOKEN}"
+      Authorization: "Bearer ${FLEXIWIND_TOKEN}"
 ```
 :::
 
@@ -178,7 +202,7 @@ copy it right away. Put it in `.env`, never in `flexiwind.yaml`, which is
 committed:
 
 ```bash
-FLEXIWIND_CLUB_TOKEN=your-token-here
+FLEXIWIND_TOKEN=your-token-here
 ```
 
 The variable name is yours to choose, as long as it matches the one referenced
@@ -192,7 +216,7 @@ stops working the same minute.
 :::
 
 :::step
-### Install a premium component or block
+### Install a premium component, block, or start from a template
 
 ```bash
 php artisan flexi:add @fx/select
@@ -203,6 +227,9 @@ Blocks work the same way:
 ```bash
 php artisan flexi:add @fx/sidebar05
 ```
+
+Prefer a whole app? Open [Templates](/templates) — Ledger, Sales CRM and more
+are included with Pro and land in your repo as plain Laravel code.
 
 Premium components compose the free primitives — the CLI pulls `button`, `input`
 and the rest from the public registry if your project doesn't have them yet.
