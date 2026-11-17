@@ -23,6 +23,7 @@ flexiwind/
 ├─ manifests/*.json              ← items du registre rangés par famille (components, blocks, marketing, base, themes)
 ├─ registry.json                 ← généré par bin/build-registry.mjs : ce que lit `flexi:build`
 ├─ registries/*.json             ← sortie de `flexi:build`, servie au CLI — ne pas éditer à la main
+├─ registries/index.json         ← catalogue source (`type: registry:source`) pour list / install-all
 ├─ resources/views/components/   ← docs-kit : preview, frame, locked, source
 ├─ src/                          ← moteur de docs
 ├─ bin/build-registry.mjs        ← assemble manifests/*.json en registry.json
@@ -151,5 +152,6 @@ la doc comme dans un projet utilisateur après `flexi add`, on écrit
 
    qui enchaîne `node ../flexiwind/bin/build-registry.mjs` (manifests/ → registry.json)
    et `php artisan flexi:build --schema=../flexiwind/registry.json --output=../flexiwind/registries --override`.
-   `registry.json` et `registries/*.json` ne s'éditent jamais à la main.
+   `registry.json`, `registries/*.json` et `registries/index.json` ne s'éditent jamais à la main.
+   `index.json` (`type: registry:source`) liste tous les registries de la source pour `flexi:list` / `flexi:add @flexiwind/*`.
    Monter la `version` d'un item archive l'ancienne sortie dans `registries/<nom>/<version>.json`.

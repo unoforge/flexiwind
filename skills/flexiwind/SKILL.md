@@ -347,7 +347,18 @@ Block preview URLs follow the pattern: `https://flexiwind.unoforge.com/preview-u
 | `php artisan flexi:init` | Initialize Flexiwind in project |
 | `php artisan flexi:add <name>` | Install a component/block |
 | `php artisan flexi:add flexiwind-base` | Install base dependencies |
+| `php artisan flexi:add @flexiwind/*` | Install every registry from the `@flexiwind` source index |
+| `php artisan flexi:add --all --namespace=@flexiwind` | Same as above via `--all` |
+| `php artisan flexi:list` | List configured registry sources |
+| `php artisan flexi:list @flexiwind` | List all items published by a source (`index.json`) |
+| `php artisan flexi:list @flexiwind --type=style` | List Playground themes (`registry:style`) |
+| `php artisan flexi:add mono` / `theme-mono` | Install one theme (short or full name) |
+| `php artisan flexi:add --themes` / `theme-*` | Install every Playground theme |
 | `php artisan flexi:help` | Show CLI help |
+
+### Source index (`index.json`)
+
+Each registry source publishes an identifiable catalog at `index.json` with `"type": "registry:source"`. A source URL like `…/registries/{name}.json` resolves the catalog to `…/registries/index.json`. Use it for `flexi:list` and for installing everything (`@ns/*` or `--all`). Never invent component/block names that are not in the skill files, the live docs, or that source index.
 
 ## flexiwind.yaml Config
 
@@ -379,6 +390,7 @@ composer require --dev unoforge/flexiwind-cli
 php artisan flexi:init
 php artisan flexi:add flexiwind-base
 php artisan flexi:add button input
+php artisan flexi:list @flexiwind
 php artisan flexi:help
 ```
 

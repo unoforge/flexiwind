@@ -9,6 +9,9 @@
  *
  *   php artisan flexi:build --schema=../flexiwind/registry.json --output=../flexiwind/registries --override
  *
+ * `flexi:build` écrit aussi registries/index.json (type: registry:source),
+ * le catalogue identifiable pour `flexi:list` / `flexi:add @flexiwind/*`.
+ *
  * (depuis flexiwind-pro, `npm run build:registry` enchaîne les deux.)
  */
 

@@ -52,10 +52,22 @@ This is what Flexiwind aims to solve. It is built around the following principle
             'icon' => 'ph--compass',
         ],
         [
+            'href' => '/docs/skills',
+            'title' => 'AI Skills',
+            'description' => 'Teach Cursor and Claude to use real Flexiwind components',
+            'icon' => 'ph--robot',
+        ],
+        [
             'href' => '/components',
             'title' => 'Components',
             'description' => 'Browse our pre-built components library',
             'icon' => 'ph--cube',
+        ],
+        [
+            'href' => '/templates',
+            'title' => 'Templates',
+            'description' => 'Full Laravel apps (billing, CRM) — free starter + Pro',
+            'icon' => 'ph--layout',
         ],
     ]" />
 :::

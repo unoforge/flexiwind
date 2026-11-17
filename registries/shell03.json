@@ -1,0 +1,24 @@
+{
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-item.json",
+    "version": "1.0.0",
+    "name": "shell03",
+    "type": "registry:component",
+    "title": "App Shell 03",
+    "description": "Application shell layout.",
+    "registryDependencies": [
+        "avatar",
+        "button",
+        "icon",
+        "sidebar-wrapper",
+        "sidebar03",
+        "breadcrumbs"
+    ],
+    "files": [
+        {
+            "path": "registry/views/components/previews/free/app-shell/shell-03.blade.php",
+            "type": "registry:block",
+            "target": "resources/views/components/layouts/app-shell.blade.php",
+            "content": "<div class=\"overflow-hidden overflow-y-auto lg:overflow-y-auto\">\n    <x-layouts.sidebar03 />\n    <main class=\"lg:pl-64 flex-1 flex flex-col h-full relative overflow-hidden bg-background \">\n        <header\n            class=\"h-14 bg-background  border-b border-border-strong/60 flex items-center justify-between px-6 sticky top-0 z-10\">\n            <div class=\"flex items-center gap-4\">\n                <div class=\"flex lg:hidden border-r border-border pr-2\">\n                    <x-ui.button variant=\"soft\" size=\"sm\" icon-only class=\"\" data-toggle-sidebar>\n                        <x-ui.icon name=\"ph--door-open\" />\n                    </x-ui.button>\n                </div>\n                <x-ui.breadcrumbs class=\"text-xs sm:text-sm text-muted-foreground\">\n                    <x-ui.breadcrumbs.item href=\"#\">\n                        Workspace\n                    </x-ui.breadcrumbs.item>\n                    <x-ui.breadcrumbs.item active>\n                        Team\n                    </x-ui.breadcrumbs.item>\n                </x-ui.breadcrumbs>\n            </div>\n            <div class=\"flex items-center gap-1\">\n                <x-ui.button variant=\"ghost\" icon-only size=\"sm\">\n                    <x-ui.icon name=\"ph--bell\" />\n                </x-ui.button>\n                <x-ui.button variant=\"ghost\" icon-only size=\"sm\">\n                    <x-ui.icon name=\"ph--chats-circle\" />\n                </x-ui.button>\n                <x-ui.button variant=\"ghost\" size=\"sm\" class=\"gap-2\">\n                    <x-ui.avatar src=\"/defaultavatar.webp\" alt=\"User\" size=\"xs\" radius=\"full\" />\n                </x-ui.button>\n            </div>\n        </header>\n        <div class=\"flex-1 overflow-y-auto p-8\">\n            <div class=\"lg:max-w-346 mx-auto animate-fade-in\" id=\"main-content-area\">\n                <div class=\"rounded-ui border border-border-strong/70 overflow-hidden mb-8\">\n                    <div class=\"grid grid-cols-4 gap-px bg-border-strong/30\">\n                        <div class=\"bg-background  p-4 h-20\">\n\n                        </div>\n                        <div class=\"bg-background  p-4 h-20\">\n\n                        </div>\n                        <div class=\"bg-background  p-4 h-20\">\n\n                        </div>\n                        <div class=\"bg-background  p-4 h-20\">\n\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"rounded-ui border border-border-strong/70 overflow-hidden\">\n                    <div class=\"h-10 border-b border-border-strong/40\">\n\n                    </div>\n                    <div class=\"divide-y divide-border-strong/30\">\n                        <div class=\"flex items-center gap-3 px-4 py-3 h-14\">\n\n                        </div>\n                        <div class=\"flex items-center gap-3 px-4 py-3 h-14\">\n\n                        </div>\n                        <div class=\"flex items-center gap-3 px-4 py-3 h-14\">\n\n                        </div>\n                        <div class=\"flex items-center gap-3 px-4 py-3 h-14\">\n\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </main>\n</div>"
+        }
+    ]
+}

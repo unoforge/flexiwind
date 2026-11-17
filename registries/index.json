@@ -1,0 +1,1012 @@
+{
+    "$schema": "https://github.com/unoforge/cli/tree/main/packages/core/schema-source.json",
+    "name": "flexiwind-ui",
+    "type": "registry:source",
+    "title": "Flexiwind UI",
+    "description": "Flexiwind UI components and blocks for Laravel Blade and Livewire.",
+    "items": [
+        {
+            "name": "accordion",
+            "type": "registry:component",
+            "title": "Accordion",
+            "description": "A reusable accordion component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "activity01",
+            "type": "registry:component",
+            "title": "Activity 01",
+            "description": "A full Activity layout.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "activity02",
+            "type": "registry:component",
+            "title": "Activity 02",
+            "description": "A full Activity layout.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "alert",
+            "type": "registry:component",
+            "title": "Alert",
+            "description": "A reusable alert component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "aspect",
+            "type": "registry:component",
+            "title": "Aspect Ratio",
+            "description": "A reusable aspect ratio component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "auth-split",
+            "type": "registry:component",
+            "title": "Auth Split",
+            "description": "A reusable auth split component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "autocomplete",
+            "type": "registry:component",
+            "title": "Autocomplete",
+            "description": "Search first: a known list or a Livewire search, one or several values. Built on Flexilla Autocomplete.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "avatar",
+            "type": "registry:component",
+            "title": "Avatar",
+            "description": "A reusable avatar component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "avatar-placeholder",
+            "type": "registry:component",
+            "title": "Avatar Placeholder",
+            "description": "A reusable avatar placeholder component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "badge",
+            "type": "registry:component",
+            "title": "Badge",
+            "description": "A reusable badge component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "breadcrumbs",
+            "type": "registry:component",
+            "title": "Breadcrumbs",
+            "description": "A reusable breadcrumbs component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "button",
+            "type": "registry:component",
+            "title": "Button",
+            "description": "A reusable button component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "button-helper",
+            "type": "registry:component",
+            "title": "Button helper",
+            "description": "A reusable button helper for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "callout",
+            "type": "registry:component",
+            "title": "Callout",
+            "description": "A reusable callout component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "card",
+            "type": "registry:component",
+            "title": "Card",
+            "description": "A reusable card component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "chart",
+            "type": "registry:component",
+            "title": "Chart",
+            "description": "Bar, line, area, pie, donut and radial charts rendered by Blade, with no chart library.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "chart-helper",
+            "type": "registry:component",
+            "title": "Chart helper",
+            "description": "Server-side geometry for Flexiwind charts: scales, bars, paths, slices, rings and value formatting.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "checkbox",
+            "type": "registry:component",
+            "title": "Checkbox",
+            "description": "A reusable checkbox component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "collapse",
+            "type": "registry:component",
+            "title": "Collapse",
+            "description": "A reusable collapse component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "command-menu",
+            "type": "registry:component",
+            "title": "Command menu",
+            "description": "A ⌘K palette: grouped commands, nested pages, keyboard navigation and Livewire search, in a native dialog.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "confirm-action-modal",
+            "type": "registry:component",
+            "title": "Confirm Action Modal",
+            "description": "Modal dialog to confirm a destructive action.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "contact-form01",
+            "type": "registry:component",
+            "title": "Contact Form 01",
+            "description": "Contact form with name, email and message fields.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "create-user-modal",
+            "type": "registry:component",
+            "title": "Create User Modal",
+            "description": "Modal form to create a user.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "dash-analytics",
+            "type": "registry:component",
+            "title": "Dashboard Analytics",
+            "description": "Analytics dashboard with KPI cards, revenue chart area, top products, and recent orders table.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "dissmissible",
+            "type": "registry:component",
+            "title": "Dissmissible",
+            "description": "A reusable divider component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "divider",
+            "type": "registry:component",
+            "title": "Divider",
+            "description": "A reusable divider component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "dropdown",
+            "type": "registry:component",
+            "title": "Dropdown",
+            "description": "A reusable dropdown component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "echarts",
+            "type": "registry:component",
+            "title": "Advanced Charts (ECharts)",
+            "description": "Zoomable time series, candlesticks, heatmaps, radar, scatter and funnels, drawn by Apache ECharts, loaded on demand and themed with your Flexiwind tokens.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "empty-state01",
+            "type": "registry:component",
+            "title": "Empty State 01",
+            "description": "Empty State.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "empty-state02",
+            "type": "registry:component",
+            "title": "Empty State 02",
+            "description": "Empty State.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "features01",
+            "type": "registry:component",
+            "title": "Features 01",
+            "description": "Feature sections.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "field",
+            "type": "registry:component",
+            "title": "Field",
+            "description": "A form field wrapper with label, hint, error message, and required indicator.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "file-trigger",
+            "type": "registry:component",
+            "title": "File trigger & Dropzone",
+            "description": "Open the file picker from any button, or drop files on a zone. Type and size checks before upload, Livewire progress.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "flexiwind-base",
+            "type": "registry:component",
+            "title": "Flexiwind utilities",
+            "description": "Base styles for Flexiwind UI components.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "header01",
+            "type": "registry:component",
+            "title": "Header 01",
+            "description": "Header navbar for dashboard layout",
+            "version": "1.0.0"
+        },
+        {
+            "name": "header02",
+            "type": "registry:component",
+            "title": "Header 02",
+            "description": "Header navbar for dashboard layout",
+            "version": "1.0.0"
+        },
+        {
+            "name": "header03",
+            "type": "registry:component",
+            "title": "Header 03",
+            "description": "Header navbar for dashboard layout",
+            "version": "1.0.0"
+        },
+        {
+            "name": "header04",
+            "type": "registry:component",
+            "title": "Header 04",
+            "description": "Header navbar for dashboard layout",
+            "version": "1.0.0"
+        },
+        {
+            "name": "header05",
+            "type": "registry:component",
+            "title": "Header 05",
+            "description": "Header navbar for dashboard layout",
+            "version": "1.0.0"
+        },
+        {
+            "name": "heading",
+            "type": "registry:component",
+            "title": "Heading",
+            "description": "A reusable heading component for Laravel Blade/Livewire with semantic levels.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "hero01",
+            "type": "registry:component",
+            "title": "HeroSection 01",
+            "description": "Hero section.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "icon",
+            "type": "registry:component",
+            "title": "Icon",
+            "description": "A reusable icon component for Laravel Blade/Livewire using Iconify.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "inline-toast",
+            "type": "registry:component",
+            "title": "Inline Toast",
+            "description": "Inline toast notification.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "input",
+            "type": "registry:component",
+            "title": "Input",
+            "description": "A reusable input component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "input-group",
+            "type": "registry:component",
+            "title": "Input Group",
+            "description": "A reusable input component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "kbd",
+            "type": "registry:component",
+            "title": "Kbd",
+            "description": "A reusable kbd component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "kpi01",
+            "type": "registry:component",
+            "title": "KPI 01",
+            "description": "A full KPI layout.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "kpi02",
+            "type": "registry:component",
+            "title": "KPI 02",
+            "description": "A full KPI layout with icons.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "kpi03",
+            "type": "registry:component",
+            "title": "KPI 03",
+            "description": "A full KPI layout with icons.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "kpi04",
+            "type": "registry:component",
+            "title": "KPI 04",
+            "description": "A full KPI layout with icons.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "kpi05",
+            "type": "registry:component",
+            "title": "KPI 05",
+            "description": "A full KPI layout with icons.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "label",
+            "type": "registry:component",
+            "title": "Label",
+            "description": "A reusable label component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "link",
+            "type": "registry:component",
+            "title": "Link",
+            "description": "A reusable link component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "listbox",
+            "type": "registry:component",
+            "title": "Listbox",
+            "description": "A select you can style and compose part by part: one or several values, search, icons, avatars and groups. Built on Flexilla Select.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "login01",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "login02",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "login03",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "login04",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "login05",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "meter",
+            "type": "registry:component",
+            "title": "Meter",
+            "description": "A reusable meter component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "modal",
+            "type": "registry:component",
+            "title": "Modal",
+            "description": "A reusable modal component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "notification-preferences",
+            "type": "registry:component",
+            "title": "Notification Preferences",
+            "description": "Slideover for notification preferences.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "notification-stack",
+            "type": "registry:component",
+            "title": "Notification Stack",
+            "description": "Stacked notification alerts.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "otp",
+            "type": "registry:component",
+            "title": "OTP",
+            "description": "A reusable otp component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "otp01",
+            "type": "registry:component",
+            "title": "Otp ",
+            "description": "A full auth OTP page.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "pagination",
+            "type": "registry:component",
+            "title": "Pagination",
+            "description": "A reusable pagination component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "password-reset01",
+            "type": "registry:component",
+            "title": "Password Reset",
+            "description": "A full auth password reset page.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "popover",
+            "type": "registry:component",
+            "title": "Popover",
+            "description": "A reusable popover component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "profile01",
+            "type": "registry:component",
+            "title": "Profile 01",
+            "description": "Profile page",
+            "version": "1.0.0"
+        },
+        {
+            "name": "progress",
+            "type": "registry:component",
+            "title": "Progress",
+            "description": "A reusable progress component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "project-stats-panel",
+            "type": "registry:component",
+            "title": "Project Stats Panel",
+            "description": "Stats panel for project metrics.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "radio",
+            "type": "registry:component",
+            "title": "Radio",
+            "description": "A reusable radio component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "range",
+            "type": "registry:component",
+            "title": "Range",
+            "description": "A reusable range component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "rich-text",
+            "type": "registry:component",
+            "title": "Rich text",
+            "description": "A rich text editor with no dependency: marks, headings, lists, links, images and uploads. Every part is a component.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "select",
+            "type": "registry:component",
+            "title": "Select",
+            "description": "A reusable select component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "setting01",
+            "type": "registry:component",
+            "title": "Setting 01",
+            "description": "Setting page",
+            "version": "1.0.0"
+        },
+        {
+            "name": "setting02",
+            "type": "registry:component",
+            "title": "Setting 02",
+            "description": "Setting page",
+            "version": "1.0.0"
+        },
+        {
+            "name": "setting03",
+            "type": "registry:component",
+            "title": "Setting 03",
+            "description": "Setting page",
+            "version": "1.0.0"
+        },
+        {
+            "name": "setting04",
+            "type": "registry:component",
+            "title": "Setting 04",
+            "description": "Setting page",
+            "version": "1.0.0"
+        },
+        {
+            "name": "setting05",
+            "type": "registry:component",
+            "title": "Setting 05",
+            "description": "Setting page",
+            "version": "1.0.0"
+        },
+        {
+            "name": "settings-slideover",
+            "type": "registry:component",
+            "title": "Settings Slideover",
+            "description": "Slideover form for settings.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "shell01",
+            "type": "registry:component",
+            "title": "App Shell 01",
+            "description": "Application shell layout.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "shell02",
+            "type": "registry:component",
+            "title": "App Shell 02",
+            "description": "Application shell layout.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "shell03",
+            "type": "registry:component",
+            "title": "App Shell 03",
+            "description": "Application shell layout.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "sidebar-wrapper",
+            "type": "registry:component",
+            "title": "Sidebar Wrapper",
+            "description": "A full sidebar wrapper layout.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "sidebar01",
+            "type": "registry:component",
+            "title": "Sidebar 01",
+            "description": "A full sidebar layout.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "sidebar02",
+            "type": "registry:component",
+            "title": "Sidebar 02",
+            "description": "A full sidebar layout with grouped navigation.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "sidebar03",
+            "type": "registry:component",
+            "title": "Sidebar 03",
+            "description": "A full sidebar layout.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "signup01",
+            "type": "registry:component",
+            "title": "Signup",
+            "description": "A full auth signup page.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "signup02",
+            "type": "registry:component",
+            "title": "Signup",
+            "description": "A full auth signup page.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "skeleton",
+            "type": "registry:component",
+            "title": "Skeleton",
+            "description": "A reusable skeleton component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "slideover",
+            "type": "registry:component",
+            "title": "Slideover",
+            "description": "A reusable slideover component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "sparkline",
+            "type": "registry:component",
+            "title": "Sparkline",
+            "description": "A tiny trend line, area or bar series for KPI cards and tables.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "switch",
+            "type": "registry:component",
+            "title": "Switch",
+            "description": "An accessible on/off switch for Laravel Blade and Livewire: label, description, sizes and colors.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "table",
+            "type": "registry:component",
+            "title": "Table",
+            "description": "A reusable table component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "table-actions-dropdown",
+            "type": "registry:component",
+            "title": "Table Actions Dropdown",
+            "description": "Row actions dropdown for tables.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "table01",
+            "type": "registry:component",
+            "title": "Table 01",
+            "description": "Data table component.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "table02",
+            "type": "registry:component",
+            "title": "Table 02",
+            "description": "Data table component.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "table03",
+            "type": "registry:component",
+            "title": "Table 03",
+            "description": "Data table component.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "table04",
+            "type": "registry:component",
+            "title": "Table 04",
+            "description": "Data table component.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "table05",
+            "type": "registry:component",
+            "title": "Table 05",
+            "description": "Data table component.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "table06",
+            "type": "registry:component",
+            "title": "Table 06",
+            "description": "Data table component.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "table07",
+            "type": "registry:component",
+            "title": "Table 07",
+            "description": "User management table with avatars, status badges, role filter, action dropdowns, and pagination.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "tabs",
+            "type": "registry:component",
+            "title": "Tabs",
+            "description": "A reusable tabs component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "tag-group",
+            "type": "registry:component",
+            "title": "Tag group",
+            "description": "Short labels to show, remove, or pick as filters: icons, dots, avatars and counts. Livewire-ready.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "tag-input",
+            "type": "registry:component",
+            "title": "Tag input",
+            "description": "A field that turns typed text into tags: topics, emails, keywords. Validation, limits, suggestions and Livewire search.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "team-performance-card",
+            "type": "registry:component",
+            "title": "Team Performance Card",
+            "description": "Card showing team performance.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "text",
+            "type": "registry:component",
+            "title": "Text",
+            "description": "A reusable text component for Laravel Blade/Livewire with intent-based styling.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "textarea",
+            "type": "registry:component",
+            "title": "Textarea",
+            "description": "A reusable textarea component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-air",
+            "type": "registry:style",
+            "title": "Air Theme",
+            "description": "Light and airy with soft, breathable colors",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-amber",
+            "type": "registry:style",
+            "title": "Amber Theme",
+            "description": "Warm amber on stone grays",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-caffeine",
+            "type": "registry:style",
+            "title": "Caffeine Theme",
+            "description": "Rich espresso browns and warm coffee tones",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-claude",
+            "type": "registry:style",
+            "title": "Claude Theme",
+            "description": "Inspired by Claude AI — warm terracotta and cream tones",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-default",
+            "type": "registry:style",
+            "title": "Default Theme",
+            "description": "Default Flexiwind theme: sky blue primary, indigo secondary",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-earth",
+            "type": "registry:style",
+            "title": "Earth Theme",
+            "description": "Natural earthy tones — browns, greens, warm neutrals",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-emerald",
+            "type": "registry:style",
+            "title": "Emerald Theme",
+            "description": "Fresh emerald green on warm stone grays",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-energy",
+            "type": "registry:style",
+            "title": "Energy Theme",
+            "description": "High-energy vibrant colors for dynamic interfaces",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-fire",
+            "type": "registry:style",
+            "title": "Fire Theme",
+            "description": "Bold reds and warm oranges evoking flame and heat",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-flexiwind",
+            "type": "registry:style",
+            "title": "Flexiwind Theme",
+            "description": "Official Flexiwind branded theme",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-indigo",
+            "type": "registry:style",
+            "title": "Indigo Theme",
+            "description": "Deep indigo on cool slate grays",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-mono",
+            "type": "registry:style",
+            "title": "Mono Theme",
+            "description": "Black and white, no accent color",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-mystery",
+            "type": "registry:style",
+            "title": "Mystery Theme",
+            "description": "Deep purples and dark tones for a mysterious feel",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-nature",
+            "type": "registry:style",
+            "title": "Nature Theme",
+            "description": "Fresh greens and organic colors inspired by nature",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-orange",
+            "type": "registry:style",
+            "title": "Orange Theme",
+            "description": "Bright orange on true neutral grays",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-oz",
+            "type": "registry:style",
+            "title": "Oz Theme",
+            "description": "Emerald-inspired fantasy theme",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-passion",
+            "type": "registry:style",
+            "title": "Passion Theme",
+            "description": "Deep reds and passionate warm tones",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-romance",
+            "type": "registry:style",
+            "title": "Romance Theme",
+            "description": "Soft pinks and romantic pastels",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-rose",
+            "type": "registry:style",
+            "title": "Rose Theme",
+            "description": "Bold rose red on zinc grays",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-spotify",
+            "type": "registry:style",
+            "title": "Spotify Theme",
+            "description": "Inspired by Spotify — vibrant green on dark backgrounds",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-spring",
+            "type": "registry:style",
+            "title": "Spring Theme",
+            "description": "Fresh spring greens and floral accents",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-trust",
+            "type": "registry:style",
+            "title": "Trust Theme",
+            "description": "Professional blues conveying trust and reliability",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-violet",
+            "type": "registry:style",
+            "title": "Violet Theme",
+            "description": "Vivid violet on neutral zinc grays",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-water",
+            "type": "registry:style",
+            "title": "Water Theme",
+            "description": "Cool blues and aqua tones inspired by water",
+            "version": "1.0.0"
+        },
+        {
+            "name": "theme-winter",
+            "type": "registry:style",
+            "title": "Winter Theme",
+            "description": "Cool whites and icy blue winter palette",
+            "version": "1.0.0"
+        },
+        {
+            "name": "toast",
+            "type": "registry:component",
+            "title": "Toast",
+            "description": "Toast notifications from Livewire, a redirect or Alpine, themed with your tokens. Built on Flexilla Toast.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "toggle",
+            "type": "registry:component",
+            "title": "Toggle",
+            "description": "A button that stays pressed, with aria-pressed. Ghost, outline and primary variants.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "toggle-group",
+            "type": "registry:component",
+            "title": "Toggle group",
+            "description": "Pressed buttons that work together: toolbars, segmented controls, view switchers. One value or several.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "tooltip",
+            "type": "registry:component",
+            "title": "Tooltip",
+            "description": "A reusable tooltip component for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "top-products",
+            "type": "registry:component",
+            "title": "Top Products",
+            "description": "Top selling products widget with revenue and sales data.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "tracker",
+            "type": "registry:component",
+            "title": "Tracker",
+            "description": "A row of status blocks for uptime, job runs or attendance.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "ui-helper",
+            "type": "registry:component",
+            "title": "Ui helper",
+            "description": "A reusable UI helper for Laravel Blade/Livewire.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "user-dropdown",
+            "type": "registry:component",
+            "title": "User Dropdown",
+            "description": "Account dropdown menu.",
+            "version": "1.0.0"
+        },
+        {
+            "name": "user-list",
+            "type": "registry:component",
+            "title": "User List",
+            "description": "Complete user management page with search, filter, table, action dropdowns, pagination, and create modal.",
+            "version": "1.0.0"
+        }
+    ],
+    "homepage": "https://flexiwind.unoforge.com",
+    "author": "Johnkat MJ <johnkatembue4@gmail.com>"
+}

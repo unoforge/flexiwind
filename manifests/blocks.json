@@ -872,6 +872,588 @@
                     "target": "resources/views/components/setting05.blade.php"
                 }
             ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "login04",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "registryDependencies": [
+                "button",
+                "checkbox",
+                "divider",
+                "icon",
+                "input",
+                "link"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/auth/login04.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "login05",
+            "type": "registry:component",
+            "title": "Login",
+            "description": "A full auth login page.",
+            "registryDependencies": [
+                "avatar",
+                "button",
+                "checkbox",
+                "icon",
+                "input"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/auth/login05.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/login.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "signup02",
+            "type": "registry:component",
+            "title": "Signup",
+            "description": "A full auth signup page.",
+            "registryDependencies": [
+                "button",
+                "checkbox",
+                "divider",
+                "field",
+                "icon",
+                "input",
+                "link"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/auth/signup02.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/signup.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "password-reset01",
+            "type": "registry:component",
+            "title": "Password Reset",
+            "description": "A full auth password reset page.",
+            "registryDependencies": [
+                "button",
+                "card",
+                "icon",
+                "input",
+                "link"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/auth/password-reset01.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/auth/password-reset.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "header04",
+            "type": "registry:component",
+            "title": "Header 04",
+            "description": "Header navbar for dashboard layout",
+            "registryDependencies": [
+                "avatar",
+                "button",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/header/04/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "header05",
+            "type": "registry:component",
+            "title": "Header 05",
+            "description": "Header navbar for dashboard layout",
+            "registryDependencies": [
+                "avatar",
+                "breadcrumbs",
+                "button",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/header/05/header.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/nav-header.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table04",
+            "type": "registry:component",
+            "title": "Table 04",
+            "description": "Data table component.",
+            "registryDependencies": [
+                "avatar-placeholder",
+                "button",
+                "card",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/table/04.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/tables/table04.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table05",
+            "type": "registry:component",
+            "title": "Table 05",
+            "description": "Data table component.",
+            "registryDependencies": [
+                "badge",
+                "button",
+                "checkbox",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/table/05.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/tables/table05.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table06",
+            "type": "registry:component",
+            "title": "Table 06",
+            "description": "Data table component.",
+            "registryDependencies": [
+                "button",
+                "card",
+                "checkbox",
+                "icon",
+                "input"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/table/06.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/tables/table06.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "shell02",
+            "type": "registry:component",
+            "title": "App Shell 02",
+            "description": "Application shell layout.",
+            "registryDependencies": [
+                "button",
+                "icon",
+                "sidebar-wrapper",
+                "sidebar02",
+                "breadcrumbs"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/app-shell/shell-02.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/app-shell.blade.php",
+                    "replace": {
+                        "x-previews.free.sidebar.02.sidebar": "x-layouts.sidebar02",
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "shell03",
+            "type": "registry:component",
+            "title": "App Shell 03",
+            "description": "Application shell layout.",
+            "registryDependencies": [
+                "avatar",
+                "button",
+                "icon",
+                "sidebar-wrapper",
+                "sidebar03",
+                "breadcrumbs"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/app-shell/shell-03.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/layouts/app-shell.blade.php",
+                    "replace": {
+                        "x-previews.free.sidebar.03.sidebar": "x-layouts.sidebar03",
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "kpi04",
+            "type": "registry:component",
+            "title": "KPI 04",
+            "description": "A full KPI layout with icons.",
+            "registryDependencies": [
+                "card",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dash-card/kpi04.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/card/kpi04.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "kpi05",
+            "type": "registry:component",
+            "title": "KPI 05",
+            "description": "A full KPI layout with icons.",
+            "registryDependencies": [
+                "card",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dash-card/kpi05.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/card/kpi05.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "empty-state02",
+            "type": "registry:component",
+            "title": "Empty State 02",
+            "description": "Empty State.",
+            "registryDependencies": [
+                "button",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/empty-state/02.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/empty-state-02.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "create-user-modal",
+            "type": "registry:component",
+            "title": "Create User Modal",
+            "description": "Modal form to create a user.",
+            "registryDependencies": [
+                "button",
+                "checkbox",
+                "field",
+                "icon",
+                "input",
+                "modal",
+                "select"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/modal-form/create-user-modal.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/modal-form/create-user-modal.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "confirm-action-modal",
+            "type": "registry:component",
+            "title": "Confirm Action Modal",
+            "description": "Modal dialog to confirm a destructive action.",
+            "registryDependencies": [
+                "button",
+                "icon",
+                "input",
+                "modal"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/modal-form/confirm-action-modal.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/modal-form/confirm-action-modal.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "settings-slideover",
+            "type": "registry:component",
+            "title": "Settings Slideover",
+            "description": "Slideover form for settings.",
+            "registryDependencies": [
+                "button",
+                "divider",
+                "icon",
+                "input",
+                "select",
+                "slideover",
+                "switch",
+                "textarea"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/slideover-form/settings-slideover.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/slideover-form/settings-slideover.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "notification-preferences",
+            "type": "registry:component",
+            "title": "Notification Preferences",
+            "description": "Slideover for notification preferences.",
+            "registryDependencies": [
+                "button",
+                "icon",
+                "slideover",
+                "switch"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/slideover-form/notification-preferences.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/slideover-form/notification-preferences.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "user-dropdown",
+            "type": "registry:component",
+            "title": "User Dropdown",
+            "description": "Account dropdown menu.",
+            "registryDependencies": [
+                "avatar",
+                "dropdown",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dropdown-menu/user-dropdown.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/dropdown-menu/user-dropdown.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "table-actions-dropdown",
+            "type": "registry:component",
+            "title": "Table Actions Dropdown",
+            "description": "Row actions dropdown for tables.",
+            "registryDependencies": [
+                "dropdown",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dropdown-menu/table-actions-dropdown.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/dropdown-menu/table-actions-dropdown.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "project-stats-panel",
+            "type": "registry:component",
+            "title": "Project Stats Panel",
+            "description": "Stats panel for project metrics.",
+            "registryDependencies": [
+                "avatar",
+                "avatar-placeholder",
+                "badge",
+                "card",
+                "divider",
+                "progress"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/stats-panel/project-stats-panel.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/stats-panel/project-stats-panel.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "team-performance-card",
+            "type": "registry:component",
+            "title": "Team Performance Card",
+            "description": "Card showing team performance.",
+            "registryDependencies": [
+                "avatar-placeholder",
+                "card",
+                "progress"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/stats-panel/team-performance-card.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/stats-panel/team-performance-card.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "inline-toast",
+            "type": "registry:component",
+            "title": "Inline Toast",
+            "description": "Inline toast notification.",
+            "registryDependencies": [
+                "button",
+                "callout"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/toast-notification/inline-toast.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/toast-notification/inline-toast.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "notification-stack",
+            "type": "registry:component",
+            "title": "Notification Stack",
+            "description": "Stacked notification alerts.",
+            "registryDependencies": [
+                "alert",
+                "icon"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/toast-notification/notification-stack.blade.php",
+                    "type": "registry:block",
+                    "target": "resources/views/components/toast-notification/notification-stack.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "name": "activity02",
+            "type": "registry:component",
+            "title": "Activity 02",
+            "description": "A full Activity layout.",
+            "registryDependencies": [
+                "badge",
+                "card",
+                "icon",
+                "link"
+            ],
+            "files": [
+                {
+                    "path": "registry/views/components/previews/free/dash-card/activity02.blade.php",
+                    "type": "registry:page",
+                    "target": "resources/views/components/dash-card/activity02.blade.php",
+                    "replace": {
+                        "x-previews.free.": "x-previews."
+                    }
+                }
+            ]
         }
     ]
 }

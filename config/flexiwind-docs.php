@@ -25,6 +25,9 @@ return [
     // Où envoyer quelqu'un qui tombe sur un artefact verrouillé.
     'upgrade_url' => '/pricing',
 
+    // Wedge Pro à côté du CTA pricing : apps complètes, pas seulement le code source.
+    'templates_url' => '/templates',
+
     'seo' => [
         'keywords' => 'flexiwind, laravel components, laravel ui, tailwind css, tailwind v4, blade components, livewire',
         'og_image' => '/cover-flexiwind.png',
